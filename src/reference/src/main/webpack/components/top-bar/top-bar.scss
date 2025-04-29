@@ -1,0 +1,129 @@
+.vida-top-bar {
+  // height: rem(80px);
+
+  @include media("<=desktop") {
+    height: rem(45px);
+  }
+
+  &__wrapper {
+    background-color: get-color("orange");
+    padding: rem(15px) 0;
+    width: 100%;
+    z-index: 998;
+
+    @include media("<=desktop") {
+      padding: rem(9px) 0;
+    }
+  }
+
+
+  &__container {
+    @include media("<=desktop") {
+      padding: 0 0 0 rem(10px);
+    }
+
+  }
+
+  &__title {
+    color: get-color("white");
+    display: flex;
+    justify-content: space-around;
+
+
+
+    &--twoline {
+      font-size: 11px;
+      font-weight: 700;
+      @include media(">=tablet") {
+        font-size: rem(25px);
+      }
+
+      @include media(">=phone") {
+        font-size: rem(12px);
+      }
+    }
+  }
+
+  &__link {
+    align-items: center;
+    display: flex;
+  }
+
+  &__allginment {
+    align-items: center;
+    display: flex;
+  }
+
+  h2 {
+    color: get-color("white");
+    font-weight: 300;
+
+    @include media("<=desktop") {
+      font-size: rem(18px);
+    }
+  }
+}
+
+.topbar,
+.vida-top-bar {
+  position: sticky;
+  top: rem(60px);
+  z-index: 997;
+  @include media(">=desktop") {
+    top: rem(76px);
+  }
+
+  &--non-sticky {
+    height: auto !important;
+    position: relative;
+    top: 0 !important;
+  }
+}
+
+
+.vida-top-bar--theme-v1 {
+  .vida-top-bar__title {
+    justify-content: center;
+  }
+
+  .vida-top-bar__title--twoline {
+    p:first-child,
+    .vida-top-bar__title--twoline--primary {
+      font-size: 24px;
+      @include media(">=desktop") {
+        font-size: rem(40px);
+      }
+
+      b {
+        font-size: 50px;
+        @include media(">=desktop") {
+          font-size: rem(60px);
+        }
+      }
+    }
+
+    p:first-child::after,
+    .vida-top-bar__title--twoline--primary::after {
+      background: #ffffff42;
+      content: " ";
+      display: block;
+      height: 2px;
+      margin: 25px auto 5px;
+      text-align: center;
+      width: 260px;
+      @include media(">=desktop") {
+        width: 560px;
+      }
+    }
+    
+  }
+
+  p+p b,
+  .vida-top-bar__title--twoline--secandary {
+    font-size: 10px;
+    font-weight: 400;
+    @include media(">=desktop") {
+      font-size: 16px;
+    }
+  }
+}

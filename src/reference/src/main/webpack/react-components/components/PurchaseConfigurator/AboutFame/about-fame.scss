@@ -1,0 +1,29 @@
+@import "../../../../site/styles/base/typography";
+
+.vida-fame-details {
+  &__title {
+    @include h2;
+    margin-bottom: rem(30px);
+  }
+
+  &__intro {
+    @include p1;
+    margin-bottom: rem(10px);
+  }
+
+  &__description {
+    @include p2;
+    margin-bottom: rem(10px);
+    @include media(">=desktop") {
+      margin-bottom: rem(20px);
+    }
+  }
+
+  &__learn-more {
+    @include btn-action;
+    margin-bottom: rem(30px);
+    @include media(">=desktop") {
+      margin-bottom: rem(80px);
+    }
+  }
+}

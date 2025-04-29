@@ -1,0 +1,234 @@
+.vida-dealer-locator {
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: row;
+
+  @include media(">=desktop") {
+    background-image: none !important;
+
+    .vida-dealer-locator {
+      &__locator {
+        .no-data-image-mobile {
+          display: none;
+        }
+      }
+    }
+
+    &__data.with-data {
+      width: 50%;
+    }
+  }
+
+  @include media("<desktop") {
+    align-items: flex-start;
+    flex-direction: column;
+    // height: calc(100vh - rem(64px));
+
+    .vida-dealer-locator {
+      justify-content: center;
+      width: 100%;
+
+      &__locator {
+        justify-content: center;
+
+        .no-data-image-mobile {
+          display: none !important;
+        }
+
+        .no-data-image-mobile {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          min-height: 300px;
+
+          p {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 30px;
+            margin-top: rem(30px);
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  @include media("<tablet") {
+    background-size: rem(360px);
+  }
+
+  &.with-data {
+    flex-direction: column;
+    margin-top: rem(30px);
+    width: 100%;
+
+    @include media("<desktop") {
+      background-image: none !important;
+
+      .vida-booking-details-dealers__listofdealers {
+        margin-top: 15px;
+      }
+    }
+
+    @include media("<tablet") {
+      margin-top: 0;
+    }
+
+    .vida-dealer-locator {
+      // align-items: center;
+
+      @include media("<desktop") {
+        background-image: none !important;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+      }
+
+      &__locator {
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+
+        @include media("<tablet") {
+          flex-direction: column;
+        }
+      }
+
+      .vida-booking-details-dealers__listofdealers {
+        //   overflow: unset;
+      }
+
+      &__asset {
+        @include media(">=desktop") {
+          width: 50%;
+
+          .vida-map {
+            height: 300px;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__locator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+
+    @include media(">=desktop") {
+      width: 60%;
+    }
+
+    &-with-data {
+      //  align-items: center;
+      flex-direction: row;
+      justify-content: flex-start;
+      margin-top: rem(30px);
+      width: 100% !important;
+
+      @include media(">=desktop") {
+        margin-top: rem(30px) !important;
+      }
+
+      @include media("<tablet") {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .vida-dealer-locator__locator-form {
+        margin-left: rem(40px);
+
+        @include media("<tablet") {
+          margin-left: 0;
+        }
+      }
+    }
+
+    &.with-data {
+      justify-content: flex-start;
+    }
+
+    &-form {
+      display: flex;
+      gap: rem(30px);
+    }
+
+    h1 {
+      color: get-color("solid-black");
+      font-size: rem(30px);
+      font-weight: 500;
+      margin-right: 30px;
+
+      @include media("<desktop") {
+        font-size: rem(25px);
+      }
+
+      @include media("<tablet") {
+        font-size: rem(27px) !important;
+        margin: rem(20px) 0;
+      }
+
+      span {
+        margin-left: rem(6px);
+      }
+
+      .text-orange {
+        color: get-color("orange");
+      }
+    }
+  }
+
+  &__asset {
+    display: none;
+
+    @include media(">=desktop") {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      // height: calc(100vh - rem(160px));
+    }
+  }
+}
+
+.vida-dealer-locator.vida-container {
+  display: block;
+  margin-bottom: 20px;
+
+  @include media(">=desktop") {
+    .vida-map {
+      border-radius: 5px;
+      height: 56vh !important;
+      overflow: hidden;
+      width: 100%;
+    }
+  }
+
+  @include media("<desktop") {
+    .vida-dealer-locator__asset {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .vida-dealer-locator__locator {
+    display: block;
+    height: auto;
+    margin-top: 25px;
+    width: 100%;
+  }
+
+  .vida-dealer-locator__data.with-data {
+    .vida-booking-details-dealers__listofdealers {
+      max-height: 56vh;
+    }
+  }
+
+  .vida-dealer-locator {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+}

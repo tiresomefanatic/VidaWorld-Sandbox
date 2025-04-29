@@ -1,0 +1,75 @@
+.vida-full-bleed-image {
+  &__wrapper {
+    height: rem(640px);
+    padding-bottom: rem(30px);
+    padding-top: rem(30px);
+    position: relative;
+
+    @include media(">=desktop") {
+      height: rem(1293px);
+      padding-bottom: rem(218px);
+      padding-top: rem(160px);
+    }
+  }
+
+  &__media {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    position: relative;
+
+    &--top {
+      align-self: flex-start;
+      max-width: rem(290px);
+      text-align: left;
+      @include media(">=desktop") {
+        max-width: rem(419px);
+      }
+    }
+
+    &--bottom {
+      align-self: flex-end;
+      max-width: rem(290px);
+      text-align: right;
+      @include media(">=desktop") {
+        max-width: rem(578px);
+      }
+    }
+  }
+
+  &__title {
+    color: get-color("white");
+    margin-bottom: rem(10px);
+    @include media(">=desktop") {
+      margin-bottom: rem(20px);
+    }
+
+    h2 {
+      @include h1;
+    }
+  }
+
+  &__description {
+    color: get-color("white");
+
+    p {
+      @include h2;
+    }
+  }
+}

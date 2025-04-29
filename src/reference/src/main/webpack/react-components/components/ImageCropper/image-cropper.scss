@@ -1,0 +1,29 @@
+.vida-image-cropper {
+  .vida-profile-cropper {
+    &__container {
+      height: rem(300px);
+      @include media(">=desktop") {
+        height: rem(350px);
+      }
+  
+      img {
+        display: block;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__button-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(20px);
+
+    button {
+      margin-right: rem(15px);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

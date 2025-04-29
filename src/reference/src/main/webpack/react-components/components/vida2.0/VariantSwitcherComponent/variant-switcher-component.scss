@@ -1,0 +1,571 @@
+.variant-switcher {
+  margin: rem(32px) rem(20px);
+  transition: opacity 1.5s ease-out;
+
+  @include media(">tablet") {
+    margin: rem(64px) rem(90px);
+  }
+
+  &--subheading {
+    color: get-color("mine-shaft");
+    font-size: rem(12px);
+    font-weight: 400;
+    text-transform: uppercase;
+
+    @include media(">tablet") {
+      font-size: rem(18px);
+    }
+  }
+
+  &--heading {
+    color: get-color("mine-shaft");
+    font-size: rem(24px);
+    font-weight: 600;
+
+    @include media(">tablet") {
+      font-size: rem(48px);
+    }
+  }
+
+  &--tab {
+    margin-top: rem(24px);
+
+    &--wrapper {
+      background-color: get-color("catskill-white");
+      border-bottom: rem(2px) solid get-color("orange");
+      border-top-left-radius: rem(8px);
+      border-top-right-radius: rem(8px);
+      display: flex;
+      height: rem(130px);
+      position: relative;
+
+      @include media(">tablet") {
+        border-bottom-width: rem(6px);
+        height: rem(210px);
+      }
+
+      .variant-switcher--tab--image {
+        height: rem(130px);
+        position: absolute;
+        right: 21%;
+        width: rem(150px);
+        z-index: 1;
+
+        @include media(">tablet") {
+          height: rem(210px);
+          width: rem(241px);
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .variant-switcher--tab--image.right {
+        right: 39%;
+
+        @include media(">tablet") {
+          right: 60%;
+        }
+      }
+
+      .variant-switcher--tab-button {
+        .variant-switcher-content {
+          padding: rem(32px) rem(16px) 0;
+
+          @include media(">tablet") {
+            padding: rem(54px) rem(54px) 0;
+          }
+
+          &--title {
+            color: get-color("mine-shaft");
+            cursor: pointer;
+            font-family: PP Neue Montreal;
+            font-size: rem(20px);
+            font-weight: 500;
+
+            @include media(">tablet") {
+              font-size: rem(48px);
+            }
+          }
+
+          &--price {
+            display: none;
+          }
+        }
+      }
+
+      .variant-switcher--tab-button.active {
+        background-color: get-color("orange");
+        border-top-left-radius: rem(8px);
+        border-top-right-radius: rem(8px);
+        flex-grow: 1;
+
+        .variant-switcher-content {
+          &--title {
+            color: get-color("white");
+            font-size: rem(24px);
+            font-weight: 600;
+            margin-bottom: rem(4px);
+
+            @include media(">tablet") {
+              font-size: rem(48px);
+            }
+          }
+
+          &--price {
+            color: get-color("white");
+            display: block;
+            font-size: rem(14px);
+            font-weight: 500;
+            width: 45%;
+
+            @include media(">tablet") {
+              font-size: rem(36px);
+              width: 100%;
+            }
+
+            span {
+              color: get-color("white");
+              font-size: rem(14px);
+              font-weight: 600;
+
+              @include media(">tablet") {
+                font-size: rem(36px);
+              }
+            }
+
+            &--details {
+              font-size: rem(10px);
+              font-weight: 400;
+
+              @include media(">tablet") {
+                font-size: rem(18px);
+                margin-top: rem(16px);
+              }
+            }
+          }
+        }
+      }
+
+      .variant-switcher--tab-button.active.left {
+        clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%);
+
+        @include media(">tablet") {
+          clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+        }
+      }
+
+      .variant-switcher--tab-button.active.right {
+        clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+        display: flex;
+        justify-content: end;
+
+        @include media(">tablet") {
+          clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .variant-switcher-content--price {
+          @include media("<=tablet") {
+            width: 72%;
+          }
+        }
+      }
+    }
+
+    &--panel {
+      padding: 0 rem(16px);
+
+      .growin-animation {
+        animation-duration: 0.5s;
+        animation-name: growIn;
+        animation-timing-function: ease-in-out;
+      }
+
+      @keyframes growIn {
+        0% {
+          opacity: 0;
+          width: 500px;
+        }
+
+        100% {
+          opacity: 1;
+          width: 300px;
+        }
+      }
+
+      .growup-animation {
+        animation-duration: 0.5s;
+        animation-name: growUp;
+        animation-timing-function: ease-in-out;
+      }
+
+      @keyframes growUp {
+        0% {
+          opacity: 0;
+          width: max-content;
+        }
+
+        100% {
+          opacity: 0.5;
+          width: unset;
+        }
+      }
+
+      .rotate-img-right-animation {
+        animation: rotateImgRight 0.5s linear forwards;
+      }
+
+      @keyframes rotateImgRight {
+        0% {
+          transform: scaleX(1);
+        }
+
+        100% {
+          transform: scaleX(-1);
+        }
+      }
+
+      .rotate-img-left-animation {
+        animation: rotateImgRight 0.5s linear forwards;
+      }
+
+      @keyframes rotateImgRight {
+        0% {
+          transform: scaleX(-1);
+        }
+
+        100% {
+          transform: scaleX(1);
+        }
+      }
+
+      .variant-switcher-desktop-panel-detail {
+        @include media(">tablet") {
+          display: flex;
+          justify-content: space-evenly;
+        }
+      }
+
+      &--detail {
+        border-bottom: rem(1px) solid get-color("mine-shaft");
+        padding: rem(32px) 0;
+
+        @include media(">tablet") {
+          padding: rem(64px) 0;
+        }
+
+        &:first-child {
+          @include media(">tablet") {
+            flex-direction: row-reverse;
+          }
+        }
+
+        .battery-img {
+          position: relative;
+
+          &--background {
+            background-color: get-color("oslo-gray");
+            border-radius: 8px;
+            height: rem(88px);
+            width: rem(94px);
+
+            @include media(">tablet") {
+              height: rem(178px);
+              width: rem(178px);
+            }
+          }
+
+          &--wrapper {
+            height: rem(94px);
+            position: absolute;
+            right: rem(-17px);
+            top: rem(8px);
+            width: rem(134px);
+
+            @include media(">tablet") {
+              height: rem(194px);
+              right: rem(-56px);
+              width: rem(280px);
+            }
+
+            img {
+              height: 100%;
+              width: 100%;
+            }
+          }
+        }
+
+        &--title {
+          align-items: center;
+          color: get-color("mine-shaft");
+          display: inline-flex;
+          font-family: PP Neue Montreal;
+          font-size: rem(12px);
+          font-weight: 400;
+          margin-bottom: rem(4px);
+
+          @include media(">tablet") {
+            font-size: rem(20px);
+            margin-bottom: rem(16px);
+          }
+
+          img {
+            height: rem(12px);
+            margin-right: rem(4px);
+            width: rem(12px);
+
+            @include media(">tablet") {
+              height: rem(20px);
+              margin-right: rem(8px);
+              width: rem(20px);
+            }
+          }
+        }
+
+        &--subheading {
+          color: get-color("oslo-gray");
+          font-size: rem(10px);
+          font-weight: 400;
+
+          @include media(">tablet") {
+            font-size: rem(12px);
+          }
+        }
+
+        .varaint-switcher-battery-details {
+          @include media(">tablet") {
+            padding-bottom: rem(28px);
+          }
+        }
+
+        .battery-count-title {
+          padding-top: rem(4px);
+          @include media(">tablet") {
+            padding-top: rem(10px);
+          }
+        }
+
+        &--value {
+          align-items: baseline;
+          color: get-color("mine-shaft");
+          display: flex;
+          font-size: rem(24px);
+          font-weight: 500;
+          line-height: rem(24px);
+
+          @include media(">tablet") {
+            align-items: normal;
+            bottom: rem(2px);
+            font-size: rem(36px);
+            font-weight: 500;
+          }
+        }
+
+        .kwh-unit {
+          color: var(--Neutral-Dark-Grey, #222);
+          font-family: PP Neue Montreal;
+          font-size: rem(24px);
+          font-style: normal;
+          font-weight: 500;
+          // leading-trim: both;
+          line-height: normal;
+          text-align: center;
+          // text-edge: cap;
+
+          @include media(">tablet") {
+            font-size: rem(20px);
+            font-weight: 400;
+          }
+        }
+
+        span {
+          padding: 0 3px;
+          @include media(">tablet") {
+            padding-bottom: 20px;
+          }
+        }
+
+        &--colors-container {
+          display: flex;
+          gap: rem(8px);
+
+          @include media(">tablet") {
+            gap: rem(32px);
+          }
+
+          div {
+            border-radius: rem(50px);
+            height: rem(24px);
+            width: rem(24px);
+
+            @include media(">tablet") {
+              height: rem(64px);
+              width: rem(64px);
+            }
+          }
+
+          .border-black {
+            border: 0.5px solid get-color("mine-shaft");
+          }
+        }
+      }
+
+      &--link {
+        margin: rem(32px) 0 rem(24px);
+
+        a {
+          font-size: rem(16px);
+          font-weight: 500;
+
+          @include media(">tablet") {
+            font-size: rem(20px);
+          }
+        }
+      }
+
+      .justify-content-between {
+        display: flex;
+        justify-content: space-between;
+        @include media(">tablet") {
+          align-items: center;
+          justify-content: space-around;
+          width: 50%;
+        }
+
+        > div:first-child:not(.varaint-switcher-battery-details) {
+          display: none;
+        }
+      }
+    }
+
+    &--button {
+      @include media(">tablet") {
+        text-align: right;
+      }
+
+      button {
+        padding: rem(16px);
+        text-align: center;
+        width: 100%;
+
+        @include media(">tablet") {
+          padding: rem(24px);
+          width: 28%;
+        }
+      }
+    }
+  }
+}
+
+.variantswitcher--no-border.variantswitcher {
+  .variant-switcher--tab--panel--detail {
+    border-bottom: none;
+
+    &--value {
+      @include vida-mobile-subtitle;
+    }
+  }
+
+  .battery-img {
+    display: none;
+  }
+
+  .variant-switcher-desktop-panel-detail {
+    justify-content: flex-start;
+
+    .variant-switcher--tab--panel--detail {
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding-bottom: rem(8px);
+      width: 100%;
+
+      &:first-child {
+        display: none;
+        // width: 20%;
+      }
+
+      > div {
+        margin-bottom: rem(24px);
+        width: 50%;
+        @include media(">tablet") {
+          margin-bottom: 0;
+          width: rem(192px);
+        }
+        
+        > .variant-switcher--tab--panel--detail--title {
+          @include vida-h5-mobile;
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          margin-bottom: 0;
+          @include media(">tablet") {
+            @include vida-h6-desktop;
+          }
+      
+          img {
+            height: rem(30px);
+            width: rem(30px);
+            @include media(">tablet") {
+              height: rem(40px);
+              width: rem(40px);
+            }
+          }
+      
+          &.kwh-unit {
+            @include vida-mobile-subtitle;
+          }
+
+          .variant-switcher--tab--panel--detail--value {
+            display: inline;
+            padding-bottom: 0;
+          }
+        }
+        
+        .variant-switcher--tab--panel--detail--value {
+          @include vida-h3-mobile;
+          align-items: center;
+          margin-bottom: 0;
+          padding-bottom: 0;
+          @include media(">tablet") {
+            @include vida-h3-desktop;
+          }
+  
+          .variant-switcher--tab--panel--detail--title {
+            @include vida-swipe-button;
+            color: #222;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            @include media(">tablet") {
+              @include vida-mobile-subtitle;
+            }
+          }
+        }
+
+        &:first-child {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .variant-switcher--tab--panel {
+    > .variant-switcher--tab--panel--detail {
+      .variant-switcher--tab--panel--detail--title {
+        @include vida-swipe-button;
+        color: #222;
+        margin-bottom: rem(8px);
+        @include media(">tablet") {
+          @include vida-desk-body-1;
+          margin-bottom: rem(32px);
+        }
+      }
+    }
+  }
+
+  .variant-switcher--tab--panel--link {
+    margin-top: rem(8px);
+  }
+}

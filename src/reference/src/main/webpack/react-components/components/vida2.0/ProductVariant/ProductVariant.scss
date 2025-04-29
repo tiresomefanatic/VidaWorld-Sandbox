@@ -1,0 +1,321 @@
+.product-varient {
+  scroll-behavior: smooth;
+
+  &__banner {
+    padding-top: rem(40px);
+    width: 100%;
+    @include media(">=desktop") {
+      padding-bottom: rem(96px);
+      padding-top: rem(44px);
+    }
+  }
+
+  &__container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__two-varient {
+    .product-varient__bike-details-wrapper {
+      margin-top: rem(-160px);
+    }
+
+    .product-varient__bike-two-varient:first-child {
+      margin-right: -5rem;
+      transition: opacity 1.5s ease-out;
+      transition: scroll 2s ease-in-out;
+      z-index: 5;
+
+      &.single-varient {
+        margin-right: -2rem;
+      }
+    }
+
+    .product-varient__banner {
+      min-height: rem(676px);
+    }
+  }
+
+  &__three-varient {
+    .product-varient__banner {
+      min-height: rem(692px);
+      @include media(">=tablet") {
+        min-height: rem(800px);
+      }
+      @include media(">=desktop") {
+        min-height: rem(1000px);
+      }
+    }
+
+    .product-varient__anchor-button {
+      @include media(">=tablet") {
+        bottom: 38%;
+        left: 45%;
+      }
+    }
+    
+    .product-varient-desktop__content {
+      @include media(">=desktop") {
+        margin-top: rem(100px);
+      }
+    }
+
+    .product-varient-desktop__bike-container {
+      @include media(">=desktop") {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__header {
+    @media screen and (max-width: 365px) {
+      font-size: 38px;
+    }
+    @include vida-h1-mobile;
+    color: get-color("mine-shaft");
+    // padding-left: rem(24.75px);
+    padding-right: rem(31.25px);
+    @include media(">=desktop") {
+      @include vida-banner-header;
+      font-weight: 600;
+      padding-bottom: rem(16px);
+      // padding-left: rem(83px);
+    }
+  }
+
+  &__item-name {
+    @include vida-mobile-body-4;
+    padding-bottom: rem(23px);
+    // padding-left: rem(83px);
+  }
+
+  &__bike-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: rem(56px);
+  }
+
+  &__bike-three-varient {
+    height: rem(192px);
+    position: relative;
+    width: 100%;
+    // width: 33%;
+
+    @include media(">=desktop") {
+      height: rem(518px);
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__anchor-button {
+    border: none;
+    bottom: 35%;
+    cursor: pointer;
+    height: 34px;
+    left: 37%;
+    padding: 0;
+    position: absolute;
+    width: 34px;
+    z-index: 10;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__bike-two-varient {
+    height: auto;
+    position: relative;
+    width: 50%;
+
+    &.single-varient {
+      width: 60%;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .product-varient__anchor-button {
+      bottom: 29%;
+      left: 34%;
+    }
+  }
+
+  &__bike-details-wrapper {
+    backdrop-filter: blur(7.5px);
+    background: rgba(228, 234, 241, 0.5);
+    border-radius: rem(8px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: rem(16px);
+    margin-top: rem(-130px);
+    max-width: rem(340px);
+    padding: rem(20px) rem(16px) rem(20px) 0;
+    row-gap: rem(40px);
+    z-index: 10;
+    @include media(">=tablet") {
+      margin-top: rem(-160px);
+    }
+    @include media(">=desktop") {
+      max-width: rem(512px);
+      padding: rem(30px) rem(24px) rem(30px) 0;
+      row-gap: rem(60px);
+    }
+  }
+
+  &__bike-details {
+    display: flex;
+    flex-grow: 1;
+    gap: rem(6px);
+    padding-left: rem(16px);
+    width: 50%;
+    @include media(">=desktop") {
+      gap: rem(9px);
+      padding-left: rem(24px);
+    }
+  }
+
+  &__image-wrapper {
+    height: rem(20px);
+    width: rem(20px);
+    @include media(">=desktop") {
+      height: rem(30px);
+      width: rem(30px);
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__details-text {
+    @include vida-small-text-mobile;
+    @include media(">=desktop") {
+      @include vida-small-text-desktop;
+    }
+  }
+
+  &__spec-value {
+    @include vida-label-value-text-mobile;
+    @include media(">=desktop") {
+      @include vida-label-value-text-desktop;
+    }
+  }
+
+  &__spec-unit {
+    @include vida-small-text-mobile;
+    @include media(">=desktop") {
+      @include vida-small-text-desktop;
+    }
+  }
+
+  &__details-specifications {
+    align-items: baseline;
+    display: flex;
+    gap: rem(4px);
+    @include media(">=tablet") {
+      gap: rem(6px);
+    }
+  }
+
+  &__btn-container {
+    background-color: get-color("catskill-white");
+    display: flex;
+    justify-content: center;
+  }
+
+  &__view-model-button {
+    @include vida-h5-mobile;
+    background: get-color("white");
+    border: 1px solid get-color("orange");
+    border-radius: rem(8px);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    color: get-color("orange") !important;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    margin: 0 0 rem(32px) 0;
+    padding: rem(8px) rem(16px);
+    position: relative;
+    text-decoration: none;
+    z-index: 10;
+    @include media(">=tablet") {
+      @include vida-h5-desktop;
+      margin-bottom: rem(64px);
+      margin-right: 0;
+      padding: rem(12px) rem(24px);
+    }
+  }
+}
+
+.product-varient-desktop {
+  &__bike-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__single-varient {
+    @include media(">=desktop") {
+      flex-direction: row !important;
+    }
+
+    .bike-details-wrapper {
+      margin: 0;
+    }
+
+    .product-varient__bike-details-wrapper {
+      margin: 0;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__detail-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__bike-two-varient {
+    height: 518px;
+    width: 563px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__bike-three-varient {
+    height: 348px;
+    scale: 1.5;
+    width: 348px;
+    
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}

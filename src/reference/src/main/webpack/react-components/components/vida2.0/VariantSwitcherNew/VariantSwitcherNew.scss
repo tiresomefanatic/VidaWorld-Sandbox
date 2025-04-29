@@ -1,0 +1,188 @@
+.variant-switcher-new {
+  &--header-container {
+    padding: rem(32px) 0 rem(20px);
+    @include media(">=desktop") {
+      padding: rem(64px) 0 rem(36px);
+    }
+  }
+
+  &--subheading {
+    @include vida-mobile-body-3;
+    @include media(">=desktop") {
+      @include vida-desktop-body-3;
+    }
+  }
+
+  &--heading {
+    @include vida-h2-mobile;
+    margin-top: rem(5px);
+    @include media(">=desktop") {
+      @include vida-h2-desk;
+      margin-top: rem(8px);
+    }
+  }
+
+  .variant-buttons-container {
+    display: flex;
+    gap: rem(8px);
+    @include media(">=desktop") {
+      gap: rem(24px);
+    }
+    
+
+    .variant-button {
+      background: get-color("alice-blue");
+      border: 1px solid get-color("orange");
+      border-radius: rem(8px);
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      padding: rem(8px) rem(20px);
+      @include media(">=desktop") {
+        border-radius: rem(16px);
+        padding: rem(15px) rem(80px);
+      }
+      
+    }
+
+    .variant-button.active {
+      background: get-color("orange");
+      border: none;
+
+      .button-product-name,
+      .button-product-price {
+        color: get-color("white");
+      }
+
+      .button-price-text {
+        @include vida-extra-small-text-mobile;
+        color: get-color("white");
+        @include media(">=desktop") {
+          @include vida-mobile-body-3;
+          color: get-color("white");
+        }
+      }
+    }
+
+    .button-product-name {
+      @include vida-h5-mobile;
+      @include media(">=desktop") {
+        @include vida-h3-desktop;
+      }
+    }
+
+    .button-product-price {
+      @include vida-mobile-body-3;
+      @include media(">=desktop") {
+        @include vida-h3-mobile;
+      }
+    }
+
+  }
+
+  .variant-specifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(40px);
+    padding: rem(40px) rem(16px);
+    @include media(">=desktop") {
+      gap: rem(64px);
+      padding: rem(48px) rem(32px) rem(64px);
+    }
+
+    .variant-spec {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(48px);
+      @include media(">=desktop") {
+        gap: rem(64px);
+      }
+
+      &-item {
+        &:first-child {
+          flex-basis: 30%;
+          @include media(">=desktop") {
+            flex-basis: 10%;
+          }
+        }
+
+        .variant-switcher--tab--panel--detail--title {
+          @include vida-h5-mobile;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: rem(6px);
+          @include media(">=desktop") {
+            @include vida-h6-desktop;
+            gap: rem(8px);
+            margin-bottom: rem(8px);
+          }
+        }
+
+        .battery-header {
+          display: inline;
+        }
+
+        .battery-count {
+          @include vida-h5-desktop;
+          padding-right: rem(4px);
+          @include media(">=desktop") {
+            @include vida-h3-desktop;
+            
+          }
+        }
+
+        .variant-switcher--tab--panel--detail--value {
+          @include vida-h3-mobile;
+          align-items: center;
+          gap: rem(4px);
+          @include media(">=desktop") {
+            @include vida-h3-desktop;
+            
+            
+          }
+        }
+
+        .variant-switcher--tab--panel--detail--unit {
+          @include vida-mobile-body-3;
+        }
+      }
+    }
+
+    .variant-spec-item {
+      .title-image {
+        height: rem(30px);
+        width: rem(30px);
+        @include media(">=desktop") {
+          height: rem(40px);
+          width: rem(40px);
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .variant-colors {
+      .variant-switcher--tab--panel--detail {
+        
+        border-bottom: none;
+        padding: 0;
+      }
+
+      .variant-switcher--tab--panel--detail--title {
+        margin-bottom: rem(8px);
+        @include media(">=desktop") {
+          @include vida-large-text-mobile;
+          margin-bottom: rem(32px);
+        }
+      }
+    }
+
+    .know-more-link {
+      .variant-switcher--tab--panel--link {
+        margin: 0;
+      }
+    }
+  }
+}

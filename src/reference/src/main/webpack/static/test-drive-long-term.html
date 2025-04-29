@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Test Ride</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Test Drive" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+  <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async></script>
+</head>
+
+<body>
+  <header></header>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "testDriveLongTermConfig": {
+        "backgroundImg": "https://stage.vidaworld.com/content/dam/vida/global/optimized-images/testride/Lifestyle2.png",
+        "schedulePickUp": {
+          "scheduleTitle": "Schedule Pick-up",
+          "rescheduleTitle": "Reschedule Pick-up",
+          "mapIcon": "/clientlib-site/images/png/dealer-location-icon.png",
+				  "phoneIcon": "/clientlib-site/images/png/phone-outgoing.png",
+          "locationOptionField": {
+            "label": "Which option would you prefer?",
+            "optionOne": "Self-Pickup",
+            "optionTwo": "Delivered at home"
+          },
+          "modelVariantField": {
+            "label": "Model Variant",
+            "message": "Final amount may vary depending on the model",
+            "validationRules": {
+              "required": {
+                "message": "Model Variant is required."
+              }
+            }
+          },
+          "rentDurationField": {
+            "label": "Rent for how many days?",
+            "validationRules": {
+              "required": {
+                "message": "Duration is required."
+              }
+            }
+          },
+          "pickupLocationField": {
+            "label": "Pickup location",
+            "validationRules": {
+              "required": {
+                "message": "Pickup location is required."
+              }
+            }
+          },
+          "pickupDateFieldInfo": {
+            "label": "Pickup Date",
+            "validationRules": {
+              "required": {
+                "message": "Pickup Date is required."
+              }
+            }
+          },
+          "pickupTimeSlotField": {
+            "label": "Pickup Time Slot",
+            "validationRules": {
+              "required": {
+                "message": "Pickup time slot is required."
+              },
+              "custom": {
+                "message": "Pickup time slots not available."
+              }
+            }
+          },
+          "addressField": {
+            "label": "Address",
+            "placeholder": "Enter address",
+            "validationRules": {
+              "required": {
+                "message": "Address is required."
+              }
+            }
+          },
+          "buildingField": {
+            "label": "House, Flat, Floor no, Building name",
+            "placeholder": "Enter House, Flat, Floor no, Building name",
+            "validationRules": {
+              "required": {
+                "message": "House, Flat, Floor no, Building name is required."
+              }
+            }
+          },
+          "landmarkField": {
+            "label": "Landmark",
+            "placeholder": "Enter Landmark",
+            "validationRules": {
+              "required": {
+                "message": "Landmark is required."
+              }
+            }
+          },
+          "pinCodeField": {
+            "label": "PIN Code",
+            "placeholder": "Enter PIN Code",
+            "validationRules": {
+              "required": {
+                "message": "PIN Code is required."
+              }, 
+              "custom": {
+                "noServiceMsg": "Pincode is not serviceable.",
+                "noCityMatchMsg": "Pincode do not match with the city selected.",
+                "noBranchMsg": "Nearby branches not available."
+              }
+            }
+          },
+          "information": {
+            "label": "Please note:",
+            "message": "On 2nd July’22 you will have to visit Hero Space, Matunga to return the vehicle between 11:00am - 4:00pm"
+          },
+          "payableAmount": {
+            "label": "Payable amount",
+            "message": "May vary depending on renting days"
+          },
+          "submitBtn": {
+            "label": "Schedule"
+          },
+          "rescheduleSubmitBtn": {
+            "label": "Reschedule"
+          }
+        }
+      }
+    });
+  </script>
+	<div data-component="Spinner" data-cmp-type="react"></div>
+  <div data-component="TestDriveLongTerm" data-cmp-type="react" data-cmp-config="testDriveLongTermConfig"></div>
+</body>
+
+</html>

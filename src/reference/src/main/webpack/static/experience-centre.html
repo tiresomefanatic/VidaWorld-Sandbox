@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Experience Centre</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Technology" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+  <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js"
+    async></script>
+</head>
+
+<body>
+  <header></header>
+  <full-bleed-banner></full-bleed-banner>
+  <ec-hotspot></ec-hotspot>
+  <text-asset-light></text-asset-light>
+  <highlight-card-carousel></highlight-card-carousel>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "experienceCenterLocatorConfig": {
+        "mode": "experienceCenter",
+        "defaultLocationId": "NEW DELHI~DELHI~INDIA",
+        "title": `<p>Experience Centers <span class="txt-color--orange">near you</span></p>`
+      }
+    });
+  </script>
+  <div data-component="LocationFinder" data-cmp-type="react" data-cmp-config="experienceCenterLocatorConfig"></div>
+  <footer></footer>
+</body>
+
+</html>

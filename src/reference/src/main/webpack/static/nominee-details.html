@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+	<head>
+		<title>Home</title>
+		<meta charset="UTF-8" />
+		<meta name="template" content="page-content" />
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	  
+		<!-- Meta Property for Analytics Datalayer -->
+		<meta property="pageCategory" content="Booking" />
+    <meta property="pageName" content="Booking:Nominee details" />
+    <meta property="country" content="India" />
+    <meta property="language" content="en" />
+    <meta property="isErrorPage" content="false" />
+    <meta property="errorCode" content="404" />
+    <meta property="errorDescription" content="Page Not Found" />
+	  
+		<link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+		<script>
+		  const sessionCookieExist = document.cookie.match(/^(.*;)?\s*SESSION_TOKEN\s*=\s*[^;]+(.*)?$/);
+		  if (!sessionCookieExist) {
+			  window.location.href = "/login.html"+"?redirectURL="+window.location.href;
+		  }
+		</script>
+		<%= htmlWebpackPlugin.options.custom %>
+    <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async></script>
+	  </head>
+
+<body>
+  <header></header>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+        "nomineeDetails": {
+            "title": "Nominee Details for Insurance",
+                "imgPath": "",
+            "nameField": {
+              "label": "Nominee Name",
+              "placeholder": "Enter",
+              "validationRules": {
+                "required": {
+                  "message": "Name is required."
+                },
+                "customValidation": {
+                  "message": "Please enter valid nominee name"
+                }
+              }
+            },
+            "ageField": {
+              "label": "Nominee Age",
+              "placeholder": "Enter",
+              "validationRules": {
+                "required": {
+                  "message": "Age is required."
+                },
+                "minLength": {
+                  "value": 2,
+                  "message": "Minimum 2 digits required."
+                },
+                "maxLength": {
+                  "value": 2,
+                  "message": "Only 2 digits allowed."
+                },
+                "customValidation": {
+                  "value": 18,
+                  "message": "Your age should be 18 years"
+                }
+              }
+            },
+            "relationField": {
+              "label": "Nominee Relation",
+              "options": [{
+                  
+                  "label": "Select",
+                  "value": ""
+                },
+                {
+                 
+                  "label": "Father", 
+                  "value": "Father"
+                },
+                {
+                 
+                  "label": "Mother",
+                  "value": "Mother"
+                },
+                {
+                 "label": "Husband",
+                  "value": "Husband"
+                },
+                {
+                  "label": "Wife",
+                  "value": "Wife"
+                },
+                {
+                 "label": "Son",
+                  "value": "Son"
+                },
+                {
+                  "label": "Daughter",
+                  "value": "Daughter"
+                }
+              ],
+              "validationRules": {
+                "required": {
+                  "message": "Please select your relation"
+                }
+              }
+            },
+                "primaryBtn":{
+                "label": "Submit"
+            }
+          }
+    
+    });  
+  </script>
+  <div data-component="NomineeDetails" data-cmp-type="react" data-cmp-config="nomineeDetails"></div>
+  <footer></footer>
+</body>
+
+</html>

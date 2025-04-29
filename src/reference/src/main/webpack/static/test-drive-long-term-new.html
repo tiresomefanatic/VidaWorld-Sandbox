@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Test Ride</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Test Drive" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+    <!-- <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async></script> -->
+</head>
+
+<body>
+  <header></header>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "testDriveLongTermConfig": {
+        "backgroundImg": "https://stage.vidaworld.com/content/dam/vida/global/optimized-images/testride/Lifestyle2.png",
+          "lttrAcknowledgement": {
+          "title": "Congratulations!",
+          "titleErr": "Ohh!",
+          "LTTRMessage": "You have successfully booked your Long term test drive",
+          "LTTRMessageErr": "Something went wrong please try later",
+          "btnText": "Go to Profile",
+          "btnTextErr": "Go to Test ride",
+          "info": "Thanks for showing interest in Long Term Test Ride. Our Freedo team will reach out shortly for further procedure!!!"
+        }
+      }
+    });
+  </script>
+  <div data-component="Spinner" data-cmp-type="react"></div>
+  <div data-component="TestDriveLongTermNew" data-cmp-type="react" data-cmp-config="testDriveLongTermConfig"></div>
+  <div id="quickDriveTerms" class="hideTerms">
+    <p>Quick drive booking Terms</p>
+    <p>&</p>
+    <p>Conditions</p>
+  </div>
+</body>
+
+</html>

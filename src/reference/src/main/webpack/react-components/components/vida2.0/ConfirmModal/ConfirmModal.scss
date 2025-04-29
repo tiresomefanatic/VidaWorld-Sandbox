@@ -1,0 +1,123 @@
+.confirm {
+  &__pop-up {
+    @include media(">=desktop") {
+    }
+    align-items: center;
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: rem(52px);
+    width: 100%;
+    z-index: 9999;
+  }
+
+  &__content {
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: rem(15px);
+    margin-right: rem(15px);
+  }
+
+  &__header {
+    color: get-color("white");
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @include media(">=desktop") {
+      font-size: rem(18px);
+    }
+  }
+
+  &__sub-header {
+    color: get-color("white");
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @include media(">=desktop") {
+      font-size: rem(28px);
+      font-weight: 600;
+    }
+  }
+
+  &__desc {
+    @include media(">=desktop") {
+    }
+    color: get-color("white");
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-top: rem(16px);
+  }
+
+  &__confirm-msg {
+    color: get-color("white");
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-top: rem(24px);
+    @include media(">=desktop") {
+      font-size: rem(20px);
+    }
+  }
+
+  &__api-error-msg {
+    color: #c00;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 1.125rem;
+    margin-top: rem(15px);
+  }
+
+  &__button-container {
+    display: flex;
+    flex-direction: row;
+    gap: rem(16px);
+    padding-top: rem(32px);
+    @include media(">=desktop") {
+      gap: rem(24px);
+    }
+  }
+
+  &__confirm-button {
+    background-color: get-color("orange");
+    color: get-color("white");
+  }
+
+  &__cancel-button {
+    background-color: get-color("white");
+    border: rem(2px) solid get-color("orange");
+    color: get-color("mine-shaft");
+  }
+
+  &__confirm-cancel-button {
+    border-radius: rem(8px);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    flex: 1;
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding: rem(16px);
+    text-align: center;
+    width: rem(156px);
+    @include media(">=desktop") {
+      flex: none;
+      font-size: rem(20px);
+      padding: rem(16px) rem(32px);
+      width: rem(267px);
+    }
+  }
+}

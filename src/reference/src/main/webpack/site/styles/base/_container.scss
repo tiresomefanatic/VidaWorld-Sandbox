@@ -1,0 +1,25 @@
+.vida-container {
+  padding: 0 rem(16px);
+  width: 100%;
+  @include media(">=desktop") {
+    padding: 0 rem(70px);
+  }
+  @include media(">=desktop-lg") {
+    margin: 0 auto;
+    max-width: rem(1232px);
+    padding: 0;
+  }
+}
+
+.vida-2-container {
+  padding: 0 rem(20px);
+  width: 100%;
+  @include media(">=desktop") {
+    padding: 0 rem(88px);
+  }
+  @include media(">=desktop-lg") {
+    margin: 0 auto;
+    max-width: rem(1440px);
+    padding: 0 rem(88px);
+  }
+}

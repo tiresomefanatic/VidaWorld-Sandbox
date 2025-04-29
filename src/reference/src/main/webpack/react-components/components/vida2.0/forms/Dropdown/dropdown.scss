@@ -1,0 +1,75 @@
+.vida2-form-group {
+  margin: 0;
+  margin: 0 0 rem(16px);
+  min-height: unset;
+  min-width: 100%;
+  @include media(">=desktop") {
+    min-height: rem(60px);
+  }
+
+  .form__dropdown-field {
+    .vida-form-field-input {
+      border: 1px solid get-color("oslo-gray");
+      border-radius: rem(8px);
+      height: rem(52px);
+      margin: 0;
+      width: 100%;
+
+      @include media(">=desktop") {
+        height: rem(56px);
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &:focus {
+        border: 1px solid get-color("oslo-gray");
+      }
+    }
+
+    .vida-dropdown-icon {
+      top: rem(15px);
+      @include media(">=desktop") {
+        left: 1.4375rem;
+        top: 1.175rem;
+      }
+    }
+
+    .vida-form-field-info {
+      display: none;
+    }
+  }
+
+  .form__dropdown-options-wrapper {
+    .form__dropdown-options {
+      .form__dropdown-option {
+        background: get-color("white");
+
+        &:hover,
+        &:focus,
+        &:active {
+          background: get-color("catskill-white");
+        }
+
+        a {
+          &:hover,
+          &:focus,
+          &:active {
+            background: get-color("catskill-white");
+          }
+        }
+      }
+
+      &::-webkit-scrollbar-track {
+        background: get-color("white") !important;
+        border-radius: rem(8px);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: get-color("catskill-white") !important;
+        border-radius: rem(8px);
+      }
+    }
+  }
+}

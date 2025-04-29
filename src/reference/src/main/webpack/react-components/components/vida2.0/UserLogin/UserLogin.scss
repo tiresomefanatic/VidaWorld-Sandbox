@@ -1,0 +1,48 @@
+.vida-hamburger-profile {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+
+  .user-profile-img,
+  i {
+    border-radius: 50%;
+    color: get-color("white");
+    height: 3rem;
+    width: 3rem;
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      border-radius: 50%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &.user-icon {
+      height: rem(28px) !important;
+      width: rem(16px) !important;
+    }
+  }
+
+  .icon-user {
+    font-size: rem(24px);
+  }
+
+  .vida-hamburger-sites-name {
+    color: get-color("white");
+    cursor: pointer;
+    display: flex;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 0.5rem 0 0;
+    text-decoration: none;
+
+    &.login-text {
+      padding: 0;
+    }
+  }
+}

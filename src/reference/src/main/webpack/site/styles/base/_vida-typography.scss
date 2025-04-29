@@ -1,0 +1,402 @@
+@import "./include-media";
+@import "../abstracts/mixins";
+
+.vida-v2 {
+  h1 {
+    color: get-color("mine-shaft");
+    font-family: "PP Neue Montreal";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @include media(">tablet") {
+      color: get-color("mine-shaft");
+      font-family: "PP Neue Montreal";
+      font-size: 80px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+
+  h2 {
+    color: get-color("mine-shaft");
+    /* Mobile/Heading 2 - Mobile */
+    font-family: "PP Neue Montreal";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @include media(">tablet") {
+      color: get-color("mine-shaft");
+      /* Desktop/Heading 2 - Desktop */
+      font-family: "PP Neue Montreal";
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+}
+
+@mixin vida-h1-desktop {
+  color: get-color("mine-shaft");
+  /* Desktop/Heading 1 - Desktop */
+  font-family: "PP Neue Montreal";
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin vida-h1-mobile {
+  color: get-color("mine-shaft");
+  /* Mobile/Heading 1 - Mobile */
+  font-family: "PP Neue Montreal";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin vida-tertiary-cta {
+  color: var(--Primary-Vida-Orange, #ff5310);
+  /* Desktop/Tertiary CTA - Desktop */
+  font-family: "PP Neue Montreal";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@mixin vida-tertiary-cta-mobile {
+  color: var(--Primary-Vida-Orange, #ff5310);
+
+  /* Mobile/Tertiary CTA - Mobile */
+  font-family: "PP Neue Montreal";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@mixin vida-h2-desk {
+  color: get-color("mine-shaft");
+  /* Desktop/Heading 2 - Desktop */
+  font-family: "PP Neue Montreal";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin vida-h2-mobile {
+  color: get-color("mine-shaft");
+  /* Mobile/Heading 2 - Mobile */
+  font-family: "PP Neue Montreal";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin vida-h3-desktop {
+  color: var(--Vida-Black, #222);
+  /* Desktop/Heading 3 - Desktop */
+  font-family: "PP Neue Montreal";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin vida-h3-mobile {
+  /* Mobile/Heading 3 - Mobile */
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin vida-swipe-button {
+  color: var(--Neutral-White, #fff);
+
+  /* Mobile/Body 3 - Mobile */
+  font-family: "PP Neue Montreal";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin vida-desk-body-1 {
+  /* Desktop/Body 1 - Desktop */
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin vida-mobile-body-1 {
+  /* Mobile/Body 1 - Mobile */
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin vida-mobile-body-2 {
+  /* Mobile/Body 2 - Mobile */
+  font-family: "PP Neue Montreal";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin vida-desktop-body-3 {
+  /* Desktop/Body 2 - Desktop */
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin vida-mobile-body-3 {
+  color: get-color("mine-shaft");
+  /* Mobile/Body 3 - Mobile */
+  font-family: "PP Neue Montreal";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin vida-mobile-body-4 {
+  /* Desktop/Body 4 - Desktop */
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@mixin vida-desktop-body-4 {
+  /* Desktop/Body 4 - Desktop */
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@mixin vida-h5-mobile {
+  color: var(--Neutral-Dark-Grey, #222);
+  /* Mobile/Heading 5 - Mobile */
+  font-family: "PP Neue Montreal";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+@mixin vida-h5-desktop {
+  /* Desktop/Heading 5 - Desktop */
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin vida-h6-mobile {
+  /* Mobile/Heading 6 - Mobile */
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin vida-h6-desktop {
+  /* Mobile/Heading 6 - Mobile */
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin vida-mobile-subtitle {
+  /* Mobile/Subtitle - Mobile */
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin vida-desktop-subtitle {
+  /* Desktop/Subtitle - Desktop */
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin vida-mobile-bottom-nav-label {
+  /* Mobile/Bottom Nav Label */
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@mixin vida-charging-plan-mobile {
+  color: var(--Neutral-Dark-Grey, #222);
+  font-family: "PP Neue Montreal";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@mixin vida-label-value-text-mobile {
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@mixin vida-label-value-text-desktop {
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@mixin vida-extra-small-text-mobile {
+  font-family: "PP Neue Montreal";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin vida-large-title1-mobile {
+  font-family: "PP Neue Montreal";
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin vida-large-title2-mobile {
+  font-family: "PP Neue Montreal";
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin vida-large-text-mobile {
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin vida-large-text-desktop {
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin vida-large-bold-text-desktop {
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+@mixin vida-small-text-mobile {
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@mixin vida-small-text-desktop {
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@mixin vida-small-bold-text-desktop {
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin vida-medium-bold-text-mobile {
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+@mixin vida-small-bold-text-mobile {
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+//new banner header with font 60px
+@mixin vida-banner-header {
+  color: get-color("mine-shaft");
+  font-family: "PP Neue Montreal";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 72px;
+}

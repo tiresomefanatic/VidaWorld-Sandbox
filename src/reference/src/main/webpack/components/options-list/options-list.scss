@@ -1,0 +1,64 @@
+.vida-options-list {
+  margin: rem(15px) 0;
+
+  &--header {
+    color: get-color("orange");
+    text-align: center;
+
+    &--black {
+      color: get-color("solid-black");
+    }
+  }
+
+  &--black-border {
+    background: get-color("solid-black");
+    display: block;
+    height: rem(2px);
+    margin: 0 auto;
+    margin-bottom: rem(15px);
+    width: rem(270px);
+  }
+
+  &__options-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: rem(50px);
+
+    &__option {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: rem(5px);
+      width: rem(300px);
+
+      img {
+        height: rem(80px);
+        margin-bottom: rem(5px);
+        margin-right: rem(15px);
+        width: rem(80px);
+      }
+
+      h3 {
+        font-size: rem(16px);
+        font-weight: 600;
+        padding-bottom: rem(3px);
+
+        &::after {
+          background: get-color("orange");
+          content: " ";
+          display: block;
+          height: rem(3px);
+          width: rem(85px);
+        }
+      }
+
+      p {
+        bold {
+          font-size: rem(20px);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

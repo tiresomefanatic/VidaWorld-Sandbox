@@ -1,0 +1,45 @@
+.vida-asset-banner {
+  padding-bottom: rem(15px);
+  padding-top: rem(28px);
+  @include media(">=desktop") {
+    padding-bottom: rem(108px);
+    padding-top: rem(60px);
+  }
+
+  &__container {
+    height: rem(212px);
+    max-height: rem(212px);
+    width: 100%;
+    @include media(">=desktop") {
+      height: rem(518px);
+      max-height: rem(518px);
+    }
+  }
+
+  &__media {
+    border-radius: rem(32px);
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+
+    video,
+    iframe {
+      border-radius: rem(32px);
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &.vida-asset-banner--sm {
+    .vida-asset-banner__container {
+      height: rem(201px);
+      max-height: rem(201px);
+      width: 100%;
+      @include media(">=desktop") {
+        height: rem(412px);
+        max-height: rem(412px);
+      }
+    }
+  }
+}

@@ -1,0 +1,140 @@
+.vida-vertical-slider {
+  overflow: hidden;
+  padding-bottom: rem(30px);
+  padding-top: rem(30px);
+  text-align: center;
+
+  @include media(">=desktop") {
+    padding-bottom: rem(50px);
+    padding-top: rem(57px);
+  }
+
+  &__heading {
+    @include h1;
+    margin-bottom: rem(30px);
+
+    @include media(">=desktop") {
+      margin-bottom: rem(90px);
+    }
+  }
+
+  &__tabs {
+    @include media(">=desktop") {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__tabcontent {
+    text-align: center;
+
+    @include media(">=desktop") {
+      width: 60%;
+    }
+
+    &-asset {
+      align-items: center;
+      display: flex;
+      height: rem(235px);
+      margin: 0 auto rem(30px);
+      width: rem(328px);
+
+      @include media(">=desktop") {
+        height: rem(444px);
+        margin: 0;
+        margin-right: 15%;
+        width: 85%;
+      }
+
+      @include media(">=desktop-lg") {
+        margin-right: rem(110px);
+        width: rem(620px);
+      }
+
+      img {
+        height: auto;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  &__tablinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    max-width: 700px;
+
+    @include media(">=desktop") {
+      width: 40%;
+    }
+  }
+
+  &__link {
+    border-left: 5px solid get-color("smoke-white");
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: rem(10px);
+    min-height: rem(57px);
+    padding-left: rem(20px);
+    text-align: left;
+
+    @include media(">=desktop") {
+      min-height: rem(82px);
+      padding-left: rem(32px);
+    }
+
+    h2 {
+      @include h3;
+      color: get-color("solid-grey");
+    }
+
+    &.vida-vertical-slider__link--active {
+      cursor: auto;
+
+      h2 {
+        @include h2;
+      }
+    }
+
+    p {
+      @include p2;
+      display: none;
+      margin-top: rem(10px);
+      padding-bottom: rem(12px);
+
+      @include media(">=desktop") {
+        padding-bottom: rem(20px);
+      }
+    }
+
+    &--active {
+      border-left: rem(5px) solid get-color("light-grey");
+
+      h2 {
+        @include h2;
+        color: get-color("solid-black");
+      }
+
+      p {
+        display: block;
+      }
+    }
+  }
+
+  &__video-player {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+
+    .vida-video-player__playback {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+}

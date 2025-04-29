@@ -1,0 +1,122 @@
+@import "../../../../../site/styles/base/typography";
+
+.vida-booking-login {
+  &__title {
+    @include h2;
+    display: none;
+    @include media(">=desktop") {
+      display: block;
+      margin-bottom: rem(5px);
+    }
+  }
+
+  &__step {
+    @include p2;
+    display: none;
+    @include media(">=desktop") {
+      color: get-color("solid-grey");
+      display: block;
+      margin-bottom: rem(5px);
+
+      span {
+        padding: 0 2px;
+      }
+    }
+  }
+
+  &__whatsapp-icon {
+    color: get-color("green");
+    font-size: rem(24px);
+    padding-left: rem(3px);
+    vertical-align: -6px;
+  }
+
+  &__whatsapp-title {
+    @include p1;
+  }
+
+  &__whatsapp-content {
+    @include p2;
+    color: get-color("solid-grey");
+  }
+
+
+  &__message {
+    @include h4;
+    margin-bottom: rem(8px);
+  }
+
+  &__change-number {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(15px);
+
+    p {
+      margin-bottom: rem(5px);
+      word-break: break-all;
+    }
+  }
+
+  &__disclaimer {
+    @include p2; //include p2 here from typography
+
+    p {
+      color: get-color("solid-grey");
+    }
+
+    span {
+      color: get-color("solid-black");
+    }
+  }
+
+  &__btn-container {
+    margin: rem(30px) 0;
+
+    .btn {
+      width: 100%;
+      @include media(">=desktop") {
+        min-width: rem(153px);
+        width: auto;
+      }
+    }
+  }
+
+  &__notification-banner {
+    @include p1;
+    background-color: rgba(0, 160, 0, 0.08);
+    border-radius: 16px;
+    color: get-color("solid-black");
+    margin-bottom: rem(30px);
+    padding: rem(16px) rem(16px) rem(16px) rem(20px);
+    width: 100%;
+    @include media(">=desktop") {
+      margin-bottom: rem(30px);
+      padding: rem(30px) rem(20px) rem(30px) rem(20px);
+    }
+  }
+
+  &__confirmation {
+    margin-top: rem(11px);
+  }
+
+  &__promo-banner {
+    @include btn-action;
+    align-items: center;
+    background-color: get-color("smoke-white");
+    border-radius: 16px;
+    display: flex;
+    gap: rem(10px);
+    margin-bottom: 50px;
+    margin-top: 30px;
+    padding: 21px;
+    width: 100%;
+  }
+
+  &__scooter-icon {
+    background-color: get-color("white");
+    border-radius: 50%;
+    color: get-color("blue");
+    font-size: 24px;
+    padding: 7px;
+  }
+}

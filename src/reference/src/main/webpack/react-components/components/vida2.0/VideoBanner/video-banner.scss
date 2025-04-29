@@ -1,0 +1,77 @@
+.video-banner-container {
+  &.vida-2-container {
+    padding: 0 !important;
+  }
+
+  .content-container {
+    left: rem(20px);
+    min-height: rem(160px);
+    min-width: rem(320px);
+    padding: 0 rem(8px);
+    position: absolute;
+    top: rem(120px);
+    z-index: 1;
+    @include media(">desktop") {
+      gap: rem(10px);
+      max-height: rem(204px);
+      max-width: rem(720px);
+      padding: 0 rem(88px);
+      top: rem(190px);
+    }
+
+    .content {
+      @include vida-h1-mobile;
+      color: get-color("white");
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: rem(48px);
+      text-align: left;
+      @include media(">desktop") {
+        @include vida-h1-desktop;
+        color: get-color("white");
+        letter-spacing: 0;
+        line-height: rem(96px);
+        text-align: left;
+      }
+    }
+  }
+
+  .video-container {
+    height: rem(800px);
+    min-width: rem(360px);
+    position: relative;
+    @include media(">=desktop") {
+      max-height: rem(900px);
+      max-width: rem(1440px);
+    }
+
+    video {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .play-button-container {
+    display: flex;
+    height: rem(46px);
+    left: 50%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    width: rem(46px);
+    @include media(">desktop") {
+      height: rem(100px);
+      left: 45%;
+      top: 40%;
+      width: rem(100px);
+    }
+
+    img {
+      cursor: pointer;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}

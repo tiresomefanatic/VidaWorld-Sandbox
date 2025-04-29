@@ -1,0 +1,52 @@
+.vida-app-cards {
+  h3 {
+    color: get-color("solid-grey");
+    text-align: center;
+  }
+  
+  &__container {
+    overflow: hidden;
+  }
+  
+  &__slider {
+    margin-bottom: rem(60px);
+    margin-top: rem(10px);
+    padding: rem(30px) 0 0 rem(1px);
+  
+    &-card {
+      text-align: center;
+  
+      img {
+        border-radius: rem(16px);
+        height: auto;
+        max-height: rem(520px);
+        max-width: rem(260px);
+        object-fit: cover;
+        @include media(">=desktop") {
+          border-radius: rem(32px);
+          max-height: rem(610px);
+          max-width: rem(280px);
+        }
+      }
+    }
+  
+    &-content {
+      padding: 0 rem(10px);
+      width: 100%;
+      word-break: break-all;
+      @include media(">=desktop") {
+        bottom: rem(25px);
+        padding: 0 rem(25px);
+      }
+    }
+  }
+  
+  .tns-horizontal.tns-subpixel>.tns-item {
+    vertical-align: inherit;
+  }
+  
+  .tns-nav {
+    position: relative;
+    top: rem(705px);
+  }
+}

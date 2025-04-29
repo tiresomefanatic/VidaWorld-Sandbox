@@ -1,0 +1,207 @@
+.vida-service-container {
+  transition: opacity 1.5s ease-out;
+
+  .vida-service {
+    padding-bottom: rem(32px);
+    padding-top: rem(32px) !important;
+
+    @include media(">tablet") {
+      padding-bottom: rem(64px);
+      padding-top: rem(64px);
+    }
+
+    &-title {
+      @include vida-mobile-body-3;
+      text-transform: uppercase;
+
+      @include media(">tablet") {
+        @include vida-desktop-body-3;
+      }
+    }
+
+    &-quote {
+      @include vida-h2-mobile;
+      padding-top: rem(5.4px);
+
+      @include media(">tablet") {
+        @include vida-h2-desk;
+      }
+    }
+
+    &-helper-text {
+      @include vida-mobile-body-1;
+      margin-top: rem(32px);
+      max-width: 98%;
+
+      @include media(">tablet") {
+        @include vida-desk-body-1;
+        max-width: 48%;
+      }
+    }
+
+    &-accordion {
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      padding: rem(16px) 0;
+
+      @include media(">tablet") {
+        padding: 3.375rem 0;
+      }
+
+      &-wrapper {
+        width: 89%;
+
+        @include media(">tablet") {
+          width: 58%;
+        }
+
+        .accordian-container {
+          &__wrapper.active .accordian-container__header-wrapper {
+            .accordian-container__header {
+              font-weight: 600;
+            }
+          }
+
+          &__header-icon {
+            animation-duration: 0.3s;
+            margin-left: rem(5px);
+          }
+
+          &__data {
+            font-size: rem(16px);
+
+            @include media(">tablet") {
+              font-size: rem(20px);
+            }
+          }
+
+          &__header-wrapper .accordian-container__header {
+            font-size: rem(20px);
+            font-weight: 400;
+
+            @include media(">tablet") {
+              font-size: rem(28px);
+            }
+          }
+        }
+      }
+    }
+
+    &-accordion.light-theme {
+      padding: 0;
+      padding-bottom: rem(32px);
+
+      @include media(">tablet") {
+        padding-bottom: rem(0);
+      }
+
+      .vida-service-accordion-wrapper {
+        @include media(">tablet") {
+          width: 87.8%;
+        }
+
+        .accordian-container {
+          background-color: get-color("white");
+
+          &__content {
+            animation-duration: 1s;
+          }
+
+          &__wrapper {
+            border-bottom: none;
+            border-top: rem(1px) solid get-color("mine-shaft");
+            padding: rem(32px) rem(16px);
+
+            @include media(">tablet") {
+              padding: rem(64px) rem(16px);
+            }
+          }
+        }
+
+        .accordian-container__content__wrapper {
+          @include media(">tablet") {
+            // align-items: flex-end;
+            padding-top: rem(64px);
+          }
+        }
+      }
+    }
+
+    &-accordion.dark-theme {
+      .vida-service-accordion-wrapper {
+        backdrop-filter: blur(25px);
+        background: radial-gradient(50.18% 50.18% at 53.56% 38.2%,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(150, 150, 150, 0.1) 30.92%,
+        rgba(52, 52, 52, 0.1) 62.7%,
+        rgba(0, 0, 0, 0.1) 100%),
+          rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        padding: rem(8px) rem(16px);
+
+        @include media(">tablet") {
+          padding: rem(24px);
+        }
+
+        .accordian-container {
+          background: none;
+          border: none;
+
+          &__content {
+            animation: none;
+            max-height: max-content;
+          }
+
+          &__wrapper {
+            border-color: get-color("white");
+
+            &:last-child {
+              border: none;
+            }
+          }
+
+          &__data {
+            color: get-color("white") !important;
+          }
+
+          &__header-wrapper .accordian-container__header {
+            color: get-color("white") !important;
+          }
+
+          &__close-icon-opacity {
+            animation: none;
+          }
+
+          &__image {
+            height: 288px;
+
+            @include media(">tablet") {
+              height: 270px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .accordian-container {
+    &__video {
+      video {
+        @include media(">tablet") {
+          max-height: rem(400px);
+          object-fit: cover;
+        }
+      }
+    }
+
+    &__ytvideo {
+      iframe {
+        @include media(">tablet") {
+          height: rem(400px);
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

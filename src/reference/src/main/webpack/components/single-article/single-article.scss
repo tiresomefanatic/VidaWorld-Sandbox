@@ -1,0 +1,44 @@
+.vida-single-article {
+  margin-bottom: 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 15px;
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    right: -20px;
+    top: 0;
+  }
+
+  &__image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+
+    * {
+      max-width: unset;
+    }
+
+    button {
+      border-radius: 50%;
+      height: 40px;
+      padding: 2px 8px;
+      width: 40px;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__text {
+    color: #777676;
+    font-size: 14px;
+    width: 90%;
+  }
+}

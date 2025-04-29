@@ -1,0 +1,55 @@
+
+.vida-aadhar-verification {
+  min-height: calc(100vh - 60px); //to make full height->calculating based on (viewport height - navbar height)
+  padding-top: rem(30px);
+  
+  @include media(">=desktop") {
+    min-height: calc(100vh - 76px);
+  }
+
+  &__subtext {
+    h4 {
+      max-width: rem(454px);
+    }
+
+  }
+
+  &__title {
+    padding-bottom: rem(10px);
+
+    @include media(">=desktop") {
+      padding-bottom: 0;
+    }
+  }
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__billing {
+    margin-top: rem(20px);
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+
+      .form__group {
+        max-width: unset;
+        width: 100%;
+      }
+
+      .btn {
+        &.btn--secondary {
+          margin-top: rem(20px);
+        }
+      }
+    }
+
+  }
+
+}

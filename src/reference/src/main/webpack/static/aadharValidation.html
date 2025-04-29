@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Validate Aadhar</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Booking" />
+  <meta property="pageName" content="Booking:Aadhar Validation Status" />
+  <meta property="country" content="India" />
+  <meta property="language" content="en" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+  <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js"
+    async></script>
+
+</head>
+
+<body>
+  <header></header>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "validateAadharDetails": {
+        "title": "Aadhar card authentication",
+        "primaryBtn": {
+          "label": "Validate Aadhar"
+        }
+      }
+    });  
+  </script>
+  <div data-component="AadharValidation" data-cmp-type="react" data-cmp-config="validateAadharDetails"></div>
+</body>
+
+</html>

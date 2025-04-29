@@ -1,0 +1,162 @@
+.vida-upload-documents {
+  &__title {
+    @include h2;
+    margin: 20px 0;
+    @include media("<=tablet") {
+      margin: 10px 0;
+    }
+  }
+
+  &__items {
+    float: left;
+    width: 100%;
+  }
+
+  &__success {  
+    p {
+      color: get-color("green");
+      font-size: rem(18px);
+      margin-top: 35vh;
+      text-align: center;
+    }
+
+    &-btn {
+      text-align: center;
+    }
+  }
+
+  &__address-details {
+    float: left;
+    max-width: rem(550px);
+    width: 100%;
+    @include media("<=tablet") {
+      width: 100%;
+    }
+
+    p {
+      font-size: rem(14px);
+      margin-bottom: rem(5px);
+
+      &.success {
+        color: get-color("green");
+      }
+
+      &.error {
+        color: get-color("red");
+      }
+    }
+
+    &-title {
+      float: left;
+      padding: 30px 0 10px;
+      width: 100%;
+    }
+  }
+
+  &__body-disclaimer {
+    color: get-color("orange");
+    margin-bottom: rem(20px);
+  }
+
+  &__btn-container {
+    float: left;
+    margin-bottom: rem(100px);
+    margin-top: rem(30px);
+    width: 100%;
+
+    .btn--primary,
+    .btn--secondary {
+      width: 40%;
+      @include media("<=tablet") {
+        width: 100%;
+      }
+    }
+
+    .btn--secondary {
+      margin-left: rem(20px);
+      @include media("<=tablet") {
+        margin-left: 0;
+        margin-top: rem(10px);
+      }
+    }
+  }
+
+  &__upload-fileUpload {
+    @include media("<=tablet") {
+      margin-top: 20px;
+    }
+  }
+
+  &__address-details-upload {
+    align-items: center;
+    display: flex;
+    float: left;
+    justify-content: space-between;
+    @include media("<=tablet") {
+      display: block;
+      position: relative;
+      width: 100%;
+
+      .form__group {
+        display: contents;
+      }
+    }
+
+    .form__group {
+      margin-bottom: 0;
+      margin-right: 20px;
+      min-height: unset;
+      width: rem(400px);
+      @include media("<=tablet") {
+        width: 100%;
+      }
+
+      .form__field-select {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__upload {
+    @include media("<=tablet") {
+      float: left;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    &-fileUpload {
+      border: 1px solid get-color("solid-grey");
+      border-radius: 20px;
+      margin: 10px;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      width: 100px;
+
+      &-disabled {
+        opacity: 0.25;
+        pointer-events: none;
+      }
+
+      .icon-upload {
+        font-size: rem(20px);
+      }
+
+      input {
+        cursor: pointer;
+        filter: alpha(opacity=0);
+        font-size: 20px;
+        margin: 0;
+        opacity: 0;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+}

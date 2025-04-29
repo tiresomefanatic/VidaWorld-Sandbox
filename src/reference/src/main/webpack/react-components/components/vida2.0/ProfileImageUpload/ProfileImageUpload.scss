@@ -1,0 +1,26 @@
+.profile--cropper {
+  .popup {
+    top: 0;
+    z-index: 999;
+
+    &__container {
+      align-items: center;
+      border-radius: 1rem;
+      display: flex;
+      height: fit-content;
+      justify-content: center;
+      overflow: hidden;
+      padding-top: rem(60px);
+      width: 90%;
+      @include media(">=desktop") {
+        width: 60%;
+      }
+    }
+
+    &__header {
+      position: absolute;
+      right: 0;
+      top: 10px;
+    }
+  }
+}

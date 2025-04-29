@@ -1,0 +1,194 @@
+.vida-full-bleed-banner {
+  margin: rem(25px) 0 rem(30px);
+
+  @include media(">=desktop") {
+    margin: auto;
+    padding: rem(30px) 0 rem(60px);
+  }
+
+  &__container {
+    padding: 0;
+    @include media(">=desktop") {
+      align-items: center;
+      display: flex;
+      min-height: rem(668px);
+      position: relative;
+      width: 100%;
+
+      .vida-container {
+        position: relative;
+      }
+    }
+  }
+
+  &__media-container {
+    display: none;
+    @include media(">=desktop") {
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: left top;
+        width: 100%;
+      }
+    }
+  }
+
+  &__text {
+    &-wrapper {
+      @include media(">=desktop") {
+        max-width: rem(360px);
+        width: 100%;
+      }
+    }
+
+    &-content {
+      @include media(">=desktop") {
+        color: get-color("solid-black");
+      }
+
+      > * {
+        @include p2;
+        color: get-color("solid-grey");
+      }
+    }
+  }
+
+  &__title {
+    * {
+      @include h1;
+    }
+
+    &-description {
+      margin-bottom: rem(20px);
+
+      * {
+        @include h3;
+      }
+    }
+
+    &--sm {
+      margin-bottom: rem(10px);
+
+      * {
+        @include h3;
+      }
+    }
+  }
+
+  &__spec {
+    color: get-color("nobel-grey");
+    min-width: 30%;
+    @include media(">=desktop") {
+      color: get-color("solid-grey");
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(20px) rem(30px);
+      margin-top: rem(30px);
+      @include media(">=desktop") {
+        gap: rem(20px) rem(60px);
+        margin-top: rem(40px);
+      }
+    }
+
+    &-info {
+      h2 {
+        @include h2;
+        align-items: center;
+        color: get-color("solid-black");
+        display: flex;
+        @include media(">=desktop") {
+          gap: 0 rem(4px);
+        }
+      }
+    }
+  }
+
+  &__cta-wrapper {
+    margin-top: rem(30px);
+
+    .btn {
+      min-width: rem(328px);
+      width: auto;
+      @include media(">=desktop") {
+        min-width: 0;
+      }
+    }
+  }
+
+  .txt-size--mb {
+    @include p2;
+  }
+
+  &--sm {
+    .vida-full-bleed-banner {
+      margin: auto;
+      padding: rem(30px) 0 rem(50px);
+
+      @include media(">=desktop") {
+        padding: rem(25px) 0 rem(60px);
+      }
+
+      &__container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: rem(27px) 0;
+        padding: 0;
+        @include media(">=desktop") {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+          min-height: rem(565px);
+          padding: rem(30px) 0;
+        }
+      }
+
+      &__media-container {
+        display: block;
+        height: rem(297px);
+        max-height: rem(297px);
+        width: 100%;
+        @include media(">=desktop") {
+          display: block;
+          height: 100%;
+          left: 0;
+          max-height: rem(565px);
+          position: absolute;
+          text-align: right;
+          top: 0;
+          width: 100%;
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          object-position: left top;
+          width: 100%;
+          @include media(">=desktop") {
+            height: 100%;
+            max-width: 841px;
+            width: 59%;
+          }
+        }
+      }
+
+      &__text {
+        &-wrapper {
+          @include media(">=desktop") {
+            max-width: rem(600px);
+            width: 49%;
+          }
+        }
+      }
+    }
+  }
+}

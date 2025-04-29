@@ -1,0 +1,334 @@
+.vida-multi-cards {
+  overflow: hidden;
+  padding-bottom: rem(30px);
+  padding-top: rem(30px);
+
+  @include media(">=desktop") {
+    padding-bottom: rem(60px);
+    padding-top: rem(60px);
+  }
+
+  &__heading {
+    @include h1;
+    margin-bottom: rem(40px);
+    text-align: center;
+
+    @include media(">=desktop") {
+      margin-bottom: rem(60px);
+    }
+  }
+
+  &__container {
+    overflow: hidden;
+  }
+
+  &__wrap {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: rem(30px);
+
+    @include media(">=desktop") {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      width: 100%;
+      z-index: 1;
+
+      &:not(:first-child) {
+        margin-top: rem(-140px);
+        position: relative;
+        z-index: 2;
+      }
+
+      &:nth-child(2n) {
+        flex-direction: row-reverse;
+        position: relative;
+
+        .vida-multi-cards__content {
+          padding-left: 0;
+
+          @include media(">=desktop") {
+            padding-right: rem(60px);
+          }
+
+          &-description {
+            text-align: right;
+          }
+        }
+
+        .vida-multi-cards__title {
+          * {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+
+  &__media-asset-video {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__media-wrap {
+    height: rem(435px);
+    max-height: rem(435px);
+    max-width: rem(328px);
+    text-align: center;
+    width: rem(328px);
+
+    @include media(">=desktop") {
+      height: rem(884px);
+      max-height: rem(884px);
+      max-width: 58%;
+      width: 58%;
+    }
+
+    @include media(">=desktop-lg") {
+      height: rem(884px);
+      max-height: rem(884px);
+      max-width: rem(707px);
+      width: rem(707px);
+    }
+
+    img,
+    video {
+      border-radius: rem(32px);
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    padding-bottom: 0;
+    width: rem(328px);
+
+    @include media(">=desktop") {
+      padding-left: rem(60px);
+      width: 42%;
+    }
+
+    @include media(">=desktop-lg") {
+      width: calc(100% - 707px);
+    }
+  }
+
+  &__title {
+    * {
+      @include h2;
+      padding-bottom: rem(10px);
+      padding-top: rem(30px);
+      position: relative;
+      text-align: left;
+
+      @include media(">=desktop") {
+        padding-bottom: rem(20px);
+        text-align: left;
+      }
+    }
+
+    span {
+      @include media(">=desktop") {
+        display: block;
+      }
+    }
+  }
+
+  &__content-description {
+    @include a2;
+    color: get-color("solid-grey");
+  }
+
+  &--reverse {
+    .vida-multi-cards__wrap {
+      flex-direction: column;
+
+      @include media(">=desktop") {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+
+        .vida-multi-cards__media-wrap {
+          height: rem(800px);
+          max-height: rem(800px);
+          max-width: 54%;
+          width: 54%;
+        }
+      }
+
+      @include media(">=desktop-lg") {
+        .vida-multi-cards__media-wrap {
+          height: rem(800px);
+          max-height: rem(800px);
+          max-width: rem(600px);
+          position: relative;
+          right: rem(80px);
+          width: rem(600px);
+        }
+      }
+
+
+
+      &:not(:first-child) {
+        margin-top: 0;
+        position: relative;
+        z-index: 2;
+
+        @include media(">=desktop") {
+          margin-top: rem(-80px);
+        }
+      }
+
+      &:nth-child(2n) {
+        flex-direction: column;
+        margin-top: 0;
+
+        @include media(">=desktop") {
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: rem(-80px);
+
+          .vida-multi-cards__media-wrap {
+            left: 6.5%;
+            position: relative;
+          }
+        }
+
+        .vida-multi-cards__content {
+          @include media(">=desktop") {
+            padding-left: 10.7%;
+            padding-right: 0;
+            width: 46%;
+          }
+
+          @include media(">=desktop-lg") {
+            padding-left: rem(131px);
+            padding-right: 0;
+            width: calc(100% - 680px);
+          }
+
+          &-description {
+            text-align: left;
+          }
+        }
+
+        .vida-multi-cards__title {
+          * {
+            text-align: left;
+          }
+        }
+      }
+    }
+
+    .vida-multi-cards__content {
+      padding-bottom: 0;
+      padding-left: 0;
+
+      @include media(">=desktop") {
+        padding-right: 10.7%;
+        width: 46%;
+      }
+
+      @include media(">=desktop-lg") {
+        padding-right: rem(131px);
+        width: calc(100% - 680px);
+      }
+
+      .vida-multi-cards__content-description {
+        @include p2;
+        color: get-color("solid-grey");
+      }
+
+      .vida-multi-cards__title {
+        * {
+          @include h1;
+          padding-bottom: rem(10px);
+          padding-top: rem(30px);
+          text-align: left;
+
+          @include media(">=desktop") {
+            padding-bottom: rem(20px);
+          }
+        }
+      }
+    }
+  }
+
+  &--two-cards {
+    .vida-multi-cards__wrap {
+      flex-direction: column-reverse;
+      z-index: 3;
+
+      @include media(">=desktop") {
+        flex-direction: row;
+
+        &:nth-child(2) {
+          flex-direction: row-reverse;
+
+          .vida-multi-cards__media-wrap {
+            max-width: 58%;
+            width: 58%;
+          }
+
+          .vida-multi-cards__content {
+            width: 42%;
+          }
+        }
+      }
+
+      @include media(">=desktop-lg") {
+        &:nth-child(2) {
+          .vida-multi-cards__media-wrap {
+            max-width: rem(726px);
+            width: rem(726px);
+          }
+
+          .vida-multi-cards__content {
+            width: calc(100% - 726px);
+          }
+        }
+      }
+    }
+
+    .vida-multi-cards__media-wrap {
+      @include media(">=desktop") {
+        height: rem(866px);
+        max-height: rem(866px);
+        max-width: 54%;
+        width: 54%;
+      }
+
+      @include media(">=desktop-lg") {
+        height: rem(866px);
+        max-height: rem(866px);
+        max-width: rem(600px);
+        width: rem(600px);
+      }
+    }
+
+    .vida-multi-cards__content {
+      @include media(">=desktop") {
+        width: 46%;
+      }
+
+      @include media(">=desktop-lg") {
+        width: calc(100% - 600px);
+      }
+    }
+
+    .vida-multi-cards__title {
+      * {
+        @include h1;
+        padding-bottom: rem(30px);
+        padding-top: 0;
+      }
+    }
+
+    .vida-multi-cards__content-description {
+      display: none;
+    }
+  }
+}

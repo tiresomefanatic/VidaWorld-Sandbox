@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Pre Booking</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Pre-Booking" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+    <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js"
+      async></script>
+</head>
+
+<body>
+  <header></header>
+
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "scrollTrackingBuckets": [25,50,75],
+      "preBookingConfig": {
+        "genericConfig": {
+          "stepLabel": "Step",
+          "nonDealerSelectedError": "Please select a dealer",
+          "noDealerAvailableError": "No Dealers found",
+          "dealersLoadingMsg": "Loading Dealers..."
+        },
+        "cityField": {
+          "label": "City",
+          "validationRules": {
+            "required": {
+              "message": "City is required."
+            }
+          }
+        },
+        "stateField": {
+            "id": "state",
+            "label": "State",
+            "placeholder": "Enter your State",
+            "validationRules": {
+              "required": {
+                "message": "State is required."
+              }
+            }
+          },
+        "userDetails": {
+          "title": "Reserve for just 499",
+          "welcomeTitle": "Welcome",
+          "message": "Use your phone number to get started",
+          "changeNumberLabel": "Change Number/Email",
+          "changePincodeLabel": "Change Pincode",
+          "confirmLabel": "Confirm",
+          "switchAccount": {
+            "message": "Want to reserve with different account?",
+            "redirectionLabel": "login/register"
+          },
+          "mobileField": {
+            "id": "mobile",
+            "label": "Mobile Number",
+            "placeholder": "Enter Mobile Number",
+            "validationRules": {
+              "required": {
+                "message": "Mobile number is required."
+              },
+              "minLength": {
+                "value": 10,
+                "message": "Minimum 10 digit required."
+              },
+              "maxLength": {
+                "value": 10,
+                "message": "Maximum 10 digit required."
+              },
+              "customValidation": {
+                "message": "Please enter valid mobile number."
+              }
+            }
+          },
+          "phoneNumberEmailField": {
+            "label": "Phone Number or Email",
+            "placeholder": "Enter Phone Number or Email",
+            "validationRules": {
+              "required": {
+                "message": "Phone Number or Email is required."
+              },
+              "minLength": {
+                "value": 10,
+                "message": "Minimum 10 digit Phone Number required."
+              },
+              "maxLength": {
+                "value": 10,
+                "message": "Maximum 10 digits Phone Number required."
+              },
+              "custom": {
+                "message": "Please enter valid Phone Number or Email."
+              }
+            }
+          },
+          "firstNameField": {
+            "label": "First Name",
+            "placeholder": "Enter First Name",
+            "validationRules": {
+              "required": {
+                "message": "First Name is required."
+              },
+              "minLength": {
+                "value": 1,
+                "message": "First name should have at least 1 character."
+              },
+              "customValidation": {
+                "message": "Please enter valid first name."
+              }
+            }
+          },
+          "lastNameField": {
+            "label": "Last Name",
+            "placeholder": "Enter Last Name",
+            "validationRules": {
+              "required": {
+                "message": "Last name is required."
+              },
+              "minLength": {
+                "value": 1,
+                "message": "Last name should have at least 1 character."
+              },
+              "customValidation": {
+                "message": "Please enter valid last name."
+              }
+            }
+          },
+          "emailField": {
+            "label": "Email ID",
+            "placeholder": "Enter Email",
+            "infoLabel": "Mention active account, this will be used to send important mails",
+            "validationRules": {
+              "required": {
+                "message": "Email is required."
+              },
+              "customValidation": {
+                "message": "Please enter valid email address."
+              }
+            }
+          },
+          "cityField": {
+            "id": "city",
+            "label": "City",
+            "placeholder": "Enter your city",
+            "validationRules": {
+              "required": {
+                "message": "City is required."
+              }
+            }
+          },
+          "stateField": {
+            "id": "state",
+            "label": "State",
+            "placeholder": "Enter your State",
+            "validationRules": {
+              "required": {
+                "message": "State is required."
+              }
+            }
+          },
+          "pinCodeField": {
+            "label": "Reserve for Pin Code",
+            "placeholder": "Enter Pin Code",
+            "validationRules": {
+              "required": {
+                "message": "Pin code is required."
+              },
+              "customValidation": {
+                "message": "Unfortunately, we don't have service in your area yet."
+              },
+              "minLength": {
+                "value": 6,
+                "message": "Pin code must have 6 digits."
+              },
+              "maxLength": {
+                "value": 6,
+                "message": "Pin code should have only 6 digits."
+              }
+            }
+          },
+          "notificationBanner": {
+            "label": "Get order and product related updates on WhatsApp",
+            "info": "And ONLY that Nothing else. No spam. Promise.",
+            "confirmField": {
+              "label": "yes, opt me in"
+            }
+          },
+          "disclaimer": "<strong>Disclaimer:</strong> By proceeding ahead, I give my consent to Hero Motorcorp Ltd. and its service providers to hold my personal data and communicate with me by e-mail, SMS or phone call for test ride purposes.",
+          "continueBtn": {
+            "label": "Continue"
+          },
+          "sendOtpBtn": {
+            "label": "Send OTP"
+          },
+          "notificationBtn": {
+            "label": "Get notified"
+          },
+          "checkAvailabilityBtn": {
+            "label": "Check Availability"
+          },
+          "promotionBanner": "Assured buyback upto 70% within 3yrs"
+        },
+        "otpDetails": {
+          "title": "Reserve for just 499",
+          "verifyMobileNumbertitle": "Verify Mobile Number",
+          "verifyEmailtitle": "Verify Email",
+          "message": "We've send verification code to",
+          "emailVerifyMessage": {
+            "messageOne": "We will send a verification code to ",
+            "messageTwo": "You can do this step later as well."
+          },
+          "changeNumberLabel": "Change Number/Email",
+          "otpField": {
+            "label": "OTP",
+            "validationRules": {
+              "required": {
+                "message": "Please enter OTP"
+              }
+            }
+          },
+          "resendLabel": "Resend",
+          "timer": {
+            "minutes": 0,
+            "seconds": 5
+          },
+          "verifyBtn": {
+            "label": "Verify"
+          },
+          "emailVerifyBtns": {
+            "sendOTPLabel": "Send Verification Code",
+            "cancelEmailVerifyLabel": "I’ll do it later"
+          },
+          "disclaimer": {
+            "label": "Disclaimer: ",
+            "message": "By proceeding ahead, I give my consent to Hero Motorcorp Ltd. and its service providers to hold my personal data and communicate with me by e-mail, SMS or phone call for test ride purposes."
+          }
+        },
+        "overrideInfo": {
+          "title": "Override !!!",
+          "content": "Your profile pin code do not match with pre booking. Do you want to update your profile with the pre booking pin code after successful booking?",
+          "overrideBtn": {
+            "label": "Override"
+          },
+          "cancelBtn": {
+            "label": "Cancel"
+          }
+        },
+        "bookingSummary": {
+          "title": "Booking Summary",
+          "content": "You will be first in line to get the vehicle once we start delivering. You can configure the vehicle & associated services at the time of purchase.",
+          "productInfo": {
+            "priceLabel": "Fully refundable",
+            "priceInfo": "499",
+            "time": "Estimated Delivery time 2 months"
+          },
+          "agreeTerms": {
+            "id": "preBookingTerms",
+            "agreeLabel": "I agree to",
+            "terms": {
+              "label": "Terms and Conditions",
+              "actionUrl": ""
+            },
+            "btnLabel":{
+              "agree": "Agree",
+              "close": "Close"
+            },
+            "validationRules": {
+              "required": {
+                "message": "Please agree the terms and conditions."
+              }
+            }
+          },
+          "terms": "I agree to the <a href='#' target='_blank'>Terms and Conditions</a>",
+          "paymentBtn": {
+            "label": "Make Payment"
+          },
+          "helpLink": {
+            "helpLabel": "Trouble booking?",
+            "chatLabel": "Chat with us"
+          }
+        },
+        "bookingInterest": {
+          "title": "Thank you for your interest!",
+          "content": "We are growing fast and will be expanding to more than 200 locations accross the country by 2022. We will notify you as soon as we are available in your city.",
+          "helpContent": {
+            "title": "Got another question?",
+            "message": "Our team is at your side with words and deeds.",
+            "call": "+91 57868 39822",
+            "mail": "vidaspacemadunga@hmc.com"
+          },
+          "chatBtn": {
+            "label": "Chat with expert",
+            "actionUrl": ""
+          },
+          "backBtn": {
+            "label": "Back",
+            "actionUrl": ""
+          }
+        },
+        "scooterInfo": {
+          "priceType": "Ex-Showroom Price",
+          "defaultCityState": "BENGALURU~KARNATAKA~INDIA",
+          "splitterChar": "~",
+          "product": {
+            "range": "Range",
+            "topSpeed": "Top speed",
+            "acceleration": "0-40km/h",
+            "chargingTime": "0 - 100% in",
+            "certifiedRange": "Certified Range",
+            "enableCertifiedRange": true,
+          },
+          "colorSummaryLabel": "Included",
+          "tooltipConfig": {
+						"info": "*Price is inclusive of portable charger, FAME II subsidy and state government subsidy (Wherever applicable).",
+						"infoPosition": "top",
+						"id": "effective-price"
+					},
+        },
+        "showBookingdealers": true
+      }
+    });
+  </script>
+  <div data-component="Spinner" data-cmp-type="react"></div>
+
+  <div data-component="PreBooking" data-cmp-type="react" data-cmp-config="preBookingConfig"></div>
+  <div id="preBookingTerms" class="hideTerms">
+    <p>Pre booking Terms</p>
+    <p>&</p>
+    <p>Conditions</p>
+  </div>
+</body>
+
+</html>

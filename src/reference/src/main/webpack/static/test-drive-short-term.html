@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Test Ride</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Test Drive" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+  <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async></script>
+</head>
+
+<body>
+  <header></header>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "testDriveShortTermConfig": {
+        "backgroundImg": "https://stage.vidaworld.com/content/dam/vida/global/optimized-images/testride/Lifestyle2.png",
+        "scheduleAppointment": {
+          "scheduleTitle": "Schedule Appointment",
+          "rescheduleTitle": "Reschedule Appointment",
+          "dropdownDefaultLabel": "Select Centre",
+          "mapIcon": "/clientlib-site/images/png/dealer-location-icon.png",
+			  	"phoneIcon": "/clientlib-site/images/png/phone-outgoing.png",
+          "locationOptionField": {
+            "label": "Where would you like to take the test drive?",
+            "optionOne": "Nearby Vida Center",
+            "optionTwo": "At Home"
+          },
+          "modelVarientField": {
+            "label": "Model Variant",
+            "validationRules": {
+              "required": {
+                "message": "Model Variant is required."
+              }
+            }
+          },
+          "vidaCentreField": {
+            "label": "VIDA Centre",
+            "validationRules": {
+              "required": {
+                "message": "VIDA Centre is required."
+              }
+            }
+          },
+          "dateField": {
+            "label": "Date",
+            "validationRules": {
+              "required": {
+                "message": "Date is required."
+              },
+              "custom": {
+                "message": "Date slots not available."
+              }
+            }
+          },
+          "timeField": {
+            "label": "Time",
+            "validationRules": {
+              "required": {
+                "message": "Time is required."
+              },
+              "custom": {
+                "message": "Time slots not available."
+              }
+            }
+          },
+          "addressField": {
+            "label": "Address",
+            "placeholder": "Enter address",
+            "validationRules": {
+              "required": {
+                "message": "Address is required."
+              }
+            }
+          },
+          "buildingField": {
+            "label": "House, Flat, Floor no, Building name",
+            "placeholder": "Enter House, Flat, Floor no, Building name",
+            "validationRules": {
+              "required": {
+                "message": "House, Flat, Floor no, Building name is required."
+              }
+            }
+          },
+          "pinCodeField": {
+            "label": "PIN Code",
+            "placeholder": "Enter PIN Code",
+            "validationRules": {
+              "required": {
+                "message": "PIN Code is required."
+              }, 
+              "custom": {
+                "noServiceMsg": "Pincode is not serviceable.",
+                "noCityMatchMsg": "Pincode do not match with the city selected.",
+                "noBranchMsg": "Nearby branches not available."
+              }
+            }
+          },
+          "submitBtn": {
+            "label": "Book Test Drive"
+          },
+          "rescheduleSubmitBtn": {
+            "label": "Reschedule"
+          },
+          "isAtHomeDisabled" : true
+        },
+        "successPage": {
+          "title": "Congratulations!",
+          "message": "You have successfully booked your test drive",
+          "rescheduleMessage": "You have successfully rescheduled your test drive",
+          "info": "The same information is sent to your phone number, you can log in using this number to edit your test drive details.",
+          "redirectBtn": {
+            "label": "Go to Profile",
+            "actionURL": "/profile.html"
+          },
+          
+          "buyLaterLabel" : "When are you planning to buy VIDA V1?",
+          "buyOptions": [
+						{
+							"label": "Within next 7 days",
+							"value": "7"
+						},
+            {
+							"label": "Within next 15 days",
+							"value": "15"
+						},
+            {
+							"label": "Within 1 month",
+							"value": "30"
+						},
+            {
+							"label": "After 1 month",
+							"value": "45"
+						},
+          ],
+          "buyLaterBtn" : "Confirm",
+          "buyLaterConfirmationMsg" : "We have received the tentative buy date.",
+          "noOptionSelectedMessage": "No Option is Selected"
+        }
+      }
+    });
+  </script>
+	<div data-component="Spinner" data-cmp-type="react"></div>
+  <div data-component="TestDriveShortTerm" data-cmp-type="react" data-cmp-config="testDriveShortTermConfig"></div>
+</body>
+
+</html>

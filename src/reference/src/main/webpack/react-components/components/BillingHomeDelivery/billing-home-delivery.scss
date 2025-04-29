@@ -1,0 +1,36 @@
+.vida-billing-home-delivery__wrapper {
+  background-color: get-color("white");
+  border-radius: 16px;
+  padding: rem(16px) rem(16px);
+
+}
+
+.vida-billing-home-delivery {
+  min-height: 100vh;
+  width: 50%;
+  @include media(">=tablet") {
+    width: 100%;
+  }
+
+  &__wrapper {
+    background-color: get-color("white");
+    border-radius: 16px;
+    padding: rem(16px) rem(16px);
+  }
+
+  &__heading {
+    font-size: rem(20px);
+  }
+
+  &__subtext {
+    padding-left: rem(30px);
+
+    label {
+      display: inline;
+    }
+
+    a {
+      margin-left: rem(5px);
+    }
+  }
+}

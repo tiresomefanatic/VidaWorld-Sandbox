@@ -1,0 +1,78 @@
+.vida-battery-benefits {
+  background: get-color("alice-blue");
+
+  &__container {
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: rem(32px);
+      justify-content: space-between;
+      padding: rem(64px) 0;
+      @include media (">=desktop") {
+        flex-direction: row;
+        gap: rem(120px);
+        margin-bottom: rem(64px);
+      }
+    }
+
+    .battery-benefits-img {
+      &__media {
+        border-radius: 16px;
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    .battery-benefits-details-content {
+      @include  media (">=desktop") {
+        max-width: rem(535px);
+      }
+
+      .benefits-heading {
+        @include vida-h2-mobile;
+        line-height: rem(28px);
+        @include  media (">=desktop") {
+          @include vida-h2-desk;
+          line-height: rem(58px);
+        }
+
+        &__description {
+          @include vida-mobile-body-1;
+          line-height: rem(20px);
+          margin-top: 8px;
+          @include  media (">=desktop") {
+            @include vida-desktop-body-4;
+            line-height: rem(34px);
+            margin-top: 16px;
+          }
+        }
+      }
+
+      .benefits-details {
+        
+        margin-top: rem(32px);
+
+        &__section {
+          align-items: center;
+          background-color: get-color("white");
+          border-radius: 16px;
+          display: flex;
+          margin-top: 24px;
+          padding: 24px 16px;
+        }
+
+        &__img {
+          height: 30px;
+          width: 30px;
+        }
+
+        &__description {
+          @include vida-desktop-body-3;
+          line-height: rem(22px);
+          padding-left: 24px;
+        }
+      }
+    }
+  }
+}

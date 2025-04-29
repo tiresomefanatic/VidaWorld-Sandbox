@@ -1,0 +1,27 @@
+
+
+.vida-aadhar-status {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  height: calc(100vh - 90px);
+  justify-content: center;
+  text-align: center;
+
+  &__confirmation-msg,
+  &__redirection-msg {
+    color: get-color("solid-grey");
+    font-size: rem(14px);
+    font-weight: 400;
+    margin-bottom: rem(20px);
+  }
+
+  &__redirection-msg {
+    bottom: rem(30px);
+    left: 0;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+
+}

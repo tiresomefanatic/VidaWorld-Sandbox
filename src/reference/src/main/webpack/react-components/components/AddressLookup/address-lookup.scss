@@ -1,0 +1,42 @@
+.vida-address-lookup {
+  &__address-details {
+    @include input;
+    background: get-color("white");
+    border: 1px solid get-color("light-grey");
+    border-radius: rem(30px);
+    display: inline-block;
+    display: flex;
+    gap: 0 rem(10px);
+    height: 46px;
+    margin-bottom: rem(6px);
+    outline: none;
+    padding: rem(14px) rem(16px);
+    width: 100%;
+    @include media(">=desktop") {
+      border-radius: rem(100px);
+      height: 48px;
+      margin-bottom: rem(7px);
+      padding: rem(15px) rem(24px);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  &__address-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__address-change {
+    @include links;
+    color: get-color("orange");
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

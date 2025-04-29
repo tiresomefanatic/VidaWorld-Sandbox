@@ -1,0 +1,245 @@
+.vida-product-info {
+  overflow: hidden;
+  padding: rem(60px) 0;
+  text-align: center;
+
+  @include media(">=desktop") {
+    padding-bottom: rem(70px);
+    padding-top: rem(50px);
+  }
+
+  &--varient-selection {
+    .vida-product-info__selection {
+      display: flex;
+    }
+
+    .vida-product-info__card-heading {
+      display: none;
+    }
+  }
+
+  &__heading {
+    @include h1;
+
+    margin-bottom: rem(20px);
+
+    @include media(">=desktop") {
+      margin-bottom: rem(24px);
+    }
+  }
+
+  &__description {
+    @include h3;
+  }
+
+  &__slider {
+    &-container {
+      margin-top: rem(44px);
+      position: relative;
+
+      @include media(">=desktop") {
+        margin-top: rem(35px);
+      }
+    }
+
+    &-slides {
+      .tns-item:not(.tns-slide-active)+.tns-slide-active,
+      .tns-item.tns-slide-active:first-child {
+        text-align: right;
+      }
+
+      // TODO: We need check and limit these class names
+      .tns-item:not(.tns-slide-active)+.tns-slide-active+.tns-slide-active+.tns-slide-active,
+      .tns-item.tns-slide-active:first-child+.tns-slide-active+.tns-slide-active {
+        text-align: left;
+      }
+
+      .vida-product-info__card-desc,
+      .vida-product-info__card-link {
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0;
+
+        @include media(">=desktop") {
+          max-width: 60vw;
+        }
+      }
+
+      .tns-item:not(.tns-slide-active)+.tns-slide-active+.tns-slide-active,
+      .tns-item.tns-slide-active:first-child+.tns-slide-active {
+        img {
+          max-width: rem(233px);
+          opacity: 1;
+
+          @include media(">=desktop") {
+            max-width: rem(600px);
+          }
+        }
+
+        .vida-product-info__card-desc,
+        .vida-product-info__card-link {
+          opacity: 1;
+        }
+
+      }
+
+      img {
+        margin-bottom: rem(40px);
+        max-width: rem(233px);
+
+        @include media(">=desktop") {
+          margin-bottom: rem(30px);
+          max-width: rem(600px);
+        }
+      }
+    }
+  }
+
+  &__item {
+    width: calc(100vw - 70px);
+
+    @include media(">=desktop") {
+      width: calc(100vw - 400px);
+    }
+  }
+
+  &__card {
+    &-desc {
+      margin: auto;
+      width: 100%;
+      @include media(">=desktop") {
+        max-width: 600px;
+        width: 45vw;
+      }
+    }
+
+    &-spec {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      margin-top: rem(30px);
+      margin-top: rem(30px);
+
+      &-item {
+        p {
+          @include p2;
+          color: get-color("solid-grey");
+          display: block;
+
+        }
+
+        h2 {
+          align-items: center;
+          display: flex;
+
+          span {
+            @include label;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+
+    &-link {
+      margin-top: rem(30px);
+    }
+  }
+
+  &__color-container {
+    padding-top: rem(10px);
+  }
+
+  &__color {
+    &-list {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  
+      &-item {
+        border: rem(1px) solid get-color("solid-grey");
+        border-radius: 50%;
+        cursor: pointer;
+        height: rem(17px);
+        margin-right: rem(12.5px);
+        position: relative;
+        width: rem(17px);
+
+        @include media(">=desktop") {
+          height: rem(20px);
+          margin-right: rem(25px);
+          width: rem(20px);
+        }
+  
+        &--active {
+          border: rem(1px) solid get-color("white");
+
+          &::before {
+            border: rem(1px) solid get-color("solid-grey");
+            border-radius: 50%;
+            content: "";
+            display: block;
+            height: rem(17px);
+            left: rem(-2px);
+            position: absolute;
+            top: rem(-2px);
+            width: rem(17px);
+
+            @include media(">=desktop") {
+              height: rem(22px);
+              left: rem(-3px);
+              top: rem(-3px);
+              width: rem(22px);
+            }
+          }
+        }
+  
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &__selection {
+    align-items: center;
+    display: none;
+    gap: 0 19px;
+    justify-content: space-between;
+
+    &-heading {
+      @include h2;
+    }
+
+    &-price {
+      text-align: right;
+
+      &-item {
+        display: none;
+
+        &--active {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__price {
+    &-label {
+      @include p2;
+      color: get-color("solid-grey");
+    }
+
+    &-value {
+      @include h2;
+      align-items: center;
+      display: flex;
+    }
+
+    &-symbol {
+      @include h4;
+    }
+  }
+}

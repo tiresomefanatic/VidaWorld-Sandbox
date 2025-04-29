@@ -1,0 +1,755 @@
+.vida-hero-banner {
+  overflow: hidden;
+  position: relative;
+
+  @include media(">=phone") {
+    // background-color: #ff5310;
+    // padding-bottom: 40px;
+  }
+
+  @include media(">=tablet") {
+    background-color: transparent;
+    padding-bottom: 0;
+  }
+
+  &__container-link {
+    text-decoration: none;
+  }
+
+  &__asset {
+    width: 100%;
+
+    .vida-video-player {
+      height: 100%;
+    }
+
+    img,
+    video {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  &__container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include media(">=desktop") {
+      align-items: unset;
+      justify-content: unset;
+    }
+
+    &-left-aligned {
+      @include media(">=desktop") {
+        justify-content: flex-start !important;
+      }
+    }
+
+    &-skewed {
+      flex-direction: column;
+      justify-content: flex-end !important;
+
+      @include media(">=tablet") {
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-end !important;
+      }
+
+      .vida-hero-banner__title {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 50%;
+        justify-content: center;
+        width: 70% !important;
+        @include media(">=tablet") {
+          display: flex;
+          flex-direction: column;
+          height: 70%;
+          padding-left: rem(40px);
+          width: 50% !important;
+        }
+        @include media(">=phone") {
+          width: 95% !important;
+        }
+
+        &-terms {
+          color: get-color("white");
+          font-size: rem(10px);
+          font-weight: normal;
+          position: absolute;
+          right: rem(-70px);
+          text-transform: lowercase !important;
+          top: 50%;
+          transform: rotateZ(90deg);
+        }
+
+        a {
+          &.cta--square {
+            align-items: center;
+            border-radius: rem(6px);
+            box-shadow: 0 rem(8px) rem(16px) 0 rgba(0, 0, 0, 0.2),
+              0 rem(6px) rem(20px) 0 rgba(0, 0, 0, 0.19);
+            display: flex;
+            float: left;
+            font-size: rem(26px);
+            font-weight: 500;
+            height: rem(50px);
+            line-height: rem(10px);
+            margin-top: rem(10px);
+            margin-top: rem(30px);
+            padding-top: rem(10px);
+            width: fit-content;
+            @include media(">=tablet") {
+              line-height: rem(28px);
+            }
+            @include media("<tablet") {
+              margin-top: rem(20px);
+            }
+          }
+        }
+
+        &-text {
+          text-transform: uppercase;
+          transform: rotate(-5deg) skew(-5deg);
+
+          p,
+          h1.skewed {
+            font-size: rem(32px);
+            font-weight: 400;
+            line-height: rem(32px);
+            @include media(">=tablet") {
+              font-size: rem(50px);
+
+              b {
+                font-size: rem(40px);
+              }
+
+              span {
+                font-size: rem(28px);
+              }
+            }
+
+            b {
+              font-size: rem(32px);
+              line-height: rem(32px);
+            }
+
+            span {
+              font-size: rem(20px);
+              line-height: rem(24px);
+            }
+
+            &.main-text.small b {
+              font-size: rem(30px);
+              @include media(">tablet") {
+                font-size: rem(36px);
+              }
+            }
+
+            &.sub-text {
+              font-size: rem(20px);
+              @include media(">tablet") {
+                font-size: rem(30px);
+                line-height: rem(40px);
+              }
+            }
+
+            &.sub-text b {
+              font-size: rem(20px);
+              @include media(">tablet") {
+                font-size: rem(30px);
+                line-height: inherit;
+              }
+            }
+          }
+
+          h1.skewed {
+            text-align: left;
+            @include media(">tablet") {
+              font-size: rem(39px);
+              line-height: rem(52px);
+            }
+          }
+
+          h1.skewed span {
+            @include media(">tablet") {
+              &.sub-text {
+                font-size: rem(20px);
+                font-weight: 500;
+                @include media(">tablet") {
+                  font-size: rem(30px);
+                  line-height: rem(40px);
+                }
+              }
+
+              &.sub-text b {
+                font-size: rem(20px);
+                @include media(">tablet") {
+                  font-size: rem(30px);
+                  line-height: inherit;
+                }
+              }
+            }
+          }
+        }
+
+        &-list {
+          margin-bottom: rem(20px);
+          transform: rotate(-5deg) skew(-5deg);
+          @include media("<tablet") {
+            margin-bottom: rem(10px);
+          }
+
+          ul {
+            margin-left: 0;
+            margin-top: rem(10px);
+            @include media(">=tablet") {
+              margin-top: rem(30px);
+            }
+
+            li img {
+              height: rem(30px);
+              transform: rotate(5deg) skew(5deg);
+              width: rem(32px);
+              @include media(">=desktop") {
+                margin-top: rem(10px);
+              }
+            }
+
+            li {
+              align-items: start;
+              display: flex;
+              list-style-type: none;
+            }
+
+            li span {
+              font-size: rem(34px);
+              font-weight: 400;
+              line-height: rem(50px);
+              list-style-type: none;
+              text-align: left;
+              text-transform: none;
+              @include media("<tablet") {
+                font-size: rem(20px);
+              }
+              @include media("<desktop") {
+                font-size: rem(24px);
+                line-height: rem(32px);
+              }
+            }
+
+            li h5 {
+              font-size: rem(34px);
+              font-weight: 400;
+              line-height: rem(50px);
+              list-style-type: none;
+              text-align: left;
+              text-transform: none;
+              @include media("<tablet") {
+                font-size: rem(20px);
+              }
+              @include media("<desktop") {
+                font-size: rem(24px);
+                line-height: rem(32px);
+              }
+            }
+          }
+        }
+      }
+
+      .vida-hero-banner__extended-title {
+        padding-top: rem(50px);
+        @include media("<tablet") {
+          height: 100%;
+          justify-content: start;
+          width: 70% !important;
+
+          &-text {
+            margin-bottom: rem(350px);
+          }
+        }
+      }
+    }
+
+    &-bottom-txt {
+      flex-direction: column;
+      justify-content: flex-end !important;
+
+      @include media(">=tablet") {
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-end !important;
+      }
+
+      .vida-hero-banner__title {
+        padding-left: 0;
+        @include media(">=tablet") {
+          width: 50% !important;
+        }
+        @include media("<tablet") {
+          padding-bottom: rem(80px);
+        }
+
+        * {
+          text-transform: none;
+        }
+
+        &-text {
+          text-transform: none;
+
+          p,
+          h1 {
+            @include media(">=desktop") {
+            }
+            font-size: rem(24px);
+            font-weight: 500;
+            line-height: rem(16px);
+            text-align: left;
+            @include media(">=tablet") {
+              font-size: rem(52px);
+
+              b {
+                font-size: rem(22px);
+              }
+            }
+            @include media("<tablet") {
+              b {
+                font-size: rem(18px);
+                line-height: rem(20px);
+              }
+            }
+
+            span {
+              display: block;
+              font-size: 1rem;
+              font-weight: 300;
+              line-height: rem(24px);
+              margin: 10px 0;
+              width: rem(300px);
+            }
+
+            b {
+              font-size: rem(24px);
+              line-height: rem(26px);
+            }
+
+            &.sub-text {
+              @include media(">tablet") {
+                font-size: rem(16px);
+                line-height: rem(24px);
+              }
+            }
+          }
+
+          h1 {
+            @include media(">tablet") {
+              font-size: rem(39px);
+              line-height: rem(12px);
+            }
+          }
+
+          h1 span {
+            @include media(">tablet") {
+              &.sub-text {
+                @include media(">tablet") {
+                  font-size: rem(16px);
+                  line-height: rem(24px);
+                }
+              }
+            }
+          }
+        }
+
+        &-list {
+          ul {
+            margin-left: 0;
+
+            li img {
+              height: rem(20px);
+              width: rem(20px);
+            }
+
+            li {
+              display: flex;
+              list-style-type: none;
+            }
+
+            li span {
+              font-size: rem(24px);
+            }
+
+            li h5 {
+              font-size: rem(20px);
+              font-weight: 500;
+              line-height: rem(24px);
+              margin-bottom: rem(20px);
+              padding-left: rem(10px);
+              @include media("<tablet") {
+                font-size: rem(16px);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-battery-variant-right {
+
+      @include media("<tablet") {
+        align-items: unset;
+        justify-content: unset !important;
+        position: unset;
+      }
+
+      @include media(">=tablet") {
+        align-items: unset;
+        justify-content: end !important;
+      }
+      
+      .vida-hero-banner__title {
+        color: get-color("orange");
+        margin-top: rem(32px);
+        @include media("<tablet") {
+          bottom: rem(90px);
+          margin-top: 0;
+          position: relative;
+          width: 100%;
+        }
+       
+        .underline {
+          padding-bottom: rem(24px);
+          text-decoration: underline;
+          text-decoration-thickness: rem(2px);
+          text-underline-offset: rem(12px);
+          text-underline-position: under;
+
+          @include media("<desktop") {
+            font-size: rem(40px);
+          }
+          @include media("<tablet") {
+            color: get-color("white");
+            font-size: rem(36px);
+            text-align: left;
+          }
+        }
+  
+        p {
+          font-weight: 400;
+
+          @include media(">=desktop") {
+            font-size: rem(20px);
+            line-height: rem(21px);
+          }
+          @include media(">=tablet") {
+            margin-top: 0;
+          }
+
+          @include media(">=phone") {
+            font-size: rem(16px);
+            line-height: rem(18px);
+            margin-top: rem(40px);
+            text-align: center;
+          }
+        }
+      }
+
+      .vida-hero-simple-banner__title {
+        &-list {
+          display: flex;
+          flex-direction: column;
+          height: 50%;
+          justify-content: space-evenly;
+          margin-left: 0;
+
+          @include media("<desktop") {
+            margin-top: rem(10px);
+          }
+
+          @include media("<tablet") {
+            align-items: center;
+            height: unset;
+          }
+  
+          &-item {
+            display: flex;
+            gap: 20px;
+            
+            @include media("<tablet") {
+              align-items: center;
+              border-bottom: 1px solid get-color("orange");
+              flex-direction: column;
+              padding: rem(20px);
+              width: 200px;
+            }
+            
+            .icon {
+              height: rem(56px);
+              width: rem(56px);
+  
+              img {
+                height: 100%;
+                width: 100%;
+              }
+            }
+          }
+        }
+  
+        &-desc {
+          font-weight: 400;
+          @include media(">=desktop") {
+            font-size: rem(18px);
+            line-height: rem(18px);
+          }
+          @include media("<desktop") {
+            font-size: rem(14px);
+            line-height: rem(14px);
+          }
+
+        }
+      }
+    }
+
+    &-battery-variant-left {
+      @include media(">=tablet") {
+        align-items: unset;
+        justify-content: unset;
+      }
+      @include media("<tablet") {
+        align-items: unset;
+        position: unset;
+      }
+
+      .vida-hero-banner__title {
+        color: get-color("orange");
+        margin-top: rem(32px);
+
+        @include media("<tablet") {
+          bottom: rem(90px);
+          margin-top: 0;
+          position: relative;
+          width: 100%;
+        }
+
+        .underline {
+          padding-bottom: rem(24px);
+          text-decoration: underline;
+          text-decoration-thickness: rem(2px);
+          text-underline-offset: rem(12px);
+          text-underline-position: under;
+
+          @include media("<desktop") {
+            font-size: rem(40px);
+          }
+          @include media("<tablet") {
+            color: get-color("white");
+            font-size: rem(36px);
+            text-align: left;
+          }
+        }
+  
+        p {
+          font-weight: 400;
+          @include media(">=desktop") {
+            font-size: rem(20px);
+            line-height: rem(21px);
+          }
+          
+          @include media(">=tablet") {
+            margin-top: 0;
+          }
+
+          @include media(">=phone") {
+            font-size: rem(16px);
+            line-height: rem(18px);
+            margin-top: rem(40px);
+            text-align: center;
+          }
+        }
+      }
+
+      .vida-hero-simple-banner__title {
+        &-list {
+          display: flex;
+          flex-direction: column;
+          height: 50%;
+          justify-content: space-evenly;
+          margin-left: 0;
+          @include media("<desktop") {
+            margin-top: rem(10px);
+          }
+
+          @include media("<tablet") {
+            align-items: center;
+            height: unset;
+          }
+
+          &-item {
+            display: flex;
+            gap: 20px;
+
+            @include media("<tablet") {
+              align-items: center;
+              border-bottom: 1px solid get-color("orange");
+              flex-direction: column;
+              padding: rem(20px);
+              width: 200px;
+            }
+
+            .icon {
+              height: rem(56px);
+              width: rem(56px);
+  
+              img {
+                height: 100%;
+                width: 100%;
+              }
+            }
+          }
+        }
+  
+        &-desc {
+          font-weight: 400;
+          @include media(">=desktop") {
+            font-size: rem(18px);
+            line-height: rem(21px);
+          }
+          @include media("<desktop") {
+            font-size: rem(14px);
+            line-height: rem(14px);
+          }
+        }
+      }
+    }
+    
+  }
+
+  &__title {
+    color: get-color("white");
+    text-align: center;
+    @include media(">=desktop") {
+      margin-top: rem(150px);
+      max-width: rem(650px);
+      text-align: left;
+    }
+
+    * {
+      @include d2;
+    }
+  }
+
+  a.cta-btn {
+    font-size: rem(25px);
+    font-weight: 500;
+    height: rem(40px);
+    padding: rem(8px) rem(15px) rem(10px);
+  }
+
+  .btn--primary {
+    font-size: rem(16px);
+    font-weight: 400;
+    line-height: rem(18px);
+    max-width: rem(270px);
+    @include media(">=tablet") {
+      margin-top: rem(50px);
+    }
+    @include media(">=phone") {
+      height: rem(40px);
+      margin-top: rem(30px);
+      padding: rem(10px) rem(20px) rem(20px);
+    }
+
+
+  }
+
+  .bottom-btn {
+    @include media("<tablet") {
+      bottom: rem(65px);
+      position: absolute;
+    }
+  }
+
+  &-four-section {
+
+    @include media("<tablet") {
+      align-items: end;
+      padding: rem(20px) 0;
+      position: unset;
+    }
+
+    &__body__boxes {
+      color: get-color("orange");
+      display: flex;
+      width: 40%;
+
+      @include media("<tablet") {
+        align-items: center;
+        border-bottom: 1px solid get-color("orange");
+        flex-direction: column;
+        padding: rem(20px);
+        width: 100%;
+
+      }
+      
+      &--img {
+        height: fit-content;
+        padding-right: 15px;
+        width: 100px;
+      }
+
+      &--title {
+        font-weight: 600;
+        padding-bottom: 5px;
+        width: 200px;
+
+        @include media("<tablet") {
+          text-align: center;
+        }
+
+      }
+
+      &--description {
+        width: 200px;
+        @include media("<tablet") {
+          text-align: center;
+        }
+
+      }
+    }
+  }
+
+  &__body {
+    align-items: center;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+
+    @include media("<tablet") {
+      flex-direction: column;
+      gap: 40px;
+    }
+    @include media(">=tablet") {
+      height: inherit;
+    }
+
+    div:nth-child(2),
+    div:nth-child(4) {
+      justify-content: end;
+    }
+  }
+}
+
+.btn-nowrap {
+  white-space: nowrap;
+}
+
+.hero-carousel .cmp-carousel__actions,
+.hero-carousel .cmp-carousel__indicators {
+  display: none;
+}

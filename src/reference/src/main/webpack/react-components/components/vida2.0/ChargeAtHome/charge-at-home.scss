@@ -1,0 +1,129 @@
+.charge-home-wrapper {
+  padding-bottom: rem(32px) !important;
+  padding-top: rem(32px) !important;
+  transition: opacity 1.5s ease-out;
+
+  @include media(">=desktop") {
+    padding-bottom: rem(64px) !important;
+    padding-top: rem(64px) !important;
+  }
+
+  .charge-home-container {
+    .charge-home-title-container {
+      .charge-home-pre-title {
+        @include vida-mobile-subtitle;
+        padding: 0 0 rem(5px) 0;
+
+        @include media(">=desktop") {
+          @include vida-desktop-subtitle;
+          padding: 0 0 rem(8px);
+        }
+      }
+
+      .charge-home-title {
+        @include vida-h2-mobile;
+        padding: 0 0 rem(24px) 0;
+
+        @include media(">=desktop") {
+          @include vida-h2-desk;
+          padding: 0 0 rem(32px) 0;
+        }
+      }
+
+      .charge-home-title-description {
+        @include vida-mobile-body-1;
+        padding: 0 0 rem(24px) 0;
+
+        @include media(">=desktop") {
+          @include vida-desk-body-1;
+          padding: 0 0 rem(64px) 0;
+        }
+      }
+    }
+
+    .charge-home-content-container {
+      .charge-home-card-list {
+        @include media(">=desktop") {
+          display: flex;
+          gap: rem(24px);
+        }
+      }
+    }
+
+    .charge-home-card-item {
+      display: block;
+      margin: 0 0 rem(34px) 0;
+      text-decoration: none;
+
+      @include media(">=desktop") {
+        flex: 1;
+        margin: 0;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+
+      .charge-home-card-title {
+        padding: 0 0 rem(16px) 0;
+
+        @include media(">=desktop") {
+          padding: 0 0 rem(24px) 0;
+        }
+
+        .charge-home-card-title-text {
+          @include vida-h3-mobile;
+
+          @include media(">=desktop") {
+            @include vida-h3-desktop;
+          }
+        }
+      }
+
+      .charge-home-card-flex-container {
+        align-items: center;
+        display: flex;
+        gap: rem(16px);
+        justify-content: space-between;
+
+        @include media(">=desktop") {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column-reverse;
+          gap: rem(34px);
+          justify-content: flex-start;
+        }
+      }
+
+      .charge-home-card-img {
+        flex: 1;
+
+        img {
+          border-radius: rem(16px);
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      .charge-home-card-description {
+        flex: 1;
+
+        @include media(">=desktop") {
+          min-height: rem(72px);
+        }
+
+        p {
+          @include vida-mobile-body-1;
+
+          @include media(">=desktop") {
+            @include vida-desk-body-1;
+          }
+        }
+      }
+    }
+  }
+
+  .p-event-none {
+    pointer-events: none;
+  }
+}

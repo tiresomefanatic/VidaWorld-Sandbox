@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Track Delivery</title>
+    <meta charset="UTF-8" />
+    <meta name="template" content="page-content" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Meta Property for Analytics Datalayer -->
+    <meta property="pageCategory" content="Track Delivery" />
+    <meta property="language" content="en" />
+    <meta property="country" content="India" />
+    <meta property="isErrorPage" content="false" />
+    <meta property="errorCode" content="404" />
+    <meta property="errorDescription" content="Page Not Found" />
+
+    <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico" />
+    <%= htmlWebpackPlugin.options.custom %>
+    <script
+      src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.minptest.js"
+      async
+    ></script>
+  </head>
+  <body>
+    <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        HeaderConfig: {
+          navbarOptions: [
+            {
+              image: "exploreicon.png",
+              title: "EXPLORE",
+              navLink: "#"
+            },
+            {
+              image: "tryicon.png",
+              title: "TRY",
+              navLink: "#"
+            },
+            {
+              image: "buyicon.png",
+              title: "BUY",
+              navLink: "#"
+            },
+            {
+              image: "loveicon.png",
+              title: "LOVE",
+              navLink: "#"
+            }
+          ],
+          termsAndPrivacyText: [
+            {
+              title: "TERMS OF SERVICE",
+              navLink: "#"
+            },
+            {
+              title: "PRIVACY POLICY",
+              navLink: "#"
+            }
+          ],
+          tryOptionContent: {
+            title: "TRY",
+            sitesOption: [
+              {
+                name: "Book Test Ride",
+                navLink: "#"
+              },
+              {
+                name: "Design Your VIDA",
+                navLink: "#"
+              }
+            ]
+          },
+          buyOptionContent: {
+            title: "BUY",
+            sitesOption: [
+              {
+                name: "Book @ ₹499",
+                navLink: "#"
+              },
+              {
+                name: "Buy a VIDA",
+                navLink: "#"
+              }
+            ]
+          },
+          exploreOptionContent: {
+            title: "EXPLORE",
+            sitesOption: [
+              {
+                name: "All Products",
+                navLink: "#"
+              },
+              {
+                name: "V1 Pro",
+                navLink: "#"
+              },
+              {
+                name: "V1 Plus",
+                navLink: "#"
+              },
+              {
+                name: "Our Story",
+                navLink: "#"
+              },
+              {
+                name: "Blogs",
+                navLink: "#"
+              },
+              {
+                name: "FAQs",
+                navLink: "#"
+              }
+            ]
+          },
+          loveOptionContent: {
+            title: "LOVE",
+            sitesOption: [
+              {
+                name: "VIDA Community",
+                navLink: "#"
+              },
+              {
+                name: "Charging Stations",
+                navLink: "#"
+              },
+              {
+                name: "Dealership Locator",
+                navLink: "#"
+              },
+              {
+                name: "Offers",
+                navLink: "#"
+              }
+            ]
+          },
+          hamburgerBgImg: {
+            mobImg: "hamburger_bg_mob.png",
+            desktopImg: "hamburger_bg_des.png"
+          },
+          hamburgerBg1Img: {
+            mobImg: "hamburger_bg1_mob.png",
+            desktopImg: "hamburger_bg1_des.png"
+          },
+          myAccountContent: {
+            myAccountText: "MY ACCOUNT",
+            preLoginText: "LOGIN / SIGN UP",
+            loginNavLink: "#",
+            preLoginNavLink: "#"
+          },
+          headerVidaLogo: "vidalogo.png",
+          vidaLogoNavLink: "#",
+          hamburgerVidaLogo: "vidawhitelogo.png"
+        }
+      });
+    </script>
+    <div
+      data-section-id="header"
+      data-component="Header"
+      data-cmp-type="react"
+      data-cmp-version="2.0"
+      data-cmp-config="HeaderConfig"
+    ></div>
+    <div data-component="Notification" data-cmp-type="react"></div>
+    <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        TrackDeliveryConfig: {
+          trackDeliveryBgDesktop: "track_delivery_bg_desktop.png",
+          trackDeliveryBgMobile: "track_delivery_bg_mobile.png",
+          trackDeliveryNormalTitle: "It’s time to celebrate!",
+          trackDeliveryBoldTitle:
+            "Your VIDA V1 Pro is successfully delivered. Make Way for better rides!",
+          bannerBgImg: "../src/main/webpack/resources/images/png/banner_bg.png",
+          onItsWayText: "on its way!",
+          bannerBikeImg:
+            "../src/main/webpack/resources/images/png/v1pro_img.png",
+          trackDeliveryTitle: "Track Delivery",
+          trackDeliveryDescription:
+            "It’s all set - from payments to docs. VIDA V1 Pro will see you soon!",
+          dropDownIcon: "dropDownIcon.png",
+          downloadBookingInvoiceText: "Download Booking Invoice",
+          joinVidaCommunityText: "Join the VIDA Community!",
+          deliveryTrackerContent: {
+            deliveryTrackerTitle: "Estimated delivery by 20 August 2023",
+            deliveryTrackerDescription:
+              "Subject to all the checks - payment, documents, and registration",
+            deliveryTrackerStepperContent: [
+              {
+                icon: "../src/main/webpack/resources/images/png/payment_icon_white.png",
+                title: "Payment"
+              },
+              {
+                icon: "../src/main/webpack/resources/images/png/upload_icon_white.png",
+                title: "Document Upload"
+              },
+              {
+                icon: "../src/main/webpack/resources/images/png/verify_icon_white.png",
+                title: "Document Verification"
+              },
+              {
+                icon: "../src/main/webpack/resources/images/png/delivery_icon_white.png",
+                title: "Delivery"
+              }
+            ]
+          },
+          purchaseTrackerContent: {
+            deliveryTrackerStepperContent: [
+            {
+              icon: "../src/main/webpack/resources/images/png/payment_icon_white.png",
+              title: "Order ID"
+            },
+            {
+              icon: "../src/main/webpack/resources/images/png/upload_icon_white.png",
+              title: "Prepping your scooter"
+            },
+            {
+              icon: "../src/main/webpack/resources/images/png/delivery_icon_white.png",
+              title: "Delivered: all yours!",
+              subTitle: "will be delivered soon"
+            }
+          ],
+          },
+          chargingLocatorChoosePlanConfig: {
+            pluginImgDesktop:
+              "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/charging-page/plugin_desktop-img.png",
+            dropDownArrowIcon:
+              "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/global/faq-down.png",
+            chargeContent: "Stay connected to the Charging Grid",
+            titleOne: "GET THE VIDA ADVANTAGE",
+            btnLabel: "Get my Plan",
+            navLink: "",
+            plansContent: {
+              tabs: [
+                {
+                  planType: "Quarterly Plan",
+                  price: "₹399",
+                  freeLabel: "Free"
+                },
+                { planType: "Yearly Plan", price: "₹699", freeLabel: "Free" }
+              ],
+              header: "Available Plans"
+            },
+            pluginImgMobile:
+              "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/charging-page/plugin_mobile_img.png",
+            newTab: false,
+            popUpObj: {
+              confirmButton: "Confirm",
+              cancelButton: "Cancel",
+              confirmLink: "/vida-charging-locator.html",
+              popupMsg: "Do you want to connect with the dealer"
+            },
+            scrollImgDesktop:
+              "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/charging-page/scroll_desktop_img.png",
+            dropDownContent:
+              "<p><b>Unlimited fast charging citywide</b><br />\r\nRecharge as much as you need at one of VIDA’s fast charging stations. Find your nearest one on the My VIDA app.</p>\r\n<hr />\r\n\r\n<p><b>Priority charging station slots</b><br />\r\nReserve your spot in advance by simply selecting on the My VIDA app. Glide in smoothly at your nearest fast charging station.</p>\r\n",
+            chargeLabel: "Charge",
+            headerContent:
+              "Our custom solutions make it easier than ever to get the right charging plan for you",
+            dropDownTitle: "Charge plan benefits",
+            scrollImgMobile:
+              "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/charging-page/scroll_mobile_img.png",
+            titleTwo: "Choose the perfect plan for you"
+          },
+          vidaAppDownloadConfig: {
+            cardBgImgAlt:
+              "My VIDA app interface with VIDA Electric Scooter at the back",
+            downloadAppLinks: {
+              playStoreLink:
+                "https://play.google.com/store/apps/details?id=com.hero.vida&hl=en&gl=US",
+              appStoreLink: "https://apps.apple.com/in/app/my-vida/id1619977916"
+            },
+            mobileDownloadImage: {
+              imageUrl:
+                "../src/main/webpack/resources/images/png/donwload-app-mobile.png"
+            },
+            downloadImageTitle: null,
+            cardBgImgMob:
+              "../src/main/webpack/resources/images/png/download-bg-img-mobile.png",
+            cardBgImgDesktop:
+              "/content/dam/vida2-0/global/vida-app-download-bg-img-desktop.png",
+            stayConnectTitle:
+              "Stay connected with the My VIDA app. No matter where you are.",
+            dataPosition: "Banner Carousel",
+            downloadImageAlt: null,
+            downloadText: "Download the My VIDA app",
+            desktopDownloadImage: {
+              imageUrl:
+                "/content/dam/vida2-0/global/vida-app-download-playstore-appstore-img-desktop.png"
+            },
+            cardBgImgTitle: "Stay Connected with My VIDA App | VIDA"
+          },
+          bikeVariantDetails:
+                {
+                    "bikeVariants": [
+                        {
+                            "variantName": "V1 Pro",
+                            "variantDetails": [
+                                {
+                                    "textColor": "white",
+                                    "color": "Matte Abrax Orange",
+                                    "bikeImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/orange_bike_resized.png",
+                                    "bgImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/orange_bg.png"
+                                },
+                                {
+                                    "textColor": "white",
+                                    "color": "Matte Sports Red",
+                                    "bikeImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/red-testing.png",
+                                    "bgImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/red_bg.png"
+                                },
+                                {
+                                    "textColor": "black",
+                                    "color": "Matte Pearl White",
+                                    "bikeImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/white_bike_resized.png",
+                                    "bgImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/white_bg.png"
+                                },
+                                {
+                                    "textColor": "black",
+                                    "color": "Matte Cyan Blue",
+                                    "bikeImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/blue_bike_resized.png",
+                                    "bgImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/blue_bg.png"
+                                },
+                                {
+                                    "textColor": "white",
+                                    "color": "Black",
+                                    "bikeImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/black_bike_resized.png",
+                                    "bgImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/black_bg.png"
+                                }
+                            ]
+                        },
+                        {
+                            "variantName": "V1 Plus",
+                            "variantDetails": [
+                                {
+                                    "textColor": "white",
+                                    "color": "Matte Abrax Orange",
+                                    "bikeImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/orange_bike_resized.png",
+                                    "bgImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/orange_bg.png"
+                                },
+                                {
+                                    "textColor": "white",
+                                    "color": "Matte Sports Red",
+                                    "bikeImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/red-testing.png",
+                                    "bgImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/red_bg.png"
+                                },
+                                {
+                                    "textColor": "black",
+                                    "color": "Matte Pearl White",
+                                    "bikeImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/white_bike_resized.png",
+                                    "bgImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/white_bg.png"
+                                },
+                                {
+                                    "textColor": "black",
+                                    "color": "Matte Cyan Blue",
+                                    "bikeImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/blue_bike_resized.png",
+                                    "bgImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/blue_bg.png"
+                                },
+                                {
+                                    "textColor": "white",
+                                    "color": "Black",
+                                    "bikeImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/black_bike_resized.png",
+                                    "bgImg": "https://publish-p62973-e632652.adobeaemcloud.com/content/dam/vida2-0/buy-page/black_bg.png"
+                                }
+                            ]
+                        }
+                    ]
+                }
+        }
+      });
+    </script>
+    <div
+      data-section-id="vidaSpinner"
+      data-component="Spinner"
+      data-cmp-version="2.0"
+      data-cmp-type="react"
+    ></div>
+    <div
+      data-section-id="track-delivery"
+      data-component="TrackDelivery"
+      data-cmp-type="react"
+      data-cmp-version="2.0"
+      data-cmp-config="TrackDeliveryConfig"
+    ></div>
+  </body>
+</html>

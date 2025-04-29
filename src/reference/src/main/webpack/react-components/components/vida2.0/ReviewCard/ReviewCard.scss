@@ -1,0 +1,182 @@
+.vida-love-container.vida-2-container {
+  padding: 0;
+}
+
+.vida-love-container {
+  transition: opacity 1.5s ease-out;
+}
+
+.vida-review-container {
+  padding: rem(32px) rem(20px);
+  @include media(">=desktop") {
+    padding: rem(64px) rem(88px);
+  }
+}
+
+.vida-review-card {
+  background: get-color("white");
+  border-radius: 8px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  // margin: 0 rem(16px) rem(16px) rem(16px);
+  padding: rem(20px);
+  width: 100%;
+
+  @include media(">=desktop") {
+    height: auto !important;
+    margin-bottom: rem(32px);
+    // height: fit-content;
+    // margin: 0 rem(32px) rem(32px) rem(32px);
+    overflow: overlay;
+    width: 100% !important;
+  }
+
+  &-header {
+    p {
+      @include vida-mobile-body-4;
+      @include media(">=desktop") {
+        @include vida-h3-desktop;
+      }
+    }
+  }
+
+  &-content {
+    color: get-color("mine-shaft");
+    font-size: rem(14px);
+    padding-bottom: rem(24px);
+
+    @include media(">=desktop") {
+      font-size: rem(18px);
+    }
+  }
+}
+
+.vida-ratings-section {
+  display: flex;
+  margin-bottom: 16px;
+
+  span {
+    display: block;
+    height: 14px;
+    width: 14px;
+
+    @include media(">=desktop") {
+      height: 24px;
+      width: 24px;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.vida-review-assets {
+  border-radius: rem(8px);
+  height: rem(158px);
+  margin-bottom: rem(16px);
+  width: 100%;
+
+  @include media(">=desktop") {
+    height: rem(203px);
+    width: 100%;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.break-line {
+  border: 1px solid get-color("catskill-white");
+  margin: rem(24px) 0;
+}
+
+.vida-review-user-section {
+  align-items: center;
+  display: flex;
+  gap: rem(8px);
+
+  .user-image {
+    height: rem(35px);
+    width: rem(35px);
+
+    @include media(">=desktop") {
+      height: rem(48px);
+      width: rem(48px);
+    }
+
+    img {
+      border: 1px solid get-color("orange");
+      border-radius: 50%;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .user-details {
+    @include vida-h6-mobile;
+
+    @include media(">=desktop") {
+      @include vida-h6-desktop;
+    }
+
+    span {
+      font-weight: 400;
+    }
+  }
+}
+
+.vida-review-cards-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: rem(32px);
+  margin: rem(16px) 0;
+
+  @include media(">=desktop") {
+    column-count: 3;
+    // column-count: 1;
+    // column-gap: 0;
+    // column-gap: 0;
+    // column-gap: rem(32px);
+    // flex-direction: row;
+    display: inline-block;
+    line-height: 1.25;
+    margin-left: auto;
+    margin-right: auto;
+    // row-gap: rem(32px);
+  }
+}
+
+.load-more-section {
+  text-align: center;
+
+  a {
+    font-size: rem(16px);
+  }
+}
+
+.vida-love-header-section {
+  p {
+    @include vida-mobile-body-3;
+    text-transform: uppercase;
+
+    @include media(">=desktop") {
+      @include vida-desktop-body-3;
+    }
+  }
+
+  h3 {
+    font-size: rem(24px);
+    font-weight: 600;
+    line-height: rem(30px);
+    padding-top: rem(6.5px);
+
+    @include media(">=desktop") {
+      font-size: rem(48px);
+      line-height: rem(60px);
+    }
+  }
+}

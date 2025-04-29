@@ -1,0 +1,113 @@
+.about-vida-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: rem(32px);
+
+  @include media(">=desktop") {
+    flex-direction: row;
+    // flex-wrap: wrap;
+  }
+
+  .about-vida-card-container {
+    background: get-color("alice-blue");
+    border-radius: rem(8px);
+    border-radius: rem(8px);
+    min-width: auto;
+
+    @include media(">=desktop") {
+      border-radius: rem(16px);
+      border-radius: rem(16px);
+      min-height: rem(346px);
+      width: rem(400px);
+    }
+
+    .about-vida-media-container {
+      img,
+      video {
+        border-top-left-radius: rem(8px);
+        border-top-right-radius: rem(8px);
+        object-fit: cover;
+        width: 100%;
+
+        @include media(">=desktop") {
+          border-top-left-radius: rem(16px);
+          border-top-right-radius: rem(16px);
+        }
+      }
+
+      &.img-none {
+        img {
+          display: none;
+        }
+
+        video {
+          display: block;
+        }
+      }
+
+      &.video-none {
+        img {
+          display: block;
+        }
+
+        video {
+          display: none;
+        }
+      }
+    }
+
+    .about-vida-card-content-container {
+      padding: rem(16px);
+
+      @include media(">=desktop") {
+        padding: rem(32px) rem(16px);
+      }
+
+      .about-vida-card-title {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0 rem(16px);
+
+        @include media(">=desktop") {
+          padding: 0 0 rem(28px);
+        }
+
+        a {
+          cursor: pointer;
+          display: block;
+          text-decoration: none;
+
+          // @include media("<=desktop") {
+          //   display: none;
+          // }
+        }
+
+        img {
+          height: rem(36px);
+          width: rem(36px);
+        }
+
+        p {
+          @include vida-h3-mobile;
+          color: get-color("mine-shaft");
+        }
+
+        h3 {
+          @include vida-h3-mobile;
+        }
+      }
+
+      .about-vida-card-description {
+        p {
+          @include vida-mobile-body-1;
+          color: get-color("pure-black");
+
+          @include media(">=desktop") {
+            @include vida-desktop-subtitle;
+          }
+        }
+      }
+    }
+  }
+}

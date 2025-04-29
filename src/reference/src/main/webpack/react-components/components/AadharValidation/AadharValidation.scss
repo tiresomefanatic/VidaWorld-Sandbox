@@ -1,0 +1,12 @@
+.vida-validate-aadhar {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  height: calc(100vh - 90px);
+  justify-content: center;
+  text-align: center;
+
+  &__heading-wrapper {
+    margin-bottom: rem(20px);
+  }
+}

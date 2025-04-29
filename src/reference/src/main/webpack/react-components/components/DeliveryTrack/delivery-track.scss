@@ -1,0 +1,285 @@
+// TODO: Cleanup the css with Typography
+.vida-delivery-track {
+  padding-top: rem(30px);
+
+  &__headline {
+    display: block;
+    @include media(">=desktop") {
+      display: flex;
+    }
+  }
+
+  &__order-title-primary {
+    margin-right: rem(15px);
+  }
+
+  &__icon-btn-back {
+    cursor: pointer;
+    display: inline-block;
+    font-size: rem(30px);
+    margin-right: rem(10px);
+    transform: rotate(90deg);
+    vertical-align: text-bottom;
+    @include media(">=desktop") {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(30px);
+    padding-top: rem(20px);
+    @include media(">=desktop") {
+      padding-top: rem(30px);
+    }
+  }
+
+  &__btn-back {
+    display: none;
+    margin-left: auto;
+    @include media(">=desktop") {
+      display: block;
+    }
+  }
+
+  &__comp {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: rem(20px);
+    width: 100%;
+    @include media(">=desktop") {
+      flex-direction: row;
+      gap: 1.5%;
+    }
+
+    &--left {
+      width: 100%;
+      @include media(">=desktop") {
+        width: 50%;
+      }
+    }
+
+    &--right {
+      width: 100%;
+      @include media(">=desktop") {
+        width: 50%;
+      }
+    }
+  }
+
+  &__line-break {
+    border-bottom: 1px solid get-color("light-grey");
+    padding-bottom: rem(20px);
+    padding-top: rem(10px);
+    @include media(">=desktop") {
+      padding-bottom: rem(30px);
+    }
+  }
+
+  &__wrapper {
+    &--items {
+      display: flex;
+      flex-direction: row;
+
+      &--left {
+        color: get-color("solid-black");
+        font-size: rem(12px);
+        margin-top: rem(20px);
+        position: relative;
+        @include media(">=desktop") {
+          font-size: rem(24px);
+        }
+      }
+
+      &--right {
+        border: none;
+        margin-bottom: rem(30px);
+        margin-left: rem(20px);
+        padding: rem(10px);
+        position: relative;
+        width: 100%;
+        @include media(">=desktop") {
+          border: 1px solid get-color("light-grey");
+          margin-left: rem(40px);
+          padding: rem(20px);
+        }
+
+        &--active {
+          margin-left: rem(9px);
+          @include media(">=desktop") {
+            margin-left: rem(29px);
+          }
+        }
+      }
+
+      
+    }
+
+    &__content {
+      display: none;
+      @include media(">=desktop") {
+        display: inline-block;
+      }
+
+      &--label {
+        @include h4;
+      ;
+        color: get-color("solid-grey");}
+    }
+
+    &__content-wrapper {
+      display: block;
+      @include media(">=desktop") {
+        display: flex;
+        gap: 12%;
+      }
+    }
+
+    &--sub-title {
+      @include label;
+      color: get-color("solid-grey");
+      font-weight: 400;
+    }
+
+    &__schedule-delivery {
+      margin-top: rem(20px);
+
+      .address-container {
+        background-color: get-opaque-color("light-grey", 0.2);
+        display: inline-block;
+        margin-bottom: rem(15px);
+        padding: rem(15px) rem(10px);
+        width: 100%;
+        @include media(">=desktop") {
+          width: 32%;
+        }
+
+        &__title {
+          @include label;
+          font-weight: 400;
+        }
+        
+
+        &__content {
+          @include label;
+          font-weight: 500;
+        }
+      }
+    }
+
+    &__delivery-selection {
+      @include p1;
+      background-color: get-color("titanium-white");
+      border-radius: rem(100px);
+      display: inline-block;
+      
+      line-height: rem(24px) !important;
+      margin-bottom: rem(15px);
+      margin-top: rem(20px);
+      padding: rem(5px);
+      
+      @include media("<=tablet") {
+        align-items: center;
+        display: inline-flex;
+        justify-content: center;
+        text-align: center;
+      }
+
+      span:nth-child(1) {
+        //commenting as part of delivery track single option
+        // margin-right: rem(10px);
+        @include media("<=tablet") {
+          margin-right: 0;
+        }
+      }  
+
+      &--active {
+        background-color: get-color("solid-black");
+        border-radius: rem(100px);
+        color: get-color("white");
+        cursor: pointer;
+        padding: rem(5px) rem(12px);
+      }
+
+      &--inactive { 
+        cursor: pointer;
+        padding: rem(0) rem(10px);
+        
+      }
+    }
+  }
+
+  &__form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px);
+    @include media(">=desktop") {
+      flex-direction: row;
+    }
+
+    .form__group {
+      width: 100%;
+    }
+  }
+
+  &__vertical-line {
+    border-left: 2px solid get-color("solid-black");
+    border-left-style: dotted;
+    height: 100%;
+    left: rem(10px);
+    position: absolute;
+    z-index: 1;
+    @include media(">=desktop") {
+      border-left-style: solid;
+      left: rem(20px);
+    }
+  }
+
+  &__vertical-line-inactive {
+    border-color: get-color("light-grey");
+  }
+
+  &__status-icon {
+    background-color: get-color("white");
+    border: 1px solid get-color("solid-black");
+    border-radius: 50%;
+    padding: rem(4px);
+    position: relative;
+    z-index: 2;
+    @include media(">=desktop") {
+      padding: rem(7px);
+    }
+  }
+
+  &__status-active {
+    border-color: get-color("orange");
+    color: get-color("orange");
+    font-size: rem(22px);
+    margin-left: rem(-6px);
+    padding: rem(7px);
+    z-index: 2;
+    @include media(">=desktop") {
+      font-size: rem(34px);
+      margin-left: rem(-10px);
+      padding: rem(12px);
+    }
+  }
+
+  &__status-inactive {
+    background-color: get-color("light-grey");
+    border: 1px solid get-color("light-grey");
+    border-radius: 50%;
+    color: get-color("light-grey");
+    font-size: rem(6px);
+    margin-left: rem(7px);
+    padding: rem(0);
+    position: relative;
+    z-index: 2;
+    @include media(">=desktop") {
+      font-size: rem(24px);
+      margin-left: rem(0);
+      padding: rem(7px);
+    }
+  }
+
+}

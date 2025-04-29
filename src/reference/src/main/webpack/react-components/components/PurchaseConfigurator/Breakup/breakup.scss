@@ -1,0 +1,151 @@
+@import "../../../../site/styles/base/typography";
+
+.vida-breakup {
+  &__container {
+    background: #fff;
+    border: 1px solid #d2d1d1;
+    border-radius: 16px;
+    margin: 0 16px;
+    padding: 20px 0 32px;
+
+    .popup__container {
+      height: fit-content !important;
+      max-width: 500px !important;
+      width: 90% !important;
+      @include media(">=desktop") {
+        margin: auto;
+        width: 100% !important;
+      }
+    }
+
+    .popup__close-btn {
+      display: none !important;
+    }
+  }
+
+  &__insurance-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    p {
+      @include label;
+    }
+
+    h4 {
+      font-weight: 500;
+    }
+  }
+
+  &__title {
+    @include h2;
+    padding: 0 16px 20px;
+  }
+
+  &__summary {
+    padding: 23px 16px 0;
+    
+    &-title {
+      @include h2;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__estimate {
+    max-width: 200px;
+    padding: 12px 0;
+    @include media(">=desktop") {
+      max-width: unset;
+    }
+  }
+
+  &__details {
+    border-bottom: 1px solid #d2d1d1;
+    border-top: 1px solid #d2d1d1;
+    padding: 20px 16px 24px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 20px;
+
+    &:last-child {
+      padding: 0;
+    }
+  }
+
+  &__name {
+    @include label;
+  }
+
+  &__value {
+    @include p1; 
+
+    &--deduct {
+      color: #00d971;
+    }
+  }
+
+  &__terms {
+    @include media(">=desktop") {
+      margin-bottom: 20px !important;
+    }
+
+    .form__field-label {
+      align-items: center;
+      column-gap: 4px;
+      display: flex;
+      margin-top: 2px;
+    }
+  }
+
+  &__submit {
+    background: #fff;
+    bottom: 0;
+    box-shadow: 0 -2px 10px rgba(40, 40, 40, 0.15);
+    left: 0;
+    margin-top: 20px;
+    padding: 16px;
+    position: fixed;
+    width: 100%;
+    @include media(">=desktop") {
+      box-shadow: none;
+      padding: 0 16px;
+      position: relative;
+      
+    }
+  }
+
+  &__help-link {
+    align-items: center;
+    column-gap: 4px;
+    display: flex;
+    margin-top: rem(15px);
+    padding: rem(10px) rem(16px) 0;
+  }
+
+  &__error {
+    border-color: #c00;
+
+    &--msg {
+      @include p3;
+      color: #c00;
+      margin: 5px 0 0 -30px;
+    }
+  }
+
+  &__btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+}
+
+.display-none-icon {
+  display: none;
+}

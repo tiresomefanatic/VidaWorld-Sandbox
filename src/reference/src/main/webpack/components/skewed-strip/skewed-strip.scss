@@ -1,0 +1,66 @@
+.vida-skewed-strip {
+  margin-bottom: rem(20px);
+
+  &__wrapper {
+    align-items: center;
+    align-items: center;
+    display: flex;
+    height: auto;
+    justify-content: center;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    max-width: 100rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: rem(30px) !important;
+    width: 100%;
+
+    &-complementary {
+      border-radius: rem(4px);
+      margin-left: rem(10px);
+
+      @include media("<tablet") {
+        max-width: 96%;
+        padding-bottom: 0;
+
+        p {
+          font-size: rem(16px) !important;
+        }
+      }
+
+      @include media("<desktop") {
+        p {
+          font-size: rem(24px);
+        }
+      }
+
+      p {
+        font-size: rem(28px);
+        padding: 10px 20px !important;
+        transform: skew(200deg) !important;
+      }
+    }
+
+    &-data {
+      display: flex;
+      flex-grow: 1;
+      margin-top: 4px;
+
+      @include media("<desktop") {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.parallelogram {
+  transform: skew(160deg);
+}
+
+.orange {
+  background: get-color("orange");
+  color: get-color("white");
+}

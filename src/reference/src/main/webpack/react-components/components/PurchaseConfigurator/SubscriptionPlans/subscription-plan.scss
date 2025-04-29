@@ -1,0 +1,260 @@
+@import "../../../../site/styles/base/typography";
+
+.vida-subscription-plans {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(20px);
+  }
+
+  &__links-block {
+    align-items: center;
+    display: flex;
+
+    a {
+      cursor: pointer;
+    }
+
+    span {
+      margin: 0 rem(10px);
+    }
+  }
+
+  &__subscription-selection {
+    @include p1;
+    background-color: get-color("titanium-white");
+    border-radius: rem(100px);
+    display: inline-block;
+    padding: rem(5px) rem(0);
+    
+    @include media("<=tablet") {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    span:nth-child(1) {
+      margin-right: rem(10px);
+      @include media("<=tablet") {
+        margin-right: 0;
+      }
+    }  
+
+    &--active {
+      background-color: get-color("solid-black");
+      border-radius: rem(15px);
+      color: get-color("white");
+      cursor: pointer;
+      padding: rem(5px) rem(12px);
+    }
+
+    &--inactive { 
+      cursor: pointer;
+      padding: rem(0) rem(10px);
+      
+    }
+  }
+
+  &__compare-cards {
+    display: flex;
+    @include media(">=desktop") {
+      width: 100% !important;
+
+      >div:not(:first-child) {
+        margin-left: 60px;
+      }
+      
+      >div {
+        max-width: 400px;
+        overflow: hidden;
+        width: 25%;
+      }
+    }
+  }
+
+  &__card {
+    border: 2px solid get-color("light-grey");
+    border-radius: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 16px;
+     
+    &:hover {
+      border: 2px solid get-color("dark-blue");
+    }
+
+    &-plan {
+      display: flex;
+      justify-content: space-between;
+
+      &-title {
+        @include h3;
+      }
+
+      &-amount {
+        @include h3;
+      }
+    }
+
+    &-desc {
+      @include p2;
+    }
+
+    &.card-selected {
+      border: 2px solid get-color("dark-blue");
+    }
+  }
+
+  .popup {
+    top: 0;
+    z-index: 999;
+
+    .popup__container {
+      border-radius: 0;
+      height: 100%;
+      max-height: 100%;
+      overflow-y: auto;
+      padding: rem(20px) 0;
+      width: 100%;
+  
+      @include media(">=desktop") {
+        border-radius: 0;
+        height: 80%;
+        padding: rem(30px) 0;
+        width: 80%;
+      }
+  
+      .popup__body {
+        padding: 0 rem(16px);
+  
+        @include media(">=desktop") {
+          padding: 0 rem(30px);
+        }
+      }
+    }
+  }
+
+  &__card-item {
+    border: 2px solid get-color("light-grey");
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+    min-height: 320px;
+    padding: 16px;
+
+    &:hover {
+      border: 2px solid get-color("dark-blue");
+    }
+
+    &-wrapper {
+      margin-bottom: rem(20px);
+    }
+
+    &-plan {
+      display: flex;
+      justify-content: space-between;
+
+      &-title {
+        @include h3;
+      }
+
+      &-amount {
+        @include h3;
+      }
+    }
+
+    &-desc {
+      @include p2;
+      margin: 0;
+    }
+
+    &.card-selected {
+      border: 2px solid get-color("dark-blue");
+    }
+  }
+
+  &__modal {
+    &-title {
+      @include h2;
+      margin-bottom: rem(20px);
+    }
+  }
+
+  &__card-item {
+    &-title {
+      @include h3;
+    }
+
+    &-desc {
+      @include h3;
+      margin-bottom: rem(20px);
+      margin-top: rem(10px);
+    }
+
+    &-list {
+      list-style: none;
+      margin: 0;
+      white-space: pre-wrap;
+
+      li {
+        display: flex;
+        margin-bottom: rem(20px);
+
+        i {
+          margin-right: rem(10px);
+        }
+
+        span {
+          @include p2; 
+          color: get-color("solid-grey");
+        }
+      }
+    }
+
+    &-cost {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: auto;
+
+      span {
+        padding-top: rem(5px);
+      }
+
+      h2 {
+        @include h2;
+        flex-grow: 1;
+        margin: 0;
+        padding-left: rem(5px);
+      }
+
+      p {
+        @include p3;
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  &__no-record {
+    @include h4;
+    margin-bottom: rem(20px);
+  }
+
+  &__selected-record {
+    margin-bottom: rem(20px);
+
+    a {
+      cursor: pointer;
+      margin-left: rem(10px);
+    }
+  }
+
+  .tns-inner {
+    margin: 0 !important;
+  }
+  
+}

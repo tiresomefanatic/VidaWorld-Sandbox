@@ -1,0 +1,48 @@
+$color-palette: (
+  "aqua": #00edff,
+  "blue": #00d5e5,
+  "dark-blue": #00c6d5,
+  "light-blue": #cbf7fa,
+  "lighter-blue": #c2fbff,
+  "orange": #ff5310,
+  "light-orange": #ffdacc,
+  "solid-black": #1d1b1b,
+  "solid-black-shadow": #0000004a,
+  "grey": #c9c9c9,
+  "solid-grey": #777676,
+  "light-grey": #d2d1d1,
+  "very-light-grey": #f7f4f8,
+  "nobel-grey": #969696,
+  "whisper-grey": #ebebeb,
+  "white": #fff,
+  "titanium-white": #e4e4e4,
+  "smoke-white": #f6f6f6,
+  "green": #00d971,
+  "light-green": #ccf7e2,
+  "yellow": #ef9f05,
+  "light-yellow": #fceccd,
+  "red": #c00,
+  "light-red": #f5cccc,
+  "pure-black": #000,
+  "off-white": #f1f1f1,
+  "light-gray": #c3c5c7,
+  "pale-cyan": #b3f9ff,
+  "mandys-pink": #f6bca1,
+  "catskill-white": #e4eaf1,
+  "mine-shaft": #222,
+  "oslo-gray": #85888c,
+  "alice-blue": #f1f5f8,
+  "lightning-yellow": #ffbc10,
+  "pale-blue": #e1e6ef,
+  "aqua-green": #00de5a,
+  "disclaimer-red" :#e00000
+);
+
+@function get-color($key: "primary") {
+  @return map-get($color-palette, $key);
+}
+
+@function get-opaque-color($key: "primary", $opacity: "1") {
+  $result: map-get($color-palette, $key);
+  @return rgba($result, $opacity);
+}

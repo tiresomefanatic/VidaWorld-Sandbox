@@ -1,0 +1,72 @@
+.vida-user-profile {
+  &__edit-popup {
+    .popup {
+      &__close-btn {
+        z-index: 1;
+        @include media(">=desktop") {
+          display: none;
+        }
+      }
+
+      .vida-user-profile__otp-popup {
+        .popup {
+          &__close-btn {
+            display: block;
+            right: 0;
+            z-index: 1;
+          }
+        }
+      }
+    }
+
+  }
+
+  &__otp-popup {
+    .popup {
+      &__container {
+        border-radius: 25px;
+        height: fit-content;
+        padding: 20px;
+
+        @include media(">=desktop") {
+          width: rem(435px);
+        }
+
+        @include media("<=tablet") {
+          width: 95%;
+        }
+  
+        .vida-otp__btn-container {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .profile--cropper {
+    .popup {
+      top: 0;
+      z-index: 999;
+
+      &__container {
+        align-items: center;
+        border-radius: 1rem;
+        display: flex;
+        height: fit-content;
+        justify-content: center;
+        overflow: hidden;
+        padding-top: rem(60px);
+        width: 90%;
+        @include media(">=desktop") {
+          width: 60%;
+        }
+      }
+
+      &__header {
+        position: absolute;
+        right: 0;
+        top: 10px;
+      }
+    }
+  }
+}

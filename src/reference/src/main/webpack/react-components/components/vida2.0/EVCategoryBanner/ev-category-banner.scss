@@ -1,0 +1,51 @@
+.ev-category-banner {
+  background-color: get-color("catskill-white");
+
+  &-background {
+    height: 12.5rem;
+
+    @include media(">tablet") {
+      display: none;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &-title {
+    @include vida-h1-desktop;
+    left: 7.5rem;
+    max-width: 46%;
+    position: absolute;
+    top: 13.125rem;
+
+    @include media("<=tablet") {
+      @include vida-h1-mobile;
+      left: 1.5rem;
+      max-width: 75%;
+      top: 7.5rem;
+    }
+  }
+
+  &-media {
+    height: 16.875rem;
+
+    @include media(">tablet") {
+      height: 56.25rem;
+
+      &-content {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &-content {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}

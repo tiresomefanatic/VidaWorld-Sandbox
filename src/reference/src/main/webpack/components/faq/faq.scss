@@ -1,0 +1,22 @@
+.vida-faq {
+  &__container {
+    &.vida-container {
+      padding-bottom: rem(30px);
+      padding-top: rem(30px);
+
+      @include media(">=desktop") {
+        padding-bottom: rem(60px);
+        padding-top: rem(60px);
+      }
+    }
+  }
+
+  &__title {
+    @include h2;
+    margin-bottom: 20px;
+
+    @include media(">=desktop") {
+      margin-bottom: 30px; 
+    }
+  }
+}

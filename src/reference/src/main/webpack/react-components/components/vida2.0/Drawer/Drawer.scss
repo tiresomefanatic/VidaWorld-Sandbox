@@ -1,0 +1,64 @@
+.drawer {
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  transition: all 1s linear;
+  width: 100%;
+  z-index: 999;
+  @include media(">=desktop") {
+    left: 0;
+    max-width: 622px;
+    position: relative;
+    width: 50%;
+    z-index: 1;
+  }
+
+  &__content {
+    background: get-color("alice-blue");
+    border-radius: rem(16px) rem(16px) 0 0;
+    box-shadow: 0 rem(-10px) rem(10px) 0 rgba(0, 0, 0, 0.1);
+    padding: 0 rem(16px) rem(24px) rem(16px);
+    @include media(">=desktop") {
+      border-radius: rem(16px);
+      box-shadow: none;
+      padding: rem(32px);
+    }
+  }
+
+  &__header {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: rem(8px);
+    @include media(">=desktop") {
+      display: none;
+    }
+
+    .header__line {
+      background: get-color("pure-black");
+      border-radius: rem(48px);
+      height: rem(4px);
+      width: rem(48px);
+    }
+  }
+
+  &__body {
+    height: 100%;
+    max-height: rem(560px);
+    overflow: scroll;
+    padding-top: rem(16px);
+    @include media(">=desktop") {
+      max-height: inherit;
+      overflow: visible;
+      padding-top: 0;
+    }
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.slide-down {
+  transform: translateY(90%);
+}

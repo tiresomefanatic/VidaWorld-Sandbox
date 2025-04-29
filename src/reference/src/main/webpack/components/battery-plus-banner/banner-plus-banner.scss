@@ -1,0 +1,99 @@
+.vida-battery-plus-banner {
+  &__contianer {
+    .battery-plus-banner {
+      align-items: center;
+      background-color: get-color("alice-blue");
+      display: flex;
+      justify-content: center;
+      padding: rem(64px) 0;
+      position: relative;
+
+      @include media(">=desktop") {
+        padding: rem(88px) 0;
+      }
+
+      &__media {
+        display: none;
+        // .battery-plus-banner__img {
+        //   height: 100%;
+        //   object-fit: cover;
+        //   width: 100%;
+        //   @include media (">=desktop") {
+        //     height: 100vh;
+        //   }
+        // }
+      }
+
+      &__content {
+        backdrop-filter: blur(3px);
+        background: linear-gradient(180deg, rgba(252, 253, 255, 1), rgba(235, 237, 240, 0.6));
+        border-radius: 16px;
+        max-width: rem(320px);
+        padding: rem(32px) rem(30px);
+        @include media (">=desktop") {
+          max-width: rem(1050px);
+          padding: rem(60px) rem(107px);
+        }
+        
+        .battery-plus-details__heading {
+          @include vida-h5-mobile;
+          line-height: 20px;
+          text-align: center;
+          @include media (">=desktop") {
+            @include vida-h3-desktop;
+            line-height: 34px;
+          }
+        }
+
+        .battery-plus-details {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          margin-top: rem(32px);
+          @include media (">=desktop") {
+            margin-top: rem(56px);
+          }
+
+          &:first-child,
+          &:last-child {
+            @include media (">=desktop") {
+              max-width: rem(192px);
+            }
+          }
+
+          &__image {
+            height: rem(45px);
+            width: rem(45px);
+            @include media (">=desktop") {
+              height: rem(90px);
+              width: rem(90px);
+            }
+          }
+
+          &__container {
+            display: flex;
+            flex-direction: column;
+            @include media (">=desktop") {
+              flex-direction: row;
+              justify-content: space-between;
+            }
+          }
+          
+          &__description {
+            @include vida-h6-mobile;
+            line-height: 16px;
+            margin-top: 8px;
+            padding: 0 rem(20px);
+            text-align: center;
+            @include media (">=desktop") {
+              @include vida-h5-desktop; 
+              line-height: 24px;
+              margin-top: 24px;        
+            }
+          }
+        }
+      }
+    }
+    
+  }
+}

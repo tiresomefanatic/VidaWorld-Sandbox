@@ -1,0 +1,605 @@
+.vida-product-info-tiles {
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  @keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+  }
+
+  @include media(">=phone") { 
+    &__bootspace,
+    &__followme,
+    &__emergency {
+      &-button ,
+      &-button-close { 
+        border: rem(1px) solid;
+        border-color: get-color("solid-black");
+        border-radius: rem(32px);
+        color: get-color("solid-black");
+        display: block;
+        padding: rem(6px);
+        position: relative;
+        right: rem(7px);
+        top: rem(-49px);
+        transform: rotate(-90deg);
+        z-index: 999;
+
+        &-close {
+          padding: rem(6px);
+        }
+      }
+
+      &-cards {
+        &-popup {
+          margin: 40vh auto !important;
+
+          &-show {
+            backdrop-filter: blur(rem(3px));
+            background: rgba(0, 0, 0, 0.5);
+            bottom: 0;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            transition: 0.4s ease;
+            visibility: visible !important;
+            width: 100%;
+            z-index: 9999;
+
+          }
+
+          &-hide { display: table-column;
+            visibility: hidden;}
+
+          
+        }
+      }
+
+      &-img {
+        &-mobile {
+          display: block;
+          max-width: rem(325px);
+
+          img {
+            border-radius: 0 0 rem(25px) rem(25px);
+            position: relative;
+            right: rem(0);
+            top: rem(6px);
+          }
+        }
+      }
+    } 
+
+    &__followme {
+      &-button ,
+      &-button-close { 
+        top: rem(-62px);
+      }
+    }
+
+    &__bootspace-cards-popup-hide  > &__slider ,
+    &__followme-cards-popup-hide  > &__slider ,
+    &__emergency-cards-popup-hide > &__slider {
+      &-bg,
+      &-bg > &__slider-content {
+        max-height: rem(300px);
+
+        h3 { padding-top: rem(15px);
+          text-indent: rem(10px);}
+      }
+    }
+
+    &__bootspace-cards-popup-hide > &__slider-bg &__slider-content > &__accessories_desc ,
+    &__followme-cards-popup-hide > &__slider-bg &__slider-content > &__accessories_desc ,
+    &__emergency-cards-popup-hide > &__slider-bg &__slider-content > &__accessories_desc {
+      padding-left: rem(11px);
+      padding-top: rem(10px);
+    }
+
+    &__bootspace-img-hoverdesktop {
+      img {
+        left: rem(-8px);
+        position: relative;
+        top: rem(-20px);
+      }
+    }
+
+    &__emergencyalert-img-mobile {
+      img {
+        border-radius: 0 0  rem(25px)  rem(25px);
+      }
+    }
+  }
+  @include media(">=tablet") {
+    &__headlamp-img {
+      img {
+        top: rem(-9px);
+      }
+    }
+
+    &__bootspace-img,
+    &__bootspace-img-hoverdesktop {
+      img {
+        left: rem(-9px);
+        top: rem(-27px);
+      }
+    }
+
+    &__followme-img {
+      img {
+        border-radius: rem(25px);
+        left: rem(0);
+        top: rem(36px) !important;
+      }
+    }
+
+    &__keyfob-img img {
+      top: rem(-11px);
+    }
+
+    &__followme-img-hover {
+      left: rem(182px);
+    }
+  }
+  @include media(">=desktop") {
+    &__followme-img-hover {
+      left: rem(185px);
+      max-width: 100%;
+      object-fit: cover;
+      position: relative;
+      top: rem(-120px);
+      z-index: 999;
+
+      img {
+        height: rem(300px);
+        width: rem(374px);
+      }
+    }
+
+    &__bootspace-img-hoverdesktop {
+      img {
+        top: rem(3px);
+      }
+    }
+
+    &__followme-cards > &__slider-content > &__accessories_desc {
+      width: 51%;
+    }
+
+    &__battery-cards > &__slider-content {
+      margin-left: rem(-25px);
+    }
+
+    &__bootspace,
+    &__followme,
+    &__emergency {
+      &-img {
+        &-desktop {
+          border-radius: rem(25px);
+          display: block;
+          left: rem(219px);
+          max-width: rem(449px);
+          max-width: rem(417px);
+          object-fit: cover;
+          position: relative;
+          top: rem(-94px);
+          z-index: 999;
+          img {width: rem(450px);}
+        }
+        &-mobile {display: none !important;}
+      }
+
+      &-button {
+        display: none;
+
+        &-close {
+          display: none;
+        }
+      }
+
+      &-cards-popup-show {
+        display: none;
+      }
+    }
+
+    &__headlamp-cards {
+      left: rem(-105px);
+      max-width: rem(302px);
+      position: relative;
+    }
+
+    &__bootspace-cards {
+      left: rem(195px);
+      max-width: rem(270px);
+      position: relative;
+      top: rem(-315px);
+    }
+
+    &__battery-cards {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: rem(278px);
+      min-height: rem(300px);
+      padding: 0 rem(30px);
+      position: relative;
+      right: rem(-74px);
+      top: rem(-5px);
+    }
+
+    &__emergency-cards {
+
+      bottom: rem(-316px);
+      max-width: rem(300px);
+      position: relative;
+      right: rem(930px);
+    }
+
+    &__followme-cards {
+      bottom: rem(-16px);
+      left: rem(-215px);
+      max-width: rem(270px);
+      position: relative;
+    }
+
+    &__keyfob-cards {
+      left: rem(-332px);
+      max-width: rem(277px);
+      position: relative;
+      top: rem(17px);
+    }
+    
+    &__bootspace-img {
+      img {
+        left: rem(-10px);
+        top: rem(4px);
+      }
+    }
+
+    &__bootspace-img-desktop img {
+      height: rem(300px);
+      width: rem(333px);
+    }
+
+    &__headlamp-img {
+      img {
+        left: rem(40px);
+        top: rem(-9px);
+      }
+    }
+
+    &__followme-img {
+      img {
+        top: rem(60px) !important;
+      }
+    }
+
+    &__emergencyalert-img {
+      position: absolute;
+
+      img {
+        left: rem(-1px);
+        top: rem(-15px);
+      }
+    }
+
+    &__keyfob-img {
+      img {
+        left: rem(-1px);
+        top: rem(-18px);
+      }
+    }
+
+    .tns-horizontal.tns-subpixel>.tns-item {
+      width: auto !important;
+    }
+
+    &__slider {
+      &-bg {
+        margin: 0;
+
+      }
+    }
+
+    &__bootspace {
+      &-desktop {
+        &-showimage {
+          picture {
+            &:nth-of-type(1) {
+              display: none !important;
+            }
+
+            &:nth-of-type(2) { 
+              display: table !important;
+              z-index: 999;
+
+              img {
+                animation-duration: 2s;
+                animation-fill-mode: both;
+                animation-name: fadeIn;
+                border-radius: 0 rem(25px) rem(25px) 0;
+                max-width: rem(450px);
+              }
+            }  
+          }
+        }
+      }
+
+      &-cards-popup-desktop-show > &__slider-bg {
+        display: flex;
+        margin: rem(10px) auto 0 auto;
+        max-height: rem(335px);
+        max-width: rem(720px) !important;
+      }
+    }
+
+  }
+  
+  @include media(">=desktop-md") {
+    &__battery-cards {
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: nowrap;
+      max-width: rem(540px);
+      padding: 0 rem(45px);
+    }
+
+    &__followme-cards {
+      left: rem(-210px);
+      max-width: 33.6875rem;
+    }
+
+    &__followme-img {
+      img {
+        border-radius: rem(25px);
+        left: rem(0);
+        top: rem(-51px) !important;
+      } 
+    }
+
+    &__bootspace-img-hoverdesktop {
+      img {
+        top: 0.3125rem;
+      }
+    }
+
+    &__followme-img-hover {
+      left: 16.25rem;
+      top: rem(-106px) !important;
+    }
+
+    &__emergency-cards {
+      right: 74.25rem;
+    }
+            
+    &__battery-cards > &__slider-content > &__accessories_desc {
+      max-height: rem(245px);
+      overflow: hidden;
+    }
+
+  }
+  
+  @include media(">=desktop-lg") {
+    &__battery-cards {
+      flex-wrap: nowrap;
+      max-width: 38.75rem;
+      padding: 0 rem(45px);
+      top: rem(5px);
+    }
+
+    &__emergency-cards {
+      right: 79.25rem !important;
+    }
+
+    &__bootspace-cards {
+      img {
+        left: rem(-9px);
+        top: rem(-3px);
+      }
+    }
+
+    &__followme-img {
+      img {top: rem(-70px) !important;}
+    }
+
+    &__followme-cards {
+      left: -13.3125rem;
+      max-width: 37.3125rem;
+    }
+
+    &__bootspace-img-hoverdesktop {
+      top: -98px;
+    }
+
+    &__followme-img-hover {
+      left: 18.25rem;
+      top: rem(-99px) !important;
+    }
+  }
+
+  img { object-fit: cover;
+    width: 100%;}
+
+  h3 {
+    color: get-color("solid-black");
+  }
+
+  &__container {
+    overflow: hidden;
+  }
+
+  &__accessories_desc {
+    font-size: rem(12px);
+    max-width: 96%;
+    word-break: break-word;
+  }
+ 
+  &__headlamp-cards,
+  &__battery-cards,
+  &__emergency-cards,
+  &__keyfob-cards,
+  &__bootspace-cards,
+  &__followme-cards {
+    display: inline-block;
+    
+
+    h3,
+    div {
+      padding: rem(8px) 0 0 rem(10px);
+      text-align: left;
+    }
+
+    img {
+      margin-top: rem(20px);
+      position: relative;
+    }
+  }
+
+  &__followme-cards {
+    background-color: get-color("solid-grey") !important;
+    color: get-color("light-grey");
+    min-height: rem(300px);
+    h3 {color: get-color("light-grey");}
+  }
+
+  &__emergency-cards {
+    min-height: rem(300px);
+  }
+
+  &__keyfob-cards {
+    min-height: rem(300px);
+  }
+
+  &__headlamp-img {
+    max-width: rem(236px);
+
+    img {
+      left: rem(24px);
+      top: rem(-3px);}
+  }
+
+  &__bootspace-img {
+    max-width: rem(325px);
+
+    img {left: rem(-11px);
+      top: rem(-20px);}
+  }
+  
+  &__batteries-img {
+    max-width: rem(393px);
+
+    img {
+      left: rem(-9px);
+      top: rem(4px);}
+  }  
+
+  &__followme-img {
+    float: right;
+    max-width: 100%;
+
+    img { border-radius: rem(25px);
+      top: rem(42px);}
+  }
+
+  &__emergencyalert-img {
+    img {
+      top: rem(-3px);}
+  }
+
+  &__keyfob-img {
+    img {
+      top: rem(14px);}
+  }
+
+  &__slider {
+    margin-bottom: rem(60px);
+    margin-top: rem(10px);
+    padding: rem(30px) 0 0 rem(1px);
+    
+    @include media(">=phone") {
+      &-bg {
+        margin: rem(5px) rem(45px);
+      }
+    }
+
+    &-bg {
+      background: get-color("smoke-white");
+      border-radius: rem(32px);
+      margin: rem(5px) 0;
+      max-height: rem(300px);
+      max-width: rem(280px);
+      width: 100%;
+    }
+
+    &-card {
+      text-align: center;
+
+      img {
+        height: auto;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    &-content {
+      padding: 0 rem(10px);
+      width: 100%;
+    }
+
+  }
+
+  &__emergencyalert-img-hover {
+    left: rem(258px);
+    max-width: 100%;
+    position: absolute;
+    top: rem(-28px);
+    z-index: 999;
+
+    img {
+      height: rem(300px);
+      width: rem(455px);
+    }
+  }
+
+  &__headlamp-cards,
+  &__bootspace-cards,
+  &__battery-cards,
+  &__followme-cards,
+  &__emergency-cards,
+  &__keyfob-cards {
+    picture {
+      &:nth-of-type(1) {
+        animation-duration: 2s;
+        animation-fill-mode: both;
+        animation-name: fadeIn;
+        display: block;
+      }
+
+      &:nth-of-type(2) {
+        display: none;
+      }
+    }
+  }
+
+  &__battery-cards > &__slider-content > &__accessories_desc {
+    max-height: rem(37px);
+    overflow: hidden;
+  }
+
+  &__keyfob-cards > &__slider-content > &__accessories_desc {
+    max-height: rem(33px);
+    overflow: hidden;
+  }
+
+  .tns-nav {
+    position: relative;
+    top: rem(700px);
+    z-index: 9999;
+  }
+
+  button {
+    float: right;
+    margin-right: rem(20px);
+  }
+
+}

@@ -1,0 +1,91 @@
+
+.vida-billing-configure {
+
+  min-height: 100vh;
+
+  &__wrapper {
+    background-color: get-color("white");
+    border-radius: 16px;
+    height: rem(170px);
+    margin-bottom: rem(20px);
+    overflow: hidden;
+    padding: rem(16px) rem(16px);
+    transition: height 1.5s, margin 2s, padding 2s;
+  }
+
+
+  &-fadeout {
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+
+
+  &__heading {
+    font-size: rem(20px);
+  }
+
+  &__subtext {
+    padding-left: rem(30px);
+
+    label {
+      display: inline;
+    }
+
+    a {
+      margin-left: rem(5px);
+    }
+  }
+
+  &__primary {
+    float: left;
+    width: 50%;
+  }
+
+  &__secondary {
+    display: flex;
+    flex-direction: column;
+    min-height: 145px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: auto;
+    @include media(">=phone") {
+      gap: 5px;
+    }
+    @include media(">=tablet") {
+      gap: 20px;
+    }
+
+    button {
+      float: right;
+      @include media(">=phone") {
+        padding: 10px;
+      }
+    }
+  }
+
+  &__product-image {
+    height: 110px;
+    margin-bottom: rem(5px);
+    max-width: 100%;
+    @include media(">=tablet") {
+      margin-left: rem(23px);
+    }
+
+    @include media(">=desktop-lg") {
+      height: 164px;
+    }
+  }
+
+  &__product-info-new {
+    text-align: right;
+  }
+
+  &__product-title {
+    padding-left: rem(55px);
+  }
+}

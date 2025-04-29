@@ -1,0 +1,152 @@
+.step-list-outer {
+  &__container {
+    width: 100%;
+  }
+}
+
+.vida-step-list {
+  &__wrapper {
+    width: 100%;
+    z-index: 998;
+  }
+
+  .btn {
+    &--primary {
+      background: transparent;
+      border: 1px solid get-color("white");
+      color: get-color("white");
+      height: auto;
+      padding: 8px rem(18px);
+      z-index: 11;
+
+      &:hover {
+        background: get-color("white");
+        color: get-color("orange");
+      }
+    }
+  }
+
+  &__item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    position: relative;
+    @include media("<tablet") {
+      margin-right: 5px;
+    }
+
+    img {
+      height: (150px);
+      width: (150px);
+    }
+
+    &-desc {
+      font-size: rem(13px);
+      max-width: rem(150px);
+      padding: 0 rem(10px);
+      text-align: center;
+    }
+  }
+
+  &__container {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: rem(20px);
+    justify-content: center;
+    padding: rem(30px);
+    @include media("<=tablet") {
+      padding: rem(14px);
+    }
+
+    &-card {
+      .vida-step-list {
+        &__item {
+          border: 1px solid get-color("light-grey");
+          border-radius: rem(16px);
+          box-shadow: 0 rem(2px) rem(10px) rgba(40, 40, 40, 0.15);
+          flex-direction: row;
+          height: rem(100px);
+          max-width: rem(320px);
+          @include media("<=tablet") {
+            max-width: none;
+            width: 100%;
+          }
+
+          &-piccontainer {
+            align-items: center;
+            background-color: get-color("blue");
+            border-radius: 50%;
+            display: flex;
+            height: rem(75px);
+            justify-content: center;
+            margin: 0 rem(10px);
+            min-width: rem(75px);
+
+            img {
+              height: rem(30px) !important;
+              width: rem(30px) !important;
+            }
+          }
+        }
+
+        &__container {
+          &__step {
+            &--body {
+              h2,
+              p {
+                max-width: fit-content !important;
+                padding-left: 0;
+                text-align: left !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.bg-gray {
+      background-color: get-color("whisper-grey");
+    }
+  }
+
+  &__title {
+    color: get-color("white");
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__allginment {
+    align-items: center;
+    display: flex;
+  }
+
+  h2 {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: rem(30px);
+    max-width: rem(150px);
+    position: relative;
+    text-align: center;
+    width: rem(230px);
+    z-index: 11;
+  }
+}
+
+
+.vida-step-list--theme-v1 {
+  .vida-step-list__container {
+    align-content: center;
+    justify-content: space-evenly;
+    text-align: center;
+
+    .vida-step-list__item {
+      gap: 15px;
+      margin-bottom: 40px;
+      @include media(">=desktop") {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

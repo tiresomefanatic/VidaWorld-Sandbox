@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Charging</title>
+    <meta charset="UTF-8" />
+    <meta name="template" content="page-content" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Meta Property for Analytics Datalayer -->
+    <meta property="pageCategory" content="Charging" />
+    <meta property="language" content="en" />
+    <meta property="country" content="India" />
+    <meta property="isErrorPage" content="false" />
+    <meta property="errorCode" content="404" />
+    <meta property="errorDescription" content="Page Not Found" />
+
+    <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico" />
+    <%= htmlWebpackPlugin.options.custom %>
+    <script
+      src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js"
+      async
+    ></script>
+  </head>
+
+  <body>
+    <header></header>
+    <div class="herobanner">
+      <div class="vida-hero-banner">
+        <div class="vida-hero-banner__asset">
+          <picture>
+            <source
+              srcset="
+                https://dev.vidaworld.com/content/dam/vida/global/optimized-images/newhomepage/Reserve_Now_Desktop.png
+              "
+              media="(min-width:768px)"
+            />
+            <source
+              srcset="
+                https://dev.vidaworld.com/content/dam/vida/global/optimized-images/newhomepage/Reserve_Now_Mobile.png
+              "
+              media="(min-width: 360px)"
+            />
+            <img
+              class="vida-hero-banner__asset-image"
+              src="https://dev.vidaworld.com/content/dam/vida/global/optimized-images/newhomepage/Reserve_Now_Mobile.png"
+              alt="VIDA V1 IS HERE&nbsp;"
+            />
+          </picture>
+        </div>
+        <div
+          class="
+            vida-container
+            vida-hero-banner__container vida-hero-banner__container-bottom-txt
+          "
+        >
+          <div class="vida-hero-banner__title">
+            <div class="vida-hero-banner__title-text">
+              <h1>
+                <b
+                  >How to Charge Your VIDA V1 Electric<br />
+                  Scooter?<br
+                /></b>
+                <span class="sub-text"
+                  >Welcome to our guide on how to charge your VIDA V1 electric
+                  scooter. Charging your VIDA V1 is simple, and we'll walk you
+                  through the process step by step</span
+                >
+                <div class="vida-hero-banner__title-list">
+                  <ul>
+                    <li>
+                      <img
+                        src="/clientlib-site/images/png/charging/plug-icon.png"
+                        alt="plug"
+                      />
+                      <h5>Connector Type: AC-1, DC-1</h5>
+                    </li>
+                  </ul>
+                </div>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <video-carosuel></video-carosuel>
+    <product-specs></product-specs>
+    <highlight-card-carousel></highlight-card-carousel>
+    <info-banner></info-banner>
+    <text-asset></text-asset>
+    <asset-collage></asset-collage>
+    <!-- Location Finder Component -->
+    <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        chargingStationsLocatorConfig: {
+          mode: "chargingStations",
+          defaultLocationId: "NEW DELHI~DELHI~INDIA",
+          title: `<p>Charging Stations <span class="txt-color--orange">near you</span></p>`,
+          googleNavigateLabel: "Navigate",
+          locations: [
+            {
+              id: "chargingStations",
+              label: "Charging stations"
+            },
+            {
+          "id": "atherChargingStations",
+          "label": "Ather Charging stations"
+        }
+          ]
+          // }, {
+          //   "id": "swappingStations",
+          //   "label": "Swapping Stations"
+          // }]
+        }
+      });
+    </script>
+    <div
+      data-section-id="locator"
+      data-component="LocationFinder"
+      data-cmp-type="react"
+      data-cmp-config="chargingStationsLocatorConfig"
+    ></div>
+    <footer></footer>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+@import "../../../../site/styles/base/typography";
+
+.vida-aadhar-details {
+  .form {
+    &__group {
+      max-width: 100%;
+    }
+
+    &__field {
+      &-aadhar {
+        display: flex;
+        flex-direction: row;
+        gap: 0 rem(10px);
+        justify-content: space-between;
+
+        .form__field-input {
+          text-align: center;
+
+          &:focus {
+            &::-webkit-input-placeholder {
+              opacity: 0;
+            }
+            
+            &::-moz-input-placeholder {
+              opacity: 0;
+            }
+            
+            &::placeholder {
+              opacity: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__title {
+    @include h2;
+    margin-bottom: rem(10px);
+  }
+
+  &__radio-btn {
+    margin-bottom: rem(10px);
+    @include media(">=desktop") {
+      margin-bottom: rem(5px);
+    }
+  }
+
+  &__subsidy-fields {
+    background: #f6f6f6;
+    border-radius: rem(16px);
+    padding: rem(20px) rem(16px) rem(10px) rem(16px);
+    @include media(">=desktop") {
+      border-radius: rem(4px);
+      padding: rem(30px) rem(32px) rem(30px) rem(32px);
+    }
+  }
+
+  &__card-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(14px);
+    @include media(">=desktop") {
+      margin-bottom: rem(28px);
+    }
+  }
+
+  &__check-field {
+    @include p2;
+  }
+
+  &__card-label {
+    @include h4-md;
+  }
+
+  &__learn-more {
+    @include btn-action;
+    margin-left: auto;
+  }
+
+  &__error-log {
+    @include p2;
+    color: get-color("red");
+    margin-bottom: rem(10px);
+  }
+
+  &__submit-btn {
+    text-align: right;
+  }
+
+  &__checkbox-mark-black {
+    &::after {
+      color: get-color("solid-black") !important;
+    }
+  }
+
+  &__checkbox-mark-error {
+    border-color: get-color("red");
+  }
+
+  &__info {
+    margin-top: 10px;
+  }
+}

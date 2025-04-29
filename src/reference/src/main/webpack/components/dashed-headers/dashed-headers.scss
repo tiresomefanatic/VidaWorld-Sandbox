@@ -1,0 +1,39 @@
+.vida-dashed-headers {
+  padding-top: rem(25px);
+
+  &__text {
+    color: get-color("orange");
+    text-align: center;
+
+    &--black {
+      color: get-color("solid-black");
+    }
+  }
+
+  &__black-border {
+    background: get-color("solid-black");
+    display: block;
+    height: rem(2px);
+    margin: 0 auto;
+    margin-bottom: rem(15px);
+    width: rem(270px);
+  }
+
+  &__orange-border {
+    background: get-color("orange");
+    display: block;
+    height: rem(2px);
+    margin: 0 auto;
+    margin-bottom: rem(15px);
+    width: rem(270px);
+  }
+}
+
+.theme-v1 {
+  .vida-dashed-headers {
+    .vida-dashed-headers__orange-border {
+      margin-top: rem(7px);
+      width: rem(145px);
+    }
+  }
+}

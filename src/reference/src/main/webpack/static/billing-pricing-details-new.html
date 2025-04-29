@@ -1,0 +1,912 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<title>Home</title>
+	<meta charset="UTF-8" />
+	<meta name="template" content="page-content" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- Meta Property for Analytics Datalayer -->
+	<meta property="pageCategory" content="Booking" />
+	<meta property="pageName" content="Booking:Billing details" />
+	<meta property="country" content="India" />
+	<meta property="language" content="en" />
+	<meta property="isErrorPage" content="false" />
+	<meta property="errorCode" content="404" />
+	<meta property="errorDescription" content="Page Not Found" />
+
+	<link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+	<script>
+		const sessionCookieExist = document.cookie.match(/^(.*;)?\s*SESSION_TOKEN\s*=\s*[^;]+(.*)?$/);
+		if (!sessionCookieExist) {
+			window.location.href = "/login.html" + "?redirectURL=" + window.location.href;
+		}
+	</script>
+	<%= htmlWebpackPlugin.options.custom %>
+		<script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js"
+			async></script>
+</head>
+
+<body>
+	<header></header>
+	<div data-component="Notification" data-cmp-type="react"></div>
+	<script>
+		window.appConfig = Object.assign(window.appConfig || {}, {
+			"billingPricingNewConfig": {
+				"billingDetails": {
+					"title": "Billing details",
+					"fields": {
+						"nameField": {
+							"label": "Name"
+						},
+						"emailField": {
+							"label": "Email Id"
+						},
+						"phoneNumberField": {
+							"label": "Phone Number"
+						},
+						"aadharNumberField": {
+							"label": "Aadhar Number"
+						},
+						"gstNumberField": {
+							"label": "GST No."
+						},
+						"companyNameField": {
+							"label": "Company Name"
+						},
+						"companyEmailField": {
+							"label": "Company Email Id"
+						},
+						"billingAddressField": {
+							"label": "Billing Address"
+						},
+						"shippingAddressField": {
+							"label": "Shipping Address"
+						},
+						"enterGst": {
+							"label": "Have a GST Number?"
+						}
+					}
+				},
+				"scooterInfo": {
+					"title": "Select Variant",
+					"priceType": "Ex-Showroom Price",
+					"defaultCityState": "BENGALURU~KARNATAKA~INDIA",
+					"splitterChar": "~",
+					"variantBtnText":"Select Variant",
+					"product": {
+						"range": "Range",
+						"topSpeed": "Top speed",
+						"acceleration": "0-40km/h",
+						"chargingTime": "0 - 100% in",
+						"certifiedRange": "Certified Range",
+            			"enableCertifiedRange": true,
+					},
+					"colorSummaryLabel": "Included",
+					"tooltipConfig": {
+						"info": "*Price is inclusive of portable charger, FAME II subsidy and state government subsidy (Wherever applicable).",
+						"infoPosition": "top",
+						"id": "effective-price"
+					},
+				},
+				"policySelection": {
+					"title": "Comprehensive Plans",
+					"logoURL": "https://picsum.photos/124/67",
+					"amountSubtext": "Including GST",
+					"description": {
+						"addCPA": {
+						"label": "Compulsory Personal Accident (CPA) cover has been removed from all plans.",
+						"action": "Add CPA"
+						},
+						"removeCPA": {
+						"label": "All plans include Compulsory Personal Accident (CPA) cover.",
+						"action": "Remove CPA"
+						}
+					},
+					"addOnLabel": "Add Extra Coverage (Add-ons)",
+					"addOnBtn": {
+						"label": "Add Cover"
+					},
+					"updateOnBtn": {
+						"label": "Update Cover"
+					},
+					"noResponseModel": {
+						"title": "Information",
+						"description": "We are unable to generate Quote. Don't worry, our executives will assist you in Experience Center",
+						"okBtn": "OK"
+					},
+					"resetBtn": {
+						"label": "Reset Cover"
+					},
+					"addPolicyBtn": {
+						"label": "Add Policy"
+					},
+					"removePolicyBtn": {
+						"label": "Remove Policy"
+					},
+					"removeCPAPopup": {
+						"title": "Are you sure you want to remove Compulsory Personal Accident (CPA) cover from all policies?",
+						"description": "According to the Insurance Regulatory and Development Authority of India (IRDAI), all vehicle owners must have a compulsory personal accident cover. ",
+						"message": "Please select one of the reasons of removal:",
+						"options": [
+						{
+							"label": "I do not have a valid Driving License",
+							"value": "I do not have a valid Driving License"
+						},
+						{
+							"label": "I have a separate General PA Cover(Non Motor Product)",
+							"value": "I have a separate General PA Cover(Non Motor Product)"
+						},
+						{
+							"label": "I have a Standalone PA cover (Motor Product)",
+							"value": "I have a Standalone PA cover (Motor Product)"
+						}
+						],
+						"actionLabel": "Remove CPA"
+					}
+				},
+				"showHomeDelivery": false,
+				"gstConfig": {
+					"title": "GST Registration",
+					"description": "You can register your vehicle under you business",
+					"info":"If you are a corporate user entering GST is mandatory",
+					"subtitle": "Business Details",
+					"gstNumberField": {
+						"label": "GST No.",
+						"placeholder": "_ _ _ _ _ _ _ _ _ _ _ _ _ _ _",
+						"changeGstLabel": "Change GST",
+						"verifyGstLabel": "Verify GST",
+						"validationRules": {
+						"required": {
+							"message": "Please provide the GST details"
+						},
+						"custom": {
+							"message": "Please verify GST details."
+						}
+						}
+					},
+					"backLabel": "Back",
+					"confirmLabel": "Confirm"
+				},
+				"exchangePolicyDetails": {
+					"tradeInPlan": {
+						"title": "Do you have a two wheeler to trade-in ?",
+						"yesBtn": {
+							"label": "Yes"
+						},
+						"noBtn": {
+							"label": "No"
+						},
+						"confirmation": {
+							"title": "Confirmation",
+							"description": "We are unable to generate Quote. You can visit to our Experience Center for the Exchange Process.",
+							"okBtn": {
+							"label": "OK"
+							}
+						},
+					},
+					"exchangePolicy": {
+						"title": "Exchange your two wheeler",
+						"description": "Save money & environment by trading your current two wheeler for VIDA",
+						"poweredByImg": "https://media.vidaworld.com/is/image/heromotocorp/VIDA-new-logo?fmt=webp&wid=360",
+						"info": "The price calculated over here is not finalized until the dealer approved",
+						"orderStatusConfig": [
+							{
+							"id": 0,
+							"icon": "scooter",
+							"label": "Apply for exchange",
+							"message": "Get an estimate quote"
+							},
+							{
+							"id": 1,
+							"icon": "search",
+							"label": "Schedule Inspection",
+							"message": "VIDA expert visits within 2-3 working days"
+							},
+							{
+							"id": 2,
+							"icon": "scooter",
+							"label": "Price Approval",
+							"message": "Make a choice to continue with or without"
+							},
+							{
+							"id": 3,
+							"icon": "truck",
+							"label": "Vehicle Pickup",
+							"message": "Old one is taken & you will recive a cashback"
+							},
+							{
+							"id": 4,
+							"icon": "wallet",
+							"label": "Complete Purchase",
+							"message": "Receive your new VIDA accordingly"
+							}
+						],
+						"vehiclePurchaseDetails": {
+							"stepTitle": "Step 1 of 3",
+							"title": "Vehicle Purchase Details",
+							"vehicleMakeField": {
+							"id": "vehiclemaking",
+							"label": "Vehicle Make (Brand)",
+							"name": "vehicle_make",
+							"options": [
+								{
+								"label": "Select",
+								"value": ""
+								}
+							],
+							"validationRules": {
+								"required": {
+								"message": "Please select a vehicle brand"
+								}
+							}
+							},
+							"vehicleModelField": {
+							"id": "vehiclemodel",
+							"label": "Vehicle Model",
+							"name": "vehicle_model",
+							"options": [
+								{
+								"label": "Select",
+								"value": ""
+								}
+							],
+							"validationRules": {
+								"required": {
+								"message": "Please select a vehicle model"
+								}
+							}
+							},
+							"vehicleTypeField": {
+							"id": "vehicletype",
+							"label": "Vehicle Type",
+							"name": "vehicle_type",
+							"options": [
+								{
+								"label": "Select",
+								"value": ""
+								}
+							],
+							"validationRules": {
+								"required": {
+								"message": "Please select a vehicle type"
+								}
+							}
+							},
+							"ccField": {
+							"id": "cctype",
+							"label": "cc",
+							"name": "vehicle_cc",
+							"options": [
+								{
+								"label": "Select",
+								"value": ""
+								}
+							],
+							"validationRules": {
+								"required": {
+								"message": "Please select cc"
+								}
+							}
+							},
+							"purchaseMonthField": {
+							"id": "purchaseMonth",
+							"name": "purchase_month",
+							"label": "Purchase Month & Year",
+							"options": [
+								{
+								"label": "Month",
+								"value": ""
+								}
+							],
+							"validationRules": {
+								"required": {
+								"message": "Please select month"
+								}
+							}
+							},
+							"purchaseYearField": {
+							"id": "purchaseYear",
+							"name": "purchase_year",
+							"label": "Purchase Year",
+							"limit": "20",
+							"options": [
+								{
+								"label": "Year",
+								"value": ""
+								}
+							],
+							"validationRules": {
+								"required": {
+								"message": "Please select year"
+								}
+							}
+							},
+							"cityField": {
+							"label": "Purchase City",
+							"name": "purchase_city",
+							"validationRules": {
+								"required": {
+								"message": "City is required."
+								}
+							}
+							},
+							"stateField": {
+							"label": "State",
+							"name": "purchase_state",
+							"validationRules": {
+								"required": {
+								"message": "State is required."
+								}
+							}
+							}
+						},
+						"ownershipDetails": {
+							"stepTitle": "Step 2 of 3",
+							"title": "Ownership Details",
+							"registrationNumberField": {
+							"id": "registrationNumber",
+							"label": "Registeration Number",
+							"name": "register_number",
+							"placeholder": "Enter",
+							"validationRules": {
+								"required": {
+								"message": "Please Enter Ownership number"
+								}
+							}
+							},
+							"numberField": {
+							"id": "registrationNumber",
+							"label": "Number of Owner",
+							"name": "number_of_owner",
+							"options": [
+								{
+								"label": "Select",
+								"value": ""
+								},
+								{
+								"label": "1",
+								"value": "1st"
+								},
+								{
+								"label": "2",
+								"value": "2nd"
+								}
+							],
+							"validationRules": {
+								"required": {
+								"message": "Please select Ownership number"
+								}
+							}
+							},
+							"ownershipField": {
+							"id": "ownershiptype",
+							"label": "Ownership Type",
+							"name": "ownership_type",
+							"options": [
+								{
+								"label": "Select",
+								"value": ""
+								},
+								{
+								"label": "Owned",
+								"value": "Owned"
+								},
+								{
+								"label": "Loan",
+								"value": "Loan"
+								},
+								{
+								"label": "Lease",
+								"value": "Lease"
+								}
+							],
+							"validationRules": {
+								"required": {
+								"message": "Please select Ownership number"
+								}
+							}
+							},
+							"insuranceValidityField": {
+							"id": "insurancevalidity",
+							"label": "Insurance Validity",
+							"name": "insurance_validity",
+							"placeholder": "Enter",
+							"validationRules": {
+								"required": {
+								"message": "Please select a date till when insurance is valid."
+								}
+							},
+							"invalidRules": {
+								"required": {
+								"message": "Insurance validity must be grater than or equal to today"
+								}
+							}
+							},
+							"manufactureYearField": {
+							"id": "manuFactureYear",
+							"label": "Manufacturing Year",
+							"name": "year_mfg",
+							"limit": "20",
+							"options": [
+								{
+								"label": "Year",
+								"value": ""
+								}
+							],
+							"validationRules": {
+								"required": {
+								"message": "Please select year"
+								}
+							}
+							},
+							"manufactureMonthField": {
+							"id": "manuFactureMonth",
+							"label": "Manufacturing Month & Year",
+							"name": "month_mfg",
+							"options": [
+								{
+								"label": "Month",
+								"value": ""
+								}
+							],
+							"validationRules": {
+								"required": {
+								"message": "Please select month"
+								}
+							}
+							},
+							"challanInfo": {
+							"id": "challanInfo",
+							"name": "challan_info",
+							"label": "I have paid all my challans and No accidents",
+							"confirmation": {
+								"title": "Confirmation",
+								"description": "You have not paid all of your challans, please contact VIDA experience centre.",
+								"okBtn": {
+								"label": "OK"
+								}
+							}
+							},
+							"hypothecationInfo": {
+							"id": "hypothecationInfo",
+							"name": "hypothecation_info",
+							"label": "Vehicle is not under Hypothecation",
+							"confirmation": {
+								"title": "Confirmation",
+								"description": "You have not paid all of your challans, please contact VIDA experience centre.",
+								"okBtn": {
+								"label": "OK"
+								}
+							}
+							},
+							"manufacturePurchaseCheck": {
+							"message": "Manufacturing date should be before Purchase date"
+							}
+						},
+						"vehicleConditionDetails": {
+							"stepTitle": "Step 3 of 3",
+							"title": "Vehicle Condition",
+							"networkError": "Something went wrong",
+							"rateConditionDetails": {
+							"id": "rateCondition",
+							"label": "Rate the Condition",
+							"name": "rate_the_condition",
+							"options": [
+								{
+								"label": "Select",
+								"value": ""
+								},
+								{
+								"label": "Good",
+								"value": "good"
+								},
+								{
+								"label": "Bad",
+								"value": "Bad"
+								}
+							],
+							"validationRules": {
+								"required": {
+								"message": "Please rate the condition of scooty."
+								}
+							}
+							},
+							"distanceDetails": {
+							"id": "distanceCondition",
+							"label": "KMs Run",
+							"name": "kms_run",
+							"options": [
+								{
+								"label": "Select",
+								"value": ""
+								},
+								{
+								"label": "0-20K",
+								"value": "0-20K"
+								},
+								{
+								"label": "20-40K",
+								"value": "20-40K"
+								},
+								{
+								"label": "40-60K",
+								"value": "40-60K"
+								}
+							],
+							"validationRules": {
+								"required": {
+								"message": "Please select distance covered."
+								}
+							}
+							},
+							"issuesListDetails": [
+							{
+								"label": "I don’t have any scratches on my vehicle",
+								"value": "body_part"
+							},
+							{
+								"label": "The engine starts normally",
+								"value": "starting"
+							},
+							{
+								"label": "The Silencers don’t emit any smoke",
+								"value": "smoke"
+							},
+							{
+								"label": "All lights are in working condition",
+								"value": "light_indicator"
+							},
+							{
+								"label": "The Front Tyre is in working condition; are not punctured or cracked",
+								"value": "front_tyre"
+							},
+							{
+								"label": "The Rear Tyre is in working condition; are not punctured or cracked",
+								"value": "rear_tyre"
+							}
+							],
+							"getQuoteWarning": "Get Quotation will remove your previous quotation"
+						},
+						"exchangeOfferDetails": {
+							"message": "bought in",
+							"priceText": "You may recieve an approximate amount between",
+							"details": "However, our technician will reach out within 1-2 working days to schedule a visit to your place & check your vehicle. <br /> *Amount will be deducted from purchase price. Incase of any change the difference will be handled "
+						},
+						"agreeTerms": {
+						"id": "exchangeTerms",
+						"agreeLabel": "I agree to",
+						"terms": {
+							"label": "Terms and Conditions",
+							"actionUrl": ""
+						},
+						"btnLabel": {
+							"agree": "Agree",
+							"close": "Close"
+						},
+						"validationRules": {
+							"required": {
+							"message": "Please agree the terms and conditions."
+							}
+						}
+						},
+						"actionBtns": {
+							"continueBtn": {
+							"label": "Continue"
+							},
+							"backBtn": {
+							"label": "Back"
+							},
+							"getQuoteBtn": {
+							"label": "Get Quote"
+							},
+							"acceptBtn": {
+							"label": "Accept & Schedule Visit"
+							},
+							"notInterestedBtn": {
+							"label": "Not Interested"
+							},
+							"removeExchange": {
+							"label": "Remove Exchange"
+							}
+						}
+					}
+				},
+				"billingShippingConfig": {
+                    "title": "Billing & shipping details",
+                    "billingAddress": {
+                        "title": "Billing Address",
+                        "message": "This address will be your RTO Address!"
+                    },
+                    "shippingAddress": {
+                        "title": "Shipping Address",
+                        "message": "We will check if your address is eligible for shipping, else you will need to pickup your vehicle from an experience centre.",
+                        "confirmAddressField": {
+                            "label": "Shipping address same as the billing adress "
+                        }
+                    },
+                    "addressLine1Field": {
+                        "label": "Address Line 1",
+                        "placeholder": "Building & street name",
+                        "validationRules": {
+                            "required": {
+                                "message": "Address Line 1 is required."
+                            }
+                        }
+                    },
+                    "addressLine2Field": {
+                        "label": "Address Line 2",
+                        "placeholder": "Area",
+                        "validationRules": {
+                            "required": {
+                                "message": "Address Line 2 is required."
+                            }
+                        }
+                    },
+                    "landmarkField": {
+                        "label": "Landmark",
+                        "placeholder": "Near..."
+                    },
+                    "pinCodeField": {
+                        "label": "PIN Code",
+                        "placeholder": "------",
+                        "validationRules": {
+                            "required": {
+                                "message": "Pin code is required."
+                            },
+                            "minLength": {
+                                "value": 6,
+                                "message": "Pin code must have 6 digits."
+                            },
+                            "customValidation": {
+                                "noServiceMsg": "Pincode is not serviceable.",
+                                "noCityMatchMsg": "Pincode do not match with the city selected.",
+                            }
+                        }
+                    },
+                    "cityField": {
+                        "label": "City"
+                    },
+                    "stateField": {
+                        "label": "State"
+                    },
+                    "notificationBanner": {
+                        "label": "Please Note",
+                        "info": "You will have to submit verification documents after payment ( Pasport size photo, Aadhar Card,  Pan card, Address proof)Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                    }
+                },
+				"pricingConfig": {
+					"title": "Pricing",
+					"basePrice": {
+						"basePriceLabel": "Base Price",
+						"id": "base-price"
+					},
+					"otherCharges": {
+						"otherChargesLabel": "Other charges",
+						"info": "Other charges Test Other charges TestOther charges TestOther charges TestOther charges TestOther charges TestOther charges Test",
+						"infoPosition": "right",
+						"id": "other-charges"
+					},
+					"addOns": {
+						"addonsLabel": "Add-ons",
+						"info": "Other charges Test Other charges TestOther charges TestOther charges TestOther charges TestOther charges TestOther charges Test",
+						"infoPosition": "right",
+						"id": "addons"
+					},	
+					"gst": {
+						"gstLabel": "GST",
+						"info": "If you are a corporate user entering GST is mandatory",
+						"infoPosition": "right",
+						"individualLabel": "Individual",
+						"corporateLabel": "Corporate",
+						"selectLabel": "Choose",
+						"id": "gst"
+					},
+					"exchange": {
+						"exchangeLabel": "Exchange",
+						"id": "exchange",
+						"info": "The price calculated over here is not finalized until the dealer approved",
+						"infoPosition": "right"
+					},
+					"tradeIn": {
+						"tradeinLabel": "Trade-in your current two-wheeler",
+						"id": "tradin"
+					},	
+					"configure": {
+						"configureLabel": "Configure",
+						"info": "Other charges Test Other charges TestOther charges TestOther charges TestOther charges TestOther charges TestOther charges Test",
+						"infoPosition": "right",
+						"id": "configure"
+					},			
+					
+					"prebookingPricePaidLabel": "Prebooking Price",
+					"homeDeliveryLabel": "Home Delivery",
+					"priceMessage": "Final price may vary depending on the exchange amount",
+					
+					"insurance": {
+						"warning": {
+							"title": "Under the Motor Vehicle Act, 2019, it is compulsory for Indian vehicle owners to at least have a third-party liability insurance policy.",
+							"description": "You may wish to apply for insurance on your own. But, after purchase you will have to provide your insurance copy."
+						},
+						"yesBtn": {
+							"label": "Agree & Remove"
+						},
+						"noBtn": {
+							"label": "Choose Another Plan"
+						},
+						"InsuranceLabel": "Insure your VIDA",
+						"coverWarning": {
+							"title": "Don't miss your valuable covers!!",
+							"description": "There are lot of attractive covers waiting for you, please check you missed out something interesting",
+							"okBtnLabel": "Ok",
+							"cancelBtn": "Cancel"
+						}
+					},
+					"subsidy": {
+						"warning": {
+							"title": "EMPS subsidy not checked",
+							"description": "Do you want to proceed without emps subsidy"
+						},
+						"yesBtn": {
+							"label": "Ok"
+						},
+						"noBtn": {
+							"label": "Cancel"
+						},
+						"subsidyLabel": "EMPS Subsidy",
+						"info": "Other charges Test Other charges TestOther charges TestOther charges TestOther charges TestOther charges TestOther charges Test",
+						"infoPosition": "right"
+						},
+
+					"loanSubmitted": {
+						"warning": {
+							"title": "Submission Error",
+							"description": ""
+						},
+						"yesBtn": {
+							"label": "Ok"
+						},
+					}
+				},
+				"optBuyBackConfig": {
+					"checkBoxLabel": "Opt For Buy Back",
+    				"optBuyBackSubtext": "Assured Buyback helps... If you agree to accept we will track your vehicle data",
+					"agreeTerms": {
+						"id": "optBuyBackTerms",
+						"agreeLabel": "I agree to",
+						"terms": {
+						"label": "Terms and Conditions",
+						"actionUrl": ""
+						},
+						"btnLabel":{
+						"agree": "Agree",
+						"close": "Close"
+						},
+					}				
+				},
+				"homeDeliveryConfig": {
+					"checkBoxLabel": "Opt for Home Delivery",
+    				"homeDeliverySubtext": "Get your VIDA delivered to your shipping address with a small fee starting from ₹100",				
+				},
+				"configureConfig": {
+    				"mainText": "You can Configure your scooter",
+					"yesBtn":"Configure Now",
+					"noBtn": "Skip Configuration"
+				},
+				"optHomeDeliveryConfig": {
+					"checkBoxLabel": "Opt for Home Delivery",
+    				"optHomeSubtext": "Get your VIDA delivered to your shipping address with a small fee starting from ₹100",
+				},
+				"paymentOption": {
+					"fullPayment": {
+						"title": "Make full payment",
+						"onlinePaymentLabel": "Full payment Online",						
+						"payBtn": {
+							"label": "Click to Pay Online"
+						},
+						"cashPaymentLabel": "Full payment with Cash",
+						"cashInfo": "<p>Please visit nearby Hero center to pay cash and complete your purchase and also carry below mentioned documents. Passport size picture Adhaar Copy PAN Card</p>",
+						"centerLabel": "Nearby Experience Center",
+						"disclaimer": "Kindly finish this within 3-5 working days to ensure timely delivery."
+					},
+					"loan": {
+						"title": "Purchase on loan",
+						"viewOfferBtn": {
+							"label": "View Offers"
+						},
+						"applyOfferBtn": {
+							"label": "Apply offers"
+						}
+					},
+					"lease": {
+						"title": "Purchase on lease",
+						"viewOfferBtn": {
+							"label": "View Offers"
+						},
+						"applyOfferBtn": {
+							"label": "Apply offers"
+						}
+					}
+
+				},
+				"deliveryStatusConfig": {
+					"customizedRequests": {
+					"label": "Customized Requests",
+					"placeholder":	"ex : gift wrap my VIDA"
+						
+					},
+					"exchangeApprovalInfo": "Payment allowed only after exchange amount approved",
+					"statuses": [{
+						"id": 0,
+						"label": "Configure"
+					},
+					{
+						"id": 1,
+						"label": "Ownership"
+					},
+					{
+						"id": 2,
+						"label": "Delivery Details"
+					},
+					{
+						"id": 3,
+						"label": {
+							"payment": "Payment",
+							"loan": "Apply for loan",
+							"lease": "Apply for lease"
+						}
+					}
+					],
+					"addressError": "Please update the address before proceed",
+					"shippingAddressError": "Please update the shipping address before proceed",
+					"billingAddressError": "Please update the billing address before proceed",
+					"deliveryMessage": "Estimated Delivery time 2 months",
+					"saveBtn": {
+						"label": "Save & Continue"
+					},
+					"paymentBtn": {
+						"label": "Make Payment"
+					},
+					"configBtn": {
+						"label": "Configure"
+					},
+					"centrePayBtn": {
+						"label": "Pay at Centre"
+					},
+					"loanBtn": {
+						"label": "Confirm"
+					},
+					"helpLink": {
+						"helpLabel": "Trouble booking?",
+						"chatLabel": "Chat with us"
+					},
+					"applyBtn": {
+						"label": "Apply Offers"
+					},
+					"paymentOption": {
+						"label": "Choose a payment option"
+					},
+					"termsAndCondition": {
+						"labelText": "Terms & Condition",
+						"btnLabelClose": "Close",
+						"contentId": "vidadcdc"
+					}
+				},
+				"loanErrorMsg": "Your Loan status is under processing can't edit the order.",
+				"infoBox": "You are eligible for state subsidy. This amount will be refunded to your bank account within 10 business days."				
+			}
+
+		});  
+	</script>
+
+	<div data-component="Spinner" data-cmp-type="react"></div>
+	<div data-component="BillingPricingDetailsNew" data-cmp-type="react" data-cmp-config="billingPricingNewConfig"></div>
+	<div id="optBuyBackTerms" class="hideTerms">
+		<p>Pre booking Terms</p>
+		<p>&</p>
+		<p>Conditions</p>
+	  </div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30">
+	<title>station-highlighted-svg</title>
+	<style>
+		.s0 { fill: #1d1b1b } 
+		.s1 { fill: none;stroke: #ffffff;stroke-linecap: round;stroke-linejoin: round } 
+	</style>
+	<g id="Layer">
+		<ellipse id="Layer" class="s0" cx="14.9" cy="15.1" rx="14.1" ry="14.4"/>
+		<path id="Layer" class="s0" d="m6.7 6.7h16.4v16.8h-16.4z"/>
+		<path id="Layer" class="s1" d="m8.5 11.7h12.9v8.8h-12.9z"/>
+		<path id="Layer" class="s1" d="m8.5 10h2.8v1.7h-2.8z"/>
+		<path id="Layer" class="s1" d="m18.6 10h2.8v1.7h-2.8z"/>
+		<path id="Layer" class="s1" d="m11.1 15h2.1"/>
+		<path id="Layer" class="s1" d="m17.1 15h2.1"/>
+		<path id="Layer" class="s1" d="m12.1 14v2.1"/>
+	</g>
+</svg>

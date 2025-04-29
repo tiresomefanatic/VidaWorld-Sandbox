@@ -1,0 +1,396 @@
+<!-- //Temporary Page to show the Orders -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Profile</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Profile" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico" />
+  <script>
+    const sessionCookieExist = document.cookie.match(
+      /^(.*;)?\s*SESSION_TOKEN\s*=\s*[^;]+(.*)?$/
+    );
+    if (!sessionCookieExist) {
+      window.location.href =
+        "/login.html" + "?redirectURL=" + window.location.href;
+    }
+  </script>
+  <%= htmlWebpackPlugin.options.custom %>
+    <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js"
+      async></script>
+</head>
+
+<body>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      HeaderConfig: {
+        navbarOptions: [
+          {
+            image:
+              "../src/main/webpack/resources/images/png/explore_icon.png",
+            title: "EXPLORE",
+            navLink: "#"
+          },
+          {
+            image: "../src/main/webpack/resources/images/png/try_icon.png",
+            title: "TRY",
+            navLink: "#"
+          },
+          {
+            image: "../src/main/webpack/resources/images/png/buy_icon.png",
+            title: "BUY",
+            navLink: "#"
+          },
+          {
+            image: "../src/main/webpack/resources/images/png/love_icon.png",
+            title: "LOVE",
+            navLink: "#"
+          }
+        ],
+        termsAndPrivacyText: [
+          {
+            title: "TERMS OF SERVICE",
+            navLink: "#"
+          },
+          {
+            title: "PRIVACY POLICY",
+            navLink: "#"
+          }
+        ],
+        tryOptionContent: {
+          title: "TRY",
+          sitesOption: [
+            {
+              name: "Book Test Ride",
+              navLink: "#"
+            },
+            {
+              name: "Design Your VIDA",
+              navLink: "#"
+            }
+          ]
+        },
+        buyOptionContent: {
+          title: "BUY",
+          sitesOption: [
+            {
+              name: "Book @ ₹499",
+              navLink: "#"
+            },
+            {
+              name: "Buy a VIDA",
+              navLink: "#"
+            }
+          ]
+        },
+        exploreOptionContent: {
+          title: "EXPLORE",
+          sitesOption: [
+            {
+              name: "All Products",
+              navLink: "#"
+            },
+            {
+              name: "V1 Pro",
+              navLink: "#"
+            },
+            {
+              name: "V1 Plus",
+              navLink: "#"
+            },
+            {
+              name: "Our Story",
+              navLink: "#"
+            },
+            {
+              name: "Blogs",
+              navLink: "#"
+            },
+            {
+              name: "FAQs",
+              navLink: "#"
+            }
+          ]
+        },
+        loveOptionContent: {
+          title: "LOVE",
+          sitesOption: [
+            {
+              name: "VIDA Community",
+              navLink: "#"
+            },
+            {
+              name: "Charging Stations",
+              navLink: "#"
+            },
+            {
+              name: "Dealership Locator",
+              navLink: "#"
+            },
+            {
+              name: "Offers",
+              navLink: "#"
+            }
+          ]
+        },
+        hamburgerBgImg: {
+          mobImg:
+            "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-solid-color-on-gray-background-image_557017.jpg",
+          desktopImg:
+            "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-solid-color-on-gray-background-image_557017.jpg"
+        },
+        hamburgerBg1Img: {
+          mobImg:
+            "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-solid-color-on-gray-background-image_557017.jpg",
+          desktopImg:
+            "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-solid-color-on-gray-background-image_557017.jpg"
+        },
+        myAccountContent: {
+          myAccountText: "MY ACCOUNT",
+          profileLink: "#",
+          preLoginNavLink: "#",
+          signUpNavLink: "#",
+          preLoginText: "Login",
+          signUpText: "Sign Up"
+        },
+        headerVidaLogo:
+          "../src/main/webpack/resources/images/png/vida_white_logo.png",
+        vidaLogoNavLink: "#",
+        vidaHeaderBackNavLink: "#",
+        headerBacknNewTab: false,
+        vidaHeaderBackIcon:
+          "../src/main/webpack/resources/images/png/header_left_arrow.png",
+        vidaHeaderTitle: "Profile",
+        hamburgerVidaLogo:
+          "https://mms.businesswire.com/media/20220304005159/en/1379682/4/vida.jpg",
+        vidaCustomerCareIcon:
+          "../src/main/webpack/resources/images/png/vida_customer_care_icon.png",
+        vidaCustomerCareNavLink: "#",
+        customerCareNewTab: false,
+        logoutlabel: "Logout",
+        headerVariation: ""
+      }
+    });
+  </script>
+  <div data-section-id="header" data-component="Header" data-cmp-type="react" data-cmp-version="2.0"
+    data-cmp-config="HeaderConfig"></div>
+
+  <section class="vida-aboutus-details" data-component="about-us-details">
+    <div class="vida-aboutus-details__wrapper">
+      <div class="vida-aboutus-details__container__content">
+        <p>With innovation at the core of its philosophy, the New Delhi (India) headquartered Hero MotoCorp has been
+          at
+          the
+          forefront of designing and developing technologically advanced motorcycles and scooters for customers
+          around
+          the
+          world. It became the world's largest two-wheeler manufacturer in 2001, in terms of unit volume sales in
+          a
+          calendar
+          year, and has maintained the coveted title for the past 20 consecutive years.
+          With over 100 million satisfied customers across the globe, it continues to champion socio-economic
+          progress
+          and
+          empowerment through its range of products and services.
+        </p>
+        <p>
+          Led by Dr. Pawan Munjal, Chairman, Hero MotoCorp, it has taken rapid strides to expand its presence to
+          40
+          countries
+          across Asia, Africa, and South & Central America. Hero MotoCorp is a truly global enterprise with a
+          workforce that
+          comprises of people from different nationalities including India, Bangladesh, Colombia, Germany,
+          Austria,
+          Japan and
+          France.</p>
+        <p> In line with Hero's vision to "Be the Future of Mobility", Dr. Munjal unveiled a new brand to lead the
+          mobility
+          transformation across the world. VIDA, Powered by Hero - was born on March 3, 2022, with a focus on
+          sustainability,
+          and the vision of a flourishing, meaningful world for future generations.</p>
+      </div>
+      <div class="vida-aboutus-details__container__mobile-content">
+        <p>With innovation at the core of its philosophy, the New Delhi (India) headquartered Hero MotoCorp has been
+          at
+          the
+          forefront of designing and developing technologically advanced motorcycles and scooters for customers
+          around
+          the
+          world. It became the world's largest two-wheeler manufacturer in 2001, in terms of unit volume sales in
+          a
+          calendar
+          year, and has maintained the coveted title for the past 20 consecutive years.</p>
+      </div>
+      <div class="vida-aboutus-details__container__read">
+        <a class="vida-aboutus-details__container__read__hidden" href="#">Read More</a>
+      </div>
+      <button class="vida-aboutus-details__container__button">
+        <a href="http://">
+          More About Hero</a></button>
+    </div>
+  </section>
+
+
+  <section class="vida-aboutus-stories">
+    <div class="vida-aboutus-stories__container">
+      <div class="our-stories-img">
+        <picture>
+          <source srcset="/clientlib-site/images/png/vision-mission.png" media="(min-width:1024px)">
+          <source srcset="/clientlib-site/images/png/vision-mission-mob.png" media="(min-width: 368px)">
+          <img class="our-stories-img__image" src="/clientlib-site/images/png/vision-mission.png"
+            alt="our-stories-img__image" />
+        </picture>
+      </div>
+      <div class="our-stories-text">
+        <div class="our-stories-text__vision">
+          <h2>Our Vision</h2>
+          <p>Using the power of our scale, we want to democratise electric mobility for the planet.</p>
+        </div>
+        <div class="our-stories-text__mission">
+          <h2>Our Mission</h2>
+          <p>Equipping the world with the best in riding tech and empowering people to make moves that matter,
+            today.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vida-aboutus-values">
+    <div class="vida-aboutus-values__container">
+      <div class="our-values">
+        <h2 class="our-values__heading">
+          Our Values
+        </h2>
+        <div class="our-values__card-container">
+          <div class="our-values__card-container__card">
+            <div class="card-img">
+              <picture>
+                <source srcset="/clientlib-site/images/png/values-Courage.png" media="(min-width:1024px)">
+                <source srcset="/clientlib-site/images/png/values-Courage.png" media="(min-width: 368px)">
+                <img class="card-image" src="/clientlib-site/images/png/values-Courage.png" alt="card-image" />
+              </picture>
+            </div>
+            <div class="card-text">
+              <div class="card-text__value-wrap">
+                <h3 class="card-text__title">Courage </h3>
+                <p class="card-text__desc">Green mobility should be global reality.
+                  And we’re chasing this ambition with all our technological might. Fuelled to overcome
+                  all
+                  constraints that might come our way.</p>
+              </div>
+            </div>
+          </div>
+          <div class="our-values__card-container__card">
+            <div class="card-img">
+              <picture>
+                <source srcset="/clientlib-site/images/png/values-Honesty.png" media="(min-width:1024px)">
+                <source srcset="/clientlib-site/images/png/values-Honesty.png" media="(min-width: 368px)">
+                <img class="card-image" src="/clientlib-site/images/png/values-Honesty.png" alt="card-image" />
+              </picture>
+            </div>
+            <div class="card-text">
+              <div class="card-text__value-wrap">
+                <h3 class="card-text__title">Honesty</h2>
+                  <p class="card-text__desc">With great product, transparency comes easy. Our riders’
+                    trust is
+                    what drives us to keep raising the bar.</p>
+              </div>
+            </div>
+          </div>
+          <div class="our-values__card-container__card">
+            <div class="card-img">
+              <picture>
+                <source srcset="/clientlib-site/images/png/values-Optimism.png" media="(min-width:1024px)">
+                <source srcset="/clientlib-site/images/png/values-Optimism.png" media="(min-width: 368px)">
+                <img class="card-image" src="/clientlib-site/images/png/values-Optimism.png" alt="card-image" />
+              </picture>
+            </div>
+            <div class="card-text">
+              <div class="card-text__value-wrap">
+                <h3 class="card-text__title">Optimism</h3>
+                <p class="card-text__desc">What good has ever come out a cynic’s hat? At VIDA, we
+                  supercharge intent into action for a better tomorrow.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vida-aboutus-values aboutus-intent">
+    <div class="vida-aboutus-values__container">
+      <div class="our-values">
+        <h2 class="our-values__heading">
+          VIDA’s Intent
+        </h2>
+        <div class="our-values__card-container">
+          <div class="our-values__card-container__card">
+            <div class="card-img">
+              <picture>
+                <source srcset="/clientlib-site/images/png/values-sustainability.png" media="(min-width:1024px)">
+                <source srcset="/clientlib-site/images/png/values-sustainability.png" media="(min-width: 368px)">
+                <img class="card-image" src="/clientlib-site/images/png/values-sustainability.png" alt="card-image" />
+              </picture>
+            </div>
+            <div class="card-text">
+              <div class="card-text__value-wrap">
+                <h3 class="card-text__title">Sustainability at Core </h3>
+                <p class="card-text__desc">VIDA is all about sustainability at scale. We are consistently optimising our
+                  processes, big and
+                  small, to move towards a future of zero emissions.</p>
+              </div>
+            </div>
+          </div>
+          <div class="our-values__card-container__card">
+            <div class="card-img">
+              <picture>
+                <source srcset="/clientlib-site/images/png/values-EV.png" media="(min-width:1024px)">
+                <source srcset="/clientlib-site/images/png/values-EV.png" media="(min-width: 368px)">
+                <img class="card-image" src="/clientlib-site/images/png/values-EV.png" alt="card-image" />
+              </picture>
+            </div>
+            <div class="card-text">
+              <div class="card-text__value-wrap">
+                <h3 class="card-text__title">Designing EVs You Deserve</h2>
+                  <p class="card-text__desc">People are curious about EVs. We want the world to be serious about them.
+                    VIDA is committed to empowering the next billion users and ushering in the electric age.</p>
+              </div>
+            </div>
+          </div>
+          <div class="our-values__card-container__card">
+            <div class="card-img">
+              <picture>
+                <source srcset="/clientlib-site/images/png/values-Change-Makers.png" media="(min-width:1024px)">
+                <source srcset="/clientlib-site/images/png/values-Change-Makers.png" media="(min-width: 368px)">
+                <img class="card-image" src="/clientlib-site/images/png/values-Change-Makers.png" alt="card-image" />
+              </picture>
+            </div>
+            <div class="card-text">
+              <div class="card-text__value-wrap">
+                <h3 class="card-text__title">Championing Change-Makers</h3>
+                <p class="card-text__desc">Change is unstoppable. Our global sustainability 
+                  fund is for individuals and communities riding us 
+                  all to a better future.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+
+</html>

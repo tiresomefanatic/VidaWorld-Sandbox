@@ -1,0 +1,211 @@
+.about-hero-card-parent-container {
+  background: get-color("white");
+  padding: rem(32px) rem(20px);
+  transition: opacity 1.5s ease-out;
+  
+  @include media(">desktop") {
+    grid-template-columns: 45% 55%;
+    padding-bottom: rem(96px) !important;
+  }
+  
+  .video-content-wrapper {
+    padding-bottom: rem(32px);
+    @include media(">=desktop") {
+      padding-bottom: rem(48px);
+    }
+  
+    &__image {
+      border-radius: rem(8px);
+      height: rem(360px);
+      @include media(">=desktop") {
+        border-radius: rem(16px);
+      }
+  
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  
+    &__video {
+      height: rem(169px);
+      position: relative;
+      @include media(">=desktop") {
+        height: rem(711px);
+      }
+
+      video {
+        border-radius: rem(8px);
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+        @include media(">=desktop") {
+          border-radius: rem(16px);
+        }
+      }
+
+      .play-button-container {
+        display: flex;
+        height: rem(46px);
+        left: 45%;
+        margin: auto;
+        position: absolute;
+        top: 45%;
+        width: rem(46px);
+        @include media(">=desktop") {
+          height: rem(100px);
+          left: 45%;
+          top: 45%;
+          width: rem(100px);
+        }
+  
+        img {
+          cursor: pointer;
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+  
+    &__ytvideo {
+      video {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+  
+  
+  .label-count {
+    @include vida-mobile-body-2;
+    padding: rem(24px) 0 0;
+    @include media(">=desktop") {
+      @include vida-desk-body-1;
+    }
+  }
+  
+  &__header-container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: rem(5px);
+    justify-content: center;
+    order: 1;
+    padding-bottom: rem(24px);
+    @include media(">=desktop") {
+      gap: rem(7.5px);
+      padding-bottom: rem(48px);
+    }
+  
+    .pre-title {
+      @include vida-mobile-subtitle;
+      text-transform: uppercase;
+  
+      @include media(">=desktop") {
+        @include vida-desktop-subtitle;
+        text-transform: uppercase;
+      }
+    }
+  
+    .title {
+      @include vida-h2-mobile;
+      @include media(">=desktop") {
+        @include vida-h2-desk;
+      }
+    }
+  }
+  
+  .img-container {
+    order: 2;
+    padding-bottom: rem(34px);
+  
+    @include media(">desktop") {
+      grid-area: 1 / 2 / span 3 / span 1;
+      margin-top: 10%;
+      order: 5;
+      padding-bottom: 0;
+      padding-left: rem(71px);
+    }
+  
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+  
+  .about-hero-description-container-left {
+    order: 4;
+  
+    @include media(">=desktop") {
+      order: 4;
+    }
+  
+    p {
+      @include vida-mobile-body-1;
+  
+      @include media(">desktop") {
+        @include vida-desk-body-1;
+        line-height: normal;
+      }
+    }
+  }
+
+  .hero-icon-header-wrapper {
+    align-items: center;
+    display: flex;
+    gap: rem(14px);
+    justify-content: center;
+    @include media(">=desktop") {
+      gap: rem(21px);
+    }
+  }
+
+  .hero-icon-container {
+    height: rem(20px);
+    width: rem(61.76px);
+    
+    @include media(">=desktop") {
+      height: rem(30px);
+      width: rem(92.64px);
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .read-icon-header-wrapper {
+    @include vida-tertiary-cta-mobile;
+    align-items: center;
+    display: flex;
+    gap: rem(8px);
+    margin-top: rem(32);
+    @include media(">=desktop") {
+      @include vida-tertiary-cta;
+      gap: rem(13px);
+      margin-top: rem(48);
+    }
+
+    .read-icon-container {
+      height: rem(16px);
+      width: rem(16px);
+      @include media(">=desktop") {
+        height: rem(18px);
+        width: rem(18px);
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+  
+}

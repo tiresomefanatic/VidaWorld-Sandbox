@@ -1,0 +1,132 @@
+.emi-calculator-container {
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+
+  .bg-img-container {
+    position: absolute;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .emi-calculator-box-wrapper {
+    padding-bottom: rem(32px);
+    padding-top: rem(32px);
+    @include media(">=desktop") {
+      padding-bottom: rem(96px);
+      padding-top: rem(67px);
+    }
+  }
+
+  .emi-calculator-box-container {
+    .emi-calculator-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: rem(16px);
+      position: relative;
+      z-index: 1;
+      @include media(">=desktop") {
+        gap: rem(32px);
+      }
+
+      &__loan-details-container {
+        border-bottom: 1px solid get-color("black");
+        margin-top: -12%;
+        position: relative;
+        z-index: 1;
+        @include media(">=desktop") {
+          margin-top: -7%;
+        }
+
+        .emi-calculator-iframe-wrapper {
+          margin-bottom: rem(24px);
+          margin-top: rem(24px);
+
+          @include media(">=desktop") {
+            margin-bottom: rem(54px);
+            margin-top: rem(54px);
+          }
+
+          iframe {
+            height: 100%;
+            min-height: 600px;
+            width: 100%;
+          }
+        }
+      }
+
+      &__redirection-card-container {
+        .vida-offer-card {
+          padding: rem(24px) 0 0 0;
+
+          @include media(">=desktop") {
+            padding: rem(96px) 0 0 0;
+          }
+
+          a {
+            min-height: rem(36px);
+            width: rem(36px);
+            @include media(">=tablet") {
+              min-height: rem(52.36px);
+              min-width: rem(52.36px);
+            }
+          }
+        }
+      }
+
+      &__choice-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        padding-top: rem(34px);
+        @include media(">=desktop") {
+          border-radius: rem(16px);
+          flex-direction: row;
+          gap: 24px;
+          padding-top: rem(96px);
+        }
+
+        button {
+          min-height: rem(51px);
+          padding: rem(16px) 0 rem(16px) 0;
+          @include media(">=desktop") {
+            min-height: rem(72px);
+            padding: rem(24px) rem(32px);
+            width: 23.75%;
+          }
+        }
+
+        .buy-button {
+          @include vida-h5-mobile;
+          background: get-color("orange");
+          border-radius: rem(8px);
+          color: get-color("white");
+          font-weight: 500;
+          line-height: 19.2px;
+          min-width: rem(300px);
+          text-align: center;
+          @include media(">=desktop") {
+            min-width: rem(263px);
+          }
+        }
+        
+        .close-button {
+          @include vida-h5-mobile;
+          border: 1px solid get-color("orange");
+          border-radius: 8px;
+          font-weight: 500;
+          line-height: 19.2px;
+          text-align: center;
+        }
+      }
+
+      &__no-dealer {
+        display: none;
+      }
+    }
+  }
+}

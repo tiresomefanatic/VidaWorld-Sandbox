@@ -1,0 +1,66 @@
+@import "../../../../site/styles/base/typography";
+@import "../../../../site/styles/base/colors";
+
+.vida-payment-options {
+  &__title-wrapper {
+    h3 {
+      @include h2;
+    }
+
+    span {
+      @include p2;
+    }
+  }
+
+  &__options {
+    align-items: center;
+    border: 2px solid get-color("light-grey");
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    height: 90px;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 17px;
+
+    &:hover {
+      border: 2px solid get-color("dark-blue");
+    }
+  }
+
+  &__subtext {
+    @include p2;
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    span {
+      @include h3;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    h2 {
+      @include h3;
+    }
+
+    p {
+      @include p2;
+    }
+  }
+
+  &__selected {
+    border: 2px solid get-color("dark-blue");
+  }
+
+  &__popup {
+    height: inherit;
+    padding-top: 40px;
+  }
+}

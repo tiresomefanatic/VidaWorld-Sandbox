@@ -1,0 +1,124 @@
+$assetWidth: 60%;
+$assetWidth-md: 65%;
+
+.vida-test-drive {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - rem(130px));
+    min-height: calc(100vh - rem(130px));
+
+    @include media(">=desktop") {
+      flex-direction: row;
+      max-height: calc(100vh - rem(76px));
+      min-height: calc(100vh - rem(76px));
+      overflow: hidden;
+    }
+  }
+
+  &__asset {
+    display: none;
+    height: rem(250px);
+    position: relative;
+
+    @include media(">=desktop") {
+      display: block;
+      // height: calc(100vh - rem(85px));
+      height: calc(100vh - rem(76px));
+      width: $assetWidth;
+    }
+
+    @include media(">=desktop-md") {
+      width: $assetWidth-md;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    &--show {
+      display: block;
+    }
+  }
+
+  &__selected-centre {
+    background: #fff;
+    border-radius: rem(32px);
+    bottom: 0;
+    box-shadow: 0 rem(2px) rem(10px) rgba(40, 40, 40, 0.1);
+    display: flex;
+    height: rem(150px);
+    margin: 0 rem(30px) rem(30px);
+    position: absolute;
+    width: calc(100% - 60px);
+  }
+
+  &__centre {
+    &-image {
+      height: rem(150px);
+      width: rem(270px);
+
+      img {
+        border-radius: rem(32px) 0 0 rem(32px);
+      }
+    }
+
+    &-detail {
+      padding: rem(10px) rem(40px) rem(20px) rem(20px);
+    }
+
+    &-name {
+      @include h3;
+    }
+
+    &-address {
+      @include h4;
+    }
+  }
+
+  &__content {
+    align-items: center;
+    background: get-color("white");
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: rem(20px) rem(16px) rem(16px); // inconsistent margin-bottom in mobile view
+    width: 100%;
+
+    @include media(">=desktop") {
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: rem(30px) rem(30px) rem(22px);
+      width: 100% - $assetWidth;
+    }
+
+    @include media(">=desktop-md") {
+      width: 100% - $assetWidth-md;
+    }
+
+    &-title {
+      font-size: rem(24px);
+      font-weight: 500;
+      padding-left: rem(10px);
+      width: 100%;
+    }
+
+    &-info {
+      font-size: rem(18px);
+      line-height: rem(22px);
+      margin-top: rem(20px);
+      padding-left: rem(10px);
+      text-align: left;
+    }
+    // override OTP from styles
+    .vida-quick-drive-form__otpfields {
+      margin-bottom: rem(20px);
+
+      .form__group {
+        min-height: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,110 @@
+.productspecification {
+  margin: rem(40px) 0;
+  @include media(">=desktop") {
+    margin: rem(64px) 0;
+  }
+
+  .product-specification-heading {
+    padding: 0 50px;
+    text-align: center;
+
+    &__title {
+      font-size: 36px;
+      font-weight: 600;
+      line-height: rem(50px);
+
+      @include media(">=desktop") {
+        font-size: 48px;
+        line-height: rem(68px);
+      }
+    }
+
+    &__description {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: rem(34px);
+      @include media(">=desktop") {
+        font-size: 28px;
+        line-height: rem(40px);
+      }
+    }
+  }
+
+  .product-specification-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: rem(1256px);
+
+    row-gap: 24px;
+    @include media("<desktop") {
+      justify-content: space-between;
+      padding: 24px 50px;
+    }
+    @include media(">=desktop") {
+      margin: 0 auto;
+      padding-bottom: 36px;
+      padding-top: 40px;
+      row-gap: 36px;
+    }
+
+    .product-item {
+      align-items: flex-start;
+      display: flex;
+      flex-basis: 45%;
+      flex-direction: column;
+      @include media(">=desktop") {
+        align-items: flex-start;
+        flex-basis: 20%;
+      }
+
+      &-image-wrapper {
+        height: 30px;
+        width: 30px;
+        @include media(">=desktop") {
+          height: 40px;
+          width: 40px;
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      &-title {
+        @include vida-h5-mobile;
+        margin: 6px 0 2px;
+        @include media(">=desktop") {
+          @include vida-h6-desktop;
+          margin: 8px 0 2px;
+          text-align: left;
+        }
+      }
+
+      &-value,
+      &-battery-value {
+        @include vida-h3-mobile;
+        align-items: center;
+        display: flex;
+        padding-right: 2px;
+
+        @include media(">=desktop") {
+          @include vida-h3-desktop;
+          padding-right: 4px;
+          text-align: left;
+        }
+
+        .unit {
+          @include vida-mobile-body-3;
+          display: inline-block;
+          padding: 0 4px;
+        }
+      }
+
+      &-battery-value {
+        display: inline;
+      }
+    }
+  }
+}

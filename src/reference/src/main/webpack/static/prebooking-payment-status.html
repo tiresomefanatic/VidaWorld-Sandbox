@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Pre Booking Status</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Pre-Booking" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <!-- <script>
+    const sessionCookieExist = document.cookie.match(/^(.*;)?\s*SESSION_TOKEN\s*=\s*[^;]+(.*)?$/);
+    if (!sessionCookieExist) {
+      window.location.href = "/login.html"+"?redirectURL="+window.location.href;
+    }
+  </script> -->
+  <%= htmlWebpackPlugin.options.custom %>
+  <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async></script>
+</head>
+
+<body>
+  <header></header>
+	<div data-component="Spinner" data-cmp-type="react"></div>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "preBookingStatusConfig": {
+        "paymentSuccess": {
+          "title": "Congratulations!",
+          "successMessage": "You have successfully reserved your VIDA",
+          "pendingMessage": "We are processing your reserve for VIDA",
+          "orderDetails": {
+            "message": "Your Order id is ",
+            "subText": "same has been sent to your email and phone number"
+          },
+          "launchDetails": {
+            "message": "The product launches in 2 months.",
+            "subText": "You have been added to our waiting list, you will receive information about release via email and message."
+          },
+          "disclaimer": {
+            "title": "Choose your scooter experience",
+            "subText": "You can continue to choose services \x26 scooter configuration as per your liking"
+          },
+          "configureBtn": {
+            "label": "Configue Now",
+          },
+          "profileBtn": {
+            "label": "Go to Profile"
+          }
+        },
+        "paymentFailure": {
+          "title": "Payment Failed",
+          "imageUrl": "asset-banner-mb",
+          "message": "The payment failed due to a technical error. If your money was debited, you should get the refund within the next 24 hrs.",
+          "retryPaymentBtn": {
+            "label": "Retry Payment",
+            "actionUrl": "/prebooking.html"
+          },
+          "helpLink": {
+            "helpLabel": "Trouble booking?",
+            "chatLabel": "Chat with us"
+          }
+        }
+      }
+    });  
+
+  </script>
+  <div data-component="PreBookingPaymentStatus" data-cmp-type="react" data-cmp-config="preBookingStatusConfig"></div>
+</body>
+
+</html>

@@ -1,0 +1,379 @@
+.buy-vida {
+  &__scroll-wrapper {
+    background-color: get-color("catskill-white");
+    background-color: get-color("catskill-white");
+    transition: opacity 1.5s ease-out;
+  }
+
+  &__container {
+    padding-bottom: rem(32px);
+    @include media(">=tablet") {
+      display: flex;
+      justify-content: center;
+      padding-bottom: rem(64px);
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    &.align-center {
+      @include media(">=tablet") {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__header {
+    @include vida-h2-mobile;
+    // padding-bottom: rem(32px);
+    padding-top: rem(32px);
+    @include media(">=tablet") {
+      @include vida-h2-desk;
+      padding-bottom: rem(64px);
+      padding-top: rem(64px);
+    }
+  }
+
+  &__learn-more-link {
+    @include vida-tertiary-cta-mobile;
+    cursor: pointer;
+    position: relative;
+    text-decoration: underline;
+    z-index: 10;
+    @include media(">=tablet") {
+      @include vida-tertiary-cta;
+    }
+  }
+
+  &__buy-now-button {
+    @include vida-h5-mobile;
+    background: get-color("orange");
+    border-radius: rem(8px);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    color: get-color("white") !important;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: rem(32px);
+    padding: rem(8px) rem(16px);
+    position: relative;
+    text-decoration: none;
+    z-index: 10;
+    @include media(">=tablet") {
+      @include vida-h5-desktop;
+      margin-right: rem(48px);
+      padding: rem(12px) rem(24px);
+    }
+  }
+}
+
+.bike-specification {
+  &__container {
+    display: flex;
+    position: relative;
+    @include media(">=tablet") {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__wrapper {
+    border-bottom: rem(1px) solid get-color("mine-shaft");
+    display: flex;
+    flex-direction: column;
+    padding-bottom: rem(33.92px);
+    padding-top: rem(33.92px);
+    @include media(">=tablet") {
+      border-bottom: none;
+      border-right: rem(1px) solid get-color("mine-shaft");
+      flex-basis: 50%;
+      padding: 0;
+      padding-top: rem(56px);
+
+      &:last-child {
+        border-right: none;
+        margin-right: 0;
+        padding-right: 0;
+      }
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:first-child {
+      .bike-specification__detail {
+        left: 0;
+      }
+    }
+
+    .buy-vida__buttonLink-wrapper {
+      @include media("<=375px") {
+        margin-top: rem(32px);
+      }
+
+      @include media(">=tablet") {
+        margin-left: rem(32px);
+      }
+    }
+
+    .home-page-bike-image {
+      @include media(">=desktop") {
+        margin-top: rem(48px);
+      }
+    }
+  }
+
+  &__image-wrapper {
+    height: rem(237px);
+    width: rem(315px);
+    @include media(">=tablet", "<desktop") {
+      width: 50%;
+    }
+    @include media(">=desktop") {
+      height: rem(518px);
+      width: rem(563px);
+    }
+
+    img {
+      height: 100%;
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
+  &__detail {
+    padding-top: rem(39.04px);
+    position: relative;
+    @include media(">=tablet") {
+      left: rem(32px);
+      margin-top: rem(-56px);
+      padding-top: 0;
+      position: absolute;
+    }
+  }
+
+  &__bike-model {
+    @include vida-h2-mobile;
+    @include media(">=tablet") {
+      @include vida-h2-desk;
+    }
+  }
+
+  &__bike-price {
+    @include vida-h2-mobile;
+    padding-top: rem(6.08px);
+    white-space: nowrap;
+    @include media(">=tablet") {
+      @include vida-label-value-text-desktop;
+      padding-top: 0;
+    }
+  }
+
+  &__showroom-text {
+    @include vida-mobile-body-3;
+    color: get-color("mine-shaft");
+    padding-top: rem(4px);
+    @include media(">=tablet") {
+      @include vida-desktop-body-3;
+      padding-top: 0;
+    }
+  }
+
+  &__speed-detail-container {
+    align-items: flex-start;
+    display: flex;
+  }
+
+  &__speed-detail-wrapper {
+    backdrop-filter: blur(5px);
+    background: rgba(228, 234, 241, 0.5);
+    border-radius: rem(8px);
+    display: flex;
+    flex-direction: row;
+    margin-top: rem(12px);
+    min-width: rem(161px);
+    padding: rem(16px) rem(8px);
+    position: absolute;
+    right: 0;
+    @include media(">=tablet") {
+      padding: rem(24px) rem(12px);
+      position: unset;
+    }
+  }
+
+  &__acceleration-text {
+    @include vida-small-text-mobile;
+    @include media(">=tablet") {
+      @include vida-small-text-desktop;
+    }
+  }
+
+  &__acceleration-unit {
+    @include vida-small-text-mobile;
+    @include media(">=tablet") {
+      @include vida-small-text-desktop;
+    }
+  }
+
+  &__speed-icon {
+    height: rem(18px);
+    width: rem(18px);
+    @include media(">=tablet") {
+      height: rem(30px);
+      width: rem(30px);
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__speed-details {
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+    padding-left: rem(6px);
+    @include media(">=tablet") {
+      padding-left: rem(12px);
+    }
+  }
+
+  &__acceleration-number {
+    @include vida-label-value-text-mobile;
+    @include media(">=tablet") {
+      @include vida-label-value-text-desktop;
+    }
+  }
+
+  &__acceleration-detail {
+    align-items: baseline;
+    display: flex;
+    gap: rem(4px);
+    @include media(">=tablet") {
+      gap: rem(6px);
+    }
+  }
+
+  &__detail-wraper {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    @include media(">=tablet") {
+      align-items: flex-start;
+    }
+  }
+}
+
+.bike-specification__wrapper.bike-specification__wrapper--border-bottom {
+  border-bottom: rem(1px) solid get-color("mine-shaft");
+  @include media(">=tablet") {
+    border-bottom: none;
+  }
+}
+
+.varient2Class {
+  flex-direction: row-reverse;
+
+  .bike-specification__detail-wraper {
+    align-items: flex-start;
+  }
+
+  .bike-specification__speed-detail-wrapper {
+    left: 0;
+  }
+}
+
+.three-varient {
+  .bike-specification {
+    &__container {
+      @media screen and (max-width: 376px) {
+        padding: rem(20px) 0;
+      }
+      @include media("<desktop") {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+
+      &.home-page-view {
+        @include media("<desktop") {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+    }
+
+    &__wrapper:first-child {
+      .bike-specification__container {
+        @include media("<desktop") {
+          flex-direction: row;
+        }
+      }
+    }
+
+    &__detail {
+      @include media("<tablet") {
+        padding-top: 0;
+      }
+
+      &-wrapper {
+        @include media("<desktop") {
+          align-items: flex-start;
+        }
+      }
+    }
+
+    &__image-wrapper {
+      height: rem(193px);
+      width: rem(193px);
+      @include media(">=tablet", "<desktop") {
+        width: 40%;
+      }
+      @include media(">=desktop") {
+        height: rem(348px);
+        width: rem(348px);
+      }
+
+      img {
+        height: 100%;
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.buy-vida__container.three-varient {
+  @include media(">=desktop") {
+    height: 566px;
+    justify-content: space-between;
+  }
+
+  .buy-vida__buttonLink-wrapper {
+    align-items: center;
+    display: flex;
+    margin-top: rem(32px);
+    @media screen and (max-width: 376px) {
+      margin-top: rem(32px);
+    }
+    @include media("<tablet") {
+      margin-top: 0;
+    }
+
+    @include media(">=tablet", "<desktop") {
+      flex-wrap: wrap;
+      gap: rem(16px);
+    }
+
+    @include media(">=desktop") {
+      margin-top: rem(64px);
+    }
+
+    .buy-vida__buy-now-button {
+      @include media(">=tablet", "<desktop") {
+        margin-right: 0;
+      }
+    }
+  }
+}

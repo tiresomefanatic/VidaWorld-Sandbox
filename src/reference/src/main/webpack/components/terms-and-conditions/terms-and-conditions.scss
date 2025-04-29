@@ -1,0 +1,53 @@
+.vida-terms-conditions {
+  &__container {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  &__body {
+    background-color: get-color("white");
+    height: 100%;
+
+    width: 100%;
+
+    &-wrap {
+      height: 100%;
+      overflow: scroll;
+      overflow-x: hidden;
+      padding: rem(20px) rem(30px) rem(80px) rem(30px);
+      width: 100%;
+    }
+
+    > p {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__btn-wrap {
+    background: get-color("white");
+    border-top: 1px solid get-color("grey");
+    bottom: 0;
+    padding: rem(15px);
+    position: fixed;
+    text-align: center;
+    width: calc(100% - 17px);
+
+    .btn {
+      height: rem(30px);
+      margin-right: rem(10px);
+      padding: rem(4px) rem(20px);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

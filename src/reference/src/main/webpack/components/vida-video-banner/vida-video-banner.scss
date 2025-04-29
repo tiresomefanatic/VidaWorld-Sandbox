@@ -1,0 +1,127 @@
+.cmp-video-banner {
+  &__container {
+    &.vida-2-container {
+      padding: rem(40px) rem(20px) rem(32px) rem(20px);
+
+      @include media(">tablet") {
+        padding: rem(48px) rem(88px) rem(56px) rem(88px);
+      }
+    }
+  }
+
+  &__slides-wrapper {
+    position: relative;
+  }
+
+  &__control-btn {
+    align-items: flex-end;
+    display: none;
+    flex-wrap: nowrap;
+    height: 0;
+    justify-content: space-between;
+    overflow: visible;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-100%);
+    width: 100%;
+
+    @include media(">tablet") {
+      display: flex;
+    }
+
+    &--prev {
+      background-image: url("/clientlib-site/images/svg/carousel-left.svg");
+      background-size: contain;
+      cursor: pointer;
+      height: rem(60px);
+      transform: translateX(-50%);
+      width: rem(60px);
+    }
+
+    &--next {
+      background-image: url("/clientlib-site/images/svg/carousel-right.svg");
+      background-size: contain;
+      cursor: pointer;
+      height: rem(60px);
+      transform: translateX(50%);
+      width: rem(60px);
+    }
+  }
+
+  &__slide {
+    position: relative;
+  }
+
+  &__play-btn {
+    cursor: pointer;
+    height: rem(30px);
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: rem(30px);
+
+    @include media(">tablet") {
+      height: rem(60px);
+      width: rem(60px);
+    }
+
+    img {
+      height: 100%;
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+
+  &__heading h2 {
+    @include vida-h3-desktop;
+    display: flex;
+    margin-bottom: rem(32px);
+
+    @include media(">tablet") {
+      @include vida-h2-desk;
+      margin-bottom: rem(56px);
+    }
+  }
+
+  &__video-cont {
+    max-width: 100%;
+
+    iframe {
+      border-radius: rem(16px);
+      height: rem(170px);
+      object-fit: cover;
+      width: 100%;
+
+      @include media(">tablet") {
+        height: rem(711px);
+      }
+    }
+
+    video {
+      border-radius: rem(16px);
+      height: rem(170px);
+      object-fit: cover;
+      width: 100%;
+
+      @include media(">tablet") {
+        height: rem(711px);
+      }
+    }
+  }
+
+  .tns-nav {
+    padding-top: rem(16px);
+
+    button {
+      background: rgba(228, 234, 241, 1);
+      border-radius: 0;
+      height: rem(2px);
+      padding: rem(1px) rem(24px);
+
+      &.tns-nav-active {
+        background: #ff5310 !important;
+      }
+    }
+  }
+}

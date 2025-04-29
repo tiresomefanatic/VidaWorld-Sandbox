@@ -1,0 +1,229 @@
+.vida-ec-hotspot {
+  overflow: hidden;
+  padding: rem(45px) rem(16px) rem(30px);
+
+  @include media (">=desktop") {
+    padding: rem(60px) 0 0;
+  }
+
+  &__heading {
+    padding-bottom: rem(30px);
+    text-align: center;
+
+    @include media (">=desktop") {
+      padding-bottom: rem(20px);
+    }
+
+    * {
+      @include h1;
+    }
+  }
+
+  &__content {
+    @include media (">=desktop") {
+      margin: 0 0 rem(120px);
+      padding: 0;
+      position: relative;
+    }
+  }
+
+  &__media {
+    align-content: center;
+    display: none;
+    height: auto;
+    justify-content: center;
+    min-height: rem(480px);
+    width: 100%;
+
+    @include media (">=desktop") {
+      display: flex;
+    }
+
+    &-asset {
+      display: flex;
+      height: auto;
+      width: 100%;
+
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  &__item {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    @include media (">=desktop") {
+      align-items: flex-start;
+      justify-content: flex-start;
+      min-width: 25%;
+      width: auto;
+  
+      &:nth-child(odd) { 
+        .vida-ec-hotspot__item-position {
+          top: 50%;
+        }
+      }
+
+      &:first-child {
+        .vida-ec-hotspot__card {
+          left: rem(30px);
+        } 
+      }
+  
+      &:nth-child(odd) { 
+        .vida-ec-hotspot__card {
+          top: 50%;
+        }
+      }
+  
+      &:nth-last-child(1) {
+        .vida-ec-hotspot__card {
+          right: rem(30px);
+        } 
+      }
+  
+      &:nth-last-child(2) {
+        .vida-ec-hotspot__card {
+          right: 25%;
+        } 
+      }
+    }
+
+    &-wrapper {  
+      display: flex;
+      flex-direction: column;
+      gap: rem(40px) 0;
+
+      @include media (">=desktop") {
+        flex-direction: row;
+        gap: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    &-position {
+      display: none;
+
+      @include media (">=desktop") {
+        cursor: pointer;
+        display: block;
+        height: 50%;
+        position: relative;
+        width: 100%;
+        z-index: 2;
+  
+        &:hover {
+          + .vida-ec-hotspot__card {
+            display: flex;
+          }
+        }
+      }
+    }
+
+    &--reverse {
+      @include media (">=desktop") {
+        .vida-ec-hotspot__card {
+          flex-direction: row-reverse;
+
+          &-content {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+
+  &__card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px) 0;
+    
+    @include media (">=desktop") {
+      display: none;
+      flex-direction: row;
+      gap: 0 rem(30px);
+      justify-content: center;
+      position: absolute;
+      top: 0;
+    }
+
+    &-media {
+      align-items: center;
+      display: flex;
+      flex-shrink: 0;
+      height: rem(300px);
+      justify-content: center;
+      position: relative;
+      width: rem(300px);
+
+      @include media (">=desktop") {
+        height: rem(358px);
+        width: rem(358px);
+      }
+
+      &-asset {
+        z-index: 1;
+
+        img {
+          border-radius: 50%;
+          height: rem(263px);
+          object-fit: cover;
+          width: rem(263px);
+
+          @include media (">=desktop") {
+            height: rem(314px);
+            width: rem(314px);
+          }
+        }
+      }
+        
+
+      &::after {
+        background-color: get-color("orange");
+        border-radius: 50%;
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        opacity: 0.2;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    &-content {
+      max-width: rem(328px);
+      width: 100%;
+
+      @include media (">=desktop") {
+        max-width: rem(350px);
+      }
+    }
+
+    &-heading {
+      margin-bottom: rem(10px);
+
+      * {
+        @include h2;
+      }
+    }
+
+    &-description {
+      * {
+        @include p2;   
+        color: get-color("solid-grey");
+      }
+    }
+  }
+}

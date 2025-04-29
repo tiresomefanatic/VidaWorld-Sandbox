@@ -1,0 +1,110 @@
+.custom-select {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  margin-left: rem(-2px);
+  max-width: rem(252px);
+  position: relative;
+  width: 100%;
+
+  i {
+    align-items: center;
+    display: flex;
+    font-size: 16px;
+    height: 100%;
+    padding: rem(9px) rem(5px) rem(10px) rem(12px);
+    position: absolute;
+    z-index: 10;
+  }
+
+  &__btn {
+    background: transparent;
+    border: 2px solid get-color("orange");
+    border-radius: rem(50px);
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 30px;
+    position: relative;
+    user-select: none;
+    width: 100%;
+
+    &::after {
+      border-bottom: 2px solid #666;
+      border-right: 2px solid #666;
+      content: "";
+      height: 6px;
+      position: absolute;
+      right: 15px;
+      top: 45%;
+      transform: translateY(-50%) rotate(45deg);
+      transform: translateY(-50%) rotate(45deg);
+      transition: 0.2s ease;
+      width: 6px;
+    }
+
+    &-toggle {
+      border-radius: 3px 3px 0 0;
+
+      &::after {
+        transform: translateY(-50%) rotate(-135deg);
+        transform: translateY(-50%) rotate(-135deg);
+      }
+    }
+  }
+
+  &__dropdown {
+    background: get-color("pure-black");
+    border-radius: 8px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    margin-top: 5px;
+    max-height: rem(153px);
+    overflow: auto;
+    position: absolute;
+    top: 100%;
+    transform: scale(1, 0);
+    transform-origin: top center;
+    transition: 0.2s ease;
+    visibility: hidden;
+    width: 100%;
+    z-index: 1;
+
+    &::-webkit-scrollbar { 
+      width: 5px !important;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: get-color("light-orange") !important;
+      border-radius: 0 16px 16px 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: get-color("orange") !important;
+      border-radius: 0 4px 4px 0;
+      height: 50px;
+    }
+
+    &-toggle {
+      transform: scale(1, 1);
+      visibility: visible;
+    }
+
+    &-option {
+      border-radius: 8px;
+      box-sizing: border-box;
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 0 !important;
+      padding: 10px;
+
+      &.selected {
+        display: none;
+      }
+
+      &:hover {
+        background: get-color("orange");
+        color: get-color("white");
+      }
+    }
+  }
+}

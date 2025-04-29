@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Savings Calculator Page</title>
+    <meta charset="UTF-8" />
+    <meta name="template" content="page-content" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Meta Property for Analytics Datalayer -->
+    <meta property="pageCategory" content="savings calculator" />
+    <meta property="language" content="en" />
+    <meta property="country" content="India" />
+    <meta property="isErrorPage" content="false" />
+    <meta property="errorCode" content="404" />
+    <meta property="errorDescription" content="Page Not Found" />
+
+    <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico" />
+    <%= htmlWebpackPlugin.options.custom %>
+    <script
+      src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.minptest.js"
+      async
+    ></script>
+  </head>
+  <body>
+    <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        HeaderConfig: {
+          navbarOptions: [
+            {
+              image:
+                "https://mms.businesswire.com/media/20220304005159/en/1379682/4/vida.jpg",
+              title: "EXPLORE",
+              navLink: "#"
+            },
+            {
+              image:
+                "https://mms.businesswire.com/media/20220304005159/en/1379682/4/vida.jpg",
+              title: "TRY",
+              navLink: "#"
+            },
+            {
+              image:
+                "https://mms.businesswire.com/media/20220304005159/en/1379682/4/vida.jpg",
+              title: "BUY",
+              navLink: "#"
+            },
+            {
+              image:
+                "https://mms.businesswire.com/media/20220304005159/en/1379682/4/vida.jpg",
+              title: "LOVE",
+              navLink: "#"
+            }
+          ],
+          termsAndPrivacyText: [
+            {
+              title: "TERMS OF SERVICE",
+              navLink: "#"
+            },
+            {
+              title: "PRIVACY POLICY",
+              navLink: "#"
+            }
+          ],
+          tryOptionContent: {
+            title: "TRY",
+            sitesOption: [
+              {
+                name: "Book Test Ride",
+                navLink: "#"
+              },
+              {
+                name: "Design Your VIDA",
+                navLink: "#"
+              }
+            ]
+          },
+          buyOptionContent: {
+            title: "BUY",
+            sitesOption: [
+              {
+                name: "Book @ ₹499",
+                navLink: "#"
+              },
+              {
+                name: "Buy a VIDA",
+                navLink: "#"
+              }
+            ]
+          },
+          exploreOptionContent: {
+            title: "EXPLORE",
+            sitesOption: [
+              {
+                name: "All Products",
+                navLink: "#"
+              },
+              {
+                name: "V1 Pro",
+                navLink: "#"
+              },
+              {
+                name: "V1 Plus",
+                navLink: "#"
+              },
+              {
+                name: "Our Story",
+                navLink: "#"
+              },
+              {
+                name: "Blogs",
+                navLink: "#"
+              },
+              {
+                name: "FAQs",
+                navLink: "#"
+              }
+            ]
+          },
+          loveOptionContent: {
+            title: "LOVE",
+            sitesOption: [
+              {
+                name: "VIDA Community",
+                navLink: "#"
+              },
+              {
+                name: "Charging Stations",
+                navLink: "#"
+              },
+              {
+                name: "Dealership Locator",
+                navLink: "#"
+              },
+              {
+                name: "Offers",
+                navLink: "#"
+              }
+            ]
+          },
+          hamburgerBgImg: {
+            mobImg:
+              "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-solid-color-on-gray-background-image_557017.jpg",
+            desktopImg:
+              "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-solid-color-on-gray-background-image_557017.jpg"
+          },
+          hamburgerBg1Img: {
+            mobImg:
+              "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-solid-color-on-gray-background-image_557017.jpg",
+            desktopImg:
+              "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-solid-color-on-gray-background-image_557017.jpg"
+          },
+          myAccountContent: {
+            myAccountText: "MY ACCOUNT",
+            profileLink: "#",
+            preLoginNavLink: "#",
+            signUpNavLink: "#",
+            preLoginText: "Login",
+            signUpText: "Sign Up"
+          },
+          headerVidaLogo:
+            "https://mms.businesswire.com/media/20220304005159/en/1379682/4/vida.jpg",
+          vidaLogoNavLink: "#",
+          hamburgerVidaLogo:
+            "https://mms.businesswire.com/media/20220304005159/en/1379682/4/vida.jpg",
+          logoutlabel: "Logout"
+        }
+      });
+    </script>
+    <div
+      data-section-id="header"
+      data-component="Header"
+      data-cmp-type="react"
+      data-cmp-version="2.0"
+      data-cmp-config="HeaderConfig"
+    ></div>
+
+    <div
+      data-section-id="vidaSpinner"
+      data-component="Spinner"
+      data-cmp-version="2.0"
+      data-cmp-type="react"
+    ></div>
+
+    <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        savingsCalculatorConfig: {
+          bgImageDesktop:
+            "../src/main/webpack/resources/images/png/emi-bg-desktop.png",
+          bgImageMobile:
+            "../src/main/webpack/resources/images/png/emi-bg-desktop.png",
+          bgImgAlt: "bg-img",
+          bgImgTitle: "bg-img-jar-with-coins",
+          title: "How much will you save with VIDA V1?",
+          questionText: "What’s your daily travel?",
+          totalSavingsText: "Your total savings",
+          savingsCardTextMonthly: "Your savings look like ",
+          totalSavingsText: "Your total savings",
+          savingsCardTextYearly: "Woohoo! This will be your annual savings ",
+          cardBgImgMobile:
+            "../src/main/webpack/resources/images/png/bg-img-mob.png",
+          cardBgImgDesktop:
+            "../src/main/webpack/resources/images/png/bg-img-desk.png",
+          cardBgImgAlt: "img-1",
+          cardBgImgTitle: "img-one",
+          impactTitle: "Let’s not forget your impact",
+          impactBgImageMob:
+            "../src/main/webpack/resources/images/png/bg-img-mob.png",
+          impactBgImageAlt: "impact-alt",
+          impactBgImageTitle: "impact-img",
+          impactCardText:
+            "With VIDA, you're on your way to less carbon emissions 🌏",
+          savingsComparisonText: "Savings comparison",
+          evBenefitsText: "Switch to EV and reduce your fuel consumption by an estimated",
+          fuelText: "Fuel",
+          evText: "EV",
+          carbonUnit: "kg CO2/yr",
+          assumptionsContent:
+            "<p><b>Do I need the key with me to start the VIDA electric scooter?<\/b><br>\r\n<br>\r\nYes, Approach the electric scooter with the key. The key can be in your pocket, bag, handbag etc.<\/p>\r\n<hr>\r\n\r\n<p><b>How to switch the electric scooter on?<\/b><br>\r\n<br>\r\n1. Option 1<br>\r\na.\x26nbsp;\x26nbsp;\x26nbsp;Unlock it by pressing the Switch\u002DOn\/Lock button by a single press of the button<br>\r\nb.\x26nbsp;\x26nbsp;\x26nbsp;Press the same button again to switch\u002Don the electric scooter<br>\r\n2. Option 2<br>\r\nSwitch on the scooter with a single long press of the start button<\/p>\r\n<hr>\r\n\r\n<p>&#xFEFF;<b>How to unlock \x26amp; lock the boot space?<\/b><br>\r\n<br>\r\n1. Press the boot space unlock button with the key in proximity to the electric scooter<br>\r\n2. To lock the luggage box simply position the seat in the lock position and press at the center of the seat.<\/p>\r\n<hr>\r\n\r\n<p><b>How to switch on the electric motor?<\/b><br>\r\n<br>\r\nTake the electric scooter off the side stand, ensure the kill switch is off. To start the motor press simultaneously one of the brakes and the start button to switch on the motor.<\/p>\r\n<hr>\r\n\r\n<p>&#xFEFF;<b>How do I start riding the Vida electric scooter?<\/b><br>\r\n<br>\r\nJust how you would ride any other two wheeler scooter!<\/p>\r\n<hr>\r\n\r\n<p>&#xFEFF;<b>How do I switch off the motor?<\/b><br>\r\n<br>\r\nJust press the kill switch or Switch off the electric scooter. The Scooter has an in\u002Dbuilt safety feature, if you provide no throttle input then the motor will automatically switch off.<br>\r\nKindly note Switching\u002Doff the Motor Using the kill switch will not lock the vehicle<\/p>\r\n<hr>\r\n\r\n<p>&#xFEFF;<b>Can I change the riding mode while riding?<\/b><br>\r\n<br>\r\nYes, you can switch modes while riding the electric scooter and that is one of our most exciting features.<br>\r\n<br>\r\nYou can also tailor the Custom Mode on the VIDA App to best suit your riding habits.<\/p>\r\n<hr>\r\n\r\n<p>&#xFEFF;<b>How to change the riding modes?<\/b><br>\r\n<br>\r\nUse the Ride Mode change button to switch between the different modes or change it through the TFT screen.<\/p>\r\n<hr>\r\n\r\n<p>&#xFEFF;<b>How should I engage the reverse mode?<\/b><br>\r\n<br>",
+          assumptionsTitle: "Assumptions & Sources",
+          arrowIconDesk:
+            "../src/main/webpack/resources/images/png/down-icon-desk.png",
+          arrowIconMob:
+            "../src/main/webpack/resources/images/png/down-icon-mob.png",
+          arrowIconAlt: "arrow-alt",
+          arrowIconTitle: "arrow-icon",
+          btnLabel: "Start Saving Now",
+          redirectUrl: "#"
+        }
+      });
+    </script>
+
+    <div
+      data-section-id="savingsCalculator"
+      data-cmp-version="2.0"
+      data-cmp-type="react"
+      data-component="SavingsCalculator"
+      data-cmp-config="savingsCalculatorConfig"
+    ></div>
+
+    <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        FooterConfig: {
+          accordianData: {
+            accordianContent: [
+              {
+                title: "VIDA",
+                content: `<a>About US</a>
+              <a>Our Story</a>
+              <a>Policy & Compliances</a>`
+              },
+              {
+                title: "V1 Pro",
+                content: `<a>Performance Highlight</a>
+              <a>Overview</a>
+              <a>Unique Features</a>`
+              },
+              {
+                title: "V1 Plus",
+                content: `<a>Performance Highlight</a>
+              <a>Overview</a>
+              <a>Unique Features</a>`
+              },
+              {
+                title: "Community",
+                content: `<a>Charging Networks</a>
+              <a>Service Stations</a>
+              <a>Join VIDA Community</a>`
+              }
+            ],
+            isShowMore: false
+          },
+          footerDescription: [
+            {
+              header: "Introducing the VIDA V1 Electric Scooter in India",
+              content: `<p>
+            Gear up to experience speed, agility, and convenience like you never
+            imagined, \ that too on an electric scooter. With <span>VIDA V1</span>, your
+            rides through cities, rural routes, or really, anywhere across the
+            country.
+          </p>`
+            },
+            {
+              header: `VIDA, powered by Hero—a new era of smarter, tougher, and safer <span>electric vehicles</span> in India`,
+              content: `<p>
+            Its not the first- its the better one. The only race VIDA V1 wants
+            to win is the one where you get to your destination faster, and
+            smoother, than before. Powered by Hero, these arent the electric
+            vehicles youre used to. Theyre made to glide smoothly over Indian
+            terrains.
+          </p>
+          <p>
+            With VIDA, youre in for an unrivalled performance thats backed by
+            some serious technology and specs:
+          </p>
+          <ul>
+            <li>
+              Two removable batteries, not just one. So youre never going to run
+              out of charge.
+            </li>
+            <li>
+              Reverse throttle thats seamless as you back up
+            </li>
+            <li>
+              Built to last - for mean streets, and for real people
+            </li>
+          </ul>`
+            },
+            {
+              header: "VIDA Electric Scooters are a league above the rest",
+              content: `<p>We're going to sound like we're bragging, but we happen to be backed by science and tech, as this is not your usual electric two-wheeler, it's a VIDA:</p>
+              <ul>
+            <li>
+              Warranty for 5 years- we're that confident
+            </li>
+            <li>
+              3.2-sec acceleration—to go from here to there in just an instant
+            </li>
+            <li>
+              110 kilometres real-world range, to truly explore your city
+            </li>
+            <li>
+              100+ riding modes to customise every joyride
+            </li>
+            <li>
+              18-cms of bright TFT display- to watch the road or to store your electric two-wheeler documents
+            </li>
+            <li>
+              20-degree incline capabilities so no road is tough to climb
+            </li>
+            <li>
+              ReGen assistance to pump your batteries as you hit the brakes
+            </li>
+          </ul>`
+            },
+            {
+              header: "Make Way for VIDA Electric Scooters in India",
+              content: `<p>As impressive as the specs are,
+                 VIDA went beyond them too. VIDA's e scooters are not just equipped with superior 
+                 technology, they're crafted with your convenience in mind. More than a machine, 
+                 they're intuitive and anticipate your comfort and safety with:</p>
+                  <ul>
+                 <li>
+                    Simplify parking using our assistance features.
+                 </li>
+               <li>
+              Customise VIDA your way—choose from 5 colours.
+            </li>
+            <li>
+              Navigate effortlessly for a smoother ride.
+            </li>
+            <li>
+              Glow with Follow Me Home headlamps, even after powering off.
+            </li>
+            <li>
+              Access your ready-to-go VIDA with a Key Fob.
+            </li>
+            <li>
+              Activate safety with the SOS Alert button.
+            </li>
+            <li>
+              Stay connected via the MyVIDA App.
+            </li>
+            <li>
+              Enjoy expansive storage with 26 litres of boot space.
+            </li>
+            <li>
+              Power up at nearby EV charging stations, anytime.
+            </li>
+            </ul>`
+            },
+            {
+              header: "Dealers & VIDA Centres right in your neighbourhood",
+              content: `<p>It's not just the best electric scooter in India, VIDA is part of a revolution when it comes to ease of purchase, and EV charging. With VIDA, you'll find a dealer in your city, as the network is constantly expanding, and adding new destinations to cover.</p>
+              <p>Currently, you'll find VIDA dealers in XXX number of cities across every region in India. As for the charging stations, you'll find VIDA's <span>EV charging stations</span> in 20 cities, where you can charge up your VIDA in minutes.</p>`
+            },
+            {
+              header: "Make VIDA yours today",
+              content: `<p>We've made it simple for you to see the VIDA scooter price for you. Just head on to the <span>nifty EMI calculator</span> to see how you can make VIDA yours.</p>
+              <p>It's not just the smarter choice, it's cost-effective. The Hero VIDA electric scooter makes saving ridiculously easy 
+              for you.</p>`
+            }
+          ],
+          faqs: {
+            faqsContent: [
+              {
+                title: "FAQs",
+                content: `<h6>Why should I choose VIDA V1 Pro over other 
+                electric scooters in India?</h6>
+                <p>The <span>VIDA V1 electric scooter</span> is powered by Hero, 
+                  to ensure you're getting the better, smoother, and safer electric vehicle. 
+                  It makes riding not just simpler, but an absolute pleasure. With the kind of 
+                  tech you know will have your back in any kind of terrain. As for the cost of 
+                  the VIDA V1 Pro, you're in for a world of savings instead. Opting for an electric scooter
+                   in India helps you reduce those always rising petrol 
+                and diesel costs.</p>
+                <h6>Where do I buy a 
+                  VIDA from?</h6>
+                  <p>There are XXXX number of 
+                    VIDA Dealers in India, some right in your city. We're present across xx cities 
+                    and are constantly setting up in your area, so head over to the dealership page
+                     to find one closest to you.</p>
+                     <h6>Would charging my electric
+                       scooter be a problem?</h6>
+                       <p>Not at all, we've 
+                        made it super easy for you. You can find an EV charging station near you 
+                        with the tap of a button on the My VIDA App. And with the two removable 
+                        batteries, you can stay juiced up on the go. The portable charger lets you
+                         charge your way, at home or work, or anywhere you can find a standard 
+                     AC 5A socket.</p><h6>Would VIDA V1 Pro be available on EMI?</h6><p>We've got multiple ways for you to finance your Hero VIDA. Head on over to our nifty EMI calculator to see how simply you can make VIDA V1 Pro yours. Check out the loans and offers too while you're at it.</p>
+                      <h6>Would <span>VIDA V1 Pro</span> be available on EMI?</h6><p>In the real world, your VIDA electric will surprise you by going at speeds of 80 km/h, that too with the convenience of not facing those bumps on roads. Not just that,  you can cruise through 110 kilometres on a single, complete charge of your VIDA. Told you, it's unlike any other electric vehicle in India. Test ride it today to see it 
+                    for yourself.</p>
+                      <h6>What does the VIDA's speed & range 
+                        look like?</h6>
+                        <p>In the real world, your VIDA electric will surprise you by going at speeds of 80 km/h, that too with the convenience of not facing those bumps on roads. Not just that, you can cruise through 110 kilometres on a single, complete charge of your VIDA. 
+                          Told you, it's unlike any other electric vehicle in India. <span>Test ride</span> it today to see it 
+                          for yourself.</p>`
+              }
+            ],
+            readMoreData: `<h6>Why should I choose VIDA V1 Pro over other 
+                electric scooters in India?</h6>
+                <p>The <span>VIDA V1 electric scooter</span> is powered by Hero, 
+                  to ensure you're getting the better, smoother, and safer electric vehicle. 
+                  It makes riding not just simpler, but an absolute pleasure. With the kind of 
+                  tech you know will have your back in any kind of terrain. As for the cost of 
+                  the VIDA V1 Pro, you're in for a world of savings instead. Opting for an electric scooter
+                   in India helps you reduce those always rising petrol 
+                and diesel costs.</p>
+                <h6>Where do I buy a 
+                  VIDA from?</h6>
+                  <p>There are XXXX number of 
+                    VIDA Dealers in India, some right in your city. We're present across xx cities 
+                    and are constantly setting up in your area, so head over to the dealership page
+                     to find one closest to you.</p>`,
+            isShowMore: true
+          },
+          footerAddress:
+            "Hero MotoCorp Limited, The Grand Plaza, Plot No.2,Nelson Mandela Road, Vasant Kunj - Phase -II, New Delhi - 110070",
+          footerEmail: "response@support.vidaworld.com",
+          footerPhno: "18002668432",
+          termsAndSeriviceText: "Terms of Service",
+          followUsText: "Follow Us",
+          PrivacyPolicyText: "Privacy Policy",
+          disclaimerText: "Disclaimer",
+          copyWriteText: "©2022-2023 VIDA World",
+          footerLogo:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyh-Uql4T1A-ymZ61UWxbx30CKSvxN2qXQqwjiHcE&s",
+          footerMediaIcons: [
+            {
+              image:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyh-Uql4T1A-ymZ61UWxbx30CKSvxN2qXQqwjiHcE&s",
+              link: ""
+            },
+            {
+              image:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyh-Uql4T1A-ymZ61UWxbx30CKSvxN2qXQqwjiHcE&s",
+              link: ""
+            },
+            {
+              image:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyh-Uql4T1A-ymZ61UWxbx30CKSvxN2qXQqwjiHcE&s",
+              link: ""
+            },
+            {
+              image:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyh-Uql4T1A-ymZ61UWxbx30CKSvxN2qXQqwjiHcE&s",
+              link: ""
+            },
+            {
+              image:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyh-Uql4T1A-ymZ61UWxbx30CKSvxN2qXQqwjiHcE&s",
+              link: ""
+            }
+          ]
+        }
+      });
+    </script>
+    <div
+      data-section-id="vidaFooter"
+      data-cmp-version="2.0"
+      data-cmp-type="react"
+      data-component="Footer"
+      data-cmp-config="FooterConfig"
+    ></div>
+  </body>
+</html>

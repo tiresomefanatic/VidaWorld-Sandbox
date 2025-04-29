@@ -1,0 +1,262 @@
+.testRide-dealers {
+  &__tab-active {
+    border-bottom: rem(1px) solid get-color("orange");
+    pointer-events: none !important;
+
+    p {
+      font-weight: 600;
+    }
+  }
+
+  &__content-active {
+    border: rem(1px) solid get-color("orange");
+    pointer-events: none !important;
+  }
+
+  &__tabs {
+    display: flex;
+    padding-bottom: rem(16px);
+    @include media(">=desktop") {
+      padding-bottom: rem(32px);
+    }
+  }
+
+  &__tabs-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding-bottom: rem(7px);
+    width: 50%;
+    @include media(">=desktop") {
+      padding-bottom: rem(12px);
+    }
+  }
+
+  &__tabs-content {
+    .vida-map {
+      height: rem(226px);
+      margin-bottom: rem(16px);
+      @include media(">=desktop") {
+        height: rem(330px);
+        margin-bottom: rem(34px);
+      }
+    }
+
+    .mmi-map {
+      height: rem(250px) !important;
+
+      @include media(">=desktop") {
+        height: rem(450px) !important;
+      }
+    }
+  }
+
+  &__tabs-list {
+    max-height: rem(275px);
+    overflow: scroll;
+
+    @include media(">=desktop") {
+      max-height: rem(325px);
+    }
+  }
+
+  &__header-text {
+    @include vida-mobile-body-1;
+    @include media(">=desktop") {
+      @include vida-desk-body-1;
+    }
+  }
+
+  &__details-header {
+    color: get-color("mine-shaft");
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-bottom: rem(16px);
+    padding-top: rem(12px);
+    @include media(">=desktop") {
+      font-size: rem(20px);
+      padding-bottom: rem(32px);
+      padding-top: 0;
+    }
+  }
+
+  &__details-content {
+    background: get-color("white");
+    border-radius: rem(8px);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: rem(8px);
+    margin-bottom: 16px;
+    padding: rem(20px) rem(16px);
+    @include media(">=desktop") {
+      gap: rem(8px);
+      margin-bottom: 32px;
+      padding: rem(24px) rem(16px);
+    }
+  }
+
+  &__right-arrow {
+    height: rem(16px);
+    width: rem(10px);
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__left-arrow {
+    height: rem(16px);
+    width: rem(10px);
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__error-message {
+    display: flex;
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 400;
+    justify-content: center;
+    @include media(">desktop") {
+      font-size: rem(20px);
+    }
+  }
+}
+
+.dealers-list {
+  &__name-distance {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__center-name {
+    color: get-color("mine-shaft");
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    overflow: hidden;
+    width: 80%;
+    @include media(">=desktop") {
+      font-size: rem(20px);
+    }
+  }
+
+  &__center-distance {
+    @include media(">=desktop") {
+    }
+    color: get-color("mine-shaft");
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__ph-address {
+    align-items: flex-start;
+    display: flex;
+    gap: rem(8px);
+    justify-content: space-between;
+  }
+
+  &__ph {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    width: 35%;
+  }
+
+  &__ph-text {
+    font-size: rem(12px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: rem(18px);
+    @include media(">=desktop") {
+      font-size: rem(18px);
+    }
+  }
+
+  &__address {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    width: 65%;
+  }
+
+  &__address-text {
+    color: get-color("mine-shaft");
+    font-size: rem(12px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    overflow: hidden;
+    @include media(">=desktop") {
+      font-size: rem(18px);
+    }
+  }
+
+  &__direction {
+    align-items: center;
+    background: get-color("pure-black");
+    border-radius: rem(10px);
+    display: flex;
+    gap: rem(2px);
+    justify-content: flex-end;
+    padding: rem(4px) rem(8px);
+    width: rem(70px);
+  }
+
+  &__img-direction {
+    display: flex;
+    height: rem(10px);
+    width: rem(10px);
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__direction-text {
+    color: get-color("white");
+    font-size: rem(10px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.locate-dealers {
+  .booking-dealers {
+    &__details-content {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: rem(16px);
+      justify-content: space-between;
+      padding: rem(30px) rem(8px);
+    }
+  }
+
+  .dealers__ph {
+    width: 40%;
+  }
+
+  .dealers__address {
+    width: 60%;
+  }
+
+  &__container {
+    width: 85%;
+  }
+}

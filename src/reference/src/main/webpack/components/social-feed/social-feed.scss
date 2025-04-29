@@ -1,0 +1,218 @@
+.vida-social-feed {
+  overflow: hidden;
+  padding-top: rem(60px);
+  /* @include media(">=desktop") {
+    padding-top: rem(152px);
+  } */
+
+  &__heading-wrapper {
+    margin-bottom: rem(30px);
+    text-align: center;
+  }
+
+  &__card {
+    border-radius: rem(32px);
+  }
+
+  &__heading {
+    @include h1;
+  }
+
+  &__tab-list {
+    border-bottom: solid rem(2px) get-color("light-grey");
+    display: flex;
+    margin-bottom: rem(28px);
+    @include media(">=desktop") {
+      margin-bottom: rem(63px);
+    }
+  }
+
+  &__tab-item {
+    align-items: center;
+    color: get-color("nobel-grey") !important;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    padding: rem(10px) rem(9px) rem(10px) rem(9px);
+    text-decoration: none;
+    @include media(">=desktop") {
+      padding: rem(16px) rem(20px) rem(16px) rem(23px);
+    }
+
+    &-icon {
+      height: rem(14.29px);
+      width: rem(14.29px);
+      @include media(">=desktop") {
+        height: rem(15px);
+        width: rem(15px);
+      }
+    }
+
+    &-title {
+      @include h4-md;
+      //color: get-color("solid-black");
+      margin-left: rem(7.36px);
+
+      @include media(">=desktop") {
+        margin-left: rem(10.36px);
+      }
+    }
+
+    &--active {
+      border-bottom: solid 2px get-color("solid-black");
+      color: get-color("solid-black");
+      margin-bottom: -2px;
+    }
+  }
+
+  .vida-social-feed__tab-panel::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__tab-panel {
+    @include media(">=desktop-lg") {
+      margin: 0 auto;
+      max-width: rem(1232px);
+    }
+  }
+
+  &__panel-item {
+    display: none;
+
+    &--active {
+      display: block;
+    }
+  }
+
+  &__card {
+    padding-bottom: rem(30px);
+
+    @include media(">=desktop") {
+      padding-bottom: rem(56px);
+    }
+
+    picture {
+      display: block;
+      height: 100%;
+    }
+  }
+
+  &__insta {
+    display: flex;
+    margin: auto;
+    padding: 0 rem(16px);
+
+    &-card {
+      border-radius: rem(32px);
+      height: rem(320px);
+      min-height: rem(320px);
+      width: 100%;
+      @include media(">=desktop") {
+        height: rem(385px);
+        margin-right: rem(0);
+        max-height: rem(385px);
+      }
+    }
+
+    &-asset {
+      border-radius: rem(32px);
+      height: auto;
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__youtube {
+    display: flex;
+    margin: auto;
+    padding: 0 rem(16px);
+
+    &-card {
+      border-radius: rem(32px);
+      box-shadow: 0 6px 26px rgba(40, 40, 40, 0.08);
+      display: flex;
+      flex-direction: column;
+      height: rem(332px);
+      width: 100%;
+      @include media(">=desktop") {
+        height: rem(423px);
+        max-height: rem(423px);
+      }
+
+      &-video {
+        border-radius: rem(32px) rem(32px) 0 0;
+        height: 50%;
+        width: 100%;
+
+        iframe {
+          border-radius: rem(32px) rem(32px) 0 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      &-content {
+        border-radius: 0 0 rem(32px) rem(32px);
+        height: 50%;
+        padding: rem(13px) rem(13px) rem(16px);
+        width: 100%;
+
+        @include media(">=desktop") {
+          padding: rem(19px) rem(19px) rem(32px);
+        }
+
+        &-title {
+          @include a2;
+          margin-bottom: rem(10px);
+        }
+
+        &-text {
+          p {
+            @include p2;
+            -webkit-box-orient: vertical;
+            color: get-color(solid-grey);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+
+  &__twitter {
+    display: flex;
+    margin: auto;
+    padding: 0 rem(16px);
+
+    &-card {
+      align-items: center;
+      border-radius: rem(32px);
+      display: flex;
+      justify-content: center;
+      min-height: rem(320px);
+      padding: rem(25px);
+      text-decoration: none;
+      width: 100%;
+
+      @include media(">=desktop") {
+        height: 100%;
+        min-height: rem(336px);
+        padding: rem(35px);
+      }
+
+      span {
+        @include h3;
+        color: get-color("solid-black");
+      }
+    }
+  }
+
+  .vida-social-feed__twitter > :nth-of-type(odd) .vida-social-feed__twitter-card {
+    background-color: get-color("light-orange");
+  }
+
+  .vida-social-feed__twitter > :nth-of-type(even) .vida-social-feed__twitter-card {
+    background-color: get-color("lighter-blue");
+  }
+}

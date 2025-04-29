@@ -1,0 +1,112 @@
+
+
+
+.vida-otp {
+  &__step {
+    display: none;
+
+    @include media(">=desktop") {
+      color: get-color("solid-grey");
+      display: block;
+
+      span {
+        padding: 0 2px;
+      }
+    }
+  }
+
+  &__field-input {
+    border-radius: 100%;
+    width: 15px;
+  }
+
+  &__title {
+    margin-bottom: rem(30px);
+
+    @include media(">=desktop") {
+      margin-bottom: rem(43px);
+    }
+
+    h1 {
+      @include h2;
+      margin-bottom: rem(20px);
+
+      @include media(">=desktop") {
+        margin-bottom: rem(11px);
+      }
+    }
+
+    p {
+      @include btn;
+      color: get-color("solid-grey");
+      margin-bottom: rem(10px);
+
+      @include media(">=desktop") {
+        margin-bottom: rem(5px);
+      }
+
+      span {
+        color: get-color("solid-black");
+        margin-left: rem(5px);
+      }
+    }
+  }
+
+  .form__group {
+    margin-bottom: 0;
+    min-height: auto;
+  }
+
+  &__timer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+
+    @include media(">=desktop") {
+      max-width: 360px;
+    }
+  }
+
+  &__disclaimer {
+    margin-top: rem(55);
+
+    @include media(">=desktop") {
+      margin-top: rem(40px);
+    }
+
+    &-label {
+      @include p1;
+      color: get-color("solid-black");
+    }
+
+    &-msg {
+      @include p2;
+      color: get-color("solid-grey");
+    }
+  }
+
+  &__btn-container {
+    align-items: center;
+    border-top: 1px solid get-color("light-grey");
+    display: flex;
+    flex-direction: column;
+
+    .btn {
+      margin: rem(20) 0;
+
+      @include media(">=desktop") {
+        margin: rem(20) 0 rem(16px);
+      }
+    }
+
+    label {
+      @include p2;
+
+      a {
+        margin-left: rem(5px);
+      }
+    }
+  }
+}

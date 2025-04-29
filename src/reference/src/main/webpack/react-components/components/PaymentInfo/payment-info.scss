@@ -1,0 +1,310 @@
+.vida-payment-info {
+  overflow: hidden;
+  padding: rem(30px) 0 rem(40px);
+  text-align: center;
+
+  @include media(">=desktop") {
+    padding-bottom: rem(98px);
+    padding-top: rem(74px);
+  }
+
+  &__heading {
+    @include h1;
+    margin-bottom: rem(16px);
+
+    @include media(">=desktop") {
+      margin-bottom: rem(24px);
+    }
+  }
+
+  &__description {
+    @include h3;
+    margin-bottom: rem(21px);
+
+    @include media(">=desktop") {
+      margin-bottom: rem(20px);
+    }
+  }
+
+  &__location {
+    margin-bottom: rem(40px);
+
+    @include media(">=desktop") {
+      margin-bottom: rem(42px);
+    }
+
+    .form__group {
+      margin: auto;
+      min-height: 0;
+    }
+  }
+
+  &__methods {
+    @include media(">=desktop") {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__box {
+    background: get-color("white");
+    border-radius: rem(16px);
+    display: flex;
+    margin-bottom: rem(20px);
+    padding: rem(20px);
+    text-align: left;
+    width: 100%;
+
+    @include media(">=desktop") {
+      border-radius: rem(32px);
+      display: block;
+      margin-bottom: 0;
+      max-width: rem(363px);
+      padding: rem(30px);
+      width: 30%;
+    }
+
+    &__icon {
+      align-items: center;
+      background: get-color("lighter-blue");
+      border-radius: rem(30px);
+      display: flex;
+      height: rem(60px);
+      justify-content: center;
+      margin-bottom: rem(20px);
+      margin-right: rem(20px);
+      width: rem(60px);
+
+      @include media(">=desktop") {
+        margin-right: 0;
+      }
+
+      span::before {
+        font-size: rem(25px);
+      }
+    }
+
+    &__name {
+      @include a2;
+      margin-bottom: rem(10px);
+    }
+
+    &__desc {
+      @include label;
+      color: get-color("solid-grey");
+    }
+
+    &__price {
+      @include h2;
+      color: get-color("solid-black");
+      margin-bottom: rem(10px);
+    }
+
+    &__link {
+      @include links;
+      color: get-color("orange");
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+  
+  .popup {
+    height: auto;
+
+    &__close-btn {
+      color: get-color("solid-black");
+      display: block;
+      right: rem(19px);
+      
+      @include media(">=desktop") {
+        right: rem(33px);
+        top: rem(3px);
+      }
+
+      &:hover {
+        color: get-color("orange");
+      }
+    
+      [class^="icon-"],
+      [class*=" icon-"] {
+        font-size: rem(25px);
+        font-weight: normal;
+      }
+    }
+
+    &__container {
+      border-radius: rem(16px);
+      height: rem(410px);
+      max-height: calc(100% - 60px);
+      overflow: hidden;
+      overflow-y: auto;
+      padding: rem(20px) 0;
+      width: rem(328px);
+
+      @include media(">=desktop") {
+        border-radius: rem(32px);
+        height: rem(580px);
+        overflow-y: hidden;
+        padding: rem(30px) 0;
+        width: rem(1240px);
+      }
+    }
+
+    &__body,
+    &__content {
+      height: 100%;
+    }
+
+    &__body {
+      padding: 0 rem(16px);
+      
+      @include media(">=desktop") {
+        padding: 0 rem(30px);
+      }
+
+      .vida-full-payment {
+        &_description p {
+          font-size: rem(14px);
+          margin-top: rem(10px);
+        }
+
+        &_headline h4 {
+          margin-top: rem(10px);
+        }
+
+        &__ctabtn {
+          padding-bottom: rem(30px);
+        }
+
+        .btn--full-width {
+          @include media(">=desktop") {
+            width: auto;
+          }
+        }
+        
+        &__stepper {
+          flex: 0 0 100%;
+          margin-bottom: rem(45px);
+          margin-left: rem(2px);
+          max-width: 100%;
+          padding-top: rem(23px);
+          position: sticky;
+      
+          @include media(">=desktop") {
+            display: flex;
+            margin: rem(52px) 0 rem(30px);
+            padding: 0;
+      
+            h3 {
+              padding-bottom: 5px;
+              word-break: break-word;
+            }
+          }
+      
+          h3 {
+            @include h4-md;
+          }
+      
+          ul {
+            border-left: rem(2px) dashed get-color("orange");
+            list-style: none;
+            padding-bottom: rem(35px);
+            padding-left: rem(25px);
+      
+            @include media(">=desktop") {
+              border-left: none;
+              border-top: 1px dashed get-color("orange");
+              list-style-type: none;
+              margin-left: 0;
+              margin-top: -1px;
+              min-width: 17.5%;
+              padding: 0;
+            }
+          }
+      
+          ul:last-child {
+            border-left-color: transparent;
+            padding-bottom: rem(0);
+      
+            @include media(">=desktop") {
+              border-top-color: transparent;
+            }
+          }
+        }
+
+        &__steps {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          width: 68%;
+      
+          .icon-check-circle {
+            background: #fff;
+            font-size: rem(30px);
+            position: relative;
+            right: 40px;
+            top: -4px;
+      
+            @include media(">=desktop") {
+              left: 0;
+              top: -16px;
+            }
+          }
+        }
+      
+        &__iconDiv {
+          height: 28px;
+          position: absolute;
+          width: 28px;
+      
+          @include media(">=desktop") {
+            position: relative;
+          }
+        }
+      
+        &__list {
+          cursor: pointer;
+        }
+      
+        &__status-icons {
+          background: #fff;
+          border: 1px solid;
+          border-radius: 100px;
+          color: get-color("orange");
+          font-size: rem(16px);
+          padding: rem(6px);
+          position: relative;
+          right: rem(41px);
+          top: rem(5px);
+      
+          @include media(">=desktop") {
+            left: 0;
+            padding: rem(11px);
+            right: rem(40px);
+            top: rem(-12px);
+          }
+        }
+      
+        &__info {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column;
+          margin-left: rem(10px);
+          position: relative;
+      
+          @include media(">=desktop") {
+            left: 0;
+            margin-left: 0;
+          }
+      
+          &-desc {
+            color: #777676;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+}

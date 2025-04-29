@@ -1,0 +1,46 @@
+.charging-guide {
+  background: get-color(catskill-white);
+  padding-bottom: rem(32px);
+  padding-top: rem(32px);
+  transition: opacity 1.5s ease-out;
+  @include media(">=desktop") {
+    padding-bottom: rem(64px);
+    padding-top: rem(64px);
+  }
+
+  .horizontal-scroll-container {
+    margin: 0;
+    @include media(">=tablet") {
+      overflow: unset;
+    }
+
+    &::-webkit-scrollbar {
+      height: rem(2px);
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: get-color("white");
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: get-color("orange");
+    }
+  }
+
+  .charge-guide__container {
+    gap: rem(32px);
+    @include media(">=tablet") {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__header {
+    @include vida-h2-mobile;
+    // margin-left: rem(20px);
+    @include media(">=desktop") {
+      @include vida-h2-desk;
+      // margin-left: rem(88px);
+    }
+  }
+}

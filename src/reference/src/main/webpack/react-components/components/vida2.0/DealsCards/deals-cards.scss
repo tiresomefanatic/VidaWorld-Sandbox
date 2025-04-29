@@ -1,0 +1,131 @@
+.deals-cards-wrapper {
+  .deals-cards-main-container {
+    @include media(">=desktop") {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(64px);
+    }
+  }
+
+  .deals-cards-parent-container {
+    filter: drop-shadow(0 0 rem(5px) rgba(0, 0, 0, 0.1));
+    margin: 0 0 rem(16px) 0;
+
+    @include media(">=desktop") {
+      margin: 0;
+    }
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  .deals-cards-container {
+    background: get-color("white");
+    border-radius: rem(8px);
+    box-shadow: 0 0 rem(20px) 0 rgba(0, 0, 0, 0.1);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 90% 100%, 0% 100%);
+    padding: rem(16px) rem(16px) rem(28px) rem(16px);
+    position: relative;
+    width: 100%;
+
+    @include media(">=desktop") {
+      border-radius: rem(12px);
+      box-shadow: 0 0 rem(30px) 0 rgba(0, 0, 0, 0.1);
+      padding: rem(24px) rem(24px) rem(48px) rem(24px);
+      width: rem(480px);
+    }
+
+    .deals-cards-bg-img {
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    .deals-cards-content-container {
+      position: relative;
+
+      .deals-cards-img-container {
+        height: rem(136px);
+        @include media(">=desktop") {
+          height: rem(204px);
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      .deals-cards-flex-container {
+        align-items: center;
+        display: flex;
+        gap: rem(16px);
+        justify-content: space-between;
+        padding: rem(16px) 0 0 0;
+        @include media(">=desktop") {
+          gap: rem(24px);
+          padding: rem(24px) 0 0 0;
+        }
+      }
+
+      .deals-cards-title {
+        flex: 1;
+
+        .deals-cards-title-text {
+          @include vida-h3-mobile;
+          line-height: rem(24px);
+          @include media(">=desktop") {
+            @include vida-h3-desktop;
+            line-height: rem(33.6px);
+          }
+        }
+      }
+
+      .deals-cards-redirection-cta {
+        cursor: pointer;
+        height: rem(36px);
+        width: rem(36px);
+        @include media(">=desktop") {
+          height: rem(54px);
+          width: rem(54px);
+        }
+
+        .deals-cards-redirection-link {
+          display: block;
+          text-decoration: none;
+        }
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .see-more-text-container {
+    margin: rem(16px) 0 0 0;
+    text-align: center;
+    width: 100%;
+    @include media(">=desktop") {
+      margin: rem(36px) 0 0 0;
+      text-align: start;
+    }
+
+    .see-more-text {
+      @include vida-tertiary-cta-mobile;
+      cursor: pointer;
+      line-height: rem(19.2px);
+      text-decoration: underline;
+      @include media(">=desktop") {
+        @include vida-tertiary-cta;
+        line-height: rem(24px);
+      }
+    }
+  }
+}

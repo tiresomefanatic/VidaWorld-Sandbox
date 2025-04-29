@@ -1,0 +1,76 @@
+.vida-caution-component {
+  .charing-caution-wrapper__container {
+    background-color: rgba(255, 83, 16, 0.1);
+    border-radius: rem(16px);
+    display: grid;
+    gap: rem(16px);
+    margin: rem(32px) auto;
+    padding: rem(24px);
+    width: 100%;
+
+    @include media(">=desktop") {
+      margin: rem(56px) auto rem(64px);
+      max-width: rem(1264px);
+      padding: rem(40px) rem(32px);
+    }
+
+    .heading {
+      align-items: center;
+      display: flex;
+      gap: rem(11.17px);
+
+      img {
+        height: rem(16.78px);
+        width: rem(19.24px);
+
+        @include media(">=desktop") {
+          height: rem(22.37px);
+          width: rem(25.65px);
+        }
+      }
+
+      h3 {
+        @include vida-h3-mobile;
+        color: get-color("orange");
+
+        @include media(">=desktop") {
+          @include vida-h3-desktop;
+          color: get-color("orange");
+        }
+      }
+    }
+
+    .subheading {
+      @include vida-mobile-body-2;
+
+      @include media(">=desktop") {
+        @include vida-desk-body-1;
+      }
+    }
+
+    .caution-list {
+      list-style-type: square;
+      margin-left: rem(-16px);
+
+      @include media(">=desktop") {
+        margin-left: rem(25px);
+      }
+
+      li {
+        @include vida-mobile-body-2;
+        line-height: rem(16.8px);
+        padding-bottom: rem(6px);
+        padding-left: rem(8px);
+
+        @include media(">=desktop") {
+          @include vida-desk-body-1;
+          line-height: rem(26px);
+        }
+      }
+
+      li::marker {
+        font-size: rem(10px);
+      }
+    }
+  }
+}

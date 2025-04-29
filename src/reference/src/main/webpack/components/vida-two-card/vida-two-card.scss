@@ -1,0 +1,111 @@
+.cmp-vida-two-cards {
+  &.light-grey {
+    background-color: #e4eaf1;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32px);
+    padding: rem(40px) rem(20px);
+    @include media(">=desktop-lg") {
+      margin: 0 auto;
+      max-width: rem(1440px);
+    }
+    @include media(">tablet") {
+      gap: rem(56px);
+      padding: rem(48px) rem(88px);
+    }
+  }
+
+  &__heading-cont {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  &__heading {
+    @include vida-h3-desktop;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    max-width: 700px;
+    @include media(">tablet") {
+      @include vida-h2-desk;
+    }
+  }
+
+  &__card-cont {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32px);
+    @include media(">tablet") {
+      flex-direction: row;
+      //gap: rem(20px);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    flex-grow: 100%;
+    @include media(">tablet") {
+      flex-basis: 50%;
+      flex-direction: column;
+      flex-grow: 50%;
+    }
+
+    &-image {
+      margin-bottom: rem(24px);
+      @include media(">tablet") {
+        margin-bottom: rem(24px);
+      }
+
+      img {
+        border-radius: 1rem;
+        height: rem(180px);
+        object-fit: cover;
+        width: 100%;
+        @include media(">tablet") {
+          height: rem(330px);
+        }
+      }
+    }
+
+    &-heading h3 {
+      @include vida-h3-desktop;
+      margin-bottom: rem(8px);
+      @include media(">tablet") {
+        @include vida-h2-desk;
+        margin-bottom: rem(16px);
+      }
+    }
+
+    &-body {
+      @include vida-mobile-body-1;
+      margin-bottom: rem(24px);
+      max-width: 100%;
+      overflow-wrap: anywhere;
+      @include media(">tablet") {
+        @include vida-desk-body-1;
+        max-width: rem(508px);
+      }
+    }
+  }
+
+  &_link a {
+    font-size: rem(20px);
+    font-weight: 500;
+  }
+}
+
+.vida-2-container {
+  .cmp-vida-two-cards__container {
+    @include media(">tablet") {
+      gap: rem(56px);
+      padding: rem(48px) rem(30px);
+    }
+  }
+}

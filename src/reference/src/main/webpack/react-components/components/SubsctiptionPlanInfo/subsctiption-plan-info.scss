@@ -1,0 +1,243 @@
+.vida-subsctiption-plan-info {
+  overflow: hidden;
+  padding-top: rem(30px);
+  text-align: left;
+
+  @include media(">=desktop") {
+    padding-top: rem(74px);
+  }
+
+  &__box {
+    background: get-color("white");
+    border-radius: rem(16px);
+    display: flex;
+    padding: rem(20px);
+    width: 100%;
+
+    @include media(">=desktop") {
+      align-items: center;
+      border-radius: rem(32px);
+      padding: rem(30px);
+    }
+
+    &-set {
+      display: flex;
+      flex-direction: column;
+      @include media(">=desktop") {
+        flex-direction: row;
+        flex-grow: 1;
+      }
+    }
+
+    &-details {
+      display: flex;
+      flex-basis: 100%;
+      flex-direction: column;
+      margin-right: 15px;
+    }
+
+    &-icon {
+      align-items: center;
+      background: get-color("lighter-blue");
+      border-radius: rem(30px);
+      display: flex;
+      flex: 0 0 rem(60px);
+      height: rem(60px);
+      justify-content: center;
+      margin-right: rem(20px);
+
+      @include media(">=desktop") {
+        margin-right: rem(20px);
+      }
+
+      span::before {
+        font-size: rem(25px);
+      }
+
+      img {
+        width: rem(24px);
+      }
+    }
+
+    &-name {
+      @include a2;
+      margin-bottom: rem(10px);
+    }
+
+    &-desc {
+      @include label;
+      color: get-color("solid-grey");
+    }
+  }
+
+  &__configure {
+    @include links;
+    color: get-color("orange");
+    cursor: pointer;
+    margin-top: rem(10px);
+    padding-right: rem(20px);
+    position: relative;
+    text-decoration: underline;
+    white-space: nowrap;
+
+    @include media(">=desktop") {
+      align-items: center;
+      display: flex;
+      margin-top: 0;
+    }
+
+    &::after {
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.83333 0.833252L11 4.99992M11 4.99992L6.83333 9.16659M11 4.99992L1 4.99992' stroke='%23FF5310' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      content: "";
+      height: rem(10px);
+      margin-left: rem(7px);
+      position: absolute;
+      position: absolute;
+      top: rem(5px);
+      width: rem(15px);
+
+      @include media(">=desktop") {
+        margin-top: rem(2px);
+        right: 0;
+        top: inherit;
+      }
+    }
+  }
+
+  .popup {
+    top: 0;
+    z-index: 999;
+
+    &__container {
+      border-radius: 0;
+      height: 100vh;
+      margin: 0;
+      max-height: 100%;
+      width: 100%;
+    }
+
+    &__content {
+      overflow: auto;
+      padding-right: rem(30px);
+    }
+
+    &__body {
+      padding-right: 0;
+    }
+  }
+
+  .vida-subscription-plans {
+    &__wrapper {
+      align-items: center;
+      align-items: flex-start;
+      flex-direction: column;
+      @include media(">=desktop") {
+        flex-direction: row;
+        padding-right: rem(50px);
+      }
+    }
+
+    &__modal-title {
+      @include media(">=desktop") {
+        margin: 0;
+      }
+    }
+
+    .tns-nav {
+      margin-top: rem(20px);
+    }
+
+    &__standard-plan {
+      border: 1px solid get-color("light-grey");
+      border-radius: rem(16px);
+      display: flex;
+      flex-direction: column;
+      margin-bottom: rem(20px);
+      padding: rem(15px);
+
+      @include media(">=desktop") {
+        flex-direction: row;
+      }
+
+      &-title {
+        @include h3;
+        margin-bottom: rem(5px);
+      }
+
+      &-desc {
+        @include p2;
+        margin: 0;
+      }
+
+      &-details {
+        margin-bottom: rem(20px);
+        @include media(">=desktop") {
+          flex: 0 0 25%;
+          margin: 0;
+        }
+      }
+
+      &-list,
+      &-item {
+        display: flex;
+      }
+
+      &-list {
+        flex-direction: column;
+        margin: 0;
+        @include media(">=desktop") {
+          flex-direction: row;
+          flex-grow: 1;
+          margin-left: rem(30px);
+        }
+      }
+
+      &-item {
+        align-items: center;
+        margin-bottom: rem(20px);
+        @include media(">=desktop") {
+          flex-grow: 1;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &__card-item {
+      cursor: default;
+    }
+  }
+
+  .tns {
+    &-ovh {
+      margin-bottom: rem(20px);
+    }
+
+    &-inner {
+      margin: 0 !important;
+    }
+  }    
+}
+
+.vida-payment-info {
+  .vida-subsctiption-plan-info {
+    .popup {
+      &__container {
+        border-radius: 0;
+        height: 100vh;
+        margin: 0;
+        max-height: 100%;
+        width: 100%;
+      }
+
+      &__content {
+        overflow: auto;
+        padding-right: rem(30px);
+      }
+  
+      &__body {
+        padding-right: 0;
+      }
+    }
+  }
+}

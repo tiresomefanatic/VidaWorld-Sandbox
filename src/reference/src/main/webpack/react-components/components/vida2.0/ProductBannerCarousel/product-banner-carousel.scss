@@ -1,0 +1,370 @@
+.vida-home-banner-carousel-container {
+  overflow: hidden;
+  padding-top: 0;
+  position: relative;
+
+  .vida-home-banner-carousel {
+    .vida-home-banner-carousel-content-wrapper {
+      // &:nth-child(2) {
+      .vida-home-banner-carousel-media {
+        .custom-style {
+          @include media(">tablet") {
+            position: absolute;
+            right: 0;
+            width: auto;
+          }
+        }
+      }
+
+      .vida-home-banner-carousel-content {
+        .vida-home-banner-carousel-title.custom-style {
+          @include media(">tablet") {
+            width: 60%;
+          }
+        }
+      }
+      // }
+    }
+  }
+
+  .play-button-container {
+    display: flex;
+    height: rem(46px);
+    left: 45%;
+    margin: auto;
+    position: absolute;
+    top: 45%;
+    width: rem(46px);
+    z-index: 1;
+    @include media(">desktop") {
+      height: rem(100px);
+      left: 45%;
+      top: 40%;
+      width: rem(100px);
+    }
+
+    img {
+      cursor: pointer;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .tns-outer {
+    //cursor: pointer;
+
+    .tns-nav {
+      column-gap: revert;
+      padding: 0;
+      width: 100%;
+
+      @include media(">tablet") {
+        display: none;
+      }
+    }
+
+    .tns-nav button {
+      background-color: get-color("oslo-gray");
+      border-radius: unset;
+      flex-grow: 1;
+      padding: 2px;
+      pointer-events: none;
+      width: 33.3%;
+    }
+
+    .tns-nav-active {
+      background-color: get-color("orange") !important;
+    }
+
+    .tns-controls {
+      bottom: 22%;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 rem(20px);
+      position: absolute;
+      width: 90%;
+      @include media(">=desktop") {
+        bottom: 10%;
+        justify-content: right;
+        margin: 0 rem(80px);
+        top: unset;
+      }
+
+      button {
+        backdrop-filter: blur(50px);
+        background-color: rgba(255, 255, 255, 0.5);
+        border: none;
+        // background: transparent;
+        border-radius: rem(8px);
+        box-shadow: 0 100px 250px 0 rgba(0, 0, 0, 0.15);
+        color: get-color("mine-shaft");
+        font-size: rem(24px);
+        font-weight: 600;
+        padding: rem(10px) rem(16px);
+
+        @include media(">=desktop") {
+          margin: 0 rem(20px);
+        }
+      }
+    }
+
+    .tns-inner {
+      cursor: pointer;
+    }
+  }
+
+  .vida-home-banner-carousel {
+    .fadein-up-animation {
+      animation-duration: 0.7s;
+      animation-name: fadeInUp;
+      animation-timing-function: ease-in-out;
+    }
+
+    .fadein-left-animation {
+      animation-duration: 0.7s;
+      animation-name: fadeInLeft;
+      animation-timing-function: ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(100%);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .vida-home-banner-carousel-content-wrapper {
+      // cursor: pointer;
+
+      .vida-home-banner-carousel-media {
+        height: calc(100vh - rem(56px));
+        @include media(">=desktop") {
+          height: calc(100vh - rem(64px));
+        }
+
+        .vida-home-banner-carousel-media-content {
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      .vida-home-banner-carousel-content {
+        padding: rem(52px) rem(88px);
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        @include media("<=tablet") {
+          padding: rem(20px) rem(24px);
+        }
+
+        .vida-home-banner-carousel-cta {
+          @include vida-mobile-body-4;
+          align-items: center;
+          color: get-color("pure-black");
+          display: flex;
+          text-decoration: none;
+
+          @include media("<=tablet") {
+            @include vida-mobile-body-1;
+            color: get-color("pure-black");
+            margin-left: rem(8px);
+          }
+        }
+
+        .explore-icon {
+          height: 18px;
+          margin-right: 4px;
+          width: 18px;
+
+          @include media(">tablet") {
+            height: 20px;
+            width: 20px;
+          }
+        }
+
+        .vida-home-banner-carousel-title {
+          @include vida-h1-mobile;
+          line-height: 1.2;
+          margin: rem(16px) 0;
+          width: 98%;
+
+          @include media(">=tablet") {
+            @include vida-h2-desk;
+            line-height: 1.2;
+            margin: rem(20px) 0 rem(10px);
+            width: 80%;
+          }
+          @include media(">=desktop-md") {
+            @include vida-banner-header;
+            margin: rem(0) 0 rem(24px);
+            width: 100%;
+          }
+
+          &.full-width {
+            font-size: rem(36px);
+            @include media(">=desktop-md") {
+              @include vida-banner-header;
+              margin: 0 0 rem(24px);
+              width: 100%;
+            }
+          }
+
+          .sub-header {
+            font-size: rem(24px);
+            line-height: rem(28.8px);
+            @include media(">=desktop-md") {
+              font-size: rem(36px);
+              line-height: rem(43.2px);
+            }
+          }
+
+          .special-variation { 
+            @include vida-h6-mobile;
+            background-color: get-color("orange");
+            border-radius: rem(4px);
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+            color: get-color("white");
+            margin-top: rem(8px);
+            max-width: rem(320px);
+            padding: rem(8px);
+
+            @include media(">=desktop") {
+              @include vida-h3-mobile;
+              color: get-color("white");
+              margin-top: rem(16px);
+              max-width: rem(470px);
+              padding: rem(16px);
+            }
+          }
+
+          &.variant-two {
+            color: get-color("white");
+            line-break: anywhere;
+            margin: 0;
+            width: 98%;
+            @include media(">=desktop") {
+              width: 42%;
+            }
+          }
+        }
+
+        .vida-home-banner-carousel-link {
+          @include vida-tertiary-cta;
+          // font-size: rem(20px);
+          // font-weight: 500;
+          // line-height: normal;
+          text-underline-offset: rem(4px);
+
+          @include media("<=tablet") {
+            @include vida-tertiary-cta-mobile;
+            // font-size: rem(16px);
+            line-height: rem(19.2px);
+          }
+        }
+
+        &.variant-two-content {
+          left: 4%;
+          min-height: rem(160px);
+          min-width: rem(320px);
+          padding: 0 rem(8px);
+          position: absolute;
+          top: 5%;
+          @include media(">desktop") {
+            gap: rem(10px);
+            min-height: rem(204px);
+            min-width: rem(720px);
+            padding: 0 rem(88px);
+            top: 5%;
+          }
+        }
+
+        .vida-home-banner-carousel-button {
+          @include vida-mobile-body-1;
+          background-color: get-color("orange");
+          border-radius: rem(8px);
+          color: get-color("white");
+          padding: rem(8px) rem(16px);
+          @include media(">=desktop") {
+            @include vida-h3-mobile;
+            border-radius: rem(4px);
+            color: get-color("white");
+            padding: rem(16px);
+          }
+        }
+      }
+
+      .btn--icon {
+        bottom: rem(180px);
+        display: none;
+        position: absolute;
+        right: 24px;
+
+        @include media("<=tablet") {
+          align-items: baseline;
+          display: flex;
+
+          @media screen and (max-height: 800px) {
+            bottom: rem(320px);
+          }
+        }
+
+        img {
+          height: 8px;
+          width: 10px;
+        }
+      }
+    }
+  }
+}
+
+div[data-component="ProductVariant"]:not(:has(> div)) {
+  min-height: 865px;
+
+  @media (max-width: 600px) {
+    min-height: 1051px;
+  }
+}
+
+div[data-component="ProductBannerCarousel"]:not(:has(> .vida-home-banner-carousel-container)) {
+  min-height: 870px;
+
+  @media (max-width: 600px) {
+    min-height: 556px;
+  }
+}
+
+div[data-component="CommunityChargingCard"]:not(:has(> .community-charging-card-parent-container)) {
+  min-height: 559px;
+
+  @media (max-width: 600px) {
+    min-height: 673px;
+  }
+}
+
+div[data-component="Footer"]:not(:has(> .footer-main-container)) {
+  min-height: 457px;
+
+  @media (max-width: 600px) {
+    min-height: 967px;
+  }
+}

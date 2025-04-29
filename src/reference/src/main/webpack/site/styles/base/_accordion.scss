@@ -1,0 +1,351 @@
+.vida-accordion {
+  .cmp-accordion {
+    &__item {
+      border-bottom: rem(1px) solid get-color("light-grey");
+      margin-bottom: rem(15px);
+      padding-bottom: rem(15px);
+    }
+
+    &__button {
+      background-color: transparent;
+      border: none;
+      color: get-color("solid-black") !important;
+      height: auto;
+      min-height: rem(40px);
+      outline: none;
+      padding: rem(9px) rem(50px) rem(10px) rem(18px);
+      position: relative;
+      text-align: left;
+      width: 100%;
+
+      &::before {
+        background-color: get-color("solid-black");
+        border-radius: 50%;
+        content: "";
+        height: rem(8px);
+        left: 0;
+        position: absolute;
+        top: rem(16px);
+        width: rem(8px);
+
+        @include media(">=tablet") {
+          top: rem(20px);
+        }
+
+        @include media(">=desktop-lg") {
+          left: rem(3px);
+          top: rem(22px);
+        }
+      }
+
+      &--expanded {
+        .cmp-accordion__icon::after {
+          content: "\e92b";
+        }
+
+        &::before {
+          background-color: get-color("blue");
+        }
+      }
+    }
+
+    &__title {
+      @include h4-md;
+    }
+
+    &__icon {
+      align-items: center;
+      background-color: get-color("blue");
+      background-image: none !important;
+      border-radius: 50%;
+      bottom: 0;
+      display: flex;
+      height: rem(40px) !important;
+      justify-content: center;
+      margin: auto;
+      position: absolute;
+      right: 0 !important;
+      top: 0 !important;
+      width: rem(40px) !important;
+
+      &::after {
+        content: "\e931";
+        font-family: "icomoon" !important;
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+
+    &__panel {
+      @include p2;
+      padding: 0 rem(50px) 0 rem(18px);
+    }
+  }
+}
+
+.cmp-accordion__panel {
+  &--hidden {
+    display: none;
+  }
+
+  &--expanded {
+    display: block;
+  }
+}
+
+.faq-accordion {
+  background-color: #1111;
+
+  .cmp-accordion {
+    &__item {
+      border-bottom: unset;
+      margin-left: rem(50px);
+    }
+
+    &__icon {
+      display: none;
+    }
+
+    &__button {
+      background-color: unset;
+      text-align: left;
+      @include media("<tablet") {
+        padding-left: 18px;
+      }
+
+      &::before {
+        background-color: unset;
+        content: "\e913";
+        font-family: icomoon;
+        font-size: rem(22px);
+        height: rem(17px);
+        left: rem(-30px);
+        position: absolute;
+        top: rem(10px);
+
+        @include media("<tablet") {
+          top: rem(16px);
+        }
+        @include media("<desktop") {
+          top: rem(16px);
+        }
+
+      }
+
+      &--expanded {
+        .cmp-accordion__icon::after {
+          display: none;
+        }
+
+        &::before {
+          left: rem(-30px);
+          top: 1.1875rem;
+          transform: rotate(180deg);
+          @include media("<tablet") {
+            top: rem(18px);
+          }
+          @include media("<desktop") {
+            top: rem(24px);
+          }
+          @include media(">=desktop-lg") {
+            top: rem(24px);
+          }
+        }
+      }
+    }
+
+    &__panel {
+      padding: rem(10px) rem(20px);
+
+      h4 {
+        font-weight: 400;
+        padding-bottom: rem(10px);
+        padding-top: rem(5px);
+      }
+
+      p {
+        color: get-color("solid-grey");
+      }
+    }
+  }
+}
+
+
+
+
+// .vida-advanced-accordion {
+//   padding: rem(30px) 0;
+
+//   @include media(">=desktop") {
+//     padding: rem(96px) 0 rem(74px);
+//   }
+
+//   &.bg-color--smoke-white {
+//     .cmp-accordion {
+//       background-color: get-color("white");
+//     }
+//   }
+
+//   &--no-icon {
+//     .cmp-accordion {
+//       &__button {
+//         padding: rem(27px) rem(60px) rem(24px) 0;
+
+//         @include media(">=desktop") {
+//           padding: rem(25px) rem(80px) rem(25px) rem(40px);
+//         }
+
+//         [class^="icon-"],
+//         [class*=" icon-"] {
+//           display: none;
+//         }
+//       }
+//     }
+//   }
+
+
+//   .panelcontainer {
+//     padding: 0 rem(16px);
+//     width: 100%;
+//     @include media(">=desktop") {
+//       padding: 0 rem(70px);
+//     }
+//     @include media(">=desktop-lg") {
+//       margin: 0 auto;
+//       max-width: rem(1232px);
+//       padding: 0;
+//     }
+//   }
+
+//   .cmp-accordion {
+//     background-color: get-color("smoke-white");
+//     border-radius: 32px;
+//     padding: 0 rem(24px);
+
+//     @include media(">=desktop") {
+//       padding: rem(23px) 0;
+//     }
+
+//     .bg-color--smoke-white & {
+//       background-color: get-color("white");
+//     }
+
+//     &__item {
+//       border-bottom: rem(1px) solid get-color("light-grey");
+//       padding-bottom: rem(5px);
+
+//       &:last-child {
+//         border-bottom: none;
+//       }
+//     }
+
+//     &__button {
+//       background-color: transparent;
+//       border: none;
+//       color: get-color("solid-black") !important;
+//       height: auto;
+//       min-height: rem(40px);
+//       outline: none;
+//       padding: rem(27px) rem(60px) rem(24px) rem(40px);
+//       position: relative;
+//       text-align: left;
+//       width: 100%;
+
+//       @include media(">=desktop") {
+//         padding: rem(25px) rem(80px) rem(25px) rem(120px);
+//       }
+
+//       [class^="icon-"],
+//       [class*=" icon-"] {
+//         bottom: 0;
+//         font-size: rem(22px);
+//         font-weight: bold;
+//         height: rem(22px);
+//         left: 0;
+//         margin: auto;
+//         position: absolute;
+//         // top: rem(28px);
+//         top: 0;
+//         width: rem(22px);
+
+//         @include media(">=tablet") {
+//           // top: rem(38px);
+//         }
+
+//         @include media(">=desktop-lg") {
+//           // top: rem(28px);
+//         }
+
+//         @include media(">=desktop") {
+//           font-size: rem(40px);
+//           height: rem(40px);
+//           left: rem(40px);
+//           width: rem(40px);
+//         }
+//       }
+
+//       &--expanded {
+//         .cmp-accordion__icon::after {
+//           content: "\e92b";
+//         }
+//       }
+//     }
+
+//     &__title {
+//       @include h2;
+//     }
+
+//     &__icon {
+//       align-items: center;
+//       background-color: get-color("blue");
+//       background-image: none !important;
+//       border-radius: 50%;
+//       bottom: 0;
+//       display: flex;
+//       height: rem(30px) !important;
+//       justify-content: center;
+//       margin: auto;
+//       position: absolute;
+//       right: 0 !important;
+//       top: 0 !important;
+//       width: rem(30px) !important;
+
+//       @include media(">=desktop") {
+//         height: rem(40px) !important;
+//         right: rem(40px) !important;
+//         width: rem(40px) !important;
+//       }
+
+//       &::after {
+//         content: "\e931";
+//         font-family: "icomoon" !important;
+//         font-size: 10px;
+//         font-weight: bold;
+
+//         @include media(">=desktop") {
+//           font-size: 15px;
+//         }
+//       }
+//     }
+
+//     &__panel {
+//       @include input;
+//       color: get-color("solid-grey");
+//       padding: 0 0 rem(25px) 0;
+
+//       @include media(">=desktop") {
+//         font-size: rem(40px);
+//         padding: 0 rem(40px) rem(25px) rem(40px);
+//       }
+//     }
+//   }
+// }
+
+.theme-v1 {
+  .faq-accordion {
+    margin: 0 -20px;
+    @include media(">=desktop") {
+      margin: 0 -22%;
+    }
+  }
+}

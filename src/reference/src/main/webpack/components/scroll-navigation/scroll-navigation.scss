@@ -1,0 +1,149 @@
+.vida-scroll-navigation {
+  height: rem(38px);
+  @include media(">=desktop") {
+    height: rem(53px);
+  }
+
+  &__wrapper {
+    background: get-color("white");
+    height: rem(38px);
+    position: fixed;
+    top: rem(60px);
+    transition: all 0.2s ease-out;
+    width: 100%;
+    z-index: 998;
+    @include media(">=desktop") {
+      height: rem(53px);
+      top: rem(76px);
+      transition: all 0.2s ease-out;
+    }
+
+    &-sticky {
+      top: 0;
+      @include media(">=desktop") {
+        top: 0;
+      }
+    }
+
+    &::after {
+      background-color: get-color("titanium-white");
+      bottom: 0;
+      content: "";
+      height: rem(2px);
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    &--theme2 {
+      position: relative;
+
+
+
+    }
+  }
+
+  .vida-scroll-navigation-container {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+    @include media(">=desktop") {
+      justify-content: center;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__links {       
+    color: get-color("solid-grey");
+    font-size: rem(16px);
+    padding: rem(10px);
+    text-decoration: none;
+    white-space: nowrap;
+
+    @include media(">=desktop") {
+      padding: rem(16px) rem(20px);
+    }
+
+    &:visited,
+    &:active {
+      color: get-color("solid-grey");
+    }
+
+    &--active {
+      color: get-color("solid-black");
+      position: relative;
+
+      &::after {
+        background-color: get-color("solid-black");
+        bottom: 0;
+        content: "";
+        height: rem(2px);
+        left: 0;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+      }
+    }
+  }
+
+  &--sticky {
+    scroll-padding-top: rem(114px);
+    @include media(">=desktop") {
+      scroll-padding-top: rem(135px);
+    }
+
+    &.vida-scroll-navigation--sticky-header {
+      scroll-padding-top: rem(38px);
+      @include media(">=desktop") {
+        scroll-padding-top: rem(53px);
+      }
+    }
+
+    .vida-header__wrapper {
+      box-shadow: none;
+    }
+  }
+
+ 
+
+  .vida-scroll-navigation__wrapper--theme2 { .vida-scroll-navigation__links--active {
+      color: #ff5310;
+      font-weight: bold;
+
+      &::after {
+        background-color: #ff5310;
+      }
+    }
+
+    .vida-scroll-navigation-container {
+      justify-content: center;
+    }
+
+    .vida-scroll-navigation__links {
+      @include media(">=phone") {
+        font-size: rem(15px);
+      }
+
+      @include media(">=desktop") {
+        font-size: rem(30px);
+      }
+      
+    }
+  }
+}
+
+.theme-v1 {
+  .vida-scroll-navigation {
+    margin-bottom: rem(15px);
+
+    .vida-scroll-navigation__wrapper--theme2 .vida-scroll-navigation__links {
+      font-size: rem(16px);
+      @include media(">=desktop") {
+        font-size: rem(22px);
+      }
+    }
+  }
+}

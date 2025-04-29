@@ -1,0 +1,116 @@
+.vida-news-cards {
+  overflow: hidden;
+  padding: rem(40px) 0;
+  @include media (">=desktop") {
+    padding: rem(104px) 0 rem(75px);
+  }
+
+  a,
+  a:active,
+  a:visited {
+    text-decoration: none;
+  }
+
+  &__title-wrapper {
+    margin-bottom: rem(30px);
+    text-align: center;
+    @include media (">=desktop") {
+      margin-bottom: rem(48px);
+    }
+
+    * {
+      @include h1;
+    }
+
+  }
+
+  &__item {
+    border: rem(1px) solid get-color("light-grey");
+    border-radius: rem(16px);
+    box-shadow: 0 6px 26px rgba(40, 40, 40, 0.08);
+    display: flex;
+    flex-direction: column;
+    height: rem(283px);
+    width: 100%;
+    @include media(">=desktop") {
+      border-radius: rem(32px);
+      box-shadow: none;
+      height: rem(356px);
+      max-height: rem(356px);
+    }
+
+    &-wrapper {
+      display: flex;
+    }
+
+    &-content {
+      padding: rem(15.61px) rem(16px) rem(20px);
+      text-decoration: none;
+
+      @include media(">=desktop") {
+        padding: rem(20px) rem(19px) rem(30px);
+      }
+
+      &-text {
+        @include h3;
+        @include lineClamp(2);
+
+        color: get-color("solid-black");
+        margin-bottom: rem(6px);
+        @include media(">=desktop") {
+          margin-bottom: rem(3px);
+        }
+      }
+    }
+
+    &-media {
+      border-radius: rem(16px) rem(16px) 0 0;
+      height: rem(184px);
+      max-height: rem(184px);
+
+      @include media(">=desktop") {
+        border-radius: rem(32px) rem(32px) 0 0;
+        height: rem(218px);
+        max-height: rem(218px);
+      }
+
+      &-asset {
+        border-radius: rem(16px) rem(16px) 0 0;
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+        width: 100%;
+        @include media(">=desktop") {
+          border-radius: rem(32px) rem(32px) 0 0;
+
+        }
+      }
+    }
+  }
+
+  &__rich-text {
+    @include p2;
+    color: get-color("solid-grey");
+  }
+
+  &__card {
+    padding-bottom: rem(30px);
+
+    @include media(">=desktop") {
+      padding-bottom: rem(10px);
+    }
+  }
+
+  &__cta-wrapper {
+    margin-top: rem(30px);
+    text-align: center;
+    @include media(">=desktop") {
+      margin-top: rem(48px);
+    }
+
+    .btn {
+      min-width: rem(328px);
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Test Ride</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Test Drive" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+  <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async></script>
+</head>
+
+<body>
+  <header></header>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "testDriveUploadConfig": {
+        "title": "Long term Test Drive",
+        "subTitle": "This information helps us verify & have collateral",
+        "backgroundImg": "https://stage.vidaworld.com/content/dam/vida/global/optimized-images/testride/Lifestyle2.png",
+        "redirectMessage": "You will be redirecting to profile page...",
+        "documents": [
+          {
+            "id": "DLFRONT",
+            "fieldName":"front_key",
+            "title": "Driving License",
+            "text": "Front",
+            "description": "Clearly lit front side",
+            "disclaimer": "(Less than 1MB)",
+            "uploadButtonText":"Upload",
+          },
+          {
+            "id": "DLBACK",
+            "fieldName":"back_key",
+            "text": "Back",
+            "description": "Clearly lit back side",
+            "disclaimer": "(Less than 1MB)",
+            "uploadButtonText":"Upload"
+          }
+        ],
+        "actions": {
+          "primary": "submit",
+          "troubleShootText": "Trouble booking?",
+          "troubleShootAction": "Chat with us"
+        },
+        "emergencyNumberField": {
+          "id": "emergencyNumber",
+          "label": "Emergency Contact",
+          "placeholder": "Enter Mobile Number",
+          "validationRules": {
+            "required": {
+              "message": "Emergency contact number is required."
+            },
+            "minLength": {
+              "value": 10,
+              "message": "Minimum 10 digit required."
+            },
+            "maxLength": {
+              "value": 10,
+              "message": "Maximum 10 digit required."
+            },
+            "customValidation": {
+              "message": "Please enter valid mobile number."
+            }
+          }
+        },
+          "relationField": {
+            "label": "Relation",
+            "validationRules": {
+              "required": {
+                "message": "Relation is required."
+              }
+            }
+          },
+          "messages": {
+            "error": "Please upload a valid document",
+            "success": "Document uploaded successfully",
+            "finalSuccess": "User successfully registered!",
+            "fileFormatText": "Please upload the files in the format of jpg, jpeg or png"
+          },
+          "actions": {
+            "primary": "submit"
+          }
+      }
+    });
+  </script>
+	<div data-component="Spinner" data-cmp-type="react"></div>
+  <div data-component="TestDriveUpload" data-cmp-type="react" data-cmp-config="testDriveUploadConfig"></div>
+</body>
+
+</html>

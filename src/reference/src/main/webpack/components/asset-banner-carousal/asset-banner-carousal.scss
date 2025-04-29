@@ -1,0 +1,134 @@
+.vida-asset-banner-carousal {
+  padding: rem(28px) 0 rem(30px);
+  @include media(">=desktop") {
+    padding: rem(60px) 0 rem(30px);
+  }
+
+  &__slide {
+    border-radius: rem(32px);
+    height: rem(269.5px);
+    max-height: rem(269.5px);
+    width: 100%;
+    @include media(">=desktop") {
+      height: rem(479px);
+      max-height: rem(479px);
+    }
+  }
+
+  &__media {
+    border-radius: rem(32px);
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+
+    video,
+    iframe {
+      border-radius: rem(32px);
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__nav-container {
+    display: flex;
+    gap: 20px;
+    height: auto;
+    justify-content: space-between;
+    margin-top: rem(20px);
+    max-width: 100%;
+    overflow: hidden;
+
+    .vida-asset-banner-carousal__nav-controller {
+      background-color: transparent;
+      flex-basis: 0;
+      flex-grow: 1;
+      min-height: rem(130px);
+      min-width: 0;
+      @include media(">=desktop") {
+        position: relative;
+      }
+
+      &::before {
+        background-color: get-color("light-grey");
+        border-radius: rem(40px);
+        content: "";
+        display: block;
+        height: rem(4px);
+        width: 100%;
+      }
+
+      &-text {
+        cursor: pointer;
+        display: none;
+        left: rem(16px);
+        margin-top: rem(20px);
+        position: absolute;
+        @include media(">=desktop") {
+          display: block;
+          left: 0;
+          position: relative;
+        }
+
+        &-title {
+          @include h4;
+          color: get-color("light-grey");
+          margin-bottom: rem(10px);
+          @include media(">=desktop") {
+            margin-bottom: rem(14px);
+          }
+        }
+
+        &-container {
+          @include h4-md;
+          color: get-color("solid-grey");
+          display: none;
+        }
+      }
+
+
+
+      &.tns-nav-active {
+        background-color: transparent !important;
+
+        .vida-asset-banner-carousal__nav-controller-text {
+          display: block;
+
+          &-title {
+            @include h3;
+            color: get-color("solid-black");
+          }
+
+          &-container {
+            display: block;
+          }
+        }
+
+        &.vida-asset-banner-carousal__nav-controller { 
+          &::before {
+            background-color: get-color("solid-black");
+            @include media(">=desktop") {
+              background-color: get-color("light-grey");
+            }
+          }
+        }
+
+        &::after {
+          background-color: get-color("solid-black");
+          border-radius: rem(40px);
+          content: "";
+          display: none;
+          height: rem(4px);
+          position: absolute;
+          top: 0;
+          width: 100%;
+
+          @include media(">=desktop") {
+            display: block;
+            width: 70%;
+          }
+        }
+      }
+    }
+  }
+}

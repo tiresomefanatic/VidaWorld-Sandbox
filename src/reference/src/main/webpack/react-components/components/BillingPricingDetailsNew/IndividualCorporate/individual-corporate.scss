@@ -1,0 +1,33 @@
+.vida-billing-individual-corporate {
+  &__container {
+    background: get-color("white");
+    border-radius: rem(15px);
+    padding: rem(15px);
+  
+    &__wrapper {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+
+      &--radioboxes {
+        align-items: center;
+        display: flex;
+        gap: rem(20px);
+
+        .form {
+          &__field-radio {
+            margin-bottom: 0;
+          }
+        }
+
+        div {
+          align-items: center;
+          display: flex;
+          gap: rem(5px);
+        }
+      }
+    }
+  }
+}
+
+

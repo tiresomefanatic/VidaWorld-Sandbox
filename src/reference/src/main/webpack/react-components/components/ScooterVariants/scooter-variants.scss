@@ -1,0 +1,35 @@
+.vida-scooter-variants {
+  align-items: center;
+  display: flex;
+  justify-content: center !important;
+  margin-top: 0 !important;
+  min-height: 400px;
+
+  &--disclaimer {
+    color: get-color("solid-grey");
+    margin-bottom: rem(10px);
+  }
+
+  &--disclaimer2 {
+    margin-bottom: rem(10px);
+    margin-top: rem(20px);
+
+    a {
+      font-size: rem(16px);
+    }
+  }
+
+  .vida-pre-booking__booking-details {
+    min-height: auto;
+    @include media(">=desktop") {
+      min-height: 650px;
+    }
+
+  }
+
+  .vida-pre-booking__booking-details--fixed-container {
+    @include media(">=desktop") {
+      z-index: 2;
+    }
+  }
+}

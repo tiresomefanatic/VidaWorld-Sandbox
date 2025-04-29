@@ -1,0 +1,130 @@
+
+
+
+.vida-payment-details {
+  margin-bottom: rem(20px);
+
+  &__wrapper {
+    border: 1px solid get-color("light-grey");
+    border-radius: rem(16px);
+    padding: rem(0);
+    @include media(">=desktop") {
+      border-radius: rem(8px);
+      padding: rem(15px);
+    }
+  }
+  
+  &__title {
+    padding: rem(15px);
+    position: relative;
+    @include media(">=desktop") {
+      padding: rem(0);
+    }
+
+    h1 {
+      @include h2;
+    }
+
+    .icon-minus,
+    .icon-plus {
+      border: 1px solid get-color("solid-black");
+      border-radius: 50%;
+      cursor: pointer;
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      @include media(">=desktop") {
+        right: 0;
+        top: 4px;
+      }
+    }
+  }
+  
+  &__info {
+    border-top: 1px solid get-color("light-grey");
+    display: flex;
+    flex-direction: column-reverse;
+    padding: rem(15px);
+    @include media(">=desktop") {
+      flex-direction: row;
+      margin-top: 20px;
+      padding: rem(0);
+      padding-top: rem(15px);
+    }
+    
+    &__left {
+      width: 100%;
+      @include media(">=desktop") {
+        width: 50%;
+      }
+
+      .items {
+        display: flex;
+        margin-bottom: rem(15px);
+        width: 100%;
+        @include media(">=desktop") {
+          display: block;
+          width: auto;
+        }
+
+        &__label {
+          @include h4-md;
+          color: get-color("solid-grey");
+          font-weight: 400 !important;
+          @include media(">=desktop") {
+            color: get-color("solid-black");
+          }
+        } 
+
+        &__value {
+          @include h4-md;
+          color: get-color("solid-black");
+          font-weight: 500;
+          margin-left: auto;
+          order: 2;
+        } 
+      }
+    }
+
+    &__right {
+      margin-top: rem(0);
+      text-align: right;
+      width: 100%;
+      @include media(">=desktop") {
+        margin-top: rem(30px);
+        width: 50%;
+      }
+
+      .items {
+        display: flex;
+        margin-bottom: rem(15px);
+        width: 100%;
+        @include media(">=desktop") {
+          display: block;
+          width: auto;
+        }
+
+        &__label {
+          @include h4-md;
+          color: get-color("solid-grey");
+          font-weight: 400;
+        } 
+
+        &__value {
+          color: get-color("solid-black");
+          font-size: rem(20px);
+          font-weight: 400;
+          margin-left: auto;
+          order: 2;
+          @include media(">=desktop") {
+            font-size: rem(21px);
+          }
+        } 
+
+        &__info {
+          margin-left: rem(5px);
+        }
+      }
+    }
+  }
+}

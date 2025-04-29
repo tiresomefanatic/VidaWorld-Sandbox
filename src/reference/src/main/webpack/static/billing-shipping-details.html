@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Billing Shipping Details</title>
+    <meta charset="UTF-8" />
+    <meta name="template" content="page-content" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Meta Property for Analytics Datalayer -->
+    <meta property="pageCategory" content="Booking" />
+    <meta property="pageName" content="Booking:Billing & shipping details" />
+    <meta property="country" content="India" />
+    <meta property="language" content="en" />
+    <meta property="isErrorPage" content="false" />
+    <meta property="errorCode" content="404" />
+    <meta property="errorDescription" content="Page Not Found" />
+
+    <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+    <script>
+        const sessionCookieExist = document.cookie.match(/^(.*;)?\s*SESSION_TOKEN\s*=\s*[^;]+(.*)?$/);
+        if (!sessionCookieExist) {
+            window.location.href = "/login.html"+"?redirectURL="+window.location.href;
+        }
+    </script>
+    <%= htmlWebpackPlugin.options.custom %>
+        <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js"
+            async></script>
+</head>
+
+<body>
+    <header></header>
+    <div data-component="Notification" data-cmp-type="react"></div>
+    <script>
+        window.appConfig = Object.assign(window.appConfig || {}, {
+            "deliveryConfig": {
+                "billingShippingConfig": {
+                    "title": "Billing & shipping details",
+                    "billingAddress": {
+                        "title": "Billing Address",
+                        "message": "This address will be your RTO Address!"
+                    },
+                    "shippingAddress": {
+                        "title": "Shipping Address",
+                        "message": "We will check if your address is eligible for shipping, else you will need to pickup your vehicle from an experience centre.",
+                        "confirmAddressField": {
+                            "label": "Shipping address same as the billing adress "
+                        }
+                    },
+                    "addressLine1Field": {
+                        "label": "Address Line 1",
+                        "placeholder": "Building & street name",
+                        "validationRules": {
+                            "required": {
+                                "message": "Address Line 1 is required."
+                            }
+                        }
+                    },
+                    "addressLine2Field": {
+                        "label": "Address Line 2",
+                        "placeholder": "Area",
+                        "validationRules": {
+                            "required": {
+                                "message": "Address Line 2 is required."
+                            }
+                        }
+                    },
+                    "landmarkField": {
+                        "label": "Landmark",
+                        "placeholder": "Near..."
+                    },
+                    "pinCodeField": {
+                        "label": "PIN Code",
+                        "placeholder": "------",
+                        "validationRules": {
+                            "required": {
+                                "message": "Pin code is required."
+                            },
+                            "minLength": {
+                                "value": 6,
+                                "message": "Pin code must have 6 digits."
+                            },
+                            "customValidation": {
+                                "noServiceMsg": "Pincode is not serviceable.",
+                                "noCityMatchMsg": "Pincode do not match with the city selected.",
+                            }
+                        }
+                    },
+                    "cityField": {
+                        "label": "City"
+                    },
+                    "stateField": {
+                        "label": "State"
+                    },
+                    "notificationBanner": {
+                        "label": "Please Note",
+                        "info": "You will have to submit verification documents after payment ( Pasport size photo, Aadhar Card,  Pan card, Address proof)Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                    }
+                },
+                "deliveryStatusConfig": {
+                    "statuses": [{
+                        "id": 0,
+                        "label": "Configure"
+                    },
+                    {
+                        "id": 1,
+                        "label": "Ownership"
+                    },
+                    {
+                        "id": 2,
+                        "label": "Delivery Details"
+                    },
+                    {
+						"id": 3,
+						"label": {
+							"payment": "Payment",
+							"loan": "Apply for loan",
+							"lease": "Apply for lease"
+						}
+					}
+                    ],
+                    "saveBtn": {
+                        "label": "Save & Continue"
+                    },
+                    "paymentBtn": {
+                        "label": "Make Payment"
+                    },
+                    "centrePayBtn": {
+                        "label": "Pay at Centre"
+                    },
+                    "helpLink": {
+                        "helpLabel": "Trouble booking?",
+                        "chatLabel": "Chat with us"
+                    },
+					"applyBtn": {
+						"label": "Apply Offers"
+					}
+                }
+            }
+        });  
+    </script>
+    <!-- <div data-component="DeliveryStatus" data-cmp-type="react" data-cmp-config="deliveryConfig"></div> -->
+    <div data-component="Spinner" data-cmp-type="react"></div>
+    <div data-component="DeliveryDetails" data-cmp-type="react" data-cmp-config="deliveryConfig"></div>
+
+    
+</body>
+
+</html>

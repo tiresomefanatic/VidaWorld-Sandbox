@@ -1,0 +1,65 @@
+
+
+.vida-delivery-details {
+  &__wrapper {
+    position: relative;
+
+    &::after {
+      clear: both;
+      content: "";
+      display: block;
+    }
+  }
+
+  &__billing {
+    float: left;
+    padding-bottom: rem(50px);
+    width: 100%;
+
+    @include media(">=desktop") {
+      padding-bottom: 0;
+      width: 64%;
+    }
+    @include media(">=desktop-md") {
+      width: 69%;
+    }
+  }
+
+  &__shipping {
+    background-color: get-color("white");
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    transition: all 0.4s ease-out;
+    width: 100%;
+    z-index: 1;
+    @include media(">=desktop") {
+      display: flex;
+      float: left;
+      min-height: 100vh;
+      position: sticky;
+      right: 0;
+      // top: rem(85px);
+      top: rem(76px);
+      width: 36%;
+    }
+    @include media(">=desktop-md") {
+      width: 31%;
+    }
+    // @include media(">=desktop-lg") {
+    //   width: 32%;
+    // }
+    // @include media(">=desktop-xl") {
+    //   width: 34%;
+    // }
+    // @include media(">=desktop-xxl") {
+    //   width: 36%;
+    // }
+
+    &-sticky {
+      @include media(">=desktop") {
+        top: 0;
+      }
+    }
+  }
+}

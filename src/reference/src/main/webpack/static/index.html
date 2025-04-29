@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Home" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+  <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.minptest.js" async></script>
+</head>
+
+<body>
+  <floating-icon></floating-icon>
+  <header></header>
+  <!-- Product Details Component -->
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "scrollTrackingBuckets":[25,50,75,98],
+      "productDetails": {
+        "productHeading": "<p>Inspired by our principles, <span class='txt-color--orange'> created for the ones who make a stand,</span>designed for any street in the world, connected to feel unique. We introduce</p>",
+        "priceLabel": "Starting Price",
+        "selectedProductSku": "VELCADRSCELM",
+        "selectedVariantSku": "VELCADRSCELMBL",
+        "selectedCityId": "NewDelhi-Delhi-India",
+        "showPrice": "true",
+        "primaryBtn": {
+          "label": "Product Details",
+          "actionUrl": ""
+        },
+        "secondaryBtn": {
+          "label": "Build your own",
+          "actionUrl": "/configuration.html"
+        },
+        "performance": {
+          "topSpeed": "Top Speed",
+          "range": "Battery range",
+          "weight": "Total Weight",
+          "chargingTime": "0-100% charge in"
+        },
+        "one3DConfig":{
+          "packageDivId":"one3dProductDetails",
+          "packageUrl": "https://poc.one3d.in/hero_360_staging/",
+          "packagePath": "one3d/assets/VIDA/one3d_functions.min.js",
+          "variant": "COUPE"
+        }
+      }
+    });
+  </script>
+  <div data-component="ProductDetails" data-cmp-type="react" data-cmp-config="productDetails"></div>
+
+  <product-info></product-info>
+
+  <!-- Payment Info Component -->
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "paymentInfoConfig": {
+        "selectedCityId":"NEW DELHI~DELHI~INDIA",
+        "selectedVariantSku": "HFDLXTB",
+        "heading": "<p><span class='txt-color--orange'>Pay</span> according to your convenience</p>",
+        "subHeading": "<p>Ownership through a new lens</p>",
+        "loanPurchaseLabel": "Purchase on loan",
+        "leasePurchaseLabel":"Purchase on lease",
+        "fullPaymentLabel":"Make full payment",
+        "startingPriceLabel":"Starting price",
+        "startingEmiLabel":"Starting EMI",
+        "knowMoreLabel": "Know more",
+        "subsctiptionPlanConfig": {
+          "planCard":{
+            "planCardTitle": "Subscription Plans",
+            "planCardDesc": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+            "planCardLink": "Compare Plans"
+          },
+          "planCardPopup":{
+            "planCardPopupTitle": "Ownership Plans",
+            "standardPlan":{
+              "standardPlanLabel": "Standard Plan",
+              "standardPlanDesc": "FREE & included with any add-on plan",
+              "chargerLabel":"Portable Charger",
+              "batteryLabel":"2 year Battery warranty",
+              "vehicleLabel":"3 year Vehicle warranty"
+            }
+          }
+        },
+        "fullPayment": {
+          "title": "Make Full Payment",
+          "headline": "Purchase your future online",
+          "description": "Simple and easy steps to purchase your scooter, say goodbye to the whole hassle of offline hunt and payments",
+          "paymentStepsConfig": [{
+            "id": 0,
+            "icon": "scooter",
+            "label": "Do your research",
+            "message": "",
+          },
+          {
+            "id": 1,
+            "icon": "scooter",
+            "label": "Book Test Drive",
+            "message": "",
+          },
+          {
+            "id": 2,
+            "icon": "wallet",
+            "label": "Reserve for 499/-",
+            "message": "",
+          },
+          {
+            "id": 3,
+            "icon": "color-swatch",
+            "label": "Configure your dream scooter",
+            "message": "",
+          },
+          {
+            "id": 4,
+            "icon": "credit-card",
+            "label": "Purchase online",
+            "message": "Pay online/offline",
+          },
+          {
+            "id": 5,
+            "icon": "truck",
+            "label": "Delivery at doorstep",
+            "message": "Track your delivery",
+          }
+          ],
+          "reserveBtnLabel": "Reserve for 499/-"
+        }
+      }
+    });
+  </script>
+  <div data-component="PaymentInfo" data-cmp-type="react" data-cmp-config="paymentInfoConfig"></div>
+
+  <div style="display: none;">
+    <banner></banner>
+    <two-column-text></two-column-text>
+    <banner-carousel></banner-carousel>
+    <full-screen-video></full-screen-video>
+    <two-column-card></two-column-card>
+    <card-details></card-details>
+    <rounded-carousel></rounded-carousel>
+    <advanced-accordion></advanced-accordion>
+  </div>
+  
+  <!-- Location Finder Component -->
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "locationFinderConfig": {
+        "mode": "default",
+        "defaultLocationId": "NEW DELHI~DELHI~INDIA",
+        "title": "Your eco-friendly neighbourhood",
+        "subtitle": "Find a VIDA near you",
+        "locations": [{
+          "id": "chargingStations",
+          "label": "Charging stations",
+          "count": 0
+        }, {
+          "id": "serviceCenter",
+          "label": "Service centers",
+          "count": 0
+        }, {
+          "id": "experienceCenter",
+          "label": "Experience stores",
+          "count": 0
+        }]
+      }
+    });
+  </script>
+  <div data-component="LocationFinder" data-cmp-type="react" data-cmp-config="locationFinderConfig"></div>
+
+  <social-feed></social-feed>
+
+  <!-- Stay in Touch Component -->
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "stayInTouch": {
+        "title": "LET’S STAY IN TOUCH!",
+        "message": "Get updates on sales specials and more",
+        "successTitle": "CONGRATULATIONS!",
+        "successMessage": "You have been added to our mailing list, you will be the first to know about our new releases",
+        "productImage": "/clientlib-site/images/png/scooter.png",
+        "socialLinks": [{
+          "name": "instagram",
+          "actionUrl": "#",
+          "icon": "icon-instagram"
+        },
+        {
+          "name": "twitter",
+          "actionUrl": "#",
+          "icon": "icon-twitter"
+        },
+        {
+          "name": "linkedIn",
+          "actionUrl": "#",
+          "icon": "icon-linkedin"
+        },
+        {
+          "name": "facebook",
+          "actionUrl": "#",
+          "icon": "icon-facebook"
+        }
+        ],
+        "firstNameField": {
+          "label": "First Name",
+          "placeholder": "Enter First Name",
+          "validationRules": {
+            "required": {
+              "message": "First Name is required."
+            },
+            "minLength": {
+              "value": 1,
+              "message": "First name should have at least 1 character."
+            },
+            "customValidation": {
+              "message": "Please enter valid first name."
+            }
+          }
+        },
+        "lastNameField": {
+          "label": "Last Name",
+          "placeholder": "Enter Last Name",
+          "validationRules": {
+            "required": {
+              "message": "Last name is required."
+            },
+            "minLength": {
+              "value": 1,
+              "message": "Last name should have at least 1 character."
+            },
+            "customValidation": {
+              "message": "Please enter valid last name."
+            }
+          }
+        },
+        "mobileField": {
+          "id": "mobile",
+          "label": "Mobile Number",
+          "placeholder": "9999999999",
+          "validationRules": {
+            "required": {
+              "message": "Mobile number is required."
+            },
+            "minLength": {
+              "value": 10,
+              "message": "Minimum 10 digit required."
+            },
+            "maxLength": {
+              "value": 10,
+              "message": "Maximum 10 digit required."
+            },
+            "customValidation": {
+              "message": "Please enter valid mobile number."
+            }
+          }
+        },
+        "errorMessage": "Duplicate Mobile number. Please try with another number",
+        "emailField": {
+          "label": "Email ID",
+          "placeholder": "Enter Email",
+          "infoLabel": "Mention active account, this will be used to send important mails",
+          "validationRules": {
+            "required": {
+              "message": "Email is required."
+            },
+            "customValidation": {
+              "message": "Please enter valid email address."
+            }
+          }
+        },
+        "pinCodeField": {
+          "label": "PIN Code",
+          "placeholder": "Enter PIN Code",
+          "validationRules": {
+            "required": {
+              "message": "PIN Code is required."
+            },
+            "minLength": {
+              "value": 6,
+              "message": "PIN Code must have 6 digits only."
+            }
+          }
+        },
+        "submitBtn": {
+          "label": "Submit"
+        }
+      }
+    });
+  </script>
+  <div data-component="StayInTouch" data-cmp-type="react" data-cmp-config="stayInTouch"></div>
+  <footer></footer>
+</body>
+
+</html>

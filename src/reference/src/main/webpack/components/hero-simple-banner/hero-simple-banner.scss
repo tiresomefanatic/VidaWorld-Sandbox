@@ -1,0 +1,555 @@
+.vida-hero-simple-banner {
+  overflow: hidden;
+  position: relative;
+
+  &__container-link {
+    text-decoration: none;
+  }
+
+  &-trapezoid {
+    &-item {
+      border-right: rem(152px) solid transparent;
+      border-top: rem(350px) solid get-color("orange");
+      display: block;
+      height: 0;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      width: 55%;
+      @include media("<desktop") {
+        width: 60%;
+      }
+      @include media("<tablet") {
+        border-right: rem(88px) solid transparent;
+        width: 75%;
+      }
+    }
+
+    .vida-hero-simple-banner__container {
+      align-items: center;
+
+      &.battery {
+        color: get-color("orange");
+        
+        .vida-hero-simple-banner__title-list {
+          .vida-hero-simple-banner__title-list-item {
+            list-style-type: none;
+
+            .icon {
+              height: rem(40px);
+              width: rem(40px);
+            }
+          }
+        }
+
+        .vida-hero-simple-banner__title-text-right {
+          margin-left: 64%;
+          width: 30%;
+        }
+
+        .vida-hero-simple-banner__title-text-left {
+          width: 30%;
+        }
+
+        .underline {
+          text-decoration: underline;
+        }
+      }
+
+      &-right {
+        justify-content: end;
+        padding: 0;
+      }
+
+      .skewed {
+        transform: rotate(-5deg) skew(-5deg);
+      }
+
+      .large-text {
+        font-size: rem(50px);
+      }
+    }
+
+    .vida-hero-simple-banner__title {
+      margin-top: 0;
+      padding-left: rem(70px);
+      position: absolute;
+      text-align: left;
+
+      @include media("<tablet") {
+        left: rem(6px) !important;
+        max-width: 50%;
+
+        &-header {
+          line-height: rem(10px);
+          margin-bottom: rem(20px);
+        }
+
+        &-highlight {
+          line-height: rem(24px);
+          margin-top: rem(20px);
+          @include media("<tablet") {
+            line-height: rem(10px);
+            margin-top: rem(5px);
+            width: 90%;
+
+            b {
+              font-size: rem(14px);
+            }
+          }
+
+          b {
+            line-height: rem(10px);
+          }
+        }
+      }
+
+      @include media("<desktop-md") {
+        left: rem(30px);
+        padding-left: 0;
+      }
+      @include media("<tablet") {
+        left: rem(5px);
+        padding-left: 0;
+
+        &.text-right {
+          left: unset;
+          right: 0;
+        }
+      }
+      @include media("<desktop") {
+        left: rem(30px);
+
+        &.text-right {
+          left: unset;
+          right: 0;
+        }
+
+        &-trapezoid {
+          p {
+            font-weight: 400;
+            text-transform: none !important;
+          }
+        }
+
+        &-header {
+          font-size: rem(30px);
+
+          b {
+            font-size: rem(30px);
+          }
+        }
+
+        &-desc {
+          font-size: rem(21px);
+          font-weight: 400;
+          @include media("<tablet") {
+            font-size: rem(14px);
+            line-height: rem(10px);
+          }
+        }
+
+        &-highlight {
+          b {
+            font-size: rem(20px);
+          }
+        }
+      }
+
+      &.text-right {
+
+        padding-left: 0;
+        right: 0;
+        @include media("<tablet") {
+          left: 174px !important;
+          max-width: 50%;
+
+          .vida-hero-simple-banner__title-terms {
+            font-size: rem(7px);
+            top: 45%;
+          }
+        }
+
+        @include media("<phone") {
+          left: 150px !important;
+
+          .vida-hero-simple-banner__title-terms {
+            font-size: rem(5px);
+            right: rem(-40px);
+            top: 40%;
+          }
+        }
+
+        @include media(">=tablet") {
+          left: unset !important;
+        }
+
+
+
+        h1 {
+          font-size: rem(28px);
+          @include media(">=desktop") {
+            width: 600px;
+          }
+          @include media(">=tablet") {
+            width: 440px;
+          }
+          @include media("<phone") {
+            line-height: rem(10px);
+          }
+
+          b {
+            font-size: rem(40px);
+            line-height: rem(25px);
+            @include media(">=phone") {
+              font-size: rem(15px);
+            }
+            @include media("<phone") {
+              font-size: rem(11px);
+              line-height: rem(12px);
+            }
+
+            @include media(">=tablet") {
+              font-size: rem(40px);
+              line-height: rem(25px);
+            }
+
+            .large-text {
+              font-size: rem(50px);
+              @include media(">=phone") {
+                font-size: rem(18px);
+              }
+              @include media("<phone") {
+                font-size: rem(14px);
+              }
+
+              @include media(">=tablet") {
+                font-size: rem(50px);
+              }
+            }
+          }
+        }
+      }
+
+      &.text-right {
+        left: unset;
+        right: 0;
+      }
+
+      &-terms {
+        color: #fff;
+        font-size: rem(10px);
+        font-weight: 400;
+        position: absolute;
+        right: rem(-70px);
+        text-transform: lowercase !important;
+        top: 50%;
+        transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+
+      &-trapezoid {
+        p {
+          font-weight: 400;
+          text-transform: none !important;
+        }
+      }
+
+      &-header {
+        font-size: rem(40px);
+        font-weight: 100;
+        letter-spacing: rem(4px);
+
+        b {
+          font-size: rem(40px);
+          letter-spacing: rem(4px);
+        }
+      }
+
+      &-desc {
+        font-size: rem(26px);
+        font-weight: 400;
+        line-height: rem(30px);
+        @include media(">=desktop") {
+          font-size: rem(30px);
+          line-height: rem(40px);
+        }
+      }
+
+      &-highlight {
+        font-size: rem(20px);
+        text-transform: none !important;
+
+        b {
+          font-size: rem(26px);
+          text-transform: none;
+          @include media(">=desktop") {
+            font-size: rem(32px);
+          }
+        }
+      }
+
+      h1 {
+        font-size: rem(40px);
+        font-weight: 300;
+        line-height: rem(40px);
+        margin-bottom: rem(20px);
+        @include media("<tablet") {
+          font-size: rem(20px);
+          line-height: rem(20px);
+          margin-bottom: 6px;
+
+          b {
+            font-size: rem(24px);
+          }
+        }
+        @include media(">=tablet") {
+          line-height: rem(35px);
+          width: 600px;
+        }
+        @include media(">=desktop") {
+          font-size: rem(56px);
+          line-height: rem(25px);
+          margin-bottom: rem(30px);
+          width: 600px;
+        }
+        @include media(">=phone") {
+          line-height: rem(20px);
+          width: rem(208px);
+        }
+
+        @include media(">=desktop") {
+          line-height: rem(50px);
+        }
+
+        b {
+          font-size: rem(40px);
+        }
+      }
+    }
+
+    &__asset {
+      height: 100%;
+      min-height: 170px;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  &__asset {
+    width: 100%;
+
+    .vida-video-player {
+      height: 100%;
+    }
+
+    img,
+    video {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  &__container {
+    align-items: left;
+    display: flex;
+    height: 100%;
+    justify-content: left;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include media(">=desktop") {
+      align-items: unset;
+      justify-content: unset;
+    }
+  }
+
+  &__title {
+    color: get-color("white");
+    margin-top: rem(13px);
+    text-align: left;
+    @include media(">=desktop") {
+      margin-top: rem(150px);
+      max-width: rem(650px);
+    }
+
+    @include media(">=phone") {
+      margin-top: rem(30px);
+    }
+
+    @include media(">=tablet") {
+      margin-top: rem(50px);
+    }
+
+    h1 {
+      line-height: rem(8px);
+      @include media(">=tablet") {
+        line-height: rem(20px);
+      }
+      @include media(">=desktop") {
+        line-height: rem(25px);
+      }
+    }
+
+    .heading__top {
+      font-size: rem(16px);
+      @include media(">=tablet") {
+        font-size: rem(30px);
+      }
+      @include media(">=desktop") {
+        font-size: rem(40px);
+        line-height: rem(40px);
+      }
+    }
+
+    .heading__middle {
+      font-size: rem(28px);
+      line-height: rem(16px);
+      @include media(">=tablet") {
+        font-size: rem(67px);
+        line-height: rem(50px);
+      }
+      @include media(">=desktop") {
+        font-size: rem(85px);
+        line-height: rem(70px);
+      }
+
+      &-variant1 {
+        font-size: rem(16px);
+        line-height: rem(16px);
+        @include media(">=tablet") {
+          font-size: rem(38px);
+          line-height: rem(40px);
+        }
+        @include media(">=desktop") {
+          font-size: rem(50px);
+          line-height: rem(53px);
+        }
+      }
+    }
+
+    .heading__bottom {
+      font-size: rem(9px);
+      line-height: rem(10px);
+      @include media(">=phone") {
+        font-size: rem(9px);
+      }
+      @include media(">=tablet") {
+        font-size: rem(21px);
+      }
+      @include media(">=desktop") {
+        font-size: rem(27px);
+        line-height: rem(30px);
+      }
+    }
+
+    * {
+      @include d3;
+    }
+  }
+
+  &__battery-variant {
+    h1 {
+      .txt-color--orange {
+        letter-spacing: rem(6px);
+      }
+
+      span:nth-child(2) {
+        font-weight: 300;
+      }
+    }
+
+    h3.vida-rest-content {
+      line-height: rem(28px);
+      @include media(">=phone") {
+        margin-top: rem(16px);
+      }
+      @include media(">=tablet") {
+        margin-top: rem(32px);
+      }
+
+      @include media(">=desktop") {
+        margin-top: rem(64px);
+      }
+
+      @include media(">=desktop-xl") {
+        margin-top: rem(80px);
+      }
+
+      @include media(">=desktop-xxl") {
+        margin-top: rem(160px);
+      }
+      
+    }
+
+    .vida-hero-simple-banner__title {
+
+      @include media(">phone") {
+        margin-top: rem(40px);
+      }
+
+      @include media(">=tablet") {
+        margin-top: rem(80px);
+      }
+
+      @include media(">=desktop") {
+        margin-top: rem(100px);
+      }
+
+      @include media(">=desktop-md") {
+        margin-top: rem(140px);
+      }
+
+      @include media(">=desktop-lg") {
+        margin-top: rem(155px);
+      }
+
+      @include media(">=desktop-xl") {
+        margin-top: rem(170px);
+      }
+      
+      @include media(">=desktop-xxl") {
+        margin-top: rem(210px);
+      }
+      
+
+      p {
+        font-weight: 300;
+        @include media(">=desktop") {
+          font-size: rem(16px);
+          line-height: rem(18px);
+        }
+
+        @include media(">=phone") {
+          font-size: rem(12px);
+          line-height: rem(14px);
+        }
+      }
+
+      
+
+      p:first-of-type {
+        font-weight: 400;
+        margin-top: rem(8px);
+        @include media(">=desktop") {
+          font-size: rem(20px);
+          line-height: rem(26px);
+        }
+        @include media(">=tablet") {
+          font-size: rem(14px);
+          line-height: (18px);
+        }
+        @include media(">=phone") {
+          font-size: rem(12px);
+          line-height: rem(16px);
+        }
+        
+        
+      }
+    }
+  }
+}

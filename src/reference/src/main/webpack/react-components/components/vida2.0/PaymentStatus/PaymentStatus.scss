@@ -1,0 +1,850 @@
+.payment-status-bg-img {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.payment-status-bg-img > img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.payment-status-bg-img {
+  .vida-payment-bg-img {
+    height: 100vh;
+    position: fixed;
+  }
+}
+
+.payment-status-wrapper {
+  // padding-top: rem(32px);
+  @include media(">=tablet") {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.payment-status-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // margin: rem(52px) 0;
+  position: relative;
+
+  @include media(">=tablet") {
+    gap: rem(32px);
+    justify-content: space-evenly;
+    justify-content: flex-start;
+    max-width: rem(450px);
+    position: relative;
+  }
+
+  &__top-banner-container {
+    background: get-color("orange");
+    border-radius: rem(8px);
+    // margin: 0 0 rem(24px) 0;
+    position: relative;
+
+    @include media(">=desktop") {
+      display: none;
+    }
+
+    .top-banner-bg {
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+
+    .top-banner-content-container {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: rem(8px) rem(16px);
+      position: relative;
+    }
+
+    .user-info-container {
+      .user-info-name {
+        font-size: rem(48px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 83.333%;
+      }
+
+      .user-info-bike {
+        font-size: rem(30px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: 133.33%;
+      }
+
+      .subtext {
+        font-size: rem(16px);
+        font-style: italic;
+        font-weight: 530;
+        line-height: 125%;
+      }
+    }
+
+    .user-info-bike-img {
+      height: rem(93px);
+      width: rem(102px);
+
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  .symbol-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: rem(12px);
+    height: rem(100px);
+    justify-content: center;
+    margin-top: rem(54px);
+    width: rem(100px);
+
+    @include media(">=tablet") {
+      height: rem(140px);
+      margin-top: 0;
+      width: rem(140px);
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .status-text-container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8px);
+    margin-bottom: rem(46px);
+
+    @include media(">=tablet") {
+      gap: rem(16px);
+      margin-bottom: rem(32px);
+      margin-top: rem(36px);
+    }
+  }
+
+  .payment-status {
+    color: get-color("mine-shaft");
+    font-size: rem(24px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+
+    @include media(">=tablet") {
+      font-size: rem(28px);
+      font-weight: 600;
+    }
+  }
+
+  .payment-amount-text {
+    color: get-color("mine-shaft");
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+
+    @include media(">=tablet") {
+      font-size: rem(28px);
+      font-weight: 600;
+    }
+  }
+
+  .bottom-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // margin: rem(20px);
+  }
+
+  .highlight-wrapper {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: rem(10px);
+  }
+
+  .highlight-text-container {
+    align-items: flex-start;
+    background: get-color("white");
+    border-radius: rem(8px);
+    box-shadow: 0 0 rem(10px) 0 rgba(0, 0, 0, 0.12);
+    display: flex;
+    gap: rem(14px);
+    margin-bottom: rem(20px);
+    // width: 328px;
+    padding: rem(22px) rem(24px);
+
+    @include media(">=tablet") {
+      border-radius: rem(16px);
+      box-shadow: 0 0 rem(10px) 0 rgba(0, 0, 0, 0.1);
+      padding: rem(24px);
+    }
+
+    &:hover {
+      outline: rem(1px) solid get-color("orange");
+    }
+
+    &:focus {
+      outline: rem(1px) solid get-color("orange");
+    }
+  }
+
+  .proceed-to-buy-container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .proceed-text {
+    color: get-color("mine-shaft");
+
+    /* Desktop/Heading 5 - Desktop */
+    font-family: PP Neue Montreal;
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    min-width: rem(233px);
+    text-align: center;
+
+    @include media(">=tablet") {
+      font-size: rem(20px);
+      font-weight: 600;
+    }
+  }
+
+  .price-text {
+    color: var(--Neutral-Dark-Grey, #222);
+
+    /* Mobile/Body 2 - Mobile */
+    font-family: PP Neue Montreal;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: right;
+
+    @include media(">=tablet") {
+      color: get-color("mine-shaft");
+
+      /* Desktop/Body 3 - Desktop */
+      font-family: PP Neue Montreal;
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-align: right;
+    }
+  }
+
+  .choose-payment {
+    align-items: center;
+    background: get-color("alice-blue");
+    border-radius: rem(8px);
+    display: flex;
+    gap: rem(10px);
+    justify-content: center;
+    padding: rem(10px) rem(18px);
+
+    p {
+      color: get-color("mine-shaft");
+      font-family: PP Neue Montreal;
+      font-size: rem(12px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      @include media(">=tablet") {
+        font-size: rem(16px);
+      }
+    }
+  }
+
+  .top-container {
+    background: get-color("white");
+    border-radius: rem(8px);
+    box-shadow: 0 0 rem(10px) 0 rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    padding: rem(22px) rem(53px);
+    width: 100%;
+
+    @include media(">=tablet") {
+      align-items: center;
+      border-radius: rem(16px);
+      gap: rem(14px);
+      margin-bottom: rem(30px);
+      padding: rem(24px);
+    }
+
+    &:hover {
+      outline: rem(1px) solid get-color("orange");
+    }
+
+    &:focus {
+      outline: rem(1px) solid get-color("orange");
+    }
+
+    &__text-container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: rem(4px);
+      justify-content: space-between;
+
+      @include media(">=tablet") {
+        align-items: flex-start;
+      }
+    }
+
+    .cancel-text {
+      color: get-color("mine-shaft");
+
+      font-family: PP Neue Montreal;
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-align: center;
+
+      @include media(">=tablet") {
+        font-size: rem(20px);
+        font-weight: 600;
+      }
+    }
+
+    .inner-text {
+      color: get-color("mine-shaft");
+      font-family: PP Neue Montreal;
+      font-size: rem(14px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-align: center;
+
+      @include media(">=tablet") {
+        font-size: rem(16px);
+      }
+    }
+  }
+
+  .desktop-button {
+    align-items: center;
+    background: get-color("orange");
+    border-radius: rem(8px);
+    // bottom: rem(45px);
+    box-shadow: 0 rem(5px) rem(10px) 0 rgba(0, 0, 0, 0.1);
+    padding: rem(16px);
+    width: 100%;
+
+    @include media(">=tablet") {
+      // bottom: 0;
+      display: flex;
+      // justify-content: flex-end;
+      // left: rem(176px);
+      padding: rem(16px) rem(32px);
+      width: rem(275px);
+    }
+  }
+
+  &.failure {
+    .payment-status-container__top-banner-container {
+      background: get-color("oslo-gray");
+      border-radius: rem(8px);
+      // margin: 0 0 rem(24px) 0;
+      position: relative;
+
+      // @include media(">=desktop") {
+      //   display: none;
+      // }
+
+      .top-banner-bg {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+
+      .top-banner-content-container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: rem(8px) rem(16px);
+        position: relative;
+
+        @include media(">=desktop") {
+          padding: rem(12px) rem(24px);
+        }
+      }
+
+      .user-info-container {
+        .user-info-name {
+          color: get-color("white");
+          font-size: rem(48px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: 83.333%;
+        }
+
+        .user-info-bike {
+          color: get-color("white");
+          font-size: rem(30px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: 133.33%;
+        }
+
+        .subtext {
+          color: get-color("white");
+          font-size: rem(16px);
+          font-style: italic;
+          font-weight: 530;
+          line-height: 125%;
+        }
+      }
+
+      .user-info-bike-img {
+        height: rem(93px);
+        width: rem(102px);
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+
+    .highlight-text-container {
+      backdrop-filter: blur(25px);
+      background: get-color("catskill-white");
+      border: none;
+      cursor: not-allowed;
+
+      &:hover {
+        border: none;
+        outline: none;
+      }
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+
+    .top-container {
+      backdrop-filter: blur(25px);
+      background: get-color("catskill-white");
+      cursor: not-allowed;
+
+      &:hover {
+        border: none;
+        outline: none;
+      }
+
+      &:focus {
+        border: none;
+        outline: none;
+      }
+    }
+
+    button {
+      color: get-color("white");
+      display: block;
+
+      font-family: PP Neue Montreal;
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      // margin-bottom: rem(20px);
+      text-align: center;
+
+      @include media(">=tablet") {
+        display: block;
+        font-size: rem(20px);
+      }
+    }
+  }
+}
+
+.payment-status {
+  &__container-wrapper {
+    padding-bottom: rem(37px) !important;
+    padding-top: rem(32px) !important;
+    position: relative;
+    @include media(">=desktop") {
+      display: flex;
+      gap: 2rem;
+      justify-content: space-between;
+      padding-bottom: rem(38px) !important;
+      padding-top: rem(50px) !important;
+    }
+
+    .proceed-banner-nav-link,
+    .cancel-banner-nav-link {
+      display: block;
+      text-decoration: none;
+    }
+
+    .cancel-banner-nav-link {
+      @include media("<desktop") {
+        margin: 0 0 rem(16px) 0;
+      }
+    }
+  }
+
+  &__right-wrapper {
+    width: 100%;
+    @include media(">=desktop") {
+      // margin-top: rem(102px);
+      max-width: 30.75rem;
+    }
+  }
+
+  &__top-banner {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: rem(156px);
+    min-width: rem(328px);
+    object-fit: cover;
+    padding-left: rem(13px);
+    padding-top: rem(19px);
+    @include media(">=desktop") {
+      min-height: rem(197px);
+      min-width: rem(492px);
+      padding-bottom: rem(14px);
+      padding-left: rem(31px);
+      padding-top: rem(16px);
+    }
+  }
+
+  &__user-details-wrapper {
+    align-items: center;
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    justify-content: center;
+
+    @include media(">=desktop") {
+      justify-content: flex-end;
+      position: relative;
+    }
+  }
+
+  &__user-details {
+    @include media(">=desktop") {
+      left: 0;
+      position: absolute;
+    }
+  }
+
+  &__user-name {
+    font-size: rem(48px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: rem(40px);
+    @include media(">=desktop") {
+      font-size: rem(72px);
+      font-weight: 600;
+      line-height: rem(60px);
+    }
+  }
+
+  &__bike-name {
+    font-size: rem(30px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: rem(40px);
+    @include media(">=desktop") {
+      font-size: rem(45px);
+      font-weight: 600;
+      line-height: rem(60px);
+    }
+  }
+
+  &__sub-text {
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: rem(20px);
+    padding-top: rem(3px);
+    @include media(">=desktop") {
+      font-size: rem(24px);
+      padding-top: rem(15px);
+    }
+  }
+
+  &__bike-image {
+    bottom: -12px;
+    height: rem(150px);
+    position: relative;
+    width: rem(164px);
+    z-index: 2;
+    @include media(">=desktop") {
+      bottom: -21px;
+      height: rem(196px);
+      width: rem(233px);
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__price-details {
+    background-color: get-color("white");
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: rem(16px);
+    padding: rem(24px) rem(23px);
+    @include media(">=desktop") {
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+      gap: rem(24px);
+      padding: rem(18px) rem(56px);
+    }
+  }
+
+  &__price-lists {
+    align-items: center;
+    border-bottom: rem(1px) solid get-color("mine-shaft");
+    display: flex;
+    gap: rem(12px);
+    justify-content: space-between;
+    margin-bottom: rem(12px);
+    padding-bottom: rem(12px);
+    @include media(">=desktop") {
+      margin-bottom: rem(17px);
+      padding-bottom: rem(17px);
+    }
+  }
+
+  &__compare-text {
+    color: get-color("orange");
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @include media(">=desktop") {
+      font-size: rem(20px);
+    }
+  }
+
+  &__price-list-wrapper {
+    background-color: get-color("alice-blue");
+    border-radius: rem(8px);
+    display: flex;
+    flex-direction: column;
+    padding: rem(10px) rem(44px);
+    @include media(">=desktop") {
+      padding: rem(12px) rem(32px);
+    }
+  }
+
+  &__price-wrapper {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__price-label-text {
+    color: get-color("mine-shaft");
+    font-size: rem(12px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @include media(">=desktop") {
+      font-size: rem(20px);
+    }
+  }
+
+  &__price {
+    color: get-color("mine-shaft");
+    font-size: rem(24px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @include media(">=desktop") {
+      font-size: rem(28px);
+    }
+  }
+
+  &__showroom-text {
+    color: get-color("mine-shaft");
+    display: flex;
+    font-size: rem(10px);
+    font-style: normal;
+    font-weight: 400;
+    justify-content: flex-end;
+    line-height: normal;
+    width: 100%;
+    @include media(">=desktop") {
+      font-size: rem(12px);
+    }
+  }
+
+  &__compare-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__specifications-container {
+    border-bottom: rem(1px) solid get-color("mine-shaft");
+    display: flex;
+    gap: rem(6px);
+    margin-bottom: rem(16px);
+    padding-bottom: rem(16px);
+  }
+
+  &__specifications-wrapper {
+    display: flex;
+    gap: rem(6px);
+    width: 50%;
+  }
+
+  &__specification-value-wrapper {
+    align-items: baseline;
+    display: flex;
+  }
+
+  &__specification-icon {
+    @include media(">=desktop") {
+    }
+    height: rem(20px);
+    width: rem(20px);
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__specification-detail-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10px);
+  }
+
+  &__specification-text {
+    color: get-color("mine-shaft");
+    font-size: rem(12px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @include media(">=desktop") {
+      font-size: rem(18px);
+    }
+  }
+
+  &__specification-value {
+    color: get-color("mine-shaft");
+    font-size: rem(24px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-right: rem(4px);
+    @include media(">=desktop") {
+      font-size: rem(28px);
+      font-weight: 530;
+    }
+  }
+
+  &__specification-unit {
+    color: get-color("mine-shaft");
+    font-size: rem(12px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @include media(">=desktop") {
+      font-size: rem(14px);
+    }
+  }
+
+  &__download-share-wrapper {
+    cursor: pointer;
+    display: flex;
+    gap: rem(16px);
+    justify-content: flex-end;
+  }
+
+  &__share {
+    height: rem(22px);
+    width: rem(22px);
+    @include media(">=desktop") {
+      display: none;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__download {
+    height: rem(22px);
+    width: rem(22px);
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__offer-scroll-wrapper {
+    background-color: get-color("black");
+    height: 22px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__img-scroll {
+    animation: scrollText 10s infinite linear;
+    display: inline-block;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+
+    img {
+      display: inline-block;
+      font-size: 50px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__retry-button {
+    bottom: rem(24px);
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    @include media(">=desktop") {
+      bottom: auto;
+      justify-content: flex-end;
+      position: relative;
+    }
+  }
+}

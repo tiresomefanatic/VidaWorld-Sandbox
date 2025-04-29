@@ -1,0 +1,160 @@
+.vida-home-contact {
+  display: flex;
+  flex-direction: column;
+  @include media(">=desktop") {
+    flex-direction: row;
+  }
+
+  &.vida-container {
+    padding-bottom: rem(40px);
+    padding-top: rem(30px);
+
+    @include media(">=desktop") {
+      padding-bottom: rem(60px);
+      padding-top: rem(56px);
+    }
+  }
+
+  &__congrats-title {
+    @include h1;
+    margin: rem(30px) 0 rem(10px) 0;
+    @include media(">=desktop") {
+      margin: rem(70px) 0 rem(10px) 0;
+      width: 50%;
+    }
+  }
+
+  &__congrats-msg {
+    @include h3;
+    margin-bottom: rem(36px);
+    @include media(">=desktop") {
+      width: 50%;
+    }
+  }
+
+  &__title {
+    @include h2;
+    margin: rem(30px) 0 rem(10px) rem(0);
+    @include media(">=desktop") {
+      margin-top: rem(70px);
+    }
+  }
+
+  &__msg {
+    @include h4;
+    margin-bottom: rem(14.5px);
+    @include media(">=desktop") {
+      margin-bottom: rem(27px);
+    }
+  }
+
+  &__social-links {
+    background: #c2fbff;
+    border-radius: 32px 32px 0 0;
+    padding-left: rem(20px);
+       
+    @include media(">=desktop") {
+      background: #c2fbff;
+      border-radius: 32px 0 0 32px;
+      padding-left: rem(72px);
+      width: 50%;
+    }
+  }
+
+  &__congrats-social-links {
+    background: #c2fbff;
+    border-radius: 32px;
+    // max-width: 100%;
+    padding-left: rem(20px);
+    @include media(">=desktop") {
+      padding-left: rem(72px);
+    }
+
+  }
+
+  &__contact-details {
+    background: #f6f6f6;
+    border-radius: 0 0 32px 32px;
+      
+    @include media(">=desktop") {
+      background: #f6f6f6;
+      border-radius: 0 32px 32px 0;
+      width: 50%;
+    }
+  }
+ 
+
+  &__links {
+    color: get-color("solid-black");
+    font-size: rem(30px);
+    margin-bottom: rem(16px);
+    padding: 0 12px;
+    text-decoration: none;
+    @include media(">=desktop") {
+      margin-bottom: rem(32px);
+    }
+
+    &.vida-header__user-icon--active {
+      border: 1px solid get-color("orange");
+      border-radius: 50%;
+      color: get-color("orange");
+      display: none;
+    }
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+
+  &__btn-container {
+    margin-bottom: rem(30px);
+    @include media(">=desktop") {
+      margin-bottom: rem(80px);
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+  }
+
+  &__scooter-img {
+    margin-bottom: rem(20px);
+    margin-top: rem(20px);
+    @include media(">=desktop") {
+      margin-bottom: rem(67px);
+      margin-top: rem(30px);
+    }
+
+    img {
+      max-width: rem(403px);
+      width: 100%;
+    }
+  }
+
+  &__congrats-scooter-img {
+    margin-bottom: rem(35px);
+    padding-top: rem(20px);
+    @include media(">=desktop") {
+      margin-left: 595px;
+      margin-top: -120px;
+      padding-top: 0;
+    }
+
+    img {
+      max-width: rem(606px);
+      width: 100%;
+    }
+  }
+
+  .form__group {
+    max-width: 100%;
+  }
+
+  &__fields {
+    margin: rem(20px) rem(16px) rem(0) rem(16px);
+    @include media(">=desktop") {
+      margin: rem(78px) rem(90px) rem(0) rem(90px);
+    }
+  }
+}

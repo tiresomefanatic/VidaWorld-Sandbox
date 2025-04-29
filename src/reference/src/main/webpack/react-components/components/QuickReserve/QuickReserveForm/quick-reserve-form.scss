@@ -1,0 +1,25 @@
+@import "../../../../site/styles/base/typography";
+
+.vida-quick-reserve-form {
+  &__title {
+    @include h2;
+    margin-bottom: 20px;
+  }
+
+  &__terms {
+    margin: 20px 0;
+
+    a {
+      margin-left: rem(5px);
+    }
+  }
+
+  .form__group {
+    min-height: rem(40px);
+  }
+
+  .form__field-message {
+    @include p2;
+    margin-bottom: rem(20px);
+  }
+}

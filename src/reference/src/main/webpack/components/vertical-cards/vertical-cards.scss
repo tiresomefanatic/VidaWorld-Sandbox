@@ -1,0 +1,96 @@
+.vida-vertical-cards {
+  padding: rem(30px) 0 rem(60px) rem(16px);
+  text-align: center;
+
+  @include media(">=desktop") {
+    padding: rem(75px) 0 rem(220px) rem(70px);
+  }
+
+  @include media(">=desktop") {
+    padding-left: rem(104px);
+  }
+
+  &__container {
+    overflow: hidden;
+  }
+
+  &__heading {
+    margin-bottom: rem(30px);
+
+    @include media(">=desktop") {
+      margin-bottom: rem(60px);
+    }
+
+    * {
+      @include h1;
+    }
+  }
+
+  &__slider {
+    &-item {
+      height: rem(519px);
+      width: rem(306px);
+
+      @include media(">=desktop") {
+        height: rem(679px);
+        width: rem(400px);
+      }
+
+      &:nth-child(even) {
+        @include media(">=desktop") {
+          margin-top: rem(78px);
+        }
+      }
+    }
+
+    &-card {
+      border-radius: rem(16px);
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+
+      @include media(">=desktop") {
+        border-radius: rem(32px);
+      }
+
+      img {
+        border-radius: rem(16px);
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+
+        @include media(">=desktop") {
+          border-radius: rem(32px);
+        }
+      }
+    }
+
+    &-content {
+      bottom: rem(20px);
+      color: get-color("white");
+      padding: 0 rem(10px);
+      position: absolute;
+      width: 100%;
+      word-break: break-all;
+
+      @include media(">=desktop") {
+        bottom: rem(25px);
+        padding: 0 rem(25px);
+      }
+    }
+
+    &-heading {
+      @include h2;
+      margin-bottom: rem(10px);
+
+      @include media(">=desktop") {
+        margin-bottom: rem(20px);
+      }
+    }
+
+    &-description {
+      @include p2;
+    }
+  }
+}

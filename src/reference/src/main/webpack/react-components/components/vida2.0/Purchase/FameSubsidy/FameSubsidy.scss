@@ -1,0 +1,158 @@
+.fame-subsidy {
+  &-wrapper {
+    background-color: get-color("alice-blue");
+
+    @include media(">=desktop") {
+      border-radius: rem(16px);
+      box-shadow: none;
+      display: block;
+      left: 0;
+      margin-left: 0;
+      max-width: 622px;
+      // padding: rem(32px);
+      position: relative;
+      z-index: auto;
+    }
+  }
+
+  &-header {
+    color: get-color("mine-shaft");
+    font-size: rem(24px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @include media(">=desktop") {
+      font-size: rem(48px);
+      font-weight: 600;
+      padding-top: rem(16px);
+    }
+  }
+
+  &-subheader {
+    color: get-color("oslo-gray");
+    font-size: rem(12px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    @include media(">=desktop") {
+      font-size: rem(18px);
+    }
+  }
+
+  &-content {
+    .dotted-seperator {
+      border: 1px solid get-color("mine-shaft");
+    }
+
+    &-radio-input {
+      margin: 24px 0;
+      @include media(">=desktop") {
+        margin: 32px 0;
+      }
+
+      .option-select {
+        display: flex;
+        gap: 12px;
+        position: relative;
+      }
+
+      .fame-subsidy-info {
+        align-items: flex-start;
+        background-color: get-color("catskill-white");
+        border-radius: rem(8px);
+        display: flex;
+        gap: rem(8px);
+        margin: rem(16px) 0 0;
+        padding: rem(16px) rem(18px);
+
+        @include media(">=desktop") {
+          margin: rem(32px) 0 0;
+        }
+
+        &-desc {
+          @include vida-mobile-body-2;
+          @include media(">=desktop") {
+            @include vida-desktop-body-3; // need to change this
+          }
+        }
+
+        &-desc:nth-of-type(2) {
+          margin-top: rem(8px);
+        }
+      }
+
+      .gst-form-wrapper {
+        margin-top: rem(16px);
+        @include media(">=desktop") {
+          margin-top: rem(32px);
+        }
+
+        .vida-form-group {
+          @include media(">=desktop") {
+            margin: 0 0 rem(32px) !important;
+          }
+        }
+      }
+    }
+
+    &-button-wrapper {
+      .primary-btn {
+        @include vida-h5-mobile;
+        background-color: get-color("orange");
+        border: 0;
+        border-radius: rem(16px);
+        color: get-color("white");
+        cursor: pointer;
+        padding: rem(16px);
+        width: 100%;
+
+        @include media(">=desktop") {
+          @include vida-h5-desktop;
+          color: get-color("white");
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &-info {
+    align-items: flex-start;
+    background-color: get-color("catskill-white");
+    border-radius: rem(8px);
+    display: flex;
+    gap: rem(8px);
+    margin: rem(16px) 0 0;
+    padding: rem(16px) rem(18px);
+
+    @include media(">=desktop") {
+      margin: rem(32px) 0 0;
+    }
+
+    &-desc {
+      @include vida-mobile-body-2;
+      @include media(">=desktop") {
+        @include vida-desktop-body-3; // need to change this
+      }
+    }
+
+    &-desc:nth-of-type(2) {
+      margin-top: rem(8px);
+    }
+  }
+
+  &-modal {
+    &-content {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19.2px;
+      text-align: left;
+
+      @include media(">=desktop") {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+}

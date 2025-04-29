@@ -1,0 +1,81 @@
+@import '../../styles/tokens.scss';
+
+.vida-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family-brand-sans-serif;
+  font-weight: $font-weight-medium;
+  border-radius: $radius-m;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  
+  // Size variants
+  &--small {
+    padding: $space-s $space-m;
+    font-size: $font-size-200;
+    line-height: $line-height-200;
+  }
+  
+  &--medium {
+    padding: $space-m $space-l;
+    font-size: $font-size-300;
+    line-height: $line-height-300;
+  }
+  
+  &--large {
+    padding: $space-l $space-xl;
+    font-size: $font-size-400;
+    line-height: $line-height-400;
+  }
+  
+  // Style variants
+  &--primary {
+    background-color: $background-brand;
+    color: $content-primary-inverse;
+    
+    &:hover:not(:disabled) {
+      background-color: $background-brand-hover;
+    }
+    
+    &:active:not(:disabled) {
+      background-color: $background-brand-pressed;
+    }
+  }
+  
+  &--secondary {
+    background-color: $background-primary;
+    color: $content-brand;
+    border: $width-xs solid $border-brand;
+    
+    &:hover:not(:disabled) {
+      background-color: $background-hover;
+      border-color: $border-focus;
+    }
+    
+    &:active:not(:disabled) {
+      background-color: $background-pressed;
+    }
+  }
+  
+  &--tertiary {
+    background-color: transparent;
+    color: $content-brand;
+    
+    &:hover:not(:disabled) {
+      background-color: $brand-100;
+    }
+    
+    &:active:not(:disabled) {
+      background-color: $brand-200;
+    }
+  }
+  
+  // Disabled state
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+} 

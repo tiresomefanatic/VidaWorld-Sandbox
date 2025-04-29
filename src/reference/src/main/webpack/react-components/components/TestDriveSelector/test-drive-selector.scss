@@ -1,0 +1,80 @@
+.vida-test-drive-selector {
+  &__container {
+    align-self: center;
+    max-width: 392px;    
+  }
+  
+  &__title {
+    @include h2;
+    color: get-color("solid-black");
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  &__disabled {
+    background-color: get-color("light-grey");
+    color: get-color("solid-grey");
+    cursor: default;
+    opacity: 0.7;
+    pointer-events: none;
+
+    &:hover {
+      border: 1px solid get-color("light-grey");
+    }
+  }
+  
+  &__card {
+    border: 1px solid get-color("light-grey");
+    border-radius: 32px;
+    box-shadow: 0 20px 50px rgba(40, 40, 40, 0.08);
+    color: get-color("solid-grey");
+    cursor: pointer;
+    margin-bottom: 30px;
+    padding: 30px 70px;
+    text-decoration: none;
+    width: 100%;
+
+    &:hover {
+      border: 1px solid get-color("blue");
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      position: relative;
+    }
+
+    &-info {
+      @include label;
+      bottom: 10px;
+      color: get-color("solid-grey");
+      position: absolute;
+    }
+  }
+
+  &__heading {
+    align-items: center;
+    display: flex;
+
+    i {
+      margin-left: 5px;
+    }
+  }
+  
+  &__label {
+    @include h3;
+    color: get-color("solid-black");
+  }
+
+  &__rate {
+    @include label;
+    margin-left: 5px;
+  }
+  
+  &__description {
+    @include p1;
+    margin-top: 5px;
+  }
+    
+}

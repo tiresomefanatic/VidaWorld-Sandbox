@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Product Details" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+    <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js"
+      async></script>
+</head>
+
+<body>
+  <header></header>
+  <scroll-navigation></scroll-navigation>
+  <product-banner></product-banner>
+  <feature-banner></feature-banner>
+  <info-graphics></info-graphics> <!-- Added for testing -->
+  <app-cards></app-cards>
+  <product-info-tiles></product-info-tiles>
+  <full-screen-video data-section-id="vida1"></full-screen-video>
+  <highlight-card-carousel></highlight-card-carousel>
+  <vertical-slider></vertical-slider>
+  <info-banner></info-banner>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "compareModel": {
+        "title": '<p>One for <span class="txt-color--orange"> everyone</span></p>',
+        "tagLine": "Buy according to your convenience",
+        "selectedCityId": "NEW DELHI~DELHI~INDIA",
+        "splitterChar": "~",
+        "CompareLinkText": "Compare Models",
+        "specs": {
+          "title": "V1 Pro",
+          "priceTag": "Starting Price",
+          "range": "Range",
+          "topSpeed": "Top Speed",
+          "chargeDuration": "0-100%",
+          "pickUp": "3.5sec",
+          "ridingModes": "Riding Mode",
+          "seatingType": "Seating",
+          "certifiedRange": "Certified Range",
+          "enableCertifiedRange": true,
+        },
+        "tooltipConfig": {
+						"info": "*Price is inclusive of portable charger, FAME II subsidy and state government subsidy (Wherever applicable).",
+						"infoPosition": "top",
+						"id": "effective-price"
+					},
+        "selectedProduct":[            
+            {
+            "productSku":"V1PLASARCEL",
+            "variantSku":"V1PLASARCELMSR",
+            "hoverImg": "https://stage.vidaworld.com/content/dam/vida/global/optimized-images/newhomepage/V1Pro-hover.mp4",
+            "baseImg": "https://stage.vidaworld.com/content/dam/vida/global/optimized-images/newhomepage/v1Pro-everyone.png",
+            "isVideo" : true
+            },
+            {
+              "productSku":"V1PRASBRCEL",
+              "variantSku":"V1PRASBRCELMSR",
+              "hoverImg": "https://stage.vidaworld.com/content/dam/vida/global/optimized-images/newhomepage/V1Plus-hover1.mp4",
+              "baseImg": "https://stage.vidaworld.com/content/dam/vida/global/optimized-images/newhomepage/v1Plus-everyone.png",
+              "isVideo" : true
+            }
+          ],
+        "bookTestDrive": "Book Test Drive",
+        "downloadBrochure": {
+          "label": "Download Brochure",
+          "url": ""
+        },
+        "configure": "Configure"
+        },      
+
+    });
+  </script>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+    "priceBreakupConfig": {
+          "splitterChar": "~",
+          "breakupLinksText": {
+            "hideBreakup": "Hide Breakup",
+            "viewBreakup": "View Breakup"
+          },
+          "mainBreakupText": {
+            "heading": "Effective Price",
+            "description": "Incl. subsidies and Portable Charger",
+            "priceLocationText": "Pricing in",
+            "gstText": "Exclusive of Insurance, Road tax & Registration charges. All prices are inclusive of G.S.T"
+          },
+          "showroomText": {
+            "heading": "Ex Showroom Price",
+            "description": "Excluding Subsidies"
+          },
+          "chargerText": {
+            "heading": ""
+          },
+          "fameSubsidyText": {
+            "heading": "",
+            "description": "Subsidy provided by central government of India on the purchase of an electric vehicle"
+          },
+          "stateSubsidyText": {
+            "potentialNotification": "Potential Price with State Subsidy (Direct to customer)",
+            "heading": "State Subsidy (Direct to customer)",
+            "description": "This subsidy varies from state to state and is subject to change based on state’s policy to promote electric vehicles. Customers need to track these subsidies and claim it on their own by submitting the required documents. The state Subsidy amount will be transferred directly to the customer by the state government"
+          },
+          "defaultCityId": "NEW DELHI~DELHI~INDIA",
+          "defaultVariantSkus": ["V1PLASARCELMWT", "V1PRASBRCELMWT"],
+        }
+      });
+  </script>
+  <div data-component="CompareModel" data-cmp-type="react" data-cmp-config="compareModel"></div>
+  <div data-component="PriceBreakup" data-cmp-type="react" data-cmp-config="priceBreakupConfig"></div>
+  <footer></footer>
+</body>
+</html>

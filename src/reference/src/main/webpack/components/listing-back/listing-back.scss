@@ -1,0 +1,22 @@
+.vida-listing-back {
+  margin-right: 30px;
+
+  &__arrow {
+    border: solid #ff5310;
+    border-width: 0 2px 2px 0;
+    float: left;
+    margin-right: 10px;
+    margin-top: 7px;
+    padding: 3px;
+    transform: rotate(-225deg);
+  }
+
+  &__link {
+    color: #ff5310;
+    font-size: 12px;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

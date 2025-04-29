@@ -1,0 +1,306 @@
+.charging-features-card-container {
+  align-items: flex-start;
+  background: 100% no-repeat;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .header-container {
+    align-items: flex-start;
+    padding-left: rem(10px);
+    padding-top: rem(67px);
+
+    @include media(">desktop") {
+      padding-left: 0;
+      padding-top: rem(52px);
+      // width: rem(590px);
+    }
+
+    .header-text-one {
+      display: none;
+    }
+
+    h1 {
+      @include vida-h1-mobile;
+      @include media(">desktop") {
+        @include vida-banner-header;
+      }
+    }
+  }
+
+  .card-container-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: rem(320px);
+    padding: rem(30px) 0 rem(50px);
+
+    @include media(">desktop") {
+      display: flex;
+      flex-wrap: wrap;
+      padding: rem(64px) 0 rem(73px);
+      // padding: 0;
+    }
+
+    .card-container {
+      display: block;
+      padding-bottom: rem(16px);
+      padding-right: rem(12px);
+      position: relative;
+      text-decoration: none;
+      width: 50%;
+
+      @include media(">desktop") {
+        margin-left: 0;
+        padding-bottom: rem(21px);
+        padding-right: rem(20px);
+      }
+    }
+
+    img {
+      border-radius: rem(8px);
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+
+      @include media(">desktop") {
+        border-radius: rem(16px);
+      }
+    }
+
+    .img-container {
+      border-radius: rem(16px);
+      min-height: rem(100px);
+      min-width: rem(154px);
+
+      @include media(">desktop") {
+        max-height: rem(300px);
+      }
+    }
+
+    .txt-container-left {
+      background: linear-gradient(82deg,
+      rgba(0, 0, 0, 0.3) 3.28%,
+      rgba(0, 0, 0, 0.5) 66.8%,
+      rgba(0, 0, 0, 0) 92.52%);
+      border-radius: rem(8px) 0 0 rem(8px);
+      height: 80%;
+      padding-left: rem(10px);
+      padding-right: rem(10px);
+      padding-top: rem(10px);
+      position: absolute;
+      top: 0;
+      width: 50%;
+      z-index: 1;
+
+      @include media(">=desktop") {
+        background: linear-gradient(84deg,
+        rgba(255, 255, 255, 0.7) -9.99%,
+        rgba(255, 255, 255, 0.3) 67.19%,
+        rgba(255, 255, 255, 0) 98.44%);
+        height: 93%;
+        padding-left: rem(30px);
+        padding-right: rem(42px);
+        padding-top: rem(44px);
+      }
+
+      .charging-features-text {
+        @include vida-h5-mobile;
+        color: get-color("white");
+        font-weight: 500;
+        height: rem(38px);
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+        width: rem(116px);
+
+        @include media(">desktop") {
+          @include vida-h2-desk;
+          height: rem(116px);
+          text-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+          width: rem(363px);
+        }
+      }
+    }
+
+    .txt-container-right {
+      background: linear-gradient(82deg,
+      rgba(0, 0, 0, 0.3) 3.28%,
+      rgba(0, 0, 0, 0.5) 66.8%,
+      rgba(0, 0, 0, 0) 92.52%);
+      border-radius: rem(8px) 0 0 rem(8px);
+      // padding-left: rem(10px);
+      display: flex;
+      height: 82%;
+      padding-right: rem(10px);
+      padding-top: rem(10px);
+      position: absolute;
+      right: rem(15px);
+      top: 0;
+      z-index: 1;
+
+      @include media(">desktop") {
+        background: linear-gradient(84deg,
+        rgba(255, 255, 255, 0.7) -9.99%,
+        rgba(255, 255, 255, 0.3) 67.19%,
+        rgba(255, 255, 255, 0) 98.44%);
+        height: 92%;
+        // padding-left: rem(30px);
+        padding-right: rem(42px);
+        padding-top: rem(44px);
+      }
+
+      .charging-features-text {
+        @include vida-h5-mobile;
+        color: get-color("white");
+        font-weight: 500;
+        height: rem(38px);
+        text-align: end;
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+        width: rem(100px);
+
+        @include media(">desktop") {
+          @include vida-h2-desk;
+          height: rem(116px);
+          text-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+          width: rem(363px);
+        }
+      }
+    }
+  }
+
+  &.variant-two {
+    @include media(">desktop") {
+      gap: 0;
+    }
+
+    .header-container {
+      padding-top: rem(32px);
+      width: 100%;
+
+      @include media(">desktop") {
+        padding-top: rem(64px);
+      }
+
+      .header-text-one {
+        @include vida-mobile-subtitle;
+        display: block;
+        // padding: 0 rem(8px);
+        text-transform: uppercase;
+
+        @include media(">desktop") {
+          @include vida-desktop-subtitle;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .card-container-wrapper {
+      padding: rem(16px) 0;
+      @include media(">desktop") {
+        padding: rem(34px) 0 rem(107px) 0;
+      }
+
+      .card-container {
+        @include media(">desktop") {
+          margin-bottom: rem(16px);
+          margin-left: 0;
+          padding-bottom: rem(18px);
+          padding-right: rem(35px);
+        }
+      }
+
+      img {
+        @include media(">desktop") {
+          background: linear-gradient(82deg,
+          rgba(0, 0, 0, 0.3) 3.28%,
+          rgba(0, 0, 0, 0.5) 66.8%,
+          rgba(0, 0, 0, 0) 92.52%);
+          border-radius: 30px;
+        }
+      }
+    }
+
+    .txt-container-left {
+      background: linear-gradient(82deg,
+      rgba(0, 0, 0, 0.3) 3.28%,
+      rgba(0, 0, 0, 0.5) 66.8%,
+      rgba(0, 0, 0, 0) 92.52%);
+
+      @include media(">=desktop") {
+        background: linear-gradient(82deg,
+        rgba(0, 0, 0, 0.3) 3.28%,
+        rgba(0, 0, 0, 0.5) 66.8%,
+        rgba(0, 0, 0, 0) 92.52%);
+        border-radius: 30px;
+        height: 92%;
+      }
+
+      .charging-features-text {
+        @include vida-h5-mobile;
+        color: get-color("white");
+        font-weight: 500;
+        height: rem(38px);
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+        width: rem(116px);
+        @include media(">desktop") {
+          @include vida-h2-desk;
+          color: get-color("white");
+          height: rem(116px);
+          text-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+
+          width: rem(363px);
+        }
+      }
+    }
+
+    .txt-container-right {
+      background: linear-gradient(82deg,
+      rgba(0, 0, 0, 0.3) 3.28%,
+      rgba(0, 0, 0, 0.5) 66.8%,
+      rgba(0, 0, 0, 0) 92.52%);
+      border-radius: rem(8px) 0 0 rem(8px);
+      height: 80%;
+      // padding-left: rem(10px);
+      padding-right: rem(10px);
+      padding-top: rem(19px);
+      position: absolute;
+      right: rem(15px);
+      top: 0;
+      // width: 60%;
+      z-index: 1;
+
+      @include media(">desktop") {
+        background: linear-gradient(82deg,
+        rgba(0, 0, 0, 0.3) 3.28%,
+        rgba(0, 0, 0, 0.5) 66.8%,
+        rgba(0, 0, 0, 0) 92.52%);
+        height: 92%;
+        // padding-left: rem(30px);
+        padding-right: rem(42px);
+        padding-top: rem(44px);
+      }
+
+      .charging-features-text {
+        @include vida-h5-mobile;
+        color: get-color("white");
+        font-weight: 500;
+        max-height: rem(38px);
+        text-align: end;
+        text-shadow: 0 rem(4px) rem(4px) rgba(0, 0, 0, 0.5);
+        width: rem(100px);
+
+        @include media(">desktop") {
+          @include vida-h2-desk;
+          color: get-color("white");
+          height: rem(116px);
+          text-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+          width: rem(363px);
+        }
+      }
+    }
+  }
+}

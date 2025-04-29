@@ -1,0 +1,190 @@
+.feature-card-slider-container {
+  background: get-color("alice-blue");
+  padding-bottom: rem(32px) !important;
+  padding-top: rem(32px) !important;
+
+  @include media(">=desktop") {
+    background: get-color("white");
+    padding-bottom: rem(64px) !important;
+    padding-top: rem(64px) !important;
+  }
+
+  &.vida-2-container {
+    padding: 0;
+    @include media(">=desktop") {
+      padding: 0 rem(88px);
+    }
+  }
+
+  .tns-horizontal.tns-subpixel > .tns-item {
+    align-items: center;
+  }
+
+  .tns-nav {
+    align-items: center;
+    display: flex !important;
+    justify-content: center;
+    padding-bottom: 0 !important;
+
+    @include media(">=desktop") {
+      display: none;
+    }
+
+    button {
+      border-radius: rem(3px);
+      height: rem(3px);
+      margin-right: rem(10px);
+      padding: rem(1px);
+      width: rem(40px);
+      @include media(">desktop") {
+        width: rem(80px);
+      }
+    }
+
+    .tns-nav-active {
+      background-color: get-color("orange") !important;
+    }
+  }
+
+  &__header-container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(5px);
+    padding: 0 rem(20px) rem(26px);
+
+    @include media(">=desktop") {
+      gap: rem(9px);
+      padding: 0 0 rem(64px);
+    }
+
+    .pre-title {
+      @include vida-mobile-subtitle;
+      letter-spacing: 0;
+      line-height: 14px;
+      text-align: left;
+
+      @include media(">=desktop") {
+        @include vida-desktop-subtitle;
+        letter-spacing: 0;
+        line-height: 22px;
+        text-align: left;
+      }
+    }
+
+    .title {
+      @include vida-h2-mobile;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 29px;
+      text-align: left;
+
+      @include media(">=desktop") {
+        @include vida-h2-desk;
+        letter-spacing: 0;
+        line-height: 58px;
+        text-align: left;
+      }
+    }
+  }
+
+  &__carousel-slider {
+    display: flex;
+    position: relative;
+
+    .img-container {
+      @include media(">=desktop") {
+        margin: auto;
+        max-width: rem(836px);
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    .video-container {
+      @include media(">=desktop") {
+        margin: auto;
+        max-width: rem(836px);
+      }
+
+      video {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    .slider-parent-container {
+      .slider-card-container {
+        background: get-color("mine-shaft");
+        border-radius: rem(8px);
+        display: flex;
+        gap: rem(16px);
+        margin: rem(-72px) auto rem(34px);
+        padding: rem(31px) rem(25px);
+        position: relative;
+        width: rem(300px);
+        z-index: 1;
+
+        @include media(">=tablet") {
+          border-radius: rem(16px);
+          gap: rem(17px);
+          margin: auto;
+          margin-bottom: rem(34px);
+          margin-top: rem(-110px);
+          padding: rem(86px) rem(79px) rem(92px);
+          width: rem(622px);
+        }
+
+        .slider-bg-img-container {
+          left: 0;
+          position: absolute;
+          top: 0;
+
+          img {
+            height: 100%;
+            object-fit: contain;
+            width: 100%;
+          }
+        }
+
+        &__icon-container {
+          height: rem(46px);
+          width: rem(46px);
+
+          @include media(">=desktop") {
+            height: rem(66px);
+            width: rem(66px);
+          }
+
+          img {
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &__text-container {
+          .card-text {
+            @include vida-h3-mobile;
+            color: get-color("white");
+            font-weight: 500;
+            letter-spacing: 0;
+            line-break: anywhere;
+            line-height: 24px;
+            text-align: left;
+
+            @include media(">=desktop") {
+              @include vida-h3-desktop;
+              color: get-color("white");
+              letter-spacing: 0;
+              line-break: anywhere;
+              line-height: 34px;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}

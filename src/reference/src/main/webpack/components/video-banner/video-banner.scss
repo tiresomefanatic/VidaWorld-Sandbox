@@ -1,0 +1,72 @@
+.vida-video-banner {
+  padding: rem(16px) 0 rem(20px);
+
+  @include media(">=desktop") {
+    padding: rem(40px) 0;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    
+    .vida-video-player {
+      &__mute {
+        bottom: rem(20px);
+        cursor: pointer;
+        height: 30px;
+        position: absolute;
+        right: rem(33px);
+        width: 30px;
+        @include media(">=desktop") {
+          bottom: rem(30px);
+          height: 45px;
+          right: rem(30px);
+          width: 45px;
+        }
+      }
+
+      &__mute-icon,
+      &__unmute-icon {
+        align-items: center;
+        border: rem(1px) solid get-color("white");
+        border-radius: 50%;
+        display: none;
+        height: 30px;
+        justify-content: center;
+        width: 30px;
+
+        @include media(">=desktop") {
+          height: 45px;
+          width: 45px;
+
+          [class^="icon-"],
+          [class*=" icon-"] {
+            font-size: 25px;
+          }
+        }
+    
+        [class^="icon-"],
+        [class*=" icon-"] {
+          color: get-color("white");
+          font-size: 20px;
+        }
+      }
+
+      &__icon--active {
+        display: flex;
+      }
+    }
+    
+    video {
+      border-radius: rem(16px);
+      height: rem(519px);
+      object-fit: cover;
+      width: 100%;
+      @include media(">=desktop") {
+        height: rem(588px);
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.vida-page-not-found {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  min-height: rem(250px);
+  position: relative;
+
+  @include media(">=tablet") {
+    min-height: rem(415px);
+  }
+
+  @include media(">=desktop") {
+    min-height: rem(615px);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    padding-top: rem(20px);
+  }
+
+  &__description {
+    padding-top: rem(10px);
+  }
+
+  &__disclaimer {
+    padding: rem(20px) 0;
+
+    * {
+      @include p2;
+    }
+  }
+
+  &__image {
+    height: calc(100% - 25px);
+    position: absolute;
+    right: 0;
+    top: rem(25px);
+    @include media(">=desktop") {
+      height: calc(100% - 70px);
+      top: rem(70px);
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}

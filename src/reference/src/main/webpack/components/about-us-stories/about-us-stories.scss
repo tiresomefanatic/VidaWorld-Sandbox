@@ -1,0 +1,72 @@
+.vida-aboutus-stories {
+  position: relative;
+
+  &__container {
+    background-color: get-color("pure-black");
+    display: grid;
+    padding: rem(225px) 0;
+    place-items: center;
+    @include media(">=desktop") {
+      padding: rem(127px) 0;
+    }
+
+    .our-stories-img {
+      height: rem(322px);
+      width: rem(322px);
+
+      @include media(">=desktop") {
+        height: rem(622px);
+        width: rem(622px);
+      }
+
+      &__image {
+        width: 100%;
+      }
+    }
+
+    .our-stories-text {
+      z-index: 3;
+
+      h2 {
+        @include vida-h1-mobile;
+        color: get-color("white");
+        @include media(">=desktop") {
+          @include vida-h2-desk;
+          color: get-color("white");
+        }
+      }
+
+      p {
+        @include vida-mobile-body-1;
+        color: get-color("white");
+        max-width: rem(215px);
+        @include media(">=desktop") {
+          @include vida-desk-body-1;
+          color: get-color("white");
+          max-width: rem(305px);
+        }
+      }
+
+      &__vision {
+        left: rem(20px);
+        position: absolute;
+        top: rem(56px);
+        @include media(">=desktop") {
+          left: rem(88px);
+          top: rem(165px);
+        }
+      }
+
+      &__mission {
+        bottom: rem(56px);
+        position: absolute;
+        right: rem(45px);
+
+        @include media(">=desktop") {
+          bottom: rem(142px);
+          right: rem(85px);
+        }
+      }
+    }
+  }
+}

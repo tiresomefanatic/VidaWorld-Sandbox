@@ -1,0 +1,59 @@
+@import "../../../../site/styles/base/typography";
+
+.vida-schedule-appointment {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: rem(400px);
+  width: 100%;
+
+  .vida-top-padding {
+    margin-top: 15px !important;
+  }
+  @media (min-width: 1024px) {
+    .vida-dealer-card__dealer {
+      width: 100%;
+    }
+
+    .vida-dealer-card__dealer:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  .form.vida-booking-details-dealers__listofdealers {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px 1px rgba(64, 60, 67, 0.16);
+    margin-bottom: 25px;
+    margin-top: 0;
+    max-height: 312px !important;
+    padding-top: 5px;
+  }
+
+  &__title {
+    @include h2;
+    margin-bottom: rem(16px);
+    max-width: rem(400px);
+    width: 100%;
+  }
+
+  .btn {
+    margin-top: auto;
+  }
+
+  &__api-error {
+    @include h4;
+    color: get-color("red");
+    margin: rem(-25px) 0 rem(15px);
+  }
+
+  &__map {
+    border-radius: rem(8px);
+    height: rem(167px);
+    margin-bottom: rem(18px);
+    overflow: hidden;
+  }
+}
+
+.form__field-radio-group {
+  margin-bottom: rem(20px);
+}

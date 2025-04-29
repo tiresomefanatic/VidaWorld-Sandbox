@@ -1,0 +1,619 @@
+.vida-billing-main-container {
+  align-items: flex-start;
+  align-items: stretch;
+  animation: slideUp 1s ease-in-out forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 rem(16px);
+  opacity: 0;
+  padding: rem(32px) 0;
+  position: relative;
+  row-gap: rem(24px);
+  transform: translateY(200%);
+
+  @include media(">=desktop") {
+    animation: none;
+    column-gap: rem(64px);
+    flex-direction: row;
+    margin: 0 rem(88px);
+    opacity: 1;
+    padding: rem(32px) 0 10% 0;
+    transform: none;
+  }
+
+  .delivery-preference {
+    display: flex;
+    flex-direction: column;
+    
+
+    @include media(">=desktop") {
+      animation: leftFadeIn 0.8s ease-in-out 1s forwards;
+      flex-basis: 48%;
+      opacity: 0;
+      row-gap: rem(24px);
+      transform: translateX(-100%);
+    }
+
+    .back-button {
+      @include vida-mobile-body-1;
+      background: transparent;
+      font-weight: 500;
+      line-height: rem(19.2px);
+      margin: 0 0 rem(16px) 1.5rem;
+      padding: 0;
+      position: relative;
+      @include media(">=desktop") {
+        @include vida-mobile-body-4;
+        line-height: rem(24px);
+        margin: 0 0 rem(24px) rem(32px);
+      }
+  
+      &::after {
+        background-image: url("/clientlib-site/images/svg/chevron-left.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        content: "";
+        height: 1rem;
+        left: -1.5rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1rem;
+
+        @include media(">=desktop") {
+          left: -2rem;
+        }
+      }
+    }
+
+    .banner-heading-container {
+      display: flex;
+      flex-direction: column;
+      
+
+      @include media(">=desktop") {
+        flex-direction: column-reverse;
+        row-gap: rem(24px);
+      }
+
+      .heading-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(8px);
+
+        @include media(">=desktop") {
+          row-gap: rem(16px);
+        }
+
+        .secondary-heading {
+          color: get-opaque-color("mine-shaft", 0.5);
+          font-size: rem(12px);
+          font-weight: 400;
+          line-height: rem(14.4px);
+          text-align: left;
+          text-transform: uppercase;
+
+          @include media(">=desktop") {
+            font-size: rem(18px);
+            font-weight: 375;
+            line-height: rem(21.6px);
+          }
+        }
+
+        .main-heading {
+          color: get-color("mine-shaft");
+          font-size: rem(24px);
+          font-weight: 600;
+          line-height: rem(28.8px);
+          text-align: left;
+
+          @include media(">=desktop") {
+            font-size: rem(48px);
+            font-weight: 700;
+            line-height: rem(57.6px);
+          }
+        }
+      }
+    }
+
+    .delivery-preference-sub-container {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(24px);
+
+      .tab-container {
+        display: flex;
+        flex-direction: column;
+
+        @include media(">=desktop") {
+          row-gap: rem(16px);
+        }
+
+        .tab-title {
+          font-size: rem(16px);
+          font-weight: 700;
+          line-height: rem(19.2px);
+          text-align: left;
+
+          @include media(">=desktop") {
+            font-size: rem(28px);
+            font-weight: 700;
+            line-height: rem(33.6px);
+          }
+        }
+      }
+
+      .card1 {
+        align-items: flex-start;
+        border-radius: rem(16px);
+        column-gap: rem(8px);
+        display: flex;
+        gap: rem(10px);
+        justify-content: flex-start;
+        padding: rem(16px) rem(20px);
+
+        @include media(">=desktop") {
+          background: get-color("alice-blue");
+        }
+
+        content {
+          font-size: rem(14px);
+          font-weight: 375;
+          line-height: rem(18px);
+
+          @include media(">=desktop") {
+            font-size: rem(16px);
+            font-weight: 400;
+            line-height: rem(18px);
+            text-align: left;
+          }
+
+          span {
+            font-size: rem(14px);
+            font-weight: 530;
+            line-height: rem(18px);
+
+            @include media(">=desktop") {
+              font-size: rem(16px);
+              font-weight: 400;
+              line-height: rem(20.8px);
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      .card2 {
+        border-radius: rem(8px);
+
+        display: flex;
+        flex-direction: column;
+        gap: rem(16px);
+        padding: rem(16px) rem(20px);
+
+        @include media(">=desktop") {
+          background: get-color("alice-blue");
+          border-radius: rem(16px);
+        }
+
+        p {
+          color: get-color("mine-shaft");
+          font-size: rem(16px);
+          font-weight: 600;
+          line-height: rem(19.2px);
+          text-align: left;
+
+          @include media(">=desktop") {
+            font-size: rem(20px);
+            font-weight: 500;
+            line-height: rem(24px);
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  .address-form-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(16px);
+
+    @include media(">=desktop") {
+      animation: rightFadeIn 0.8s ease-in-out forwards;
+      background: get-color("white");
+      border-radius: rem(16px);
+      box-shadow: 0 4px 10px 0 get-opaque-color("pure-black", 0.1);
+      flex-basis: 48%;
+      opacity: 0;
+      padding: rem(32px);
+      row-gap: rem(24px);
+      transform: translateX(200%);
+    }
+
+    .shipping-address-title {
+      color: get-color("mine-shaft");
+      font-size: rem(16px);
+      font-weight: 600;
+      line-height: rem(19.2px);
+      text-align: left;
+
+      @include media(">=desktop") {
+        font-size: rem(28px);
+        font-weight: 700;
+        line-height: rem(33.6px);
+      }
+    }
+
+    .shipping-address-description {
+      color: get-color("mine-shaft");
+      font-size: rem(14px);
+      font-weight: 400;
+      line-height: rem(16.8px);
+      text-align: left;
+
+      @include media(">=desktop") {
+        font-size: rem(18px);
+        font-weight: 375;
+        line-height: rem(21.6px);
+      }
+    }
+
+    .shipping-address-mandatory-msg {
+      @include vida-h5-mobile;
+      @include media(">=desktop") {
+        @include vida-h6-desktop;
+      }
+
+      span {
+        color: get-color("red");
+      }
+    }
+
+    .shipping-address-form {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(16px);
+
+      @include media(">=desktop") {
+        // background: get-color("white");
+        // border-radius: rem(16px);
+        // box-shadow: 0 4px 10px 0 get-opaque-color("pure-black", 0.1);
+        // padding: rem(32px);
+        row-gap: 24px;
+      }
+
+      .divider {
+        background-color: get-color("mine-shaft");
+        height: rem(1px);
+        width: 100%;
+      }
+
+      .billing-address-form-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(16px);
+
+        @include media(">=desktop") {
+          row-gap: 24px;
+        }
+
+        .billing-address-title {
+          color: get-color("mine-shaft");
+          font-size: rem(16px);
+          font-weight: 600;
+          line-height: rem(19.2px);
+          text-align: left;
+
+          @include media(">=desktop") {
+            font-size: rem(28px);
+            font-weight: 700;
+            line-height: rem(33.6px);
+          }
+        }
+      }
+
+      .billingSameAsShippingContainer {
+        align-items: center;
+        display: flex;
+
+        .billingSameAsShippingFieldCheckbox {
+          accent-color: get-color("orange");
+          border: 1px solid get-color("orange");
+          height: rem(16px);
+          margin-right: 8px;
+          width: rem(16px);
+
+          @include media(">=desktop") {
+            height: rem(20px);
+            width: rem(20px);
+          }
+        }
+      }
+
+      .form__field-label {
+        span {
+          color: get-color("red");
+        }
+      }
+    }
+
+    .confirm-address {
+      width: 100%;
+    }
+  }
+
+  .billing-bottom-drawer {
+    background: get-color("alice-blue");
+    border-top-left-radius: rem(16px);
+    border-top-right-radius: rem(16px);
+    bottom: 0;
+    box-shadow: 0 rem(-10px) rem(10px) 0 rgba(0, 0, 0, 0.1);
+    left: 0;
+    padding: 0 rem(16px) rem(16px) rem(16px);
+    position: fixed;
+    transition: all 1s linear;
+    width: 100%;
+    z-index: 998;
+
+    @include media(">=desktop") {
+      padding: rem(32px);
+      transition: all 0s linear;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 0 10%;
+    }
+  }
+
+  .shipping-address-disclaimer {
+    border: 1px solid get-color("disclaimer-red");
+    border-radius: rem(8px);
+    display: flex;
+    flex-direction: column;
+    gap: rem(8px);
+    margin: rem(16px) 0;
+    padding: rem(8px);
+    @include media(">=desktop") {
+      padding: rem(16px);
+    }
+
+    .disclaimer-header-text {
+      align-items: center;
+      display: flex;
+      gap: rem(4px);
+
+      .disclaimer-image-wrapper {
+        height: rem(16px);
+        width: rem(16px);
+        @include media(">=desktop") {
+          height: rem(20px);
+          width: rem(20px);
+        }
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      p {
+        @include vida-h6-mobile;
+        color: get-color("disclaimer-red");
+        line-height: rem(24px);
+        @include media(">=desktop") {
+          @include vida-h6-desktop;
+          color: get-color("disclaimer-red");
+        }
+      }
+    }
+
+    .disclaimer-content-text {
+      @include vida-mobile-body-3;
+      color: get-color("disclaimer-red");
+      @include media(">=desktop") {
+        @include vida-mobile-body-1;
+        color: get-color("disclaimer-red");
+      }
+    }
+  }
+
+  .address-prefill-text {
+    @include vida-mobile-body-3;
+    color: get-color("oslo-gray");
+    @include media(">=desktop") {
+      @include vida-mobile-body-1;
+      color: get-color("oslo-gray");
+      // margin-top: rem(12px);
+    }
+  }
+
+  .service-pincode-error {
+    @include vida-mobile-body-3;
+    color: get-color("disclaimer-red");
+    @include media(">=desktop") {
+      @include vida-mobile-body-1;
+      color: get-color("disclaimer-red");
+      line-height: rem(19.2px);
+    }
+
+    span {
+      color: get-color("orange");
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  .form__dropdown-options {
+    .form__dropdown-option {
+      background: get-color("white");
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: get-color("catskill-white");
+      }
+
+      a {
+        &:hover,
+        &:focus,
+        &:active {
+          background: get-color("catskill-white");
+        }
+      }
+    }
+
+    &::-webkit-scrollbar-track {
+      background: get-color("white") !important;
+      border-radius: rem(8px);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: get-color("catskill-white") !important;
+      border-radius: rem(8px);
+    }
+  }
+}
+
+.service-pincode-popup {
+  align-items: center;
+  backdrop-filter: blur(15px);
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 3.25rem;
+  width: 100%;
+  z-index: 999;
+
+  &-content {
+    background-color: get-color("alice-blue");
+    border-radius: rem(16px);
+    max-width: rem(328px);
+    overflow: hidden;
+    padding: rem(16px);
+
+    @include media(">=desktop") {
+      max-width: rem(686px);
+      padding: rem(32px);
+    }
+
+    .service-pincode-header {
+      @include vida-h2-mobile;
+      line-height: rem(28.8px);
+      @include media(">=desktop") {
+        @include vida-h3-desktop;
+      }
+    }
+
+    .service-pincode-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(24px);
+      margin-top: rem(16px);
+      max-height: rem(181px);
+      overflow-y: scroll;
+      padding-right: rem(12px);
+      @include media(">=desktop") {
+        margin-top: rem(32px);
+        max-height: rem(200px);
+        padding-right: rem(16px);
+      }
+
+      &::-webkit-scrollbar {
+        border-radius: rem(30px);
+        width: rem(4px);
+        @include media(">=desktop") {
+          width: rem(6px);
+        }
+        
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.1);
+        // opacity: 0.12px;
+      }
+  
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+    }
+
+    .pincode-item {
+      @include vida-mobile-body-3;
+      background-color: get-color("white");
+      border-radius: rem(8px);
+      min-width: rem(70px);
+      padding: rem(14px);
+      text-align: center;
+
+      @include media(">=desktop") {
+        @include vida-mobile-body-1;
+        min-width: rem(90px);
+        padding: rem(16px);
+      }
+    }
+
+    .service-pincode-btn {
+      @include vida-h5-mobile;
+      background-color: get-color("orange");
+      border-radius: rem(8px);
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+      color: get-color("white");
+      margin: rem(16px) 0 0;
+      padding: rem(16px);
+      text-align: center;
+      width: 100%;
+
+      @include media(">=desktop") {
+        @include vida-h5-desktop;
+        color: get-color("white");
+      }
+    }
+  }
+
+}
+
+// keyframes for slide animation
+@keyframes leftFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rightFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(200%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(200%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

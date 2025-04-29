@@ -1,0 +1,45 @@
+@import "../../../../site/styles/base/typography";
+
+.vida-remove-cpa {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  @include media(">=desktop") {
+    row-gap: 20px;
+  }
+
+  &__title {
+    @include h3;
+    width: 90%;
+  }
+
+  &__description {
+    @include p1;
+    color: get-color("solid-grey");
+  }
+
+  &__message {
+    @include p1;
+    color: get-color("solid-grey");
+  }
+
+  &__reason {
+    @include p1;
+    font-weight: 500 !important;
+  }
+
+  &__action {
+    
+    @include media(">=desktop") {
+      align-items: flex-end;
+    }
+
+    button {
+      width: 100%;
+      @include media(">=desktop") {
+        width: fit-content;
+      }
+    }
+    
+  }
+}

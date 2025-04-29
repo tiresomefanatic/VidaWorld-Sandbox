@@ -1,0 +1,112 @@
+@import "../../../../site/styles/base/typography";
+
+.vida-trade-in {
+  &__description {
+    @include p2;
+    display: none;
+
+    @include media(">=desktop") {
+      display: block;
+    }
+
+    &-mobile {
+      display: flex;
+      // max-width: 242px;
+      margin-right: 24px;
+      @include media(">=desktop") {
+        display: none;
+      }
+    }    
+  }
+
+  &__info {
+    color: get-color("orange");
+    margin: rem(10px) 0;
+  }
+
+  &__title {
+    @include h2;
+
+    margin-bottom: rem(10px);
+  }
+
+  .form {
+    &__group {
+      max-width: 100%;
+    }
+
+    &__field {
+      &-aadhar {
+        display: flex;
+        flex-direction: row;
+        gap: 0 rem(10px);
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__container {
+    height: 100%;
+
+    @include media(">=desktop") {
+      max-width: unset;
+    }
+  }
+
+  &__logo-lg {
+    display: none;
+    margin-left: 22px;
+    margin-right: 20px;
+
+    @include media(">=desktop") {
+      display: block;
+      margin-right: 60px;
+    }
+
+    &-mobile {
+      margin-left: auto;
+      margin-right: 21px;
+      padding-top: 10px;
+      @include media(">=desktop") {
+        display: none;
+      }
+
+      img {
+        height: auto;
+        max-width: 100px;
+      }
+    }
+
+    img {
+      height: auto;
+      max-width: 100px;
+    }
+  }
+
+  &__header {
+    // width: 95%;
+    background: #fff;
+    box-shadow: 0 0 10px rgb(0 0 0 / 5%);
+    display: flex;
+    justify-content: space-between;
+    @include media(">=desktop") {
+      background: #fff;
+      box-shadow: unset;
+      margin-bottom: 30px;
+    }
+   
+    &-mobile {
+      align-items: center;
+      box-shadow: none;
+      display: flex;
+      @include media(">=desktop") {
+        display: none;
+      }
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

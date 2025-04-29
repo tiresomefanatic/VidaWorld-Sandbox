@@ -1,0 +1,107 @@
+.charge-guide {
+  &__container {
+    display: flex;
+    // margin-left: rem(20px);
+    // margin-right: rem(20px);
+
+    @include media(">=desktop") {
+      // margin-left: rem(88px);
+      // margin-right: rem(56px);
+    }
+
+    &::after {
+      content: "";
+      padding: rem(0.8px);
+      @include media(">=desktop") {
+        padding: 0;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32px);
+    // margin-right: 0;
+    min-height: rem(349px);
+    padding-bottom: rem(48px);
+    padding-top: rem(32px);
+    @include media(">=desktop") {
+      gap: rem(48px);
+      min-height: rem(636px);
+      padding-bottom: 0;
+      padding-top: rem(48px);
+      width: 31%;
+    }
+  }
+
+  &__top-image {
+    border-radius: 0.75rem;
+    height: rem(180px);
+    width: rem(240px);
+    @include media(">=desktop") {
+      height: rem(400px);
+      width: 100%;
+    }
+
+    img {
+      border-radius: 0.75rem;
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__details-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 49%;
+    justify-content: space-between;
+    margin: 0;
+    max-width: rem(240px);
+    @include media(">=desktop") {
+      height: 40%;
+      margin: 0 rem(24px) 0 rem(24px);
+      max-width: rem(352px);
+    }
+  }
+
+  &__title-label {
+    @include vida-h5-mobile;
+    color: get-color("mine-shaft");
+    font-weight: 600;
+    @include media(">=desktop") {
+      @include vida-h3-desktop;
+    }
+  }
+
+  &__desc {
+    padding-top: rem(24px);
+    @include media(">=desktop") {
+      padding-top: rem(48px);
+    }
+  }
+
+  &__desc-label {
+    @include vida-mobile-body-1;
+    color: get-color("mine-shaft");
+    @include media(">=desktop") {
+      @include vida-desk-body-1;
+    }
+  }
+
+  &__offer {
+    padding-top: rem(16px);
+    @include media(">=desktop") {
+      padding-top: rem(24px);
+    }
+  }
+
+  &__offer-label {
+    @include vida-label-value-text-mobile;
+    @include media(">=desktop") {
+      @include vida-label-value-text-desktop;
+      line-height: 33px;
+    }
+  }
+}

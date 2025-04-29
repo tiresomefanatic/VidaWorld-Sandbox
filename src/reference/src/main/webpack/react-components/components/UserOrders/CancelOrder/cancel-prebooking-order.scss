@@ -1,0 +1,46 @@
+.vida-cancel-prebooking-order {
+  height: 100%;
+  
+  &__form {
+    margin: auto;
+  
+    h3 {
+      margin-bottom: rem(18px);
+      padding-right: rem(26px);
+  
+      @include media(">=desktop") {
+        margin-bottom: rem(10px);
+        padding-right: rem(40px);
+      }
+    }
+  
+    p {
+      @include p2;
+      color: get-color("solid-grey");
+      margin-bottom: rem(24px);
+  
+      @include media(">=desktop") {
+        margin-bottom: rem(18px);
+      }
+    }
+  }
+  
+  &__button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(20px);
+  
+    @include media(">=desktop") {
+      justify-content: flex-end;
+      margin-top: rem(10px);
+    }
+  
+    .btn {
+      width: 100%;
+  
+      @include media(">=desktop") {
+        width: auto;
+      }
+    }
+  }
+}

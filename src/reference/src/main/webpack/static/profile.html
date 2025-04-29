@@ -1,0 +1,572 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <title>Profile</title>
+    <meta charset="UTF-8" />
+    <meta name="template" content="page-content" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Meta Property for Analytics Datalayer -->
+    <meta property="pageCategory" content="Profile" />
+    <meta property="language" content="en" />
+    <meta property="country" content="India" />
+    <meta property="isErrorPage" content="false" />
+    <meta property="errorCode" content="404" />
+    <meta property="errorDescription" content="Page Not Found" />
+
+    <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+    <script>
+        const sessionCookieExist = document.cookie.match(/^(.*;)?\s*SESSION_TOKEN\s*=\s*[^;]+(.*)?$/);
+        if (!sessionCookieExist) {
+            window.location.href = "/login.html" + "?redirectURL=" + window.location.href;
+        }
+    </script>
+    <%= htmlWebpackPlugin.options.custom %>
+        <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async></script>
+</head>
+
+<body>
+    <header></header>
+    <div data-component="Notification" data-cmp-type="react"></div>
+    <script>
+        window.appConfig = Object.assign(window.appConfig || {}, {
+            "profileConfig": {
+                "userProfileConfig": {
+                    "title": "Profile Details",
+                    "firstNameField": {
+                        "label": "First Name",
+                        "placeholder": "Enter first name",
+                        "validationRules": {
+                            "required": {
+                                "message": "First name is required."
+                            },
+                            "minLength": {
+                                "value": 1,
+                                "message": "First name should have at least 1 character."
+                            },
+                            "maxLength": {
+                                "value": 10,
+                                "message": "First name cannot be more than 10 characters."
+                            },
+                            "customValidation": {
+                                "message": "Please enter valid first name."
+                            }
+                        }
+                    },
+                    "lastNameField": {
+                        "label": "Last Name",
+                        "placeholder": "Enter last name",
+                        "validationRules": {
+                            "required": {
+                                "message": "Last name is required."
+                            },
+                            "minLength": {
+                                "value": 1,
+                                "message": "Last name should have at least 1 character."
+                            },
+                            "customValidation": {
+                                "message": "Please enter valid last name."
+                            }
+                        }
+                    },
+                    "phoneNumberField": {
+                        "label": "Phone Number",
+                        "placeholder": "Enter Phone Number",
+                        "validationRules": {
+                            "required": {
+                                "message": "Phone Number is required."
+                            },
+                            "minLength": {
+                                "value": 10,
+                                "message": "Minimum 10 digit Phone Number required."
+                            },
+                            "maxLength": {
+                                "value": 10,
+                                "message": "Maximum 10 digits Phone Number required."
+                            },
+                            "custom": {
+                                "message": "Please enter valid Phone Number."
+                            }
+                        }
+                    },
+                    "emailField": {
+                        "label": "Email ID",
+                        "placeholder": "Enter Email ID",
+                        "infoLabel": "Mention active account, this will be used to send important mails",
+                        "validationRules": {
+                            "required": {
+                                "message": "Email is required."
+                            },
+                            "customValidation": {
+                                "message": "Please enter valid email address."
+                            }
+                        }
+                    },
+                    "cityField": {
+                        "label": "City / Town / District",
+                        "validationRules": {
+                            "required": {
+                                "message": "City / Town / District is required."
+                            }
+                        }
+                    },
+                    "stateField": {
+                        "label": "State",
+                        "validationRules": {
+                            "required": {
+                                "message": "State is required."
+                            }
+                        }
+                    },
+                    "countryField": {
+                        "label": "Country",
+                        "validationRules": {
+                            "required": {
+                                "message": "Country is required."
+                            }
+                        }
+                    },
+                    "pinCodeField": {
+                        "label": "PinCode",
+                        "placeholder": "Enter Pincode",
+                        "validationRules": {
+                            "required": {
+                                "message": "Pincode is required."
+                            },
+                            "minLength": {
+                                "value": 6,
+                                "message": "Pincode must have 6 digits."
+                            },
+                            "custom": {
+                                "noServiceMsg": "Pincode is not serviceable.",
+                                "noCityMatchMsg": "Pincode do not match with the city selected."
+                            }
+                        }
+                    },
+                    "cancelBtn": {
+                        "label": "Cancel"
+                    },
+                    "saveBtn": {
+                        "label": "Save Changes"
+                    },
+                    "editBtn": {
+                        "label": "Edit"
+                    },
+                    "logoutBtn": {
+                        "label": "Logout"
+                    },
+                    "emailOtpConfig": {
+                        "verifyNowLabel": "Verify Now",
+                        "otpLabel": "OTP",
+                        "otpTitle": "Verify Email",
+                        "otpDescription": "We’ve sent verification code to",
+                        "verifyBtn": {
+                            "label": "Verify"
+                        },
+                    },
+                    "mobileOtpConfig": {
+                        "notificationLabel": "Note: If you update your mobile number you have to submit your otp",
+                        "verifyOTPtitle": "Verify OTP",
+                        "message": "We've send verification code to",
+                        "changeNumberLabel": "Change Number",
+                        "otpLabel": "OTP",
+                        "resendLabel": "Resend",
+                        "timer": {
+                            "minutes": 0,
+                            "seconds": 5
+                        },
+                        "verifyBtn": {
+                            "label": "Verify"
+                        },
+                        "validationRules": {
+                            "required": {
+                                "message": "Please enter OTP"
+                            }
+                        }
+                    },
+                    "profilePicConfig": {
+                        "userImg": "/clientlib-site/images/png/scooter.png",
+                        "validationMsg": "Please upload proper image."
+                    }
+                },
+                "userTestRideConfig": {
+                    "bookingIdLabel": "Booking ID",
+                    "callLabel": "Call",
+                    "dealershipLabel": "Scheduled at dealership",
+                    "homeLabel": "Scheduled at home",
+                    "salesExecutiveLabel": "Person attending",
+                    "noAssigneeLabel": "Not Assigned",
+                    "cancelBtn": {
+                        "label": "Cancel Booking"
+                    },
+                    "rescheduleBtn": {
+                        "label": "Reschedule"
+                    },
+                    "downloadBtn": {
+                        "label": "Download Report"
+                    },
+                    "noRecordFound": {
+                        "title": "No Test Rides Found !!!",
+                        "description": "Book your short term test ride now.",
+                        "btnLabel": "Test Ride"
+                    },
+                    "scheduledLabel": "Scheduled",
+                    "confirmedLabel": "Confirmed",
+                    "startTestRideLabel": "Start Test Ride",
+                    "endTestRideLabel": "End Test Ride",
+                    "cancelledLabel": "Cancelled",
+                    "lapsedLabel": "Lapsed",
+                    "completedLabel": "Completed"
+                },
+                "userLongTestRideConfig": {
+                    "id": "LONG_TERM",
+                    "bookingIdLabel": "Booking ID",
+                    "callLabel": "Call",
+                    "dealershipLabel": "Scheduled at dealership",
+                    "homeLabel": "Pickup Location",
+                    "salesExecutiveLabel": "Person attending",
+                    "noAssigneeLabel": "Not Assigned",
+                    "cancelBtn": {
+                        "label": "Cancel Booking"
+                    },
+                    "rescheduleBtn": {
+                        "label": "Reschedule"
+                    },
+                    "uploadDocBtn": {
+                        "label": "Upload Document"
+                    },
+                    "noRecordFound": {
+                        "title": "No long test rides found !!!",
+                        "description": "Book your long term test ride now.",
+                        "btnLabel": "Test Ride"
+                    },
+                    "scheduledLabel": "Scheduled",
+                    "paidLabel": "Paid",
+                    "statusLabel": "Status",
+                    "confirmedLabel": "Confirmed Long Test Ride",
+                    "startTestRideLabel": "Start Test Ride",
+                    "endTestRideLabel": "End Test Ride",
+                    "cancelledLabel": "Cancelled",
+                    "lapsedLabel": "Lapsed",
+                    "completedLabel": "Completed"
+                },
+                "cancelLongTestDriveConfig": {
+                    "title": "Cancel test ride",
+                    "message": "Are you sure you want to cancel long term test drive?",
+                    "yesBtn": {
+                        "label": "Yes"
+                    },
+                    "noBtn": {
+                        "label": "No"
+                    }
+                },
+                "recentConfig": {
+                    "videoid": "9sqMldMYjso,PgzRHXDFD3k",
+                    "title": "Recommended videos",
+                    "communitytext": " Visit Community for more",
+                    "comminitylink": "/",
+                    "videonotfoundtxt": "video not found",
+                    "videonotfounddesctext": "Video will upload soon",
+                    "views": "Views",
+                },
+                "cancelTestDriveConfig": {
+                    "confirmLabel": "Are you sure you want to Cancel Test Drive?",
+                    "helpLabel": "Help us understand why so that we can serve you better",
+                    "selection": [{
+                        "label": "I am busy",
+                        "value": "I am busy"
+                    }, {
+                        "label": "I am out of station",
+                        "value": "I am out of station"
+                    }, {
+                        "label": "I changed my mind",
+                        "value": "I changed my mind"
+                    }, {
+                        "label": "I got another vehicle",
+                        "value": "I got another vehicle"
+                    }, {
+                        "label": "I don't want to share",
+                        "value": "I don't want to share"
+                    }, {
+                        "label": "Other",
+                        "value": "Other"
+                    }],
+                    "reasonField": {
+                        "label": "Reason for cancellation",
+                        "placeholder": "Your comment",
+                        "validationRules": {
+                            "required": {
+                                "message": "Comment is required."
+                            }
+                        }
+                    },
+                    "yesBtn": {
+                        "label": "Yes"
+                    },
+                    "noBtn": {
+                        "label": "No"
+                    }
+                },
+                "cancelOrderConfig": {
+                    "confirmLabel": "Are you sure you want to cancel your order?",
+                    "refundInfo": "If you wish to proceed, you will receive your booking amount in 10 business days. The amount will be credited to your bank account which was used to make the purchase.",
+                    "reasonField": {
+                        "label": "Reason for cancellation",
+                        "placeholder": "Help us understand why you are cancelling your order",
+                        "validationRules": {
+                            "required": {
+                                "message": "Reason is required."
+                            }
+                        }
+                    },
+                    "cancelBtn": {
+                        "label": "Confirm Cancellation"
+                    },
+                    "reasonOptions": {
+                        "options": [{
+                            "label": "Duplicate Order",
+                            "value": "Duplicate Order"
+                        }, {
+                            "label": "Want to change payment method",
+                            "value": "Want to change payment method"
+                        }, {
+                            "label": "Sourcing Payment Issue",
+                            "value": "Sourcing Payment Issue"
+                        }, {
+                            "label": "Change of mind",
+                            "value": "Change Of Mind"
+                        }, {
+                            "label": "Decided For Alternative Product",
+                            "value": "Decided For Alternative Product"
+                        }, {
+                            "label": "Change/Combine Order",
+                            "value": "Change/Combine Order"
+                        }],
+                        "validationRules": {
+                            "required": {
+                                "message": "Reason is required."
+                            }
+                        }
+                    }
+                },
+                "cancelPrebookingOrderConfig": {
+                    "confirmLabel": "Are you sure you want to cancel your order?",
+                    "refundInfo": "If you wish to proceed, you will receive your booking amount ₹499/- in 10 business days. The amount will be credited to your bank account which was used to make the purchase.",
+                    "reasonField": {
+                        "label": "Reason for cancellation",
+                        "placeholder": "Help us understand why you are cancelling your order",
+                        "validationRules": {
+                            "required": {
+                                "message": "Reason is required."
+                            }
+                        }
+                    },
+                    "cancelBtn": {
+                        "label": "Confirm Cancellation"
+                    }
+                },
+                "myOrderConfig": {
+                    "userOrder": {
+                        "title": "My Orders",
+                        "noRecordFound": {
+                            "title": "No Orders Found !!!",
+                            "description": "Start order your scooter as per your taste.",
+                            "btnLabel": "Book Now"
+                        },
+                        "loadingOrdersTitle": "Loading Orders...",
+                        "bookingIdLabel": "Booking ID",
+                        "exchangeApprovedInfo": "Purchase will allow only if your exchange is approved.",
+                        "totalLabel": "Order Total",
+                        "dateLabel": "Order Date",
+                        "delivery": {
+                            "label": "Expected Delivery",
+                            "info": "Will be shared only after final booking with full amount"
+                        },
+                        "statusLabel": "Status",
+                        "cancelBtn": {
+                            "label": "Cancel Order"
+                        },
+                        "purchaseBtn": {
+                            "label": "Purchase"
+                        },
+                        "isAadharVerificationRequired": true,
+                        "downloadInvoiceBtn": {
+                            "label": "Download Invoice",
+                            "fileName": "Vida_Invoice"
+                        },
+                        "downloadSalesQuotationBtn": {
+                            "label": "Download Sales Quotation",
+                            "fileName": "SalesQuotation"
+                        },
+                        "paymentBtn": {
+                            "label": "Make Payment"
+                        },
+                        "partialPaymentBtn": {
+                            "label": "Make Partial Payment"
+                        },
+                        "statusBtn": {
+                            "loanLabel": "Loan Status",
+                            "LeaseLabel": "Lease Status"
+                        },
+                        "cancelLoanLeaseBtn": {
+                            "loanLabel": "Cancel Loan",
+                            "LeaseLabel": "Cancel Lease"
+                        },
+                        "viewDetailLabel": "View details",
+                        "viewLessDetailLabel": "View Less",
+                        "orderStatusDetails": [{
+                            "id": "Draft",
+                            "message": "Will be shared only after final booking with full amount",
+                            "status": "Purchase Pending"
+                        }, {
+                            "id": "Booked",
+                            "message": "Will be shared only after final booking with full amount",
+                            "status": "Purchase Pending"
+                        }, {
+                            "id": "Credit Verified",
+                            "message": "Will be shared only after final booking with full amount",
+                            "status": "Purchase Pending"
+                        }, {
+                            "id": "Fulfilment",
+                            "message": "Delivery will start after document verification",
+                            "status": "Scooter Purchased"
+                        }, {
+                            "id": "KYC Done",
+                            "message": "---",
+                            "status": "Scooter Reserved"
+                        }, {
+                            "id": "Invoicing",
+                            "message": "---",
+                            "status": "Scooter Reserved - Invoiced"
+                        }, {
+                            "id": "Delivery",
+                            "message": "",
+                            "status": "Scooter Allocated"
+                        }, {
+                            "id": "Closed",
+                            "message": "Delivered",
+                            "status": "Scooter Delivered"
+                        }, {
+                            "id": "Cancelled",
+                            "message": "---",
+                            "status": "Scooter Cancelled"
+                        }],
+                        "fameSubsidyRejectedReason": "Fame Subsidy Rejected",
+                        "preDeliveryMessage": "Further details will be shared once manufacturing starts",
+                        "postDeliveryMessage": "Schedule Delivery",
+                        "emailVerificationMsg": "Inorder to purchase your order please verify your email otp.",
+                        "emailOtpConfig": {
+                            "verifyNowLabel": "Verify Now",
+                            "otpLabel": "OTP",
+                            "otpTitle": "Verify Email",
+                            "otpDescription": "We’ve sent verification code to",
+                            "verifyBtn": {
+                                "label": "Verify"
+                            },
+                        },
+                        "viewLoanLabel": "View Loan Offer",
+                        "viewLeaseLabel": "View Lease Offer",
+                        "loanLeaseStatus": "Application Pending",
+                        "inventoryAvailable": {
+                            "value": true,
+                            "message": "Inventory not available"
+                        },
+                        "priorityEmailDomain":"@heromotocorp.com",
+                        
+                    },
+                    "cancelOrderPopup": {
+                            "title":"Are you sure you want to cancel Order",
+                            "description":"Go ahead by clicking on yes or no",
+                            "yesBtnLabel":"Yes",
+                            "noBtnLabel":"No"
+                    },
+                    "purchaseTracker": {
+                        "title": "Purchase Tracker",
+                        "orderStatusConfig": [{
+                            "id": 0,
+                            "label": "Reserved"
+                        }, {
+                            "id": 1,
+                            "label": "Scooter Purchase"
+                        }, {
+                            "id": 2,
+                            "label": "Submit Documents"
+                        }, {
+                            "id": 3,
+                            "label": "Document Verified"
+                        }, {
+                            "id": 4,
+                            "label": "Shipment and Delivery"
+                        }],
+                        "fameSubsidyRejectedReason": "Fame Subsidy Rejected",
+                        "uploadBtn": {
+                            "label": "Upload Documents"
+                        },
+                        "purchaseBtn": {
+                            "label": "Purchase Now"
+                        },
+                        "userManualBtn": {
+                            "label": "Owner's Manual",
+                            "url": ""
+                        },
+                        "trackBtn": {
+                            "label": "Track Delivery"
+                        },
+                    },
+                    "paymentInfo": {
+                        "title": "Payment Information",
+                        "transactionIdLabel": "Transaction ID",
+                        "purchaseLoanLabel": "Purchase on",
+                        "paidOnLabel": "Paid"
+                    },
+                    "customerDetails": {
+                        "title": "Owner Details"
+                    },
+                    "orderSummary": {
+                        "title": "Breakdown",
+                        "basePriceLabel": "Base Price",
+                        "otherChargesLabel": "Other charges",
+                        "addonsLabel": "Add-ons",
+                        "gstLabel": "GST",
+                        "subsidyLabel": "EMPS Subsidy",
+                        "prebookingPricePaidLabel": "Prebooking Price",
+                        "exchangeLabel": "Exchange Price",
+                        "insuranceLabel": "Insurance",
+                        "orderTotalLabel": "Order Total",
+                        "configureLabel": "Configure",
+                        "homeDeliveryLabel": "Home Delivery charges"
+                    }
+                },
+                "navConfig": {
+                    "myscooter": "My Scooter",
+                    "myorders": "Orders",
+                    "shorttestrides": "Short Term Test Rides",
+                    "longtestrides": "Long Term Test Rides",
+                    "recents": "Recents",
+                },
+                "myscooterconfig": {
+                    "title": "Continue Configurating",
+                    "configLabels": {
+                        "dateLabel": "Accessed on",
+                        "totalLabel": "Order Total"
+                    },
+                    "noRecordFound": {
+                        "title": "You have not saved any scooter configurations yet!",
+                        "description": "Start customizing your scooter as per your taste.",
+                        "buildYourOwnBtn": "Build Your Own"
+                    },
+                    "btnLabels": {
+                        "purchaseBtn": "Purchase",
+                        "continueBtn": "Continue Configuration",
+                    },
+                    "showOldPurchasePage": false
+                },
+            }
+        })
+    </script>
+    <div data-component="Spinner" data-cmp-type="react"></div>
+    <div data-component="UserProfile" data-cmp-type="react" data-cmp-config="profileConfig"></div>
+</body>
+
+</html>

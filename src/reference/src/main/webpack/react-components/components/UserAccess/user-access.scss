@@ -1,0 +1,165 @@
+.vida-user-access {  
+  background-size: cover;
+  height: calc(100vh - rem(76px));
+
+  @include media(">=desktop") {
+    // height: calc(100vh - rem(85px));
+    min-height: rem(900px);
+    overflow: hidden;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+      
+    @include media(">=desktop") {
+      justify-content: flex-end;
+      padding: rem(79px) rem(70px);
+    }
+
+    @include media(">=desktop-lg") {
+      padding: rem(79px) 0;
+    }
+  }
+
+  &__content-container {
+    background-color: get-color("white");
+    max-width: rem(440px);
+    padding: rem(20px) rem(16px);
+    width: 100%;
+
+    @include media(">=desktop") {
+      border-radius: rem(32px);
+      padding: rem(20px);
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__tab {
+    border-bottom: 2px solid get-color("light-grey");
+    cursor: pointer;
+    margin-bottom: rem(28px);
+    padding: rem(9px) rem(10px);
+
+    @include media(">=desktop") {
+      margin-bottom: rem(40px);
+      padding: rem(16px) rem(20px);
+    }
+
+    label {
+      color: get-color("solid-grey");
+      cursor: pointer;
+    }
+  
+    &--active {
+      border-bottom-color: get-color("solid-black");
+
+      label {
+        color: get-color("solid-black"); 
+      }
+    }
+  }
+
+  &__login {
+    .vida-user-access__btn-container {
+      margin-top: rem(200px);
+      @include media(">=desktop") {
+        margin-top: rem(106px);
+      }
+    }
+  }
+
+  &__register {
+    .vida-user-access__btn-container {
+      margin-top: rem(16px);
+    }
+
+    .form {
+      &__group {
+        min-height: auto;
+      }
+    }
+  }
+
+  &__otp-container {
+    .vida-otp__btn-container {
+      margin-top: rem(140px);
+      @include media(">=desktop") {
+        margin-top: rem(43px);
+      }
+    }
+  }
+
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: space-between;
+  }
+
+  &__terms {
+    display: flex;
+    flex-direction: column;
+  
+    label {
+      margin-right: rem(5px);
+    }
+  }
+
+  &__label {
+    @include p2;
+  }
+
+  &__btn-container {
+    align-items: center;
+    border-top: 1px solid get-color("light-grey");
+    display: flex;
+    flex-direction: column;
+
+    .btn {
+      margin: rem(20px) 0;
+      @include media(">=desktop") {
+        margin: rem(20px) 0 rem(16px);
+      }
+    }
+
+    label {
+      a {
+        margin-left: rem(5px);
+      }
+    }
+  }
+
+  &__whatsapp-checkbox {
+    margin-bottom: 0;
+    margin-top: rem(20px);
+
+    label {
+      @include input;
+      align-items: center;
+      color: get-color("solid-black");
+      display: flex;
+      margin-bottom: 0;
+
+      i {
+        color: #00a000;
+        margin-left: rem(2px);
+      }
+    }
+  }
+
+  &__notification-msg {
+    @include p2;
+    color: get-color("solid-grey");
+    margin: 0 0 rem(20px) rem(30px);
+  }
+}
+
+.hideTerms {
+  display: none;
+}

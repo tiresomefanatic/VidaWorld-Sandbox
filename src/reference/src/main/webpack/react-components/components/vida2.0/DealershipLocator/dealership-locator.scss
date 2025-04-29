@@ -1,0 +1,146 @@
+.dealership-locator-wrapper {
+  padding-bottom: rem(16px) !important;
+  padding-top: rem(32px) !important;
+
+  .dealership-locator-container {
+    transition: opacity 1.5s ease-out;
+
+    .dealership-locator-title-container {
+      padding: 0 0 rem(48px) 0;
+
+      .dealership-locator-secondary-text {
+        padding: 0 0 rem(5px) 0;
+
+        @include media(">=desktop") {
+          padding: 0 0 rem(6.5px) 0;
+        }
+
+        p {
+          color: get-color("mine-shaft");
+          font-size: rem(12px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+
+          @include media(">=desktop") {
+            font-size: rem(18px);
+          }
+        }
+      }
+
+      .dealership-locator-primary-text {
+        color: get-color("mine-shaft");
+        font-size: rem(24px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+
+        @include media(">=desktop") {
+          font-size: rem(48px);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .dealership-locator-card-container {
+    background: get-color("catskill-white");
+    border-radius: rem(8px);
+    box-shadow: 0 0 rem(10px) 0 rgba(0, 0, 0, 0.2);
+    padding: rem(16px);
+
+    @include media(">=desktop") {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: rem(32px);
+    }
+
+    .dealership-locator-card-content-container {
+      flex: 2;
+
+      .dealership-locator-search-icon {
+        height: rem(20px);
+        margin: 0 0 rem(16px) 0;
+        width: rem(20px);
+
+        @include media(">=desktop") {
+          height: rem(30px);
+          margin: 0 0 rem(24px) 0;
+          width: rem(30px);
+        }
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      .dealership-locator-card-primary-text {
+        padding: 0 0 rem(16px) 0;
+
+        @include media(">=desktop") {
+          padding: 0 0 rem(24px) 0;
+        }
+
+        p {
+          @include vida-h3-mobile;
+          color: get-color("mine-shaft");
+          width: rem(160px);
+
+          @include media(">=desktop") {
+            @include vida-h3-desktop;
+            width: auto;
+          }
+        }
+      }
+
+      .dealership-locator-card-secondary-text {
+        padding: 0 0 rem(32px) 0;
+
+        @include media(">=desktop") {
+          padding: 0;
+        }
+
+        p {
+          @include vida-mobile-body-1;
+          color: get-color("mine-shaft");
+
+          @include media(">=desktop") {
+            @include vida-desk-body-1;
+          }
+        }
+      }
+    }
+
+    .dealership-locator-card-button-container {
+      flex: 3;
+
+      .locate-now-btn {
+        @include vida-h5-mobile;
+        align-items: center;
+        background: get-color("orange");
+        border-radius: rem(8px);
+        box-shadow: 0 rem(5px) rem(10px) 0 rgba(0, 0, 0, 0.1);
+        color: get-color("white");
+        cursor: pointer;
+        display: flex;
+        font-weight: 600;
+        height: rem(35px);
+        justify-content: center;
+        text-decoration: none;
+        width: rem(118px);
+
+        @include media(">=desktop") {
+          @include vida-h5-desktop;
+          border-radius: rem(12px);
+          box-shadow: 0 rem(7.5px) rem(15px) 0 rgba(0, 0, 0, 0.1);
+          color: get-color("white");
+          float: right;
+          height: rem(48px);
+          width: rem(156px);
+        }
+      }
+    }
+  }
+}

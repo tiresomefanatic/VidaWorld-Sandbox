@@ -1,0 +1,174 @@
+.vida-price-breakup-details {
+  padding: 0 rem(20px);
+
+  &__wrapper {
+    background: get-color("smoke-white");
+    border-radius: rem(32px);
+    margin: rem(40px) 0;
+    padding: rem(40px);
+
+    &.vida-price-breakup-details-mobile {
+      padding: rem(40px) rem(30px);
+
+      .vida-price-breakup-details__table-header {
+        &-row {
+          @include media("<tablet") {
+            flex-direction: column;
+
+            .form__group {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__table {
+    &-header,
+    &-body {
+      &-row {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &-header {
+      border-bottom: 1px solid get-color("light-grey");
+      padding: 0 rem(18px);
+
+      &-title {
+        @include h3;
+        font-size: rem(21px);
+        @include media(">=desktop") {
+          align-items: center;
+          display: flex;
+          justify-content: flex-end;
+
+          &.vida-price-breakup-details__first-column {
+            align-items: flex-start;
+            justify-content: flex-start;
+          }
+
+          &-text {
+            align-items: center;
+            display: flex;
+            height: (48px);
+            padding-right: rem(16px);
+          }
+        }
+      }
+    }
+
+    &-body-row {
+      padding: rem(30px) rem(20px) 0 rem(20px);
+    }
+
+    &-header-title,
+    &-body-price {
+      flex: 0 0 25%;
+      text-align: right;
+    }
+
+    &-body-labels {
+      h2 {
+        @include h4;
+        margin-bottom: rem(5px);
+      }
+
+      p {
+        color: get-color("solid-grey");
+      }
+    }
+  }
+
+  &__first-column {
+    flex: 0 0 50%;
+    margin-right: 20px;
+    text-align: left;
+    @include media(">=desktop") {
+      margin-right: 0;
+    }
+  }
+
+  &__subsidy {
+    border-bottom: 1px solid get-color("light-grey");
+    border-top: 1px solid get-color("light-grey");
+    margin-top: rem(18px);
+    padding-bottom: rem(18px);
+  }
+
+  &__main-price {
+    font-size: rem(21px);
+  }
+
+  &__link {
+    margin-top: rem(15px);
+    text-align: center;
+
+    a {
+      img {
+        margin-left: rem(10px);
+      }
+    }
+  }
+
+  .subsidy--notification {
+    margin-top: rem(25px);
+  }
+}
+
+.vida-price-breakup-details-mobile {
+  .form__group {
+    margin: 0 !important;
+    max-width: 220px;
+    min-height: auto;
+    width: 100%;
+  }
+
+  .vida-price-breakup-details__table {
+    &-header-row,
+    &-body-row {
+      flex-direction: column;
+    }
+
+    &-header-title,
+    &-body-price {
+      text-align: left;
+    }
+
+    &-header {
+      padding: 0;
+
+      &-row {
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-bottom: rem(20px);
+      }
+
+      &-title {
+        flex: none;
+
+        .form__group {
+          width: 100%;
+        }
+      }
+    }
+
+    &-body {
+      &-row {
+        padding: rem(30px) 0 0 0;
+      }
+
+      &-price {
+        font-size: rem(18px);
+        margin-top: rem(5px);
+      }
+
+      &-subsidy-price {
+        font-size: rem(16px);
+      }
+    }
+  }
+}

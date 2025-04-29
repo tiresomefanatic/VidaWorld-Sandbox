@@ -1,0 +1,214 @@
+button {
+  border: rem(1px) solid transparent;
+  border-radius: rem(30px);
+  display: inline-block;
+  margin: 0;
+  padding: rem(16px) rem(24px);
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+
+  @include media(">=desktop") {
+    border-radius: rem(100px);
+    padding: rem(9px) rem(20px) rem(10px);
+  } 
+}
+
+.btn {
+  border: rem(1px) solid transparent;
+  border-radius: rem(30px);
+  display: inline-block;
+  margin: 0;
+  padding: rem(16px) rem(24px);
+  text-align: center;
+  text-decoration: none;
+
+  @include media(">=desktop") {
+    border-radius: rem(100px);
+    padding: rem(9px) rem(20px) rem(10px);
+  } 
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    font-size: rem(16px);
+    margin-left: rem(8px);
+  }
+
+  &--primary {
+    @include btn;
+    background: get-color("blue");
+    color: get-color("solid-black");
+    height: rem(50px);
+
+    @include media(">=desktop") {
+      height: rem(40px);
+    }
+
+    &:hover {
+      background: get-color("dark-blue");
+      transition: all 0.3s;
+    }  
+  
+    &:active,
+    &:visited {
+      color: get-color("solid-black");;
+    }  
+  }
+
+  &--secondary {
+    @include btn;
+    background: get-color("solid-black");
+    color: get-color("white");
+    height: rem(50px);
+
+    @include media(">=desktop") {
+      height: rem(40px);
+    }
+    
+    &:hover {
+      background: get-color("white");
+      border-color: get-color("solid-black");
+      color: get-color("solid-black");
+      transition: all 0.3s;
+    }
+
+    &:active,
+    &:visited {
+      color: get-color("white");
+
+      &:hover {
+        color: get-color("solid-black");
+      }
+    }
+  }
+
+  &--tertiary {
+    @include btn;
+    background: get-color("orange");
+    color: get-color("white");
+    height: rem(50px);
+
+    @include media(">=desktop") {
+      height: rem(40px);
+    }
+    
+    &:hover {
+      background: get-color("white");
+      border-color: get-color("orange");
+      color: get-color("orange");
+      transition: all 0.3s;
+    }
+
+    &:active,
+    &:visited {
+      color: get-color("white");
+
+      &:hover {
+        color: get-color("orange");
+      }
+    }
+  }
+
+  &--lg {
+    @include media(">=desktop") {
+      height: rem(60px);
+      padding: rem(19px) rem(40px) rem(20px);
+    }
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--action {
+    @include btn-action;
+    height: rem(30px);
+    padding: rem(6px) rem(12px) rem(8px);
+
+    @include media(">=desktop") {
+      height: rem(40px);
+      padding: rem(8px) rem(20px) rem(11px);
+    }
+  }
+
+  &--card-action {
+    @include btn-card-action;
+    background: get-color("white");
+    border-color: get-color("solid-black");
+    color: get-color("solid-black");
+    height: rem(30px);
+    padding: rem(4px) rem(10px) rem(8px);
+
+    @include media(">=desktop") {
+      height: rem(30px);
+      padding: rem(2px) rem(10px) rem(6px);
+    }
+
+    &:hover,
+    &:active,
+    &:visited {
+      background: inherit;
+      color: get-color("solid-black");
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-size: inherit;
+      line-height: inherit;
+      margin-left: 0;
+      margin-right: rem(7px);
+    }
+  }
+
+  &--icon {
+    align-items: center;
+    display: flex;
+    gap: 0 rem(2px);
+    justify-content: center;
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-size: rem(25px);
+      margin-left: 0;
+
+      @include media(">=desktop") {
+        font-size: rem(26px);
+      }
+    }
+  }
+
+  &--transparent {
+    backdrop-filter: blur(50px);
+    background-color: rgba(34, 34, 34, 0.05);
+    border-radius: 4px;
+    color: get-color("white");
+    font-size: rem(12px);
+    font-weight: 400;
+    height: rem(24px);
+    padding: 4px 12px;
+  }
+
+  &--tertiary-2 {
+    background: get-color("orange");
+    border-radius: rem(8px) !important;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+    color: get-color("white");
+    font-size: rem(16px);
+    font-weight: 600;
+    padding: rem(8px) rem(16px);
+    @include media(">tablet") {
+      font-size: rem(20px);
+      padding: rem(12px) rem(24px);
+    }
+  }
+
+  &:disabled,
+  &.disabled,
+  &[disabled],
+  &--disabled {
+    background: get-color("grey");
+    color: get-color("white");
+    cursor: default;
+    pointer-events: none;
+  }
+}

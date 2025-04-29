@@ -1,0 +1,18 @@
+.vida-logo-graphics {
+  margin: 5px;
+  text-align: center;
+
+  img {
+    max-height: 40px;
+    padding-left: 20px;
+  }
+}
+
+.theme-v1 {
+  .vida-logo-graphics {
+    img {
+      margin-bottom: -33px;
+      margin-top: 30px;
+    }
+  }
+}

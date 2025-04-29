@@ -1,0 +1,83 @@
+.vida-my-scooter {
+  margin-bottom: rem(20px);
+
+  .vida-card {
+    @include media(">=desktop") {
+      width: rem(600px);
+    }
+
+    &__container {
+      flex-direction: column;
+      padding: rem(15px);
+    }
+
+    &__product-data {
+      margin: rem(20px) 0;
+    }
+
+    &__image {
+      text-align: center;
+      width: 100%;
+
+      img {
+        height: auto;
+        width: rem(380px);
+      }
+    }
+
+    &__scooter-desc {
+      h4 {
+        color: get-color("solid-grey");
+      }
+
+      &:last-child {
+        h4 {
+          margin-bottom: rem(5px);
+          text-align: right;
+        }
+      }
+    }
+
+    &__scooter-footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include media(">=desktop") {
+        flex-direction: row;
+      }
+
+      .btn {
+        margin-bottom: rem(15px);
+        @include media(">=desktop") {
+          flex: 0 0 48%;
+          max-width: 48%;
+        }
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(20px);
+    margin-top: rem(20px);
+
+    @include media(">=desktop") {
+      margin-bottom: rem(30px);
+    }
+  }
+
+  &__no-record {
+    margin-top: rem(70px);
+
+    h3 {
+      margin-bottom: rem(10px);
+    }
+
+    h4 {
+      color: get-color("solid-grey");
+    }
+
+    .btn {
+      margin-top: rem(20px);
+    }
+  }
+}

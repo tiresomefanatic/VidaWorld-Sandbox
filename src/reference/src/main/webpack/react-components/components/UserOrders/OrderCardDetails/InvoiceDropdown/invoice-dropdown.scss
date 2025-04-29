@@ -1,0 +1,87 @@
+.vida-invoice-dropdown {
+  background: get-color("solid-black");
+  border: rem(1px) solid transparent;
+  border-radius: rem(30px);
+  color: get-color("white");
+  cursor: pointer;
+  display: inline-block;
+  height: rem(50px);
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+    
+  @include media(">=desktop") {
+    border-radius: rem(100px);
+    height: rem(40px);
+  }
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    font-size: rem(16px);
+    margin-left: auto;
+  }
+
+  &__label {
+    border-radius: rem(30px);
+    column-gap: rem(8px);
+    display: flex;
+    padding: rem(16px) rem(24px);
+    @include media(">=desktop") {
+      padding: rem(9px) rem(24px) rem(10px);
+    }
+  }
+
+  ul {
+    background: get-color("white");
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(40, 40, 40, 0.1);
+    list-style: none;
+    margin: 0;
+    max-height: 255px;
+    -ms-overflow-style: none;
+    overflow-y: auto;
+    padding: rem(10px) 0;
+    position: absolute;
+    top: rem(55px);
+    width: 100%;
+    z-index: 2;
+    @include media(">=desktop") {
+      top: rem(45px);
+    }
+
+    &::-webkit-scrollbar {
+      width: 5px !important;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: get-color("lighter-blue") !important;
+      border-radius: 0 16px 16px 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: get-color("dark-blue") !important;
+      border-radius: 0 4px 4px 0;
+      height: 50px;
+    }
+  }
+    
+  li {
+    @include p2;
+    color: get-color("solid-black");
+    column-gap: rem(8px);
+    display: flex;
+    font-weight: 500;
+    margin: 0 !important;
+    padding: rem(20px);
+    text-align: left;
+    word-break: break-word;
+
+    &:hover {
+      background: get-color("lighter-blue");
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,240 @@
+@import "../../../../site/styles/base/typography";
+
+.vida-exchange-tracker-steps {
+  padding-bottom: rem(48px);
+
+  &__quote-warning {
+    flex-basis: 100%;
+  }
+
+  &__heading {
+    padding: rem(5px) 0 rem(29px) 0;
+  }
+
+  &__wrapper {
+    padding-bottom: rem(48px);
+  }
+
+  .vida-exchange-tracker-steps__terms {
+    margin-top: rem(10px);
+  }
+
+  &__error-wrapper {
+    @include p2;
+    margin-top: 10px;
+  }
+
+  &__popup {
+    &-title,
+    &-desc {
+      margin-bottom: rem(20px);
+
+      @include media(">=desktop") {
+        margin-bottom: rem(30px);
+      }
+    }
+
+    &-btn-wrapper {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__form {
+    &-controls {
+      @include media(">=desktop") {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 47px;
+      }
+
+      >div.form__group {
+        @include media(">=desktop") {
+          width: 34%;
+        }
+      }
+    }
+
+    .form {
+      &__dropdown-options {
+        max-height: rem(160px);
+      }
+    }
+  }
+
+  &__details-edit {
+    margin-left: 14px;
+  }
+
+  &__checkbox_container {
+    width: 100%;
+  }
+
+  &__checkbox {
+    flex-basis: 100%;
+  }
+
+  &__state-wrapper {
+    @include media(">=desktop") {
+      display: flex;
+      gap: 10px;
+      width: 34%;
+    }
+
+    &-date {
+      align-items: center;
+      display: flex;
+
+      .form {
+        &__dropdown-field {
+          width: 110px;
+        }
+
+        &__group:nth-child(2) {
+          left: -27px;
+          position: relative;
+          top: 20px;
+
+          @include media(">=desktop") {
+            left: -59px;
+            top: 25px;
+          }
+
+          .form__field-message {
+            left: 0;
+            position: relative;
+            top: -3px;
+
+            @include media(">=desktop") {
+              top: 0;
+            }
+          }
+        }
+
+      }
+    }
+
+    &-purchase-date {
+      .form {
+        &__group:nth-child(2) {
+          left: -1px;
+          top: 20px;
+          @include media(">=desktop") {
+            left: -29px;
+            top: 24px;
+          }
+
+          .form__field-message {
+            left: 0;
+            top: 0;
+            @include media(">=desktop") {
+              left: 0;
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__condition-wrapper {
+    width: 100%;
+  }
+
+  &__btn-container {
+    display: flex;
+    flex-direction: column;
+
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 100px;
+    @include media(">=desktop") {
+      flex-direction: row;
+    }
+  }
+
+
+  &__title {
+    @include h3;
+    color: get-color("solid-black");
+    line-height: 20px;
+  }
+
+  &__icon-edit {
+    align-items: center;
+    border: 1px solid;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    margin-left: 13px;
+    width: 40px;
+  }
+
+  &__header {
+    align-items: center;
+    display: flex;
+
+    &-actions {
+      display: flex;
+      margin-left: auto;
+    }
+  }
+
+  &__place {
+    color: get-color("solid-grey");
+    display: none;
+    margin-bottom: 20px;
+  }
+
+  &__amount-desc {
+    color: get-color("solid-black");
+    margin-bottom: 10px;
+  }
+
+  &__amount {
+    color: get-color("orange");
+  }
+}
+
+.vida-exchange-tracker-steps {
+  &--info {
+    flex-direction: column;
+
+    &--details {
+      background: #f6f6f6;
+      border-radius: 13px;
+      padding: 15px 24px;
+
+      h3 {
+        padding: 0;
+        padding-bottom: 5px;
+      }
+
+      p {
+        color: #5e5e5e;
+        font-size: 13px !important;
+      }
+    }
+
+    p {
+      color: #5e5e5e;
+      font-size: 11px;
+    }
+  }
+}
+
+.vida-exchange-tracker-steps__btn-container--footer {
+  margin-top: 30px !important;
+}
+
+.vida-exchange-tracker-steps__state-wrapper-trouble {
+  font-size: 12px;
+  margin-top: 13px;
+
+  a {
+    font-size: 12px;
+    margin-left: 5px;
+  }
+}

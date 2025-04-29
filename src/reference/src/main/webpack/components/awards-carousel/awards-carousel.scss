@@ -1,0 +1,73 @@
+.vida-awards-carousel {
+  padding-bottom: rem(30px);
+  padding-top: rem(60px);
+
+  @include media(">=desktop") {
+    padding-bottom: rem(120px);
+    padding-top: rem(120px);
+  }
+
+  &__container {
+    overflow: hidden;
+  }
+
+  h2 {
+    @include h1;
+    text-align: center;
+  }
+
+  &__slider {
+    position: relative;
+
+    .tns-nav {
+      align-items: center;
+      display: flex;
+      margin-top: rem(20px);
+      @include media(">=desktop") {
+        display: none;
+      }
+
+      button {
+        height: 12px;
+        margin-right: 10px;
+        width: 12px;
+      }
+
+      .tns-nav-active {
+        background-color: get-color("blue") !important;
+        height: 16px;
+        width: 16px;
+      }
+    }
+
+    &-card {
+      text-align: center;
+
+      img {
+        height: auto;
+        max-width: 290px;
+        width: calc(100vw - 32px);
+
+        @include media(">=desktop") {
+          max-width: unset;
+          min-height: 166px;
+          min-width: 215px;
+          width: auto;
+        }
+      }
+    }
+
+    &-heading {
+      @include h1;
+      color: get-color("nobel-grey");
+      margin-bottom: rem(8px);
+      margin-top: rem(30px);
+
+      @include media(">=desktop") {
+        color: get-color("light-grey");
+        margin-bottom: rem(23px);
+        margin-top: rem(60px);
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+.vida-registration-details {
+  margin-bottom: rem(20px);
+  
+  &__wrapper {
+    border: 1px solid get-color("light-grey");
+    border-radius: rem(16px);
+    padding: rem(0);
+    @include media(">=desktop") {
+      border-radius: rem(4px);
+      padding: rem(15px);
+    }
+  }
+    
+  &__title {
+    padding: rem(15px);
+    position: relative;
+    @include media(">=desktop") {
+      padding: rem(0);
+      padding-bottom: rem(15px);
+    }
+
+    .icon-minus,
+    .icon-plus {
+      border: 1px solid get-color("solid-black");
+      border-radius: 50%;
+      height: rem(22.5px);
+      margin-top: rem(-8px);
+      padding: rem(2px);
+      position: absolute;
+      right: rem(15px);
+      top: 50%;
+      width: rem(22.5px);
+
+      @include media(">=desktop") {
+        display: none;
+      }
+    }
+  }
+    
+  &__info {
+    border-top: 1px solid get-color("light-grey");
+    display: flex;
+    flex-direction: column;
+    padding: rem(15px);
+    @include media(">=desktop") {
+      flex-direction: row;
+      padding: rem(0);
+      padding-top: rem(15px);
+    }
+
+    &-right {
+      text-align: right;
+      width: 100%;
+      @include media(">=desktop") {
+        width: 30%;
+      }
+    }
+
+    &-left {
+      column-count: 3;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 18%;
+      width: 100%;
+      @include media(">=desktop") {
+        width: 70%;
+      }
+
+    }
+
+    .items {
+      display: flex;
+      margin-bottom: rem(15px);
+      width: 100%;
+      @include media(">=desktop") {
+        display: block;
+        width: auto;
+      }
+
+      &__label {
+        color: get-color("solid-grey");
+        font-size: rem(14px);     
+      }
+
+      &__value {
+        @include input;
+        color: get-color("solid-black");
+        margin-left: auto;
+        order: 2;
+      }
+    }
+    
+  }
+}

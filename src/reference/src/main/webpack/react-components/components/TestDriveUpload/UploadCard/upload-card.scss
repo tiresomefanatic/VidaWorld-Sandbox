@@ -1,0 +1,109 @@
+.vida-test-drive {
+  &__container {
+    .vida-upload-card {
+      &__container {
+        float: left;
+        margin-right: rem(10px);
+        width: 100%;
+
+        p {
+          font-size: rem(14px);
+
+          &.success {
+            color: get-color("green");
+          }
+
+          &.error {
+            color: get-color("red");
+          }
+        }
+      }
+
+      &__body-disclaimer {
+        color: get-color("orange");
+        margin-bottom: rem(10px);
+      }
+
+      &__valid-message {
+        margin-bottom: rem(20px);
+      }
+
+      &__upload {
+        input {
+          width: 100%;
+        }
+      }
+
+      &__file-upload {
+        border: 1px solid get-color("solid-grey");
+        border-radius: 20px;
+        margin: 10px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        width: 100px;
+
+        &-btn {
+          align-items: center;
+          display: flex;
+          justify-content: center;
+        }
+
+        .icon-upload {
+          font-size: rem(20px);
+          margin-right: rem(5px);
+        }
+
+        input {
+          cursor: pointer;
+          filter: alpha(opacity=0);
+          font-size: 20px;
+          margin: 0;
+          opacity: 0;
+          padding: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 100%;
+        }
+      }
+
+      &__head {
+        margin-bottom: rem(20px);
+      }
+
+      &__title {
+        @include h3;
+        padding: 10px 0;
+      }
+
+      &__body {
+        border: 2px dashed get-color("light-grey");
+        border-radius: rem(8px);
+        box-shadow: 0 2px 10px rgb(40 40 40 / 10%);
+        justify-content: center;
+        padding: rem(25px);
+        width: 100%;
+
+        ul {
+          margin-left: rem(20px);
+        }
+
+        .file-name {
+          margin-bottom: rem(20px);
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &.success {
+          border-color: get-color("green");
+        }
+
+        &.error {
+          border-color: get-color("red");
+        }
+      }
+    }
+  }
+}

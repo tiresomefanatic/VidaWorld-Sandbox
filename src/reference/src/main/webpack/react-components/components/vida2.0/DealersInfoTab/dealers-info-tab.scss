@@ -1,0 +1,179 @@
+.dealers-info-wrapper {
+  padding-bottom: rem(32px) !important;
+  padding-top: rem(32px) !important;
+  transition: opacity 1.5s ease-out;
+
+  @include media(">=desktop") {
+    padding-bottom: rem(64px) !important;
+    padding-top: rem(64px) !important;
+  }
+
+  .dealers-info-container {
+    .dealers-info-text {
+      @include vida-mobile-subtitle;
+      color: get-color("mine-shaft");
+      padding: 0 0 rem(5px);
+
+      @include media(">=desktop") {
+        @include vida-desktop-subtitle;
+        padding: 0 0 rem(6px);
+      }
+    }
+
+    .dealers-info-title {
+      @include vida-h2-mobile;
+      color: get-color("mine-shaft");
+      padding: 0 0 rem(32px);
+
+      @include media(">=desktop") {
+        @include vida-h2-desk;
+        font-weight: 600;
+        padding: 0 0 rem(64px);
+      }
+    }
+
+    .dealers-info-content-container {
+      .dealers-info-tab-container {
+        background: rgba(228, 234, 241, 0.4);
+        border-radius: rem(8px);
+        display: flex;
+        height: rem(72px);
+        justify-content: space-between;
+        margin: 0 0 rem(16px);
+        padding: rem(6px);
+
+        @include media(">=desktop") {
+          background: none;
+          border-bottom: 2px solid get-color("catskill-white");
+          border-radius: 0;
+          height: auto;
+          margin: 0 0 rem(64px);
+          padding: 0;
+        }
+      }
+
+      .dealers-info-tab {
+        cursor: pointer;
+        flex: 1;
+        text-align: center;
+
+        @include media("<desktop") {
+          align-items: center;
+          border-bottom: 2px solid get-color("orange");
+          display: flex;
+
+          @media screen and (min-width: 450px) {
+            justify-content: center;
+          }
+        }
+
+        @include media(">=desktop") {
+          padding: 0 0 rem(16px);
+        }
+
+        .dealers-info-count {
+          display: none;
+        }
+
+        h2 {
+          @include vida-mobile-body-1;
+          padding: rem(10px) 0;
+
+          @include media(">=desktop") {
+            @include vida-desk-body-1;
+            padding: 0;
+          }
+        }
+
+        &.active-tab {
+          @include media("<desktop") {
+            background: get-color("orange");
+          }
+          @include media(">=desktop") {
+            border-bottom: 5px solid get-color("orange");
+          }
+
+          .dealers-info-count {
+            @include media(">=desktop") {
+              display: inline-block;
+            }
+          }
+
+          h2 {
+            color: get-color("white");
+            font-weight: 600;
+
+            @include media(">=desktop") {
+              color: get-color("mine-shaft");
+              font-size: rem(28px);
+            }
+          }
+
+          &:first-child {
+            @include media("<desktop") {
+              border-bottom-left-radius: rem(4px);
+              border-top-left-radius: rem(4px);
+              clip-path: polygon(0 0, 70% 0, 101% 100%, 0 100%);
+              flex: 1.25;
+              padding: 0 rem(24px) 0 0;
+            }
+          }
+
+          &:nth-child(2) {
+            @include media("<desktop") {
+              clip-path: polygon(20% 0, 80% 0, 101% 100%, -1% 100%);
+              flex: 1.25;
+              padding: 0 rem(12px) 0 rem(12px);
+            }
+          }
+
+          &:last-child {
+            @include media("<desktop") {
+              border-bottom-right-radius: rem(4px);
+              border-top-right-radius: rem(4px);
+              clip-path: polygon(25% 0, 100% 0, 100% 100%, -1% 100%);
+              flex: 1.25;
+              padding: 0 0 0 rem(24px);
+            }
+          }
+        }
+      }
+    }
+
+    .dealers-info-tab-content-container {
+      .dealers-info-tab-content-title {
+        padding: 0 0 rem(16px);
+
+        @include media(">=desktop") {
+          padding: 0 0 rem(24px);
+        }
+
+        p {
+          @include vida-h3-mobile;
+          color: get-color("mine-shaft");
+          font-weight: 600;
+          @include media(">=desktop") {
+            @include vida-h2-desk;
+          }
+        }
+      }
+
+      .dealers-info-tab-content-description {
+        padding: 0 0 rem(32px);
+
+        @include media(">=desktop") {
+          padding: 0 0 rem(64px);
+        }
+
+        p {
+          @include vida-mobile-body-1;
+          color: get-color("mine-shaft");
+
+          @include media(">=desktop") {
+            @include vida-desk-body-1;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.vida-pricing-new {
+  &__select-variant {
+    @include media(">=desktop") {
+      .popup {
+        &__container {
+          height: calc(100vh - rem(200px));
+        }
+      }
+    }
+
+    .vida-select-variant {
+      &__scooter-info {
+        display: flex;
+        flex-direction: column;
+        grid-gap: rem(30px);
+        margin: rem(30px) 0;
+        padding-bottom: rem(50px);
+
+        .vida-card__button-container {
+          justify-content: center;
+        }
+
+        .vida-scooter-info {
+          @include media(">=desktop") {
+            padding-left: rem(280px);
+
+            &__image {
+              left: rem(20px);
+              margin-bottom: 0;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              transform: translateY(-50%);
+
+              .vida-scooter-info__product-image {
+                max-width: rem(230px);
+              }
+            }
+
+            &__performance {
+              flex-wrap: wrap;
+              gap: rem(10px) 0;
+              justify-content: space-between;
+              margin-top: rem(24px);
+
+              .vida-scooter-info__performance-item {
+                width: 50%;
+              }
+            }
+
+            &__color-name {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

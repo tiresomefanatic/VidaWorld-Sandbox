@@ -1,0 +1,722 @@
+.vida-quick-form {
+  .form-fields {
+    &__name {
+      .vida-form-group {
+        max-width: rem(328px);
+        @include media(">=desktop") {
+          margin: 0;
+          max-width: rem(558px);
+        }
+
+        .form__field-label {
+          color: get-color("mine-shaft");
+          font-size: rem(24px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          margin-bottom: rem(16px);
+          @include media(">=desktop") {
+            font-size: rem(48px);
+            margin-bottom: rem(64px);
+          }
+        }
+
+        .vida-form-field-input {
+          background: get-color("white");
+          border: rem(1px) solid get-color("oslo-gray");
+          border-radius: rem(8px);
+          color: get-color("mine-shaft");
+          font-size: rem(16px);
+          font-style: normal;
+          font-weight: 400;
+          // height: rem(51px);
+          margin-bottom: 0;
+          @include media(">=desktop") {
+            font-size: rem(20px);
+            // height: rem(56px);
+          }
+
+          &:disabled {
+            background: get-color("grey");
+            color: get-color("solid-grey");
+            opacity: 0.7;
+          }
+        }
+
+        .form__field-message {
+          font-size: rem(14px);
+          margin-bottom: 0;
+          margin-top: rem(4px);
+
+          @include media(">=desktop") {
+            font-size: rem(16px);
+            margin-top: rem(8px);
+          }
+        }
+      }
+    }
+
+    &__email {
+      .vida-form-group {
+        .form__field-label {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+
+    &__state-city {
+      .form__field-label {
+        @include media(">=desktop") {
+          margin-bottom: rem(32px) !important;
+        }
+      }
+
+      .form__dropdown-field {
+        @include media(">=desktop") {
+          margin-bottom: rem(32px) !important;
+        }
+      }
+
+      .form__field-message {
+        margin: 0 !important;
+      }
+
+      .form-fields__btn-wrapper {
+        @include media(">=desktop") {
+          padding-top: rem(32px) !important;
+        }
+      }
+    }
+
+    &__modal-variant {
+      .form__dropdown-options {
+        .form__dropdown-option {
+          background: get-color("white") !important;
+
+          &:hover,
+          &:focus,
+          &:active {
+            background: get-color("catskill-white") !important;
+          }
+
+          a {
+            &:hover,
+            &:focus,
+            &:active {
+              background: get-color("catskill-white") !important;
+            }
+          }
+        }
+
+        &::-webkit-scrollbar-track {
+          background: get-color("white") !important;
+          border-radius: rem(8px);
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: get-color("catskill-white") !important;
+          border-radius: rem(8px);
+        }
+      }
+    }
+
+    &__name-header {
+      color: get-color("oslo-gray");
+      font-size: rem(12px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      padding-bottom: rem(4px);
+      text-transform: uppercase;
+      @include media(">=desktop") {
+        font-size: rem(18px);
+        padding-bottom: rem(16px);
+      }
+    }
+
+    &__sub-header {
+      color: get-color("mine-shaft");
+      font-size: rem(24px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      padding-bottom: rem(16px);
+      @include media(">=desktop") {
+        font-size: rem(48px);
+        padding-bottom: rem(32px);
+      }
+    }
+
+    &__btn-primary {
+      background-color: get-color("orange");
+      border: none;
+      border-radius: rem(8px);
+      box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+      color: get-color("white");
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      min-width: 100%;
+      // padding: rem(16px);
+      text-align: center;
+      @include media(">=desktop") {
+        border-radius: rem(8px);
+        font-size: rem(20px);
+        min-width: rem(275px);
+        padding: rem(16px) rem(32px);
+      }
+
+      &:disabled {
+        background-color: get-color("oslo-gray");
+      }
+    }
+
+    &__btn-wrapper {
+      display: flex;
+      justify-content: center;
+      padding-top: rem(16px);
+      @include media(">=desktop") {
+        justify-content: flex-end;
+        padding-top: rem(64px);
+      }
+    }
+
+    .otp-sub-title-text {
+      color: get-color("oslo-grey");
+      font-family: "PP Neue Montreal";
+      font-size: rem(12px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: uppercase;
+
+      @include media(">=desktop") {
+        color: rgba(34, 34, 34, 0.5);
+        font-size: rem(18px);
+      }
+    }
+  }
+
+  .form__group--datepicker {
+    max-width: 100%;
+    @include media(">=desktop") {
+      max-width: rem(558px);
+    }
+
+    input {
+      border-radius: rem(8px) !important;
+      color: #222;
+      font-size: rem(16px) !important;
+      @include media(">=desktop") {
+        font-size: rem(20px) !important;
+      }
+    }
+  }
+
+  .test-ride-number-form-wrapper {
+    .form-fields__name-header {
+      color: get-color("oslo-gray");
+      font-size: rem(12px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .form__field-label {
+      color: get-color("mine-shaft");
+      font-size: rem(24px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      margin-bottom: rem(16px);
+      @include media(">=desktop") {
+        font-size: rem(48px);
+        margin-bottom: rem(64px);
+      }
+    }
+
+    .form__field-message {
+      color: get-color("red");
+    }
+
+    .form__field-mobile {
+      @include media(">=desktop") {
+      }
+      margin-bottom: rem(16px);
+    }
+
+    .form__field-select-wrapper {
+      margin: 0;
+
+      .form__field-select {
+        border-radius: rem(8px) 0 0 rem(8px) !important;
+        border-right: none !important;
+        margin-right: 0;
+        padding-right: 0;
+      }
+
+      &::after {
+        display: none !important;
+      }
+    }
+
+    .whatsapp-consent {
+      color: get-color("oslo-gray");
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+}
+
+.notify-card {
+  background: get-color("white");
+  border-radius: 8px;
+  padding: 20px 16px;
+
+  p {
+    color: get-color("mine-shaft");
+    font-size: 16px;
+    font-weight: 300;
+    padding-bottom: 8px;
+    @include media(">=desktop") {
+      font-size: 18px;
+      padding-bottom: 16px;
+    }
+  }
+
+  a {
+    color: get-color("orange");
+    font-size: 16px;
+    font-weight: 400;
+
+    @include media(">=desktop") {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+}
+
+.vida-dealer-not-found__options {
+  .vida-warranty-card {
+    align-items: unset;
+    padding: 0 0 16px;
+
+    @include media(">=desktop") {
+      padding: 0 0 64px;
+
+      &:first-of-type {
+        padding: 32px 0 64px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    &__txt-redirect-container {
+      justify-content: space-between;
+    }
+  }
+}
+
+.vida-notify__success-container {
+  .form-fields__content {
+    border-bottom: 1px dotted get-color("mine-shaft");
+    color: get-color("mine-shaft");
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+    padding-bottom: 16px;
+
+    @include media(">=desktop") {
+      font-size: 18px;
+      padding-bottom: 32px;
+    }
+  }
+
+  .contact-us-container {
+    padding-top: 16px;
+    @include media(">=desktop") {
+      padding-top: 32px;
+    }
+
+    &__header {
+      color: get-color("mine-shaft");
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 19px;
+      padding-bottom: 12px;
+      @include media(">=desktop") {
+        font-size: 20px;
+        line-height: 24px;
+        padding-bottom: 32px;
+      }
+    }
+
+    &__message {
+      color: get-color("mine-shaft");
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 19px;
+      padding-bottom: 20px;
+      @include media(">=desktop") {
+        font-size: 18px;
+        line-height: 21px;
+        padding-bottom: 32px;
+      }
+    }
+
+    &__details {
+      align-items: center;
+      display: flex;
+      gap: 10px;
+
+      &:first-of-type {
+        padding-bottom: 16px;
+
+        @include media(">=desktop") {
+          padding-bottom: 32px;
+        }
+      }
+    }
+
+    .contact-us-image {
+      height: 20px;
+      width: 20px;
+      @include media(">=desktop") {
+        height: 34px;
+        width: 34px;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .contact-us-info {
+      color: get-color("orange");
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19px;
+
+      @include media(">=desktop") {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .form-fields__btn-wrapper {
+    @include media(">=desktop") {
+      justify-content: start !important;
+    }
+  }
+}
+
+.test-ride-location-container {
+  padding: 0 0 rem(16px) 0;
+  position: relative;
+
+  @include media(">=desktop") {
+    padding: 0 0 rem(24px) 0;
+  }
+
+  .test-ride-location-find-icon {
+    cursor: pointer;
+    height: rem(20px);
+    position: absolute;
+    right: rem(16px);
+    top: rem(14px);
+    width: rem(20px);
+
+    @include media(">=desktop") {
+      height: rem(32px);
+      right: rem(24px);
+      top: rem(18px);
+      width: rem(32px);
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .test-ride-location-cancel-icon {
+    cursor: pointer;
+    height: rem(16px);
+    position: absolute;
+    right: rem(48px);
+    top: rem(16px);
+    width: rem(16px);
+
+    @include media(">=desktop") {
+      height: rem(24px);
+      right: rem(64px);
+      top: rem(22px);
+      width: rem(24px);
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  input {
+    @include vida-mobile-body-2;
+    background: get-color("white");
+    border: none;
+    border-radius: rem(8px);
+    box-shadow: 0 0 rem(10px) 0 rgba(0, 0, 0, 0.1);
+    color: get-color("mine-shaft");
+    font-size: rem(16px);
+    font-weight: 400;
+    height: rem(48px);
+    padding: 0 rem(16px);
+    width: 100%;
+
+    @include media(">=desktop") {
+      @include vida-desktop-body-4;
+      border-radius: rem(16px);
+      color: get-color("mine-shaft");
+      font-size: rem(20px);
+      font-weight: 400;
+      height: rem(68px);
+      padding: 0 rem(24px);
+    }
+
+    &:focus {
+      border: 2px solid get-color("orange");
+    }
+  }
+
+  .city-option-container {
+    background: get-color("white");
+    border-radius: rem(8px);
+    margin: rem(2px) 0 0 0;
+    max-height: rem(160px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    @include media(">=desktop") {
+      max-height: rem(240px);
+    }
+
+    &::-webkit-scrollbar {
+      width: rem(2px);
+
+      @include media(">=desktop") {
+        width: rem(4px);
+      }
+    }
+
+    &::-webkit-scrollbar-track {
+      background: get-color("white");
+      border-radius: rem(8px);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: get-color("catskill-white");
+      border-radius: rem(8px);
+    }
+  }
+
+  .test-ride-city-error-msg {
+    color: get-color("red");
+    font-size: rem(12px);
+    font-weight: 400;
+    margin: rem(4px) 0 0 rem(4px);
+
+    @include media(">=desktop") {
+      font-size: rem(16px);
+    }
+  }
+
+  .city-option {
+    border-bottom: 1px solid get-color("catskill-white");
+    cursor: pointer;
+    height: rem(40px);
+    padding: rem(12px) rem(16px);
+
+    @include media(">=desktop") {
+      height: rem(56px);
+      padding: rem(16px);
+    }
+
+    &:hover {
+      background: get-color("catskill-white");
+    }
+
+    p {
+      color: get-color("mine-shaft");
+      font-size: rem(12px);
+
+      @include media(">=desktop") {
+        font-size: rem(16px);
+      }
+    }
+  }
+
+  .d-block {
+    display: block;
+  }
+
+  .d-none {
+    display: none;
+  }
+}
+
+.temp-no-dealers-found {
+  margin-top: 15px;
+
+  .click-here {
+    background-color: get-color("orange");
+    color: get-color("white");
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 8px;
+    width: 80px;
+  }
+}
+
+.test-ride-user-info-form-container {
+  .form__field-label {
+    display: none;
+  }
+
+  .vida-form-group {
+    margin: 0 0 rem(24px) 0 !important;
+  }
+
+  .user-info-form-title {
+    @include vida-h2-mobile;
+    line-height: rem(28.8px);
+    margin: 0 0 rem(16px) 0;
+    @include media(">=desktop") {
+      @include vida-h2-desk;
+      line-height: rem(57.6px);
+      margin: 0 0 rem(64px) 0;
+    }
+  }
+
+  .test-ride-location-container {
+    .test-ride-location-find-icon {
+      cursor: pointer;
+      height: rem(20px);
+      position: absolute;
+      right: rem(16px);
+      top: rem(14px);
+      width: rem(20px);
+
+      @include media(">=desktop") {
+        height: rem(28px);
+        right: rem(24px);
+        top: rem(16px);
+        width: rem(28px);
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    .test-ride-location-cancel-icon {
+      cursor: pointer;
+      height: rem(16px);
+      position: absolute;
+      right: rem(48px);
+      top: rem(16px);
+      width: rem(16px);
+
+      @include media(">=desktop") {
+        height: rem(20px);
+        right: rem(64px);
+        top: rem(20px);
+        width: rem(20px);
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    input {
+      border: 1px solid get-color("oslo-gray");
+      border-radius: rem(8px);
+      box-shadow: none;
+      height: rem(52px);
+      outline: none;
+      padding: 0 rem(16px);
+      @include media(">=desktop") {
+        height: rem(56px);
+        padding: 0 rem(24px) 0 rem(16px);
+      }
+
+      &:focus {
+        border: 1px solid get-color("oslo-gray");
+        outline: none;
+      }
+
+      &:focus-visible {
+        border: 1px solid get-color("oslo-gray");
+        outline: none;
+      }
+    }
+
+    .d-block {
+      display: block;
+    }
+
+    .d-none {
+      display: none;
+    }
+  }
+}
+
+.dealers-selection-tab {
+  margin: 0 0 rem(32px) 0;
+  @include media(">=desktop") {
+    margin: 0 0 rem(48px) 0;
+  }
+}
+
+.modal-selection-dropdown {
+  margin: 0 0 rem(32px) 0;
+  @include media(">=desktop") {
+    margin: 0 0 rem(48px) 0;
+  }
+
+  .vida-form-group {
+    min-height: unset;
+  }
+}
+
+.dealer-selection-title {
+  margin: 0 0 rem(12px) 0;
+  @include media(">=desktop") {
+    margin: 0 0 rem(24px) 0;
+  }
+
+  .dealer-selection-title-text {
+    color: get-color("oslo-gray");
+    font-size: rem(12px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-bottom: rem(4px);
+    text-transform: uppercase;
+    @include media(">=desktop") {
+      font-size: rem(18px);
+      padding-bottom: rem(16px);
+    }
+  }
+}

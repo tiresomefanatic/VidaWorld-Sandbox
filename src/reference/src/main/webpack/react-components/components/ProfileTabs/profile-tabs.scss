@@ -1,0 +1,96 @@
+.vida-profile-tabs {
+  &__nav {
+    border-bottom: rem(1px) solid get-color("light-grey");
+    display: flex;
+    margin-top: rem(10px);
+    overflow: auto;
+    @include media(">=desktop") {
+      margin-top: rem(40px);
+    }
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    a {
+      @include h4-md;
+      color: get-color("solid-grey");
+      flex: 0 0 auto;
+      padding: rem(9px) rem(10px);
+      text-decoration: none;
+      @include media(">=desktop") {
+        padding: rem(16px) rem(20px);
+      }
+
+      &:hover,
+      &.vida-profile-tabs__nav-item--active {
+        border-bottom: rem(1px) solid get-color("solid-black");
+        color: get-color("solid-black");
+      }
+    }
+  }
+
+  .vida-order-card-details__payment-frame {
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
+
+    .popup {
+      height: 100vh;
+
+      &__container {
+        height: 550px;
+        overflow-y: hidden;
+        padding-bottom: rem(30px);
+        padding-top: rem(16px);
+        width: 340px;
+        @include media(">=desktop") {
+          height: 490px;
+          width: 700px;
+        }
+      }
+
+      &__body,
+      &__content {
+        height: 100%;
+      }
+
+      &__close-btn {
+        display: block;
+        right: 8px;
+        top: 0;
+      }
+
+      &__header {
+        height: 30px;
+      }
+    }
+  }
+
+  .popup {
+    height: calc(100vh - rem(76px));
+    @include media(">=desktop") {
+      // height: calc(100vh - rem(85px));
+    }
+
+    &__container {
+      padding: 0;
+    }
+
+    &__close-btn {
+      display: none;
+    }
+
+    &__body,
+    &__body>div {
+      height: 100%;
+    }
+  }
+
+  .vida-user-orders__verify-email-dialog {
+    .popup {
+      height: 100vh;
+    }
+  }
+}

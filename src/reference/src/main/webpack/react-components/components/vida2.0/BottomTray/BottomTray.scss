@@ -1,0 +1,163 @@
+.vida-bottom-tray-wrapper {
+  bottom: 0;
+  height: rem(164px);
+  position: fixed;
+  width: 100%;
+  z-index: 9997;
+
+  @include media(">=tablet") {
+    display: none;
+  }
+
+  .vida-bottom-tray-container {
+    height: 100%;
+    width: 100%;
+
+    .bottom-tray-bg-container {
+      height: 100%;
+      position: relative;
+      width: 100%;
+
+      .bottom-tray-bg-img {
+        backdrop-filter: blur(7.5px);
+        background: rgba(34, 34, 34, 0.5);
+        border-top-left-radius: rem(4px);
+        border-top-right-radius: rem(4px);
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  .bottom-tray-content-container {
+    display: flex;
+    gap: rem(6.8px);
+    justify-content: space-evenly;
+    left: 0;
+    padding: rem(16px);
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    .bottom-tray-card-wrapper {
+      display: block;
+      position: relative;
+      text-decoration: none;
+
+      .bottom-tray-card-bg-img {
+        backdrop-filter: blur(2.5px);
+        filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+        height: rem(132px);
+        opacity: 0.7;
+        width: 100%;
+      }
+    }
+
+    .bottom-tray-card-container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      left: 0;
+      padding: rem(10px) rem(8px) rem(15px);
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      .bottom-tray-card-icon {
+        height: rem(44px);
+        width: rem(44px);
+
+        .bottom-tray-card-icon-img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      .bottom-tray-card-title {
+        padding: rem(5px) 0 0;
+
+        p {
+          @include vida-h3-mobile;
+          color: get-color("white");
+          font-weight: 600;
+        }
+      }
+
+      .bottom-tray-card-description {
+        min-width: rem(64px);
+        padding: rem(5.3px) 0 0;
+        text-align: center;
+        width: 100%;
+
+        p {
+          @include vida-mobile-bottom-nav-label;
+          color: get-color("white");
+        }
+      }
+    }
+  }
+
+  &.variant-2 {
+    height: rem(88px);
+
+    .vida-bottom-tray-container {
+      backdrop-filter: blur(25px);
+      background: rgba(34, 34, 34, 0.5);
+      border-top-left-radius: rem(8px);
+      border-top-right-radius: rem(8px);
+
+      .bottom-tray-bg-container {
+        .bottom-tray-bg-img {
+          display: none;
+        }
+      }
+    }
+
+    .bottom-tray-content-container {
+      gap: 0;
+      padding: 0;
+
+      .bottom-tray-card-wrapper {
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+        width: 100%;
+
+        &:first-child {
+          border-left: none;
+        }
+
+        &:last-child {
+          border-right: none;
+        }
+
+        .bottom-tray-card-bg-img {
+          height: rem(83.2px);
+          opacity: 0;
+        }
+      }
+    }
+
+    .bottom-tray-card-container {
+      justify-content: center;
+      padding: 0;
+
+      .bottom-tray-card-icon {
+        height: rem(36px);
+        width: rem(36px);
+      }
+
+      .bottom-tray-card-title {
+        p {
+          @include vida-h5-mobile;
+          color: get-color("white");
+        }
+      }
+
+      .bottom-tray-card-description {
+        display: none;
+      }
+    }
+  }
+}

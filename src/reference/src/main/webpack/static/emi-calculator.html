@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Emi Calculator</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Pre-Booking" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <!-- <script>
+    const sessionCookieExist = document.cookie.match(/^(.*;)?\s*SESSION_TOKEN\s*=\s*[^;]+(.*)?$/);
+    if (!sessionCookieExist) {
+      window.location.href = "/login.html"+"?redirectURL="+window.location.href;
+    }
+  </script> -->
+  <%= htmlWebpackPlugin.options.custom %>
+  <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async></script>
+</head>
+
+<body>
+  <header></header>
+	<div data-component="Spinner" data-cmp-type="react"></div>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+    "EmiCalculatorConfig": {
+        "genericConfig": {
+          "submitBtn": "Submit",
+          "disclaimer": "Note: Prices shown are exshowroom prices",
+          "disclaimer2": "Want to reserve with different account?",
+          "disclaimer2Btn": "Login/Register"
+        },
+        "cityField": {
+            "label": "Select a city*",
+            "name": "city",
+            "validationRules": {
+              "required": {
+                "message": "City is required."
+              }
+            }
+          },
+        "scooterInfo": {
+          "priceType": "Ex-Showroom Price",
+          "defaultCityState": "BENGALURU~KARNATAKA~INDIA",
+          "splitterChar": "~",
+          "product": {
+            "range": "Range",
+            "topSpeed": "Top speed",
+            "acceleration": "0-40km/h",
+            "chargingTime": "0 - 100% in",
+            "certifiedRange": "Certified Range",
+            "enableCertifiedRange": true,
+          },
+          "colorSummaryLabel": "Included",
+          "tooltipConfig": {
+						"info": "*Price is inclusive of portable charger, FAME II subsidy and state government subsidy (Wherever applicable).",
+						"infoPosition": "top",
+						"id": "effective-price"
+					},
+        },
+      }
+    });  
+
+  </script>
+  <div data-component="EmiCalculator" data-cmp-type="react" data-cmp-config="EmiCalculatorConfig"></div>
+</body>
+
+</html>

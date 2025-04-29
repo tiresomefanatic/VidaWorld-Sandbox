@@ -1,0 +1,27 @@
+.vida-product-subscription-marquee {
+  margin: rem(32px) 0;
+  @include media(">=desktop") {
+    margin: rem(64px) 0;
+  }
+
+  .scroll-wrapper {
+    background-color: get-color("pure-black");
+    height: rem(22px);
+    overflow: hidden;
+    @include media(">=desktop") {
+      height: rem(32px);
+    }
+
+    &__img-scroll {
+      animation: scrollText 20s infinite linear;
+      display: inline-block;
+      height: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+
+      img {
+        display: inline-block;
+      }
+    }
+  }
+}

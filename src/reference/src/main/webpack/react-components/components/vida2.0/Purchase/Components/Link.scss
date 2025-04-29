@@ -1,0 +1,14 @@
+.vida2-link {
+  font-size: rem(16px);
+  font-weight: 530;
+  line-height: rem(19.2px);
+  padding: 0;
+  text-align: center;
+  width: fit-content;
+
+  @include media(">=desktop") {
+    font-size: rem(20px);
+    font-weight: 500;
+    line-height: rem(24px);
+  }
+}

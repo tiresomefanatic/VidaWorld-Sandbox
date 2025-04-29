@@ -1,0 +1,55 @@
+@import "../../../../site/styles/base/typography";
+
+.vida-booking-interest {
+  &__title {
+    @include h2;
+    margin-bottom: rem(10px);
+  }
+
+  &__content {
+    @include p2;
+    color: get-color("solid-grey");
+    margin-bottom: rem(52px);
+    @include media(">=desktop") {
+      margin-bottom: rem(40px);
+    }
+  }
+
+  &__phone-icon {
+    padding-right: 13px;
+  }
+
+  &__email-icon {
+    padding-right: 13px;
+  }
+
+  &__question {
+    @include h4;
+    margin-bottom: rem(10px);
+  }
+
+  &__with-you {
+    @include p2;
+    margin-bottom: rem(20px);
+  }
+
+  &__contact {
+    @include links;
+    margin-bottom: (17px);
+    @include media(">=desktop") {
+      margin-bottom: rem(22px);
+    }
+
+    a {
+      color: get-color("solid-black");
+    }
+  }
+
+  &__chat-lg {
+    margin-bottom: rem(20px);
+    margin-top: rem(18px);
+    @include media(">=desktop") {
+      margin-bottom: rem(150px);
+    }
+  }
+}

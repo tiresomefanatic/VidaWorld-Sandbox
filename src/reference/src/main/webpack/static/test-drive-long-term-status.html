@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Test Ride - Status</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Test Drive" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+  <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async></script>
+</head>
+
+<body>
+  <header></header>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "testDriveStatusConfig": {
+        "backgroundImg": "https://stage.vidaworld.com/content/dam/vida/global/optimized-images/testride/Lifestyle2.png",
+        "successPage": {
+          "title": "Congratulations!",
+          "message": "You have successfully booked your long term test drive. Find your pickup information below",
+          "info": "The same information is sent to your phone number, you can log in using this number to edit your test drive details.",
+          "redirectBtn": {
+            "label": "Update Emergency Contact",
+          }
+        },
+        "failurePage": {
+          "title": "Payment Failed!",
+          "message": "Your payment failed, please retry payment",
+          "info": "Please click on the below button to retry payment",
+          "redirectBtn": {
+            "label": "Retry Payment",
+          }
+        }
+      }
+    });
+  </script>
+	<div data-component="Spinner" data-cmp-type="react"></div>
+  <div data-component="TestDriveStatus" data-cmp-type="react" data-cmp-config="testDriveStatusConfig"></div>
+</body>
+
+</html>

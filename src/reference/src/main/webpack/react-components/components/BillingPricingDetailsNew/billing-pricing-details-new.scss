@@ -1,0 +1,218 @@
+
+.vida-billing-pricing-new {
+  min-height: calc(100vh - 76px);
+
+  &__banner {
+    margin-top: rem(10px);
+
+    .icon-information-circle {
+      color: get-color("blue");
+    }
+  }
+
+  &__payment-container {
+    margin-top: rem(20px);
+  }
+
+  .vida-container {
+    &::after {
+      clear: both;
+      content: "";
+      display: block;
+    }
+  }
+
+  &__opt-buyback {
+    margin-top: rem(10px);
+    width: 100%;
+    @include media(">=desktop") {
+      width: 50%;
+    }
+  }
+
+  &__home-delivery {
+    margin-top: rem(10px);
+    width: 100%;
+    @include media(">=desktop") {
+      width: 50%;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    @include media(">=desktop") {
+      flex-direction: row;
+    }
+  }
+
+  &__payment {
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: rem(160px);
+    padding-top: rem(20px);
+    width: 100%;
+    @include media(">=desktop") {
+      float: left;
+      padding-bottom: rem(30px);
+      padding-right: rem(48px);
+      padding-top: rem(30px);
+      width: 64%;
+    }
+    @include media(">=desktop-md") {
+      width: 69%;
+    }
+    // @include media(">=desktop-lg") {
+    //   width: 71%;
+    // }
+    // @include media(">=desktop-xxl") {
+    //   width: 72%;
+    // }
+  }
+
+  &__info-container {
+    margin-top: 20px;
+  }
+
+  &__status {
+    background-color: get-color("white");
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    transition: all 0.4s ease-out;
+    width: 100%;
+    @include media(">=desktop") {
+      float: left;
+      min-height: calc(100vh - 76px);
+      position: sticky;
+      right: 0;
+      // top: rem(85px);
+      top: rem(76px);
+      width: 36%;
+    }
+    @include media(">=desktop-md") {
+      min-height: calc(100vh - 76px);
+      width: 31%;
+    }
+    // @include media(">=desktop-lg") {
+    //   width: 32%;
+    // }
+    // @include media(">=desktop-xl") {
+    //   width: 34%;
+    // }
+    // @include media(">=desktop-xxl") {
+    //   width: 36%;
+    // }
+
+    &-sticky {
+      z-index: 999;
+      @include media(">=desktop") {
+        top: 0;
+      }
+    }
+  }
+
+  &__wrapper {
+    @include media(">=desktop-md") {
+      display: flex;
+      flex-direction: row;
+      gap: 0 rem(10px);
+      justify-content: space-between;
+    }
+  }
+
+  &__billing {
+    @include media(">=desktop-md") {
+      width: 50%;
+    }
+  }
+
+  &__pricing {
+    @include media(">=desktop-md") {
+      width: 50%;
+    }
+  }
+
+  &__frame-container {
+    height: 100%;
+  }
+
+  &__payment-frame {
+    iframe {
+      height: 100%;
+      width: 97%;
+    }
+
+    .popup {
+      &__container {
+        height: 550px;
+        width: 340px;
+      
+        @include media(">=desktop") {
+          height: 490px;
+          padding-bottom: rem(30px);
+          padding-top: rem(16px);
+          width: rem(820px);
+        }
+      }
+  
+      &__body,
+      &__content {
+        height: 100%;
+      }
+  
+      &__close-btn {
+        bottom: 10px;
+        @include media(">=desktop") {
+          display: none;
+        }
+      }
+   
+    }
+  }
+
+  &__insurance-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+    padding-right: rem(20px);
+
+    p {
+      @include label;
+    }
+
+    h4 {
+      font-weight: 500;
+    }
+  }
+}
+
+.display-none-icon {
+  display: none;
+}
+
+.vida-payment-new-mobile-wrapper {
+  padding-bottom: rem(136px);
+
+  .vida-delivery-status-new__product-info-new {
+    padding: rem(20px) 0;
+  }
+
+  &__payments {
+    background-color: get-color("white");
+    border: 1px solid get-color("light-grey");
+    border-radius: rem(16px);
+  }
+
+  .vida-payment-new__container {
+    > div {
+      padding: rem(16px);
+    }
+
+    > div:not(:last-child) {
+      border-bottom: 1px solid get-color("light-grey");
+    }
+  }
+}

@@ -1,0 +1,160 @@
+.popup {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  height: auto;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 76px;
+  width: 100%;
+  z-index: 998;
+  @include media(">=desktop") {
+    // top: rem(85px);
+    top: rem(76px);
+  }
+
+  &--full-screen {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    @include media(">=desktop") {
+      top: 0;
+    }
+  }
+
+  &__container {
+    background-color: get-color("white");
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: rem(30px);
+    padding-top: rem(16px);
+    position: absolute;
+    right: 0;
+    top: 0;
+      
+    @include media(">=desktop") {
+      padding-bottom: rem(59px);
+      padding-top: rem(56px);
+    }
+  }
+  
+  &__header {
+    position: relative;
+  }
+  
+  &__close-btn {
+    background: none;
+    border: none;
+    color: inherit;
+    color: get-color("blue");
+    cursor: pointer;
+    display: block;
+    font: inherit;
+    padding: 0;
+    position: absolute;
+    right: rem(20px);
+    
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-size: rem(20px);
+      font-weight: bold;
+    }
+  }
+  
+}
+
+.popup.popup--small {
+  top: 0 !important;
+
+  .popup__container {
+    border-radius: 32px !important;
+    height: max-content !important;
+    max-height: fit-content !important;
+    max-width: 450px !important;
+    min-height: 150px;
+    min-width: 280px;
+    width: 40vw !important;
+
+    @media screen and (min-device-pixel-ratio: 0) {
+      /* webkit specific CSS */
+      height: 65vh !important;
+      max-height: 65vh !important;
+      max-width: 620px !important;
+      width: 80vw !important;
+    }
+  }
+
+  .popup__body,
+  .popup__content {
+    height: 100%;
+  }
+}
+
+.popup.popup--medium {
+  top: 0 !important;
+
+  .popup__container {
+    border-radius: 32px !important;
+    height: max-content !important;
+    margin-top: 100px;
+    max-height: fit-content !important;
+    max-width: 620px !important;
+    min-height: 150px;
+    min-width: 280px;
+    width: 60vw !important;
+
+    @media screen and (min-device-pixel-ratio: 0) {
+      /* webkit specific CSS */
+      height: 65vh !important;
+      max-height: 65vh !important;
+      max-width: 620px !important;
+      width: 80vw !important;
+    }
+  }
+
+  .popup__body,
+  .popup__content {
+    height: 100%;
+
+    &--container {
+
+      display: flex;
+      flex-direction: column;
+      flex-direction: column;
+      margin-bottom: 20px;
+      padding: 0 1.25rem 0 0;
+
+      h4 {
+
+        font-weight: 500;
+      }
+
+      .btn-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+
+        .btn--primary {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  .popup__body {
+    overflow-y: auto;
+    padding: 0 rem(16px);
+
+    @include media(">=desktop") {
+      padding: 0 rem(30px);
+    }
+  }
+
+  .popup__close-btn {
+    color: #000;
+  }
+}
+

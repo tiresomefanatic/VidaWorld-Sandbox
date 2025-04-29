@@ -1,0 +1,110 @@
+@import "../../../../../site/styles/base/typography";
+
+.vida-booking-summary {
+  &__steps {
+    @include p2;
+    display: none;
+    @include media(">=desktop") {
+      color: get-color("solid-grey");
+      display: block;
+
+      span {
+        padding: 0 2px;
+      }
+    }
+  }
+
+  &__title {
+    @include h2;
+    margin-bottom: rem(10px);
+  }
+
+  &__content {
+    @include p2;
+    margin-bottom: rem(30px);
+    @include media(">=desktop") {
+      color: get-color("solid-grey");
+    }
+  }
+
+  &__scooter-info {
+    @include h3;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(10px);
+    @include media(">=desktop") {
+      margin-bottom: rem(2px);
+    }
+  }
+
+  &__deliver-info {
+    @include p2;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(33px);
+  }
+
+  &__term-checkbox {
+    @include links;
+    @include media(">=desktop") {
+      margin-bottom: rem(20px);
+    }
+  }
+
+  &__confirmation {
+    margin-top: rem(11px);
+  }
+
+  &__buttons {
+    margin-bottom: rem(16px);
+    margin-top: rem(40px);
+  }
+
+  &__help-text {
+    @include links;
+    margin-bottom: rem(30px);
+    margin-left: rem(70px);
+    text-align: left;
+    @include media(">=desktop") {
+      margin-left: 0;
+    }
+  }
+
+  &__payment-frame {
+    iframe {
+      height: 100%;
+      width: 97%;
+      // z-index: 999999;
+    }
+
+    .popup {
+      &__container {
+        height: 550px;
+        width: 340px;
+      
+        @include media(">=desktop") {
+          height: 490px;
+          padding-bottom: rem(30px);
+          padding-top: rem(16px);
+          width: 700px;
+        }
+      }
+  
+      &__body,
+      &__content {
+        height: 100%;
+      }
+  
+      &__close-btn {
+        bottom: 10px;
+        @include media(">=desktop") {
+          display: none;
+        }
+      }
+   
+    }
+  }
+
+}
+
+

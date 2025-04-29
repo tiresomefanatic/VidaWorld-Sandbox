@@ -1,0 +1,137 @@
+
+
+.vida-delivery-status {
+  margin: rem(16px);
+
+
+  @include media(">=desktop") {
+    background: #fff;
+    height: 100%;
+    margin: 0;
+    padding: rem(16px) 0 rem(30px);
+    width: 100%;
+  }
+
+  &__product-image {
+    display: none;
+    height: 110px;
+    margin-bottom: rem(20px);
+    margin-left: rem(23px);
+    max-width: 100%;
+
+    @include media(">=desktop") {
+      display: block;
+    }
+    @include media(">=desktop-lg") {
+      height: 164px;
+    }
+  }
+
+  &__product-info {
+    @include h3;
+    display: flex;
+    gap: rem(10px);
+    justify-content: space-between;
+    margin-bottom: rem(20px);
+    margin-left: 0;
+    
+    @include media(">=desktop") {
+      display: flex;
+      justify-content: normal;
+      margin-bottom: rem(22px);
+      margin-left: rem(38px);
+    }
+  }
+
+  &__stepper {
+    display: none;
+    margin-bottom: rem(35px);
+    margin-left: rem(15px);
+    
+    @include media(">=desktop") {
+      display: block;
+    }
+
+    ul {
+      border-left: rem(1.4px) dashed get-color("blue");
+      height: calc(100% - 40px);
+      list-style: none;
+      padding-bottom: rem(20px);
+    }
+
+    ul:last-child {
+      padding-bottom: rem(0);
+    }
+  }
+
+  &__stepper-next {
+    background: #d2d1d1;
+    border: rem(1.4px) solid #d2d1d1;
+    border-radius: 50%;
+    display: flex;
+    height: rem(10px);
+    margin-right: rem(22px);
+    margin-top: 6px;
+    position: relative;
+    right: 5px;
+    width: rem(10px);
+  }
+
+  &__steps {
+    display: flex;
+
+    .icon-check-circle {
+      background: #fff;
+      font-size: rem(30px);
+      position: relative;
+      right: 15px;
+    }
+  }
+
+  &__stepper-image {
+    height: 42px;
+    margin-right: rem(-6px);
+    position: relative;
+    right: 16px;
+  }
+
+  .form__group {
+    max-width: 100%;
+    @include media(">=desktop") {
+      margin-bottom: rem(20px);
+      margin-left: rem(30px);
+      margin-right: rem(30px);
+    }
+
+    &.form__field-button {
+      .btn {
+        min-width: 0;
+        width: calc(100% - 60px);
+        @include media(">=desktop") {
+          width: calc(100% - 70px);
+        }
+      }
+    }
+  }
+
+  &__help-text {
+    @include links;
+    display: none;
+    margin-left: rem(38px);
+    
+    @include media(">=desktop") {
+      display: block;
+    }
+
+    p {
+      align-items: center;
+      display: flex;
+      gap: rem(5px);
+    }
+  }
+
+  &__info-active {
+    color: get-color("orange");
+  }
+
+}

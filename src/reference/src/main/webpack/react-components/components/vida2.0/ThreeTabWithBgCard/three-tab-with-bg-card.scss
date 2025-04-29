@@ -1,0 +1,403 @@
+.three-tab-with-bgcard {
+  backdrop-filter: blur(rem(63px));
+  background: radial-gradient(50.18% 50.18% at 53.56% 38.2%,
+  rgba(255, 255, 255, 0.1) 0%,
+  rgba(150, 150, 150, 0.1) 30.92%,
+  rgba(52, 52, 52, 0.1) 62.7%,
+  rgba(0, 0, 0, 0.1) 100%),
+    rgba(0, 0, 0, 0.05) no-repeat;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  border: rem(2px) solid get-color("white");
+  border-radius: rem(4px);
+  display: flex;
+  justify-content: center;
+  padding-bottom: rem(67px);
+  padding-top: rem(195px);
+
+  @include media(">=tablet") {
+    background: get-color("white");
+    flex-shrink: 0;
+    justify-content: flex-end;
+    padding-bottom: rem(171px);
+    padding-right: rem(80px);
+    padding-top: rem(171px);
+  }
+
+  .info-details-container {
+    align-items: flex-start;
+    backdrop-filter: blur(rem(25px));
+    background: radial-gradient(50.18% 50.18% at 53.56% 38.2%,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(150, 150, 150, 0.1) 30.92%,
+    rgba(52, 52, 52, 0.1) 62.7%,
+    rgba(0, 0, 0, 0.1) 100%),
+      rgba(0, 0, 0, 0.05);
+    border-radius: rem(8px);
+    box-shadow: 0 rem(100px) rem(250px) 0 rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: rem(32px);
+    max-width: rem(320px);
+    padding: rem(32px) rem(16px);
+    position: relative;
+
+    @include media(">=tablet") {
+      border-radius: rem(16px);
+      box-shadow: 0 rem(150px) rem(375px) 0 rgba(0, 0, 0, 0.15);
+      display: inline-flex;
+      flex-direction: column;
+      gap: rem(64px);
+      max-width: rem(496px);
+      min-height: rem(558px);
+      padding: rem(64px) rem(32px);
+    }
+  }
+
+  .info-details-header {
+    color: get-color("white");
+
+    /* Mobile/Heading 2 - Mobile */
+    font-family: PP Neue Montreal;
+    font-size: rem(24px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    @include media(">=tablet") {
+      font-size: rem(48px);
+      font-weight: 600;
+    }
+  }
+
+  .info-details-nav-container {
+    border-bottom: 2px solid get-color("orange");
+    border-bottom-left-radius: rem(2px);
+    border-bottom-right-radius: rem(2px);
+    display: flex;
+    width: 100%;
+
+    @include media(">=tablet") {
+      border-bottom: solid 3px get-color("orange");
+      border-bottom-left-radius: rem(3px);
+      border-bottom-right-radius: rem(3px);
+    }
+  }
+
+  .info-details-nav {
+    align-items: center;
+    color: get-color("white");
+    cursor: pointer;
+    display: flex;
+    flex: 1;
+
+    font-family: PP Neue Montreal;
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 375;
+    justify-content: center;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+
+    @include media(">=tablet") {
+      font-size: rem(20px);
+      font-weight: 400;
+    }
+
+    &.type-one-active {
+      align-items: center;
+      background-color: get-color("orange");
+      border: none;
+      border-top-left-radius: rem(5px);
+
+      clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%);
+      color: get-color("white");
+      font-family: PP Neue Montreal;
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 600;
+      justify-content: flex-start;
+      line-height: normal;
+      padding: rem(10px) rem(15px);
+      text-align: center;
+      transition: background-color 0.3s ease;
+
+      @include media(">=tablet") {
+        clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+        font-size: rem(20px);
+      }
+    }
+
+    &.type-two-active {
+      align-items: center;
+      background-color: get-color("orange");
+      border: none;
+      border-radius: 0;
+
+      clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+      color: get-color("white");
+
+      font-family: PP Neue Montreal;
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 600;
+      justify-content: center;
+      line-height: normal;
+      padding: rem(10px) rem(15px);
+      text-align: center;
+      transition: background-color 0.3s ease;
+
+      @include media(">=tablet") {
+        clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+        font-size: rem(20px);
+      }
+    }
+
+    &.type-three-active {
+      align-items: center;
+      background-color: get-color("orange");
+      border: none;
+      border-radius: 0;
+      border-bottom-right-radius: rem(2px);
+      border-top-right-radius: rem(5px);
+      clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+      color: get-color("white");
+
+      font-family: PP Neue Montreal;
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 600;
+      justify-content: flex-end;
+      line-height: normal;
+      padding: rem(10px) rem(15px);
+      text-align: center;
+      transition: background-color 0.3s ease;
+
+      @include media(">=tablet") {
+        clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+        font-size: rem(20px);
+      }
+    }
+  }
+
+  .info-details-extra-details {
+    align-items: flex-start;
+    align-self: stretch;
+    color: get-color("white");
+    display: flex;
+    flex-direction: column;
+    font-family: PP Neue Montreal;
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 375;
+    gap: rem(16px);
+    line-height: normal;
+    width: 100%;
+
+    @include media(">=tablet") {
+      font-size: rem(20px);
+      font-weight: 400;
+      gap: rem(32px);
+    }
+  }
+
+  .know-more-text {
+    color: get-color("orange");
+    font-family: PP Neue Montreal;
+    font-size: rem(16px);
+    font-style: normal;
+    font-weight: 530;
+    line-height: normal;
+    text-align: center;
+    @include media(">=tablet") {
+      font-size: rem(20px);
+      font-weight: 500;
+    }
+  }
+
+  &.variant-two {
+    background: none;
+    padding-bottom: rem(20px);
+    padding-top: rem(10px);
+
+    @include media(">=tablet") {
+      justify-content: center;
+      padding-bottom: rem(30px);
+    }
+
+    .info-details-container {
+      @include media(">=tablet") {
+        max-width: rem(516px);
+        min-height: rem(568px);
+      }
+    }
+
+    .info-details-header {
+      color: get-color("mine-shaft");
+      font-family: PP Neue Montreal;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+
+      @include media(">=tablet") {
+        font-size: rem(48px);
+        font-weight: 600;
+      }
+    }
+
+    .info-details-nav-container {
+      border-bottom: 2px solid get-color("orange");
+      border-bottom-left-radius: rem(2px);
+      border-bottom-right-radius: rem(2px);
+      display: flex;
+      width: 100%;
+
+      @include media(">=tablet") {
+        border-bottom: solid 3px get-color("orange");
+        border-bottom-left-radius: rem(3px);
+        border-bottom-right-radius: rem(3px);
+      }
+    }
+
+    .info-details-nav {
+      align-items: center;
+      color: get-color("mine-shaft");
+      cursor: pointer;
+      display: flex;
+      flex: 1;
+
+      font-family: PP Neue Montreal;
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 400;
+      justify-content: center;
+      line-height: normal;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+
+      @include media(">=tablet") {
+        font-size: rem(20px);
+        font-weight: 400;
+      }
+
+      &.type-one-active {
+        align-items: center;
+        background-color: get-color("orange");
+        border: none;
+        border-top-left-radius: rem(5px);
+
+        clip-path: polygon(0 0, 70% 0, 100% 100%, 0 100%);
+        color: get-color("white");
+        font-family: PP Neue Montreal;
+        font-size: rem(16px);
+        font-style: normal;
+        font-weight: 600;
+        justify-content: flex-start;
+        line-height: normal;
+        padding: rem(10px) rem(15px);
+        text-align: center;
+        transition: background-color 0.3s ease;
+
+        @include media(">=tablet") {
+          clip-path: polygon(0 0, 80% 0, 100% 100%, 0 100%);
+          font-size: rem(20px);
+        }
+      }
+
+      &.type-two-active {
+        align-items: center;
+        background-color: get-color("orange");
+        border: none;
+        border-radius: 0;
+
+        clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+        color: get-color("white");
+
+        font-family: PP Neue Montreal;
+        font-size: rem(16px);
+        font-style: normal;
+        font-weight: 600;
+        justify-content: center;
+        line-height: normal;
+        padding: rem(10px) rem(15px);
+        text-align: center;
+        transition: background-color 0.3s ease;
+
+        @include media(">=tablet") {
+          clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+          font-size: rem(20px);
+        }
+      }
+
+      &.type-three-active {
+        align-items: center;
+        background-color: get-color("orange");
+        border: none;
+        border-radius: 0;
+        border-bottom-right-radius: rem(2px);
+        border-top-right-radius: rem(5px);
+        clip-path: polygon(25% 0, 100% 0, 100% 100%, 0 100%);
+        color: get-color("white");
+
+        font-family: PP Neue Montreal;
+        font-size: rem(16px);
+        font-style: normal;
+        font-weight: 600;
+        justify-content: flex-end;
+        line-height: normal;
+        padding: rem(10px) rem(15px);
+        text-align: center;
+        transition: background-color 0.3s ease;
+
+        @include media(">=tablet") {
+          clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+          font-size: rem(20px);
+        }
+      }
+    }
+
+    .info-details-extra-details {
+      align-items: flex-start;
+      align-self: stretch;
+      color: get-color("mine-shaft");
+      display: flex;
+      flex-direction: column;
+      font-family: PP Neue Montreal;
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 400;
+      gap: rem(16px);
+      line-height: normal;
+      line-height: normal;
+      width: 100%;
+
+      @include media(">=tablet") {
+        font-size: rem(20px);
+        font-weight: 400;
+        gap: rem(32px);
+      }
+    }
+
+    .know-more-text {
+      color: get-color("orange");
+      font-family: PP Neue Montreal;
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 530;
+      line-height: normal;
+      text-align: center;
+      @include media(">=tablet") {
+        font-size: rem(20px);
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.three-tab-with-bg-card-pt-wrapper {
+  transition: opacity 1.5s ease-out;
+}

@@ -1,0 +1,69 @@
+.vida-quick-form {
+  .form-fields {
+    .form__group {
+      &--datepicker {
+        .rmdp-container {
+          width: 100%;
+
+          input {
+            border: 1px solid get-color("oslo-gray");
+            
+            &:focus {
+              border: none !important;
+            }
+          }
+        }
+    
+        .rmdp-week-day {
+          color: get-color("solid-black");
+        }
+    
+        .rmdp-arrow {
+          border-color: get-color("grey");
+        }
+    
+        .rmdp-arrow-container:hover {
+          background: transparent;
+          box-shadow: none;
+    
+          .rmdp-arrow {
+            border-color: get-color("solid-black");
+          }
+        }
+    
+        .rmdp-day {
+          &.rmdp-today {
+            span {
+              background: get-color("grey");
+              color: get-color("orange");
+            }
+    
+            &.rmdp-selected {
+              &:not(.rmdp-disabled):not(.rmdp-day-hidden) span:hover,
+              span {
+                background: get-color("orange");
+                color: get-color("white");
+              }
+            }
+          }
+    
+          &.rmdp-selected {
+            &:not(.rmdp-disabled):not(.rmdp-day-hidden) span:hover,
+            span:not(.highlight),
+            span {
+              background: get-color("orange");
+              color: get-color("white");
+            }
+          }
+    
+          &:not(.rmdp-disabled):not(.rmdp-day-hidden) span:hover,
+          span:hover {
+            background: get-color("grey");
+            color: get-color("solid-black");
+          }
+        }
+      }
+    }
+  }
+}
+

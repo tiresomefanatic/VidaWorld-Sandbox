@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Contact Us</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Contact Us" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+  <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async></script>
+</head>
+
+<body>
+  <header></header>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "contactUsConfig": {
+        "title": "Contact Us",
+        "message": "Contact us using the details below or fill the form and our team will get back to you withinin 24 hours",
+        "thankYouTitle": "CONGRATULATIONS!",
+        "thankYouMessage": "You have been added to our mailing list, you will be the first to know about our new releases",
+        "productImage": "/clientlib-site/images/png/scooter.png",
+        "contactPhone": {
+          "label": "Tollfree",
+          "number": "1800 333 333"
+        },
+        "contactMail": {
+          "label": "Support",
+          "email": "customercare@heromotorcorp.com"
+        },
+        "videoConnect": {
+          "label": "Connect with our expert",
+          "message": "start a video call",
+          "actionUrl": ""
+        },
+        "followUsLabel": "Follow Us",
+        "firstNameField": {
+          "label": "First Name",
+          "placeholder": "Enter First Name",
+          "validationRules": {
+            "required": {
+              "message": "First Name is required."
+            },
+            "minLength": {
+              "value": 1,
+              "message": "First name should have at least 1 character."
+            },
+            "customValidation": {
+              "message": "Please enter valid first name."
+            }
+          }
+        },
+        "lastNameField": {
+          "label": "Last Name",
+          "placeholder": "Enter Last Name",
+          "validationRules": {
+            "required": {
+              "message": "Last name is required."
+            },
+            "minLength": {
+              "value": 1,
+              "message": "Last name should have at least 1 character."
+            },
+            "customValidation": {
+              "message": "Please enter valid last name."
+            }
+          }
+        },
+        "mobileField": {
+          "id": "mobile",
+          "label": "Mobile Number",
+          "placeholder": "Enter Mobile Number",
+          "validationRules": {
+            "required": {
+              "message": "Mobile number is required."
+            },
+            "minLength": {
+              "value": 10,
+              "message": "Minimum 10 digit required."
+            },
+            "maxLength": {
+              "value": 10,
+              "message": "Maximum 10 digit required."
+            },
+            "customValidation": {
+              "message": "Please enter valid mobile number."
+            }
+          }
+        },
+        "emailField": {
+          "label": "Email ID",
+          "placeholder": "Enter Email",
+          "infoLabel": "Mention active account, this will be used to send important mails",
+          "validationRules": {
+            "required": {
+              "message": "Email is required."
+            },
+            "customValidation": {
+              "message": "Please enter valid email address."
+            }
+          }
+        },
+        "sendBtn": {
+          "label": "Send"
+        },
+        "textField": {
+          "label": "Message",
+          "placeholder": "Tell us how we can help you..."
+        },
+        "socialLinks": [{
+          "name": "instagram",
+          "actionUrl": "#",
+          "icon": "icon-instagram"
+        },
+        {
+          "name": "twitter",
+          "actionUrl": "#",
+          "icon": "icon-twitter"
+        },
+        {
+          "name": "linkedIn",
+          "actionUrl": "#",
+          "icon": "icon-linkedin"
+        },
+        {
+          "name": "facebook",
+          "actionUrl": "#",
+          "icon": "icon-facebook"
+        }
+        ]
+      }
+    });
+  </script>
+  <div data-component="ContactUs" data-cmp-type="react" data-cmp-config="contactUsConfig"></div>
+  <footer></footer>
+</body>
+
+</html>

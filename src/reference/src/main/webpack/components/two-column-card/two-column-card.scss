@@ -1,0 +1,140 @@
+.vida-two-column-card {
+  padding: rem(40px) 0 rem(35px);
+  @include media(">=desktop") {
+    padding: 0 0 rem(62px);
+  }
+
+  &__position--overlap {
+    @include media(">=desktop") {
+      margin-top: rem(-160px);
+    }
+  }
+
+  &__container {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: rem(68px) 0;
+    @include media(">=desktop") {
+      flex-direction: row;
+      gap: 0 11%;
+      justify-content: center;
+    }
+    @include media(">=desktop-lg") {
+      gap: 0 rem(139px);
+    }
+  }
+
+  &__right {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    //max-width: rem(327px);
+    width: 100%;
+    @include media(">=desktop") {
+      margin-top: rem(280px);
+      max-width: rem(438px);
+      width: 36%;
+    }
+
+    .vida-two-column-card__media {
+      max-width: rem(327);
+      @include media(">=desktop") {
+        height: rem(558px);
+        max-height: rem(558px);
+        max-width: 100%;
+      }
+
+      &-asset {
+        border-radius: rem(32px);
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+
+        &-video {
+          height: 100%;
+          max-height: 100%;
+          max-width: 100%;
+
+          video {
+            border-radius: rem(32px);
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__left {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    //max-width: rem(327px);
+    width: 100%;
+    @include media(">=desktop") {
+      max-width: rem(553px);
+      width: 45%;
+    }
+
+    .vida-two-column-card__media {
+      max-width: rem(327px);
+      @include media(">=desktop") {
+        height: rem(688px);
+        max-height: rem(688px);
+        max-width: 100%;
+      }
+
+      &-asset {
+        border-radius: rem(32px);
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  &__media {    
+    height: rem(460px);
+    margin-bottom: rem(30px);
+    max-height: rem(460px);
+    max-width: 100%;
+    width: 100%;
+    
+    @include media(">=desktop") {
+      margin-bottom: rem(64px);
+    }
+
+    picture {
+      border-radius: rem(32px);
+      display: block;
+      height: 100%;
+      overflow: hidden;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    max-width: rem(553px);
+    text-align: center;
+    @include media(">=desktop") {
+      width: 100%;
+    }
+
+    &-title {
+      @include h3;
+      margin-bottom: rem(16px);
+      @include media(">=desktop") {
+        margin-bottom: rem(20px);
+      }
+    }
+
+    &-description {
+      @include a2;
+      color: get-color("solid-grey");
+    }
+  }
+
+
+}

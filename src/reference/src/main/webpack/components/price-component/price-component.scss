@@ -1,0 +1,294 @@
+.vida-price-component {
+  padding: rem(32px) rem(20px);
+
+  // @include media(">=desktop") {
+  //   padding: rem(56px) 0;
+  // }
+
+  &__wrapper {
+    background-color: get-color(alice-blue);
+    border-radius: rem(8px);
+    margin: 0 auto;
+
+    max-width: rem(590px);
+    padding: rem(16px);
+    @include media(">=desktop") {
+      padding: rem(26px) rem(72px);
+    }
+  }
+
+  .price-container {
+    // border: 2px solid get-color("oslo-gray");
+    display: flex;
+    gap: rem(28px);
+    @include media(">=desktop") {
+      align-items: end;
+      flex-direction: row;
+      gap: rem(16px);
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: rem(1152px);
+    }
+
+    h2 {
+      @include vida-mobile-body-3;
+
+      @include media(">=desktop") {
+        @include vida-desktop-body-3;
+      }
+
+      span,
+      b {
+        @include vida-small-bold-text-mobile;
+
+        @include media(">=desktop") {
+          @include vida-h5-desktop;
+        }
+      }
+    }
+
+    .price-section-types {
+      display: flex;
+      flex-direction: column;
+      gap: rem(16px);
+      max-width: rem(200px);
+      width: 100%;
+
+      @include media(">=desktop") {
+        flex-direction: row;
+        gap: rem(40px);
+        max-width: rem(745px);
+      }
+    }
+
+    &__variants {
+      display: grid;
+      gap: rem(16px);
+
+      .variant-buttons {
+        display: flex;
+        gap: rem(16px);
+
+        label {
+          flex-basis: 50%;
+        }
+      }
+
+      .button input[type="radio"] {
+        display: none;
+        max-width: rem(404px);
+      }
+
+      .button span {
+        @include vida-h5-mobile;
+        background-color: get-color("white");
+        border: 1px solid get-color("orange");
+        border-radius: 5px;
+        display: inline-block;
+        padding: rem(16px) rem(22.5px);
+        text-align: center;
+        width: 100%;
+
+        @include media(">=desktop") {
+          @include vida-h5-desktop;
+          padding: rem(15px) 0;
+          text-align: center;
+          width: 194px;
+        }
+      }
+
+      .button input[type="radio"]:checked + span {
+        background-color: get-color("orange");
+        color: get-color("white");
+      }
+    }
+
+    &__cities {
+      // border: 2px solid get-color("grey");
+      display: grid;
+      gap: rem(4px);
+
+      @include media(">=desktop") {
+        gap: rem(16px);
+      }
+
+      .input-search {
+        background: get-color("white");
+        border: 1px solid get-color("oslo-gray");
+        border-radius: rem(8px);
+        height: rem(36px);
+        max-width: rem(150px);
+        padding: rem(8px);
+        position: relative;
+        @include media(">=desktop") {
+          border: none;
+          border-radius: unset;
+          height: rem(56px);
+          height: auto;
+          max-width: unset;
+          padding: 0;
+        }
+      }
+
+      .input-city {
+        border-radius: 8px;
+        caret-color: transparent;
+        height: rem(17px);
+        width: 100%;
+
+        @include media(">=desktop") {
+          @include vida-mobile-body-4;
+          background: get-color("white");
+          border: 1px solid get-color("oslo-gray");
+          height: 54px;
+          padding: rem(12px) rem(16px);
+          width: rem(228px);
+        }
+
+        &::placeholder {
+          @include vida-mobile-body-4;
+          color: get-color("mine-shaft");
+        }
+      }
+
+      .arrow {
+        position: absolute;
+        right: rem(8px);
+        top: 50%;
+        transform: translateY(-50%);
+        // transform: translateY(40%);
+        z-index: 2;
+        @include media(">=desktop") {
+          // transform: translate(20%, 80%);
+        }
+
+        .arr-image {
+          height: rem(20px);
+          width: rem(20px);
+          @include media(">=desktop") {
+            height: rem(30px);
+            width: rem(30px);
+          }
+        }
+
+        .rotated-image {
+          transform: rotate(180deg);
+        }
+      }
+
+      .error-msg {
+        display: none;
+      }
+
+      .city-option-container {
+        background-color: get-color("white");
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        max-height: rem(114px);
+        overflow-y: auto;
+        padding: 0 1rem 1rem;
+        position: relative;
+        width: 100%;
+        z-index: 3;
+
+        @include media("<=365px") {
+          max-width: 105px;
+        }
+
+        @include media(">=desktop") {
+          max-height: rem(126px);
+          position: absolute;
+          width: rem(228px);
+        }
+      }
+
+      .city-option {
+        border-bottom: 1px solid get-color("oslo-gray");
+        max-width: 100%;
+        padding: 1rem;
+        @include media(">=desktop") {
+          max-width: unset;
+          width: 100%;
+        }
+
+        p {
+          @include vida-mobile-body-2;
+
+          @include media(">=desktop") {
+            @include vida-desk-body-1;
+          }
+        }
+      }
+    }
+
+    &__price-value {
+      display: grid;
+      gap: rem(8px);
+      padding-top: rem(16px);
+      width: rem(256px);
+
+      @include media(">=desktop") {
+        padding-top: 0;
+        width: max-content;
+      }
+
+      h2 {
+        @include vida-h5-mobile;
+
+        @include media(">=desktop") {
+          @include vida-h6-desktop;
+        }
+      }
+
+      p {
+        @include vida-h2-mobile;
+        display: grid;
+
+        @include media(">=desktop") {
+          @include vida-h2-desk;
+          display: block;
+          font-size: rem(32px);
+          white-space: nowrap;
+        }
+      }
+
+      span {
+        @include vida-mobile-subtitle;
+
+        @include media(">=desktop") {
+          @include vida-mobile-body-1;
+          margin-bottom: rem(8px);
+          margin-left: rem(8px);
+        }
+      }
+
+      .rupees.active {
+        @include media(">=desktop") {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  .d-none {
+    display: none;
+  }
+
+  // .mob-view {
+  //   display: block;
+
+  //   @include media(">=desktop") {
+  //     display: none;
+  //   }
+  // }
+
+  // .desk-view {
+  //   display: none;
+
+  //   @include media(">=desktop") {
+  //     display: block;
+  //   }
+  // }
+}

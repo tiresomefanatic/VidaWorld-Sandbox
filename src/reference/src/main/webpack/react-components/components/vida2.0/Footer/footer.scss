@@ -1,0 +1,586 @@
+.footer-main-container {
+  background-color: get-color("catskill-white");
+  display: flex;
+  flex-direction: column;
+  padding: 0 rem(32px) rem(96px);
+  @include media(">=desktop") {
+    padding: rem(32px) 5.5rem;
+  }
+
+  .faq-section {
+    .accordian-container {
+      border-top: none;
+
+      &__wrapper {
+        padding-top: 0;
+
+        .minus-icon {
+          display: none;
+        }
+
+        .add-icon {
+          display: block;
+        }
+
+        &.active {
+          .minus-icon {
+            display: block;
+          }
+
+          .add-icon {
+            display: none;
+          }
+        }
+      }
+
+      &__header {
+        font-size: rem(16px);
+        pointer-events: all;
+        @include media(">=desktop") {
+          font-size: rem(18px);
+        }
+      }
+
+      &__content {
+        animation: none;
+        max-height: 0;
+
+        &.accordian-container__expand {
+          max-height: 100%;
+        }
+      }
+
+      h6 {
+        border-top: rem(1px) solid get-color("oslo-gray");
+        font-size: rem(14px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding-top: rem(16px);
+        @include media(">=desktop") {
+          font-size: rem(18px);
+        }
+
+        &:first-child {
+          border: none;
+          padding-top: rem(24px);
+        }
+
+        span {
+          color: get-color("orange");
+          display: inline-block;
+          font-size: rem(14px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          @include media(">=desktop") {
+            font-size: rem(18px);
+          }
+        }
+      }
+
+      &__icon-opacity {
+        animation: none;
+      }
+
+      p {
+        font-size: rem(14px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding-bottom: rem(16px);
+        padding-top: rem(16px);
+        @include media(">=desktop") {
+          font-size: rem(18px);
+        }
+
+        span {
+          color: get-color("orange");
+          display: inline-block;
+          font-size: rem(12px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          @include media(">=desktop") {
+            font-size: rem(18px);
+          }
+        }
+      }
+
+      a {
+        font-size: rem(14px);
+        @include media(">=desktop") {
+          font-size: rem(18px);
+        }
+      }
+    }
+  }
+
+  .footer-address {
+    display: flex;
+    padding: 0 0 rem(32px) 0;
+    @include media("<desktop") {
+      order: 2;
+    }
+
+    &__wrapper {
+      margin-top: 32px;
+      min-width: rem(300px);
+      width: 100%;
+
+      @include media(">=desktop") {
+        margin-top: 0;
+        width: auto;
+      }
+    }
+
+    &__logo-container {
+      align-items: center;
+      display: flex;
+  
+      .vida-logo {
+        border-right: 0.5px solid get-color("oslo-gray");
+        height: rem(43px);
+        margin-bottom: rem(16px);
+        padding-right: rem(16px);
+        width: rem(100px);
+        @include media(">=desktop") {
+          border-right: 1px solid #ccd3db;
+          padding-right: rem(24px);
+        }
+      }
+  
+      .hero-logo {
+        padding-left: rem(16px);
+        @include media(">=desktop") {
+          padding-left: rem(24px);
+        }
+  
+        img {
+          height: rem(38px);
+          object-fit: contain;
+          width: rem(23px);
+          @include media(">=desktop") {
+            height: rem(40px);
+            width: rem(23px);
+          }
+        }
+      }
+
+      img {
+        height: 100%;
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+
+    &__description {
+      color: get-color("mine-shaft");
+      font-size: rem(12px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      max-width: rem(210px);
+      padding-bottom: rem(16px);
+    }
+
+    &__ph-no {
+      color: get-color("mine-shaft");
+      font-size: rem(14px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      padding-bottom: rem(16px);
+      @include media(">=desktop") {
+        font-weight: 530;
+      }
+    }
+
+    &__email {
+      color: get-color("mine-shaft");
+      font-size: rem(14px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .social-media {
+      align-items: center;
+      border-bottom: rem(1px) solid get-color("oslo-gray");
+      border-top: rem(1px) solid get-color("oslo-gray");
+      display: flex;
+      margin-top: rem(36px);
+      width: 100%;
+      @include media(">=desktop") {
+        align-items: flex-start;
+        border: none;
+        flex-direction: column;
+        margin-top: rem(32px);
+      }
+
+      &__follow-header {
+        @include media("<desktop") {
+          flex-basis: 20%;
+        }
+      }
+
+      &__follow-text {
+        @include vida-charging-plan-mobile;
+        color: get-color("mine-shaft");
+        font-size: rem(14px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+        @include media(">=desktop") {
+          @include vida-charging-plan-mobile;
+          font-size: rem(14px);
+          margin-right: rem(18px);
+        }
+      }
+
+      &__icons {
+        align-items: center;
+        border-bottom: rem(0) solid get-color("oslo-gray");
+        display: flex;
+        flex-basis: 80%;
+        justify-content: space-between;
+        padding: rem(24px) 0;
+        @include media(">=desktop") {
+          border-bottom: 0 solid get-color("oslo-gray");
+        }
+      }
+      
+
+      &__icon-container {
+        height: rem(24px);
+        width: rem(24px);
+        @include media(">=desktop") {
+          height: rem(30px);
+          margin-right: rem(18px);
+          width: rem(30px);
+        }
+
+        img {
+          height: 100%;
+          object-fit: contain;
+          opacity: 0.3;
+          width: 100%;
+        }
+
+        img:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__desktop-container {
+      display: none;
+      @include media(">=desktop") {
+        display: flex;
+        flex-direction: column;
+        gap: rem(32px);
+        width: 80%;
+      }
+
+      .footer-address__desktop-accordian-details {
+        display: none;
+        @include media(">=desktop") {
+          display: flex;
+          flex-wrap: wrap;
+          row-gap: rem(48px);
+          width: 100%;
+        }
+  
+        .footer-address__vida__content {
+          display: flex;
+          flex-direction: column;
+  
+          &__data {
+            background: inherit;
+            color: get-color("mine-shaft");
+            cursor: pointer;
+            font-size: rem(14px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            padding-top: rem(8px);
+            text-decoration: none;
+            width: fit-content;
+  
+            &:hover {
+              color: get-color("orange");
+            }
+          }
+        }
+      }
+
+      .footer-address__desktop-city-container {
+        @include media(">=desktop") {
+          display: flex;
+          flex-direction: column;
+          gap: rem(16px);
+          padding-left: rem(20px);
+        }
+
+        .city-container-header {
+          @include media(">=desktop") {
+            @include vida-h6-desktop;
+            line-height: rem(21.6px);
+          }
+        }
+
+        .city-options {
+          @include media(">=desktop") {
+            display: flex;
+            flex-wrap: wrap;
+            gap: rem(32px);
+            row-gap: rem(16px);
+          }
+
+          a {
+            @include media(">=desktop") {
+              @include vida-charging-plan-mobile;
+              text-decoration: none;
+            }
+
+            &:active,
+            &:visited {
+              @include media(">=desktop") {
+                color: get-color("mine-shaft");
+              }
+            }
+          }
+        }
+      }
+    }
+   
+
+    &__vida {
+      padding-left: rem(20px);
+      width: 20%;
+
+      &__header {
+        color: get-color("mine-shaft");
+        font-size: rem(18px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+
+      &__content {
+        .accordian-container__data {
+          color: get-color("mine-shaft");
+          font-size: rem(16px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          padding-top: rem(16px);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .terms-and-service-container {
+    display: flex;
+    flex-direction: column;
+    @include media("<desktop") {
+      order: 3;
+    }
+
+    @include media(">=desktop") {
+      border-top: rem(1px) solid get-color("oslo-gray");
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      // margin-top: rem(32px);
+      padding-top: rem(32px);
+      width: 100%;
+    }
+
+    &__wrapper {
+      @include media(">=desktop") {
+      }
+      flex-direction: column;
+    }
+
+    .terms-and-service {
+      align-items: center;
+      border-bottom: rem(1px) solid get-color("oslo-gray");
+      display: flex;
+      justify-content: space-between;
+      padding: 0 0 rem(24px);
+      @include media(">=desktop") {
+        border-bottom: 0 solid get-color("oslo-gray");
+        padding: 0;
+      }
+
+      &__text {
+        @include vida-charging-plan-mobile;
+        color: get-color("mine-shaft");
+        cursor: pointer;
+        font-size: rem(14px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+        @include media(">=desktop") {
+          @include vida-charging-plan-mobile;
+          font-size: rem(14px);
+          margin-right: rem(32px);
+        }
+
+        &:hover {
+          color: get-color("orange");
+        }
+      }
+    }
+
+    .copy-right-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: rem(24px) 0;
+
+      @include media(">=desktop") {
+        padding: 0;
+      }
+
+      &__text {
+        color: get-color("mine-shaft");
+        font-size: rem(12px);
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .footer-descriptions {
+    border-top: rem(1px) solid get-color("oslo-gray");
+    padding-top: rem(24px);
+    @include media(">=desktop") {
+      padding-top: rem(32px);
+    }
+
+    .footer-description {
+      &__header {
+        color: get-color("mine-shaft");
+        font-size: rem(14px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        padding-bottom: rem(16px);
+        @include media(">=desktop") {
+          font-size: rem(18px);
+          padding-bottom: rem(32px);
+        }
+
+        span {
+          color: get-color("orange");
+          display: inline-block;
+          font-size: rem(14px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          @include media(">=desktop") {
+            font-size: rem(18px);
+          }
+        }
+      }
+
+      &__content {
+        p {
+          color: get-color("mine-shaft");
+          font-size: rem(12px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          padding-bottom: rem(24px);
+          @include media(">=desktop") {
+            font-size: rem(18px);
+            padding-bottom: rem(32px);
+          }
+
+          span {
+            color: get-color("orange");
+            display: inline-block;
+            font-size: rem(12px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            @include media(">=desktop") {
+              font-size: rem(18px);
+            }
+          }
+        }
+
+        ul {
+          padding-bottom: rem(24px);
+          @include media(">=desktop") {
+            padding-bottom: rem(32px);
+          }
+
+          li {
+            color: get-color("mine-shaft");
+            font-size: rem(12px);
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            @include media(">=desktop") {
+              font-size: rem(18px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-accordian {
+    display: block;
+    @include media("<desktop") {
+      order: 1;
+    }
+    @include media(">=desktop") {
+      display: none;
+
+      .accordian-container__header {
+        display: none;
+      }
+    }
+  }
+
+  .footer-description {
+    &__seo-header {
+      color: get-color("mine-shaft");
+      font-size: rem(14px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      padding-top: 1rem;
+      @include media(">=desktop") {
+        font-size: rem(18px);
+      }
+    }
+  }
+
+  .footer-description {
+    &__seo-header {
+      color: get-color("mine-shaft");
+      font-size: rem(14px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      padding-top: 1rem;
+      @include media(">=desktop") {
+        font-size: rem(18px);
+      }
+    }
+
+  }
+
+  &.footer-faq-container {
+    padding-bottom: 0;
+  }
+}

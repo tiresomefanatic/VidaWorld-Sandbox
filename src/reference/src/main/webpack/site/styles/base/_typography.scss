@@ -1,0 +1,291 @@
+@import "./include-media";
+@import "../abstracts/mixins";
+
+%a1 {
+  @include defaultTypoStyles(40, 0, 45);
+  @include media(">=desktop") {
+    @include defaultTypoStyles(75, 0, 90);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(112, 0, 120);
+  }
+}
+
+%a2 {
+  @include defaultTypoStyles(14, 0, 18);
+  @include media(">=tablet") {
+    @include defaultTypoStyles(20, 0, 26);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(21, 0, 32);
+  }
+}
+
+%a3 {
+  @include defaultTypoStyles(40, 0, 45);
+  @include media(">=tablet") {
+    @include defaultTypoStyles(50, 0, 66);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(56, 0, 72);
+  }
+}
+
+%d1 {
+  @include defaultTypoStyles(80, 0, 140);
+  @include media(">=tablet") {
+    @include defaultTypoStyles(108, 0, 134);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(112, 0, 120);
+  }
+}
+
+%d2 {
+  @include defaultTypoStyles(40, 0, 60, bold);
+  @include media(">=tablet") {
+    @include defaultTypoStyles(52, 0, 70, bold);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(60, 0, 80, bold);
+  }
+}
+
+
+%d3 {
+  @include defaultTypoStyles(15, 0, 25, bold);
+  @include media(">=phone") {
+    @include defaultTypoStyles(15, 0, 25, bold);
+  }
+  @include media(">=tablet") {
+    @include defaultTypoStyles(30, 0, 40, 700);
+  }
+  @include media(">=desktop") {
+    @include defaultTypoStyles(40, 0, 60, bold);
+  }
+}
+
+%h1 {
+  @include defaultTypoStyles(24, 0, 30);
+  @include media(">=tablet") {
+    @include defaultTypoStyles(50, 0, 66);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(56, 0, 72);
+  }
+}
+
+%h2 {
+  @include defaultTypoStyles(20, 0, 24, 500);
+  @include media(">=tablet") {
+    @include defaultTypoStyles(30, 0, 45, 500);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(34, 0, 51, 500);
+  }
+}
+
+%h3 {
+  @include defaultTypoStyles(18, 0, 20);
+  @include media(">=tablet") {
+    @include defaultTypoStyles(20, 0, 26);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(21, 0, 32);
+  }
+}
+
+%h4 {
+  @include defaultTypoStyles(16, 0, 18);
+  @include media(">=tablet") {
+    @include defaultTypoStyles(16, 0, 21);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(16, 0, 21);
+  }
+}
+
+%h4-md {
+  @include defaultTypoStyles(16, 0, 18, 500);
+  @include media(">=tablet") {
+    @include defaultTypoStyles(16, 0, 21, 500);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(16, 0, 21, 500);
+  }
+}
+
+%p1 {
+  @include defaultTypoStyles(14, 0, 20);
+  @include media(">=tablet") {
+    @include defaultTypoStyles(14, 0, 18);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(16, 0, 18);
+  }
+}
+
+%p2 {
+  @include defaultTypoStyles(12, 0, 18);
+  @include media(">=tablet") {
+    @include defaultTypoStyles(14, 0, 18);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(14, 0, 21);
+  }
+}
+
+%p3 {
+  @include defaultTypoStyles(10, 0, 14);
+  @include media(">=tablet") {
+    @include defaultTypoStyles(12, 0, 18);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(12, 0, 18);
+  }
+}
+
+%links {
+  @include defaultTypoStyles(12, 0, 18, 500);
+  @include media(">=tablet") {
+    @include defaultTypoStyles(14, 0, 18, 500);
+  }
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(14, 0, 21, 500);
+  }
+}
+
+%btn {
+  @include defaultTypoStyles(14, 0, 18);
+  @include media(">=desktop-lg") {
+    @include defaultTypoStyles(16, 0, 21);
+  }
+}
+
+%btn-action {
+  @include defaultTypoStyles(12, 0, 16, 500);
+  @include media(">=desktop") {
+    @include defaultTypoStyles(16, 0, 21);
+  }
+}
+
+%btn-card-action {
+  @include defaultTypoStyles(14, 0, 18);
+  @include media(">=desktop") {
+    @include defaultTypoStyles(16, 0, 22, 500);
+  }
+}
+
+%label {
+  @include defaultTypoStyles(12, 0, 16, 500);
+  @include media(">=desktop") {
+    @include defaultTypoStyles(14, 0, 21);
+  }
+}
+
+%input {
+  @include defaultTypoStyles(14, 0, 18);
+  @include media(">=desktop") {
+    @include defaultTypoStyles(16, 0, 18);
+  }
+}
+
+%msg {
+  @include defaultTypoStyles(12, 0, 18);
+  @include media(">=desktop") {
+    @include defaultTypoStyles(10, 0, 14);
+  }
+}
+
+%info-text {
+  @include defaultTypoStyles(14, 0, 20, 400);
+  @include media(">=desktop") {
+    @include defaultTypoStyles(16, 0, 20, 400);
+  }
+}
+@mixin a1 {
+  @extend %a1;
+}
+
+@mixin a2 {
+  @extend %a2;
+}
+
+@mixin a3 {
+  @extend %a3;
+}
+
+@mixin d1 {
+  @extend %d1;
+}
+
+@mixin d2 {
+  @extend %d2;
+}
+
+@mixin d3 {
+  @extend %d3;
+}
+
+@mixin h1 {
+  @extend %h1;
+}
+
+@mixin h2 {
+  @extend %h2;
+}
+
+@mixin h3 {
+  @extend %h3;
+}
+
+@mixin h4 {
+  @extend %h4;
+}
+
+@mixin h4-md {
+  @extend %h4-md;
+}
+
+@mixin p1 {
+  @extend %p1;
+}
+
+@mixin p2 {
+  @extend %p2;
+}
+
+@mixin p3 {
+  @extend %p3;
+}
+
+@mixin links {
+  @extend %links;
+}
+
+@mixin btn {
+  @extend %btn;
+}
+
+@mixin btn-action {
+  @extend %btn-action;
+}
+
+@mixin btn-card-action {
+  @extend %btn-card-action;
+}
+
+@mixin label {
+  @extend %label;
+}
+
+@mixin input {
+  @extend %input;
+}
+
+@mixin msg {
+  @extend %msg;
+}
+@mixin info-text {
+  @extend %info-text;
+}

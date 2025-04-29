@@ -1,0 +1,45 @@
+.vida-charging-component {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32px);
+    justify-content: center;
+    padding: rem(32px) 0;
+
+    @include media(">=desktop") {
+      flex-direction: row;
+      gap: rem(20px);
+      padding: rem(48px) 0;
+    }
+
+    .card {
+      border: 1px solid get-color("orange");
+      border-radius: rem(12px);
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: rem(8px);
+      padding: rem(16px) rem(24px);
+
+      @include media(">=desktop") {
+        gap: rem(16px);
+        max-width: rem(408px);
+        padding: rem(24px);
+      }
+
+      h2 {
+        @include vida-h3-mobile;
+        @include media(">=desktop") {
+          @include vida-h3-desktop;
+        }
+      }
+
+      p {
+        @include vida-mobile-body-2;
+        @include media(">=desktop") {
+          @include vida-desk-body-1;
+        }
+      }
+    }
+  }
+}

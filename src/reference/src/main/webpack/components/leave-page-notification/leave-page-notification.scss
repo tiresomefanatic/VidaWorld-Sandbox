@@ -1,0 +1,40 @@
+.vida-leave-page-notification {
+  display: none;
+
+  &__container {
+    align-items: center;
+    background-color: get-color("solid-black-shadow");
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+  }
+
+  &__body {
+    background-color: get-color("white");
+    border-radius: rem(15px);
+    padding: rem(20px) rem(30px);
+    width: rem(320px);
+
+    > p {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__btn-wrap {
+    margin-top: rem(15px);
+
+    .btn {
+      margin-right: rem(10px);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

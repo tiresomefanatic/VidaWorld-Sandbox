@@ -1,0 +1,76 @@
+.left-border {
+  margin: 30px 10px 10px 56px;
+  position: relative;
+    
+  &::before {
+    background: get-color("solid-grey");
+    border-radius: 10px;
+    content: " ";
+    display: block;
+    height: 64px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-34px, -50%);
+    width: 4px;
+  }
+
+  h3 {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+
+  p {
+    color: get-color("solid-grey");
+  }
+}
+
+.theme-v1 {
+  .leftborderbox {
+    @include media(">=desktop") {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  }
+
+  .left-border {
+    margin: 30px 10px 10px;
+    @include media(">=desktop") {
+      width: 25%;
+    }
+
+    &::before {
+      content: none;
+    }
+
+    p {
+      align-items: center;
+      color: get-color("solid-black");
+      display: flex;
+      flex-direction: row;
+      @include media(">=desktop") {
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      b {
+        align-items: center;
+        background: get-color("mandys-pink");
+        border-radius: 50%;
+        color: get-color("solid-black");
+        display: flex;
+        font-size: 24px;
+        height: 60px;
+        justify-content: center;
+        margin-right: 10px;
+        min-width: 60px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        @include media(">=desktop") {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}

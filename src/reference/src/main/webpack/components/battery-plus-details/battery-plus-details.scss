@@ -1,0 +1,100 @@
+.vida-battery-plus {
+  &__contianer {
+    .battery-details {
+      margin: 2rem 0;
+      @include media (">=desktop") {
+        margin: 4rem 0;
+      }
+
+      &__heading {
+        @include vida-h3-mobile;
+        line-height: rem(24px);
+    
+        @include media (">=desktop") {
+          @include vida-h2-desk; 
+          line-height: rem(58px);
+        }
+      }
+
+      &__price {
+        margin: rem(16px) 0 rem(24px);
+        @include media (">=desktop") {
+          @include vida-h3-desktop;
+          margin: rem(48px) 0;
+        }
+
+        .discount-price-text {
+          @include vida-h3-mobile;
+          color: get-color("orange") !important;
+          line-height: rem(20px);
+          @include media (">=desktop") {
+            @include vida-h3-desktop;
+            line-height: rem(34px);
+          }
+        }
+
+        .discount-price-amount {
+          @include vida-h5-mobile;
+          line-height: rem(20px);
+          @include media (">=desktop") {
+            @include vida-h3-desktop;
+            line-height: rem(34px);
+          }
+        }
+      }
+
+      &--button_nav {
+        @include vida-h5-mobile;
+        align-items: center;
+        background: get-color("orange");
+        border-radius: rem(8px);
+        box-shadow: 0 rem(5px) rem(10px) 0 rgba(0, 0, 0, 0.1);
+        color: get-color("white");
+        cursor: pointer;
+        display: flex;
+        font-weight: 600;
+        height: rem(35px);
+        justify-content: center;
+        padding: 12px 24px;
+        text-decoration: none;
+        width: fit-content;
+
+        @include media(">=desktop") {
+          @include vida-h5-desktop;
+          border-radius: rem(12px);
+          box-shadow: 0 rem(7.5px) rem(15px) 0 rgba(0, 0, 0, 0.1);
+          color: get-color("white");
+          height: rem(48px);
+          min-width: rem(156px);
+        }
+      }
+    }
+    
+  }
+  
+  .original-price {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    line-height: 1;
+    position: relative;
+    text-align: center;
+    @include media(">=desktop") {
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 34px;
+    } 
+  }
+
+  .original-price::before {
+    background-color: get-color("orange");
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-15deg);
+    width: 100%;
+    z-index: -1; 
+  }
+}

@@ -1,0 +1,142 @@
+.vida-charging-lights-component {
+  .charging-light__container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+
+    @include media(">=desktop") {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: rem(48px) auto rem(56px);
+      max-width: rem(1264px);
+      width: 100%;
+    }
+
+    .mobile-heading {
+      @include vida-h3-mobile;
+      padding-top: rem(32px);
+
+      @include media(">=desktop") {
+        display: none;
+      }
+    }
+
+    .light-image {
+      //   padding: rem(26px) rem(44px) rem(27px) rem(45px);
+      display: grid;
+      place-items: center;
+      width: 100%;
+
+      @include media(">=desktop") {
+        max-width: rem(495px);
+        width: 40%;
+      }
+
+      img {
+        height: rem(254px);
+        object-fit: contain;
+        width: rem(232px);
+
+        @include media(">=desktop") {
+          height: rem(440px);
+          width: rem(319px);
+        }
+      }
+    }
+
+    .light-instruction {
+      display: grid;
+      gap: rem(32px);
+
+      @include media(">=desktop") {
+        max-width: 690px;
+        width: 60%;
+      }
+
+      .heading {
+        //@include vida-h3-mobile;
+        display: none;
+
+        @include media(">=desktop") {
+          @include vida-h3-desktop;
+        }
+      }
+
+      .color-name {
+        @include vida-h6-mobile;
+        width: 54.5%;
+
+        @include media(">=desktop") {
+          @include vida-h5-desktop;
+          width: rem(137px);
+        }
+      }
+
+      .light-wrapper {
+        display: grid;
+
+        @include media(">=desktop") {
+          gap: rem(66px);
+        }
+      }
+
+      .light-details {
+        border-top: 1px solid get-color("oslo-gray");
+        display: flex;
+        gap: rem(15px);
+        padding: rem(24px) 0;
+        width: 100%;
+
+        // max-width: 43.125rem;
+        @include media(">=desktop") {
+          border-top: 0;
+          justify-content: space-between;
+          max-width: rem(690px);
+          padding: 0;
+        }
+      }
+
+      .light-color {
+        display: flex;
+        gap: rem(17.26px);
+        max-width: rem(148px);
+
+        // max-width: 18.125rem;
+
+        @include media(">=desktop") {
+          gap: rem(24px);
+          max-width: rem(290px);
+          width: 40%;
+        }
+
+        .color-img {
+          height: rem(23.42px);
+          width: rem(74.39px);
+
+          @include media(">=desktop") {
+            height: rem(39.72px);
+            width: rem(109.36px);
+          }
+        }
+
+        img {
+          height: 100%;
+          object-fit: contain;
+          width: 100%;
+        }
+      }
+
+      .light-para {
+        @include vida-mobile-body-2;
+        width: 45%;
+
+        @include media(">=desktop") {
+          @include vida-desk-body-1;
+          max-width: 359px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

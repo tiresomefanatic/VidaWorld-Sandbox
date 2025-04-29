@@ -1,0 +1,211 @@
+.vida-rounded-carousel {
+  overflow: hidden;
+  padding: rem(60px) 0 rem(30px);
+  text-align: center;
+
+  @include media(">=desktop") {
+    padding-bottom: rem(74px);
+    padding-top: rem(170px);
+  }
+
+  &__heading {
+    @include h1;
+
+    margin-bottom: rem(20px);
+
+    @include media(">=desktop") {
+      margin-bottom: rem(24px);
+    }
+  }
+
+  &__description {
+    @include h3;
+  }
+
+  &__slider {
+    &-container {
+      margin-top: rem(40px);
+      position: relative;
+
+      @include media(">=desktop") {
+        margin-top: rem(80px);
+      }
+    }
+
+    &-controls {
+      display: none;
+
+      @include media(">=desktop") {
+        align-items: center;
+        background: transparent;
+        bottom: 0;
+        display: flex;
+        height: rem(80px);
+        justify-content: space-between;
+        list-style: none;
+        margin: 0;
+        margin: auto;
+        padding: 0 10%;
+        position: absolute;
+        width: 100%;
+
+        &-prev {
+          align-items: center;
+          border: 1px solid get-color("solid-black");
+          border-radius: rem(20px);
+          cursor: pointer;
+          display: inline-flex;
+          height: rem(40px);
+          justify-content: center;
+          width: rem(40px);
+
+          [class^="icon-"],
+          [class*=" icon-"] {
+            display: flex;
+            font-size: 25px;
+            transform: rotate(180deg);
+          }
+        }
+  
+        &-next {
+          align-items: center;
+          border: 1px solid get-color("solid-black");
+          border-radius: rem(20px);
+          cursor: pointer;
+          display: inline-flex;
+          height: rem(40px);
+          justify-content: center;
+          width: rem(40px);
+
+          [class^="icon-"],
+          [class*=" icon-"] {
+            display: flex;
+            font-size: 25px;
+          }
+          
+        }
+      }
+    }
+
+    &-slides {
+      .tns-item:not(.tns-slide-active)+.tns-slide-active,
+      .tns-item.tns-slide-active:first-child {
+        padding-top: rem(30px);
+        text-align: right;
+        @include media(">=desktop") {
+          padding-top: rem(50px);
+        }
+      }
+
+      // TODO: We need check and limit these class names
+      .tns-item:not(.tns-slide-active)+.tns-slide-active+.tns-slide-active+.tns-slide-active,
+      .tns-item.tns-slide-active:first-child+.tns-slide-active+.tns-slide-active {
+        padding-top: rem(30px);
+        text-align: left;
+        @include media(">=desktop") {
+          padding-top: rem(50px);
+        }
+      }
+
+      p,
+      h2 {
+        margin-left: auto;
+        margin-right: auto;
+        opacity: 0;
+        text-align: left;
+
+        @include media(">=desktop") {
+          max-width: 60vw;
+        }
+      }
+
+      .tns-slide-active {
+        picture {
+          max-width: rem(172px);
+          width: 100%;
+          @include media(">=desktop") {
+            max-width: rem(306px);
+          }
+        }
+
+        img {
+          max-width: rem(172px);
+          opacity: 0.5;
+          @include media(">=desktop") {
+            max-width: rem(306px);
+          }
+        }
+      }
+
+      .tns-item:not(.tns-slide-active)+.tns-slide-active+.tns-slide-active,
+      .tns-item.tns-slide-active:first-child+.tns-slide-active {
+        picture {
+          max-width: rem(224px);
+          width: 100%;
+          @include media(">=desktop") {
+            max-width: rem(400px);
+          }
+        }
+
+        img {
+          max-width: rem(224px);
+          opacity: 1;
+          @include media(">=desktop") {
+            max-width: rem(400px);
+          }
+        }
+
+        p,
+        h2 {
+          opacity: 1;
+        }
+
+      }
+
+      picture {
+        border-radius: 50%;
+        display: inline-block;
+        height: 100%;
+        max-width: rem(224px);
+        overflow: hidden;
+        width: 100%;
+        @include media(">=desktop") {
+          max-width: rem(400px);
+        }
+      }
+
+      img {
+        border-radius: 50%;
+        max-width: rem(224px);
+        opacity: 0.5;
+
+        @include media(">=desktop") {
+          max-width: rem(400px);
+        }
+      }
+    }
+
+    &-item {
+      width: calc(100vw - 50px);
+      @include media(">=desktop") {
+        width: calc(100vw - 530px);
+      }
+    }
+
+    &-item-card-heading {
+      margin-bottom: rem(10px);
+      margin-top: rem(40px);
+
+      @include media(">=desktop") {
+        margin-bottom: rem(40px);
+        margin-top: rem(50px);
+      }
+    }
+
+    &-item-card-description {
+      @include h3;
+      color: get-color("solid-grey");
+    }
+  }
+
+}

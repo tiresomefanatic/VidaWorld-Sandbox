@@ -1,0 +1,17 @@
+.vida-fame-subsidy-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: rem(32px) !important;
+
+  @include media(">=desktop") {
+    padding-top: rem(36px) !important;
+  }
+}
+
+.drawer {
+  .drawer__content {
+    .drawer__body {
+      max-height: unset !important;
+    }
+  }
+}

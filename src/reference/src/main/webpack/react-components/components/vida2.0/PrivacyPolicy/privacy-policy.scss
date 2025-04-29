@@ -1,0 +1,281 @@
+.privacy-policy-parent-container {
+  display: flex;
+  flex-direction: column;
+
+  ul {
+    margin-left: rem(10px);
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .section-one-container {
+    background-color: get-color("catskill-white");
+    display: flex;
+    flex-direction: column;
+    padding: rem(48px) rem(20px) rem(20px);
+
+    @include media(">=desktop") {
+      padding: rem(0) rem(195px);
+      padding-bottom: rem(250px);
+      padding-top: rem(142px);
+    }
+
+    &__header-container {
+      display: flex;
+      flex-direction: column;
+      gap: rem(12px);
+      padding-bottom: rem(8px);
+
+      @include media(">=desktop") {
+        gap: rem(32px);
+        padding-bottom: rem(80px);
+      }
+
+      .title {
+        @include vida-h1-mobile;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: rem(48px);
+        text-align: left;
+
+        @include media(">=desktop") {
+          @include vida-h1-desktop;
+          line-height: rem(96px);
+          text-align: left;
+        }
+      }
+
+      .date {
+        @include vida-mobile-body-1;
+        letter-spacing: 0;
+        line-height: rem(19px);
+        text-align: left;
+      }
+    }
+
+    &__content-container {
+      gap: rem(16px);
+      padding-top: rem(16px);
+
+      .content-heading {
+        @include vida-h5-mobile;
+        font-weight: 500;
+        line-height: rem(19px);
+        padding: rem(16px) 0;
+        text-align: left;
+
+        @include media(">=desktop") {
+          @include vida-h3-desktop;
+          line-height: rem(34px);
+          text-align: left;
+        }
+      }
+
+      .content-info {
+        @include vida-mobile-body-1;
+        line-height: rem(19px);
+        text-align: left;
+
+        @include media(">=desktop") {
+          @include vida-desktop-body-3;
+          line-height: rem(22px);
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .two-three-container-wrapper {
+    @include media(">=desktop") {
+      background-color: get-color("white");
+      border-radius: rem(16px);
+      box-shadow: 0 0 rem(12px) 0 rgba(0, 0, 0, 0.2);
+      gap: rem(60px);
+      margin-bottom: rem(64px);
+      margin-left: rem(129px);
+      margin-right: rem(129px);
+      margin-top: rem(-150px);
+      padding: rem(64px);
+    }
+  }
+
+  .section-two-container {
+    display: flex;
+    flex-direction: column;
+    overflow-wrap: anywhere;
+    padding: rem(32px) rem(20px);
+
+    @include media(">=desktop") {
+      padding: 0;
+      padding-bottom: rem(60px);
+    }
+
+    &.bottom-none {
+      @include media(">=desktop") {
+        padding-bottom: 0;
+      }
+    }
+
+    &__content-container {
+      .wrapper {
+        display: flex;
+      }
+
+      .question-number-container {
+        display: flex;
+        justify-content: flex-start;
+
+        .question-number-text {
+          @include vida-h5-mobile;
+          font-weight: 500;
+          line-height: rem(22px);
+          margin-top: rem(-1px);
+          overflow-y: auto;
+          padding-right: rem(12px);
+          text-align: left;
+
+          @include media(">=desktop") {
+            @include vida-h2-mobile;
+            font-weight: 500;
+            line-height: rem(26px);
+            margin-top: rem(3px);
+            padding-left: rem(24px);
+            text-align: left;
+          }
+        }
+      }
+
+      .title-text {
+        @include vida-h5-mobile;
+        font-weight: 500;
+        line-height: rem(22px);
+        padding-bottom: rem(16px);
+        text-align: left;
+
+        @include media(">=desktop") {
+          @include vida-h3-desktop;
+          font-weight: 500;
+          line-height: rem(34px);
+          text-align: left;
+        }
+      }
+
+      .description-text {
+        @include vida-mobile-body-1;
+        line-height: rem(22px);
+        padding-bottom: rem(16px);
+        text-align: left;
+
+        @include media(">=desktop") {
+          @include vida-desktop-body-3;
+          line-height: rem(22px);
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  .section-three-container {
+    border-top: rem(1px) solid get-color("mine-shaft");
+    display: flex;
+    flex-direction: column;
+    gap: rem(16px);
+    justify-content: flex-start;
+    padding: rem(32px) rem(20px);
+
+    @include media(">=desktop") {
+      padding: rem(60px) 0 0 0;
+    }
+
+    &__header-container {
+      display: flex;
+      flex-direction: column;
+      gap: rem(12px);
+      padding-bottom: rem(8px);
+
+      @include media(">=desktop") {
+        gap: rem(39px);
+      }
+
+      .title-text {
+        @include vida-h5-mobile;
+        font-weight: 500;
+        line-height: rem(19px);
+        text-align: left;
+
+        @include media(">=desktop") {
+          @include vida-h2-desk;
+          font-weight: 600;
+          line-height: rem(58px);
+          text-align: left;
+        }
+      }
+
+      .description-text {
+        @include vida-mobile-body-2;
+        line-height: rem(17px);
+        text-align: left;
+
+        @include media(">=desktop") {
+          @include vida-desk-body-1;
+          line-height: rem(24px);
+          text-align: left;
+        }
+      }
+    }
+
+    .contact-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: rem(16px);
+      @include media(">=desktop") {
+        display: flex;
+        flex-direction: row;
+        gap: rem(34px);
+      }
+    }
+
+    &__content-container {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .content-wrapper {
+        display: flex;
+        gap: rem(10px);
+
+        .icon-container {
+          height: rem(20px);
+          width: rem(20px);
+          @include media(">=desktop") {
+            height: rem(26px);
+            width: rem(26px);
+          }
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
+
+        .contact-txt {
+          @include vida-tertiary-cta-mobile;
+          font-weight: 530;
+          text-align: center;
+
+          @include media(">=desktop") {
+            @include vida-tertiary-cta;
+            line-height: rem(24px);
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

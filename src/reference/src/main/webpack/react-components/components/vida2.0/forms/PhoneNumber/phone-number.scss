@@ -1,0 +1,35 @@
+.vida-form-group {
+  margin: 0;
+  margin: 0 0 rem(16px);
+  min-width: 100%;
+
+  @include media(">=desktop") {
+    min-height: rem(60px);
+  }
+}
+
+.vida-form-field-input {
+  border: 1px solid get-color("oslo-gray");
+  border-radius: rem(8px);
+  height: rem(52px);
+  margin: 0;
+  width: 100%;
+
+  @include media(">=desktop") {
+    height: rem(56px);
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
+  }
+
+  &[type="number"] {
+    appearance: textfield;
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+}

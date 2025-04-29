@@ -1,0 +1,97 @@
+.vida-product-subscription {
+  &__bannercontainer {
+    .vida-product-subscription__banner-wrapper {
+      position: relative;
+
+      &__content {
+        .vida-product-subscription-banner-media {
+          height: calc(100vh - 100px);
+          object-fit: cover;
+          width: 100%;
+        }
+
+        .vida-product-subscription-banner-bottom-text {
+          @include vida-mobile-body-1;
+          bottom: rem(40px);
+          color: get-color("white");
+          left: rem(18px);
+          position: absolute;
+          @include media(">=desktop") {
+            @include vida-desk-body-1;
+            bottom: rem(64px);
+            color: get-color("white");
+            left: rem(89px);
+          }
+        }
+      }
+
+      .vida-product-subscription-banner-content {
+        padding: rem(56px) 0 0 rem(24px);
+        position: absolute;
+        top: 0;
+        @include media(">=desktop") {
+          padding: rem(52px) 0 0 rem(88px);
+        }
+
+        &__title {
+          @include vida-h1-mobile;
+          @include media(">=desktop") {
+            @include vida-banner-header;
+          }
+        }
+
+        &__title.text-color-white {
+          color: get-color("white");
+        }
+
+        &__description1 {
+          @include vida-h3-mobile;
+          margin-top: rem(32px);
+          @include media(">=desktop") {
+            margin-top: rem(24px);
+          }
+        }
+
+        &__description1.text-color-white {
+          color: get-color("white");
+        }
+
+        &__description2 {
+          @include vida-h3-mobile;
+          color: get-color("orange");
+          margin-top: rem(8px);
+        }
+
+        &__description2.text-color-white {
+          color: get-color("white");
+        }
+      }
+    }
+  }
+}
+
+.vida-product-subscription-banner--battery-plus {
+  .vida-product-subscription {
+    &__bannercontainer {
+      .vida-product-subscription__banner-wrapper {
+        .vida-product-subscription-banner-content {
+          @include media("<desktop") {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-between;
+            padding-bottom: rem(64px);
+          }
+        }
+
+        .vida-product-subscription-banner-content__description1 {
+          @include vida-label-value-text-mobile;
+
+          &.text-color-white {
+            color: get-color("white");
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.product-offer-cards {
+  transition: opacity 1.5s ease-out;
+
+  .horizontal-scroll-container {
+    @include media(">=desktop") {
+      margin-bottom: rem(32px);
+      margin-top: rem(32px);
+    }
+  }
+
+  .product-offer-cards-primary-text {
+    @include vida-mobile-subtitle;
+    padding: rem(32px) 0 rem(5px) 0;
+    @include media(">=desktop") {
+      @include vida-desktop-subtitle;
+      padding: rem(64px) 0 rem(7px) 0;
+    }
+  }
+
+  .product-offer-cards-bold-text {
+    @include vida-h2-mobile;
+    @include media(">=desktop") {
+      @include vida-h2-desk;
+    }
+  }
+
+  .product-offer-cards-secondary-text {
+    @include vida-mobile-body-1;
+    line-height: rem(19.2px);
+    margin-top: rem(8px);
+    @include media(">=desktop") {
+      @include vida-desktop-body-4;
+      line-height: rem(33.6px);
+      margin-top: rem(16px);
+      max-width: rem(517px);
+    }
+  }
+
+  .horizontal-scroll-container {
+    @include media(">=desktop-lg") {
+      overflow: auto;
+    }
+  }
+
+  .offer-cards {
+    padding-top: 10px;
+    @include media(">=tablet") {
+      flex-direction: row;
+      // justify-content: center;
+    }
+
+    @include media(">=desktop-lg") {
+      justify-content: flex-start;
+    }
+  }
+
+  .d-none {
+    display: none;
+  }
+
+  .d-block {
+    display: block;
+  }
+}

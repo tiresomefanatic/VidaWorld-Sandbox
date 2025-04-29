@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Upload Documents</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Booking" />
+  <meta property="pageName" content="Booking:Upload Documents" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>  
+  <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js"
+    async></script>
+</head>
+
+<body>
+  <header></header>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "uploadDocumentsConfig": {
+        "title": "Upload Documents",
+        "documents": [
+          {
+            "id": "SELF_IMAGE",
+            "title": "Passport size picture",
+            "text": "Upload",
+            "description": "Most recent picture advised",
+            "disclaimer": "(Less than 1MB)",
+          },
+          {
+            "id": "PAN_CARD",
+            "title": "PAN Card",
+            "text": "Upload",
+            "description": "Data should be clearly visible",
+            "disclaimer": "(Less than 1MB)"
+          },
+          {
+            "id": "INSURANCE_COPY",
+            "title": "Insurance Copy",
+            "text": "Upload",
+            "description": "Data should be clearly visible",
+            "disclaimer": "(Less than 1MB)"
+          }
+        ],
+        "addressProof": {
+          "id": "ADDRESS_PROOF",
+          "title": "Address Proof",
+          "subTitle": "Billing address",
+          "name": "addressProofType",
+          "disclaimer": "Note: Upload document ONLY If the billing address is different from the uploaded aadhar card",
+          "addressHead": "Booking Address",
+          "selectPlaceholder": "Select",
+          "uploadLabel": "upload",
+          "addressProofType": {
+            "label": "Select document to upload",
+            "validationRules": {
+              "required": {
+                "message": "Document is required."
+              }
+            },
+          },
+          "messages": {
+            "error": "Please upload a valid address proof",
+            "success": "Address proof uploaded successfully"
+          }
+        },
+        "messages": {
+          "error": "Please upload a valid document",
+          "success": "Document uploaded successfully",
+          "fileFormatText": "Please upload the files in the format of jpeg, png or pdf"
+        },
+        "actions": {
+          "primary": "submit",
+          "secondary": "I'll do it later"
+        },
+        "finalSubmission": {
+          "primary": "Profile",
+          "success": "Documents uploaded successfully",
+        }
+      }
+    });
+  </script>
+  <div data-component="UploadDocuments" data-cmp-type="react" data-cmp-config="uploadDocumentsConfig"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+.vida-asset-collage {
+  overflow: hidden;
+
+  &--reverse {
+    .vida-asset-collage__wrapper {
+      flex-direction: column;
+
+      @include media(">=desktop") {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &--with-description {
+    .vida-asset-collage__content {
+      .vida-asset-collage__heading {
+        * {
+          @include h3;
+        }
+      }
+
+      .vida-asset-collage__description {
+        display: block;
+      }
+    }
+  }
+
+  &__main {
+    &-heading {
+
+      margin-bottom: rem(10px);
+      text-align: center;
+
+      * {
+        @include h1;
+      }
+    }
+    
+    &-description {
+      margin-bottom: rem(20px);
+      text-align: center;
+  
+      @include media(">=desktop") {
+        margin-bottom: rem(40px);
+      }
+  
+      * {
+        @include p2;
+        color: get-color("solid-grey");
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    @include media(">=desktop") {
+      flex-direction: row;
+      max-height: rem(768px);
+    }
+  }
+
+  &__two-image {
+    max-height: rem(520px);
+
+    @include media(">=desktop") {
+      max-height: rem(768px);
+      width: 40vw;
+    }
+
+    .vida-asset-collage__media {
+      height: 50%;
+      max-height: rem(260px);
+      position: relative;
+
+      @include media(">=desktop") {
+        max-height: rem(384px);
+      }
+    }
+
+    .vida-asset-collage__asset {
+      height: rem(260px);
+      object-fit: cover;
+      width: 100%;
+
+      @include media(">=desktop") {
+        height: rem(384px);
+        width: 40vw;
+      }
+
+      video {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  &__one-image {
+    max-height: rem(327px);
+
+    @include media(">=desktop") {
+      max-height: rem(768px);
+      width: 60vw;
+    }
+
+    .vida-asset-collage__media {
+      height: 100%;
+      position: relative;
+    }
+
+    .vida-asset-collage__asset {
+      height: rem(327px);
+      object-fit: cover;
+      width: 100%;
+
+      @include media(">=desktop") {
+        height: rem(768px);
+        width: 60vw;
+      }
+
+      video {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  &__content {
+    bottom: rem(30px);
+    color: get-color("white");
+    left: 0;
+    padding-left: rem(25px);
+    padding-right: rem(20px);
+    position: absolute;
+
+    @include media(">=desktop") {
+      bottom: rem(58px);
+      left: 0;
+      padding-left: 18%;
+    }
+
+    @include media("=>desktop-lg") {
+      padding-left: rem(104px);
+    }
+
+  }
+
+  &__heading {
+    margin-bottom: 10px;
+
+    @include media("=>desktop") {
+      margin-bottom: 20px;
+    }
+
+    * {
+      @include h2;
+    }
+  }
+
+  &__description {
+    display: none;
+    max-width: 360px;
+    padding-top: 15px;
+    position: relative;
+
+    @include media("=>desktop") {
+      padding-top: 25px;
+    }
+
+    * {
+      @include p2;
+    }
+
+    &::before {
+      background-color: get-color("orange");
+      content: "";
+      height: 5px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100px;
+    }
+  }
+}

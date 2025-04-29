@@ -1,0 +1,34 @@
+.exclusive-deals-wrapper {
+  padding-bottom: rem(32px) !important;
+  padding-top: rem(32px) !important;
+  @include media(">=desktop") {
+    padding-bottom: rem(64px) !important;
+    padding-top: rem(64px) !important;
+  }
+
+  .exclusive-deals-container {
+    .exclusive-deals-title-container {
+      .exclusive-deals-primary-text {
+        @include vida-mobile-subtitle;
+        line-height: rem(14.4px);
+        padding: 0 0 rem(5px) 0;
+        @include media(">=desktop") {
+          @include vida-desktop-subtitle;
+          line-height: rem(21.6px);
+          padding: 0 0 rem(7px) 0;
+        }
+      }
+
+      .exclusive-deals-bold-text {
+        @include vida-h2-mobile;
+        line-height: rem(28.8px);
+        padding: 0 0 rem(18px) 0;
+        @include media(">=desktop") {
+          @include vida-h2-desk;
+          line-height: rem(57.6px);
+          padding: 0 0 rem(25px) 0;
+        }
+      }
+    }
+  }
+}

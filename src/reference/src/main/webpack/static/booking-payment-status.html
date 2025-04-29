@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<title>Booking Status</title>
+	<meta charset="UTF-8" />
+	<meta name="template" content="page-content" />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- Meta Property for Analytics Datalayer -->
+	<meta property="pageCategory" content="Booking" />
+	<meta property="pageName" content="Booking:Completed" />
+	<meta property="country" content="India" />
+	<meta property="language" content="en" />
+	<meta property="isErrorPage" content="false" />
+	<meta property="errorCode" content="404" />
+	<meta property="errorDescription" content="Page Not Found" />
+
+	<link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+	<script>
+		const sessionCookieExist = document.cookie.match(/^(.*;)?\s*SESSION_TOKEN\s*=\s*[^;]+(.*)?$/);
+		if (!sessionCookieExist) {
+			window.location.href = "/login.html"+"?redirectURL="+window.location.href;
+		}
+	</script>
+	<%= htmlWebpackPlugin.options.custom %>
+		<script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js"
+			async></script>
+</head>
+
+<body>
+	<header></header>
+	<div data-component="Notification" data-cmp-type="react"></div>
+	<script>
+		window.appConfig = Object.assign(window.appConfig || {}, {
+			"paymentStatusConfig": {
+				"paymentSuccess": {
+					"title": "Congratulations!",
+					"successMessage": "You have successfully booked your VIDA",
+          			"pendingMessage": "We are processing your booking for VIDA",
+					"orderDetails": {
+						"message": "Your Order id is",
+						"subText": "Details of the same has been sent to your email and phone no."
+					},
+					"launchDetails": {
+						"message": "The product delivers in 2 months from order processing*",
+						"subText": "Click on the link to",
+						"trackDeliveryLabel": "Track your delivery",
+						"info": "You can also use your phone number to login again and check your delivery status"
+					},
+					"disclaimer": {
+						"subText": "*Delivery dates may change if there are any delays in providing information"
+					},
+				},
+				"paymentPending": {
+					"title": "Payment Pending",
+					"message": "You have successfully saved your VIDA V1.",
+					"orderDetails": {
+						"message": "Your Payment id is ",
+						"subText": "Your details have been captured, you can visit the selected store and complete the process. After which your order will be processed further.<a href=''> Get Directions</a>"
+					},
+					"confirmationDetails": {
+						"title": "The order will be confirmed once payment is complete",
+						"message": "Click on the link to",
+						"trackDeliveryLabel": "Track your delivery",
+						"info": "You can also use your phone number to login again and check your delivery status"
+					}
+				},
+				"paymentFailure": {
+					"title": "Payment Failed",
+					"imageUrl": "asset-banner-mb",
+					"message": "The payment failed due to a technical error. If your money was debited, you should get the refund within the next 24 hrs.",
+					"retryPaymentBtn": {
+						"label": "Retry Payment",
+						"actionUrl": "/profile.html"
+					},
+          "helpLink": {
+            "helpLabel": "Trouble booking?",
+            "chatLabel": "Chat with us"
+          }
+				},
+				"documentSection": {
+					"title": "Next steps",
+					"message": "There are two simple steps remaining which will help us start processing your order. Without this your order will not start manufacturing",
+					"inspectionDetails": {
+						"title": "Where would you prefer to get your exchange inspection?",
+						"message": "We will reach out to you for the same within 1-2 working days.",
+						"atHome": {
+							"label": "At home",
+							"id": "home"
+						},
+						"atCenter": {
+							"label": "At Vida center",
+							"id": "hero-center"
+						}
+					},
+					"nomineeInfo": {
+						"title": "Nominee Info",
+						"message": "To complete your insurance details we need your nominee details",
+						"processingTime": "3 mins"
+					},
+					"uploadDocumentInfo": {
+						"title": "Upload Documents",
+						"documentsList": "<ul><li>Passport size picture</li><li>PAN Card</li><li>Address Proof</li><li>Insurance Copy</li></ul>",
+						"processingTime": "10 mins"
+					},
+					"primaryBtn": {
+						"label": "Continue"
+					},
+					"secondaryBtn": {
+						"label": "I’ll do it later"
+					},
+
+					"confirmationPopUp": {
+						"title": "Your order will not be processed until you complete these details",
+						"message": "You may wish to continue or come back later <span> (Within the next 72 hours)</span> This will affect your delivery dates, your order will be sent for manufacturing only if these details are provided!",
+						"primaryBtn": {
+							"label": "OK"
+						},
+						"secondaryBtn": {
+							"label": "Go Back",
+							"actionUrl": ""
+						}
+					}
+				},
+				"outStandingPaymentSuccess": {
+					"title": "Congratulations!",
+					"successMessage": "You have successfully paid the remaining amount for VIDA",
+					"orderDetails": {
+						"message": "Your Order id is",
+						"subText": "Details of the same has been sent to your email and phone no."
+					},
+					"launchDetails": {
+						"message": "The product is under processing*",
+						"subText": "Click on the link to",
+						"trackDeliveryLabel": "Track your delivery",
+						"info": "You can also use your phone number to login again and check your delivery status"
+					},
+					"disclaimer": {
+						"subText": "*Delivery dates may change if there are any delays in providing information"
+					}
+				}
+			}
+		});  
+	</script>
+	<div data-component="BookingPaymentStatus" data-cmp-type="react" data-cmp-config="paymentStatusConfig"></div>
+	<footer></footer>
+</body>
+
+</html>

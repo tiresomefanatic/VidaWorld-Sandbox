@@ -1,0 +1,330 @@
+@import "../abstracts/variables";
+
+* {
+  box-sizing: border-box;
+  font-variant-ligatures: none;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: $font-family-primary;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: get-color("solid-black");
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  @include links;
+  color: get-color("orange");
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active,
+  &:visited {
+    color: get-color("orange");
+    text-decoration: none;
+  }
+
+  &:disabled,
+  &.disabled,
+  &[disabled],
+  &--disabled {
+    color: get-color("light-grey");
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+  }
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    color: inherit;
+    font-size: inherit;
+    margin-right: rem(8px);
+  }
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ol,
+ul {
+  margin-left: 30px;
+}
+
+b,
+strong,
+.bold {
+  font-weight: bold;
+}
+
+.a1 {
+  @include a1;
+}
+
+.a2 {
+  @include a2;
+}
+
+.a3 {
+  @include a3;
+}
+
+.d1 {
+  @include d1;
+}
+
+.d2 {
+  @include d2;
+}
+
+.d3 {
+  @include d3;
+}
+
+.h1,
+h1 {
+  @include h1;
+}
+
+.h2,
+h2 {
+  @include h2;
+}
+
+.h3,
+h3 {
+  @include h3;
+}
+
+.h4,
+h4 {
+  @include h4;
+}
+
+.h4-md {
+  @include h4-md;
+}
+
+.p1 {
+  @include p1;
+}
+
+.p2 {
+  @include p2;
+}
+
+.p3 {
+  @include p3;
+}
+
+.clear {
+  clear: both;
+}
+
+.align-top {
+  vertical-align: top;
+}
+
+.align-bottom {
+  vertical-align: bottom;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.zero-padding {
+  padding: 0 !important;
+}
+
+.no-padding-top {
+  padding-top: 0 !important;
+}
+
+.no-padding-right {
+  padding-right: 0 !important;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0 !important;
+}
+
+.no-padding-left {
+  padding-left: 0 !important;
+}
+
+.zero-margin {
+  margin: 0 !important;
+}
+
+.no-margin-top {
+  margin-top: 0 !important;
+}
+
+.no-margin-right {
+  margin-right: 0 !important;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0 !important;
+}
+
+.no-margin-left {
+  margin-left: 0 !important;
+}
+
+.no-top-spacer {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.no-bottom-spacer {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.no-spacer {
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-top: 0 !important;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Custom Scroll bar */
+.custom-scroll {
+  &::-webkit-scrollbar {
+    height: rem(7px);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: get-color("light-grey");
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: get-color("light-orange");
+    border-radius: rem(25px);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: get-color("orange-mid-tone");
+  }
+}
+
+.txt-color {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+
+  &--orange {
+    color: get-color("orange");
+  }
+
+  &--white {
+    color: get-color("white");
+  }
+
+  &--solid-grey {
+    color: get-color("solid-grey");
+  }
+}
+
+.bg-color--smoke-white {
+  background-color: get-color("smoke-white");
+}
+
+// override style for react tooltip library component
+.__react_component_tooltip {
+  background: get-color("white") !important;
+  border: 1px solid get-color("nobel-grey") !important;
+  border-radius: rem(12px) !important;
+  box-shadow: 1px 3px 4px 0 get-color("solid-black-shadow");
+  color: get-color("solid-black") !important;
+  max-width: rem(300px);
+  opacity: 1 !important;
+  padding: 16px !important;
+
+  &::after {
+    border-bottom-color: get-color("nobel-grey") !important;
+  }
+}
+
+::-webkit-file-upload-button { cursor: pointer; }
+
+
+//Battery warranty page css
+
+.d-flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.table-battery-content {
+  border-right: 1px dotted get-color("orange");
+  padding: 0 rem(32px);
+}
+
+.hero-no-control .cmp-carousel__actions {
+  display: none;
+}
+
+.hero-no-control .cmp-carousel__indicators {
+  position: relative;
+  top: -25px;
+}
+
+.hero-no-control .cmp-carousel__content {
+  margin-bottom: -15px;
+}
+
+.global-tooltip {
+  cursor: pointer;
+  font-weight: 500 !important;
+  margin-left: rem(6px);
+  white-space: break-spaces;
+  @include media(">=desktop") {
+    margin-left: rem(8px);
+  }
+
+  &.fill-white {
+    img {
+      filter: invert(1);
+    }
+  }
+}

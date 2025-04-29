@@ -1,0 +1,85 @@
+.cmp-vida-connect {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32px);
+    padding: rem(40px) 0;
+    @include media(">tablet") {
+      gap: rem(56px);
+      padding: rem(48px) 0;
+    }
+  }
+
+  &__heading {
+    @include vida-h3-desktop;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    @include media(">tablet") {
+      @include vida-h2-desk;
+    }
+  }
+
+  &__card-cont {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    @include media(">tablet") {
+      gap: rem(20px);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: row;
+    flex-grow: 100%;
+    @include media(">tablet") { 
+      flex-basis: 25%;
+      flex-direction: column;
+      flex-grow: 25%;
+    }
+
+    &-image {
+      margin-bottom: rem(32px);
+      @include media(">tablet") {
+        margin-bottom: rem(24px);
+      }
+
+      img {
+        border-radius: 1rem;
+        height: rem(135px);
+        object-fit: cover;
+        width: 100%;
+        @include media(">tablet") {
+          height: rem(260px);
+        }
+      }
+    }
+
+    &-heading h3 {
+      @include vida-h3-desktop;
+      margin-bottom: rem(16px);
+    }
+
+    &-body {
+      @include vida-mobile-body-1;
+      overflow-wrap: anywhere;
+    }
+  }
+
+  .tns-nav {
+    padding-top: rem(16px);
+
+    button {
+      background: rgba(228, 234, 241, 1);
+      border-radius: 0;
+      height: rem(2px);
+      padding: rem(1px) rem(24px);
+
+      &.tns-nav-active {
+        background: #ff5310 !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.vida-video-carosuel {
+  position: relative;
+
+  .vida-container {
+    padding: 0;
+
+    .tns-controls {
+      .next,
+      .prev {
+        background: #00000091;
+        border-radius: 50%;
+        padding: 10px;
+      }
+
+      img {
+        align-items: center;
+        background: rgb(12 12 12 / 13%);
+        border-radius: 50%;
+        display: flex;
+        filter: invert(94%);
+        height: 50px;
+        justify-content: center;
+        width: 35px;
+        width: 50px;
+      }
+
+      .prev {
+        position: absolute;
+        top: 50%;
+        transform: rotate(180deg);
+        z-index: 9;
+      }
+
+      .next {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        z-index: 9;
+
+      }
+    }
+
+  }
+
+  &__slider {
+    margin-top: 70px;
+  }
+
+  .vida-video-player {
+    &__playback {
+      border-radius: 2rem;
+      height: 500px;
+      object-fit: cover;
+      width: fill-available;
+    }
+  }
+
+  .vida-asset-banner__media {
+    // position: relative;
+    // z-index: 9;
+  }
+
+  .tns-item:not(.tns-slide-active) + .tns-slide-active + .tns-slide-active { 
+    transform: translateY(-50px);
+    @include media(">=tablet") {
+      transform: translateY(0); 
+    }
+  }
+}
+

@@ -1,0 +1,297 @@
+.vida-scooter-info {
+  background: linear-gradient(113.37deg, #e8e8e8 3.28%, #fdfdfd 78.36%);
+  border: rem(2px) solid get-color("white");
+  border-radius: rem(16px);
+  cursor: pointer;
+  padding: rem(20px) rem(20px) rem(22px);
+  position: relative;
+  
+
+  @include media(">=desktop") {
+    background: linear-gradient(113.37deg, #f4f4f4 3.28%, #fff 78.36%);
+    border-radius: rem(32px);
+    padding-top: rem(30px);
+  }
+
+  .vida-pre-booking__scooter-info-summary & {
+    cursor: initial;
+  }
+
+  &--active {
+    background: get-color("white");
+    border-color: get-color("dark-blue");
+    @include media(">=desktop") {
+      background: get-color("white");
+    }
+  }
+
+  &.vida-scooter-info--image-left {
+    flex-shrink: 0;
+    @include media(">=desktop-lg") {
+      padding-left: rem(280px);
+    }
+
+    &:hover {
+      background: get-color("white");
+      border-color: get-color("dark-blue");
+    }
+  }
+
+  &--simple-layout {
+    background: none !important;
+  }
+
+  &__color-name {
+    &--simple-layout {
+      margin-top: rem(15px);
+
+      &--active {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__title {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__name {
+    margin-bottom: rem(10px);
+  }
+
+  &__price {
+    text-align: right;
+
+    &-type {
+      @include p2;
+    }
+  }
+
+  &__color {
+    &-list {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .vida-scooter-info--image-left & {
+        @include media(">=desktop-lg") {
+          margin-top: rem(10px);
+        }
+      }
+  
+      &-item {
+        // Fallback Color - when the product color not available
+        background: linear-gradient(to right, #f00, #ffa500, #ff0, #0f0, #00f, #4b0082, #8f00ff);
+        border: rem(1px) solid get-color("solid-grey");
+        border-radius: 50%;
+        height: rem(23px);
+        margin-right: rem(12.5px);
+        position: relative;
+        width: rem(23px);
+
+        @include media(">=desktop") {
+          height: rem(30px);
+          margin-right: rem(25px);
+          width: rem(30px);
+        }
+
+        .vida-pre-booking__scooter-info-summary & {
+          display: none;
+          
+          &--active {
+            display: block;
+          }
+        }
+  
+        &--active {
+          border: rem(1px) solid get-color("white");
+
+          &::before {
+            border: rem(1px) solid get-color("solid-grey");
+            border-radius: 50%;
+            content: "";
+            display: block;
+            height: rem(23px);
+            left: rem(-2px);
+            position: absolute;
+            top: rem(-2px);
+            width: rem(23px);
+
+            @include media(">=desktop") {
+              height: rem(34px);
+              left: rem(-4px);
+              top: rem(-4px);
+              width: rem(34px);
+            }
+          }
+        }
+  
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &--simple-layout {
+        justify-content: center;
+
+        li {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          padding: rem(10px);
+          text-align: center;
+          div {margin: 0;}
+        }
+      }
+    }
+
+    &-name {
+      @include p2;
+      margin-top: rem(15px);
+
+      span {
+        color: get-color("solid-grey");
+        margin-left: rem(5px);
+      }
+
+      .vida-scooter-info--image-left & {
+        @include media(">=desktop-lg") {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__image {
+    margin: rem(15px) 0 rem(16px);
+    text-align: center;
+
+    @include media(">=desktop") {
+      margin: 0 0 rem(32px);
+    }
+
+    .vida-scooter-info--image-left & {
+      @include media(">=desktop-lg") {
+        left: rem(20px);
+        margin-bottom: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        .vida-scooter-info__product-image {
+          max-width: rem(230px);
+        }
+      }
+    }
+  }
+
+  &__product-image {
+    max-width: rem(190px);
+    width: 100%;
+
+    @include media(">=desktop") {
+      max-width: rem(420px);
+    }
+
+    .vida-scooter-info--image-left & {
+      @include media(">=desktop") {
+        max-width: rem(350px);
+      }
+    }
+  }
+
+  &__performance {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    @include media("<desktop") {
+      flex-wrap: wrap;
+      gap: rem(10px) 0;
+
+      &-item {
+        text-align: center;
+        width: 50%;
+      }
+
+      &-data {
+        justify-content: center;
+      }
+    }
+
+    @include media(">=desktop-lg") {
+      flex-wrap: wrap;
+      gap: rem(10px) 0;
+
+      &-item {
+        width: 50%;
+      }
+    }
+
+    .vida-scooter-info--image-left & {
+      @include media(">=desktop-lg") {
+        justify-content: space-between;
+        margin-top: rem(24px);
+      }
+    }
+
+    &-title {
+      @include p2;
+      color: get-color("solid-grey");
+    }
+
+    &-data {
+      align-items: baseline;
+      display: flex;
+
+      @include media(">=desktop") {
+        align-items: center;
+      }
+
+      span {
+        @include p2;
+        display: inline-block;
+        margin-left: rem(5px);
+      }
+    }
+  }
+  
+
+  .__react_component_tooltip.place-top {
+    background: get-color("black") !important;
+    border: 1px solid get-color("orange") !important;
+    box-shadow: none !important;
+    color: get-color("black") !important;
+    letter-spacing: 2px;
+    line-height: 18px;
+    margin-top: -14px;
+    // margin-left: 24px !important;
+    opacity: 1 !important;
+
+    &::after {
+      border-bottom-color: transparent !important;
+      border-top-color: #ff5310;
+      //  border-right-color: get-color("orange") !important;
+      margin-left: 0 !important;
+    }
+  }
+
+  .icon-information-circle {
+    // margin-left: -15px;
+    margin-top: -13px;
+    position: absolute;
+  }
+
+  .notification__icon {
+    display: inline-block;
+    width: auto;
+  }
+
+}

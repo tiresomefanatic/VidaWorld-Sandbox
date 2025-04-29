@@ -1,0 +1,182 @@
+.vida-banner-carousel {
+  padding-top: rem(20px);
+  position: relative;
+
+  @include media(">=desktop") {
+    padding-top: rem(80px);
+  }
+
+  &__slider {
+    &-controls {
+      border-bottom: 1px solid #000;
+      bottom: rem(160px);
+      display: flex;
+      gap: 0 rem(20px);
+      height: rem(80px);
+      left: rem(15px);
+      list-style: none;
+      margin: auto;
+      padding: rem(15px) 0;
+      position: absolute;
+      width: calc(100% - 30px);
+      z-index: 9;
+
+      @include media(">=desktop") {
+        bottom: rem(170px);
+        left: rem(40px);
+        width: calc(34% - 80px);
+      }
+
+      &-index {
+        @include h4;
+        bottom: rem(30px);
+        position: absolute;
+        right: 0;
+      }
+
+      &-prev {
+        align-items: center;
+        border: 1px solid get-color("solid-black");
+        border-radius: rem(20px);
+        cursor: pointer;
+        display: inline-flex;
+        height: rem(40px);
+        justify-content: center;
+        width: rem(40px);
+
+        [class^="icon-"],
+        [class*=" icon-"] {
+          display: flex;
+          font-size: 25px;
+          transform: rotate(180deg);
+        }
+        
+      }
+
+      &-next {
+        align-items: center;
+        border: 1px solid get-color("solid-black");
+        border-radius: rem(20px);
+        cursor: pointer;
+        display: inline-flex;
+        height: rem(40px);
+        justify-content: center;
+        width: rem(40px);
+
+        [class^="icon-"],
+        [class*=" icon-"] {
+          display: flex;
+          font-size: 25px;
+        }
+      }
+    }
+
+    &-item {
+      &-card {
+        background: #fff;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+
+        @include media(">=desktop") {
+          flex-direction: row;
+        }
+
+        &-asset {
+          display: inline-block;
+          height: calc(100vh - rem(76px));
+          max-height: rem(288px);
+          max-width: 100%;
+          vertical-align: top;
+          width: 100%;
+          
+          @include media(">=desktop") {
+            // height: calc(100vh - rem(85px));
+            height: 100vh;
+            max-height: unset;
+            width: 66%;
+          }
+
+          .vida-scroll-navigation--sticky & {
+            // height: calc(100vh - rem(114px));
+            height: calc(100vh - rem(38px));
+
+            @include media(">=desktop") {
+              // height: calc(100vh - rem(138px));
+              height: calc(100vh - rem(50px));
+            }
+          }
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
+
+        video {
+          height: 100%;
+          width: 100%;
+        }
+
+        &-desc {
+          background: get-color("blue");
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          min-height: rem(400px);
+          padding: rem(15px);
+          padding-bottom: rem(40px);
+          width: 100%;
+
+          @include media(">=desktop") {
+            padding: rem(40px);
+            width: 34%;
+          }
+
+          p {
+            @include p2;
+            @include lineClamp(5);
+            max-height: rem(105px);
+          }
+
+          h2 span {
+            display: block;
+
+            &:first-child {
+              @include p2;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__video {
+    height: 100%;
+
+    video {
+      object-fit: cover;
+    }
+  }
+
+  &--left-image {
+    .vida-banner-carousel__slider-item-card {
+      @include media(">=desktop") {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .vida-banner-carousel__slider-container {
+      position: relative;
+    }
+
+    .vida-banner-carousel__slider-controls {
+      left: unset;
+      right: rem(15px);
+      @include media(">=desktop") {
+        right: rem(40px);
+      }
+    }
+  }
+}

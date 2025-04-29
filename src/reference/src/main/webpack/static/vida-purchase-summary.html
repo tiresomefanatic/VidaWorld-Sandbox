@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Purchase Summary</title>
+    <meta charset="UTF-8" />
+    <meta name="template" content="page-content" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Meta Property for Analytics Datalayer -->
+    <meta property="pageCategory" content="Purchase Summary" />
+    <meta property="language" content="en" />
+    <meta property="country" content="India" />
+    <meta property="isErrorPage" content="false" />
+    <meta property="errorCode" content="404" />
+    <meta property="errorDescription" content="Page Not Found" />
+
+    <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico" />
+    <%= htmlWebpackPlugin.options.custom %>
+    <script
+      src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.minptest.js"
+      async
+    ></script>
+    <script type="text/javascript" src="//assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async></script>
+  </head>
+  <body>
+    <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        HeaderConfig: {
+          navbarOptions: [
+            {
+              image: "exploreicon.png",
+              title: "EXPLORE",
+              navLink: "#"
+            },
+            {
+              image: "tryicon.png",
+              title: "TRY",
+              navLink: "#"
+            },
+            {
+              image: "buyicon.png",
+              title: "BUY",
+              navLink: "#"
+            },
+            {
+              image: "loveicon.png",
+              title: "LOVE",
+              navLink: "#"
+            }
+          ],
+          termsAndPrivacyText: [
+            {
+              title: "TERMS OF SERVICE",
+              navLink: "#"
+            },
+            {
+              title: "PRIVACY POLICY",
+              navLink: "#"
+            }
+          ],
+          tryOptionContent: {
+            title: "TRY",
+            sitesOption: [
+              {
+                name: "Book Test Ride",
+                navLink: "#"
+              },
+              {
+                name: "Design Your VIDA",
+                navLink: "#"
+              }
+            ]
+          },
+          buyOptionContent: {
+            title: "BUY",
+            sitesOption: [
+              {
+                name: "Book @ ₹499",
+                navLink: "#"
+              },
+              {
+                name: "Buy a VIDA",
+                navLink: "#"
+              }
+            ]
+          },
+          exploreOptionContent: {
+            title: "EXPLORE",
+            sitesOption: [
+              {
+                name: "All Products",
+                navLink: "#"
+              },
+              {
+                name: "V1 Pro",
+                navLink: "#"
+              },
+              {
+                name: "V1 Plus",
+                navLink: "#"
+              },
+              {
+                name: "Our Story",
+                navLink: "#"
+              },
+              {
+                name: "Blogs",
+                navLink: "#"
+              },
+              {
+                name: "FAQs",
+                navLink: "#"
+              }
+            ]
+          },
+          loveOptionContent: {
+            title: "LOVE",
+            sitesOption: [
+              {
+                name: "VIDA Community",
+                navLink: "#"
+              },
+              {
+                name: "Charging Stations",
+                navLink: "#"
+              },
+              {
+                name: "Dealership Locator",
+                navLink: "#"
+              },
+              {
+                name: "Offers",
+                navLink: "#"
+              }
+            ]
+          },
+          hamburgerBgImg: {
+            mobImg: "hamburger_bg_mob.png",
+            desktopImg: "hamburger_bg_des.png"
+          },
+          hamburgerBg1Img: {
+            mobImg: "hamburger_bg1_mob.png",
+            desktopImg: "hamburger_bg1_des.png"
+          },
+          myAccountContent: {
+            myAccountText: "MY ACCOUNT",
+            preLoginText: "LOGIN / SIGN UP",
+            loginNavLink: "#",
+            preLoginNavLink: "#"
+          },
+          headerVidaLogo: "vidalogo.png",
+          vidaLogoNavLink: "#",
+          hamburgerVidaLogo: "vidawhitelogo.png"
+        }
+      });
+    </script>
+    <div
+      data-section-id="header"
+      data-component="Header"
+      data-cmp-type="react"
+      data-cmp-version="2.0"
+      data-cmp-config="HeaderConfig"
+    ></div>
+    <div
+      data-section-id="vidaSpinner"
+      data-component="Spinner"
+      data-cmp-version="2.0"
+      data-cmp-type="react"
+    ></div>
+    <div data-component="Notification" data-cmp-type="react"></div>
+    <script>
+     window.appConfig = Object.assign(window.appConfig || {}, {
+      PurchaseBookingConfig: 
+    {
+  "insurance": {
+    "totalText": "Total",
+    "comparePlansFirstTitle": "Compare Plans",
+    "cpaText": "CPA",
+    "onItsWayText": "is on it’s way!",
+    "optOutCPADescription": "It's mandatory, you know. According to the IRDAI, all vehicle owners must have a compulsory personal accident cover.",
+    "additionalCoverageOptions": [
+      {
+        "icon": "/content/dam/vida2-0/payment-summary/zero_icon.png",
+        "addonName": "Zero Depreciation on parts"
+      },
+      {
+        "icon": "/content/dam/vida2-0/payment-summary/theft_icon.png",
+        "addonName": "Finance against theft"
+      },
+      {
+        "icon": "/content/dam/vida2-0/payment-summary/accident_icon.png",
+        "addonName": "Personal Accident Cover"
+      },
+      {
+        "icon": "/content/dam/vida2-0/payment-summary/battery_icon.png",
+        "addonName": "Battery damage cover"
+      },
+      {
+        "icon": "/content/dam/vida2-0/payment-summary/engine_icon.png",
+        "addonName": "Engine protection"
+      }
+    ],
+    "confirmText": "Confirm",
+    "bannerBgImg": "/content/dam/vida2-0/payment-summary/banner_bg_with_color.png",
+    "showingForText": "Showing for",
+    "policyNameText": "Policy Name",
+    "selectBtnCta": "Select",
+    "chevronRightIcon": "/content/dam/vida2-0/payment-summary/chevron-right.svg",
+    "chevronDownIcon": "/content/dam/vida2-0/global/icons/desktop/drop_down_icon2.svg",
+    "optOutCPAFormTitle": "Please select a valid reason for removal",
+    "sortDropdownOptions": [
+      { "option": "Lowest to Highest Premium" },
+      { "option": "Highest to Lowest Premium" }
+    ],
+    "cancelText": "Cancel",
+    "chooseYourAddonsText": "Choose your Add-ons",
+    "insurancePlansDescriptionText": "Covers damage to your vehicle for 1 year and damage to others for 5 years.",
+    "ownInsuranceDescription": "Be the rebel and opt for your own insurance, bought independently",
+    "premiumPerYearText": "Premium per year",
+    "tickIcon": "/content/dam/vida2-0/payment-summary/tick_icon_img.png",
+    "comparePlansCta": "Compare Plans",
+    "proceedBtnLabel": "Proceed",
+    "optOutCPATitle": "Do you really want to remove Compulsory Personal Accident (CPA) cover from all policies?",
+    "addOnsText": "Add-on",
+    "addOnTooltipContent": [
+      { "id": "CPA", "content": "CPA" },
+      {
+        "id": "Zero Depreciation",
+        "content": "Experience peace of mind with Zero Depreciation, also known as Nil-Dep coverage. This add-on is a part of your motor insurance policy. It covers the full cost of repairs or replacements for your VIDA V1 Electric Scooter parts—excluding natural wear and tear. Be ready for the unexpected, and enjoy complete repair coverage if an accident happens. "
+      },
+      {
+        "id": "RTI",
+        "content": "If the unexpected strikes and your VIDA is stolen or damaged beyond repair, standard insurance only covers up to the Insured Declared Value (IDV). This can be much lower than your scooter's invoice price. But with RTI, you’re protected. This add-on ensures you’ll get the full invoice amount back."
+      },
+      { "id": "Finance Against Theft", "content": "Finance Against Theft" },
+      {
+        "id": "Battery Cover",
+        "content": "Your VIDA V2’s batteries power every ride, and with the Battery Cover add-on, you’re ensuring they stay protected. Cover your batteries against theft or damage, and ride with peace of mind knowing they are safeguarded. This crucial add-on is active as long as your Own Damage policy is, giving you full coverage for your scooter’s most essential part."
+      },
+      {
+        "id": "Motor Engine Protection",
+        "content": "Motor Engine Protection."
+      },
+      { "id": "Personal Accident Cover", "content": "Personal Accident Cover" }
+    ],
+    "buyOwnInsuranceTitle": "Are you sure you want to buy your own insurance?",
+    "optOutCPAFormOptions": [
+      { "reason": "I dont have a valid driving license" },
+      { "reason": "I have a seperate General PA cover (Non motor Product)" },
+      { "reason": "I have a standalone PA cover (Motor Product)" }
+    ],
+    "bestSellingInsuranceTitle": "Choose best-selling insurance",
+    "bestSellingInsuranceDescription": [
+      {
+        "descriptionText": "Top Insurance Plans starting from ₹1,299 per year"
+      },
+      { "descriptionText": "Over 20 Providers to choose from" }
+    ],
+    "financersText": "Financers",
+    "insurancePlansPageSecondaryText": "All plans include Compulsory Personal Accident (CPA) cover.",
+    "selectedBtnCta": "Selected",
+    "additionalCoverageDescriptionText": "Opt for peace of mind and protect your VIDA from everything  ₹299 per year",
+    "sortDropdownField": {
+      "iconTitle": null,
+      "iconAltText": null,
+      "icon": "/content/dam/vida2-0/global/faq-down.png",
+      "placeholder": "Lowest to Highest Premium"
+    },
+    "ownInsuranceTitle": "Buy my own insurance",
+    "comparePlansMobileTitle": "Let's Choose Your Insurance Plan",
+    "comparePlansSecondTitle": "Compare insurance plans",
+    "insurancePlansPageTitle": "Let’s Insure Your VIDA V2",
+    "backToInsurancePlanCtaLabel": "Back to Insurance Plans",
+    "bannerBikeImg": "/content/dam/vida2-0/payment-summary/sum_desk_img.png",
+    "additionalCoverageTitleText": "Get additional coverage",
+    "insuranceLandingPageTitle": "Build A Custom Insurance Plan",
+    "buyOwnInsuranceDescription": "According to the Insurance Regulatory and Development Authority of India (IRDAI), all vehicle owners must have a compulsory personal accident cover.",
+    "insurancePlansDeclaredValueText": "Insurance Declared Value "
+  },
+  "offerGSTInclusiveText": "Prices shown are Inclusive of GST",
+  "purchaseBookingBikeImg": "/content/dam/vida2-0/payment-summary/sum_desk_img.png",
+  "deliveryBikeIcon": "/content/dam/vida2-0/payment-summary/scooter_icon.svg",
+  "bikePriceWithoutTax": "",
+  "bikeInfoSubText": "is on it’s way!",
+  "bikeVariantDetails": {
+    "bikeVariants": [
+      {
+        "variantName": "V2 Pro",
+        "variantDetails": [
+          {
+            "color": "Glossy Sports Red",
+            "textColor": "white",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Pro%20Glossy%20Sports%20Red?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/red_bg.png"
+          },
+          {
+            "color": "Matte Cyan",
+            "textColor": "black",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Pro%20Matte%20Cyan?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/blue_bg.png"
+          },
+          {
+            "color": "Matte White",
+            "textColor": "black",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Pro%20Matte%20White?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/white_bg.png"
+          },
+          {
+            "color": "Matte Abrax Orange",
+            "textColor": "white",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Pro%20_Matte%20Abrax%20Orange?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/orange_bg.png"
+          },
+          {
+            "color": "Matte Nexus Blue",
+            "textColor": "white",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Pro%20Matte%20Nexus%20Blue?fmt=webp&fmt=webp-alpha",
+            "bgImg": "https://media.vidaworld.com/is/image/heromotocorpstage/nexus-bg?fmt=webp&fmt=webp-alpha"
+          },
+          {
+            "color": "Glossy Black",
+            "textColor": "white",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Plus%20Glossy%20Black?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/black_bg.png"
+          }
+        ]
+      },
+      {
+        "variantName": "V2 Plus",
+        "variantDetails": [
+          {
+            "color": "Matte White",
+            "textColor": "black",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Plus%20Matte%20White?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/white_bg.png"
+          },
+          {
+            "color": "Glossy Black",
+            "textColor": "white",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Plus%20Glossy%20Black?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/black_bg.png"
+          },
+          {
+            "color": "Matte Abrax Orange",
+            "textColor": "white",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Plus%20Matte%20Abrax%20Orange?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/orange_bg.png"
+          },
+          {
+            "color": "Glossy Sports Red",
+            "textColor": "white",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Plus%20Sports%20Red?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/red_bg.png"
+          },
+          {
+            "color": "Matte Cyan",
+            "textColor": "black",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Plus%20Matte%20Cyan?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/blue_bg.png"
+          }
+        ]
+      },
+      {
+        "variantName": "V2 Lite",
+        "variantDetails": [
+          {
+            "color": "Glossy Black",
+            "textColor": "white",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Lite%20Glossy%20Black?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/black_bg.png"
+          },
+          {
+            "color": "Matte Abrax Orange",
+            "textColor": "white",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Lite%20Matte%20Abrax%20Orange?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/orange_bg.png"
+          },
+          {
+            "color": "Glossy Sports Red",
+            "textColor": "white",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Lite%20Glossy%20Sports%20Red?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/red_bg.png"
+          },
+          {
+            "color": "Matte White",
+            "textColor": "black",
+            "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Lite%20Matte%20White?fmt=webp&fmt=webp-alpha",
+            "bgImg": "/content/dam/vida2-0/buy-page/white_bg.png"
+          }
+        ]
+      }
+    ]
+  },
+  "paymentDetailsConfig": {
+    "paymentDetailsNormalTitle": "YAY, ORDER CONFIRMED",
+    "gstAmountText": "GST Amount",
+    "partPaymentMinimumAmountText": "Minimum amount is ₹10,000",
+    "orderDetailsText": "Order details",
+    "totalPayableText": "Total Payable",
+    "makePartPaymentNormalTitle": "MAKE PART PAYMENT",
+    "deliveryTrackerContent": {
+      "deliveryTrackerDescription": "Subject to all the checks - payment, documents, and registration",
+      "deliveryTrackerStepperContent": [
+        {
+          "icon": "/content/dam/vida2-0/delivery-tracker/ph_credit-card.svg",
+          "title": "Payment"
+        },
+        {
+          "icon": "/content/dam/vida2-0/delivery-tracker/ph_upload-simple.svg",
+          "title": "Document Upload"
+        },
+        {
+          "icon": "/content/dam/vida2-0/delivery-tracker/ph_seal-check.svg",
+          "title": "Document Verification"
+        },
+        {
+          "icon": "/content/dam/vida2-0/delivery-tracker/ph_package.svg",
+          "title": "Delivery"
+        }
+      ],
+      "deliveryTrackerTitle": "Estimated delivery by "
+    },
+    "onItsWayText": "is on it’s way!",
+    "offersText": "Offers",
+    "makeRemainingPaymentBoldTitle": null,
+    "partPayTransactionText": null,
+    "paymentDetailsBoldTitle": "VIDA V2 Is Going To Be Yours Soon 🎉",
+    "bannerBgImg": "/content/dam/vida2-0/payment-summary/banner_bg_with_color.png",
+    "bikeVariantDetails": {
+      "bikeVariants": [
+        {
+          "variantName": "V2 Pro",
+          "variantDetails": [
+            {
+              "color": "Glossy Sports Red",
+              "textColor": "white",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Pro%20Glossy%20Sports%20Red?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/red_bg.png"
+            },
+            {
+              "color": "Matte Cyan",
+              "textColor": "black",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Pro%20Matte%20Cyan?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/blue_bg.png"
+            },
+            {
+              "color": "Matte White",
+              "textColor": "black",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Pro%20Matte%20White?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/white_bg.png"
+            },
+            {
+              "color": "Matte Abrax Orange",
+              "textColor": "white",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Pro%20_Matte%20Abrax%20Orange?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/orange_bg.png"
+            },
+            {
+              "color": "Matte Nexus Blue",
+              "textColor": "white",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Pro%20Matte%20Nexus%20Blue?fmt=webp&fmt=webp-alpha",
+              "bgImg": "https://media.vidaworld.com/is/image/heromotocorpstage/nexus-bg?fmt=webp&fmt=webp-alpha"
+            },
+            {
+              "color": "Glossy Black",
+              "textColor": "white",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Plus%20Glossy%20Black?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/black_bg.png"
+            }
+          ]
+        },
+        {
+          "variantName": "V2 Plus",
+          "variantDetails": [
+            {
+              "color": "Matte White",
+              "textColor": "black",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Plus%20Matte%20White?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/white_bg.png"
+            },
+            {
+              "color": "Glossy Black",
+              "textColor": "white",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Plus%20Glossy%20Black?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/black_bg.png"
+            },
+            {
+              "color": "Matte Abrax Orange",
+              "textColor": "white",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Plus%20Matte%20Abrax%20Orange?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/orange_bg.png"
+            },
+            {
+              "color": "Glossy Sports Red",
+              "textColor": "white",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Plus%20Sports%20Red?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/red_bg.png"
+            },
+            {
+              "color": "Matte Cyan",
+              "textColor": "black",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Plus%20Matte%20Cyan?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/blue_bg.png"
+            }
+          ]
+        },
+        {
+          "variantName": "V2 Lite",
+          "variantDetails": [
+            {
+              "color": "Glossy Black",
+              "textColor": "white",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Lite%20Glossy%20Black?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/black_bg.png"
+            },
+            {
+              "color": "Matte Abrax Orange",
+              "textColor": "white",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Lite%20Matte%20Abrax%20Orange?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/orange_bg.png"
+            },
+            {
+              "color": "Glossy Sports Red",
+              "textColor": "white",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Lite%20Glossy%20Sports%20Red?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/red_bg.png"
+            },
+            {
+              "color": "Matte White",
+              "textColor": "black",
+              "bikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/V2%20Lite%20Matte%20White?fmt=webp&fmt=webp-alpha",
+              "bgImg": "/content/dam/vida2-0/buy-page/white_bg.png"
+            }
+          ]
+        }
+      ]
+    },
+    "partPaymentBgDesktop": null,
+    "makePartPaymentBoldTitle": "How much would you like to pay today?",
+    "termsAndConditionsText": "Terms & Conditions",
+    "insuranceText": "Insurance",
+    "partPaymentText": "Part Payment",
+    "chooseYourWayText": "Choose your way to pay",
+    "fameAmountText": "PM E-Drive Scheme",
+    "partPayHelperText": null,
+    "partPaymentAmountField": {
+      "validationRules": {
+        "minLength": {
+          "message": "Minimum amount should be ₹10,000",
+          "value": 5
+        },
+        "required": { "message": "Please enter valid amount" },
+        "maxLength": { "message": "Please enter valid amount", "value": 7 }
+      },
+      "label": "Part Payment 1",
+      "placeholder": "Enter your Amount"
+    },
+    "partPaymentBgMobile": null,
+    "fullPaymentText": "Full Payment",
+    "cancelButtonText": "Cancel",
+    "confirmButtonText": "Save Changes",
+    "agreeToText": "I agree to the ",
+    "makePaymentDescriptionText": "Choose to pay in Full/ Part Payment, Experience center, or Loan",
+    "partPaymentRandomAmounts": ["75000", "50000", "25000"],
+    "backBtnLabel": "Back",
+    "allowedPartPayment": 0,
+    "itemDetailsText": "Item Details",
+    "payBtnLabel": "Pay",
+    "makePaymentFailErrorMsg": "Something went wrong. Please try again later",
+    "paymentReceivedText": null,
+    "makePaymentText": "Make Payment",
+    "makeRemainingPaymentNormalTitle": null,
+    "termsNavLink": "/terms-and-conditions.html",
+    "cancelOrderText": "Cancel Order",
+    "balancePaymentHeader": null,
+    "loanCtaText": "",
+    "continueToUploadDocumentsText": "Continue to Upload Documents",
+    "bannerBikeImg": "https://media.vidaworld.com/is/image/heromotocorpstage/booking_bike_img?fmt=webp&fmt=webp-alpha",
+    "prebookingPriceText": "Prebooking price paid",
+    "partPayTransactionHeader": null,
+    "termsNewTab": true,
+    "partPaymentDisclaimerBannerText": "Don’t forget: complete payment now to get VIDA V2 by "
+  },
+  "purchaseBookingBikeName": "V2 Pro",
+  "purchaseBookingBgMobile": "/content/dam/vida2-0/payment-summary/payment_bg_mob_img.svg",
+  "reviewBookingTitle": "Let's Review Your Order Summary 👀",
+  "purchaseBookingBgDesktop": "/content/dam/vida2-0/payment-summary/payment_bg_desk_img.svg",
+  "editPurchaseOption": [
+    "purchaseSummary",
+    "Subsidy",
+    "Insurance",
+    "GST",
+    "Offers"
+  ],
+  "cancelOrderTitle": "Cancel Order",
+  "purchaseBookingPayableText": "Total Payable",
+  "purchaseBookingBannerImg": "/content/dam/vida2-0/payment-summary/bg_banner.png",
+  "cancelButtonText": "Cancel",
+  "confirmButtonText": "Save Changes",
+  "purchaseBookingDeliveryDateText": "Estimated date for delivery ",
+  "disclaimerHelperText": "Please review all your selections and the final amount carefully. The same will reflect in your final invoice.  Thank you for your cooperation.",
+  "discountOffersHeader": "Offers",
+  "purchaseBookingSubTitle": "YAY, ORDER CONFIRMED",
+  "reviewBookingSubTitle": "Before We Proceed",
+  "backButtonLabel": "Back",
+  "bottomDrawer": {
+    "initialState": {
+      "cancelButton": { "label": "Cancel Order" },
+      "paymentLabel": "Total Payable",
+      "addInsuranceLabel": "<p>Please add <span class=\"txt-color--orange\">Insurance</span> in order to continue&nbsp; &nbsp;&nbsp;</p>\r\n",
+      "termsAndConditionsLabel": "<p>I agree to the <a href=\"https://dev.vidaworld.com/terms-and-conditions.html\" target=\"_self\" rel=\"noopener noreferrer\">Terms &amp; Conditions</a></p>\r\n",
+      "confirmButton": {
+        "secondaryLabel": "Choose from Full / Part Payment, Pay at Experience center, Loan",
+        "label": "Review and Pay"
+      }
+    },
+    "reviewState": {
+      "cancelButton": { "label": "Cancel Booking" },
+      "paymentLabel": "Total Payable",
+      "addInsuranceLabel": "<p>Insurance</p>\r\n",
+      "termsAndConditionsLabel": "<p>I agree to the <a href=\"https://dev.vidaworld.com/terms-and-conditions.html\" target=\"_self\" rel=\"noopener noreferrer\">Terms &amp; Conditions</a></p>\r\n",
+      "confirmButton": {
+        "secondaryLabel": "Proceed to Billing & Shipping Details",
+        "label": "Confirm"
+      }
+    },
+    "cancelState": {
+      "cancelButton": {
+        "label": "Keep Booking",
+        "openInNewTab": false,
+        "url": null
+      },
+      "drawerTitle": "Do You Really Want To Cancel Your VIDA V2 Booking?",
+      "confirmButton": {
+        "label": "Cancel Booking",
+        "openInNewTab": false,
+        "url": null
+      }
+    }
+  },
+  "billingAndShipping": {
+    "mobileSubmitButtonSecondaryLabel": "Proceed for Payment",
+    "billingMainHeading": "Billing & Shipping Info",
+    "deliveryPreferenceTitle": "Please Provide Your Billing And Shipping Address  ",
+    "shippingAddressFormDescription": "<p>Make sure this address is correct and has the required proof, for RTO purposes and more.</p>\r\n<p>&nbsp;</p>\r\n",
+    "shippingAddressDisclaimerHeader": "Disclaimer",
+    "shippingAddressFormDisclaimer": "You can pick up your VIDA scooter from the nearest experience center!",
+    "shippingAddressPrefillText" : "The City, State and PIN Code is pre-populated based on the Dealer selection.",
+    "shippingAddressServicableError": "The entered pin code is currently not serviceable. Please",
+    "shippingAddressClickableError": "click here",
+    "shippingAddressDealerError": " to get the nearest dealer's pin code.",
+    "pincodePopupHeader": "Please use any of the following serviceable PIN codes",
+    "pincodePopupBtnText" : "OK",
+    "specificDateNote": null,
+    "banner": {
+      "bannerImage": {
+        "altText": null,
+        "title": null,
+        "imgSrc": "/content/dam/vida2-0/payment-summary/banner_bg_with_color.png"
+      },
+      "bannerBikeImg": {
+        "altText": null,
+        "title": null,
+        "imgSrc": "/content/dam/vida2-0/payment-summary/sum_desk_img.png"
+      },
+      "subText": "is on it’s way!"
+    },
+    "shippingSameAsBillingCheckboxLabel": "Billing address same as the shipping address",
+    "deliveryPreferenceTabs": [{ "value": "Pick from Dealer" }],
+    "contactCustomerLink": { "label": null, "url": null },
+    "billingSecondaryHeading": "Almost all yours",
+    "backButtonLabel": "Back",
+    "shippingAddressMandatoryMsg": "<p>All fields marked <span class=\"txt-color--orange\">*</span>&nbsp;are mandatory.</p>\r\n",
+    "billingSameAsShippingCheckboxLabel": "Shipping address same as the billing address ",
+    "billingAddressFormTitle": "Billing Address",
+    "billingFormFields": {
+      "pincode": {
+        "validationRules": {
+          "custom": { "message": "Please enter a valid pincode" },
+          "noCityMatchMsg": {
+            "message": "Select the pincode with valid Service Availability"
+          },
+          "required": { "message": "Pincode is Required" },
+          "maxLength": { "message": "Please enter a valid pincode", "value": 6 }
+        },
+        "name": "PIN Code",
+        "placeholder": "Enter your PIN Code",
+        "label": "<p>PIN Code <span>*</span></p>\r\n",
+        "errorMsg": "Invalid Pincode"
+      },
+      "city": {
+        "validationRules": {
+          "custom": { "message": "Please enter a valid city" },
+          "required": { "message": "City is Required" }
+        },
+        "name": "City ",
+        "placeholder": "Select",
+        "label": "<p>City <span>*</span></p>\r\n",
+        "errorMsg": "City is Invalid"
+      },
+      "addressLine1": {
+        "validationRules": {
+          "custom": { "message": "Please enter a valid address" },
+          "required": { "message": "This field is Required" }
+        },
+        "name": "Address line 1",
+        "placeholder": "Enter your address",
+        "label": "<p>Address line 1 <span>*</span></p>\r\n",
+        "specialCharacterErrorMsg": "Special characters is not allowed",
+        "errorMsg": "Address is Invalid"
+      },
+      "addressLine2": {
+        "validationRules": {
+          "custom": { "message": "Please enter a valid address" },
+          "required": { "message": "This field is Required" }
+        },
+        "name": "Address line 2",
+        "placeholder": "Enter your address",
+        "label": "<p>Address line 2 <span>*</span></p>\r\n",
+        "specialCharacterErrorMsg": "Special characters is not allowed",
+        "errorMsg": "Address is Invalid"
+      },
+      "state": {
+        "validationRules": {
+          "custom": { "message": "Please enter a valid state" },
+          "required": { "message": "State is Required" }
+        },
+        "name": "State",
+        "placeholder": "Select",
+        "label": "<p>State <span>*</span></p>\r\n",
+        "errorMsg": "State is Invalid"
+      },
+      "landmark": {
+        "validationRules": null,
+        "name": "Landmark (Optional)",
+        "placeholder": "Enter your landmark",
+        "label": "Landmark (Optional)",
+        "errorMsg": null
+      }
+    },
+    "tabToShowDeliveryCharges": "At your Location",
+    "yourLocationDeliveryDescription": null,
+    "mobileSubmitButtonLabel": "Confirm",
+    "shippingAddressFormTitle": "Shipping Address",
+    "shippingFormFields": {
+      "pincode": {
+        "validationRules": {
+          "custom": { "message": "Please enter a valid pincode" },
+          "noCityMatchMsg": {
+            "message": "Select the pincode with valid Service Availability"
+          },
+          "required": { "message": "Pincode is Required" },
+          "maxLength": { "message": "Please enter a valid pincode", "value": 6 },
+          "noServiceMsg": { "message": "Not service Availebality"}
+        },
+        "name": "PIN Code",
+        "placeholder": "Enter your PIN Code",
+        "label": "<p>PIN Code <span>*</span></p>\r\n",
+        "errorMsg": "Invalid Pincode"
+      },
+      "city": {
+        "validationRules": {
+          "custom": { "message": "Please enter a valid city" },
+          "required": { "message": "City is Required" }
+        },
+        "name": "City ",
+        "placeholder": "Select",
+        "label": "<p>City <span>*</span></p>\r\n",
+        "errorMsg": "City is Invalid"
+      },
+      "addressLine1": {
+        "validationRules": {
+          "custom": { "message": "Please enter a valid address" },
+          "required": { "message": "This field is Required" }
+        },
+        "name": "Address line 1",
+        "placeholder": "Enter your address",
+        "label": "<p>Address line 1 <span>*</span></p>\r\n",
+        "specialCharacterErrorMsg": "Special characters is not allowed",
+        "errorMsg": "Address is Invalid"
+      },
+      "addressLine2": {
+        "validationRules": {
+          "custom": { "message": "Please enter a valid address" },
+          "required": { "message": "This field is Required" }
+        },
+        "name": "Address line 2",
+        "placeholder": "Enter your address",
+        "label": "<p>Address line 2 <span>*</span></p>\r\n",
+        "specialCharacterErrorMsg": "Special characters is not allowed",
+        "errorMsg": "Address is Invalid"
+      },
+      "state": {
+        "validationRules": {
+          "custom": { "message": "Please enter a valid state" },
+          "required": { "message": "State is Required" }
+        },
+        "name": "State",
+        "placeholder": "Select",
+        "label": "<p>State <span>*</span></p>\r\n",
+        "errorMsg": "State is Invalid"
+      },
+      "landmark": {
+        "validationRules": null,
+        "name": "Landmark (Optional)",
+        "placeholder": "Enter your landmark",
+        "label": "Landmark (Optional)",
+        "errorMsg": null
+      }
+    }
+  },
+  "fameSubsidyConfig": {
+    "subsidySubTitle": "FEW MORE STEPS",
+    "subsidyIndividualText": "I am an Individual Buyer",
+    "subsidyCorporateDescription": "FAME can only be availed once for each Aadhar Card in a lifetime. Subsidy will be applied once Aadhar is verified.\r\n\r\nCan buy multiple vehicles and the FAME Subsidy will be processed on verifying the GST number.",
+    "subsidyTitle": "Let’s apply for your FAME Subsidy",
+    "gstFormFields": {
+      "gstCompanyName": {
+        "validationRules": null,
+        "name": "GST Company",
+        "placeholder": "Enter your company's name",
+        "errorMsg": null
+      },
+      "gstNumber": {
+        "validationRules": null,
+        "name": "GST Number",
+        "placeholder": "Enter your GST number",
+        "errorMsg": null
+      },
+      "gstEmail": {
+        "validationRules": null,
+        "name": "GST Email",
+        "placeholder": "Enter your email ID",
+        "errorMsg": null
+      }
+    },
+    "subsidyCorporateText": "I represent a Business",
+    "subsidyDescription": "FAME can only be availed once for each Aadhar Card in a lifetime. Subsidy will be applied once Aadhar is verified."
+  },
+  "deliveryChargesHandlingText": "Scooter, Registration & Road Tax, Handling Charges",
+  "purchaseBookingDeliveryText": "Delivering from: ",
+  "purchaseBookingVidaText": "Registration & Road Tax",
+  "insuranceDisclaimerText": "Please add Insurance in order to continue",
+  "disclaimerHelperHeader": "Disclaimer",
+  "purchaseBookingTitle": "Select Add-Ons & Finalise Your VIDA V2 🎉",
+  "isShowChevronDownIcon": true,
+  "variantDisclaimerText": "Kindly ensure you have selected the variant and colour of  your choice, this cannot be reversed once you proceed ahead.   Thank you for understanding.",
+  "purchaseBookingAddOnContent": {
+    "insurance": {
+      "addOnBtnText": "Add",
+      "addOnSubText": "Buying insurance is mandatory by law",
+      "tooltipText": null,
+      "addOnIcon": "/content/dam/vida2-0/payment-summary/insurance_icon.svg",
+      "id": "Insurance",
+      "addOnBtnNavLink": null,
+      "newTab": false,
+      "addOnTitle": "Insurance"
+    },
+    "offers": {
+      "addOnBtnText": "Apply",
+      "addOnSubText": null,
+      "tooltipText": "Exclusion of GST",
+      "addOnIcon": "/content/dam/vida2-0/payment-summary/sub_icon.svg",
+      "id": "Offers",
+      "addOnBtnNavLink": "#",
+      "newTab": false,
+      "addOnTitle": "Offers"
+    },
+    "subsidy": {
+      "addOnBtnText": "Apply",
+      "addOnSubText": "Check your eligibility to avail PM E-Drive",
+      "tooltipText": "I understand and agree to follow/fulfil requirements of EMPS (Electric Mobility Promotion Scheme 2024) adoption of electric two-wheeler (e-2W) to provide further impetus to the green mobility and development of electric vehicle (EV) manufacturing eco-system in the country by Gov. of India.  The details of scheme is available on https://heavyindustries.gov.in/ministry -heavy-industries-electric-mobility-promotion-scheme-2024",
+      "addOnIcon": "/content/dam/vida2-0/payment-summary/fame_icon.svg",
+      "id": "Subsidy",
+      "addOnBtnNavLink": null,
+      "newTab": false,
+      "addOnTitle": "PM E-Drive Scheme"
+    },
+    "gst": {
+      "addOnBtnText": "0",
+      "addOnSubText": null,
+      "tooltipText": "GST incorporates: - 5% GST on Vehicle - 5%  GST on Charger - 18%  GST on Handing charges - Please note: 18% GST will be applicable additional to the component if insurance is chosen from VIDA platform",
+      "addOnIcon": "/content/dam/vida2-0/payment-summary/fame_icon.svg",
+      "id": "GST",
+      "addOnBtnNavLink": null,
+      "newTab": false,
+      "addOnTitle": "GST"
+    }
+  },
+  "scooterInfo": {
+    "chooseColorLabel": "Choose Your Colour",
+    "selectVidaLabel": "Select Your VIDA V2 Variant",
+    "variantHeaderLabel": "Scooter Details"
+  },
+  "changeModalVariantText": "Change The Model Color And Variant",
+  "bikePriceWithTax": "",
+  "discountDescription": "Click here to avail"
+}
+
+      });
+      </script>
+    <div
+      data-section-id="purchase-summary"
+      data-component="Purchase"
+      data-cmp-type="react"
+      data-cmp-version="2.0"
+      data-cmp-config="PurchaseBookingConfig"
+    ></div>
+  </body>
+</html>

@@ -1,0 +1,188 @@
+.accessories-merchandise {
+  @include media(">=desktop") {
+    padding-right: 0 !important;
+  }
+
+  &__container {
+    padding: rem(32px) 0;
+    position: relative;
+
+    @include media(">=desktop") {
+      padding: rem(64px) 0 rem(56px);
+    }
+  }
+
+  &__heading {
+    &__description {
+      @include vida-mobile-body-3;
+
+      @include media(">=desktop") {
+        @include vida-desktop-body-3;
+      }
+    }
+
+    &__title {
+      @include vida-h2-mobile;
+      margin-top: rem(6px);
+
+      @include media(">=desktop") {
+        @include vida-h2-desk;
+        margin-top: rem(8px);
+      }
+    }
+  }
+
+  &__details {
+    display: flex;
+    gap: 16px;
+    margin: rem(40px) 0;
+    overflow-x: auto;
+    padding-bottom: rem(34px);
+    position: static;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+      height: rem(2px);
+      padding-bottom: rem(24px);
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: get-color("catskill-white");
+      margin-right: rem(20px);
+
+      @include media(">=desktop") {
+        margin-right: rem(88px);
+      }
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: get-color("orange");
+    }
+
+    &__item {
+      .accessories-merchandise-imagebox {
+        cursor: pointer;
+
+        &__img {
+          border-radius: rem(12px);
+        }
+      }
+
+      .hover-image {
+        display: none;
+      }
+
+      .accessories-merchandise-imagebox:hover .default-image {
+        display: none;
+        transition: all 5s ease;
+      }
+
+      .accessories-merchandise-imagebox:hover .hover-image {
+        display: block;
+        transition: all 5s ease;
+      }
+
+      &__name {
+        @include vida-h5-mobile;
+        margin: rem(8px) 0;
+        min-height: rem(50px);
+
+        @include media(">=desktop") {
+          @include vida-h3-desktop;
+          margin: rem(16px) 0;
+        }
+      }
+
+      .view-price-link {
+        @include vida-tertiary-cta;
+        text-underline-offset: rem(4px);
+
+        @include media("<=tablet") {
+          @include vida-tertiary-cta-mobile;
+          line-height: rem(20px);
+        }
+      }
+    }
+
+    .view-all-container {
+      align-items: center;
+      display: flex;
+      padding-bottom: rem(56px);
+      padding-right: rem(20px);
+      text-wrap: nowrap;
+
+      @include media(">=desktop") {
+        padding-bottom: rem(86px);
+        padding-right: rem(88px);
+      }
+
+      .view-price-link {
+        @include vida-tertiary-cta;
+        cursor: pointer;
+        text-underline-offset: rem(4px);
+
+        @include media("<=tablet") {
+          @include vida-tertiary-cta-mobile;
+          line-height: rem(20px);
+        }
+      }
+    }
+
+    .accessories-left-arrow {
+      height: rem(60px);
+      left: rem(30px);
+      position: absolute;
+      top: 50%;
+      transform: translate(-35%, -90%);
+      width: rem(60px);
+
+      @include media("<desktop") {
+        display: none !important;
+      }
+    }
+
+    .accessories-right-arrow {
+      height: rem(60px);
+      position: absolute;
+      right: rem(40px);
+      top: 50%;
+      transform: translate(-35%, -90%);
+      width: rem(60px);
+
+      @include media("<desktop") {
+        display: none !important;
+      }
+    }
+
+    .accessories-merchandise__arrow-icon {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__download-action {
+    .downloadcta {
+      @include vida-h5-mobile;
+      align-items: center;
+      background: get-color("orange");
+      border-radius: rem(8px);
+      box-shadow: 0 rem(5px) rem(10px) 0 rgba(0, 0, 0, 0.1);
+      color: get-color("white");
+      cursor: pointer;
+      display: flex;
+      height: rem(48px);
+      justify-content: center;
+      padding: rem(16px) rem(24px);
+      text-decoration: none;
+      width: fit-content;
+
+      @include media(">=desktop") {
+        @include vida-h5-desktop;
+        box-shadow: 0 rem(7.5px) rem(15px) 0 rgba(0, 0, 0, 0.1);
+        color: get-color("white");
+        height: rem(56px);
+        min-width: rem(156px);
+      }
+    }
+  }
+}

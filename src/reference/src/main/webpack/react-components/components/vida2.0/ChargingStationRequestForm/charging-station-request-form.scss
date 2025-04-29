@@ -1,0 +1,214 @@
+.charging-station-form-wrapper {
+  padding-bottom: rem(32px) !important;
+  padding-top: rem(32px) !important;
+  @include media(">=desktop") {
+    padding-bottom: rem(64px) !important;
+    padding-top: rem(64px) !important;
+  }
+
+  .charging-station-form-container {
+    @include media(">=desktop") {
+      display: flex;
+      gap: rem(129px);
+      justify-content: space-between;
+    }
+
+    .charging-station-form-title-container {
+      padding: 0 0 rem(32px) 0;
+      @include media(">=desktop") {
+        flex: 1;
+        padding: 0;
+      }
+
+      .charging-station-form-title {
+        @include vida-h2-mobile;
+        padding: 0 0 rem(16px) 0;
+        @include media(">=desktop") {
+          @include vida-h2-desk;
+          padding: 0 0 rem(34px) 0;
+        }
+      }
+
+      .charging-station-form-description {
+        @include vida-mobile-body-3;
+        @include media(">=desktop") {
+          @include vida-desk-body-1;
+        }
+      }
+    }
+
+    .charging-station-form-content-container {
+      @include media(">=desktop") {
+        flex: 1;
+      }
+
+      .charging-station-form-heading {
+        padding: 0 0 rem(24px) 0;
+        @include media(">=desktop") {
+          padding: 0 0 rem(34px) 0;
+        }
+
+        .charging-station-form-heading-text {
+          @include vida-h5-mobile;
+          @include media(">=desktop") {
+            @include vida-h3-desktop;
+          }
+        }
+      }
+    }
+
+    .charging-station-form-main-container {
+      .charging-station-request-form {
+        input {
+          @include vida-mobile-body-1;
+          background: get-color("white");
+          border: none;
+          border-radius: rem(8px);
+          box-shadow: 0 0 rem(10px) 0 rgba(0, 0, 0, 0.1);
+          height: rem(51px);
+          padding: rem(16px);
+          width: 100%;
+
+          @include media(">=desktop") {
+            @include vida-desk-body-1;
+            border-radius: rem(16px);
+            height: rem(92px);
+            padding: rem(34px) rem(32px);
+          }
+
+          &::placeholder {
+            @include vida-mobile-body-1;
+            @include media(">=desktop") {
+              @include vida-desk-body-1;
+            }
+          }
+        }
+      }
+
+      .vida-form-group {
+        margin: 0 0 rem(16px) 0;
+        @include media(">=desktop") {
+          margin: 0 0 rem(24px) 0;
+        }
+      }
+
+      .form__field-label {
+        display: none;
+      }
+
+      .form__field-message {
+        margin: rem(4px) 0 0 rem(2px);
+        @include media(">=desktop") {
+          font-size: rem(18px);
+          margin: rem(8px) 0 0 rem(4px);
+        }
+      }
+    }
+
+    .current-location-wrapper {
+      align-items: center;
+      // cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      padding: rem(16px) 0 rem(32px) 0;
+
+      @include media(">=desktop") {
+        gap: rem(44px);
+        justify-content: flex-start;
+        padding: rem(10px) 0 rem(34px) 0;
+      }
+
+      .current-location-flex-container {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        gap: rem(16px);
+      }
+
+      .location-icon {
+        height: rem(24px);
+        width: rem(24px);
+        @include media(">=desktop") {
+          height: rem(32px);
+          width: rem(32px);
+        }
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      .current-location-text-wrapper {
+        .current-location-text {
+          @include vida-h6-mobile;
+          color: get-color("orange");
+          @include media(">=desktop") {
+            @include vida-h5-desktop;
+            color: get-color("orange");
+          }
+        }
+      }
+
+      .chevron-right-icon {
+        cursor: pointer;
+        height: rem(24px);
+        width: rem(24px);
+        @include media(">=desktop") {
+          height: rem(34px);
+          width: rem(34px);
+        }
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+
+    .send-request-btn-wrapper {
+      .send-request-btn {
+        @include vida-h5-mobile;
+        align-items: center;
+        background: get-color("orange");
+        border-radius: rem(4px);
+        box-shadow: 0 rem(5px) rem(10px) 0 rgba(0, 0, 0, 0.1);
+        color: get-color("white");
+        cursor: pointer;
+        display: flex;
+        height: rem(51px);
+        justify-content: center;
+        width: 100%;
+        @include media(">=desktop") {
+          @include vida-h5-desktop;
+          border-radius: rem(12px);
+          box-shadow: 0 rem(7.5px) rem(15px) 0 rgba(0, 0, 0, 0.1);
+          color: get-color("white");
+          height: rem(72px);
+        }
+      }
+    }
+
+    .form-error-msg {
+      @include vida-mobile-subtitle;
+      color: get-color("red");
+      margin: rem(8px) 0 rem(8px) rem(2px);
+      @include media(">=desktop") {
+        @include vida-desktop-subtitle;
+        color: get-color("red");
+        margin: rem(16px) 0 rem(16px) rem(2px);
+      }
+    }
+
+    .form-success-msg {
+      @include vida-mobile-subtitle;
+      color: get-color("orange");
+      margin: rem(8px) 0 rem(8px) rem(2px);
+      @include media(">=desktop") {
+        @include vida-desktop-subtitle;
+        color: get-color("orange");
+        margin: rem(16px) 0 rem(16px) rem(2px);
+      }
+    }
+  }
+}

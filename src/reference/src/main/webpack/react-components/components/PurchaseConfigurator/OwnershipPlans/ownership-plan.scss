@@ -1,0 +1,109 @@
+@import "../../../../site/styles/base/typography";
+
+.vida-ownership-plans {
+  h2 {
+    margin-bottom: rem(20px);
+  }
+  // &__tabs-container {
+  //   align-items: baseline;
+  //   display: flex;
+  //   flex-direction: row;
+  //   justify-content: space-between;
+  //   width: 100%;
+  // }
+
+  // &__tabs {
+  //   @include btn-card-action;
+  //   padding: 5% 0;
+  // }
+
+  // &__tab-month {
+  //   background: get-color("solid-black");
+  //   border-radius: 20px;
+  //   color: get-color("white");
+  //   padding: 12%;
+  // }
+
+  // &__tab-year {
+  //   background-color: get-color("light-grey");
+  //   border-radius: 20px;
+  //   padding: 12%;
+  // }
+
+  // &__plans {
+  //   border: 1px solid get-color("solid-black");
+  //   border-radius: 6px;
+  //   display: flex;
+  //   flex-direction: row;
+  //   height: 90px;
+  //   margin: 2% 0;
+  //   padding: 2%;
+  // }
+
+  // &__left {
+  //   p {
+  //     @include h3; }
+
+  //   span {
+  //     @include p1;
+  //   }
+  // }
+
+  &__container {
+    display: none;
+  }
+
+  &__title-container {
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    @include media(">=desktop") {
+      gap: rem(8px);
+    }
+  }
+
+  &__title {
+    @include h3;
+  }
+
+  &__message {
+    @include p2;
+  }
+
+  &__icon-container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10px);
+    justify-content: space-between;
+    margin-top: rem(20px);
+    @include media(">=desktop") {
+      flex-direction: row;
+    }
+
+    label {
+      @include p2; 
+     
+    }
+  }
+
+  &__icon {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+
+    i {
+      font-size: 24px;
+    }
+  }
+
+  &__card-basic {
+    background-color: get-color("smoke-white");
+    border: 1px solid #cccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    padding: 2%;
+    
+  }
+}

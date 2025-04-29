@@ -1,0 +1,42 @@
+.vida-full-image-banner {
+  &__image {
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // height: calc(100vh - rem(76px));
+    height: calc(100vh - rem(38px));
+    // min-height: rem(642px);
+    min-height: rem(604px);
+    width: 100%;
+    
+    @include media(">=desktop") {
+      // height: calc(100vh - rem(85px));
+      height: calc(100vh - rem(50px));
+      // min-height: rem(760px);
+      min-height: rem(520px);
+    }
+  }
+
+  &__content {
+    padding-top: rem(30px);
+    text-align: center;
+
+    @include media(">=desktop") {
+      padding-top: rem(20px);
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(10px);
+
+    * {
+      @include h1;
+    }
+  }
+
+  &__description {
+    * {
+      @include h3;
+    }
+  }
+}

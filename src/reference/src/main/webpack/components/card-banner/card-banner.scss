@@ -1,0 +1,114 @@
+.card-banner {
+  &__container {
+    width: 100%;
+  }
+}
+
+.vida-card-banner {
+  &__wrapper {
+    padding: rem(22px) 0;
+    width: 100%;
+    z-index: 998;
+
+    @include media("<=desktop") {
+      padding: rem(9px) 0;
+    }
+  }
+
+  .btn {
+    &--primary {
+      background: transparent;
+      border: 1px solid get-color("white");
+      color: get-color("white");
+      height: auto;
+      padding: 8px rem(18px);
+      position: relative;
+      z-index: 11;
+
+      &:hover {
+        background: get-color("white");
+        color: get-color("orange");
+      }
+    }
+  }
+
+  &__item {
+    background-color: get-color("orange");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: rem(25px);
+    height: rem(200px);
+    margin-bottom: rem(10px);
+    min-width: rem(400px);
+    overflow-wrap: break-word;
+    padding: rem(30px);
+    position: relative;
+    @include media("<=desktop") {
+      min-width: rem(350px);
+    }
+    @include media("<=tablet") {
+      min-width: 100%;
+    }
+
+    img {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    &:hover {
+      box-shadow: 3px 7px 16px -8px rgba(0, 0, 0, 0.75);
+      box-shadow: 3px 7px 16px -8px rgba(0, 0, 0, 0.75);
+    }
+  }
+
+  &__container {
+    align-items: center;
+    display: flex;
+    grid-gap: rem(20px);
+    justify-content: center;
+    @include media("<=tablet") {
+      flex-direction: column;
+      padding: 0 rem(30px);
+    }
+  }
+
+  &__title {
+    color: get-color("white");
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__allginment {
+    align-items: center;
+    display: flex;
+  }
+
+  h2 {
+    color: get-color("white");
+    font-size: rem(40px);
+    font-weight: 400;
+    margin-bottom: rem(20px);
+    position: relative;
+    width: rem(230px);
+    z-index: 11;
+    @include media("<=desktop") {
+      font-size: rem(32px);
+      line-height: rem(30px);
+    }
+  }
+}
+
+.offers-container {
+  &__smoke-white {
+    background-color: get-color("smoke-white");
+  }
+
+  &__whisper-grey {
+    background-color: get-color("whisper-grey");
+  }
+}

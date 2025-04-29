@@ -1,0 +1,98 @@
+
+.vida-map {
+  display: flex;
+  height: 167px;
+  position: relative;
+
+  @include media(">=tablet") {
+    height: 350px;
+  }
+
+  @include media(">=desktop") {
+    // height: calc(100vh - 85px);
+    height: calc(100vh - 76px);
+  }
+  
+  &__info {
+    bottom: 15px;
+    left: 0;
+    position: absolute;
+  }  
+}
+
+.vida-info-box {
+  align-items: center;
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 2px 10px rgba(40, 40, 40, 0.1);
+  display: flex;
+  height: 60px;
+  margin: 0 10%;
+  padding: 0 20px;
+  width: 80%;
+
+  @include media(">=desktop") {
+    height: 151px;
+    padding: 0;
+
+    &__img {
+      display: block;
+      height: 151px;
+      max-width: 269px;
+      min-width: 142px;
+
+      img {
+        border-bottom-left-radius: 32px;
+        border-top-left-radius: 32px;
+        height: 100%;
+        object-fit: contain;
+        padding: 20px 0;
+        width: 100%;
+      }
+    }
+
+    &__message {
+      display: block;
+    }
+
+    .h3 {
+      font-size: rem(18px);
+    }
+
+    &__link {
+      font-size: rem(18px);
+    }
+
+    &__content {
+      padding: 10px 40px 10px 20px;
+    }
+  } 
+  @include media(">=desktop-md") {
+    margin: 0 7%;
+    width: 86%;
+  }
+
+  &__img,
+  &__message {
+    display: none;
+  }
+
+  .h3 {
+    font-size: rem(15px);
+  }
+
+  &__link {
+    font-size: rem(15px);
+  }
+
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+
+    i {
+      font-size: 20px;
+    }
+  }
+}

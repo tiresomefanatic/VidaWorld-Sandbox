@@ -1,0 +1,70 @@
+@import "../../site/styles/base/typography";
+
+.vida-card-details {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: rem(35px) 0 rem(25px);
+
+  @include media(">=desktop") {
+    padding: rem(62px) 0 rem(102px);
+  }
+
+  &__container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 rem(16px);
+    width: 100%;
+  }
+
+  &__text-area {
+    max-width: rem(553px);
+    text-align: center;
+
+    &-title {
+      @include h3;
+      margin-bottom: rem(16px);
+      @include media(">=desktop") {
+        margin-bottom: rem(20px);
+      }
+    }
+
+    &-text {
+      @include a2;
+      color: get-color("solid-grey");
+    }
+  }
+
+  &__img {
+    height: rem(460px);
+    margin-bottom: rem(20px);
+    max-height: rem(460px);
+    max-width: rem(328px);
+    width: 100%;
+
+    @include media(">=desktop") {
+      height: rem(498px);
+      margin-bottom: rem(64px);
+      max-height: rem(498px);
+      max-width: rem(780px);
+    }    
+
+    picture {
+      border-radius: rem(32px);
+      display: block;
+      height: 100%;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    img {
+      border-radius: rem(32px);
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}

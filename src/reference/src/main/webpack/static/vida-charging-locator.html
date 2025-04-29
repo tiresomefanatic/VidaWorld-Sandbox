@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Charging</title>
+    <meta charset="UTF-8" />
+    <meta name="template" content="page-content" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- Meta Property for Analytics Datalayer -->
+    <meta property="pageCategory" content="Home" />
+    <meta property="language" content="en" />
+    <meta property="country" content="India" />
+    <meta property="isErrorPage" content="false" />
+    <meta property="errorCode" content="404" />
+    <meta property="errorDescription" content="Page Not Found" />
+
+    <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico" />
+    <%= htmlWebpackPlugin.options.custom %>
+    <script
+      src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.minptest.js"
+      async
+    ></script>
+  </head>
+  <body>
+    <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        HeaderConfig: {
+          navbarOptions: [
+            {
+              image:
+                "../src/main/webpack/resources/images/png/explore_icon.png",
+              title: "EXPLORE",
+              navLink: "#"
+            },
+            {
+              image: "../src/main/webpack/resources/images/png/try_icon.png",
+              title: "TRY",
+              navLink: "#"
+            },
+            {
+              image: "../src/main/webpack/resources/images/png/buy_icon.png",
+              title: "BUY",
+              navLink: "#"
+            },
+            {
+              image: "../src/main/webpack/resources/images/png/love_icon.png",
+              title: "LOVE",
+              navLink: "#"
+            }
+          ],
+          termsAndPrivacyText: [
+            {
+              title: "TERMS OF SERVICE",
+              navLink: "#"
+            },
+            {
+              title: "PRIVACY POLICY",
+              navLink: "#"
+            }
+          ],
+          tryOptionContent: {
+            title: "TRY",
+            sitesOption: [
+              {
+                name: "Book Test Ride",
+                navLink: "#"
+              },
+              {
+                name: "Design Your VIDA",
+                navLink: "#"
+              }
+            ]
+          },
+          buyOptionContent: {
+            title: "BUY",
+            sitesOption: [
+              {
+                name: "Book @ ₹499",
+                navLink: "#"
+              },
+              {
+                name: "Buy a VIDA",
+                navLink: "#"
+              }
+            ]
+          },
+          exploreOptionContent: {
+            title: "EXPLORE",
+            sitesOption: [
+              {
+                name: "All Products",
+                navLink: "#"
+              },
+              {
+                name: "V1 Pro",
+                navLink: "#"
+              },
+              {
+                name: "V1 Plus",
+                navLink: "#"
+              },
+              {
+                name: "Our Story",
+                navLink: "#"
+              },
+              {
+                name: "Blogs",
+                navLink: "#"
+              },
+              {
+                name: "FAQs",
+                navLink: "#"
+              }
+            ]
+          },
+          loveOptionContent: {
+            title: "LOVE",
+            sitesOption: [
+              {
+                name: "VIDA Community",
+                navLink: "#"
+              },
+              {
+                name: "Charging Stations",
+                navLink: "#"
+              },
+              {
+                name: "Dealership Locator",
+                navLink: "#"
+              },
+              {
+                name: "Offers",
+                navLink: "#"
+              }
+            ]
+          },
+          hamburgerBgImg: {
+            mobImg:
+              "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-solid-color-on-gray-background-image_557017.jpg",
+            desktopImg:
+              "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-solid-color-on-gray-background-image_557017.jpg"
+          },
+          hamburgerBg1Img: {
+            mobImg:
+              "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-solid-color-on-gray-background-image_557017.jpg",
+            desktopImg:
+              "https://png.pngtree.com/thumb_back/fh260/background/20210207/pngtree-simple-solid-color-on-gray-background-image_557017.jpg"
+          },
+          myAccountContent: {
+            myAccountText: "MY ACCOUNT",
+            profileLink: "#",
+            preLoginNavLink: "#",
+            signUpNavLink: "#",
+            preLoginText: "Login",
+            signUpText: "Sign Up"
+          },
+          headerVidaLogo:
+            "../src/main/webpack/resources/images/png/vida_white_logo.png",
+          vidaLogoNavLink: "#",
+          vidaHeaderBackNavLink: "#",
+          headerBacknNewTab: false,
+          vidaHeaderBackIcon:
+            "../src/main/webpack/resources/images/png/header_left_arrow.png",
+          vidaHeaderTitle: "Profile",
+          hamburgerVidaLogo:
+            "https://mms.businesswire.com/media/20220304005159/en/1379682/4/vida.jpg",
+          vidaCustomerCareIcon:
+            "../src/main/webpack/resources/images/png/vida_customer_care_icon.png",
+          vidaCustomerCareNavLink: "#",
+          customerCareNewTab: false,
+          logoutlabel: "Logout",
+          headerVariation: ""
+        }
+      });
+    </script>
+    <div
+      data-section-id="header"
+      data-component="Header"
+      data-cmp-type="react"
+      data-cmp-version="2.0"
+      data-cmp-config="HeaderConfig"
+    ></div>
+    <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        FastChargingNetworkConfig: {
+          communityChargingCardConfig: {
+            includeChargingStationBanner: false,
+            preTitle: "0 - 80% IN 65 MINUTES",
+            mobileImage: null,
+            titleTag2: null,
+            chargingInformation: [
+              {
+                icon: "/content/dam/vida2-0/charging-page/community-charging/station_icon.svg",
+                order: "3",
+                labeltext: "Kms Powered",
+                labelvalue: "1000+",
+                iconAlt: "Kms Powered"
+              },
+              {
+                icon: "/content/dam/vida2-0/charging-page/community-charging/cities_icon.svg",
+                order: "1",
+                labeltext: "Cities",
+                labelvalue: "30",
+                iconAlt: "cities"
+              },
+              {
+                icon: "/content/dam/vida2-0/charging-page/community-charging/charge_icon.svg",
+                order: "2",
+                labeltext: "Fast Chargers",
+                labelvalue: "100+",
+                iconAlt: "fast chargers"
+              }
+            ],
+            ctaText: null,
+            description:
+              "<p>Experience what fast truly is when you plug in at one of VIDA’s Fast Charging stations.</p>\r\n",
+            isVideo: false,
+            title2: null,
+            titleTag: "h1",
+            title: "Fast Electric Scooter Charging  Ecosystem",
+            description2: null,
+            imageAlt: null,
+            URL: null,
+            newTab: false,
+            includeCitySearch: true,
+            desktopImage: null,
+            cityConfig: {
+              dropDownIconAlt: "drop down icon",
+              searchIcon:
+                "../src/main/webpack/resources/images/png/search_icon_black.png",
+              dropDownIcon:
+                "../src/main/webpack/resources/images/png/chevron_down_black.png",
+              searchIconAlt: "search Icon",
+              searchCityText: "Select City",
+              chargingCountLabel:
+                "Total charging stations available in your city",
+              errorMsg: "No charging stations available here."
+            },
+            descPositionDesktop: "right",
+            imageTitle: null,
+            includeRedirectionCard: false,
+            showCta: true,
+            ctaLabel: "Locate a Dealer",
+            ctaUrl: ""
+          }
+        }
+      });
+    </script>
+    <div
+      data-section-id="fastChargingNetwork"
+      data-component="FastChargingNetwork"
+      data-cmp-type="react"
+      data-cmp-version="2.0"
+      data-cmp-config="FastChargingNetworkConfig"
+    ></div>
+    <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        ChargingStationRequestFormConfig: {
+          title: "Can’t find a public fast charging station?",
+          titleTag: "p",
+          description:
+            "If there’s none around you, just request it. We’re ever-growing with our network of riders, and we’ll be there for you soon.",
+          formTitle: "Request a Fast Charging Station",
+          formTitleTag: "p",
+          chooseYourLocationCta: "Use Current Location",
+          locationErrorMsg: "Please allow your location access",
+          buttonLabel: "Send Request",
+          formErrorMsg: "Something went wrong. Please try again later.",
+          formSuccessMsg: "Thank You. We will reach out to you shortly..!!",
+          nameField: {
+            label: "Name",
+            placeholder: "Enter name",
+            validationRules: {
+              required: {
+                message: "Name is required."
+              },
+              minLength: {
+                value: 1,
+                message: "Name should have at least 1 character."
+              },
+              customValidation: {
+                message: "Please enter valid name."
+              }
+            }
+          },
+          phoneNumberField: {
+            label: "Mobile Number",
+            placeholder: "Enter mobile number",
+            validationRules: {
+              required: {
+                message: "Mobile number is required."
+              },
+              minLength: {
+                value: 10,
+                message: "Minimum 10 digit required."
+              },
+              maxLength: {
+                value: 10,
+                message: "Maximum 10 digit required."
+              },
+              customValidation: {
+                message: "Please enter valid mobile number."
+              }
+            }
+          },
+          cityField: {
+            label: "City",
+            placeholder: "Enter city",
+            validationRules: {
+              required: {
+                message: "City is required."
+              },
+              minLength: {
+                value: 1,
+                message: "City should have at least 1 character."
+              },
+              customValidation: {
+                message: "Please enter valid city."
+              }
+            }
+          },
+          pincodeField: {
+            label: "PinCode",
+            placeholder: "Enter pincode",
+            validationRules: {
+              required: {
+                message: "Pincode is required."
+              },
+              minLength: {
+                value: 6,
+                message: "Pincode must have 6 digits."
+              }
+            }
+          }
+        }
+      });
+    </script>
+    <!-- <div
+      data-section-id="vidaSpinner"
+      data-component="Spinner"
+      data-cmp-version="2.0"
+      data-cmp-type="react"
+    ></div> -->
+    <div
+      data-section-id="chargingStationRequestForm"
+      data-component="ChargingStationRequestForm"
+      data-cmp-type="react"
+      data-cmp-version="2.0"
+      data-cmp-config="ChargingStationRequestFormConfig"
+    ></div>
+
+    <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        charginglocatorfeatu: {
+          isVariantTwo: false,
+          title2Tag: null,
+          bgDesktopImage:
+            "/content/dam/vida2-0/chargingguide/charging-locator/desktop/Charging_bg_desk.svg",
+          bgMobileImage:
+            "/content/dam/vida2-0/chargingguide/charging-locator/mobile/Charging_bg_mob.svg",
+          cardsInfo: [
+            {
+              order: "1",
+              label: "Two removable batteries",
+              labelTag: "h2",
+              link: "#two-removable-batteries",
+              desktopImage:
+                "../src/main/webpack/resources/images/png/image-three.png",
+              mobileImage:
+                "../src/main/webpack/resources/images/png/mobile-img-one.png",
+              imageAlt: "Two Removal Batteries",
+              imageTitle: "Two Removal Batteries",
+              labelPositionDesktop: "left",
+              labelPositionMobile: "left"
+            },
+            {
+              order: "2",
+              label: "Portable charger",
+              labelTag: "h2",
+              link: "#portable-charger",
+              desktopImage:
+                "../src/main/webpack/resources/images/png/image-one.png",
+              mobileImage:
+                "../src/main/webpack/resources/images/png/mobile-img-one.png",
+              imageAlt: "Portable charger",
+              imageTitle: "Portable charger",
+              labelPositionDesktop: "left",
+              labelPositionMobile: "left"
+            },
+            {
+              order: "3",
+              label: "Community charging",
+              labelTag: "h2",
+              link: "#community-charging",
+              desktopImage:
+                "../src/main/webpack/resources/images/png/image-two.png",
+              mobileImage:
+                "../src/main/webpack/resources/images/png/mobile-img-one.png",
+              imageAlt: "Community charging",
+              imageTitle: "Community charging",
+              labelPositionDesktop: "left",
+              labelPositionMobile: "right"
+            },
+            {
+              order: "4",
+              label: "Fast-charging network",
+              labelTag: "h2",
+              link: "#fast-charging-network",
+              desktopImage:
+                "../src/main/webpack/resources/images/png/image-three.png",
+              mobileImage:
+                "../src/main/webpack/resources/images/png/mobile-img-one.png",
+              imageAlt: "Fast-charging network",
+              imageTitle: "Fast-charging network",
+              labelPositionDesktop: "left",
+              labelPositionMobile: "right"
+            }
+          ],
+          titleTag: "h1",
+          title: "We took charge\r\nof charging\r\n",
+          dataPosition: null,
+          variantTwoTitle: null
+        }
+      });
+    </script>
+    <div
+      data-section-id="charginglocatorfeatu"
+      data-cmp-version="2.0"
+      data-cmp-type="react"
+      data-component="ChargingLocatorFeatureCard"
+      data-cmp-config="charginglocatorfeatu"
+    ></div>
+
+    <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        ChargeAtHomeConfig: {
+          preTitle: "0-80% in 6 hours",
+          title: "Charge at home",
+          titleTag: "p",
+          description:
+            "Or at work, or at a cafe. Anywhere you spot a standard 5A socket board.",
+          cardsInfo: [
+            {
+              order: "1",
+              sectionId: "removableBatteries",
+              label: "Removable Batteries",
+              labelTag: "p",
+              link: "",
+              description:
+                "The only electric scooter in India with 2 batteries. Bring them home and charge them. They’ll have your back during long rides.",
+              desktopImage:
+                "../src/main/webpack/resources/images/png/charge_at_home_img_desktop.png",
+              mobileImage:
+                "../src/main/webpack/resources/images/png/charge_at_home_img_mobile.png",
+              imageTitle: "Removable Batteries",
+              imageAlt: "Removable Batteries"
+            },
+            {
+              order: "2",
+              sectionId: "portableCharger",
+              label: "Portable Charger",
+              labelTag: "p",
+              link: "",
+              description:
+                "No connector? No problem. The portable charge connects to any 5A socket board.",
+              desktopImage:
+                "../src/main/webpack/resources/images/png/charge_at_home_img_desktop.png",
+              mobileImage:
+                "../src/main/webpack/resources/images/png/charge_at_home_img_mobile.png",
+              imageTitle: "Portable Charger",
+              imageAlt: "Portable Charger"
+            }
+          ]
+        }
+      });
+    </script>
+    <div
+      data-section-id="chargeAtHome"
+      data-component="ChargeAtHome"
+      data-cmp-type="react"
+      data-cmp-version="2.0"
+      data-cmp-config="ChargeAtHomeConfig"
+    ></div>
+    <script>
+      window.appConfig = Object.assign(window.appConfig || {}, {
+        FindChargingStationConfig: {
+          titleTag: "h2",
+          title: "You’re always close to a fast- charging station.",
+          accordianTitle: "Find your nearest public fast-charging station",
+          accordianTitleIcon:
+            "../src/main/webpack/resources/images/png/charging_station_title_icon.png",
+          chargingBatteryIcon:
+            "../src/main/webpack/resources/images/png/charging_station_battery_icon.png",
+          chargingStationsInfoText1: "charging stations in your city",
+          chargingStationsInfoText2: "charging stations near you",
+          findChargingStationTitle:
+            "Can’t find a public fast-charging station?",
+          findChargingStationDescription:
+            "If there’s none around you, just request it. We’re ever-growing with our network of riders, and we’ll be there for you soon.",
+          requestChargingStationBtnLabel: "Request a charging station",
+          requestChargingStationBtnNavLink: "#",
+          requestChargingStationNewTab: false,
+          isShowNearByCount: false,
+          cityField: {
+            placeholder: "Enter your location here",
+            searchIcon:
+              "../src/main/webpack/resources/images/png/charging_station_search_icon.png",
+            locationIcon:
+              "../src/main/webpack/resources/images/png/charging_station_location_icon.png",
+            validationRules: {
+              notFoundMsg: "No charging Stations found in your city",
+              locationErrorMsg: "your location is disabled"
+            }
+          },
+          chargingInfoContent: [
+            {
+              icon: "../src/main/webpack/resources/images/png/charging_station_battery_icon.png",
+              title: "Stations",
+              number: "20"
+            },
+            {
+              icon: "../src/main/webpack/resources/images/png/charging_station_battery_icon.png",
+              title: "Cities",
+              number: "30"
+            },
+            {
+              icon: "../src/main/webpack/resources/images/png/charging_station_battery_icon.png",
+              title: "Fast charges",
+              number: "100+"
+            }
+          ]
+        }
+      });
+    </script>
+    <!-- <div
+      data-section-id="vidaSpinner"
+      data-component="Spinner"
+      data-cmp-version="2.0"
+      data-cmp-type="react"
+    ></div> -->
+    <div
+      data-section-id="findChargingStation"
+      data-component="FindChargingStation"
+      data-cmp-type="react"
+      data-cmp-version="2.0"
+      data-cmp-config="FindChargingStationConfig"
+    ></div>
+  </body>
+</html>

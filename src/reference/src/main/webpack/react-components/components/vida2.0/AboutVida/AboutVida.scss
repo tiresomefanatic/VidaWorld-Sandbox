@@ -1,0 +1,115 @@
+.about-vida-wrapper {
+  padding-bottom: rem(32px) !important;
+  padding-top: rem(32px) !important;
+
+  @include media(">=desktop") {
+    padding-bottom: rem(64px) !important;
+    padding-top: rem(64px) !important;
+  }
+
+  .about-vida-container {
+    transition: opacity 1.5s ease-out;
+
+    .about-vida-text {
+      @include vida-mobile-subtitle;
+      color: get-color("mine-shaft");
+      padding: 0 0 rem(5px);
+
+      @include media(">=desktop") {
+        @include vida-desktop-subtitle;
+        padding: 0 0 rem(6px);
+      }
+    }
+
+    .about-vida-title {
+      @include vida-h2-mobile;
+      color: get-color("mine-shaft");
+      padding: 0 0 rem(32px);
+
+      @include media(">=desktop") {
+        @include vida-h2-desk;
+        padding: 0 0 rem(64px);
+      }
+    }
+
+    .about-vida-content-container {
+      .about-vida-tab-container {
+        border-bottom: 1px solid get-color("catskill-white");
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 rem(32px);
+
+        @include media(">=desktop") {
+          border-bottom: 2px solid get-color("catskill-white");
+          margin: 0 0 rem(64px);
+        }
+
+        .about-vida-tab {
+          @include vida-mobile-body-1;
+          cursor: pointer;
+          flex: 1;
+          padding: 0 0 rem(7px);
+          text-align: center;
+          text-decoration: none;
+
+          @include media(">=desktop") {
+            @include vida-desktop-body-4;
+            color: get-color("mine-shaft");
+            padding: 0 0 rem(16px);
+          }
+
+          &.active-tab {
+            border-bottom: 2px solid get-color("orange");
+            font-weight: 600;
+
+            @include media(">=desktop") {
+              border-bottom: 5px solid get-color("orange");
+            }
+          }
+        }
+      }
+    }
+
+    .about-vida-tab-content-container {
+      .about-vida-tab-content-title {
+        padding: 0 0 rem(16px);
+
+        @include media(">=desktop") {
+          padding: 0 0 rem(24px);
+        }
+
+        p {
+          @include vida-h2-mobile;
+          color: get-color("mine-shaft");
+          @include media(">=desktop") {
+            @include vida-h2-desk;
+          }
+        }
+
+        h3 {
+          @include vida-h2-mobile;
+          @include media(">=desktop") {
+            @include vida-h2-desk;
+          }
+        }
+      }
+
+      .about-vida-tab-content-description {
+        padding: 0 0 rem(34px);
+
+        @include media(">=desktop") {
+          padding: 0 0 rem(64px);
+        }
+
+        p {
+          @include vida-mobile-body-1;
+          color: get-color("mine-shaft");
+
+          @include media(">=desktop") {
+            @include vida-desk-body-1;
+          }
+        }
+      }
+    }
+  }
+}

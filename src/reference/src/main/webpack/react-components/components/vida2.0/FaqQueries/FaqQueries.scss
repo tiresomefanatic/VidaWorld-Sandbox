@@ -1,0 +1,246 @@
+.faq-queries-container {
+  padding-bottom: rem(32px);
+  padding-top: rem(32px);
+
+  @include media(">=desktop") {
+    padding-bottom: rem(64px) !important;
+    padding-top: rem(64px) !important;
+  }
+
+  &__search-query-container {
+    align-items: center;
+    background-color: get-color("alice-blue");
+    border-radius: rem(8px);
+    display: flex;
+
+    @include media(">=desktop") {
+      border-radius: rem(16px);
+      height: rem(104px);
+      margin-left: auto;
+      margin-right: auto;
+      width: rem(800px);
+    }
+
+    .search-icon-container {
+      height: rem(24px);
+      margin-right: rem(8px);
+      width: rem(24px);
+
+      @include media(">=desktop") {
+        height: rem(36px);
+        margin-right: rem(16px);
+        width: rem(36px);
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    input {
+      @include vida-mobile-body-1;
+      background: transparent;
+      border: none;
+      color: get-color("oslo-grey");
+      flex: 1;
+      line-height: 19.2px;
+      padding: rem(8px) rem(16px);
+      text-align: left;
+      @include media(">=desktop") {
+        @include vida-desktop-body-4;
+        color: get-color("oslo-grey");
+        line-height: 33.6px;
+        padding: rem(34px) rem(32px);
+        text-align: left;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+
+  .horizontal-scroll-container {
+    @include media(">=tablet") {
+      overflow: unset;
+    }
+
+    &::-webkit-scrollbar {
+      border-radius: rem(2px);
+      height: rem(2px);
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: get-color("white");
+      margin: 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: get-color("orange");
+    }
+  }
+
+  &__box-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: rem(16px);
+    margin-bottom: rem(17px);
+
+    @include media(">=tablet") {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin: rem(64px) 0;
+    }
+
+    .box-wrapper {
+      background-color: get-color("catskill-white");
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: rem(130px);
+      padding: 16px;
+
+      @include media(">=desktop") {
+        background-color: get-color("catskill-white");
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        min-width: rem(370px);
+        padding: 32px 24px;
+      }
+
+      &.selected {
+        background-color: get-color("orange");
+        border: 1px solid get-color("orange");
+        @include media(">=desktop") {
+          border: 2px solid get-color("orange");
+        }
+
+        .description-container {
+          .description {
+            color: get-color("white");
+          }
+        }
+      }
+
+      .icon-container {
+        height: 24px;
+        width: 24px;
+        @include media(">=desktop") {
+          height: 30px;
+          width: 30px;
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      .description-container {
+        .description {
+          @include vida-h6-mobile;
+          line-height: 16.8px;
+          text-align: left;
+          @include media(">=desktop") {
+            @include vida-h3-desktop;
+            line-height: 33.6px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  &__content-container {
+    @include media(">=desktop") {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    a {
+      font-size: rem(14px);
+      font-weight: 400;
+      text-decoration: none;
+      @include media(">=desktop") {
+        font-size: rem(20px);
+      }
+    }
+
+    .content-wrapper {
+      gap: rem(16px);
+      @include media(">=desktop") {
+        gap: rem(32px);
+        margin-top: rem(64px);
+      }
+
+      &__content {
+        border-bottom: 1px solid get-color("mine-shaft");
+        display: flex;
+        flex-direction: column;
+        gap: rem(16px);
+        padding-bottom: rem(16px);
+        padding-top: rem(16px);
+        @include media(">=desktop") {
+          gap: rem(32px);
+          padding-bottom: rem(32px);
+          padding-top: rem(32px);
+        }
+
+        &:first-child {
+          padding-top: 0;
+        }
+
+        &:last-child {
+          border: none;
+        }
+
+        .query-text,
+        h3 {
+          @include vida-h5-mobile;
+          font-weight: 500;
+          line-height: 19.2px;
+          text-align: left;
+          @include media(">=desktop") {
+            @include vida-h5-desktop;
+            line-height: 24px;
+            text-align: left;
+          }
+        }
+
+        .answer-text,
+        p {
+          @include vida-mobile-body-2;
+          line-height: 16.8px;
+          text-align: left;
+          @include media(">=desktop") {
+            @include vida-desk-body-1;
+            line-height: 24px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+  
+  .read-more-container {
+    a {
+      @include vida-tertiary-cta-mobile;
+      line-height: 19.2px;
+      @include media(">=desktop") {
+        @include vida-tertiary-cta;
+        line-height: 24px;
+      }
+    }
+  }
+}

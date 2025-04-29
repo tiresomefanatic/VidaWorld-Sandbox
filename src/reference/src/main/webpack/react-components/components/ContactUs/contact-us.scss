@@ -1,0 +1,195 @@
+.vida-contact-us {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: rem(20px) 0 rem(30px) 0;
+  @include media(">=desktop") {
+    border-radius: rem(20px);
+    box-shadow: 0 0 rem(4px) rgba(0, 0, 0, 0.25);
+    margin: rem(60px) 0 rem(30px) 0;
+  }
+
+  &__thank-you {
+    background: get-color("smoke-white");
+    border-radius: rem(20px);
+    padding-left: rem(20px);
+    width: 100%;
+    @include media(">=desktop") {
+      padding-left: rem(72px);
+    }
+  }
+
+  &__thanks-title {
+    @include h2;
+    margin: rem(30px) 0 rem(10px) 0;
+    @include media(">=desktop") {
+      margin: rem(70px) 0 rem(10px) 0;
+      width: 50%;
+    }
+  }
+
+  &__thanks-msg {
+    @include h3;
+    margin-bottom: rem(36px);
+    @include media(">=desktop") {
+      width: 50%;
+    }
+  }
+
+  &__scooter-img {
+    margin-bottom: rem(35px);
+    padding-top: rem(20px);
+    @include media(">=desktop") {
+      margin-left: 595px;
+      margin-top: -120px;
+      padding-top: 0;
+    }
+
+    img {
+      max-width: rem(606px);
+      width: 100%;
+    }
+  }
+
+  &__links {
+    color: get-color("solid-black");
+    font-size: rem(30px);
+    margin-bottom: rem(16px);
+    padding: 0 12px;
+    text-decoration: none;
+    @include media(">=desktop") {
+      margin-bottom: rem(32px);
+    }
+
+    &.vida-header__user-icon--active {
+      border: 1px solid get-color("orange");
+      border-radius: 50%;
+      color: get-color("orange");
+      display: none;
+    }
+  }
+
+  &__contact {
+    width: 100%;
+      
+    @include media(">=desktop") {
+      background: get-color("smoke-white");
+      border-radius: rem(20px) 0 0 rem(20px);
+      overflow: hidden;
+      padding: rem(40px);
+      position: relative;
+      width: 50%;
+  
+      &::after {
+        background: get-color("light-orange");
+        border-radius: 50%;
+        bottom: -30px;
+        content: "";
+        height: rem(414px);
+        position: absolute;
+        right: -162px;
+        width: rem(414px);
+      }
+    }
+  }
+  
+  &__title {
+    @include h2;
+  }
+  
+  &__msg {
+    @include h4;
+    padding: rem(10px) 0;
+  }
+  
+  &__contact-wrap {
+    padding-top: rem(10px);
+    @include media(">=desktop") {
+      padding-top: rem(73px);
+    }
+  }
+  
+  &__contact-type {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: rem(20px);
+    
+    @include media(">=desktop") {
+      margin-bottom: rem(70px);
+    }
+  
+    i {
+      display: inline-block;
+      font-size: rem(34px);
+    }
+  }
+  
+  &__contact-info {
+    display: inline-block;
+    line-height: rem(21px);
+    padding-left: rem(15px);
+  }
+  
+  &__contact-title {
+    @include p2;
+    display: none;
+    @include media(">=desktop") {
+      display: block;
+    }
+  }
+  
+  &__social-wrap {
+    padding-bottom: rem(25px);
+    @include media(">=desktop") {
+      padding-bottom: 0;
+      padding-top: rem(32px);
+    }
+  }
+  
+  &__social-heading {
+    @include p2;
+    color: get-color("solid-black");
+    font-weight: 300;
+    padding-bottom: rem(16px);
+  }
+  
+  &__social-links {
+    color: get-color("solid-black");
+    font-size: rem(29px);
+    text-decoration: none;
+  }
+  
+  &__contact-details {
+    width: 100%;
+    @include media(">=desktop") {
+      background: get-color("white");
+      border-radius: 0 rem(20px) rem(20px) 0;
+      padding: rem(57px) rem(40px);
+      width: 50%;
+    }  
+  }
+  
+  &__contact-fields {
+    .form__group {
+      max-width: 100%;
+    }
+  }
+  
+  &__btn-container {
+    margin-top: rem(53px);
+  
+    .btn--secondary {
+      background: get-color("grey");
+      width: 100%;
+  
+      &:hover {
+        background: get-color("white");
+      }
+    }
+
+    .btn--primary {
+      width: 100%;
+    }
+  }
+}

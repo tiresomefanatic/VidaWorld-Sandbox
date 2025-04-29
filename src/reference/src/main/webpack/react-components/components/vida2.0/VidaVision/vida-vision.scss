@@ -1,0 +1,117 @@
+.vida-vision {
+  padding: rem(50px) rem(20px);
+
+  @include media(">=desktop") {
+    padding-bottom: rem(64px) !important;
+    padding-top: rem(64px) !important;
+  }
+
+  .title {
+    @include vida-mobile-subtitle;
+    @include media(">=desktop") {
+      @include vida-desktop-subtitle;
+    }
+  }
+
+  .sub-title {
+    @include vida-h2-mobile;
+    line-height: 1.5;
+    @include media(">=desktop") {
+      @include vida-h2-desk;
+    }
+  }
+
+  .gallery-container {
+    border-radius: rem(8px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(9.79px);
+    height: rem(270px);
+    justify-content: flex-end;
+    margin-top: rem(34px);
+    max-width: rem(360px);
+    min-width: rem(320px);
+
+    @include media(">=desktop") {
+      gap: rem(20px);
+      height: rem(540px);
+      min-width: rem(622px);
+    }
+
+    .img {
+      aspect-ratio: 1.33;
+      max-width: 100%;
+      object-fit: fill;
+      object-position: center;
+    }
+
+    .img__one {
+      height: rem(140px);
+      width: rem(266px);
+      @include media(">=desktop") {
+        height: rem(300px);
+        width: rem(550px);
+      }
+    }
+
+    .img__two {
+      height: rem(120px);
+      width: rem(190px);
+      @media (min-width: 375px) {
+        width: rem(190px);
+      }
+      @include media(">=desktop") {
+        height: rem(220px);
+        width: rem(352px);
+      }
+    }
+
+    .img__three {
+      height: rem(90px);
+      width: rem(120px);
+      @include media(">=desktop") {
+        height: rem(150px);
+        width: rem(250px);
+      }
+    }
+  }
+
+  .description-wrapper {
+    @include media(">desktop") {
+      margin-top: rem(34px);
+    }
+
+    .header {
+      @include vida-h3-mobile;
+      letter-spacing: 0;
+      line-height: 24px;
+      text-align: left;
+      @include media(">=desktop") {
+        @include vida-h3-desktop;
+      }
+    }
+
+    .details {
+      @include vida-mobile-body-1;
+      line-height: 19px;
+      margin-top: rem(12px);
+      text-align: left;
+      @include media(">=desktop") {
+        @include vida-desk-body-1;
+        margin-top: rem(48px);
+      }
+    }
+  }
+
+  .detail-specification-container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(34px);
+
+    @include media(">desktop") {
+      flex-direction: row;
+      gap: rem(82px);
+      padding-top: rem(14px);
+    }
+  }
+}

@@ -1,0 +1,164 @@
+.vida-card {
+  &__container {
+    background: get-color("white");
+    border: 1px solid get-color("light-grey");
+    border-radius: rem(16px);
+    display: flex;
+    flex-direction: column;
+    padding: rem(20px) rem(16px);
+
+    @include media(">=desktop") {
+      box-shadow: 0 6px 26px rgba(40, 40, 40, 0.08);
+      flex-direction: row;
+      padding: 0;
+    }
+  }
+
+  &__image {
+    margin-bottom: rem(20px);
+    text-align: center;
+
+    @include media(">=desktop") {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0;
+      padding: rem(5px);
+      width: rem(300px);
+    }
+
+    @include media(">=desktop-lg") {
+      width: rem(400px);
+    }
+  }
+
+  &__product-image {
+    max-height: rem(180px);
+    max-width: 100%;
+    width: auto;
+
+    @include media(">=desktop") {
+      max-height: rem(290px);
+      max-width: 100%;
+    }
+  }
+
+  &__data {
+    @include media(">=desktop") {
+      padding: rem(20px);
+      width: calc(100% - 300px);
+    }
+
+    @include media(">=desktop-lg") {
+      width: calc(100% - 400px);
+    }
+  }
+
+  &__product-data {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    gap: 0 rem(10px);
+    justify-content: space-between;
+    margin-bottom: rem(20px);
+  }
+
+  &__product-title {
+    max-width: 50%;
+    word-wrap: break-word;
+    @include media(">=desktop") {
+      max-width: unset;
+      word-wrap: unset;
+    }
+
+    h4 {
+      color: get-color("solid-grey");
+      margin-top: rem(5px);
+    }
+  }
+
+  &__product-schedule {
+    min-width: rem(120px);
+    text-align: center;
+
+    @include media(">=desktop") {
+      min-width: rem(140px);
+    }
+
+    p {
+      @include p2;
+      color: get-color("solid-grey");
+    }
+  }
+
+  &__booking-data {
+    display: flex;
+    flex-direction: column;
+
+    @include media(">=desktop") {
+      flex-direction: row;
+      gap: 0 rem(20px);
+      margin-bottom: rem(20px);
+      min-height: rem(120px);
+    }
+  }
+
+  &__booking-item {
+    margin-bottom: rem(20px);
+    padding-left: rem(20px);
+    position: relative;
+
+    @include media(">=desktop") {
+      margin-bottom: 0;
+      min-width: calc(33.33% - 20px);
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      color: get-color("solid-grey");
+      font-size: rem(15px);
+      left: 0;
+      line-height: rem(18px);
+      position: absolute;
+      top: 0;
+
+      @include media(">=desktop") {
+        line-height: rem(21px);
+      }
+    }
+
+    label {
+      @include p2;
+      color: get-color("solid-grey");
+      display: block;
+      margin-bottom: rem(6px);
+    }
+
+    h4+a {
+      display: block;
+      margin-top: rem(6px);
+    }
+  }
+
+  &__button-container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16px);
+
+    @include media(">=desktop") {
+      flex-direction: row;
+      gap: 0 rem(20px);
+    }
+
+    .btn--secondary {
+      @include media(">=desktop") {
+        margin-top: rem(0);
+      }
+      
+      @include media(">=phone") {
+        margin-top: rem(20px);
+      }
+
+    }
+  }
+}

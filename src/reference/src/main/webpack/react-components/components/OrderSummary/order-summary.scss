@@ -1,0 +1,81 @@
+
+
+.vida-order-summary {
+  border: rem(1px) solid get-color("light-grey");
+  border-radius: rem(16px);
+  display: flex;
+  flex-direction: column;
+
+  @include media(">=desktop") {
+    background: get-color("smoke-white");
+    border: none;
+  }
+
+  &__title {
+    @include h3;
+  }
+
+  &__summary-title {
+    display: flex;
+    justify-content: space-between;
+    margin: rem(15px);
+
+    .icon-minus,
+    .icon-plus {
+      border: rem(1px) solid get-color("solid-black");
+      border-radius: 50%;
+      cursor: pointer;
+      height: rem(18px);
+      width: rem(18px);
+
+      @include media(">=desktop") {
+        display: none;
+      }
+    }
+  }
+
+  &__seperator {
+    border-bottom: rem(1px) solid get-color("light-grey");
+  }
+
+  &__breakup {
+    margin: rem(20px) rem(16px);
+  }
+
+  &__breakup-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(20px);
+  }
+
+  &__breakup-label {
+    @include h4; 
+    color: get-color("solid-grey");
+    @include media(">=desktop") {
+      color: get-color("solid-black");
+    }
+  }
+
+  &__breakup-value {
+    @include h4-md;
+  }
+
+  &__breakup-deduct {
+    color: get-color("orange");
+
+    &.exchange-approved {
+      color: get-color("green");
+    }
+  }
+
+  &__fame-subsidy {
+    color: get-color("green");
+  }
+
+  &__total {
+    @include h2;
+    display: flex;
+    justify-content: space-between;
+    margin: rem(23px) rem(16px);
+  }
+}

@@ -1,0 +1,11 @@
+.vida-video-player {
+  &__mute-icon,
+  &__unmute-icon {
+    display: none;
+  }
+  
+  &__icon--active {
+    display: block;
+  }
+  
+}

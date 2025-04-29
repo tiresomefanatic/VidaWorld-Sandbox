@@ -1,0 +1,374 @@
+.vida-test-ride__success.fade-in {
+  @include media(">=desktop") {
+    animation-duration: 0.5s;
+    animation-name: leftFadeIn;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes leftFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.vida-success__content.animate-in {
+  @include media(">=desktop") {
+    animation: zoomin 0.3s ease-in-out;
+  }
+}
+
+@keyframes zoomin {
+  from {
+    transform: scale(0.7);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.vida-test-ride__success.fade-out {
+  @include media(">=desktop") {
+    animation: leftFadeOut 0.5s ease-in-out;
+  }
+}
+
+@keyframes leftFadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(200%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes rightFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(200%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+.test-ride__wrapper {
+  .drawer {
+    animation: slideUp 1s ease-in-out;
+
+    @include media(">=desktop") {
+      animation: leftFadeIn 0.8s ease-in-out;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  .ticket-name__container {
+    animation: slideUp 0.5s ease-in-out;
+
+    @include media(">=desktop") {
+      animation: rightFadeIn 0.8s ease-in-out;
+    }
+  }
+}
+
+.test-ride {
+  &__bg-image {
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    img {
+      background: get-color("catskill-white");
+      height: 100vh;
+      object-fit: cover;
+      position: fixed;
+      width: 100%;
+    }
+  }
+
+  &__container {
+    height: 100%;
+    padding-bottom: rem(37px);
+    padding-top: rem(33px);
+    position: relative;
+    width: 100%;
+
+    @include media(">=desktop") {
+      padding-bottom: rem(37px);
+      padding-top: rem(101px);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 7px;
+    justify-content: center;
+    position: relative;
+    @include media(">=desktop") {
+      align-items: flex-start;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .drawer {
+      @include media(">=desktop") {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+    }
+  }
+}
+
+.vida-test-ride__success {
+  background: get-color("alice-blue");
+  border-radius: 8px;
+  padding: rem(6px);
+  width: 100%;
+
+  @include media(">=tablet", "<desktop-md") {
+    margin: 0 auto;
+    width: 45%;
+  }
+
+  @include media(">=desktop-md") {
+    background: get-color("alice-blue");
+    border-radius: rem(16px);
+    padding: rem(32px);
+    width: 44%;
+  }
+
+  .vida-test-ride__message {
+    display: flex;
+    gap: 16px;
+    margin-bottom: rem(12px);
+
+    @include media(">=desktop") {
+      gap: 32px;
+      margin-bottom: rem(32px);
+    }
+
+    .test-ride-asset {
+      height: 64px;
+      width: 64px;
+
+      @include media(">=desktop") {
+        flex-basis: 30%;
+        height: 96px;
+        min-width: 96px;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    p {
+      color: get-color("mine-shaft");
+      font-size: 14px;
+      font-weight: 600;
+
+      @include media(">=desktop") {
+        font-size: 28px;
+
+        span {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.vida-test-ride__actions {
+  display: flex;
+  gap: 16px;
+
+  @include media(">=desktop") {
+    gap: 32px;
+  }
+
+  .test-ride__actions-icons {
+    cursor: pointer;
+    display: flex;
+
+    .download-icon {
+      margin-left: 16px;
+
+      @include media(">=desktop") {
+        margin-left: 32px;
+      }
+    }
+
+    .share-icon {
+      height: 20px;
+      width: 20px;
+
+      @include media(">=desktop") {
+        height: 30px;
+        width: 30px;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .download-icon {
+      height: 20px;
+      width: 20px;
+
+      @include media(">=desktop") {
+        height: 33px;
+        width: 33px;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .test-ride-links {
+    a {
+      cursor: pointer;
+      font-size: 16px;
+      margin-right: 24px;
+
+      @include media(">=desktop") {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.test-ride__cancel-container {
+  @include media("<desktop") {
+    align-items: center;
+    backdrop-filter: blur(5px);
+    // background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: rem(52px);
+    width: 100%;
+    z-index: 9999;
+  }
+
+  .test-ride__cancel-content {
+    @include media("<desktop") {
+      background-color: get-color("white");
+      border-radius: 8px;
+      padding: 32px 16px;
+    }
+
+    .cancel-ride {
+      &__message {
+        color: get-color("oslo-gray");
+        font-size: 12px;
+        text-transform: uppercase;
+        @include media(">=desktop") {
+          font-size: 18px;
+        }
+      }
+
+      &__header {
+        font-size: 24px;
+        line-height: 30px;
+        margin: 4px 0 16px;
+        @include media(">=desktop") {
+          font-size: 48px;
+          font-weight: 600;
+          line-height: 55px;
+          margin: 16px 0;
+        }
+      }
+
+      &__btn-wrapper {
+        display: flex;
+        gap: 16px;
+
+        @include media(">desktop") {
+          gap: 32px;
+        }
+
+        .secondary-btn,
+        .primary-btn {
+          border-radius: 8px;
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+          flex-basis: 48%;
+          font-size: 16px;
+          min-height: rem(41px);
+          min-width: rem(140px);
+          padding: 16px;
+
+          @include media(">desktop") {
+            font-size: 20px;
+            padding: 16px 32px;
+          }
+        }
+
+        .secondary-btn {
+          background-color: get-color("white");
+          border: 2px solid get-color("orange");
+          color: get-color("orange");
+        }
+
+        .primary-btn {
+          background-color: get-color("orange");
+          color: get-color("white");
+          padding: 16px 9.5px;
+        }
+      }
+
+      &__notifyMsg {
+        color: get-color("oslo-gray");
+        font-size: 14px;
+        margin: 16px 0;
+        @include media(">desktop") {
+          font-size: 20px;
+        }
+      }
+
+      &__reschedule {
+        cursor: pointer;
+        font-size: 16px;
+        @include media(">desktop") {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

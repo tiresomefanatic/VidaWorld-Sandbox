@@ -1,0 +1,52 @@
+@import "../base/include-media";
+
+
+.right-element,
+.left-element {
+  @include media("<=tablet") {
+    margin-left: 0 !important;
+    padding: 20px !important;
+    width: 100% !important;
+  }
+}
+
+
+.left-element {
+  border-radius: rem(16px);
+  box-shadow: 0 6px 26px rgba(40, 40, 40, 0.08);
+  margin-bottom: 20px;
+  margin-top: 54px;
+  padding: 30px;
+}
+
+.right-element {
+  @include media(">=tablet") {
+    margin-top: 85px;
+    padding-left: 40px;
+  }
+
+  ul {
+    li {
+      list-style: none;
+      margin-bottom: 20px;
+
+      a {
+        color: get-color("solid-black");
+        text-decoration: none;
+
+        &:active,
+        &:hover {
+          color: get-color("orange") !important;
+        }
+      }
+    }
+  }
+}
+
+
+
+.text-container {
+  color: get-color("solid-grey");
+  font-size: rem(17px);
+  line-height: rem(25px);
+}

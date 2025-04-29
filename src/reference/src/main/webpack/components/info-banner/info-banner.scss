@@ -1,0 +1,192 @@
+.vida-info-banner {
+
+  @include media(">=desktop") {
+    position: relative;
+  }
+
+  &__container {
+    min-height: rem(176px);
+    overflow: hidden;
+    width: 100%;
+    @include media (">=desktop") {
+      min-height: rem(502px); 
+    }
+  }
+
+  &--mb-lg {
+    .vida-info-banner__container {
+      min-height: rem(340px);
+      width: 100%;
+      @include media (">=desktop") {
+        min-height: rem(502px);
+      }
+    }
+  }
+
+  &__media {
+    border-radius: 0;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+
+    video,
+    iframe {
+      height: auto;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .vida-container {
+    @include media(">=desktop") {
+      align-items: center;
+      background: linear-gradient(90deg, #1d1b1b 1.79%, rgba(29, 27, 27, 0) 100%);
+      display: flex;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 62%;
+    }
+  }
+
+  &__content-wrapper {
+    color: get-color("solid-black");
+    overflow: hidden;
+
+    @include media(">=desktop") {
+      color: get-color("white");
+      position: absolute;
+
+      // top: 25%;
+      width: 50.6%;
+    }
+    @include media(">=desktop-lg") {
+      left: 9%;
+    }
+  }
+
+  &__spec {
+    &-wrapper {
+      display: flex;
+      gap: 0 rem(30px);
+      margin-top: rem(30px);
+      @include media (">=desktop") {
+        gap: 0 rem(40px);
+        margin-top: rem(80px);
+
+      }
+    }
+
+    &-info {
+      @include h2;
+    }
+  }
+
+  &__text {
+    &-wrapper {
+      margin-top: rem(30px);
+      @include media(">=desktop") {
+        margin-top: 0;
+      }
+    }
+
+    &-title {
+      @include h1;
+      margin-bottom: rem(10px);
+      @include media(">=desktop") {
+        margin-bottom: rem(20px);
+      }
+    }
+
+    &-content {
+      @include p2;
+    }
+  }
+
+  &__accordion {
+    background-color: get-color("white");
+
+    @include media(">=desktop") {
+      background-color: transparent;
+    }
+
+    &-wrapper {
+      margin-top: rem(10px);
+      @include media(">=desktop") {
+        margin-top: 0;
+
+      }
+    }
+
+    &-header {
+      align-items: center;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+      outline: none;
+      padding: rem(20px) 0;
+      text-align: left;
+      transition: 0.4s;
+      width: 100%;
+      @include media(">=desktop") {
+        padding: rem(30px) 0;
+      }
+
+      .vida-info-banner__accordion-title {
+        @include h2;
+        // color: get-color("solid-black");
+        // @include media(">=desktop") {
+        //   color: get-color("white");
+        // }
+      }
+    }
+
+    &-body {
+      @include p1;
+      border-bottom: rem(1px) solid get-color("light-grey");
+      height: 0;
+      overflow: hidden;
+      transition: all 0.4s;
+      @include media(">=desktop") {
+        border-bottom: rem(1px) solid get-color("white");
+      }
+    }
+
+    &-indicator {
+      cursor: pointer;
+      @include media(">=desktop") {
+        color: get-color("white");
+      }
+
+      [class^="icon-"]::before,
+      [class*=" icon-"]::before {
+        font-size: rem(21px);
+        @include media(">=desktop") {
+          font-size: rem(32px);
+        }
+      }
+
+    }
+
+    &.vida-info-banner__accordion--active {
+      .vida-info-banner__accordion-body {
+        height: auto;
+        padding-bottom: rem(19px);
+        transition: all 0.4s;
+      }
+
+      .vida-info-banner__accordion-indicator {
+        [class^="icon-"]::before,
+        [class*=" icon-"]::before {
+          content: "\e912";
+        }
+      }
+    }
+
+    &:last-child {
+      .vida-info-banner__accordion-body {
+        border-bottom: none;
+      }
+    }
+  }
+}

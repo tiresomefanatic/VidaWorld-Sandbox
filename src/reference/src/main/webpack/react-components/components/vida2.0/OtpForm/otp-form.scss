@@ -1,0 +1,261 @@
+.vida-otp {
+  .form__group input[type="number"] {
+    border-left: 0;
+    border-radius: 0;
+    border-right: 0;
+    border-top: 0;
+  }
+
+  .user-access-otp-primary-text {
+    padding: 0 0 rem(4px);
+
+    p {
+      color: get-color("oslo-gray");
+      font-size: rem(12px);
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      @include media(">=desktop") {
+        font-size: rem(18px);
+      }
+    }
+  }
+
+  .user-access-otp-bold-text {
+    padding: 0 0 rem(16px);
+
+    @include media(">=desktop") {
+      padding: 0 0 rem(32px);
+    }
+
+    p {
+      color: get-color("mine-shaft");
+      font-size: rem(24px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+
+      @include media(">=desktop") {
+        font-size: rem(48px);
+      }
+    }
+  }
+
+  .form__field-otp {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 rem(16px);
+
+    @include media(">=desktop") {
+      gap: rem(12px);
+    }
+
+    .otp-form__field-input {
+      border: 1px solid get-color("oslo-gray") !important;
+      border-radius: rem(4px) !important;
+      height: rem(52px);
+      padding: 0;
+      width: rem(42px);
+      @include media(">=desktop") {
+        height: rem(72px);
+        width: rem(72px);
+      }
+
+      &:focus {
+        border: 1px solid var(--Primary-Vida-Orange, #ff5310) !important;
+      }
+
+      &::placeholder {
+        @include vida-mobile-body-1;
+        @include media(">=desktop") {
+          @include vida-desk-body-1;
+        }
+      }
+    }
+  }
+
+  .user-access-timer-container {
+    align-items: center;
+    display: flex;
+    gap: rem(8px);
+
+    a {
+      color: get-color("mine-shaft");
+      font-size: rem(14px);
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-decoration: none;
+
+      @include media(">=desktop") {
+        font-size: rem(18px);
+      }
+
+      &[disabled] {
+        color: get-color("grey");
+      }
+    }
+  }
+
+  .vida-otp__timer {
+    max-width: 100%;
+  }
+
+  .change-number-text {
+    color: get-color("mine-shaft");
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+
+    @include media(">=desktop") {
+      font-size: rem(18px);
+      font-weight: 600;
+    }
+  }
+
+  &__step {
+    display: none;
+
+    @include media(">=desktop") {
+      color: get-color("solid-grey");
+      display: block;
+
+      span {
+        padding: 0 2px;
+      }
+    }
+  }
+
+  &__field-input {
+    border-radius: 100%;
+    width: 15px;
+  }
+
+  &__title {
+    margin-bottom: rem(30px);
+
+    @include media(">=desktop") {
+      margin-bottom: rem(43px);
+    }
+
+    h1 {
+      @include h2;
+      margin-bottom: rem(20px);
+
+      @include media(">=desktop") {
+        margin-bottom: rem(11px);
+      }
+    }
+
+    p {
+      @include btn;
+      color: get-color("solid-grey");
+      margin-bottom: rem(10px);
+
+      @include media(">=desktop") {
+        margin-bottom: rem(5px);
+      }
+
+      span {
+        color: get-color("solid-black");
+        margin-left: rem(5px);
+      }
+    }
+  }
+
+  .form__group {
+    margin-bottom: 0;
+    min-height: auto;
+
+    .form__group--error p {
+      a {
+        font-size: rem(10px);
+        font-weight: 400;
+      }
+    
+    }
+  }
+
+  &__timer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+    width: 100%;
+
+    // @include media(">=desktop") {
+    //   max-width: 360px;
+    // }
+  }
+
+  &__disclaimer {
+    margin-top: rem(55);
+
+    @include media(">=desktop") {
+      margin-top: rem(40px);
+    }
+
+    &-label {
+      @include p1;
+      color: get-color("solid-black");
+    }
+
+    &-msg {
+      @include p2;
+      color: get-color("solid-grey");
+    }
+  }
+
+  &__btn-container {
+    align-items: center;
+    border-top: 1px solid get-color("light-grey");
+    display: flex;
+    display: none;
+    flex-direction: column;
+
+    .btn {
+      margin: rem(20) 0;
+
+      @include media(">=desktop") {
+        margin: rem(20) 0 rem(16px);
+      }
+    }
+
+    label {
+      @include p2;
+
+      a {
+        margin-left: rem(5px);
+      }
+    }
+  }
+
+  .vida-access-otp-btn-container {
+    border: none !important;
+    padding: rem(8px) 0 0;
+
+    .vida-access-otp-btn {
+      align-items: center;
+      background: get-color("orange");
+      border-radius: rem(8px);
+      color: get-color("white");
+      display: flex;
+      font-size: rem(16px);
+      font-style: normal;
+      font-weight: 600;
+      height: rem(52px);
+      justify-content: center;
+      line-height: normal;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+
+      &:disabled {
+        background: get-color("grey");
+      }
+    }
+  }
+}

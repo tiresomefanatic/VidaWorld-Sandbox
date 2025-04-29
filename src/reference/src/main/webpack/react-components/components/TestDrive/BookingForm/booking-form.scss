@@ -1,0 +1,134 @@
+@import "../../../../site/styles/base/typography";
+
+.vida-booking-form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  max-width: rem(400px);
+  width: 100%;
+
+  &__title {
+    @include h2;
+    margin-bottom: rem(16px);
+    max-width: rem(400px);
+    width: 100%;
+
+    p {
+      color: get-color("orange");
+      text-transform: capitalize;
+    }
+  }
+
+  &__confirm {
+    margin: 0 0 rem(18px);
+    max-width: rem(400px);
+    width: 100%;
+  }
+
+  &__location {
+    column-gap: rem(16px);
+    display: flex;
+    
+    @include media(">=desktop") {
+      flex-wrap: wrap;
+    }
+    @include media(">desktop-md") {
+      flex-wrap: nowrap;
+    }
+    
+    .form__group {
+      width: 50%;
+      @include media(">=desktop") {
+        width: 100%;
+      }
+      @include media(">desktop-md") {
+        width: 50%;
+      }
+    }
+  }
+
+  .form__field-checkbox {
+    margin-bottom: 0;
+
+    label {
+      @include input;
+      align-items: center;
+      color: get-color("solid-black");
+      display: flex;
+      padding-top: rem(2px);
+
+      i {
+        color: #00a000;
+        margin-left: rem(2px);
+
+      }
+    }
+  }
+
+  &__notification-msg {
+    @include p2;
+    color: get-color("solid-grey");
+    margin: 0 0 rem(30px) rem(30px);
+  }
+
+  &__disclaimer {
+    margin: auto 0 0;
+    
+    &-label {
+      @include p1;
+      color: get-color("solid-black");
+    }
+
+    &-msg {
+      @include p2;
+      color: get-color("solid-grey");
+    }
+  }
+
+  .btn {
+    margin-top: auto;
+
+    &--no-top-margin {
+      margin-top: rem(30px);
+    }
+
+    &--notify {
+
+      @include media(">=desktop") {
+        height: auto;
+        margin-top: unset;
+        width: fit-content;
+      }
+    }
+  }
+
+  &__relogin {
+    margin-top: rem(20px);
+    text-align: center;
+    @include media(">=desktop") {
+      text-align: left;
+    }
+  }
+
+  &__service-err {
+    &-msg {
+      @include h4;
+      color: get-color("red");
+      margin-bottom: rem(20px);
+    }
+
+    &-info {
+      @include p2;
+      color: get-color("solid-grey");
+      margin: rem(28px) 0;
+    }
+  }
+
+  &__change-number {
+    @include p2;
+    color: get-color("solid-grey");
+    cursor: pointer;
+    margin-left: rem(8px);
+  }
+
+}

@@ -1,0 +1,201 @@
+.cmp-tabs {
+  padding-top: rem(32px);
+  @include media(">=desktop") {
+    padding-top: rem(64px);
+  }
+
+  .cmp-tabs {
+    &__tablist {
+      background-color: rgba(228, 234, 241, 0.4);
+      border-bottom: 2px solid rgba(228, 234, 241, 1);
+      border-radius: rem(8px);
+      display: flex;
+      justify-content: space-between;
+      margin-left: 0;
+      padding: rem(8px) rem(16px) rem(8px) rem(8px);
+      width: 100%;
+      @include media(">=desktop") {
+        background-color: get-color("white");
+        border-radius: unset;
+        padding: 0;
+      }
+    }
+
+
+    &__tab {
+      @include vida-mobile-body-1;
+      align-items: center;
+      border-bottom: 2px solid get-color("orange");
+      display: flex;
+      flex-basis: calc(100% / 3);
+      flex-grow: 1;
+      justify-content: center;
+      max-width: calc(100% / 3);
+      padding: rem(12px) rem(5px) rem(11px);
+      text-align: center;
+      word-break: break-word;
+      @include media(">=desktop") {
+        @include vida-desk-body-1;
+        background-color: get-color("white");
+        border-bottom: none;
+        padding: rem(16px) 0 rem(26px);
+    
+      }
+
+    
+      &--active {
+        @include vida-h5-mobile;
+        background-color: get-color("orange");
+        border-bottom: 2px solid get-color("orange");
+        border-radius: rem(8px);
+        color: get-color("white");
+        padding: rem(16px) rem(8px);
+        position: relative;
+        @include media(">=desktop") {
+          @include vida-h3-desktop;
+          background-color: get-color("white");
+          border-bottom: 5px solid get-color("orange");
+          border-radius: unset;
+          color: get-color("mine-shaft");
+          padding: rem(20px) rem(8px);
+
+          &::after {
+            content: unset;
+          }
+
+          &::before {
+            content: unset;
+          }
+
+          &:first-child {
+            &::after {
+              content: unset;
+            }
+
+            &::before {
+              content: unset;
+            }
+          }
+
+          &:last-child {
+            &::after {
+              content: unset;
+            }
+
+            &::before {
+              content: unset;
+            }
+          }
+        }
+        
+        &::before {
+          background-color: get-color("orange");
+          clip-path: polygon(17.5px 0, 0 100%, 100% 100%);
+          content: "";
+          height: calc(100% - 2px);
+          left: -17px;
+          position: absolute;
+          top: 4px;
+          width: 23px;
+        }
+        
+        &::after {
+          background-color: get-color("orange");
+          clip-path: polygon(0 -20px, 0 100%, 100% 100%);
+          clip-path: polygon(6px 0, 0 100%, 100% 100%);
+          content: "";
+          height: calc(100% - 2px);
+          position: absolute;
+          right: -16px;
+          top: 4px;
+          width: 23px;
+        }
+        
+        &:first-child {
+          &::before {
+            content: unset;
+          }
+          
+          &::after {
+            background-color: get-color("orange");
+            clip-path: polygon(0 -20px, 0 100%, 100% 100%);
+            clip-path: polygon(6px 0, 0 100%, 100% 100%);
+            content: "";
+            height: calc(100% - 2px);
+            position: absolute;
+            right: -16px;
+            top: 4px;
+            width: 23px;
+          }
+        }
+        
+        &:last-child {
+          &::before {
+            background-color: get-color("orange");
+            clip-path: polygon(17.5px 0, 0 100%, 100% 100%);
+            content: "";
+            height: calc(100% - 2px);
+            left: -17px;
+            position: absolute;
+            top: 4px;
+            width: 23px;
+          }
+          
+          &::after {
+            content: unset;
+          }
+        }
+      }
+    }
+
+  }
+
+  // .richtext {
+  //   padding: 0;
+  
+  //   h2,
+  //   h2 b {
+  //     @include vida-h3-mobile;
+  //     @include media(">=desktop") {
+  //       @include vida-h2-desk;
+  //     }
+  //   }
+  
+  //   p {
+  //     @include vida-mobile-body-2;
+  //     @include media(">=desktop") {
+  //       @include vida-desk-body-1;
+  //     }
+  //   }
+  // }
+
+  .vida-service-container .vida-service-accordion-wrapper {
+    width: 100% !important;
+  }
+}
+
+// .richtext {
+//   h2,
+//   h2 b {
+//     @include vida-h3-mobile;
+//     @include media(">=desktop") {
+//       @include vida-h2-desk;
+//     }
+//   }
+
+//   p {
+//     @include vida-mobile-body-2;
+//     @include media(">=desktop") {
+//       @include vida-desk-body-1;
+//     }
+//   }
+
+//   &.vida-2-container {
+//     padding-bottom: rem(32px);
+//     padding-top: rem(32px);
+//     @include media(">=desktop") {
+//       padding-bottom: rem(64px);
+//       padding-top: rem(64px);
+//     }
+//   }
+// }

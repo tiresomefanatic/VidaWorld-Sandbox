@@ -1,0 +1,75 @@
+
+
+.vida-pricing {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__heading {
+    @include h3;
+    padding: rem(22px) 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 50%;
+    width: auto;
+
+    &--deduct {
+      color: #00d971;
+    }
+  }
+
+  &__price-detail {
+    background-color: get-color("white");
+    border-radius: rem(4px) rem(4px) 0 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: rem(10px);
+    padding: rem(16px);
+    @include media(">=desktop") {
+      border-radius: 16px 16px 0 0;
+    }
+  }
+
+  &__price-info {
+    @include a2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    label {
+      max-width: 60%;
+      width: auto;
+    }
+  }
+
+  &__product-heading {
+    @include a2;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__product {
+    background-color: get-color("white");
+    border-radius: 0 0 4px 4px;
+    border-top: 1px solid get-color("light-grey");
+    padding: 10px 16px;
+    @include media(">=desktop") {
+      border-radius: 0 0 16px 16px;
+    }
+  }
+
+  &__message {
+    @include p3;
+  }
+}

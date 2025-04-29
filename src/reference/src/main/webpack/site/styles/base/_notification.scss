@@ -1,0 +1,134 @@
+.notification {
+  border-radius: rem(4px);
+  position: relative;
+ 
+  &--fixed {
+    left: 0;
+    margin: auto;
+    position: fixed;
+    right: 0;
+    top: rem(35px);
+    width: rem(328px);
+    z-index: 1000000;
+
+    @include media(">=desktop") {
+      top: rem(120px);
+    }
+  }
+
+  
+
+  &::before {
+    border-radius: rem(4px) 0 0 rem(4px);
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: rem(10px);
+  }
+
+  &__container {
+    margin-left: rem(10px);
+    padding: rem(15px) rem(20px) rem(15px) rem(18px);
+  }
+
+  &__title {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+  }
+
+  &__icon {
+    margin-right: rem(12.5px);
+    width: rem(15px);
+
+    [class*=" icon-"],
+    [class^=icon-] {
+      font-size: rem(16px);
+    }
+  }
+
+  &__label {
+    @include links;
+    padding-right: rem(20px);
+    text-transform: capitalize;
+  }
+
+  &__close {
+    color: get-color("solid-black");
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    width: rem(16px);
+
+    [class*=" icon-"],
+    [class^=icon-] {
+      font-size: rem(16px);
+      margin-right: 0;
+    }
+  }
+
+  &__description {
+    @include p2;
+    margin: rem(10px) rem(25px) 0 rem(27.5px);
+
+    a {
+      display: block;
+      margin-top: rem(10px);
+    }
+  }
+
+  &--lg {
+    width: calc(100% - 32px);
+    @include media(">=desktop") {
+      width: calc(100% - 140px);
+    }
+    @include media(">=desktop-lg") {
+      max-width: rem(1232px);
+      width: 100%;
+    }
+  }
+
+  &--info {
+    background-color: get-color("light-blue");
+
+    &::before {
+      background-color: get-color("blue");
+    }
+  }
+
+  &--warning {
+    background-color: get-color("light-yellow");
+
+    &::before {
+      background-color: get-color("yellow");
+    }
+  }
+
+  &--warning-info {
+    background-color: get-color("light-orange");
+
+    &::before {
+      background-color: get-color("orange");
+    }
+  }
+
+  &--success {
+    background-color: get-color("light-green");
+
+    &::before {
+      background-color: get-color("green");
+    }
+  }
+
+  &--error {
+    background-color: get-color("light-red");
+
+    &::before {
+      background-color: get-color("red");
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.vida-user-long-test-rides {
+  margin-bottom: rem(20px);
+  // padding-bottom: rem(30px);
+
+  // @include media(">=desktop") {
+  //   padding: rem(60px) 0;
+  // }
+
+  &__no-record {
+    margin-top: rem(70px);
+
+    h3 {
+      margin-bottom: rem(10px);
+    }
+
+    h4 {
+      color: get-color("solid-grey");
+    }
+
+    .btn {
+      margin-top: rem(20px);
+    }
+  }
+
+  &__type {
+    margin: rem(30px) 0;
+
+    @include media(">=desktop") {
+      margin: rem(60px) 0;
+    }
+
+    &-title {
+      margin-bottom: rem(20px);
+
+      @include media(">=desktop") {
+        margin-bottom: rem(30px);
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__confirmation {
+    padding: 6%;
+  }
+
+  &__message {
+    @include p2;
+    color: get-color("solid-grey");
+    padding: 3% 0;
+  }
+
+  &__button-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+  }
+
+  &__popup-container {
+    .popup__container {
+      border-radius: 11px;
+      height: fit-content;
+      margin: auto 10%;
+      @include media(">=desktop") {
+        margin: auto;
+        width: 35%;
+      }
+    }
+  }
+}

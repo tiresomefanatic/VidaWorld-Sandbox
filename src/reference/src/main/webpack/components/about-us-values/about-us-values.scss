@@ -1,0 +1,197 @@
+.vida-aboutus-values {
+  &__container {
+    .our-values {
+      display: grid;
+      gap: rem(32px);
+      padding: rem(56px) rem(20px);
+      @include media(">=desktop") {
+        gap: rem(88px);
+        padding: rem(56px) rem(88px);
+      }
+
+      &__heading {
+        @include vida-h1-mobile;
+        @include media(">=desktop") {
+          @include vida-h1-desktop;
+          color: get-color("mine-shaft");
+        }
+      }
+
+      &__card-container {
+        display: flex;
+        flex-direction: column;
+        gap: rem(24px);
+
+        @include media(">=desktop") {
+          gap: rem(128px);
+        }
+
+        &__card {
+          border-bottom: none;
+          display: flex;
+          flex-direction: column;
+          gap: rem(16px);
+          padding: 0;
+          @include media(">=desktop") {
+            flex-direction: row;
+            gap: rem(24px);
+          }
+
+          &:nth-child(even) {
+            flex-direction: column;
+            @include media(">=desktop") {
+              flex-direction: row-reverse;
+            }
+
+            .card-text {
+              align-items: start !important;
+            }
+          }
+
+          &:last-child {
+            padding-bottom: rem(24px);
+          }
+
+          .card-img {
+            flex: 1;
+          }
+
+          .card-image {
+            border-radius: rem(6px);
+            height: rem(320px);
+            max-width: 100%;
+            object-fit: cover;
+            width: rem(320px);
+
+            @include media(">=desktop") {
+              border-radius: rem(12px);
+              height: rem(482px);
+              width: rem(620px);
+            }
+          }
+
+          .card-text {
+            display: flex;
+            @include media(">=desktop") {
+              align-items: end;
+              flex: 1;
+              flex-direction: column;
+              justify-content: center;
+            }
+          }
+
+          .card-text__value-wrap {
+            display: grid;
+            gap: rem(8px);
+            @include media(">=desktop") {
+              gap: rem(16px);
+              max-width: rem(525px);
+            }
+          }
+
+          .card-text__title {
+            @include vida-h3-desktop;
+            display: grid;
+
+            @include media(">=desktop") {
+              @include vida-h2-desk;
+              align-items: end;
+            }
+          }
+
+          .card-text__desc {
+            @include vida-mobile-body-1;
+
+            @include media(">=desktop") {
+              @include vida-desktop-body-4;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.aboutus-intent {
+    .our-values {
+      display: grid;
+      gap: 0;
+      padding: 0 rem(20px) rem(56px) rem(20px);
+      @include media(">=desktop") {
+        gap: rem(34px);
+        padding: rem(64px) rem(88px);
+      }
+
+      &__heading {
+        @include vida-h1-mobile;
+        @include media(">=desktop") {
+          @include vida-h2-desk;
+          color: get-color("mine-shaft");
+        }
+      }
+
+      &__card-container {
+        display: grid;
+        gap: 0;
+
+        @include media(">=desktop") {
+          gap: rem(63px);
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        &__card {
+          align-items: start;
+          border-bottom: 1px solid get-color("mine-shaft");
+          gap: rem(24px);
+          justify-content: start;
+          padding: rem(32px) 0;
+          @include media(">=desktop") {
+            border-bottom: none;
+            flex-direction: column;
+            gap: rem(24px);
+            padding: 0;
+          }
+
+          &:last-child {
+            border-bottom: none;
+            padding-bottom: rem(28px);
+          }
+
+          .card-img {
+            max-height: rem(213px);
+          }
+
+          .card-image {
+            border-radius: rem(20px);
+            height: rem(180px);
+            max-width: 100%;
+            width: rem(320px);
+
+            @include media(">=desktop") {
+              border-radius: rem(12px);
+              height: rem(213px);
+              width: rem(380px);
+            }
+          }
+
+          .card-text {
+            align-items: start;
+            justify-content: start;
+
+            .card-text__value-wrap {
+              display: grid;
+              gap: rem(10px);
+            }
+
+            &__title {
+              @include vida-h5-desktop;
+            }
+
+            &__desc {
+              @include vida-mobile-body-1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

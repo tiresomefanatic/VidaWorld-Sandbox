@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Delivery Tracker</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Delivery Tracker" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <script>
+		const sessionCookieExist = document.cookie.match(/^(.*;)?\s*SESSION_TOKEN\s*=\s*[^;]+(.*)?$/);
+		if (!sessionCookieExist) {
+			window.location.href = "/login.html"+"?redirectURL="+window.location.href;
+		}
+	</script>
+  <%= htmlWebpackPlugin.options.custom %>
+  <script src="https://assets.adobedtm.com/85ad58377b05/2c553529771b/launch-d478403fce9a-development.min.js" async></script>
+</head>
+
+<body>
+  <header></header>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+    "deliveryTrackerConfig": {
+      "title": "Track My Vida",
+      "backBtn": {
+          "label": "Back to My Orders"
+        },
+      "userOrder": {
+            "title": "My Orders",
+            "bookingIdLabel": "Booking ID",
+            "totalLabel": "Order Total",
+            "dateLabel": "Order Date",
+            "delivery": {
+              "label": "Expected Delivery",
+              "info": "Will be shared only after final booking with full amount"
+            },
+            "statusLabel": "Status",
+            "cancelBtn": {
+              "label": "Cancel Order"
+            },
+            "purchaseBtn": {
+              "label": "Purchase"
+            },
+            "downloadInvoiceBtn": {
+              "label": "Download Invoice",
+              "fileName": "Vida_Invoice"
+            },
+            "paymentBtn": {
+              "label": "Make Payment"
+            },
+            "viewDetailLabel": "View details",
+            "orderStatusDetails": [{
+              "id": "Draft",
+              "message": "Will be shared only after final booking with full amount",
+              "status": "Purchase Pending"
+            },
+            {
+              "id": "Booked",
+              "message": "Will be shared only after final booking with full amount",
+              "status": "Purchase Pending"
+            },
+            {
+              "id": "Credit Verified",
+              "message": "Will be shared only after final booking with full amount",
+              "status": "Purchase Pending"
+            },
+            {
+              "id": "Fulfilment",
+              "message": "Delivery will start after document verification",
+              "status": "Scooter Purchased"
+            },
+            {
+              "id": "KYC Done",
+              "message": "---",
+              "status": "Scooter Purchased"
+            },
+            {
+              "id": "Invoicing",
+              "message": "---",
+              "status": "Scooter Reserved - Invoiced"
+            },
+            {
+              "id": "Delivery",
+              "message": "",
+              "status": "Scooter Allocated"
+            },
+            {
+              "id": "Closed",
+              "message": "Delivered",
+              "status": "Scooter Delivered"
+            }],
+            "fameSubsidyRejectedReason": "Fame Subsidy Rejected",
+          },
+      "purchaseTracker": {
+          "title": "Purchase Tracker",
+          "orderStatusConfig": [{
+              "id": 0,
+              "label": "Reserved"
+          }, {
+              "id": 1,
+              "label": "Scooter Purchase"
+          }, {
+              "id": 2,
+              "label": "Submit Documents"
+          }, {
+              "id": 3,
+              "label": "Document Verified"
+          }, {
+              "id": 4,
+              "label": "Shipment and Delivery"
+          }],
+          "fameSubsidyRejectedReason": "Fame Subsidy Rejected",
+          "uploadBtn": {
+              "label": "Upload Documents"
+          },
+          "purchaseBtn": {
+              "label": "Purchase Now"
+          },
+          "userManualBtn": {
+              "label": "Owner's Manual",
+              "url": ""
+          },
+          "trackBtn": {
+              "label": "Track Delivery"
+          },
+      },
+      "deliveryTracker": {
+        "title": "Delivery Tracker",
+        "vehicleAllocation": {
+          "label": "Vehicle Allocated"
+        },
+        "vehicleCustomisation": {
+          "label": "Vehicle Customised",
+          "msg": "Customisation as per requirement done"
+        },
+        "rtoProcess": {
+          "label": "RTO Process",
+          "msg": "RTO process initiated"
+        },
+        "readyForDelivery": {
+          "label": "Ready for Delivery"
+        },
+        "delivery": {
+          "label": "Delivered",
+          "msg": "Your vehicle is delivered"
+        },
+
+        "deliveryPriority": {
+          "title": "Where would you like to take delivery?",
+          "experienceCenter": {
+            "label": "At Experience Centre",
+            "addressLabel": "Experience Center Address",
+            "dateField": {
+              "label": "Date",
+              "validationRules": {
+                "required": {
+                  "message": "Date is required"
+            }
+            }},
+            "confirmBtn": {
+              "label": "Confirm"
+            }
+        },
+          "onsite": {
+            "label": "Home Delivery",
+            "addressLabel": "Shipment Address",
+            "dateField": {
+              "label": "Date",
+              "validationRules": {
+                "required": {
+                  "message": "Date is required"
+            }
+            }
+          },
+            "timeField": {
+              "label": "Time",
+              "validationRules": {
+                "required": {
+                  "message": "Time is required"
+            }
+            }
+            },
+            "scheduleDeliveyBtn": {
+              "label": "Schedule Delivery"
+            }
+        }
+      }
+    },
+      "RTODetails": {
+        "title": "Vehicle RTO Registration",
+        "registrationNameLabel": "Registration Name",
+        "vehicleTypeLabel": "Vehicle Type",
+        "vehicleColorLabel": "Vehicle Colour",
+        "vehicleNameLabel": "Vehicle Name",
+        "registrationNumberLabel": "Registration Number",
+        "registrationCertificateBtn": {
+          "label": "Download Registration Certificate"
+        }
+      },
+      "paymentInfo": {
+        "title": "Payment Information",
+        "transactionIdLabel": "Transaction ID",
+        "purchaseLoanLabel": "Purchase on",
+        "paidOnLabel": "Paid"
+      },
+      "customerDetails": {
+        "title": "Owner Details"
+      },
+      "orderSummary": {
+        "title": "Breakdown",
+        "basePriceLabel": "Base Price",
+        "otherChargesLabel": "Other charges",
+        "addonsLabel": "Add-ons",
+        "gstLabel": "GST",
+        "subsidyLabel": "FAME II Subsidy",
+        "prebookingPricePaidLabel": "Prebooking Price",
+        "exchangeLabel": "Exchange Price",
+        "insuranceLabel": "Insurance",
+        "orderTotalLabel": "Order Total",
+        "configureLabel": "Configure",
+        "homeDeliveryLabel": "Home Delivery charges"
+      }
+
+    }
+
+    });
+  </script>
+  <div data-component="DeliveryTrack" data-cmp-type="react" data-cmp-config="deliveryTrackerConfig"></div>
+  <footer></footer>
+</body>
+
+</html>

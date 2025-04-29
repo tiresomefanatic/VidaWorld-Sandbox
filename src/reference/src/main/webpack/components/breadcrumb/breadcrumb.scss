@@ -1,0 +1,53 @@
+.cmp-breadcrumb {
+  background-color: get-color("catskill-white");
+  width: 100%;
+
+  &__list {
+    margin: 0 auto;
+    padding: rem(9px) rem(20px) rem(8px);
+    @include media(">=desktop") {
+      padding: rem(9px) rem(88px) rem(8px);
+    }
+  }
+
+  &__item {
+    &-link {
+      @include vida-desktop-body-3;
+      padding-right: 2rem;
+      position: relative;
+      text-decoration: none;
+
+      &::after {
+        background-image: url("/clientlib-site/images/svg/chevron-right.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 1rem 1rem;
+        content: "";
+        height: 100%;
+        position: absolute;
+        right: rem(5px);
+        top: 0;
+        width: 1rem;
+      }
+
+      &:visited {
+        color: get-color("mine-shaft");
+      }
+    }
+
+    &--active {
+      @include vida-h6-desktop;
+
+    }
+  }
+}
+
+.breadcrumb-top-fixed {
+  position: fixed;
+  top: 52px;
+  width: 100%;
+  z-index: 2;
+  @include media(">=desktop") {
+    top: 64px;
+  }
+}

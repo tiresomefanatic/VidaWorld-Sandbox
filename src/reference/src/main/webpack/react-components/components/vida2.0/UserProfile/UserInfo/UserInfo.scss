@@ -1,0 +1,67 @@
+.vida-user-info-wrapper {
+  @include vida-mobile-body-4;
+  background: get-color("white");
+  border-radius: rem(8px);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  padding: rem(8px) rem(10px);
+  width: 100%;
+  @include media(">=desktop") {
+    @include vida-desktop-body-4;
+    border-radius: rem(16px);
+    padding: rem(16px);
+    width: 100%;
+  }
+
+  .icon-desc-container {
+    display: flex;
+    gap: rem(8px);
+    @include media(">=desktop") {
+      gap: rem(12px);
+    }
+
+    .icon-container {
+      height: rem(36px);
+      width: rem(36px);
+      @include media(">=desktop") {
+        height: rem(44px);
+        width: rem(44px);
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+
+  .description-container {
+    @include vida-mobile-body-1;
+    font-weight: 500;
+    line-height: 19px;
+    padding: rem(8.5px) 0;
+    @include media(">=desktop") {
+      @include vida-desktop-body-4;
+      padding: 5px 0;
+    }
+  }
+
+  .redirection-container {
+    height: rem(24px);
+    margin: rem(6px) 0;
+    width: rem(24px);
+    @include media(">=desktop") {
+      height: rem(30px);
+      margin: rem(7px) 0;
+      width: rem(30px);
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+}

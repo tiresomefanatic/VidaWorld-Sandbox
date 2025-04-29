@@ -1,0 +1,29 @@
+.fast-charging-network-wrapper {
+  background: get-color("catskill-white");
+
+  @include media(">=desktop") {
+    padding: 0 0 rem(64px) 0;
+  }
+
+  .charging-map-my-india-cl-container {
+    @include media(">=desktop") {
+      padding: 0 rem(88px);
+    }
+
+    .mmi-map {
+      @include media(">=desktop") {
+        border-radius: rem(16px) !important;
+        height: auto !important;
+        max-width: unset !important;
+        width: 100% !important;
+      }
+
+      canvas {
+        @include media(">=desktop") {
+          height: auto !important;
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}

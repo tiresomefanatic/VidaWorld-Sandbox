@@ -1,0 +1,170 @@
+.exchange-offer-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: rem(32px);
+  padding: rem(32px) rem(20px) !important;
+  @include media(">=desktop") {
+    gap: rem(48px);
+    padding: rem(64px) rem(88px) !important;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32px);
+    @include media(">=desktop") {
+      gap: rem(48px);
+    }
+
+    .title {
+      @include vida-h1-mobile;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 48px;
+      text-align: left;
+      @include media(">=desktop") {
+        @include vida-h1-desktop;
+        letter-spacing: 0;
+        line-height: 96px;
+        text-align: left;
+      }
+    }
+
+    .header-content {
+      @include vida-mobile-body-1;
+      letter-spacing: 0;
+      line-height: 19px;
+      text-align: left;
+      @include media(">=desktop") {
+        @include vida-desk-body-1;
+        letter-spacing: 0;
+        line-height: 24px;
+        text-align: left;
+      }
+    }
+  }
+
+  &__terms-and-conditions-container {
+    display: flex;
+    flex-direction: column;
+
+    .title-container {
+      padding-bottom: rem(8px);
+      @include media(">=desktop") {
+        padding-bottom: rem(16px);
+      }
+
+      .qna-title {
+        @include vida-tertiary-cta-mobile;
+        color: get-color("mine-shaft");
+        line-height: 19px;
+        text-align: left;
+        @include media(">=desktop") {
+          @include vida-h3-desktop;
+          letter-spacing: 0;
+          line-height: 34px;
+          text-align: left;
+        }
+      }
+    }
+
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: rem(24px);
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      .wrapper {
+        display: flex;
+        gap: rem(16px);
+
+        .question-number-text {
+          @include vida-tertiary-cta-mobile;
+          color: get-color("mine-shaft");
+          letter-spacing: 0;
+          line-height: 22px;
+          text-align: left;
+          @include media(">=desktop") {
+            @include vida-h5-mobile;
+            letter-spacing: 0;
+            line-height: 22px;
+            text-align: left;
+          }
+        }
+
+        .qna-container {
+          display: flex;
+          flex-direction: column;
+          gap: rem(16px);
+          @include media(">=desktop") {
+            gap: 0;
+          }
+
+          .question-text {
+            @include vida-tertiary-cta-mobile;
+            color: get-color("mine-shaft");
+            letter-spacing: 0;
+            line-height: 22px;
+            text-align: left;
+            @include media(">=desktop") {
+              @include vida-h5-desktop;
+              letter-spacing: 0;
+              line-height: 24px;
+              text-align: left;
+            }
+          }
+
+          .answer-text {
+            @include vida-mobile-body-1;
+            letter-spacing: 0;
+            line-height: 22px;
+            text-align: left;
+            @include media(">=desktop") {
+              @include vida-desk-body-1;
+              letter-spacing: 0;
+              line-height: 24px;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .claim-offer-button {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+    .claim-offer-label {
+      @include vida-h5-mobile;
+      color: get-color("white");
+      letter-spacing: 0;
+      line-height: 19px;
+      text-align: center;
+      @include media(">=desktop") {
+        @include vida-h5-desktop;
+        color: get-color("white");
+        letter-spacing: 0;
+        line-height: 24px;
+        text-align: center;
+      }
+    }
+
+    button {
+      background-color: get-color("orange");
+      border-radius: rem(4px);
+      cursor: pointer;
+      min-width: rem(280px);
+      padding: rem(16px);
+      @include media(">=desktop") {
+        min-width: rem(320px);
+        padding: rem(16px);
+      }
+    }
+  }
+}

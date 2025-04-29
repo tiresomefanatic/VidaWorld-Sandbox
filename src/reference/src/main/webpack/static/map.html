@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Map</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Map" />
+  <meta property="language" content="en" />
+  <meta property="country" content="India" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+</head>
+<body>
+  <header></header>  
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "mapsConfig": {
+        "zoom": 15.5,
+        "center": {
+          "lat": 18.004,
+          "lng": 77.004
+        },
+        "markers": [{
+            "lat": 18.001,
+            "lng": 77.001,
+            "details": {
+              "id": "",
+              "image": "https://picsum.photos/269/151.webp?random=1",
+              "title": "Vida Space, Matunga",
+              "message": "Camelio Colleo, Mumbai North East, Mumbai, Maharashtra, 400019"
+            }
+          },
+          {
+            "icon": "/clientlib-site/images/svg/building.svg",
+            "selectIcon": "/clientlib-site/images/svg/building-active.svg",
+            "lat": 18.003,
+            "lng": 77.003,
+            "details": {
+              "id": "",
+              "image": "https://picsum.photos/269/151.webp?random=2",
+              "title": "Vida, Mumbai",
+              "message": "Mumbai"
+            }
+          },
+          {
+            "icon": "/clientlib-site/images/svg/building.svg",
+            "selectIcon": "/clientlib-site/images/svg/building-active.svg",
+            "lat": 18.005,
+            "lng": 77.005,
+            "details": {
+              "id": "",
+              "image": "https://picsum.photos/269/151.webp?random=3",
+              "title": "Vida, Bangalore",
+              "message": "Bangalore"
+            }
+          },
+          {
+            "icon": "/clientlib-site/images/svg/building.svg",
+            "selectIcon": "/clientlib-site/images/svg/building-active.svg",
+            "lat": 18.007,
+            "lng": 77.007,
+            "details": {
+              "id": "",
+              "image": "https://picsum.photos/269/151.webp?random=4",
+              "title": "Vida, Chennai",
+              "message": "Chennai"
+            }
+          }
+        ]
+      }
+    });
+  </script>
+  <div data-component="GoogleMaps" data-cmp-type="react" data-cmp-config="mapsConfig"></div>
+</body>
+</html>

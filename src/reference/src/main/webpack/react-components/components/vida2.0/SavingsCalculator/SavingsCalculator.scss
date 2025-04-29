@@ -1,0 +1,612 @@
+.savings-calculator-container {
+  .bg-img-container {
+    position: absolute;
+    top: rem(110px);
+
+    @include media(">=desktop") {
+      top: rem(100px);
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .savings-calculator-wrapper {
+    background-color: rgba(255, 255, 255, 70%);
+    border-radius: rem(8px);
+    margin: rem(32px) rem(14.5px);
+    padding: rem(32px) rem(14.5px);
+    position: relative;
+    z-index: 1;
+    @include media(">=desktop") {
+      border-radius: rem(16px);
+      margin: rem(137.5px) auto rem(32px) auto;
+      margin-left: rem(88px);
+      margin-right: rem(88px);
+      padding: rem(64px);
+    }
+  }
+
+  &__title-container {
+    .title-text {
+      @include vida-h1-mobile;
+      line-height: 48px;
+      text-align: left;
+
+      @include media(">=desktop") {
+        @include vida-h2-desk;
+        line-height: 57.6px;
+        text-align: left;
+      }
+    }
+  }
+
+  &__distance-range-container {
+    padding: rem(16px) 0 0;
+    @include media(">=desktop") {
+      padding: rem(64px) 0 0;
+    }
+
+    .question-text {
+      @include vida-mobile-body-2;
+      line-height: 16.8px;
+      text-align: left;
+
+      @include media(">=desktop") {
+        @include vida-h3-desktop;
+        line-height: 33.6px;
+        text-align: left;
+      }
+    }
+
+    .slider-container {
+      margin-top: rem(37px);
+      position: relative;
+      width: 100%;
+      @include media(">=desktop") {
+        margin-top: rem(64px);
+      }
+
+      .slider {
+        appearance: none;
+        background: linear-gradient(to right,
+        get-color("orange") 0%,
+        get-color("orange") 10%,
+        get-color("catskill-white") 10%,
+        get-color("catskill-white") 100%);
+        background-color: get-color("catskill-white");
+        border-radius: 5px;
+        height: 3px;
+        opacity: 0.7;
+        outline: none;
+        transition: opacity 0.2s;
+        width: 100%;
+      }
+
+      .slider:hover {
+        opacity: 1;
+      }
+
+      .slider::-webkit-slider-thumb {
+        appearance: none;
+        background: get-color("orange");
+        border: 2px solid #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        height: 25px;
+        position: relative;
+        width: 25px;
+        z-index: 2;
+      }
+
+      .slider::-moz-range-thumb {
+        background: get-color("orange");
+        cursor: pointer;
+        height: 25px;
+        width: 25px;
+      }
+
+      .slider-divisions {
+        color: #222;
+        display: flex;
+        justify-content: space-between;
+        margin-top: rem(8px);
+        @include media(">=desktop") {
+          margin-top: rem(24px);
+        }
+      }
+
+      .distance-value {
+        border-radius: rem(5px);
+        color: #000;
+        font-size: rem(16px);
+        font-weight: 700;
+        left: 10%;
+        padding: rem(5px) rem(10px);
+        position: absolute;
+        top: rem(-22px);
+        transform: translateX(-50%);
+        white-space: nowrap;
+        z-index: 1;
+        @include media(">=desktop") {
+          font-size: rem(28px);
+          top: rem(-58px);
+        }
+      }
+    }
+  }
+
+  .savings-graph-container {
+    display: flex;
+    flex-direction: column;
+    @include media(">=desktop") {
+      background-color: get-color("white");
+      border-radius: rem(16px);
+      flex-direction: row;
+      gap: rem(40px);
+      justify-content: center;
+      margin: rem(64px) 0;
+      padding: rem(34px) rem(35px);
+    }
+
+    &__total-savings-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: rem(16px);
+      padding: rem(24px) 0;
+      @include media(">=desktop") {
+        flex-basis: 50%;
+        gap: rem(24px);
+      }
+
+      .yours-savings-text {
+        @include vida-h3-mobile;
+        line-height: 24px;
+        text-align: left;
+
+        @include media(">=desktop") {
+          @include vida-h3-desktop;
+          line-height: 33.6px;
+          padding-bottom: rem(12px);
+          text-align: left;
+        }
+      }
+
+      .savings-card-container {
+        align-items: center;
+        background-color: get-color("orange");
+        border-radius: rem(8px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: rem(74px);
+        padding: rem(15px) rem(13px);
+        position: relative;
+        width: 100%;
+        @include media(">=desktop") {
+          border-radius: rem(16px);
+          // margin: 0;
+          // min-height: rem(148px);
+          // min-width: rem(550px);
+          padding: rem(30px) rem(75px) rem(50px);
+          // width: rem(303px);
+        }
+
+        .bg-img-container {
+          height: 100%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+
+          img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+
+        .text-container ,
+        .text-container h3 {
+          @include vida-mobile-body-1;
+          color: #fff;
+          font-weight: 450;
+          line-height: 22px;
+          position: relative;
+          text-align: center;
+          z-index: 1;
+
+          @include media(">=desktop") {
+            @include vida-desktop-body-4;
+            line-height: 33.6px;
+            text-align: center;
+          }
+
+          span {
+            @include vida-h5-mobile;
+            color: #fff;
+            font-weight: 700;
+            line-height: 22px;
+            text-align: center;
+            @include media(">=desktop") {
+              @include vida-h3-desktop;
+              font-weight: 700;
+              line-height: 33.6px;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    .graph-wrapper {
+      @include media(">=desktop") {
+        display: flex;
+        flex-basis: 50%;
+        flex-direction: column;
+      }
+    }
+
+    .graph-header-container {
+      display: none;
+      @include media(">=desktop") {
+        display: block;
+        padding-bottom: rem(24px);
+        padding-top: rem(30px);
+      }
+
+      .header-text {
+        @include media(">=desktop") {
+          @include vida-h3-desktop;
+          line-height: 33.6px;
+          text-align: left;
+        }
+      }
+    }
+
+    &__graph-container {
+      background-color: get-color("white");
+      border-radius: rem(8px);
+      box-shadow: 0 0 rem(20px) 0 rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: rem(10px);
+      justify-content: space-between;
+      padding: rem(12px) rem(15px);
+
+      @include media(">=desktop") {
+        gap: rem(46px);
+        min-height: rem(332px);
+        // min-width: rem(460px);
+        padding: rem(43px) rem(15px);
+        // width: 70%;
+      }
+
+      .ev-benefits-container {
+        .ev-benefits-text {
+          @include vida-extra-small-text-mobile;
+          color: get-color("mine-shaft");
+          line-height: 12px;
+          text-align: left;
+
+          @include media(">=desktop") {
+            @include vida-mobile-body-1;
+            line-height: 19.2px;
+            text-align: left;
+            width: rem(338px);
+          }
+
+          span {
+            @include vida-small-bold-text-desktop;
+            color: get-color("mine-shaft");
+            font-weight: 500;
+            line-height: 12px;
+            text-align: left;
+
+            @include media(">=desktop") {
+              @include vida-tertiary-cta-mobile;
+              color: get-color("mine-shaft");
+              line-height: 19.2px;
+              text-align: left;
+            }
+          }
+        }
+      }
+
+      .fuel-ev-graph-text-container {
+        border-bottom: 1px solid get-color("oslo-gray");
+        display: flex;
+        flex-basis: 100%;
+        height: fill-available;
+        justify-content: center;
+        min-height: rem(82px);
+        @include media(">=desktop") {
+          min-width: rem(160px);
+        }
+
+        .fuel-text-container {
+          align-items: flex-end;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          padding-right: rem(19px);
+
+          .fuel-text {
+            @include vida-small-bold-text-desktop;
+            color: get-color("mine-shaft");
+            font-weight: 500;
+            line-height: 12px;
+            text-align: right;
+            @include media(">=desktop") {
+              @include vida-tertiary-cta-mobile;
+              color: get-color("mine-shaft");
+              line-height: 19.2px;
+              text-align: right;
+            }
+          }
+
+          .value-and-unit {
+            @include vida-extra-small-text-mobile;
+            color: get-color("mine-shaft");
+            line-height: 12px;
+            text-align: right;
+
+            @include media(">=desktop") {
+              @include vida-tertiary-cta-mobile;
+              color: get-color("mine-shaft");
+              line-height: 19.2px;
+              text-align: left;
+            }
+          }
+        }
+
+        .ev-text-container {
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          padding-left: rem(19px);
+
+          .ev-text {
+            @include vida-small-bold-text-desktop;
+            color: get-color("mine-shaft");
+            font-weight: 500;
+            line-height: 12px;
+            text-align: right;
+
+            @include media(">=desktop") {
+              @include vida-tertiary-cta-mobile;
+              color: get-color("mine-shaft");
+              line-height: 19.2px;
+              text-align: right;
+            }
+          }
+
+          .value-and-unit {
+            @include vida-extra-small-text-mobile;
+            color: get-color("mine-shaft");
+            line-height: 12px;
+            text-align: right;
+
+            @include media(">=desktop") {
+              @include vida-tertiary-cta-mobile;
+              color: get-color("mine-shaft");
+              line-height: 19.2px;
+              text-align: left;
+            }
+          }
+        }
+
+        .fuel-ev-graph-wrapper {
+          align-items: flex-end;
+          display: flex;
+          gap: rem(10px);
+
+          .fuel-graph {
+            background-color: get-color("oslo-gray");
+            height: 100%;
+            width: rem(32px);
+          }
+
+          .ev-graph {
+            background-color: get-color("orange");
+            height: 36%;
+            width: rem(32px);
+          }
+        }
+      }
+    }
+  }
+
+  &__vida-impact-container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16px);
+    padding: rem(10px) 0 rem(16px);
+
+    @include media(">=desktop") {
+      display: none;
+    }
+
+    .impact-title-container {
+      @include vida-h5-desktop;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: left;
+    }
+
+    .impact-card-container {
+      background-color: get-color("catskill-white");
+      border-radius: rem(8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: rem(74px);
+      padding: rem(15px) rem(13px);
+      width: 100%;
+      
+      @include media(">=desktop") {
+        padding: rem(30px) rem(75px) rem(50px);
+        width: rem(303px);
+      }
+
+      .img-container {
+        position: absolute;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      .text-container {
+        @include vida-mobile-body-1;
+        color: get-color("mine-shaft");
+        font-weight: 450;
+        line-height: 22px;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+      }
+
+      span {
+        @include vida-h5-mobile;
+        font-weight: 700;
+        line-height: 22px;
+        text-align: center;
+      }
+    }
+  }
+
+  &__assumptions-container {
+    display: flex;
+    flex-direction: column;
+    padding: rem(34px) 0 rem(24px);
+
+    @include media(">=desktop") {
+      padding-left: rem(146px);
+      padding-right: rem(44px);
+    }
+
+    .content-container {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      gap: rem(16px);
+      padding-top: rem(16px);
+      transition-delay: 5s;
+      width: 100%;
+
+      @include media(">=tablet") {
+        gap: rem(32px);
+        padding-top: rem(32px);
+      }
+
+      // h3 {
+      //   @include vida-h5-mobile;
+      //   line-height: normal;
+      //   padding-top: rem(16px);
+
+      //   @include media(">=tablet") {
+      //     font-size: rem(20px);
+      //     padding-top: rem(32px);
+      //   }
+
+      //   &:first-child {
+      //     border-top: rem(1px) solid get-color("mine-shaft");
+      //   }
+      // }
+
+      p,
+      h3 {
+        @include vida-mobile-body-2;
+        color: get-color("mine-shaft");
+        padding: rem(16px) 0;
+
+        @include media(">=tablet") {
+          @include vida-desk-body-1;
+          padding: rem(32px) 0;
+        }
+      }
+    }
+
+    .header-container {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+
+      .title-container {
+        @include vida-h3-mobile;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: left;
+
+        @include media(">=desktop") {
+          @include vida-h3-desktop;
+          line-height: 33.6px;
+          text-align: left;
+        }
+      }
+
+      .arrow-img-container {
+        height: rem(32px);
+        width: rem(32px);
+
+        @include media(">=desktop") {
+          height: rem(42px);
+          width: rem(42px);
+        }
+
+        .drop-down-icon.open {
+          transform: rotate(180deg);
+        }
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+
+    .button-container {
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      margin-top: rem(34px);
+      min-height: rem(51px);
+      min-width: rem(300px);
+
+      @include media(">=desktop") {
+        justify-content: flex-end;
+        min-height: rem(72px);
+        min-width: rem(359px);
+      }
+
+      button {
+        @include vida-h5-mobile;
+        background-color: get-color("orange");
+        border-radius: rem(8px);
+        color: get-color("white");
+        line-height: 19.2px;
+        padding: rem(16px);
+        text-align: center;
+        width: 100%;
+
+        @include media(">=desktop") {
+          @include vida-h5-desktop;
+          border-radius: rem(16px);
+          color: get-color("white");
+          line-height: 24px;
+          padding: rem(24px) rem(96px);
+          text-align: center;
+          width: auto;
+        }
+      }
+    }
+  }
+}

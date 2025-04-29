@@ -1,0 +1,55 @@
+.vida-text-image-banner {
+  padding: rem(30px) 0 rem(60px);
+
+  @include media(">=desktop") {
+    padding: rem(55px) 0 rem(110px);
+  }
+
+  &__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: rem(16px);
+    height: 100%;
+    width: 100%;
+
+    @include media(">=desktop") {
+      border-radius: rem(32px);
+    }
+  }
+
+  &__content {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 18.75%, rgba(107, 107, 107, 0) 100%);
+    border-radius: rem(16px);
+    color: get-color("white");
+    height: 100%;
+    min-height: rem(259px);
+    padding: rem(30px) rem(16px);
+    width: 100%;
+
+    @include media(">=desktop") {
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 8.33%, rgba(107, 107, 107, 0) 80.21%);
+      border-radius: rem(32px);
+      min-height: rem(314px);
+      padding: rem(60px) rem(30px) rem(55px);
+    }
+  }
+
+  &__title {
+    @include h1;
+    margin: rem(45px) 0 rem(10px);
+
+    @include media(">=desktop") {
+      margin: 0 0 rem(5px);
+    }
+  }
+
+  &__description {
+    @include h3;
+    margin-bottom: rem(30px);
+
+    @include media(">=desktop") {
+      margin-bottom: rem(43px);
+    }
+  }
+}

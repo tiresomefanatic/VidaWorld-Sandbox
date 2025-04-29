@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Aadhar Validation Status</title>
+  <meta charset="UTF-8" />
+  <meta name="template" content="page-content" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Meta Property for Analytics Datalayer -->
+  <meta property="pageCategory" content="Booking" />
+  <meta property="pageName" content="Booking:Aadhar Validation" />
+  <meta property="country" content="India" />
+  <meta property="language" content="en" />
+  <meta property="isErrorPage" content="false" />
+  <meta property="errorCode" content="404" />
+  <meta property="errorDescription" content="Page Not Found" />
+
+  <link rel="shortcut icon" href="/clientlib-site/images/favicon.ico">
+  <%= htmlWebpackPlugin.options.custom %>
+
+</head>
+
+<body>
+  <header></header>
+  <div data-component="Notification" data-cmp-type="react"></div>
+  <script>
+    window.appConfig = Object.assign(window.appConfig || {}, {
+      "aadharValidationStatus": {
+        "aadharValidationSuccess": {
+          "title": "Success",
+          "content": "Your aadhar was verified successfully for the order",
+          "redirectMessage": "Redirecting to profile..."
+        },
+        "aadharValidationFailure": {
+          "title": "Failure",
+          "content": "Your aadhar was failed to validate. Please try again."
+        },
+        "primaryBtn": {
+          "label": "Re-Validate Aadhar"
+        },
+        "pageRedirectionTimeout" : 3000
+      }
+    });  
+  </script>
+  <div data-component="AadharValidationStatus" data-cmp-type="react" data-cmp-config="aadharValidationStatus"></div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+.vida-two-column-text-new {
+  padding: rem(20px) 0;
+  @include media(">=desktop") {
+    padding: rem(48px) 0 rem(80px);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px) 0;
+    @include media(">=desktop") {
+      display: flex;
+      flex-direction: row;
+      gap: 0 rem(32px);
+      justify-content: space-between;
+    }
+  }
+
+  &__heading {
+    @include h1;
+    float: left;
+
+    @include media(">=desktop") {
+      width: 50%;
+    }
+  }
+
+  &__description {
+    @include a2;
+    color: get-color("solid-grey");
+    display: inline-block;
+
+    @include media(">=desktop") {
+      width: 50%;
+    }
+  }
+
+}

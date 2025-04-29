@@ -1,0 +1,137 @@
+.vida-love-container.vida-2-container {
+  padding: 0;
+}
+
+.vida-love-container {
+  transition: opacity 1.5s ease-out;
+}
+
+.vida-news-section {
+  background: get-color("catskill-white");
+  padding: rem(32px) rem(20px);
+  @include media(">=desktop") {
+    background: none;
+    padding: rem(64px) rem(88px);
+  }
+
+  .news-card-wrapper {
+    border-radius: rem(12px);
+    position: relative;
+  }
+
+  .horizontal-scroll-container {
+    margin-bottom: 0;
+
+    &::-webkit-scrollbar {
+      height: rem(2px);
+      @include media(">=tablet") {
+        display: none;
+      }
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: get-color("white");
+      margin-left: rem(4px);
+      margin-right: rem(4px);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: get-color("orange");
+    }
+  }
+}
+
+.news-card-content {
+  backdrop-filter: blur(45px);
+  border-radius: rem(12px);
+  bottom: rem(15px);
+  display: flex;
+  flex-direction: column;
+  gap: rem(12px);
+  margin: 0 rem(13px);
+  padding: rem(15px) rem(24px);
+  position: absolute;
+
+  p {
+    color: get-color("white");
+    font-size: rem(14px);
+
+    @include media(">=desktop") {
+      font-size: rem(20px);
+    }
+  }
+
+  a {
+    font-size: rem(16px);
+
+    @include media(">=desktop") {
+      font-size: rem(20px);
+    }
+  }
+}
+
+.vida-news-card {
+  width: 84%;
+
+  @include media(">=desktop") {
+    width: 32%;
+  }
+}
+
+.news-card-asset {
+  height: rem(225px);
+  width: rem(266px);
+
+  @include media(">=desktop") {
+    height: rem(337px);
+    width: 100%;
+  }
+
+  .vida-news-card-image {
+    border-radius: 12px;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.vida-news-section {
+  background: get-color("catskill-white");
+
+  @include media(">=desktop") {
+    background: none;
+  }
+}
+
+.vida-news-container {
+  display: flex;
+  gap: rem(16px);
+  margin-bottom: rem(16px);
+
+  @include media(">=desktop") {
+    gap: rem(24px);
+  }
+}
+
+.vida-love-header-section {
+  p {
+    font-size: rem(12px);
+    font-weight: 400;
+    text-transform: uppercase;
+
+    @include media(">=desktop") {
+      font-size: rem(18px);
+    }
+  }
+
+  h2 {
+    font-size: rem(24px);
+    font-weight: 600;
+    line-height: rem(30px);
+    padding-top: rem(6.5px);
+
+    @include media(">=desktop") {
+      font-size: rem(48px);
+      line-height: rem(60px);
+    }
+  }
+}

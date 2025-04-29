@@ -1,0 +1,135 @@
+.vida-battery-specification {
+  &__container.vida-2-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: rem(32px);
+    padding-top: rem(32px);
+    @include media(">=desktop") {
+      padding-bottom: rem(64px);
+      padding-top: rem(64px);
+    }
+
+    .specification-banner {
+      display: flex;
+      flex-direction: column;
+      
+      margin-top: rem(36px);
+      min-height: rem(410px);
+      position: relative;
+
+      @include media(">=desktop") {
+        flex-direction: row;
+        gap: rem(157px);
+        justify-content: space-between;
+      }
+
+      .specification-banner-image-wrapper {
+        @include media(">=desktop") {
+          height: rem(630px);
+          width: rem(748px);
+        }
+        
+      }
+
+      &__image {
+        display: block;
+        height: 100%;
+        object-fit: contain;
+        width: 100%;
+        @include media(">=desktop") {
+          margin: 0 auto;
+          width: 100%;
+        }
+      }
+
+      .battery-specification {
+        display: flex;
+        flex-direction: column;
+        gap: rem(16px);
+        margin: rem(32px) 0;
+        padding: 0 rem(34px);
+
+        @include media(">=desktop") {
+          flex-direction: row;
+          gap: rem(32px);
+          justify-content: center;
+          margin: rem(64px) 0;
+        }
+
+        &:first-child {
+          @include media(">=desktop") {
+            margin: 0 0 rem(64px) !important;
+          }
+        }
+
+        &:last-child {
+          @include media(">=desktop") {
+            margin: rem(64px) 0 0 !important;
+          }
+        }
+
+        .default-icon {
+          display: block;
+        }
+
+
+        &__icon {
+          &__dimensions {
+            height: rem(45px);
+            width: rem(45px);
+            @include media(">=desktop") {
+              height: rem(90px);
+              width: rem(90px);
+            }
+          }
+
+          &__hover-icon {
+            display: none;
+          }
+        }
+
+        &__tooltip {
+          display: block;
+          width: 80%;
+          z-index: 1;
+          @include media(">=desktop") {
+            flex-basis: 70%;
+            width: 100%;
+          }
+
+          &__heading {
+            @include vida-h3-mobile;
+            padding-bottom: rem(8px);
+            @include media(">=desktop") {
+              @include vida-h3-desktop;
+              font-weight: 600;
+              padding-bottom: rem(8px);
+            }
+          }
+
+          &__title {
+            @include vida-mobile-body-2;
+            @include media(">=desktop") {
+              @include vida-desktop-body-3;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__heading h2 {
+    @include vida-h2-mobile;
+    @include media(">=desktop") {
+      @include vida-h2-desk;
+    }
+  }
+}
+
+.specification-banner-image-wrapper,
+.specification-tooltip-container {
+  @include media(">=desktop") {
+    flex-basis: 48%;
+  }
+}

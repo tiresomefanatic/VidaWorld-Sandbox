@@ -1,0 +1,190 @@
+.feature-details-specification-container {
+  display: flex;
+  flex-direction: column;
+  gap: rem(32px);
+  padding: rem(32px) rem(20px) !important;
+  @include media(">=desktop-md") {
+    padding: rem(64px) rem(88px) !important;
+  }
+
+  &__header-container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(5px);
+
+    @include media(">=desktop") {
+      gap: rem(9px);
+    }
+
+    .pre-title {
+      @include vida-mobile-subtitle;
+      letter-spacing: 0;
+      line-height: rem(14px);
+      text-align: left;
+
+      @include media(">=desktop") {
+        @include vida-desktop-subtitle;
+        letter-spacing: 0;
+        line-height: rem(22px);
+        text-align: left;
+      }
+    }
+
+    .title {
+      @include vida-h2-mobile;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 29px;
+      text-align: left;
+
+      @include media(">=desktop") {
+        @include vida-h2-desk;
+        letter-spacing: 0;
+        line-height: 58px;
+        text-align: left;
+      }
+    }
+  }
+
+  .image-detail-specification-container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(32px);
+    padding: 0 !important;
+    @include media(">desktop") {
+      flex-direction: row-reverse;
+      gap: rem(0);
+      padding-top: rem(17px);
+    }
+
+    &__image-layout {
+      align-items: center;
+      display: flex;
+      flex: 50%;
+      flex-wrap: wrap;
+      gap: rem(10px);
+      justify-content: flex-start;
+
+      @include media(">=desktop") {
+        gap: rem(20px);
+        padding-bottom: rem(32px);
+      }
+      @include media(">=desktop-lg") {
+        justify-content: flex-end;
+      }
+      @include media(">desktop", "<desktop-md") {
+        flex: 57%;
+      }
+      @include media(">=desktop-md", "<desktop-lg") {
+        flex: 53%;
+      }
+
+      .img-container {
+        img {
+          border-radius: rem(8px);
+          object-fit: cover;
+
+          @include media(">desktop") {
+            border-radius: rem(16px);
+          }
+        }
+      }
+    }
+
+    .description-specification-wrapper {
+      display: flex;
+      flex: 45%;
+      flex-direction: column;
+      flex-shrink: 99;
+      gap: rem(32px);
+
+      @include media(">desktop") {
+        padding-right: rem(45px);
+      }
+
+      @include media(">=desktop-md", "<desktop-lg") {
+        flex: 40%;
+      }
+
+      &__details-container {
+        .description {
+          @include vida-mobile-body-1;
+          letter-spacing: 0;
+          line-height: rem(19px);
+          text-align: left;
+
+          @include media(">desktop") {
+            @include vida-desk-body-1;
+            letter-spacing: 0;
+            line-height: rem(24px);
+            padding-bottom: rem(32px);
+            text-align: left;
+          }
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+
+      &__specifications-container {
+        display: flex;
+        gap: rem(12px);
+
+        @include media(">=desktop") {
+          gap: rem(20px);
+        }
+
+        .icon-container {
+          height: rem(20px);
+          width: rem(20px);
+
+          @include media(">=desktop") {
+            height: rem(30px);
+            width: rem(30px);
+          }
+
+          img {
+            object-fit: cover;
+          }
+        }
+
+        .content-container {
+          display: flex;
+          flex-direction: column;
+          gap: rem(12px);
+
+          .title {
+            @include vida-tertiary-cta-mobile;
+            color: get-color("mine-shaft");
+            letter-spacing: 0;
+            line-height: rem(19px);
+            text-align: left;
+
+            @include media(">desktop") {
+              @include vida-h5-desktop;
+              letter-spacing: 0;
+              line-height: rem(24px);
+              text-align: left;
+            }
+          }
+
+          .description {
+            @include vida-mobile-body-2;
+            color: get-color("mine-shaft");
+            letter-spacing: 0;
+            line-height: rem(17px);
+            text-align: left;
+            
+            @include media(">desktop") {
+              @include vida-desk-body-1;
+              letter-spacing: 0;
+              line-height: rem(24px);
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,553 @@
+.cancel-booking-wrapper {
+  position: relative;
+
+  .cancel-booking-bg-img {
+    background: get-color("catskill-white");
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  .cancel-booking-conatiner {
+    padding: rem(32px) rem(16px);
+
+    @include media(">=desktop") {
+      display: flex;
+      gap: rem(125px);
+      justify-content: space-between;
+      padding: rem(56px) rem(80px);
+    }
+
+    .cancel-booking-left-container {
+      @include media(">=desktop") {
+        flex: 1;
+      }
+
+      .cancel-booking-title {
+        padding: 0 0 rem(24px) 0;
+
+        @include media(">=desktop") {
+          padding: 0 0 rem(32px) 0;
+        }
+
+        h2 {
+          color: get-color("mine-shaft");
+          font-size: rem(24px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+
+          @include media(">=desktop") {
+            font-size: rem(48px);
+          }
+        }
+      }
+    }
+
+    .cancel-booking-banner-container {
+      border-radius: rem(8px);
+      margin: 0 0 rem(24px) 0;
+      position: relative;
+
+      @include media(">=desktop") {
+        border-radius: rem(16px);
+      }
+
+      .cancel-booking-banner-bg {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+
+      .cancel-booking-banner-content-container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: rem(8px) rem(16px);
+        position: relative;
+
+        @include media(">=desktop") {
+          padding: rem(12px) rem(24px);
+        }
+      }
+
+      .user-info-conatiner {
+        @include media(">=desktop") {
+          flex: 3;
+        }
+
+        .user-info-name {
+          color: get-color("white");
+          font-size: rem(48px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: 83.333%;
+
+          @include media(">=desktop") {
+            font-size: rem(72px);
+            line-height: normal;
+          }
+        }
+
+        .user-info-bike {
+          color: get-color("white");
+          font-size: rem(30px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: 133.33%;
+
+          @include media(">=desktop") {
+            font-size: rem(45px);
+            line-height: normal;
+          }
+        }
+
+        .subtext {
+          color: get-color("white");
+          font-size: rem(16px);
+          font-style: italic;
+          font-weight: 530;
+          line-height: 125%;
+
+          @include media(">=desktop") {
+            font-size: rem(20px);
+            line-height: 100%;
+          }
+        }
+      }
+
+      .user-info-bike-img {
+        height: rem(93px);
+        width: rem(102px);
+
+        @include media(">=desktop") {
+          flex: 2;
+        }
+
+        @include media(">=desktop") {
+          height: rem(158px);
+          max-width: rem(192px);
+          width: rem(192px);
+        }
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+
+    .cancel-booking-right-container {
+      background: get-color("white");
+      border-radius: rem(8px);
+      box-shadow: 0 rem(5px) rem(10px) 0 rgba(0, 0, 0, 0.1);
+      padding: rem(24) rem(16px);
+
+      @include media(">=desktop") {
+        border-radius: rem(16px);
+        flex: 1;
+        padding: rem(32px) rem(56px);
+      }
+
+      .cancel-booking-right-content-container {
+        .dashed-border {
+          border-top: 1px dashed get-color("mine-shaft");
+          margin: 0 0 rem(16px) 0;
+        }
+      }
+    }
+
+    .booking-delivery-info-container {
+      border-bottom: 1px dashed get-color("mine-shaft");
+      margin: 0 0 rem(16px) 0;
+      padding: 0 rem(20px) rem(16px) rem(20px);
+
+      .delivering-from-info {
+        padding: 0 0 rem(16px) 0;
+
+        @include media(">=desktop") {
+          padding: 0 0 rem(24px) 0;
+        }
+
+        .delivery-info {
+          color: get-color("mine-shaft");
+          font-size: rem(12px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: 150%;
+
+          @include media(">=desktop") {
+            font-size: rem(18px);
+            line-height: 100%;
+          }
+        }
+
+        .delivery-place {
+          color: get-color("mine-shaft");
+          font-size: rem(12px);
+          font-style: normal;
+          font-weight: 450;
+          line-height: 150%;
+
+          @include media(">=desktop") {
+            font-size: rem(18px);
+            line-height: 100%;
+          }
+        }
+      }
+
+      .delivery-payment-info {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        .payable-text {
+          color: get-color("mine-shaft");
+          font-size: rem(12px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+
+          @include media(">=desktop") {
+            font-size: rem(16px);
+          }
+        }
+
+        .payable-amount {
+          color: get-color("mine-shaft");
+          font-size: rem(24px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          @include media(">=desktop") {
+            font-size: rem(28px);
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    .delivery-bike-info-container {
+      align-items: flex-start;
+      background: get-color("alice-blue");
+      border-radius: rem(8px);
+      display: flex;
+      justify-content: space-between;
+      margin: 0 0 rem(16px) 0;
+      padding: rem(16px);
+
+      .delivery-bike-icon {
+        height: rem(20px);
+        min-height: rem(20px);
+        min-width: rem(20px);
+        width: rem(20px);
+
+        @include media(">=desktop") {
+          height: rem(26px);
+          min-height: rem(26px);
+          min-width: rem(26px);
+          width: rem(26px);
+        }
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      .delivery-bike-flex-container {
+        display: flex;
+        gap: rem(8px);
+      }
+
+      .delivery-model-flex-container {
+        align-items: flex-start;
+        display: flex;
+        gap: rem(12px);
+        justify-content: flex-end;
+      }
+
+      .delivery-bike-model-info {
+        .delivery-bike-model-info-text {
+          color: get-color("mine-shaft");
+          font-size: rem(14px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          padding: 0 0 rem(8px) 0;
+
+          @include media(">=desktop") {
+            font-size: rem(20px);
+          }
+        }
+
+        .delivery-bike-charges-text {
+          color: get-color("mine-shaft");
+          font-size: rem(12px);
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+
+          @include media(">=desktop") {
+            font-size: rem(10px);
+          }
+        }
+      }
+
+      .delivery-bike-model-amount {
+        p {
+          color: get-color("mine-shaft");
+          font-size: rem(14px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+
+          @include media(">=desktop") {
+            font-size: rem(20px);
+          }
+        }
+      }
+
+      .chevron-down-icon {
+        height: rem(20px);
+        margin: rem(-2.5px) 0 0 0;
+        min-height: rem(20px);
+        min-width: rem(20px);
+        width: rem(20px);
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+
+    .delivery-add-on-container {
+      .delivery-add-on-content-container {
+        align-items: flex-start;
+        border-bottom: 1px dashed get-color("mine-shaft");
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 rem(16px) 0;
+        padding: 0 rem(16px) rem(16px) rem(16px);
+
+        .delivery-add-on-title-container {
+          display: flex;
+          gap: rem(8px);
+        }
+      }
+
+      .delivery-add-on-icon {
+        height: rem(20px);
+        width: rem(20px);
+
+        @include media(">=desktop") {
+          height: rem(26px);
+          width: rem(26px);
+        }
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      .delivery-add-on-info {
+        .delivery-add-on-info-title {
+          color: get-color("mine-shaft");
+          font-size: rem(14px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+          padding: 0 0 rem(8px);
+
+          @include media(">=desktop") {
+            font-size: rem(20px);
+            font-weight: 530;
+          }
+        }
+
+        .delivery-add-on-info-sub-text {
+          color: get-color("lightning-yellow");
+          font-size: rem(10px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: normal;
+
+          @include media(">=desktop") {
+            font-size: rem(14px);
+          }
+        }
+      }
+
+      .delivery-add-on-btn-container {
+        .delivery-add-on-btn {
+          color: get-color("orange");
+          cursor: pointer;
+          font-size: rem(16px);
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+
+          @include media(">=desktop") {
+            font-size: rem(20px);
+            font-weight: 530;
+          }
+        }
+      }
+    }
+  }
+}
+
+.cancel-booking-drawer-wrapper {
+  background: get-color("alice-blue");
+  border-top-left-radius: rem(16px);
+  border-top-right-radius: rem(16px);
+  bottom: 0;
+  box-shadow: 0 rem(-10px) rem(10px) 0 rgba(0, 0, 0, 0.1);
+  padding: 0 rem(16px) rem(16px) rem(16px);
+  position: fixed;
+  transition: all 1s linear;
+  width: 100%;
+  z-index: 998;
+
+  @include media(">=desktop") {
+    padding: rem(32px);
+    transition: all 0s linear;
+  }
+
+  .drawer-btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 rem(16px) 0;
+    padding: rem(8px) 0;
+
+    @include media(">=desktop") {
+      display: none;
+    }
+
+    .drawer-btn {
+      background: get-color("pure-black");
+      border-radius: rem(48px);
+      height: rem(4px);
+      width: rem(48px);
+    }
+  }
+
+  .cancel-booking-drawer-container {
+    @include media(">=desktop") {
+      align-items: center;
+      display: flex;
+      gap: rem(125px);
+    }
+
+    .cancel-booking-drawer-title {
+      padding: 0 0 rem(32px) 0;
+
+      @include media(">=desktop") {
+        flex: 1;
+        padding: 0;
+      }
+
+      p {
+        color: get-color("mine-shaft");
+        font-size: rem(24px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+
+        @include media(">=desktop") {
+          font-size: rem(28px);
+          font-weight: 600;
+        }
+      }
+    }
+
+    .cancel-booking-drawer-btn-container {
+      display: flex;
+      gap: rem(16px);
+
+      @include media(">=desktop") {
+        flex: 1;
+        gap: rem(12px);
+      }
+
+      .cancel-booking-cancel-btn {
+        align-items: center;
+        background: get-color("white");
+        border: 1px solid get-color("orange");
+        border-radius: rem(8px);
+        color: get-color("mine-shaft");
+        cursor: pointer;
+        display: flex;
+        font-size: rem(16px);
+        font-style: normal;
+        font-weight: 600;
+        height: rem(52px);
+        justify-content: center;
+        line-height: normal;
+        text-decoration: none;
+        width: 100%;
+
+        @include media(">=desktop") {
+          border: 2px solid get-color("orange");
+          font-size: rem(20px);
+          font-weight: 600;
+          height: rem(78px);
+        }
+      }
+
+      .cancel-booking-confirm-btn {
+        align-items: center;
+        background: get-color("orange");
+        border-radius: rem(8px);
+        color: get-color("white");
+        cursor: pointer;
+        display: flex;
+        font-size: rem(16px);
+        font-style: normal;
+        font-weight: 600;
+        height: rem(52px);
+        justify-content: center;
+        line-height: normal;
+        text-decoration: none;
+        width: 100%;
+
+        @include media(">=desktop") {
+          font-size: rem(20px);
+          font-weight: 600;
+          height: rem(78px);
+        }
+      }
+    }
+  }
+
+  .cancel-booking-error {
+    color: get-color("red");
+    font-size: rem(10px);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: rem(14px);
+    margin: 0 0 rem(8px) 0;
+
+    &.show-only-mobile {
+      @include media(">=desktop") {
+        display: none;
+      }
+    }
+
+    &.show-only-desktop {
+      font-size: rem(14px);
+      @include media("<=desktop") {
+        display: none;
+      }
+    }
+  }
+
+  .slide-down {
+    transform: translateY(90%);
+  }
+}

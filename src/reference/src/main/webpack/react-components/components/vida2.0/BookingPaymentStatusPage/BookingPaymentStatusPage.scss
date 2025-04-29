@@ -1,0 +1,315 @@
+.booking-status-page-wrapper {
+  .booking-status-bg-img {
+    background: get-color("catskill-white");
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    width: 100%;
+  }
+  
+  .booking-status-page-container {
+    padding-bottom: rem(24px) !important;
+    padding-top: rem(32px) !important;
+    position: relative;
+  
+    @include media(">=desktop") {
+      display: flex;
+      gap: rem(152px);
+      justify-content: space-between;
+      padding-bottom: rem(152px) !important;
+      padding-top: rem(37px) !important;
+    }
+  }
+  
+  .booking-status-left-container {
+    @include media(">=desktop") {
+      flex: 1;
+    }
+  
+    .booking-status-banner-container {
+      border-radius: rem(8px);
+      margin: 0 0 rem(88px) 0;
+      position: relative;
+
+      @media screen and (max-height: 800px) {
+        margin-bottom: rem(32px);
+      }
+  
+      @include media(">=desktop") {
+        border-radius: rem(16px);
+        margin: 0;
+      }
+  
+      &.failure {
+        filter: grayscale(1);
+        opacity: 0.5;
+      }
+  
+      .booking-status-banner-bg {
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+  
+      .booking-status-banner-content-container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: rem(8px) rem(16px);
+        position: relative;
+  
+        @include media(">=desktop") {
+          padding: rem(12px) rem(10px) rem(12px) rem(30px);
+        }
+      }
+  
+      .user-info-container {
+        padding: 16px 0;
+
+        .user-info-name-text {
+          @include vida-h2-desk;
+          color: get-color("white");
+          line-height: rem(40px);
+  
+          @include media(">=desktop") {
+            @include vida-large-title1-mobile;
+            color: get-color("white");
+            line-height: rem(86px);
+          }
+        }
+  
+        .user-info-bike-text {
+          @include vida-medium-bold-text-mobile;
+          color: get-color("white");
+          line-height: rem(40px);
+  
+          @include media(">=desktop") {
+            @include vida-large-title2-mobile;
+            color: get-color("white");
+            line-height: rem(54px);
+          }
+        }
+
+        .user-info-modal-color {
+          @include vida-mobile-body-1;
+          color: get-color("white");
+
+          @include media(">=desktop") {
+            @include vida-desk-body-1;
+            color: get-color("white");
+          }
+        }
+  
+        .bike-sub-text {
+          @include vida-tertiary-cta-mobile;
+          color: get-color("white");
+          line-height: rem(20px);
+  
+          @include media(">=desktop") {
+            @include vida-mobile-body-4;
+            color: get-color("white");
+            line-height: rem(20px);
+          }
+        }
+      }
+  
+      .user-bike-img-container {
+        height: rem(93px);
+        width: rem(102px);
+  
+        @include media(">=desktop") {
+          height: rem(158px);
+          max-width: rem(192px);
+          width: rem(192px);
+        }
+  
+        .user-bike-img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  .booking-status-right-container {
+    @include media(">=desktop") {
+      flex: 1.1;
+    }
+  
+    .booking-status-right-content-container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .booking-payment-status-success-failure-icon {
+      height: rem(100px);
+      margin: 0 0 rem(12px) 0;
+      width: rem(100px);
+  
+      @include media(">=desktop") {
+        height: rem(210px);
+        margin: 0 0 rem(24px) 0;
+        width: rem(210px);
+      }
+  
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  
+    .booking-payment-status-title {
+      margin: 0 0 rem(8px) 0;
+  
+      @include media(">=desktop") {
+        margin: 0 0 rem(18px) 0;
+      }
+  
+      .booking-payment-status-title-text {
+        @include vida-h2-mobile;
+        line-height: rem(28.8px);
+  
+        @include media(">=desktop") {
+          @include vida-h2-desk;
+          line-height: rem(57.6px);
+        }
+      }
+    }
+  
+    .booking-payment-status-description {
+      text-align: center;
+  
+      .booking-payment-status-description-text {
+        @include vida-mobile-body-1;
+        line-height: rem(19.2px);
+  
+        @include media(">=desktop") {
+          @include vida-desktop-body-4;
+          line-height: rem(33.6px);
+        }
+      }
+
+      .booking-payment-status-order-details {
+        align-items: center;
+        background-color: get-color("alice-blue");
+        border-radius: rem(16px);
+        display: flex;
+        flex-direction: column;
+        gap: rem(16px);
+        justify-content: space-between;
+        margin-bottom: rem(80px);
+        margin-top: rem(30px);
+        padding: rem(24px) rem(20px);
+
+        @include media(">=desktop") {
+          margin: rem(16px);
+        }
+
+        .booking-payment-order-details-header {
+          @include vida-h3-mobile;
+          line-height: rem(24px);
+        }
+
+        .booking-payment-order-details-link {
+          a {
+            @include vida-h3-mobile;
+            color: get-color("orange");
+            line-height: rem(24px);
+          }
+        }
+      }
+    }
+  }
+  
+  .booking-status-popup-container {
+    @include media(">=desktop") {
+      position: fixed;
+    }
+  
+    .drawer {
+      @include media("<desktop") {
+        margin: 0;
+        padding: 0 rem(24px) rem(36px) rem(24px);
+        position: fixed;
+      }
+      @include media(">=desktop") {
+        border-radius: 0;
+        border-top-left-radius: rem(16px);
+        border-top-right-radius: rem(16px);
+        bottom: 0;
+        box-shadow: 0 rem(-10px) rem(10px) 0 rgba(0, 0, 0, 0.1);
+        left: 0;
+        max-width: unset;
+        position: fixed;
+        width: 100%;
+      }
+    }
+  
+    .drawer__content {
+      @include media("<desktop") {
+        background: none;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+      }
+      @include media(">=desktop") {
+        border-radius: 0;
+        border-top-left-radius: rem(16px);
+        border-top-right-radius: rem(16px);
+        padding: 0;
+      }
+    }
+  
+    .drawer__header {
+      @include media("<desktop") {
+        display: none;
+      }
+    }
+  
+    .drawer__body {
+      @include media("<desktop") {
+        height: unset;
+        margin: 0;
+        overflow: unset;
+        padding: 0;
+      }
+      @include media(">=desktop") {
+        padding: rem(37px) rem(88px);
+      }
+      @include media(">=desktop-lg") {
+        margin: 0 auto;
+        max-width: rem(1440px);
+      }
+    }
+  
+    .booking-status-popup-btn-container {
+      @include media(">=desktop") {
+        display: flex;
+        justify-content: flex-end;
+      }
+  
+      .booking-status-popup-btn {
+        @include vida-h5-mobile;
+        align-items: center;
+        background: get-color("orange");
+        border-radius: rem(8px);
+        box-shadow: 0 rem(5px) rem(10px) 0 rgba(0, 0, 0, 0.2);
+        color: get-color("white");
+        cursor: pointer;
+        display: flex;
+        height: rem(51px);
+        justify-content: center;
+        width: 100%;
+  
+        @include media(">=desktop") {
+          @include vida-h5-desktop;
+          color: get-color("white");
+          height: rem(78px);
+          width: rem(347px);
+        }
+      }
+    }
+  }
+}

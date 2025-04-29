@@ -1,0 +1,83 @@
+.vida-charging-process-component {
+  margin: 32px auto;
+
+  .charing-process__container {
+    display: grid;
+    gap: rem(16px);
+    margin: 0 auto;
+    width: 100%;
+    @include media(">=desktop") {
+      gap: rem(40px);
+      max-width: rem(1246px);
+    }
+
+    h2 {
+      @include vida-h3-mobile;
+      @include media(">=desktop") {
+        @include vida-h2-desk;
+      }
+    }
+
+    .steps {
+      display: grid;
+      gap: rem(20px);
+      @include media(">=desktop") {
+        gap: rem(16px);
+      }
+    }
+
+    .step {
+      display: flex;
+      gap: rem(8px);
+      position: relative;
+
+      @include media(">=desktop") {
+        gap: rem(61px);
+        min-height: rem(96px);
+        padding: rem(24px);
+      }
+
+      h3 {
+        @include vida-h5-mobile;
+        min-width: rem(74px);
+
+        @include media(">=desktop") {
+          @include vida-h3-desktop;
+          min-width: rem(83px);
+          //   padding: rem(24px) 0;
+        }
+      }
+
+      p {
+        @include vida-mobile-body-2;
+        width: 74%;
+
+        @include media(">=desktop") {
+          @include vida-desk-body-1;
+          max-width: rem(1055px);
+          width: 100%;
+          //   padding: rem(24px) rem(24px);
+        }
+      }
+
+      .liner {
+        background-color: get-color("oslo-gray");
+        height: 80%;
+        position: absolute;
+        transform: translate(20px, 25px);
+        width: 2px;
+
+        @include media(">=desktop") {
+          height: rem(46px);
+          transform: translate(35px, 50px);
+        }
+      }
+
+      &:last-child {
+        .liner {
+          display: none;
+        }
+      }
+    }
+  }
+}

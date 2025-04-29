@@ -1,0 +1,198 @@
+.vida-exchange-tracker {
+  &__stepper {
+    // border-top: 1px solid get-color("light-grey");
+    flex: 0 0 100%;
+    margin-bottom: rem(45px);
+    margin-left: rem(2px);
+    max-width: 100%;
+    padding-top: rem(23px);
+    position: sticky;
+
+    @include media(">=desktop") {
+      display: flex;
+      margin: rem(52px) 0 rem(30px);
+      padding: 0;
+
+      h3 {
+        padding-bottom: 5px;
+        word-break: break-word;
+      }
+    }
+
+    h3 {
+      @include h4-md;
+    }
+
+    ul {
+      border-left: rem(2px) dashed get-color("solid-grey");
+      list-style: none;
+      padding-bottom: rem(35px);
+      padding-left: rem(25px);
+
+      @include media(">=desktop") {
+        border-left: none;
+        border-top: 1px dashed get-color("solid-grey");
+        list-style-type: none;
+        margin-left: 0;
+        margin-top: -1px;
+        min-width: 20%;
+        padding: 0;
+      }
+    }
+
+    ul:last-child {
+      border-left-color: transparent;
+      padding-bottom: rem(0);
+
+      @include media(">=desktop") {
+        border-top-color: transparent;
+      }
+    }
+  }
+
+  &__stepper-next {
+    display: flex;
+    height: rem(10px);
+    position: relative;
+    right: 31px;
+    width: rem(10px);
+
+    @include media(">=desktop") {
+      height: 12px;
+      margin-bottom: 12px;
+      margin-top: 2px;
+      right: 0;
+      top: -12px;
+      width: 12px;
+    }
+
+    &::before {
+      background: get-color("light-grey");
+      border-radius: 100%;
+      content: "";
+      height: 10px;
+      left: 1px;
+      position: absolute;
+      top: 4px;
+      width: 10px;
+      z-index: 2;
+    }
+
+    &::after {
+      background: get-color("white");
+      border-radius: 100%;
+      content: "";
+      height: 27px;
+      left: -8px;
+      position: absolute;
+      top: -4px;
+      width: 28px;
+    }
+  }
+
+  &__steps {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 68%;
+
+    .icon-check-circle {
+      background: #fff;
+      font-size: rem(30px);
+      position: relative;
+      right: 40px;
+      top: -4px;
+
+      @include media(">=desktop") {
+        left: 0;
+        top: -16px;
+      }
+    }
+  }
+
+  &__iconDiv {
+    height: 28px;
+    position: absolute;
+    width: 28px;
+
+    @include media(">=desktop") {
+      position: relative;
+    }
+  }
+
+  &__list {
+    cursor: pointer;
+  }
+
+  &__status-icons {
+    background: #fff;
+    border: 1px solid;
+    border-radius: 100px;
+
+    font-size: rem(16px);
+    padding: rem(6px);
+    position: relative;
+    right: rem(41px);
+    top: rem(5px);
+
+    @include media(">=desktop") {
+      left: 0;
+      padding: rem(11px);
+      right: rem(40px);
+      top: rem(-12px);
+    }
+
+    &.active {
+      border: 1px solid get-color("orange");
+      color: get-color("orange");
+    }
+  }
+
+  &__info {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: rem(10px);
+    position: relative;
+
+    @include media(">=desktop") {
+      left: 0;
+      margin-left: 0;
+    }
+
+    &.active {
+      color: get-color("orange");
+
+    }
+
+    &-desc {
+      color: #777676;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+  }
+
+  .btn--tracker {
+    margin-top: rem(10px);
+
+    @include media("<desktop") {
+      font-size: rem(12px);
+      height: rem(30px);
+      padding: 5px 24px;
+    }
+  }
+
+  &__status-action {
+    padding-top: 10px;
+
+    @include media(">=desktop") {
+      margin-bottom: 20px;
+
+      .btn {
+        height: auto;
+        position: relative;
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.vida-blog-details {
+  .vida-blog__header {
+    color: get-color("orange");
+    font-size: 30px;
+    padding: 20px 12px;
+
+    @include media(">tablet") {
+      margin-left: 30px;
+    }
+  }
+
+  .vida-blog-card__container {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @include media(">tablet") {
+      flex-direction: row;
+    }
+  
+    ul {
+      flex-basis: 20%;
+
+      li {
+        cursor: pointer;
+        list-style-type: none;
+        padding: 20px 12px;
+
+        a {
+          color: get-color("solid-grey");
+          font-size: 16px;
+          text-decoration: none;
+        }
+      }
+
+      li.active {
+        a {
+          color: get-color("solid-black");
+          font-size: 24px;
+        }
+      }
+    }
+  
+    .vida-blog-card__body {
+      align-items: center;
+      flex-basis: 80%;
+      flex-direction: column;
+  
+      .vida-blog-card__articlebody {
+        width: 100%;
+        @include media(">=desktop") {
+          width: 60%;
+        }
+      }
+
+      .vida-blog-card__results {
+        display: none;
+      }
+    }
+  }
+}

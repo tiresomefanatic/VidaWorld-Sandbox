@@ -1,0 +1,570 @@
+.vida-header-wrapper {
+  height: 3.25rem;
+  width: 100%;
+
+  @include media(">=desktop") {
+    height: 4rem;
+  }
+
+  &.header-home-page {
+    .vida-header-container {
+      background: rgba(0, 0, 0, 0.1);
+      @include media(">=desktop") {
+        background: get-color("catskill-white");
+      }
+
+      .vida-logo-container {
+        align-items: center;
+        display: flex;
+
+        .vida-logo { 
+          border-right: 0.5px solid get-color("oslo-gray");
+          padding-right: 16px;
+          @include media(">=desktop") {
+            border-right: 1px solid #ccd3db;
+            padding-right: 24px;
+          }
+        }
+
+        .hero-logo {
+          padding-left: 16px;
+          @include media(">=desktop") {
+            padding-left: 24px;
+          }
+        }
+      }
+
+      .vida-navbar-container {
+        .vida-navbar-option {
+          .vida-navbar-option-text {
+            color: get-color("mine-shaft");
+          }
+
+          &.active-option {
+            border-bottom: 5px solid get-color("mine-shaft");
+          }
+        }
+
+        .vida-hamburger-container {
+          @include media("<=desktop") {
+            background: get-color("orange");
+          }
+
+          .vida-hamburger-line {
+            @include media(">desktop") {
+              background: get-color("mine-shaft");
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.header-booking-page {
+    .vida-header-container {
+      .vida-navbar-container {
+        .vida-header-customer-care-icon {
+          @include media("<=desktop") {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  &.header-nav-page {
+    .vida-header-container {
+      .vida-logo-container {
+        @include media("<=desktop") {
+          display: none;
+        }
+      }
+
+      .vida-header-title-container {
+        @include media("<=desktop") {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .vida-header-container {
+    align-items: center;
+    backdrop-filter: blur(25px);
+    background: rgba(34, 34, 34, 0.5);
+    display: flex;
+    height: 3.25rem;
+    justify-content: space-between;
+    padding: 0 rem(20px);
+    position: fixed;
+    width: 100%;
+    z-index: 9998;
+
+    @include media(">=desktop") {
+      height: 4rem;
+      padding: 0 rem(88px);
+    }
+
+    .vida-logo-container {
+      align-items: center;
+      display: flex;
+
+      .vida-logo { 
+        border-right: 0.5px solid get-color("oslo-gray");
+        padding-right: 16px;
+        @include media(">=desktop") {
+          border-right: 1px solid #ccd3db;
+          padding-right: 24px;
+        }
+
+        img {
+          height: rem(28px);
+          object-fit: contain;
+          width: rem(65px);
+          @include media(">=desktop") {
+            height: rem(40px);
+            width: rem(93px);
+          }
+        }
+
+        a {
+          text-decoration: none;
+        }
+      }
+
+      .hero-logo {
+        padding-left: 16px;
+        @include media(">=desktop") {
+          padding-left: 24px;
+        }
+
+        img {
+          height: rem(28px);
+          object-fit: contain;
+          width: rem(17px);
+          @include media(">=desktop") {
+            height: rem(40px);
+            width: rem(23px);
+          }
+        }
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .vida-header-title-container {
+      display: none;
+
+      .vida-header-back-icon {
+        a {
+          display: block;
+          height: rem(36px);
+          width: rem(36px);
+        }
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      .vida-header-title {
+        h1 {
+          @include vida-h2-mobile;
+          color: get-color("white");
+        }
+
+        h2 {
+          @include vida-h2-mobile;
+          color: get-color("white");
+        }
+
+        span {
+          @include vida-h2-mobile;
+          color: get-color("white");
+        }
+      }
+
+      .vida-header-title-flex-container {
+        align-items: center;
+        display: flex;
+        gap: rem(16px);
+      }
+    }
+
+    .vida-navbar-container {
+      align-items: center;
+      display: flex;
+      // gap: rem(84px);
+
+      .vida-navbar-option {
+        align-items: center;
+        border-bottom: 5px solid transparent;
+        display: flex;
+        gap: rem(8px);
+        padding: rem(7px) rem(40px);
+
+        @include media("<=desktop") {
+          display: none;
+        }
+
+        .vida-navbar-option-icon {
+          margin: rem(4px) 0 0 0;
+        }
+
+        .vida-navbar-option-link {
+          text-decoration: none;
+        }
+
+        .vida-navbar-option-img {
+          height: rem(36px);
+          width: rem(36px);
+        }
+
+        p {
+          font-size: rem(20px) !important;
+        }
+
+        .vida-navbar-option-text {
+          @include vida-h3-mobile;
+          color: get-color("white");
+          cursor: pointer;
+          text-decoration: none;
+        }
+
+        &.active-option {
+          border-bottom: 5px solid get-color("white");
+        }
+      }
+
+      .vida-header-customer-care-icon {
+        display: none;
+        margin: rem(8px) rem(8px) 0 0;
+      }
+
+      .vida-hamburger-container {
+        border-radius: rem(4px);
+        display: flex;
+        flex-direction: column;
+        gap: rem(6px);
+        height: rem(36px);
+        padding: rem(9px) rem(6px);
+        width: rem(36px);
+
+        @include media(">=desktop") {
+          background: transparent;
+        }
+
+        .vida-hamburger-line {
+          background: get-color("white");
+          height: rem(2px);
+          width: 100%;
+
+          @include media(">=desktop") {
+            // background: get-color("mine-shaft");
+            background: get-color("white");
+          }
+        }
+      }
+    }
+  }
+
+  .vida-hamburger-menu-wrapper {
+    background: get-color("white");
+    height: 100%;
+    position: fixed;
+    top: 0;
+    transform: translateX(100%);
+    transition: all 0.5s linear;
+    width: 100%;
+    z-index: 9999;
+
+    @include media(">=desktop") {
+      border-bottom-left-radius: rem(16px);
+      border-bottom-right-radius: rem(16px);
+      height: 85%;
+      right: rem(88px);
+      top: rem(64px);
+      transform: translateY(-125%);
+      transition: all 0.02s ease-in-out;
+      width: 70%;
+
+      @media (min-height: 650px) {
+        max-height: rem(555px);
+      }
+    }
+
+    .vida-hamburger-menu-container {
+      background: rgba(0, 0, 0, 0.6);
+      height: 100%;
+      width: 100%;
+
+      @include media(">=desktop") {
+        border-bottom-left-radius: rem(16px);
+        border-bottom-right-radius: rem(16px);
+      }
+
+      .vida-hamburger-menu-content-container {
+        height: 100%;
+        padding: rem(32px) rem(20px);
+        width: 100%;
+      }
+    }
+
+    .vida-hamburger-bg {
+      height: 100%;
+      position: absolute;
+      width: 100%;
+
+      source,
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .vida-hamburger-bg1 {
+      height: 100%;
+      width: 100%;
+
+      source,
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .vida-hamburger-content {
+    height: 100%;
+    padding: rem(48px) rem(48px) rem(48px) rem(16px);
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    @include media(">=desktop") {
+      padding: rem(64px) rem(48px) 0 rem(40px);
+    }
+
+    .vida-hamburger-topbar {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 0 rem(24px);
+
+      @include media(">=desktop") {
+        padding: 0 rem(16px) rem(16px) 0;
+      }
+
+      .vida-logo-container {
+        align-items: center;
+        display: flex;
+  
+        .vida-logo { 
+          border-right: 0.5px solid get-color("oslo-gray");
+          height: rem(28px);
+          padding-right: 16px;
+          width: rem(65px);
+          @include media(">=desktop") {
+            border-right: 1px solid #ccd3db;
+            display: none;
+            padding-right: 24px;
+          }
+        }
+
+        .hero-logo {
+          height: rem(28px);
+          padding-left: 16px;
+          width: rem(33px);
+          @include media(">=desktop") {
+            display: none;
+            padding-left: 24px;
+          }
+        }
+
+        a {
+          display: block;
+          height: 100%;
+          text-decoration: none;
+          width: 100%;
+        }
+
+        img {
+          height: 100%;
+          object-fit: contain;
+          width: 100%;
+        }
+      }
+
+      .close-icon {
+        cursor: pointer;
+        height: rem(20px);
+        width: rem(20px);
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+
+    .vida-hamburger-sites-container {
+      height: 85%;
+      overflow-x: hidden;
+      overflow-y: scroll;
+
+      @include media(">=desktop") {
+        height: 75%;
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .vida-hamburger-flex-container {
+        @include media(">=desktop") {
+          display: flex;
+          gap: rem(42px);
+          padding: 0 rem(32px) 0 0;
+        }
+
+        .vida-sub-flex-container {
+          @include media(">=desktop") {
+            flex: 1;
+          }
+        }
+      }
+
+      .vida-hamburger-sites-content {
+        padding: 0 0 rem(32px);
+
+        @include media(">=desktop") {
+          flex: 1;
+          padding: 0 0 rem(24px);
+        }
+
+        .vida-hamburger-sites-title {
+          @include vida-mobile-body-3;
+          border-bottom: 1px solid get-color("white");
+          color: get-color("white");
+          padding: 0 0 rem(8px);
+          width: 95%;
+
+          @include media(">=desktop") {
+            @include vida-desktop-body-3;
+            color: get-color("white");
+          }
+
+          &.my-account-text {
+            margin: 0 0 rem(8px);
+          }
+        }
+
+        .vida-hamburger-sites-name {
+          @include vida-label-value-text-mobile;
+          color: get-color("white");
+          cursor: pointer;
+          display: flex;
+          padding: rem(8px) 0 0;
+          text-decoration: none;
+
+          &.login-text {
+            padding: 0;
+          }
+        }
+      }
+
+      .vida-hamburger-bottombar {
+        border-top: 1px solid get-color("white");
+        width: 95%;
+
+        @include media(">=desktop") {
+          display: flex;
+          gap: rem(24px);
+        }
+
+        .vida-hamburger-bottombar-site {
+          // font-family: PP Neue Montreal;
+          @include vida-mobile-body-3;
+          color: get-color("white");
+          cursor: pointer;
+          display: flex;
+          padding: rem(8px) 0 0;
+          text-decoration: none;
+
+          @include media(">=desktop") {
+            @include vida-desktop-body-3;
+            color: get-color("white");
+          }
+        }
+      }
+    }
+
+    .blur-effect {
+      @include media("<=desktop") {
+        mask: 
+          linear-gradient(to top, rgb(0, 0, 1) 75%, transparent 100%),
+          linear-gradient(to bottom, rgb(0, 0, 1) 75%, transparent 100%);
+        mask-composite: source-in;
+        mask-composite: intersect;
+        mask-position: center;
+        mask-position: center;
+        mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        mask-size: 110% 110%;
+        mask-size: 110% 110%;
+      }
+    }
+
+    .vida-hamburger-profile {
+      align-items: center;
+      display: flex;
+      gap: rem(16px);
+
+      .user-profile-img,
+      i {
+        border-radius: 50%;
+        color: get-color("white");
+        height: rem(48px);
+        width: rem(48px);
+
+        a {
+          text-decoration: none;
+        }
+
+        img {
+          border-radius: 50%;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .vida-logout-btn {
+    a {
+      @include vida-mobile-body-3;
+      color: get-color("white");
+      cursor: pointer;
+      display: flex;
+      padding: rem(8px) 0 0;
+      text-decoration: none;
+
+      @include media(">=desktop") {
+        @include vida-desktop-body-3;
+        color: get-color("white");
+      }
+    }
+  }
+
+  // animation classes
+  .slide-left {
+    transform: translateX(0) !important;
+  }
+
+  .d-none {
+    display: none;
+  }
+}

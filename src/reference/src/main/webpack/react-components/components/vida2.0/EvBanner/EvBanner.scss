@@ -1,0 +1,106 @@
+.ev {
+  &-banner-pt-container {
+    transition: opacity 1.5s ease-out;
+  }
+
+  &__container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: rem(514px);
+    position: relative;
+    @include media(">=tablet") {
+      min-height: rem(771px);
+    }
+  }
+
+  &__right-bg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include media(">=desktop") {
+      height: 1000px;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__explore-content {
+    align-items: center;
+    display: flex;
+    gap: rem(4px);
+    justify-content: left;
+    padding-top: rem(32px);
+    @include media(">=tablet") {
+      gap: rem(6px);
+      padding-top: rem(50px);
+    }
+  }
+
+  &__expore-icon {
+    height: 18px;
+    width: 18px;
+    @include media(">=tablet") {
+      height: 27px;
+      width: 27px;
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  &__expore-label {
+    @include vida-mobile-subtitle;
+    @include media(">=tablet") {
+      @include vida-desktop-subtitle;
+    }
+  }
+
+  &__header {
+    @include vida-h2-mobile;
+    padding-bottom: rem(16px);
+    padding-top: rem(6px);
+    @include media(">tablet") {
+      @include vida-h2-desk;
+      padding-bottom: rem(24px);
+      padding-top: rem(9px);
+    }
+  }
+
+  &__desc-container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(16px);
+    padding-bottom: rem(16px);
+    @include media(">=tablet") {
+      flex-direction: row;
+      gap: rem(24px);
+      padding-bottom: rem(48px);
+    }
+  }
+
+  &__desc {
+    @include vida-mobile-body-1;
+    //max-width: rem(277px);
+    @include media(">=tablet") {
+      @include vida-desk-body-1;
+      max-width: rem(416px);
+    }
+  }
+
+  &__link {
+    @include vida-tertiary-cta-mobile;
+    position: relative;
+    z-index: 1;
+    @include media(">=tablet") {
+      @include vida-tertiary-cta;
+    }
+  }
+}

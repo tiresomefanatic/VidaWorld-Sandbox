@@ -1,0 +1,28 @@
+@import "../../../../site/styles/base/typography";
+
+.vida-pickup-centre {
+  &__model {
+    position: relative;
+  }
+
+  &__message {
+    @include label;
+    bottom: 0;
+    position: absolute;
+  }
+
+  &__amount {
+    @include h3;
+    display: flex;
+    justify-content: space-between;
+    
+    + div {
+      @include label;
+      margin-bottom: 20px;
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,58 @@
+.vida-product-specs {
+  padding: rem(60px) 0;
+
+  &__container {
+    display: block;
+    @include media(">=desktop") {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: rem(40px) 0;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    padding: 0 rem(10px);
+    text-align: center;
+    @include media(">=desktop") {
+      border-right: rem(1px) solid get-color("light-grey");
+      min-width: 25%;
+    }
+
+    &:last-of-type,
+    &:nth-child(4n) {
+      border-right: none;
+    }
+
+    &::after {
+      background: get-color("light-grey");
+      content: "";
+      display: block;
+      height: rem(1px);
+      margin: rem(25px) auto;
+      width: rem(35px);
+      @include media(">=desktop") {
+        display: none;
+      }
+    }
+
+    &:last-of-type {
+      &::after {
+        display: none;
+      } 
+    }
+    
+  }  
+
+  &__heading {
+    @include p2;
+    color: get-color("solid-grey");
+    padding-bottom: rem(20px);
+  }
+
+  &__data {
+    @include a3;
+  }
+}
+

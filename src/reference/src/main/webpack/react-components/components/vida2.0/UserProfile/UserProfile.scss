@@ -1,0 +1,320 @@
+.user-profile {
+  background: url("images/svg/background.svg");
+  background-color: get-color("pale-blue");
+  display: flex;
+  justify-content: space-around;
+  padding: rem(118px) rem(80px);
+  width: 100%;
+  @include media(">=tablet", "<desktop") {
+    padding: rem(84px) rem(20px) rem(20px);
+  }
+  @include media(">=phone", "<tablet") {
+    flex-direction: column-reverse;
+    padding: rem(44px) rem(20px);
+  }
+
+  .vida-user-order-details {
+    display: flex;
+    flex-basis: 40%;
+    flex-direction: column;
+    gap: rem(20px);
+    margin-top: rem(32px);
+
+    .user-test-ride-card-link,
+    .user-buy-now-card-link,
+    .user-order-card-link {
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+    }
+
+    .user-image-card {
+      background-color: get-color("white");
+      border-radius: rem(16px);
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      padding: rem(24px);
+      @include media("<tablet") {
+        flex-direction: column;
+        padding: rem(20px);
+      }
+
+      h1 {
+        color: get-color("mine-shaft");
+        flex-basis: 31%;
+        font-size: rem(28px);
+        line-height: normal;
+        @include media("<desktop") {
+          font-size: rem(16px);
+          margin-bottom: rem(14px);
+        }
+      }
+
+      .image-upload {
+        align-items: center;
+        background-color: get-color("alice-blue");
+        border-radius: rem(16px);
+        display: flex;
+        flex-basis: 61%;
+        justify-content: center;
+
+        @include media("<tablet") {
+          min-height: rem(170px);
+        }
+
+        input[type="file"],
+        label {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .reward-offers-container {
+      display: grid;
+      gap: rem(10px);
+      grid-template-columns: auto auto;
+      height: rem(224px);
+      width: rem(320px);
+      @include media(">=desktop") {
+        gap: rem(12px);
+        height: rem(357px);
+        width: rem(512px);
+      }
+
+      .my-vida-container,
+      .my-orders-container,
+      .my-rewards-container,
+      .my-offers-container {
+        background-color: get-color("white");
+        border-radius: rem(8px);
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: rem(10px) rem(9.5px);
+        @include media(">=desktop") {
+          border-radius: rem(13px);
+          min-height: rem(127px);
+          min-width: rem(247px);
+          padding: rem(15px);
+        }
+
+        .icon-header-container {
+          @include vida-h6-mobile;
+          border-bottom: 1px solid get-color("oslo-gray");
+          display: flex;
+          font-weight: 500;
+          gap: rem(6px);
+          line-height: 16.8px;
+          padding-bottom: rem(5px);
+          text-align: left;
+          @include media(">=desktop") {
+            @include vida-tertiary-cta;
+            color: get-color("mine-shaft");
+            font-weight: 400;
+            line-height: 24px;
+            text-align: left;
+          }
+
+          .icon-container {
+            height: rem(30px);
+            width: rem(30px);
+
+            img {
+              height: 100%;
+              object-fit: cover;
+              width: 100%;
+            }
+          }
+        }
+
+        .description-container {
+          @include vida-extra-small-text-mobile;
+          display: flex;
+          justify-content: flex-end;
+          line-height: 12px;
+          padding-top: rem(5px);
+          text-align: left;
+          text-align: left;
+          @include media(">=desktop") {
+            @include vida-mobile-body-1;
+            line-height: 19.2px;
+            padding-top: rem(5px);
+            text-align: left;
+            text-align: left;
+          }
+        }
+      }
+
+      .my-community-container {
+        background-color: get-color("white");
+        border-radius: rem(8px);
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: rem(10px) rem(9.5px);
+        @include media(">=desktop") {
+          border-radius: rem(13px);
+          min-height: rem(127px);
+          min-width: rem(247px);
+          padding: rem(15px);
+        }
+
+        .icon-desc-container {
+          display: flex;
+          gap: 0.375rem;
+
+          .icon-container {
+            height: rem(30px);
+            width: rem(30px);
+
+            img {
+              height: 100%;
+              object-fit: cover;
+              width: 100%;
+            }
+          }
+        }
+
+        .description-container {
+          @include vida-extra-small-text-mobile;
+          display: flex;
+          justify-content: flex-end;
+          line-height: 12px;
+          padding-top: rem(5px);
+          text-align: left;
+          text-align: left;
+          @include media(">=desktop") {
+            @include vida-mobile-body-1;
+            line-height: 19.2px;
+            padding-top: rem(5px);
+            text-align: left;
+            text-align: left;
+          }
+        }
+
+        .redirection-container {
+          height: rem(26px);
+          width: rem(26px);
+          @include media(">=desktop") {
+            height: rem(30px);
+            width: rem(30px);
+          }
+
+          img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .vida-user-details {
+    flex-basis: 49%;
+    @include media(">=desktop") {
+      flex-basis: 49%;
+      width: 38.875rem;
+    }
+  }
+
+  .vida-profile-test-ride-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    @include media(">=desktop") {
+      flex-basis: 48%;
+      margin-top: 2rem;
+    }
+  }
+
+  .user-profile-logout-link {
+    color: get-color("orange");
+    margin-top: rem(36px);
+
+    a {
+      font-size: rem(20px);
+
+      @include media("<desktop") {
+        font-size: rem(16px);
+      }
+    }
+  }
+}
+
+.user-test-ride-card,
+.user-buy-now-card,
+.user-order-card {
+  align-items: center;
+  background: get-color("white");
+  border-radius: rem(16px);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 90% 100%, 0% 100%);
+  display: flex;
+  gap: 19px;
+  justify-content: space-between;
+
+  @include media("<desktop") {
+    gap: rem(16px);
+  }
+
+  &__image {
+    @include media("<desktop") {
+      height: rem(114px);
+      width: rem(114px);
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  &__details {
+    flex-basis: 50%;
+    @include media("<tablet") {
+      flex-basis: 40%;
+    }
+
+    .user-test-ride__label {
+      color: get-color("mine-shaft");
+      font-size: rem(28px);
+      font-weight: 600;
+      line-height: rem(30px);
+
+      @include media("<desktop") {
+        font-size: rem(20px);
+        line-height: rem(24px);
+      }
+    }
+
+    .user-test-ride__value {
+      color: get-color("mine-shaft");
+      font-size: rem(20px);
+      font-weight: 200;
+      line-height: rem(24px);
+      margin-top: rem(10px);
+      @include media("<desktop") {
+        font-size: rem(14px);
+        line-height: rem(20px);
+      }
+    }
+  }
+
+  &__action {
+    cursor: pointer;
+    flex-basis: 22%;
+    @include media("<desktop") {
+      flex-basis: 26%;
+      height: rem(44px);
+      width: rem(44px);
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

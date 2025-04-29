@@ -1,0 +1,311 @@
+.find-vida-dealers-wrapper {
+  background: get-color("catskill-white");
+  padding-bottom: rem(32px) !important;
+  padding-top: rem(32px) !important;
+  @include media(">=desktop") {
+    padding-bottom: rem(64px) !important;
+    padding-top: rem(64px) !important;
+  }
+
+  .find-vida-dealers-container {
+    .vida-dealers-title-flex-container {
+      align-items: center;
+      display: flex;
+      gap: rem(24px);
+      justify-content: space-between;
+      padding: 0 0 rem(32px) 0;
+
+      @include media(">=desktop") {
+        gap: unset;
+        padding: 0 0 rem(48px) 0;
+      }
+    }
+
+    .vida-dealers-title-container {
+      .vida-dealers-primary-text {
+        @include vida-mobile-subtitle;
+        line-height: rem(14.4px);
+        padding: 0 0 rem(5px) 0;
+
+        @include media(">=desktop") {
+          @include vida-desktop-subtitle;
+          line-height: rem(21.6px);
+          padding: 0 0 rem(7px) 0;
+        }
+      }
+
+      .vida-dealers-bold-text {
+        @include vida-h2-mobile;
+        line-height: rem(28.8px);
+        @include media(">=desktop") {
+          @include vida-h2-desk;
+          line-height: rem(57.6px);
+        }
+      }
+    }
+
+    .vida-dealers-redirection-icon {
+      a {
+        display: block;
+        height: rem(36px);
+        text-decoration: none;
+        width: rem(36px);
+        @include media(">=desktop") {
+          height: rem(54px);
+          width: rem(54px);
+        }
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    .dealer-finder-search-container {
+      padding: 0 0 rem(32px) 0;
+      position: relative;
+
+      @include media(">=desktop") {
+        max-width: rem(360px);
+        padding: 0 0 rem(48px) 0;
+      }
+
+      .dealer-location-find-icon {
+        cursor: pointer;
+        height: rem(24px);
+        position: absolute;
+        right: rem(16px);
+        top: rem(12px);
+        width: rem(24px);
+
+        @include media(">=desktop") {
+          height: rem(32px);
+          right: rem(24px);
+          top: rem(18px);
+          width: rem(32px);
+        }
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      input {
+        @include vida-mobile-body-2;
+        background: get-color("white");
+        border: none;
+        border-radius: rem(8px);
+        box-shadow: 0 0 rem(10px) 0 rgba(0, 0, 0, 0.1);
+        color: get-color("mine-shaft");
+        height: rem(48px);
+        padding: 0 rem(48px) 0 rem(16px);
+        width: 100%;
+
+        @include media(">=desktop") {
+          @include vida-desk-body-1;
+          border-radius: rem(16px);
+          color: get-color("mine-shaft");
+          height: rem(72px);
+          padding: 0 rem(48px) 0 rem(24px);
+        }
+
+        &:focus {
+          outline: 2px solid get-color("orange");
+        }
+      }
+
+      .city-option-container {
+        background: get-color("white");
+        border-radius: rem(8px);
+        margin: rem(2px) 0 0 0;
+        max-height: rem(160px);
+        overflow-x: hidden;
+        overflow-y: scroll;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+
+        @include media(">=desktop") {
+          max-height: rem(240px);
+        }
+
+        &::-webkit-scrollbar {
+          width: rem(2px);
+
+          @include media(">=desktop") {
+            width: rem(4px);
+          }
+        }
+
+        &::-webkit-scrollbar-track {
+          background: get-color("white");
+          border-radius: rem(8px);
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: get-color("catskill-white");
+          border-radius: rem(8px);
+        }
+      }
+
+      .dealer-finder-error-msg {
+        color: get-color("red");
+        font-size: rem(12px);
+        font-weight: 400;
+        margin: rem(4px) 0 0 rem(4px);
+
+        @include media(">=desktop") {
+          font-size: rem(16px);
+        }
+      }
+
+      .city-option {
+        border-bottom: 1px solid get-color("catskill-white");
+        cursor: pointer;
+        height: rem(40px);
+        padding: rem(12px) rem(16px);
+
+        @include media(">=desktop") {
+          height: rem(56px);
+          padding: rem(16px);
+        }
+
+        &:hover {
+          background: get-color("catskill-white");
+        }
+
+        p {
+          color: get-color("mine-shaft");
+          font-size: rem(12px);
+
+          @include media(">=desktop") {
+            font-size: rem(16px);
+          }
+        }
+      }
+    }
+
+    .vida-dealers-content-container {
+      .vida-dealers-card-list {
+        display: flex;
+        gap: rem(32px);
+        overflow: auto;
+        padding: 0 0 rem(32px) 0;
+        @include media(">=desktop") {
+          flex-direction: column;
+          gap: rem(48px);
+          max-height: rem(440px);
+          padding: 0;
+        }
+
+        &::-webkit-scrollbar {
+          height: rem(2px);
+          @include media(">=desktop") {
+            height: unset;
+            width: rem(2px);
+          }
+        }
+
+        &::-webkit-scrollbar-track {
+          background: get-color("white");
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: get-color("orange");
+        }
+      }
+    }
+  }
+
+  .vida-dealers-card-item {
+    min-width: rem(240px);
+    width: rem(240px);
+    @include media(">=desktop") {
+      display: flex;
+      gap: rem(48px);
+      width: 100%;
+    }
+
+    .vida-dealers-card-img {
+      margin: 0 0 rem(32px) 0;
+      @include media(">=desktop") {
+        margin: 0;
+      }
+
+      img {
+        height: rem(135px);
+        width: rem(240px);
+
+        @include media(">=desktop") {
+          height: rem(190px);
+          width: rem(360px);
+        }
+      }
+    }
+
+    .vida-dealers-details-container {
+      .dealers-type {
+        padding: 0 0 rem(16px) 0;
+        @include media(">=desktop") {
+          padding: 0 0 rem(24px) 0;
+        }
+
+        .dealers-type-text {
+          @include vida-mobile-subtitle;
+          line-height: rem(14.4px);
+          @include media(">=desktop") {
+            @include vida-desktop-subtitle;
+            line-height: rem(21.6px);
+          }
+        }
+      }
+
+      .dealers-card-title {
+        padding: 0 0 rem(16px) 0;
+        @include media(">=desktop") {
+          padding: 0 0 rem(24px) 0;
+        }
+
+        .dealers-card-title-text {
+          @include vida-h5-mobile;
+          line-height: rem(19.2px);
+          @include media(">=desktop") {
+            @include vida-h5-desktop;
+            line-height: rem(24px);
+          }
+        }
+      }
+
+      .dealers-card-address {
+        padding: 0 0 rem(32px) 0;
+        @include media(">=desktop") {
+          padding: 0 0 rem(24px) 0;
+        }
+
+        .dealers-card-address-text {
+          @include vida-mobile-body-1;
+          line-height: rem(19.2px);
+          @include media(">=desktop") {
+            @include vida-desk-body-1;
+            line-height: rem(24px);
+          }
+        }
+      }
+
+      .dealers-card-get-direction-cta {
+        .dealers-card-get-direction-cta-text {
+          @include vida-tertiary-cta-mobile;
+          display: block;
+          line-height: rem(19.2px);
+
+          @include media(">=desktop") {
+            @include vida-tertiary-cta;
+            line-height: rem(24px);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+:root {
+  --doc-height: 100%;
+}
+
+.vida-product-configurator {
+  height: var(--doc-height);
+  // height: calc(100vh - rem(76px));
+  // padding-bottom: rem(100px);
+
+  @include media(">=desktop") {
+    // height: calc(100vh - rem(85px));
+    // padding-bottom: 0;
+  }
+
+  .popup {
+    &__container {
+      padding-left: rem(16px);
+      padding-right: rem(16px);
+    }
+
+    &--hidden {
+      display: none;
+    }
+
+    &__close-btn {
+      color: get-color("solid-grey");
+      top: rem(-38px);
+    }
+
+    &__body,
+    &__content {
+      height: 100%;
+    }
+  }
+}

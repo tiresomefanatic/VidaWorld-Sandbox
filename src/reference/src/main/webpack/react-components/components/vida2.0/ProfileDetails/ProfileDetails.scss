@@ -1,0 +1,223 @@
+.user-profile-details {
+  position: relative;
+
+  .profile-details {
+    background: get-color("white");
+    border-radius: rem(16px);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    padding: rem(61px) rem(61px) rem(25px);
+    //   position: relative;
+
+    @include media("<tablet") {
+      margin-top: rem(104px);
+      padding: rem(80px) rem(20px) 0;
+    }
+
+    @include media("<desktop") {
+      padding: rem(80px) rem(20px) rem(20px);
+    }
+
+    .profile-details-card {
+      padding-top: rem(88px);
+
+      .contact-details {
+        margin-top: rem(14px);
+      }
+
+      .user-name {
+        align-items: center;
+        border-bottom: 1px solid #85888c;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: rem(14px);
+
+        .profile-edit-icon {
+          cursor: pointer;
+        }
+
+        h2 {
+          color: get-color("orange");
+          flex-basis: 80%;
+          font-size: rem(48px);
+          font-style: normal;
+          font-weight: 600;
+          line-height: rem(50px);
+
+          @include media("<desktop") {
+            font-size: rem(24px);
+            line-height: rem(30px);
+          }
+        }
+      }
+
+      .vida-profile-form {
+        width: 100%;
+
+        .vida-form-field-input {
+          border: 1px solid get-color("oslo-gray");
+          border-radius: rem(8px);
+          height: rem(52px);
+          margin: 0;
+          width: 100%;
+
+          @include media(">=desktop") {
+            height: rem(56px);
+          }
+        }
+      }
+
+      .user-profile__field {
+        align-items: center;
+        background: get-color("alice-blue");
+        border-radius: rem(8px);
+        display: flex;
+        justify-content: space-between;
+        margin-top: rem(6px);
+        padding: rem(12px) rem(10px);
+
+        .vida-form-group {
+          margin: 0;
+          min-height: rem(60px);
+        }
+
+        .user-profile__label {
+          align-items: center;
+          color: get-color("mine-shaft");
+          display: flex;
+          font-size: rem(20px);
+
+          @include media("<desktop") {
+            font-size: rem(16px);
+          }
+        }
+
+        img {
+          cursor: pointer;
+        }
+      }
+
+      .user-profile-logout-link {
+        color: get-color("orange");
+        margin-top: rem(16px);
+        text-align: end;
+
+        &.profile-edit-mode {
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .user-profile-save-btn {
+          background: transparent;
+          border: 0;
+          font-size: rem(20px);
+          font-weight: 500;
+          padding: 0;
+
+          @include media("<desktop") {
+            font-size: rem(16px);
+          }
+        }
+
+        a {
+          font-size: rem(20px);
+
+          @include media("<desktop") {
+            font-size: rem(16px);
+          }
+        }
+      }
+    }
+  }
+
+  .profile-image-wrapper {
+    background: get-color("white");
+    border-radius: rem(16px);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    height: rem(190px);
+    left: 50%;
+    padding: rem(15px);
+    position: absolute;
+    top: -20%;
+    transform: translate(-50%, 0);
+    width: rem(190px);
+
+    @include media(">tablet") {
+      height: rem(200px);
+      width: rem(200px);
+    }
+
+    .profile-image {
+      position: relative;
+
+      img {
+        border-radius: rem(16px);
+        height: 100%;
+        width: 100%;
+      }
+
+      .profile-image-inital {
+        align-items: center;
+        background-color: get-color("catskill-white");
+        color: get-color("oslo-gray");
+        display: flex;
+        font-size: rem(140px);
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .edit-image-overlay {
+        align-items: center;
+        background-color: get-color("catskill-white");
+        border-radius: rem(16px);
+        color: get-color("mine-shaft");
+        display: flex;
+        font-size: rem(16px);
+        height: 100%;
+        justify-content: center;
+        opacity: 0.7;
+        position: absolute;
+        width: 100%;
+        z-index: 99;
+
+        label {
+          cursor: pointer;
+          height: rem(50px);
+          width: rem(50px);
+        }
+      }
+    }
+  }
+
+  .form__dropdown-options {
+    .form__dropdown-option {
+      background: get-color("white") !important;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: get-color("catskill-white") !important;
+      }
+
+      a {
+        &:hover,
+        &:focus,
+        &:active {
+          background: get-color("catskill-white") !important;
+        }
+      }
+    }
+
+    &::-webkit-scrollbar-track {
+      background: get-color("white") !important;
+      border-radius: rem(8px);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: get-color("catskill-white") !important;
+      border-radius: rem(8px);
+    }
+  }
+}

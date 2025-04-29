@@ -1,0 +1,182 @@
+.vida-user-recents {
+  margin-bottom: rem(20px);
+
+  a:active,
+  a:visited {
+    color: #fff;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__name {
+    color: #1d1b1b;
+    font-size: rem(20px);
+    font-weight: 400;
+    line-height: rem(20px);
+    @include media(">=desktop") {
+      font-size: rem(36px);
+      font-weight: 500;
+      line-height: rem(51px);
+    }
+  }
+
+  &__communitybody {
+    display: block;
+    margin-bottom: rem(25px);
+    @include media("<=desktop") {
+      display: none;
+    }
+  }
+
+  .popup {
+    &__close-btn {
+      display: block !important;
+      right: 8px;
+      top: 8;
+    }
+  }
+
+  .popup__close-btn [class^=icon-] {
+    font-size: rem(30px);
+    font-weight: bold;
+  }
+
+  &__communitybodymobileview {
+    display: none;
+    margin-bottom: rem(25px);
+    text-align: center;
+    @include media("<=desktop") {
+      display: block;
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__communitytxt {
+    background-color: #1d1b1b;
+    border-radius: rem(15px);
+    color: #fff;
+    font-size: rem(15px);
+    padding: rem(10px);
+    text-decoration: none;
+  }
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    @include media(">=desktop") {
+      flex-wrap: nowrap;
+      gap: rem(13px);
+    }
+  }
+
+  &__imgsize {
+    border-radius: rem(16px);
+    cursor: pointer;
+    width: 100%;
+  }
+
+  &__articlebody {
+    margin-bottom: rem(16px);
+    width: 100%;
+    @include media(">=desktop") {
+      width: 33%;
+    }
+  }
+
+  &__title {
+    margin-bottom: rem(25px);
+    margin-top: rem(25px);
+  }
+
+  &__content {
+    margin-bottom: rem(16px);
+    margin-top: rem(15px);
+    padding: 0 rem(10px);
+  }
+
+  &__catoegory {
+    background-color: #c2fbff;
+    border-radius: rem(13px);
+    color: #1d1b1b;
+    display: inline-block;
+    font-size: rem(12px);
+    font-weight: 500;
+    line-height: rem(16px);
+    padding: rem(3px) rem(10px);
+    @include media(">=desktop") {
+      font-size: rem(14px);
+      line-height: rem(21px);
+    }
+  }
+
+  &__time {
+    color: #969696;
+    font-size: rem(12px);
+    line-height: rem(16px);
+    padding-right: rem(10px);
+  }
+
+  &__icon {
+    background: #fff;
+    border: 1px solid;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: rem(20px);
+    padding: rem(5px);
+  }
+
+  .icon-share {
+    margin-right: rem(15px);
+  }
+
+  &__sharetime {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__by {
+    color: #777676;
+    font-size: rem(14px);
+    font-weight: 400;
+    line-height: rem(18px);
+    padding-top: rem(6px);
+  }
+
+  &__channelname {
+    @include media(">=desktop") {}
+    color: #ff5310;
+    font-size: rem(14px);
+    font-weight: 400;
+    line-height: rem(18px);
+    padding-top: rem(6px);
+  }
+
+  &__videoname {
+    cursor: pointer;
+    font-size: rem(18px);
+    font-weight: 400;
+    line-height: rem(22px);
+    padding-top: rem(5px);
+    @include media(">=desktop") {
+      font-size: rem(21px);
+      line-height: rem(32px);
+    }
+  }
+
+  &__articlebody {
+    border: 1.4px solid #d2d1d1;
+    border-radius: rem(16px);
+    box-shadow: 0 6px 26px rgba(40, 40, 40, 0.08);
+  }
+
+  a.vida-user-recents__communitytxt {
+    color: #fff;
+  }
+}

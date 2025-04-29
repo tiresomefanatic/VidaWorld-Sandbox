@@ -1,0 +1,121 @@
+.vida-date-picker {
+  background: get-color("white");
+  position: relative;
+}
+
+.vida-availbility-msg {
+  left: 27%;
+  position: absolute;
+  text-transform: uppercase;
+  top: 86px;
+}
+
+.vida-time-slot-header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  img {
+    padding: 16px;
+  }
+
+  p {
+    color: get-color("mine-shaft");
+    font-size: 20px;
+    padding: 16px;
+  }
+}
+
+.vida-time-slot-content {
+  padding: 20px;
+  text-align: center;
+
+  .vida-time-slot {
+    background: none;
+    border: 1.5px solid get-color("mine-shaft");
+    border-radius: 8px;
+    color: get-color("mine-shaft");
+    font-size: 20px;
+    margin: 5px;
+    padding: 12px;
+  }
+
+  .vida-slot-active {
+    background: get-color("orange");
+    border: none;
+    color: get-color("white");
+  }
+}
+
+.react-calendar {
+  border: none !important;
+  margin: 0 auto;
+  padding: 32px;
+  //   width: 100% !important;
+}
+
+.react-calendar__navigation {
+  justify-content: center;
+  margin-bottom: rem(48px) !important;
+}
+  
+.react-calendar__navigation__prev2-button,
+.react-calendar__navigation__next2-button {
+  display: none;
+}
+
+.react-calendar__navigation__label {
+  color: get-color("mine-shaft");
+  flex-grow: 0 !important;
+  font-size: 20px;
+}
+
+.react-calendar .react-calendar__month-view__weekdays__weekday {
+  abbr {
+    text-decoration: none;
+  }
+}
+
+.react-calendar__tile {
+  border: 1.5px solid get-color("mine-shaft") !important;
+  border-radius: 8px;
+  flex-basis: 10% !important;
+  margin: 10px 5px !important;
+  padding: 12px 0 !important;
+
+  @include media(">=desktop") {
+    margin: 10px 6px !important;
+  }
+
+  &--active {
+    background: get-color("orange") !important;
+    border: 1.5px solid get-color("orange") !important;
+    color: get-color("white");
+  }
+}
+
+.react-calendar__tile:disabled {
+  background: none !important;
+  border: none !important;
+  color: get-color("oslo-gray");
+
+  &--active {
+    background: get-color("orange") !important;
+    border: 1.5px solid get-color("orange") !important;
+    color: get-color("white");
+  }
+}
+
+.react-calendar__navigation button:enabled:focus,
+.react-calendar__navigation button:enabled:hover {
+  background: none !important;
+}
+
+.react-calendar__tile:enabled:focus,
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:active {
+  background: get-color("orange") !important;
+  border: 1.5px solid get-color("orange") !important;
+  color: get-color("white");
+}
+

@@ -1,0 +1,369 @@
+.emi-savings-calculator-container {
+  &__box-container {
+    background-color: rgba(255, 255, 255, 70%);
+    border-radius: rem(8px);
+    padding: rem(32px) rem(20px);
+    @include media(">=desktop") {
+      border-radius: rem(16px);
+      padding: rem(72px) rem(63px) rem(92px) rem(63px);
+    }
+
+    .emi-calculator-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: rem(16px);
+      @include media(">=desktop") {
+        gap: rem(32px);
+      }
+
+      &__header-container {
+        .title {
+          @include vida-h1-mobile;
+          font-weight: 500;
+          line-height: 48px;
+          min-height: rem(144px);
+          min-width: rem(301px);
+          text-align: left;
+          @include media(">=desktop") {
+            @include vida-h1-desktop;
+            font-weight: 500;
+            line-height: 96px;
+            min-height: rem(192px);
+            text-align: left;
+            width: 80%;
+          }
+        }
+      }
+
+      &__select-city-container {
+        display: flex;
+        flex-direction: column;
+        gap: rem(16px);
+        @include media(">=desktop") {
+          flex-direction: row;
+          gap: 0;
+          justify-content: space-between;
+        }
+
+        &__second-title-container {
+          .second-title {
+            @include vida-label-value-text-mobile;
+            line-height: 28.8px;
+            text-align: left;
+            @include media(">=desktop") {
+              @include vida-h2-desk;
+              font-weight: 500;
+              line-height: 57.6px;
+              text-align: left;
+            }
+          }
+        }
+
+        .search-wrapper {
+          display: flex;
+          flex-direction: row;
+          gap: rem(22px);
+
+          .showing-text {
+            @include vida-mobile-body-2;
+            line-height: 16.8px;
+            text-align: left;
+            width: 100%;
+            @include media(">=desktop") {
+              @include vida-desk-body-1;
+              line-height: 24px;
+              padding: 12px 0;
+              text-align: left;
+            }
+          }
+
+          .city-finder-message {
+            color: get-color("red");
+            font-size: rem(12px);
+            font-weight: 400;
+            margin: rem(4px) 0 0 rem(4px);
+
+            @include media(">desktop") {
+              font-size: rem(16px);
+            }
+          }
+
+          &__find-city-search-container {
+            position: relative;
+            width: 98%;
+            @include media(">=desktop") {
+              padding-bottom: rem(16px);
+            }
+
+            .icon-container {
+              cursor: pointer;
+              height: rem(24px);
+              position: absolute;
+              right: rem(16px);
+              top: rem(5px);
+              width: rem(24px);
+              @include media(">=desktop") {
+                right: rem(16px);
+                top: rem(13px);
+              }
+
+              img {
+                object-fit: cover;
+                width: 100%;
+              }
+            }
+
+            input {
+              @include vida-mobile-body-2;
+              background-color: get-color("white");
+              border: none;
+              border-radius: rem(8px);
+              box-shadow: 0 0 rem(10px) 0 rgba(0, 0, 0, 0.1);
+              height: rem(36px);
+              line-height: 16.8px;
+              padding: rem(6px) rem(8px);
+              text-align: left;
+              width: rem(208px);
+              @include media(">=desktop") {
+                @include vida-desktop-body-3;
+                border-radius: rem(8px);
+                gap: 4px;
+                height: rem(48px);
+                line-height: 21.6px;
+                padding: rem(12px) rem(10px);
+                text-align: left;
+                width: rem(236px);
+              }
+
+              &:focus {
+                outline: 2px solid get-color("orange");
+              }
+            }
+          }
+
+          .city-option-container {
+            background: get-color("white");
+            border-radius: rem(8px);
+            margin: rem(2px) 0 0 0;
+            max-height: rem(160px);
+            overflow-x: hidden;
+            overflow-y: scroll;
+            position: absolute;
+            width: 100%;
+            z-index: 99;
+            @include media(">desktop") {
+              max-height: rem(240px);
+            }
+
+            &::-webkit-scrollbar {
+              width: rem(2px);
+              @include media(">desktop") {
+                width: rem(4px);
+              }
+            }
+
+            &::-webkit-scrollbar-track {
+              background: get-color("white");
+              border-radius: rem(8px);
+            }
+
+            &::-webkit-scrollbar-thumb {
+              background: get-color("catskill-white");
+              border-radius: rem(8px);
+            }
+          }
+
+          .city-option {
+            border-bottom: 1px solid get-color("catskill-white");
+            cursor: pointer;
+            height: rem(40px);
+            padding: rem(12px) rem(16px);
+            @include media(">desktop") {
+              height: rem(56px);
+              padding: rem(16px);
+            }
+          }
+
+          p {
+            color: get-color("mine-shaft");
+            font-size: rem(12px);
+            @include media(">desktop") {
+              font-size: rem(16px);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.emi-calculator-wrapper {
+  &__pick-your-scooter-container {
+    border-bottom: 1px solid get-color("black");
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: rem(10px);
+    padding-bottom: rem(16px);
+    width: 100%;
+    @include media(">desktop") {
+      gap: rem(16px);
+      padding-bottom: rem(54px);
+    }
+
+    .scooter-card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: rem(11px);
+      @include media(">=desktop") {
+        gap: rem(19px);
+      }
+
+      .scooter-wrapper {
+        background: get-color("white");
+        border: 1px solid get-color("orange");
+        border-radius: rem(8px);
+        display: flex;
+        padding-left: rem(12px);
+        padding-top: rem(4px);
+        position: relative;
+        // width: 30%;
+        @include media(">=desktop") {
+          justify-content: center;
+          padding-left: rem(40px);
+          padding-top: 0;
+          width: 32%;
+        }
+
+        &.selected-card {
+          background: get-color("orange");
+          border: none;
+        }
+
+        .left-bg-image-container {
+          left: 0;
+          position: absolute;
+          z-index: 1;
+
+          img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+
+        .right-bg-image-container {
+          display: none;
+          @include media(">=desktop") {
+            display: block;
+            position: absolute;
+            right: 0;
+            z-index: 1;
+          }
+
+          img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+
+        .details-container {
+          color: get-color("mine-shaft");
+          padding: rem(14px) rem(18px);
+          @include media(">=desktop") {
+            padding-right: rem(24px);
+            padding-top: rem(13px);
+          }
+
+          .bike-name-label {
+            @include vida-h5-mobile;
+            // color: get-color("white");
+            // font-weight: 500;
+            line-height: 19.2px;
+            text-align: left;
+            @include media(">=desktop") {
+              @include vida-h3-desktop;
+              // color: get-color("white");
+              line-height: 33.6px;
+              text-align: left;
+            }
+          }
+
+          .effective-price-container {
+            display: flex;
+            flex-direction: column;
+            @include media(">=desktop") {
+              flex-direction: row;
+              gap: rem(10px);
+            }
+          }
+
+          .effective-price {
+            @include vida-mobile-bottom-nav-label;
+            color: get-color("mine-shaft");
+            font-weight: 400;
+            line-height: 13.2px;
+            text-align: left;
+            @include media(">=desktop") {
+              @include vida-tertiary-cta;
+              color: get-color("mine-shaft");
+              font-weight: 400;
+              line-height: 24px;
+              text-align: left;
+            }
+          }
+
+          .effective-price-label {
+            @include vida-extra-small-text-mobile;
+            font-weight: 500;
+            // color: get-color("white");
+            line-height: 12px;
+            text-align: left;
+            @include media(">=desktop") {
+              @include vida-mobile-body-1;
+              // color: get-color("white");
+              line-height: 19.2px;
+              padding-top: rem(5px);
+              text-align: left;
+            }
+          }
+
+          .selected-card {
+            color: get-color("white") !important;
+          }
+        }
+
+        .image-container {
+          height: rem(54px);
+          width: rem(61px);
+          @include media(">=desktop") {
+            height: rem(88px);
+            width: rem(101px);
+          }
+          
+          img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+      }
+
+      &.scooter-card-no-dealer {
+        cursor: default;
+        pointer-events: none;
+
+        .scooter-wrapper {
+          background-color: get-color("white");
+          background-image: none;
+          border: none;
+
+          .details-container .selected-card {
+            color: get-color("pure-black") !important;
+          }
+        }
+      }
+    }
+  }
+}

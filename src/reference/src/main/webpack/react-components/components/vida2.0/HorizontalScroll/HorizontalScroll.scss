@@ -1,0 +1,33 @@
+.horizontal-scroll-container {
+  margin-bottom: rem(32px);
+  margin-top: rem(32px);
+  overflow-x: scroll;
+  @include media(">=desktop") {
+    margin-bottom: rem(64px);
+    margin-top: rem(48px);
+    overflow: auto;
+  }
+
+  &::-webkit-scrollbar {
+    height: rem(1.48px);
+    @include media(">=tablet") {
+      display: none;
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: get-color(catskill-white);
+    margin-left: rem(20px);
+    margin-right: rem(20px);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgb(237, 17, 17);
+    border-radius: rem(10px);
+    height: rem(20px);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 154, 95, 0.274);
+  }
+}

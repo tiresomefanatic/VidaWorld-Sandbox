@@ -1,0 +1,57 @@
+@import './_fonts.scss';
+@import './tokens.scss';
+@import './mixins.scss';
+
+// Global styles
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $font-family-brand-sans-serif;
+  color: $content-primary;
+  background-color: $background-primary;
+  margin: 0;
+  padding: 0;
+  line-height: $line-height-400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PP Neue Montreal', sans-serif;
+  margin-top: 0;
+}
+
+h1 {
+  @include heading-xl;
+}
+
+h2 {
+  @include heading-l;
+}
+
+h3 {
+  @include heading-m;
+}
+
+p {
+  @include body-regular;
+  margin-top: 0;
+  margin-bottom: $space-m;
+}
+
+// Utility classes
+.text-semibold {
+  @include body-semibold;
+}
+
+// Component styles
+.dropdown {
+  border-radius: 0px 0px 20px 20px;
+}
+
+// You can add more global styles here 

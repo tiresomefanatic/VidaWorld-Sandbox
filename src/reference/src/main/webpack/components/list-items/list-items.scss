@@ -1,0 +1,46 @@
+.vida-list-items {
+  ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-left: 0;
+    padding: rem(10px);
+    @include media(">=desktop") {
+      padding-left: rem(40px);
+    }
+
+    li {
+      align-items: flex-start;
+      display: flex;
+      font-size: rem(17px);
+      margin-bottom: rem(10px);
+      padding-right: rem(15px);
+      
+      @include media("<tablet") {
+        font-size: rem(14px);
+      }
+
+      &::before {
+        color: get-color("orange");
+        content: "\25A0";
+        display: inline-block;
+        font-size: rem(6px);
+        font-weight: bold;
+        margin-top: rem(4px);
+        padding-right: 10px;
+        width: 5px;
+      }
+    }
+
+    li.two-column {
+      @include media(">=desktop") {
+        flex: 1 1 50%;
+      }
+    }
+  }
+
+  ul.two-columns {
+    flex-direction: row;
+  }
+}

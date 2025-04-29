@@ -1,0 +1,155 @@
+
+
+.vida-booking-success {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  margin-top: 5%;
+  
+  &__image-container {
+    display: none;
+    @include media(">=desktop") {
+      display: block;
+      width: 50%;
+    }
+  }
+
+  &__congrats-wrapper {
+    @include media(">=desktop") {
+      width: 45%;
+    }
+  }
+
+  &__wrapper {
+    @include media(">=desktop") {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    @include h2;
+    padding: 5% 0;
+    @include media(">=desktop") {
+      padding: 2% 0;
+    }
+  }
+
+  &__confirmation-msg {
+    @include p2;
+    color: get-color("solid-grey");
+    padding: rem(5px) 0;
+  }
+
+  &__order-msg {
+    @include h4;
+    padding: rem(5px) 0;
+  }
+
+  &__confirmation-head {
+    @include p2;
+  }
+
+  &__disclaimer {
+    @include p2;
+    color: get-color("solid-grey");
+  }
+
+  &__order-id {
+    @include a2;
+    padding: 5% 0;
+    @include media(">=desktop") {
+      padding: 2% 0;
+    }
+  }
+
+  &__configure-btn {
+    margin-top: rem(30px);
+    @include media(">=desktop") {
+      width: 40%;
+    }
+  }
+
+  &__message {
+    @include p2;
+    padding-top: rem(10px);
+  }
+
+
+  &__time {
+    margin-top: rem(25px);
+  }
+
+  &__btn,
+  &__order-btn {
+    width: 45%;
+    @include media(">=desktop") {
+      width: auto;
+    }
+  }
+}
+
+.vida-prebooking-success {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5% 0;
+  
+  &__image-container {
+    display: none;
+    @include media(">=desktop") {
+      display: block;
+      width: 50%;
+    }
+  }
+
+  &__container {
+    @include media(">=desktop") {
+      width: 40%;
+    }
+  }
+
+  &__title {
+    font-size: rem(20px);
+    font-weight: 500;
+    line-height: 24px;
+    padding: 5% 0;
+    @include media(">=desktop") {
+      padding: 2% 0;
+    }
+  }
+
+  &__confimation-msg {
+    color: get-color("solid-grey");
+    font-size: rem(14px);
+    font-weight: 400;
+  }
+
+  &__order-id {
+    padding: 5% 0;
+    @include media(">=desktop") {
+      padding: 2% 0;
+    }
+
+    h4 {
+      @include h4;
+      font-size: rem(16px);
+      font-weight: 500;
+    }
+    
+  }
+
+  &__action {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 rem(20px);
+
+    &-btn {
+      margin-top: rem(30px);
+      @include media(">=desktop") {
+        width: 40%;
+      }
+    }
+  }
+}

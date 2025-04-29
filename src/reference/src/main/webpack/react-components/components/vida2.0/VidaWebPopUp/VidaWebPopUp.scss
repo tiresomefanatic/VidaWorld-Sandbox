@@ -1,0 +1,181 @@
+.vida-webpopup-backdrop {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 100000;
+
+  .vida-webpopup-header {
+    .user-info-form-title {
+      margin-bottom: rem(24px);
+    }
+
+    .popup-close-btn {
+      background: none;
+      border: none;
+      color: inherit;
+      color: get-color("pure-black");
+      cursor: pointer;
+      display: block;
+      font: inherit;
+      padding: 0;
+      position: absolute;
+      right: rem(32px);
+      top: rem(24px);
+
+      .icon-x::before {
+        content: "\e949";
+        font-size: rem(24px);
+        font-weight: 600;
+      }
+    }
+  }
+
+  .web-popup-form-cont {
+    padding-bottom: rem(80px);
+  }
+
+  .vida-form-field-input {
+    font-size: rem(20px);
+  }
+
+  .vida-webpopup-form {
+    background: get-color("white");
+    margin: 0 auto;
+    margin-top: rem(80px);
+    max-height: rem(566px);
+    max-width: rem(400px);
+    overflow: hidden;
+    padding: rem(48px) rem(32px) rem(28px);
+    position: relative;
+
+    .form-fields__name {
+      max-height: rem(314px);
+      overflow-y: scroll;
+      overscroll-behavior: none;
+      padding-right: rem(8px);
+
+      &::-webkit-scrollbar {
+        width: rem(2px);
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        background-color: get-color("oslo-gray");
+      }
+  
+      &::-webkit-scrollbar-track {
+        background-color: get-color("catskill-white");
+      }
+
+      .test-ride-user-info-form-container .vida-form-group {
+        margin: 0 0 rem(30px) !important;
+      }
+    }
+
+    .form-fields__btn-wrapper {
+      background-color: get-color("white");
+      bottom: 0;
+      left: 0;
+      padding: rem(16px) rem(32px) rem(24px);
+      position: absolute;
+      width: 100%;
+
+      .form-fields__btn-primary {
+        background-color: get-color("orange");
+        border: none;
+        border-radius: rem(8px);
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+        color: get-color("white");
+        font-size: rem(16px);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        min-width: 100%;
+        // padding: rem(16px);
+        text-align: center;
+        @include media(">=desktop") {
+          border-radius: rem(8px);
+          font-size: rem(20px);
+          min-width: rem(275px);
+          padding: rem(16px) rem(32px);
+          width: 100%;
+        }
+
+        &:disabled {
+          background-color: get-color("oslo-gray");
+        }
+      }
+    }
+  }
+
+  // .form-fields {
+  .user-info-form-title {
+    @include vida-h3-desktop;
+  }
+  // }
+  .user-access-otp-primary-text {
+    padding-bottom: rem(16px);
+
+    p {
+      @include vida-desk-body-1;
+      color: get-color("mine-shift");
+      @include media(">=desktop") {
+        font-size: rem(20px);
+      }
+    }
+  }
+
+  .user-access-otp-bold-text {
+    padding: 0;
+  }
+
+  .vida-otp {
+    .user-access-otp-bold-text {
+      padding: 0;
+    }
+
+    .user-access-timer-container + div {
+      display: none;
+    }
+
+    .vida-otp__timer {
+      justify-content: flex-end;
+
+      .resend-text {
+        @include vida-tertiary-cta-mobile;
+      }
+    }
+
+    .form__field-otp {
+      gap: rem(10px);
+      @include media(">=desktop") {
+        gap: rem(18px);
+      }
+
+      .otp-form__field-input {
+        height: rem(51px);
+        margin: 0;
+        width: rem(40px);
+      }
+
+      &[type=number]:focus {
+        padding: 0;
+      }
+    }
+
+    .vida-access-otp-btn-container {
+      background-color: get-color("white");
+      bottom: 0;
+      left: 0;
+      padding: rem(16px) rem(32px) rem(24px);
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
+

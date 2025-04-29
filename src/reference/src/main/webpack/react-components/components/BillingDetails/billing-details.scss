@@ -1,0 +1,76 @@
+
+
+.vida-billing {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__heading {
+    @include h2;
+    padding: 24px 0;
+    
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__details {
+    background-color: get-color("white");
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: rem(14px);
+    padding: rem(16px) rem(15px);
+    @include media(">=desktop") {
+      border-radius: 16px 16px 0 0;
+    }
+  }
+
+  &__info {
+    @include p1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: space-between;
+
+    label {
+      max-width: 50%;
+      width: auto;
+    }
+  }
+
+  &__info-val {
+    @include h4;
+    max-width: 52%;
+    width: auto;
+    word-break: break-word;
+  }
+
+  &__address {
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+    border-top: 1px solid get-color("light-grey");
+    padding: 16px;
+    @include media(">=desktop") {
+      border-radius: 0 0 16px 16px;
+    }
+  }
+
+  &__billing {
+    @include p1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &__billing-add {
+    @include h4-md;
+  }
+}
