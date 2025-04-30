@@ -1,0 +1,137 @@
+/* Button Component Styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-s);
+  font-family: var(--brand-font);
+  border: 1px solid;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: var(--space-s);
+}
+
+/* Size Variations */
+.button--s {
+  padding: var(--space-s) var(--space-m);
+  font-size: var(--label-label-s-medium-font-size);
+  line-height: var(--label-label-s-medium-line-height);
+  font-weight: var(--label-label-s-medium-font-weight);
+  letter-spacing: var(--label-label-s-medium-letter-spacing);
+}
+
+.button--m {
+  padding: var(--space-m) var(--space-l);
+  font-size: var(--label-label-m-medium-font-size);
+  line-height: var(--label-label-m-medium-line-height);
+  font-weight: var(--label-label-m-medium-font-weight);
+  letter-spacing: var(--label-label-m-medium-letter-spacing);
+}
+
+.button--l {
+  padding: var(--space-l) var(--space-xl);
+  font-size: var(--label-label-l-medium-font-size);
+  line-height: var(--label-label-l-medium-line-height);
+  font-weight: var(--label-label-l-medium-font-weight);
+  letter-spacing: var(--label-label-l-medium-letter-spacing);
+}
+
+/* Prominence & State Variations */
+/* Primary Button */
+.button--primary {
+  background-color: var(--background-brand);
+  border-color: var(--border-brand);
+  color: var(--content-primary-inverse);
+}
+
+.button--primary.button--hover {
+  background-color: var(--background-brand-hover);
+  border-color: var(--border-focus);
+}
+
+.button--primary.button--pressed {
+  background-color: var(--background-brand-pressed);
+  border-color: var(--border-focus);
+}
+
+/* Secondary Button */
+.button--secondary {
+  background-color: var(--background-primary);
+  border-color: var(--border-brand);
+  color: var(--content-brand);
+}
+
+.button--secondary.button--hover {
+  background-color: var(--background-hover);
+  border-color: var(--border-focus);
+  color: var(--content-brand-focus);
+}
+
+.button--secondary.button--pressed {
+  background-color: var(--background-pressed);
+  border-color: var(--border-focus);
+  color: var(--content-brand-focus);
+}
+
+/* Tertiary Button */
+.button--tertiary {
+  background-color: var(--brand-100);
+  border-color: var(--brand-100);
+  color: var(--content-brand);
+}
+
+.button--tertiary.button--hover {
+  background-color: var(--brand-200);
+  border-color: var(--brand-200);
+  color: var(--content-brand-focus);
+}
+
+.button--tertiary.button--pressed {
+  background-color: var(--brand-300);
+  border-color: var(--brand-300);
+  color: var(--content-brand-focus);
+}
+
+/* Disabled State */
+.button--disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Icon Positioning */
+.button--icon-left {
+  padding-left: var(--space-s);
+}
+
+.button--icon-right {
+  padding-right: var(--space-s);
+}
+
+.button__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button icons color inherit from text */
+.button__icon svg {
+  color: inherit;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .button--s {
+    font-size: var(--label-label-s-medium-font-size-mobile);
+    line-height: var(--label-label-s-medium-line-height-mobile);
+  }
+
+  .button--m {
+    font-size: var(--label-label-m-medium-font-size-mobile);
+    line-height: var(--label-label-m-medium-line-height-mobile);
+  }
+
+  .button--l {
+    font-size: var(--label-label-l-medium-font-size-mobile);
+    line-height: var(--label-label-l-medium-line-height-mobile);
+  }
+} 

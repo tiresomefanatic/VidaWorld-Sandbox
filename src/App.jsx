@@ -7,6 +7,7 @@ import Product from "./pages/Product";
 import Explore from "./pages/Explore";
 import Components from "./pages/Components";
 import HomePage from "./pages/HomePage";
+import ButtonsPage from "./pages/buttons";
 
 // Import Header component
 import Header from "./components/Header/Header";
@@ -26,6 +27,7 @@ function App() {
             <Route path="/product" element={<Product />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/components" element={<Components />} />
+            <Route path="/buttons" element={<ButtonsPage />} />
           </Routes>
         </div>
       </div>
