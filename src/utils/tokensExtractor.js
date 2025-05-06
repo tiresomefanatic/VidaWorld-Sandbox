@@ -27,8 +27,8 @@ export async function extractScssTokens(forceRefresh = false) {
   console.log("Attempting to load tokens.scss file...");
   
   try {
-    // Use the raw-scss endpoint to get the unprocessed SCSS content
-    const response = await fetch(`/raw-scss/src/styles/tokens.scss?t=${Date.now()}`, {
+    // Use the public endpoint to get the unprocessed SCSS content
+    const response = await fetch(`/tokens.scss?t=${Date.now()}`, {
       headers: {
         'Accept': 'text/plain',
         'Cache-Control': 'no-cache'

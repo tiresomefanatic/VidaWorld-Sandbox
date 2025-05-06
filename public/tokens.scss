@@ -1,0 +1,661 @@
+/* Typography Primitives */
+$font-size-50: 10px;
+$font-family-brand-sans-serif: "PP Neue Montreal";
+$font-size-100: 12px;
+$font-size-200: 14px;
+$font-size-300: 16px;
+$font-size-400: 20px;
+$font-size-500: 24px;
+$font-size-600: 32px;
+$font-size-700: 40px;
+$font-size-800: 48px;
+$font-size-900: 60px;
+$font-size-1000: 72px;
+$font-size-1100: 84px;
+$font-size-1200: 96px;
+$font-size-1300: 108px;
+$font-size-1400: 120px;
+$font-size-1500: 132px;
+$line-height-100: 14px;
+$line-height-200: 18px;
+$line-height-300: 20px;
+$line-height-400: 24px;
+$line-height-500: 28px;
+$line-height-600: 32px;
+$line-height-700: 40px;
+$line-height-800: 48px;
+$line-height-900: 56px;
+$line-height-1000: 64px;
+$line-height-1100: 72px;
+$line-height-1200: 80px;
+$line-height-1300: 88px;
+$line-height-1400: 96px;
+$line-height-1500: 104px;
+$line-height-1600: 112px;
+$font-weight-light: 300;
+$font-weight-book: 400;
+$font-weight-regular: 450;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 800;
+$letter-spacing-xs: -0.25px;
+$letter-spacing-s: 0px;
+$letter-spacing-m: 0.1px;
+$letter-spacing-l: 0.15px;
+$letter-spacing-xl: 0.25px;
+$letter-spacing-xxl: 0.4px;
+$font-weight-light-italic: "Light Italic";
+$font-weight-book-italic: "Book Italic";
+$font-weight-italic: "Italic";
+$font-weight-medium-italic: "Medium Italic";
+$font-weight-semibold-italic: "Semibold Italic";
+$font-weight-bold-italic: "Bold Italic";
+
+/* Spacing */
+$space-2xs: 2px;
+$space-xs: 4px;
+$space-s: 8px;
+$space-m: 12px;
+$space-l: 16px;
+$space-xl: 24px;
+$space-2xl: 32px;
+$space-3xl: 40px;
+$space-4xl: 48px;
+$space-5xl: 56px;
+$space-6xl: 64px;
+$space-7xl: 72px;
+$space-8xl: 80px;
+$space-9xl: 88px;
+$space-10xl: 96px;
+$space-11xl: 104px;
+$space-12xl: 112px;
+
+/* Colour Primitives */
+$brand-100: #FFDDCF;
+$brand-200: #FFBA9F;
+$brand-300: #FF9870;
+$brand-400: #FF7540;
+$brand-500: #FF5310;
+$brand-600: #CC420D;
+$brand-700: #99320A;
+$brand-800: #662106;
+$brand-900: #331103;
+$neutral-50: #FFFFFF;
+$neutral-100: #F4F4F4;
+$neutral-150: #EAEAEA;
+$neutral-200: #DFDFDF;
+$neutral-250: #D4D4D4;
+$neutral-300: #C9C9C9;
+$neutral-350: #BDBDBD;
+$neutral-400: #A7A6A6;
+$neutral-450: #9B9A9A;
+$neutral-500: #8F8E8E;
+$neutral-550: #838282;
+$neutral-600: #767575;
+$neutral-650: #696767;
+$neutral-700: #5C5A5A;
+$neutral-750: #4E4C4C;
+$neutral-800: #3F3D3D;
+$neutral-850: #2E2C2C;
+$neutral-900: #1D1B1B;
+$cyan-100: #CCFBFF;
+$cyan-200: #99F8FF;
+$cyan-300: #66F4FF;
+$cyan-400: #33F1FF;
+$cyan-500: #00EDFF;
+$cyan-600: #00BECC;
+$cyan-700: #008E99;
+$cyan-800: #005F66;
+$cyan-900: #002F33;
+$red-100: #FFCCCC;
+$red-200: #FF9999;
+$red-300: #FF6666;
+$red-400: #FF3333;
+$red-500: #FF0000;
+$red-600: #CC0000;
+$red-700: #990000;
+$red-800: #660000;
+$red-900: #330000;
+$yellow-100: #FFF2CF;
+$yellow-200: #FFE49F;
+$yellow-300: #FFD770;
+$yellow-400: #FFC940;
+$yellow-500: #FFBC10;
+$yellow-600: #CC960D;
+$yellow-700: #99710A;
+$yellow-800: #664B06;
+$yellow-900: #332603;
+$green-100: #CCF9DE;
+$green-200: #99F3BD;
+$green-300: #66EC9C;
+$green-400: #33E67B;
+$green-500: #00E05A;
+$green-600: #00B348;
+$green-700: #008636;
+$green-800: #005A24;
+$green-900: #002D12;
+$blue-100: #DDE4F6;
+$blue-200: #BAC9EE;
+$blue-300: #98ADE5;
+$blue-400: #7592DD;
+$blue-500: #5377D4;
+$blue-600: #425FAA;
+$blue-700: #32477F;
+$blue-800: #213055;
+$blue-900: #11182A;
+$transparent-black-50: rgba(29, 27, 27, 0.5);
+$transparent-white-50: rgba(255, 255, 255, 0.5);
+
+/* Border */
+$radius-circle: 50px;
+$radius-pill: 999px;
+$radius-l: 16px;
+$radius-m: 12px;
+$radius-s: 8px;
+$radius-xs: 4px;
+$width-xl: 8px;
+$width-l: 4px;
+$width-m: 2px;
+$width-s: 1.5px;
+$width-xs: 1px;
+
+/* Layout */
+$breakpoint-xl: 1440px;
+$breakpoint-l: 1024px;
+$breakpoint-m: 768px;
+$breakpoint-s: 393px;
+
+/* Semantic Colours */
+$content-primary: $neutral-900;
+$content-secondary: $neutral-800;
+$content-tertiary: $neutral-700;
+$content-primary-inverse: $neutral-50;
+$content-secondary-inverse: $neutral-200;
+$content-tertiary-inverse: $neutral-400;
+$content-disabled: $neutral-400;
+$content-brand: $brand-500;
+$content-link: $brand-500;
+$content-link-hover: $brand-600;
+$content-link-pressed: $brand-700;
+$content-notice: $yellow-400;
+$content-notice-bold: $yellow-600;
+$content-negative: $red-500;
+$content-negative-bold: $red-600;
+$content-positive: $green-600;
+$content-positive-bold: $green-800;
+$background-primary: $neutral-50;
+$background-hover: $neutral-100;
+$background-pressed: $neutral-200;
+$background-selected: $brand-100;
+$background-disabled: $neutral-100;
+$background-inverse: $neutral-900;
+$background-brand: $brand-500;
+$background-brand-hover: $brand-600;
+$background-brand-pressed: $brand-700;
+$background-info: $blue-500;
+$background-info-subtle: $blue-100;
+$background-notice: $yellow-500;
+$background-notice-subtle: $yellow-100;
+$background-negative: $red-500;
+$background-negative-subtle: $red-100;
+$background-positive: $green-600;
+$background-positive-subtle: $green-100;
+$border-primary: $neutral-600;
+$border-secondary: $neutral-400;
+$border-tertiary: $neutral-200;
+$border-disabled: $neutral-300;
+$border-inverse: $neutral-50;
+$border-brand: $brand-500;
+$border-focus: $brand-600;
+$border-info: $blue-500;
+$border-notice: $yellow-500;
+$border-negative: $red-500;
+$border-positive: $green-600;
+$surface-l0: $neutral-50;
+$surface-l1: $neutral-50;
+$surface-l2: $neutral-50;
+$surface-l3: $neutral-50;
+$surface-l4: $neutral-50;
+$surface-l5: $neutral-50;
+$surface-l6: $neutral-50;
+$overlay-50: $transparent-black-50;
+$overlay-50-inverse: $transparent-white-50;
+$content-brand-focus: $brand-600; 
+
+/* Semantic Typography - Desktop */
+$heading-heading-5xl-font-size: $font-size-1300;
+$heading-heading-5xl-font-weight: $font-weight-semibold;
+$heading-heading-5xl-line-height: $line-height-1500;
+$heading-heading-5xl-letter-spacing: $letter-spacing-xs;
+$heading-heading-4xl-font-size: $font-size-1100;
+$heading-heading-4xl-font-weight: $font-weight-semibold;
+$heading-heading-4xl-line-height: $line-height-1300;
+$heading-heading-4xl-letter-spacing: $letter-spacing-xs;
+$heading-heading-3xl-font-size: $font-size-1000;
+$heading-heading-3xl-font-weight: $font-weight-semibold;
+$heading-heading-3xl-line-height: $line-height-1100;
+$heading-heading-3xl-letter-spacing: $letter-spacing-xs;
+$heading-heading-2xl-font-size: $font-size-900;
+$heading-heading-2xl-font-weight: $font-weight-semibold;
+$heading-heading-2xl-line-height: $line-height-1100;
+$heading-heading-2xl-letter-spacing: $letter-spacing-m;
+$heading-heading-xl-font-size: $font-size-800;
+$heading-heading-xl-font-weight: $font-weight-semibold;
+$heading-heading-xl-line-height: $line-height-900;
+$heading-heading-xl-letter-spacing: $letter-spacing-m;
+$heading-heading-l-font-size: $font-size-700;
+$heading-heading-l-font-weight: $font-weight-semibold;
+$heading-heading-l-line-height: $line-height-800;
+$heading-heading-l-letter-spacing: $letter-spacing-xs;
+$heading-heading-m-font-size: $font-size-600;
+$heading-heading-m-font-weight: $font-weight-semibold;
+$heading-heading-m-line-height: $line-height-700;
+$heading-heading-m-letter-spacing: $letter-spacing-s;
+$heading-heading-s-font-size: $font-size-500;
+$heading-heading-xs-font-size: $font-size-400;
+$heading-heading-xs-font-weight: $font-weight-book;
+$heading-heading-xs-line-height: $line-height-400;
+$heading-heading-xs-letter-spacing: $letter-spacing-xl;
+$heading-heading-s-font-weight: $font-weight-semibold;
+$heading-heading-s-line-height: $line-height-600;
+$heading-heading-s-letter-spacing: $letter-spacing-m;
+$body-body-xl-regular-font-size: $font-size-500;
+$body-body-xl-regular-font-weight: $font-weight-book;
+$body-body-xl-regular-line-height: $line-height-600;
+$body-body-xl-regular-letter-spacing: $letter-spacing-m;
+$body-body-l-regular-font-size: $font-size-400;
+$body-body-l-regular-font-weight: $font-weight-book;
+$body-body-l-regular-line-height: $line-height-500;
+$body-body-l-regular-letter-spacing: $letter-spacing-l;
+$body-body-m-regular-font-size: $font-size-300;
+$body-body-m-regular-font-weight: $font-weight-book;
+$body-body-m-regular-line-height: $line-height-400;
+$body-body-m-regular-letter-spacing: $letter-spacing-xl;
+$body-body-s-regular-font-size: $font-size-200;
+$body-body-s-regular-font-weight: $font-weight-book;
+$body-body-s-regular-line-height: $line-height-300;
+$body-body-s-regular-letter-spacing: $letter-spacing-xl;
+$body-body-xs-regular-font-size: $font-size-100;
+$body-body-xs-regular-font-weight: $font-weight-book;
+$body-body-xs-regular-line-height: $line-height-300;
+$body-body-xs-regular-letter-spacing: $letter-spacing-xl;
+$link-primary-cta-medium-font-size: $font-size-500;
+$link-primary-cta-medium-font-weight: $font-weight-medium;
+$link-primary-cta-medium-line-height: $line-height-500;
+$link-primary-cta-medium-letter-spacing: $letter-spacing-m;
+$link-secondary-cta-medium-font-size: $font-size-400;
+$link-secondary-cta-medium-font-weight: $font-weight-medium;
+$link-secondary-cta-medium-line-height: $line-height-400;
+$link-secondary-cta-medium-letter-spacing: $letter-spacing-l;
+$heading-heading-2xs-font-size: $font-size-200;
+$heading-heading-2xs-font-weight: $font-weight-semibold;
+$heading-heading-2xs-line-height: $line-height-300;
+$heading-heading-2xs-letter-spacing: $letter-spacing-xxl;
+$label-label-xl-medium-font-size: $font-size-700;
+$label-label-xl-medium-font-weight: $font-weight-medium;
+$label-label-xl-medium-line-height: $line-height-800;
+$label-label-xl-medium-letter-spacing: $letter-spacing-s;
+$label-label-l-medium-font-size: $font-size-600;
+$label-label-l-medium-font-weight: $font-weight-medium;
+$label-label-l-medium-line-height: $line-height-700;
+$label-label-l-medium-letter-spacing: $letter-spacing-m;
+$label-label-m-medium-font-size: $font-size-400;
+$label-label-m-medium-font-weight: $font-weight-medium;
+$label-label-m-medium-line-height: $line-height-400;
+$label-label-m-medium-letter-spacing: $letter-spacing-m;
+$label-label-s-medium-font-size: $font-size-300;
+$label-label-s-medium-font-weight: $font-weight-medium;
+$label-label-s-medium-line-height: $line-height-300;
+$label-label-s-medium-letter-spacing: $letter-spacing-xl;
+$label-label-xs-medium-font-size: $font-size-100;
+$label-label-xs-medium-font-weight: $font-weight-medium;
+$label-label-xs-medium-line-height: $line-height-100;
+$label-label-xs-medium-letter-spacing: $letter-spacing-xxl;
+$link-tertiary-cta-medium-font-size: $font-size-300;
+$link-tertiary-cta-medium-font-weight: $font-weight-medium;
+$link-tertiary-cta-medium-line-height: $line-height-300;
+$link-tertiary-cta-medium-letter-spacing: $letter-spacing-xl;
+$link-small-link-text-medium-font-size: $font-size-200;
+$link-small-link-text-medium-font-weight: $font-weight-medium;
+$link-small-link-text-medium-line-height: $line-height-200;
+$link-small-link-text-medium-letter-spacing: $letter-spacing-xxl;
+$brand-font: $font-family-brand-sans-serif;
+$body-body-xl-semibold-font-size: $font-size-500;
+$body-body-xl-semibold-font-weight: $font-weight-semibold;
+$body-body-xl-semibold-line-height: $line-height-600;
+$body-body-xl-semibold-letter-spacing: $letter-spacing-m;
+$body-body-l-semibold-font-size: $font-size-400;
+$body-body-l-semibold-font-weight: $font-weight-semibold;
+$body-body-l-semibold-line-height: $line-height-500;
+$body-body-l-semibold-letter-spacing: $letter-spacing-l;
+$body-body-m-semibold-font-size: $font-size-300;
+$body-body-m-semibold-font-weight: $font-weight-semibold;
+$body-body-m-semibold-line-height: $line-height-400;
+$body-body-m-semibold-letter-spacing: $letter-spacing-xl;
+$body-body-s-semibold-font-size: $font-size-200;
+$body-body-s-semibold-font-weight: $font-weight-semibold;
+$body-body-s-semibold-line-height: $line-height-300;
+$body-body-s-semibold-letter-spacing: $letter-spacing-xl;
+$body-body-xs-semibold-font-size: $font-size-100;
+$body-body-xs-semibold-font-weight: $font-weight-semibold;
+$body-body-xs-semibold-line-height: $line-height-300;
+$body-body-xs-semibold-letter-spacing: $letter-spacing-xl;
+$label-label-xl-semibold-font-size: $font-size-700;
+$label-label-xl-semibold-font-weight: $font-weight-semibold;
+$label-label-xl-semibold-line-height: $line-height-800;
+$label-label-xl-semibold-letter-spacing: $letter-spacing-s;
+$label-label-l-semibold-font-size: $font-size-600;
+$label-label-l-semibold-font-weight: $font-weight-semibold;
+$label-label-l-semibold-line-height: $line-height-700;
+$label-label-l-semibold-letter-spacing: $letter-spacing-m;
+$label-label-m-semibold-font-size: $font-size-400;
+$label-label-m-semibold-font-weight: $font-weight-semibold;
+$label-label-m-semibold-line-height: $line-height-400;
+$label-label-m-semibold-letter-spacing: $letter-spacing-m;
+$label-label-s-semibold-font-size: $font-size-300;
+$label-label-s-semibold-font-weight: $font-weight-semibold;
+$label-label-s-semibold-line-height: $line-height-300;
+$label-label-s-semibold-letter-spacing: $letter-spacing-xl;
+$label-label-xs-semibold-font-size: $font-size-100;
+$label-label-xs-semibold-font-weight: $font-weight-semibold;
+$label-label-xs-semibold-line-height: $line-height-100;
+$label-label-xs-semibold-letter-spacing: $letter-spacing-xxl;
+$link-primary-cta-semibold-font-size: $font-size-500;
+$link-primary-cta-semibold-font-weight: $font-weight-semibold;
+$link-primary-cta-semibold-line-height: $line-height-500;
+$link-primary-cta-semibold-letter-spacing: $letter-spacing-m;
+$link-secondary-cta-semibold-font-size: $font-size-400;
+$link-secondary-cta-semibold-font-weight: $font-weight-semibold;
+$link-secondary-cta-semibold-line-height: $line-height-400;
+$link-secondary-cta-semibold-letter-spacing: $letter-spacing-l;
+$link-tertiary-cta-semibold-font-size: $font-size-300;
+$link-tertiary-cta-semibold-font-weight: $font-weight-semibold;
+$link-tertiary-cta-semibold-line-height: $line-height-300;
+$link-tertiary-cta-semibold-letter-spacing: $letter-spacing-xl;
+$link-small-link-text-semibold-font-size: $font-size-200;
+$link-small-link-text-semibold-font-weight: $font-weight-semibold;
+$link-small-link-text-semibold-line-height: $line-height-200;
+$link-small-link-text-semibold-letter-spacing: $letter-spacing-xxl;
+
+/* Semantic Typography - Mobile */
+$heading-heading-5xl-font-size-mobile: $font-size-1200;
+$heading-heading-5xl-font-weight-mobile: $font-weight-semibold;
+$heading-heading-5xl-line-height-mobile: $line-height-1400;
+$heading-heading-5xl-letter-spacing-mobile: $letter-spacing-xs;
+$heading-heading-4xl-font-size-mobile: $font-size-1000;
+$heading-heading-4xl-font-weight-mobile: $font-weight-semibold;
+$heading-heading-4xl-line-height-mobile: $line-height-1200;
+$heading-heading-4xl-letter-spacing-mobile: $letter-spacing-xs;
+$heading-heading-3xl-font-size-mobile: $font-size-900;
+$heading-heading-3xl-font-weight-mobile: $font-weight-semibold;
+$heading-heading-3xl-line-height-mobile: $line-height-900;
+$heading-heading-3xl-letter-spacing-mobile: $letter-spacing-xs;
+$heading-heading-2xl-font-size-mobile: $font-size-800;
+$heading-heading-2xl-font-weight-mobile: $font-weight-semibold;
+$heading-heading-2xl-line-height-mobile: $line-height-900;
+$heading-heading-2xl-letter-spacing-mobile: $letter-spacing-m;
+$heading-heading-xl-font-size-mobile: $font-size-600;
+$heading-heading-xl-font-weight-mobile: $font-weight-semibold;
+$heading-heading-xl-line-height-mobile: $line-height-700;
+$heading-heading-xl-letter-spacing-mobile: $letter-spacing-m;
+$heading-heading-l-font-size-mobile: $font-size-600;
+$heading-heading-l-font-weight-mobile: $font-weight-semibold;
+$heading-heading-l-line-height-mobile: $line-height-700;
+$heading-heading-l-letter-spacing-mobile: $letter-spacing-xs;
+$heading-heading-m-font-size-mobile: $font-size-500;
+$heading-heading-m-font-weight-mobile: $font-weight-semibold;
+$heading-heading-m-line-height-mobile: $line-height-600;
+$heading-heading-m-letter-spacing-mobile: $letter-spacing-s;
+$heading-heading-s-font-size-mobile: $font-size-400;
+$heading-heading-xs-font-size-mobile: $font-size-200;
+$heading-heading-xs-font-weight-mobile: $font-weight-book;
+$heading-heading-xs-line-height-mobile: $line-height-300;
+$heading-heading-xs-letter-spacing-mobile: $letter-spacing-xl;
+$heading-heading-s-font-weight-mobile: $font-weight-semibold;
+$heading-heading-s-line-height-mobile: $line-height-400;
+$heading-heading-s-letter-spacing-mobile: $letter-spacing-m;
+$body-body-xl-regular-font-size-mobile: $font-size-400;
+$body-body-xl-regular-font-weight-mobile: $font-weight-book;
+$body-body-xl-regular-line-height-mobile: $line-height-500;
+$body-body-xl-regular-letter-spacing-mobile: $letter-spacing-m;
+$body-body-l-regular-font-size-mobile: $font-size-300;
+$body-body-l-regular-font-weight-mobile: $font-weight-book;
+$body-body-l-regular-line-height-mobile: $line-height-400;
+$body-body-l-regular-letter-spacing-mobile: $letter-spacing-l;
+$body-body-m-regular-font-size-mobile: $font-size-200;
+$body-body-m-regular-font-weight-mobile: $font-weight-book;
+$body-body-m-regular-line-height-mobile: $line-height-300;
+$body-body-m-regular-letter-spacing-mobile: $letter-spacing-xl;
+$body-body-s-regular-font-size-mobile: $font-size-100;
+$body-body-s-regular-font-weight-mobile: $font-weight-book;
+$body-body-s-regular-line-height-mobile: $line-height-200;
+$body-body-s-regular-letter-spacing-mobile: $letter-spacing-xl;
+$body-body-xs-regular-font-size-mobile: $font-size-50;
+$body-body-xs-regular-font-weight-mobile: $font-weight-book;
+$body-body-xs-regular-line-height-mobile: $line-height-200;
+$body-body-xs-regular-letter-spacing-mobile: $letter-spacing-xl;
+$link-primary-cta-medium-font-size-mobile: $font-size-400;
+$link-primary-cta-medium-font-weight-mobile: $font-weight-medium;
+$link-primary-cta-medium-line-height-mobile: $line-height-400;
+$link-primary-cta-medium-letter-spacing-mobile: $letter-spacing-m;
+$link-secondary-cta-medium-font-size-mobile: $font-size-300;
+$link-secondary-cta-medium-font-weight-mobile: $font-weight-medium;
+$link-secondary-cta-medium-line-height-mobile: $line-height-300;
+$link-secondary-cta-medium-letter-spacing-mobile: $letter-spacing-l;
+$heading-heading-2xs-font-size-mobile: $font-size-100;
+$heading-heading-2xs-font-weight-mobile: $font-weight-semibold;
+$heading-heading-2xs-line-height-mobile: $line-height-200;
+$heading-heading-2xs-letter-spacing-mobile: $letter-spacing-xxl;
+$label-label-xl-medium-font-size-mobile: $font-size-600;
+$label-label-xl-medium-font-weight-mobile: $font-weight-medium;
+$label-label-xl-medium-line-height-mobile: $line-height-700;
+$label-label-xl-medium-letter-spacing-mobile: $letter-spacing-s;
+$label-label-l-medium-font-size-mobile: $font-size-500;
+$label-label-l-medium-font-weight-mobile: $font-weight-medium;
+$label-label-l-medium-line-height-mobile: $line-height-600;
+$label-label-l-medium-letter-spacing-mobile: $letter-spacing-m;
+$label-label-m-medium-font-size-mobile: $font-size-300;
+$label-label-m-medium-font-weight-mobile: $font-weight-medium;
+$label-label-m-medium-line-height-mobile: $line-height-300;
+$label-label-m-medium-letter-spacing-mobile: $letter-spacing-m;
+$label-label-s-medium-font-size-mobile: $font-size-200;
+$label-label-s-medium-font-weight-mobile: $font-weight-medium;
+$label-label-s-medium-line-height-mobile: $line-height-200;
+$label-label-s-medium-letter-spacing-mobile: $letter-spacing-xl;
+$label-label-xs-medium-font-size-mobile: $font-size-50;
+$label-label-xs-medium-font-weight-mobile: $font-weight-medium;
+$label-label-xs-medium-line-height-mobile: $line-height-100;
+$label-label-xs-medium-letter-spacing-mobile: $letter-spacing-xxl;
+$link-tertiary-cta-medium-font-size-mobile: $font-size-200;
+$link-tertiary-cta-medium-font-weight-mobile: $font-weight-medium;
+$link-tertiary-cta-medium-line-height-mobile: $line-height-200;
+$link-tertiary-cta-medium-letter-spacing-mobile: $letter-spacing-xl;
+$link-small-link-text-medium-font-size-mobile: $font-size-100;
+$link-small-link-text-medium-font-weight-mobile: $font-weight-medium;
+$link-small-link-text-medium-line-height-mobile: $line-height-200;
+$link-small-link-text-medium-letter-spacing-mobile: $letter-spacing-xxl;
+$brand-font-mobile: $font-family-brand-sans-serif;
+$body-body-xl-semibold-font-size-mobile: $font-size-400;
+$body-body-xl-semibold-font-weight-mobile: $font-weight-semibold;
+$body-body-xl-semibold-line-height-mobile: $line-height-500;
+$body-body-xl-semibold-letter-spacing-mobile: $letter-spacing-m;
+$body-body-l-semibold-font-size-mobile: $font-size-300;
+$body-body-l-semibold-font-weight-mobile: $font-weight-semibold;
+$body-body-l-semibold-line-height-mobile: $line-height-400;
+$body-body-l-semibold-letter-spacing-mobile: $letter-spacing-l;
+$body-body-m-semibold-font-size-mobile: $font-size-200;
+$body-body-m-semibold-font-weight-mobile: $font-weight-semibold;
+$body-body-m-semibold-line-height-mobile: $line-height-300;
+$body-body-m-semibold-letter-spacing-mobile: $letter-spacing-xl;
+$body-body-s-semibold-font-size-mobile: $font-size-100;
+$body-body-s-semibold-font-weight-mobile: $font-weight-semibold;
+$body-body-s-semibold-line-height-mobile: $line-height-200;
+$body-body-s-semibold-letter-spacing-mobile: $letter-spacing-xl;
+$body-body-xs-semibold-font-size-mobile: $font-size-50;
+$body-body-xs-semibold-font-weight-mobile: $font-weight-semibold;
+$body-body-xs-semibold-line-height-mobile: $line-height-200;
+$body-body-xs-semibold-letter-spacing-mobile: $letter-spacing-xl;
+$label-label-xl-semibold-font-size-mobile: $font-size-600;
+$label-label-xl-semibold-font-weight-mobile: $font-weight-semibold;
+$label-label-xl-semibold-line-height-mobile: $line-height-700;
+$label-label-xl-semibold-letter-spacing-mobile: $letter-spacing-s;
+$label-label-l-semibold-font-size-mobile: $font-size-500;
+$label-label-l-semibold-font-weight-mobile: $font-weight-semibold;
+$label-label-l-semibold-line-height-mobile: $line-height-600;
+$label-label-l-semibold-letter-spacing-mobile: $letter-spacing-m;
+$label-label-m-semibold-font-size-mobile: $font-size-300;
+$label-label-m-semibold-font-weight-mobile: $font-weight-semibold;
+$label-label-m-semibold-line-height-mobile: $line-height-300;
+$label-label-m-semibold-letter-spacing-mobile: $letter-spacing-m;
+$label-label-s-semibold-font-size-mobile: $font-size-200;
+$label-label-s-semibold-font-weight-mobile: $font-weight-semibold;
+$label-label-s-semibold-line-height-mobile: $line-height-200;
+$label-label-s-semibold-letter-spacing-mobile: $letter-spacing-xl;
+$label-label-xs-semibold-font-size-mobile: $font-size-50;
+$label-label-xs-semibold-font-weight-mobile: $font-weight-semibold;
+$label-label-xs-semibold-line-height-mobile: $line-height-100;
+$label-label-xs-semibold-letter-spacing-mobile: $letter-spacing-xxl;
+$link-primary-cta-semibold-font-size-mobile: $font-size-400;
+$link-primary-cta-semibold-font-weight-mobile: $font-weight-semibold;
+$link-primary-cta-semibold-line-height-mobile: $line-height-400;
+$link-primary-cta-semibold-letter-spacing-mobile: $letter-spacing-m;
+$link-secondary-cta-semibold-font-size-mobile: $font-size-300;
+$link-secondary-cta-semibold-font-weight-mobile: $font-weight-semibold;
+$link-secondary-cta-semibold-line-height-mobile: $line-height-300;
+$link-secondary-cta-semibold-letter-spacing-mobile: $letter-spacing-l;
+$link-tertiary-cta-semibold-font-size-mobile: $font-size-200;
+$link-tertiary-cta-semibold-font-weight-mobile: $font-weight-semibold;
+$link-tertiary-cta-semibold-line-height-mobile: $line-height-200;
+$link-tertiary-cta-semibold-letter-spacing-mobile: $letter-spacing-xl;
+$link-small-link-text-semibold-font-size-mobile: $font-size-100;
+$link-small-link-text-semibold-font-weight-mobile: $font-weight-semibold;
+$link-small-link-text-semibold-line-height-mobile: $line-height-200;
+$link-small-link-text-semibold-letter-spacing-mobile: $letter-spacing-xxl;
+
+/* Component Tokens - Prominence */
+/* Prominence - Primary */
+:root {
+  --fill: var(--primary-fill);
+  --stroke: var(--primary-stroke);
+  --text-color: var(--primary-text-color);
+}
+
+/* Prominence - Secondary */
+:root {
+  --fill: var(--secondary-fill);
+  --stroke: var(--secondary-stroke);
+  --text-color: var(--secondary-text-color);
+}
+
+/* Prominence - Tertiary */
+:root {
+  --fill: var(--tertiary-fill);
+  --stroke: var(--tertiary-stroke);
+  --text-color: var(--tertiary-text-color);
+}
+
+/* Component Tokens - Size */
+/* Size - S */
+:root {
+  --horizontal-padding: var(--space-m);
+  --vertical-padding: var(--space-s);
+  --font-size: var(--label-label-s-medium-font-size);
+  --line-height: var(--label-label-s-medium-line-height);
+}
+
+/* Size - M */
+:root {
+  --horizontal-padding: var(--space-l);
+  --vertical-padding: var(--space-m);
+  --font-size: var(--label-label-m-medium-font-size);
+  --line-height: var(--label-label-m-medium-line-height);
+}
+
+/* Size - L */
+:root {
+  --horizontal-padding: var(--space-xl);
+  --vertical-padding: var(--space-l);
+  --font-size: var(--label-label-l-medium-font-size);
+  --line-height: var(--label-label-l-medium-line-height);
+}
+
+/* Component Tokens - Disabled */
+/* Disabled - False */
+:root {
+  --opacity: 100%;
+}
+
+/* Disabled - True */
+:root {
+  --opacity: 40%;
+}
+
+/* Component Tokens - States */
+/* States - Default */
+:root {
+  --primary-fill: var(--background-brand);
+  --primary-stroke: var(--border-brand);
+  --primary-text-color: var(--content-primary-inverse);
+  --secondary-fill: var(--background-primary);
+  --secondary-stroke: var(--border-brand);
+  --secondary-text-color: var(--content-brand);
+  --input-fill: var(--background-primary);
+  --input-stroke: var(--content-brand);
+  --input-text-color: var(--content-brand);
+  --tertiary-fill: var(--brand-100);
+  --tertiary-stroke: var(--brand-100);
+  --tertiary-text-color: var(--content-brand);
+}
+
+/* States - Hover */
+:root {
+  --primary-fill: var(--background-brand-hover);
+  --primary-stroke: var(--border-focus);
+  --primary-text-color: var(--content-primary-inverse);
+  --secondary-fill: var(--background-hover);
+  --secondary-stroke: var(--border-focus);
+  --secondary-text-color: var(--content-brand-focus);
+  --input-fill: var(--background-hover);
+  --input-stroke: var(--content-brand-focus);
+  --input-text-color: var(--content-brand-focus);
+  --tertiary-fill: var(--brand-200);
+  --tertiary-stroke: var(--brand-200);
+  --tertiary-text-color: var(--content-brand-focus);
+}
+
+/* States - Pressed */
+:root {
+  --primary-fill: var(--background-brand-pressed);
+  --primary-stroke: var(--border-focus);
+  --primary-text-color: var(--content-primary-inverse);
+  --secondary-fill: var(--background-pressed);
+  --secondary-stroke: var(--border-focus);
+  --secondary-text-color: var(--content-brand-focus);
+  --input-fill: var(--background-pressed);
+  --input-stroke: var(--content-brand-focus);
+  --input-text-color: var(--content-brand-focus);
+  --tertiary-fill: var(--brand-300);
+  --tertiary-stroke: var(--brand-300);
+  --tertiary-text-color: var(--content-brand-focus);
+}
+
+/* Component Tokens - Icon Position */
+/* Icon Left - False */
+:root {
+  --iconleft: false;
+}
+
+/* Icon Left - True */
+:root {
+  --iconleft: true;
+}
+
+/* Icon Right - False */
+:root {
+  --iconright: false;
+}
+
+/* Icon Right - True */
+:root {
+  --iconright: true;
+} 

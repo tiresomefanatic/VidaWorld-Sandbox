@@ -106,8 +106,8 @@ async function updateFileHash() {
  */
 async function getFileHash() {
   try {
-    // Fetch the tokens.scss file with cache busting using the raw-scss endpoint
-    const response = await fetch(`/raw-scss/src/styles/tokens.scss?t=${Date.now()}`, {
+    // Fetch the tokens.scss file with cache busting using the public endpoint
+    const response = await fetch(`/tokens.scss?t=${Date.now()}`, {
       headers: {
         'Accept': 'text/plain',
         'Cache-Control': 'no-cache'
