@@ -1,2 +1,0 @@
-export const MY_SCOOTER_DATA = "MY_SCOOTER_DATA";
-export const CITY_HOMEPAGE = "CITY_HOMEPAGE";

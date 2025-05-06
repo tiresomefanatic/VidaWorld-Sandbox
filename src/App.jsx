@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import React from "react";
 
 // Import page components
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Explore from "./pages/Explore";
-import Components from "./pages/Components";
 import HomePage from "./pages/HomePage";
-import ButtonsPage from "./pages/buttons";
+import DesignTokens from "./pages/DesignTokens";
 
 // Import Header component
 import Header from "./components/Header/Header";
@@ -16,20 +16,19 @@ function App() {
   return (
     <Router>
       <div className="app">
-        {/* Add the Header component to be visible on all pages */}
+        {/* Header is fixed at the top */}
         <Header />
         
-        {/* Main content area with padding-top to account for fixed header */}
-        <div className="content" style={{ paddingTop: "64px" }}>
+        {/* Content container with no margin or padding */}
+        <main className="app-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/product" element={<Product />} />
             <Route path="/explore" element={<Explore />} />
-            <Route path="/components" element={<Components />} />
-            <Route path="/buttons" element={<ButtonsPage />} />
+            <Route path="/designtokens" element={<DesignTokens />} />
           </Routes>
-        </div>
+        </main>
       </div>
     </Router>
   );

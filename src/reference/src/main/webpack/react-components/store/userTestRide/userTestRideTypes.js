@@ -1,1 +1,0 @@
-export const USER_TEST_RIDE_DATA = "USER_TEST_RIDE_DATA";

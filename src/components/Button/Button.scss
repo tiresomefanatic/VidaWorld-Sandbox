@@ -1,81 +1,140 @@
 @import '../../styles/tokens.scss';
 
-.vida-button {
+// Button Component Styles
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-radius: $radius-s;
   font-family: $font-family-brand-sans-serif;
-  font-weight: $font-weight-medium;
-  border-radius: $radius-m;
-  transition: all 0.2s ease;
-  border: none;
+  border: $width-xs solid;
   cursor: pointer;
-  text-decoration: none;
-  
-  // Size variants
-  &--small {
+  transition: all 0.2s ease;
+  gap: $space-s;
+
+  // Size Variations
+  &--s {
     padding: $space-s $space-m;
-    font-size: $font-size-200;
-    line-height: $line-height-200;
+    font-size: $label-label-s-medium-font-size;
+    line-height: $label-label-s-medium-line-height;
+    font-weight: $label-label-s-medium-font-weight;
+    letter-spacing: $label-label-s-medium-letter-spacing;
   }
-  
-  &--medium {
+
+  &--m {
     padding: $space-m $space-l;
-    font-size: $font-size-300;
-    line-height: $line-height-300;
+    font-size: $label-label-m-medium-font-size;
+    line-height: $label-label-m-medium-line-height;
+    font-weight: $label-label-m-medium-font-weight;
+    letter-spacing: $label-label-m-medium-letter-spacing;
   }
-  
-  &--large {
+
+  &--l {
     padding: $space-l $space-xl;
-    font-size: $font-size-400;
-    line-height: $line-height-400;
+    font-size: $label-label-l-medium-font-size;
+    line-height: $label-label-l-medium-line-height;
+    font-weight: $label-label-l-medium-font-weight;
+    letter-spacing: $label-label-l-medium-letter-spacing;
   }
-  
-  // Style variants
+
+  // Prominence & State Variations
+  // Primary Button
   &--primary {
     background-color: $background-brand;
+    border-color: $border-brand;
     color: $content-primary-inverse;
-    
-    &:hover:not(:disabled) {
+
+    &.button--hover {
       background-color: $background-brand-hover;
-    }
-    
-    &:active:not(:disabled) {
-      background-color: $background-brand-pressed;
-    }
-  }
-  
-  &--secondary {
-    background-color: $background-primary;
-    color: $content-brand;
-    border: $width-xs solid $border-brand;
-    
-    &:hover:not(:disabled) {
-      background-color: $background-hover;
       border-color: $border-focus;
     }
-    
-    &:active:not(:disabled) {
-      background-color: $background-pressed;
+
+    &.button--pressed {
+      background-color: $background-brand-pressed;
+      border-color: $border-focus;
     }
   }
-  
-  &--tertiary {
-    background-color: transparent;
+
+  // Secondary Button
+  &--secondary {
+    background-color: $background-primary;
+    border-color: $border-brand;
     color: $content-brand;
-    
-    &:hover:not(:disabled) {
-      background-color: $brand-100;
+
+    &.button--hover {
+      background-color: $background-hover;
+      border-color: $border-focus;
+      color: $content-brand-focus;
     }
-    
-    &:active:not(:disabled) {
-      background-color: $brand-200;
+
+    &.button--pressed {
+      background-color: $background-pressed;
+      border-color: $border-focus;
+      color: $content-brand-focus;
     }
   }
-  
-  // Disabled state
-  &:disabled {
+
+  // Tertiary Button
+  &--tertiary {
+    background-color: $brand-100;
+    border-color: $brand-100;
+    color: $content-brand;
+
+    &.button--hover {
+      background-color: $brand-200;
+      border-color: $brand-200;
+      color: $content-brand-focus;
+    }
+
+    &.button--pressed {
+      background-color: $brand-300;
+      border-color: $brand-300;
+      color: $content-brand-focus;
+    }
+  }
+
+  // Disabled State
+  &--disabled {
     opacity: 0.4;
     cursor: not-allowed;
+  }
+
+  // Icon Positioning
+  &--icon-left {
+    padding-left: $space-s;
+  }
+
+  &--icon-right {
+    padding-right: $space-s;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      color: inherit;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: $breakpoint-m) {
+  .button {
+    &--s {
+      font-size: $label-label-s-medium-font-size-mobile;
+      line-height: $label-label-s-medium-line-height-mobile;
+    }
+
+    &--m {
+      font-size: $label-label-m-medium-font-size-mobile;
+      line-height: $label-label-m-medium-line-height-mobile;
+    }
+
+    &--l {
+      font-size: $label-label-l-medium-font-size-mobile;
+      line-height: $label-label-l-medium-line-height-mobile;
+    }
   }
 } 

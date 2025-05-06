@@ -1,5 +1,0 @@
-export const PURCHASE_STATE = {
-  INITIAL: "INITIAL",
-  REVIEW: "REVIEW",
-  CANCEL: "CANCEL"
-};

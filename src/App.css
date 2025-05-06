@@ -2,7 +2,6 @@
   width: 100%;
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
 /* App Structure */
@@ -13,37 +12,39 @@ body, html {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/* Page content styles */
+/* Basic app container */
 .app {
+  width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  position: relative; /* Create proper stacking context */
+}
+
+/* Global content container */
+.app-content {
   width: 100%;
+  position: relative; /* Create stacking context */
+  margin-top: 0; /* Let the individual pages handle their top margins */
+  z-index: 1; /* Ensure proper stacking with header */
 }
 
-.content {
-  flex: 1;
-  /* Fixed header height is 64px, padding-top is added in the JSX */
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  position: relative;
-  overflow-x: hidden;
+/* Remove header-spacer as we're not using it anymore */
+.header-spacer {
+  display: none;
 }
 
-.home-page,
-.product-page,
-.explore-page,
-.vida-xv2-page {
-  padding: 2rem;
+/* Define a basic fallback style for the product page */
+.product-page-wrapper {
+  padding-top: 64px; /* Match header height */
 }
 
+/* Logo animations */
 .logo {
   height: 6em;
   padding: 1.5em;
