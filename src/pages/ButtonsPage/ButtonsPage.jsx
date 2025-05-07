@@ -18,7 +18,7 @@ const ButtonsPage = () => {
         </div>
         
         <section className="buttons-page__section">
-          <h2>Finished Components</h2>
+        
           
           <div className="buttons-page__component-card">
             <h3>Label Button</h3>
