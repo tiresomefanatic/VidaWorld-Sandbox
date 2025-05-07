@@ -30,7 +30,7 @@ body {
 // Special approach for product page using pseudo-element
 .product-page {
   margin-top: 0; // Reset margin
-  padding-top: 64px; // Match header height exactly
+  padding-top: 96px; // Match header height exactly
   position: relative;
   
   &::before {
@@ -60,8 +60,8 @@ body {
 // Product cards
 .product-card {
   padding: 2rem;
-  border-radius: 12px;
-  background-color: #f4f4f4;
+  border-radius: $radius-m;
+  background-color: $neutral-100;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   
   &__content {
@@ -72,7 +72,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'PP Neue Montreal', sans-serif;
+  font-family: $font-family-brand-sans-serif;
   margin-top: 0;
 }
 
@@ -101,26 +101,219 @@ p {
 
 // Component styles
 .dropdown {
-  border-radius: 0px 0px 20px 20px;
+  border-radius: 0px 0px $radius-m $radius-m;
 }
 
-// Common page container styles for other pages
-.home-page__container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+// Radio button styles
+.radio-button {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  
+  &__input {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: $radius-circle;
+    background-color: $radio-fill-default;
+    border: $width-xs solid $radio-stroke-default;
+    margin-right: $space-xs;
+    position: relative;
+    
+    &:hover {
+      background-color: $radio-fill-hover;
+      border-color: $radio-stroke-hover;
+    }
+    
+    &:checked {
+      background-color: $radio-fill-pressed;
+      border-color: $radio-stroke-pressed;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: $radius-circle;
+        background-color: $radio-innerfill-pressed;
+      }
+    }
+    
+    &--small {
+      @include radio-button-size('s');
+    }
+    
+    &--medium {
+      @include radio-button-size('m');
+    }
+    
+    &--large {
+      @include radio-button-size('l');
+    }
+  }
+  
+  &__label {
+    color: $radio-text-color-default;
+    
+    &:hover + .radio-button__input {
+      background-color: $radio-fill-hover;
+      border-color: $radio-stroke-hover;
+    }
+  }
+}
+
+// Checkbox styles
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  
+  &__input {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: $radius-xs;
+    background-color: $checkbox-background-default;
+    border: $width-xs solid $checkbox-strokecolor-default;
+    margin-right: $space-xs;
+    position: relative;
+    
+    &:hover {
+      background-color: $checkbox-background-hover;
+      border-color: $checkbox-strokecolor-hover;
+    }
+    
+    &:checked {
+      background-color: $checkbox-background-pressed;
+      border-color: $checkbox-strokecolor-pressed;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: $radius-xxs;
+        background-color: $checkbox-innercolor-pressed;
+      }
+    }
+    
+    &--small {
+      @include checkbox-size('s');
+    }
+    
+    &--medium {
+      @include checkbox-size('m');
+    }
+    
+    &--large {
+      @include checkbox-size('l');
+    }
+  }
+  
+  &__label {
+    color: $radio-text-color-default;
+    
+    &:hover + .checkbox__input {
+      background-color: $checkbox-background-hover;
+      border-color: $checkbox-strokecolor-hover;
+    }
+  }
+}
+
+// Toggle button styles
+.toggle {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    
+    &:checked + .toggle__slider {
+      background-color: $toggle-fill-on;
+      
+      &:before {
+        transform: translateX(100%);
+        background-color: $toggle-innerfill-on;
+      }
+    }
+    
+    &:focus + .toggle__slider {
+      @include focus-ring;
+    }
+  }
+  
+  &__slider {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    background-color: $toggle-fill-off;
+    transition: .4s;
+    border-radius: $toggle-buttonradius-m;
+    
+    &:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: $toggle-innerfill-off;
+      transition: .4s;
+      border-radius: $toggle-buttonouterradius-m;
+    }
+  }
+}
+
+// Tab styles
+.tab {
+  display: inline-block;
+  padding: $tab-verticalpadding-m $tab-horzontalpadding-m;
+  border-bottom: $tab-strokewidth-off solid $tab-stroke-off;
+  color: $tab-textfill-off;
+  font-weight: $tab-fontweight-off;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: $tab-textfill-on;
+    border-bottom-width: $tab-strokeweight-hover;
+    border-bottom-color: $tab-stroke-on;
+  }
+  
+  &.active {
+    color: $tab-textfill-on;
+    font-weight: $tab-fontweight-on;
+    border-bottom-width: $tab-strokewidth-on;
+    border-bottom-color: $tab-stroke-on;
+  }
+  
+  &--small {
+    @include tab-size('s');
+  }
+  
+  &--medium {
+    @include tab-size('m');
+  }
+  
+  &--large {
+    @include tab-size('l');
+  }
 }
 
 // Global page styles - use consistent padding for all pages
+// Header height offset to prevent content being hidden behind fixed header
 .home-page, 
 .design-tokens-page, 
 .button-component-page, 
 .header-component-page,
 .components-page,
-.explore-page {
+.product-page {
   width: 100%;
-  padding-top: 64px; // Match header height exactly
+  padding-top: 96px; // Header height offset
   margin-top: 0;
   position: relative;
   z-index: 1;
@@ -161,9 +354,8 @@ p {
   .button-component-page, 
   .header-component-page,
   .components-page,
-  .explore-page,
   .product-page {
-    padding-top: 64px; // Keep consistent with header height
+    padding-top: 96px; // Keep consistent with header height
   }
   
   .product-card {
@@ -171,25 +363,147 @@ p {
   }
 }
 
+// Common page container styles
+.home-page__container,
+.design-tokens-page__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
 // Design tokens page specific styles
 .design-tokens-page {
-  margin-top: 0;
-  padding-top: 64px !important; // Match header height exactly
-  position: relative;
-  z-index: 1;
-  
-  &__container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-  
   &__content {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     margin-top: 2rem;
+  }
+}
+
+// Buttons page and Explore page specific styles removed - now in their own files
+
+// Dropdown selector styles
+.dropdown-selector {
+  position: relative;
+  
+  &__select {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    padding: $space-m;
+    border: $width-xs solid $dropdown-selector-stroke-default;
+    border-radius: $radius-s;
+    background-color: $dropdown-option-background-default;
+    cursor: pointer;
+    
+    &:hover {
+      border-color: $dropdown-selector-stroke-hover;
+    }
+    
+    &:focus {
+      border-color: $dropdown-selector-stroke-pressed;
+      @include focus-ring;
+    }
+  }
+  
+  &__icon {
+    position: absolute;
+    right: $space-m;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: $dropdown-iconvisbility-default;
+    
+    &:hover {
+      opacity: $dropdown-iconvisbility-hover;
+    }
+  }
+  
+  &--small {
+    width: $dropdown-selector-selectorwidth-s;
+  }
+  
+  &--medium {
+    width: $dropdown-selector-selectorwidth-m;
+  }
+  
+  &--large {
+    width: $dropdown-selector-selectorwidth-l;
+  }
+}
+
+// Navbar styles
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: $navbar-background-light;
+  z-index: 10;
+  
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: $navbar-maxwidth-l;
+    margin: 0 auto;
+    padding: 0 $navbar-horzontalpadding-l;
+    
+    @media (max-width: $breakpoint-l) {
+      max-width: $navbar-maxwidth-m;
+      padding: 0 $navbar-horzontalpadding-m;
+    }
+    
+    @media (max-width: $breakpoint-s) {
+      max-width: $navbar-maxwidth-s;
+      padding: 0 $navbar-horzontalpadding-s;
+    }
+  }
+  
+  &__logo {
+    color: $navbar-fillcolor-light;
+    font-weight: $font-weight-semibold;
+  }
+  
+  &__menu {
+    display: flex;
+    gap: $space-l;
+  }
+  
+  &__item {
+    color: $navbar-fillcolor-light;
+    text-decoration: none;
+    
+    &:hover {
+      color: $content-brand;
+    }
+    
+    &.active {
+      color: $content-brand;
+      font-weight: $font-weight-semibold;
+    }
+  }
+  
+  &--dark {
+    background-color: $navbar-background-dark;
+    
+    .navbar__logo,
+    .navbar__item {
+      color: $navbar-fillcolor-dark;
+    }
+  }
+  
+  &--brand {
+    background-color: $navbar-background-brand;
+    
+    .navbar__logo,
+    .navbar__item {
+      color: $navbar-fillcolor-brand;
+    }
   }
 }
 

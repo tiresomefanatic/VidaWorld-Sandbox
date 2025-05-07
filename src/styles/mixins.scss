@@ -99,4 +99,96 @@
 @mixin focus-ring {
   outline: none;
   box-shadow: 0 0 0 2px $border-focus;
-} 
+}
+
+// Radio button mixins
+@mixin radio-button-size($size) {
+  @if $size == 's' {
+    width: $radio-outer-s;
+    height: $radio-outer-s;
+    
+    &::after {
+      width: $radio-inner-s;
+      height: $radio-inner-s;
+    }
+  } @else if $size == 'm' {
+    width: $radio-outer-m;
+    height: $radio-outer-m;
+    
+    &::after {
+      width: $radio-inner-m;
+      height: $radio-inner-m;
+    }
+  } @else if $size == 'l' {
+    width: $radio-outer-l;
+    height: $radio-outer-l;
+    
+    &::after {
+      width: $radio-inner-l;
+      height: $radio-inner-l;
+    }
+  }
+}
+
+// Checkbox mixins
+@mixin checkbox-size($size) {
+  @if $size == 's' {
+    width: $checkbox-size-s;
+    height: $checkbox-size-s;
+    
+    .checkbox-inner {
+      width: $checkbox-innersize-s;
+      height: $checkbox-innersize-s;
+    }
+  } @else if $size == 'm' {
+    width: $checkbox-size-m;
+    height: $checkbox-size-m;
+    
+    .checkbox-inner {
+      width: $checkbox-innersize-m;
+      height: $checkbox-innersize-m;
+    }
+  } @else if $size == 'l' {
+    width: $checkbox-size-l;
+    height: $checkbox-size-l;
+    
+    .checkbox-inner {
+      width: $checkbox-innersize-l;
+      height: $checkbox-innersize-l;
+    }
+  }
+}
+
+// Toggle button mixins
+@mixin toggle-button-size($size) {
+  @if $size == 's' {
+    border-radius: $toggle-buttonradius-s;
+    
+    &::before {
+      border-radius: $toggle-buttonouterradius-s;
+    }
+  } @else if $size == 'm' {
+    border-radius: $toggle-buttonradius-m;
+    
+    &::before {
+      border-radius: $toggle-buttonouterradius-m;
+    }
+  } @else if $size == 'l' {
+    border-radius: $toggle-buttonradius-l;
+    
+    &::before {
+      border-radius: $toggle-buttonouterradius-l;
+    }
+  }
+}
+
+// Tab mixins
+@mixin tab-size($size) {
+  @if $size == 's' {
+    padding: $tab-verticalpadding-s $tab-horzontalpadding-s;
+  } @else if $size == 'm' {
+    padding: $tab-verticalpadding-m $tab-horzontalpadding-m;
+  } @else if $size == 'l' {
+    padding: $tab-verticalpadding-l $tab-horzontalpadding-l;
+  }
+}

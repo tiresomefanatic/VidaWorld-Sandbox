@@ -5,7 +5,7 @@ import Button from '../components/Button/Button';
 const Product = () => {
   // Container styles - similar to what we used for design tokens page
   const containerStyle = {
-    paddingTop: '80px',
+    paddingTop: '96px',
     paddingBottom: '80px',
     maxWidth: '1200px',
     margin: '0 auto',
@@ -35,7 +35,7 @@ const Product = () => {
       left: 0,
       width: '100%',
       minHeight: '100%',
-      paddingTop: '64px' // Match header height exactly
+      paddingTop: '96px' // Match header height exactly
     }}>
       <div style={containerStyle}>
         <h1>Vida Electric Scooter Models</h1>

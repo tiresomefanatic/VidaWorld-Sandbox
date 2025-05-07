@@ -1,0 +1,51 @@
+@import '../../styles/tokens.scss';
+
+.drawer {
+  position: relative;
+  width: 100%;
+  margin: $space-xl 0;
+  
+  &__toggle {
+    background: $blue-500;
+    color: $neutral-50;
+    padding: $space-s $space-m;
+    border: none;
+    border-radius: $radius-s;
+    font-family: $font-family-brand-sans-serif;
+    font-size: $font-size-200;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+    
+    &:hover {
+      background: $blue-600;
+    }
+    
+    &:active {
+      background: $blue-700;
+    }
+  }
+  
+  &__content {
+    position: absolute;
+    right: 0;
+    top: calc(100% + #{$space-s});
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: $neutral-50;
+    border-radius: $radius-m;
+    width: 500px;
+    z-index: 10;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  &--open {
+    .drawer__content {
+      max-height: 2000px;
+      padding: $space-xl;
+      border: 1px solid $neutral-200;
+    }
+  }
+} 

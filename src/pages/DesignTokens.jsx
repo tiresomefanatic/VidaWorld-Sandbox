@@ -86,7 +86,7 @@ const DesignTokens = () => {
 
   // Simple container styles
   const containerStyle = {
-    paddingTop: '80px',
+    paddingTop: '96px',
     paddingBottom: '80px',
     maxWidth: '1200px',
     margin: '0 auto',
@@ -100,7 +100,7 @@ const DesignTokens = () => {
       left: 0,
       width: '100%',
       minHeight: '100%',
-      paddingTop: '64px' // Match header height exactly
+      paddingTop: '96px' // Match header height exactly
     }}>
       <div style={containerStyle}>
         <h1>Design Tokens</h1>
