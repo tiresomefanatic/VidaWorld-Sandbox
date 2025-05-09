@@ -1,14 +1,12 @@
 {
   "components": {
-    "LabelButton": {
-      "label": "Label"
-    },
     "Header": {
       "title": "Vida World",
       "subtitle": "Design System"
     },
     "Button": {
-      "text": "Button"
+      "text": "Button",
+      "label": "Label"
     }
   },
   "history": []

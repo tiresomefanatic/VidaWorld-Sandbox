@@ -598,8 +598,8 @@ $label-label-m-medium-line-height: $line-height-400;
 $label-label-m-medium-letter-spacing: $letter-spacing-m;
 $label-label-s-medium-font-size: $font-size-100;
 $label-label-s-medium-font-weight: $font-weight-medium;
-$label-label-s-medium-line-height: $line-height-300;
-$label-label-s-medium-letter-spacing: $letter-spacing-xl;
+$label-label-s-medium-line-height: $line-height-200;
+$label-label-s-medium-letter-spacing: $letter-spacing-s;
 $label-label-xs-medium-font-size: $font-size-100;
 $label-label-xs-medium-font-weight: $font-weight-medium;
 $label-label-xs-medium-line-height: $line-height-100;
@@ -888,7 +888,7 @@ $link-small-link-text-semibold-letter-spacing-mobile: $letter-spacing-xxl;
 :root {
   --primary-fill: var(--background-brand);
   --primary-stroke: var(--border-brand);
-  --primary-text-color: var(--content-primary-inverse);
+  --primary-text-color: var(--primary-text-color);
   --secondary-fill: var(--background-primary);
   --secondary-stroke: var(--border-brand);
   --secondary-text-color: var(--content-brand);
@@ -904,7 +904,7 @@ $link-small-link-text-semibold-letter-spacing-mobile: $letter-spacing-xxl;
 :root {
   --primary-fill: var(--background-brand-hover);
   --primary-stroke: var(--border-focus);
-  --primary-text-color: var(--content-primary-inverse);
+  --primary-text-color: var(--primary-text-color);
   --secondary-fill: var(--background-hover);
   --secondary-stroke: var(--border-focus);
   --secondary-text-color: var(--content-brand-focus);
@@ -920,7 +920,7 @@ $link-small-link-text-semibold-letter-spacing-mobile: $letter-spacing-xxl;
 :root {
   --primary-fill: var(--background-brand-pressed);
   --primary-stroke: var(--border-focus);
-  --primary-text-color: var(--content-primary-inverse);
+  --primary-text-color: var(--primary-text-color);
   --secondary-fill: var(--background-pressed);
   --secondary-stroke: var(--border-focus);
   --secondary-text-color: var(--content-brand-focus);

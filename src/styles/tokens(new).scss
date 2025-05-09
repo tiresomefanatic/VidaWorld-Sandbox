@@ -1,0 +1,866 @@
+/***************TYPOGRAPHY PRIMITIVES***************/
+
+/* Font Size  */
+ $font-size-700: 40px;
+ $font-size-500: 24px;
+ $font-size-400: 20px;
+ $font-size-300: 16px;
+ $font-size-200: 14px;
+ $font-size-100: 12px;
+ $font-size-600: 32px;
+ $font-size-900: 60px;
+ $font-size-1000: 72px;
+ $font-size-800: 48px;
+ $font-size-1200: 96px;
+ $font-size-1400: 120px;
+ $font-size-1300: 108px;
+ $font-size-1100: 84px;
+ $font-size-1500: 132px;
+ $font-size-50: 10px;
+
+  /* Font Weight  */
+$font-weight-semibold: 600px;
+$font-weight-medium: 500px;
+$font-weight-regular: 450px;
+$font-weight-light: 300px;
+$font-weight-book: 400px;
+$font-weight-bold: 800px;
+
+
+ /* Letter Spacing  */
+ $letter-spacing-xl: 0.25px;
+ $letter-spacing-l: 0.15px;
+ $letter-spacing-m: 0.1px;
+ $letter-spacing-s: 0px;
+ $letter-spacing-xs: -0.25px;
+ $letter-spacing-xxl: 0.4px;
+ 
+  /* Line Height  */
+$line-height-1100: 72px;
+$line-height-900: 56px;
+$line-height-700: 40px;
+$line-height-300: 20px;
+$line-height-1000: 64px;
+$line-height-200: 18px;
+$line-height-600: 32px;
+$line-height-400: 24px;
+$line-height-100: 14px;
+$line-height-800: 48px;
+$line-height-1400: 96px;
+$line-height-1200: 80px;
+$line-height-1300: 88px;
+$line-height-1500: 104px;
+$line-height-1600: 112px;
+$line-height-500: 28px;
+
+ /***************COLOR PRIMITIVES***************/ 
+
+ /* Brand  */
+ $brand-100: #FFDDCFFF;
+ $brand-200: #FFBA9FFF;
+ $brand-300: #FF9870FF;
+ $brand-400: #FF7540FF;
+ $brand-500: #FF5310FF;
+ $brand-600: #CC420DFF;
+ $brand-700: #99320AFF;
+ $brand-800: #662106FF;
+ $brand-900: #331103FF;
+ 
+ 
+ /* Neutral  */
+ $neutral-50: #FFFFFFFF;
+ $neutral-100: #F4F4F4FF;
+ $neutral-150: #EAEAEAFF;
+ $neutral-200: #DFDFDFFF;
+ $neutral-250: #D4D4D4FF;
+ $neutral-300: #C9C9C9FF;
+ $neutral-350: #BDBDBDFF;
+ $neutral-400: #A7A6A6FF;
+ $neutral-450: #9B9A9AFF;
+ $neutral-500: #8F8E8EFF;
+ $neutral-550: #838282FF;
+ $neutral-600: #767575FF;
+ $neutral-650: #696767FF;
+ $neutral-700: #5C5A5AFF;
+ $neutral-750: #4E4C4CFF;
+ $neutral-800: #3F3D3DFF;
+ $neutral-850: #2E2C2CFF;
+ $neutral-900: #1D1B1BFF;
+ 
+  /* Cyan  */
+$cyan-100: #CCFBFFFF;
+$cyan-200: #99F8FFFF;
+$cyan-300: #66F4FFFF;
+$cyan-400: #33F1FFFF;
+$cyan-500: #00EDFFFF;
+$cyan-600: #00BECCFF;
+$cyan-700: #008E99FF;
+$cyan-800: #005F66FF;
+$cyan-900: #002F33FF;
+
+ /* Red  */
+ $red-100: #FFCCCCFF;
+ $red-200: #FF9999FF;
+ $red-300: #FF6666FF;
+ $red-400: #FF3333FF;
+ $red-500: #FF0000FF;
+ $red-600: #CC0000FF;
+ $red-700: #990000FF;
+ $red-800: #660000FF;
+ $red-900: #330000FF;
+ 
+  /* Yellow  */
+$yellow-100: #FFF2CFFF;
+$yellow-200: #FFE49FFF;
+$yellow-300: #FFD770FF;
+$yellow-400: #FFC940FF;
+$yellow-500: #FFBC10FF;
+$yellow-600: #CC960DFF;
+$yellow-700: #99710AFF;
+$yellow-800: #664B06FF;
+$yellow-900: #332603FF;
+
+ /* Green  */
+ $green-100: #CCF9DEFF;
+ $green-200: #99F3BDFF;
+ $green-300: #66EC9CFF;
+ $green-400: #33E67BFF;
+ $green-500: #00E05AFF;
+ $green-600: #00B348FF;
+ $green-700: #008636FF;
+ $green-800: #005A24FF;
+ $green-900: #002D12FF;
+ 
+  /* Blue  */
+$blue-100: #DDE4F6FF;
+$blue-200: #BAC9EEFF;
+$blue-300: #98ADE5FF;
+$blue-400: #7592DDFF;
+$blue-500: #5377D4FF;
+$blue-600: #425FAAFF;
+$blue-700: #32477FFF;
+$blue-800: #213055FF;
+$blue-900: #11182AFF;
+
+ /* Transparent  */ 
+$transparent-black-50: #1D1B1B80;
+$transparent-white-50: #FFFFFF80;
+$transparent-black-0: #1D1B1B00;
+$transparent-white-0: #FFFFFF00;
+
+ /***************BORDER RADIUS***************/
+ $radius-xs: 4px;
+ $radius-s: 8px;
+ $radius-m: 12px;
+ $radius-l: 16px;
+ $radius-pill: 999px;
+ $radius-circle: 50px;
+ $radius-xxs: 2px;
+ $radius-0: 0px;
+
+
+/***************BORDER WIDTH***************/
+$width-l: 4px;
+$width-xl: 8px;
+$width-xs: 1px;
+$width-s: 1.5px;
+$width-m: 2px;
+
+ /***************LAYOUT***************/
+ $breakpoint-s: 393px;
+ $breakpoint-m: 768px;
+ $breakpoint-l: 1024px;
+ $breakpoint-xl: 1440px;
+
+ /***************SPACE***************/
+$space-2xl: 32px;
+$space-m: 12px;
+$space-2xs: 4px;
+$space-12xl: 112px;
+$space-4xl: 48px;
+$space-6xl: 64px;
+$space-11xl: 104px;
+$space-9xl: 88px;
+$space-8xl: 80px;
+$space-l: 16px;
+$space-s: 8px;
+$space-3xs: 2px;
+$space-xl: 24px;
+$space-7xl: 72px;
+$space-10xl: 96px;
+$space-3xl: 40px;
+$space-5xl: 56px;
+$space-xs: 6px;
+$space-15xl: 134px;
+$space-20xl: 174px;
+$space-25xl: 214px;
+$space-50xl: 414px;
+$space-37xl: 310px;
+
+ /***************SEMANTIC COLORS***************/
+  
+ /* Background   */
+
+ $background-primary: $neutral-50;
+ $background-hover: $neutral-100;
+ $background-selected: $brand-100;
+ $background-disabled: $neutral-100;
+ $background-primaryinverse: $neutral-900;
+ $background-brand: $brand-500;
+ $background-brand-hover: $brand-600;
+ $background-brand-pressed: $brand-700;
+ $background-info: $blue-500;
+ $background-info-subtle: $blue-100;
+ $background-notice: $yellow-500;
+ $background-notice-subtle: $yellow-100;
+ $background-negative: $red-500;
+ $background-negative-subtle: $red-100;
+ $background-positive: $green-600;
+ $background-positive-subtle: $green-100;
+ $background-tertiary: $brand-100;
+ $background-tertiaryhover: $brand-200;
+ $background-tertiarypressed: $brand-300;
+ $background-secondary: $neutral-200;
+ $background-secondary50: $neutral-650;
+ $background-secondaryinverse-hover: $neutral-550;
+ $background-transparent: $transparent-white-0;
+ $background-transparent50: $transparent-white-50;
+ $background-negative-hover: $red-600;
+ $background-negative-pressed: $red-700;
+ $background-negative-subtle-hover: $red-200;
+ $background-negative-subtle-pressed: $red-300;
+ $background-secondary-hover: $neutral-300;
+ $background-secondary-pressed: $neutral-400;
+
+ /* Border  */
+ $border-primary: $neutral-600;
+ $border-secondary: $neutral-400;
+ $border-tertiary: $neutral-200;
+ $border-disabled: $neutral-300;
+ $border-inverse: $neutral-50;
+ $border-brand: $brand-500;
+ $border-focus: $brand-600;
+ $border-info: $blue-500;
+ $border-notice: $yellow-500;
+ $border-negative: $red-500;
+ $border-positive: $green-600;
+ $border-transparent: $transparent-white-0;
+ $border-brandlight: $brand-100;
+ $border-brandlight-hover: $brand-200;
+ $border-brandlight-pressed: $brand-300;
+ 
+  /* Surface  */ 
+$surface-l0: $neutral-50;
+$surface-l1: $neutral-50;
+$surface-l2: $neutral-50;
+$surface-l3: $neutral-50;
+$surface-l4: $neutral-50;
+$surface-l5: $neutral-50;
+$surface-l6: $neutral-50;
+
+ /* Overlay  */ 
+ $overlay-50: $transparent-black-50;
+ $overlay-50-inverse: $transparent-white-50;
+
+  /* Content  */
+$content-primary: $neutral-900;
+$content-secondary: $neutral-800;
+$content-tertiary: $neutral-700;
+$content-primary-inverse: $neutral-50;
+$content-secondary-inverse: $neutral-200;
+$content-tertiary-inverse: $neutral-400;
+$content-disabled: $neutral-400;
+$content-brand: $brand-500;
+$content-link: $brand-500;
+$content-link-hover: $brand-600;
+$content-link-pressed: $brand-700;
+$content-notice: $yellow-400;
+$content-notice-bold: $yellow-600;
+$content-negative: $red-500;
+$content-negative-bold: $red-600;
+$content-positive: $green-600;
+$content-positive-bold: $green-800;
+$content-brand-focus: $brand-600;
+$content-primary-inverse-light: $neutral-100;
+
+/***************SEMANTIC TYPOGRAPHY***************/
+
+/* Desktop  */
+
+/* Desktop-Body  */
+
+/* Desktop-Body-XL-Regular  */
+$body-body-xl-regular-font-size: $font-size-500;
+$body-body-xl-regular-font-weight: $font-weight-book;
+$body-body-xl-regular-line-height: $line-height-600;
+$body-body-xl-regular-letter-spacing: $letter-spacing-m;
+
+/* Desktop-Body-XL-SemiBold  */
+$body-body-xl-semibold-font-size: $font-size-500;
+$body-body-xl-semibold-font-weight: $font-weight-semibold;
+$body-body-xl-semibold-line-height: $line-height-600;
+$body-body-xl-semibold-letter-spacing: $letter-spacing-m;
+
+ /* Desktop-Body-L-Regular  */
+ $body-body-l-regular-font-size: $font-size-400;
+ $body-body-l-regular-font-weight: $font-weight-book;
+ $body-body-l-regular-line-height: $line-height-500;
+ $body-body-l-regular-letter-spacing: $letter-spacing-l;
+
+  /* Desktop-Body-L-SemiBold  */
+$body-body-l-semibold-font-size: $font-size-400;
+$body-body-l-semibold-font-weight: $font-weight-semibold;
+$body-body-l-semibold-line-height: $line-height-500;
+$body-body-l-semibold-letter-spacing: $letter-spacing-l;
+
+/* Desktop-Body-M-Regular  */ 
+$body-body-m-regular-font-size: $font-size-300;
+$body-body-m-regular-font-weight: $font-weight-book;
+$body-body-m-regular-line-height: $line-height-400;
+$body-body-m-regular-letter-spacing: $letter-spacing-xl;
+
+/* Desktop-Body-M-SemiBold  */
+$body-body-m-semibold-font-size: $font-size-300;
+$body-body-m-semibold-font-weight: $font-weight-semibold;
+$body-body-m-semibold-line-height: $line-height-400;
+$body-body-m-semibold-letter-spacing: $letter-spacing-xl;
+
+  /* Desktop-Body-S-Regular  */
+$body-body-s-regular-font-size: $font-size-200;
+$body-body-s-regular-font-weight: $font-weight-book;
+$body-body-s-regular-line-height: $line-height-300;
+$body-body-s-regular-letter-spacing: $letter-spacing-xl;
+
+/* Desktop-Body-S-SemiBold  */
+$body-body-s-semibold-font-size: $font-size-200;
+$body-body-s-semibold-font-weight: $font-weight-semibold;
+$body-body-s-semibold-line-height: $line-height-300;
+$body-body-s-semibold-letter-spacing: $letter-spacing-xl;
+
+/* Desktop-Body-XS-Regular  */
+$body-body-xs-regular-font-size: $font-size-100;
+$body-body-xs-regular-font-weight: $font-weight-book;
+$body-body-xs-regular-line-height: $line-height-300;
+$body-body-xs-regular-letter-spacing: $letter-spacing-xl;
+
+/* Desktop-Body-XS-SemiBold  */
+$body-body-xs-semibold-font-size: $font-size-100;
+$body-body-xs-semibold-font-weight: $font-weight-semibold;
+$body-body-xs-semibold-line-height: $line-height-300;
+$body-body-xs-semibold-letter-spacing: $letter-spacing-xl;
+
+
+/* Desktop-Headling  */
+
+ /* Desktop-Heading-2XS  */
+ $heading-heading-2xs-font-size: $font-size-200;
+ $heading-heading-2xs-font-weight: $font-weight-semibold;
+ $heading-heading-2xs-line-height: $line-height-300;
+ $heading-heading-2xs-letter-spacing: $letter-spacing-xxl;
+
+ /* Desktop-Heading-XS */ 
+ $heading-heading-xs-font-size: $font-size-400;
+ $heading-heading-xs-font-weight: $font-weight-book;
+ $heading-heading-xs-line-height: $line-height-400;
+ $heading-heading-xs-letter-spacing: $letter-spacing-xl;
+
+ /* Desktop-Heading-S */
+$heading-heading-s-font-size: $font-size-500;
+$heading-heading-s-font-weight: $font-weight-semibold;
+$heading-heading-s-line-height: $line-height-600;
+$heading-heading-s-letter-spacing: $letter-spacing-m;
+
+/* Desktop-Heading-M */
+$heading-heading-m-font-size: $font-size-600;
+$heading-heading-m-font-weight: $font-weight-semibold;
+$heading-heading-m-line-height: $line-height-700;
+$heading-heading-m-letter-spacing: $letter-spacing-s;
+
+/* Desktop-Heading-L */
+$heading-heading-l-font-size: $font-size-700;
+$heading-heading-l-font-weight: $font-weight-semibold;
+$heading-heading-l-line-height: $line-height-800;
+$heading-heading-l-letter-spacing: $letter-spacing-xs;
+
+/* Desktop-Heading-XL */
+$heading-heading-xl-font-size: $font-size-800;
+$heading-heading-xl-font-weight: $font-weight-semibold;
+$heading-heading-xl-line-height: $line-height-900;
+$heading-heading-xl-letter-spacing: $letter-spacing-m;
+
+/* Desktop-Heading-2XL */
+$heading-heading-2xl-font-size: $font-size-900;
+$heading-heading-2xl-font-weight: $font-weight-semibold;
+$heading-heading-2xl-line-height: $line-height-1100;
+$heading-heading-2xl-letter-spacing: $letter-spacing-m;
+
+/* Desktop-Heading-3XL */
+$heading-heading-3xl-font-size: $font-size-1000;
+$heading-heading-3xl-font-weight: $font-weight-semibold;
+$heading-heading-3xl-line-height: $line-height-1100;
+$heading-heading-3xl-letter-spacing: $letter-spacing-xs;
+
+/* Desktop-Heading-4XL */
+$heading-heading-4xl-font-size: $font-size-1100;
+$heading-heading-4xl-line-height: $line-height-1300;
+$heading-heading-4xl-font-weight: $font-weight-semibold;
+$heading-heading-4xl-letter-spacing: $letter-spacing-xs;
+
+/* Desktop-Heading-5XL */
+$heading-heading-5xl-font-size: $font-size-1300;
+$heading-heading-5xl-font-weight: $font-weight-semibold;
+$heading-heading-5xl-line-height: $line-height-1500;
+$heading-heading-5xl-letter-spacing: $letter-spacing-xs;
+
+ /* Desktop-Label  */
+
+ /* Desktop-Label-XS-Medium  */ 
+ $label-label-xs-medium-font-size: $font-size-100;
+ $label-label-xs-medium-font-weight: $font-weight-medium;
+ $label-label-xs-medium-line-height: $line-height-100;
+ $label-label-xs-medium-letter-spacing: $letter-spacing-xxl;
+
+  /* Desktop-Label-XS-Semibold  */
+$label-label-xs-semibold-font-size: $font-size-100;
+$label-label-xs-semibold-font-weight: $font-weight-semibold;
+$label-label-xs-semibold-line-height: $line-height-100;
+$label-label-xs-semibold-letter-spacing: $letter-spacing-xxl;
+
+ /* Desktop-Label-S-Medium  */
+ $label-label-s-medium-font-size: $font-size-300;
+ $label-label-s-medium-font-weight: $font-weight-medium;
+ $label-label-s-medium-line-height: $line-height-300;
+ $label-label-s-medium-letter-spacing: $letter-spacing-xl;
+
+  /* Desktop-Label-S-Semibold  */
+$label-label-s-semibold-font-size: $font-size-300;
+$label-label-s-semibold-font-weight: $font-weight-semibold;
+$label-label-s-semibold-line-height: $line-height-300;
+$label-label-s-semibold-letter-spacing: $letter-spacing-xl;
+
+ /* Desktop-Label-M-Medium  */
+ $label-label-m-medium-font-size: $font-size-400;
+ $label-label-m-medium-font-weight: $font-weight-medium;
+ $label-label-m-medium-line-height: $line-height-400;
+ $label-label-m-medium-letter-spacing: $letter-spacing-m;
+
+ /* Desktop-Label-M-Semibold  */
+ $label-label-m-semibold-font-size: $font-size-400;
+ $label-label-m-semibold-font-weight: $font-weight-semibold;
+ $label-label-m-semibold-line-height: $line-height-400;
+ $label-label-m-semibold-letter-spacing: $letter-spacing-m;
+
+  /* Desktop-Label-L-Medium  */
+$label-label-l-medium-font-size: $font-size-600;
+$label-label-l-medium-font-weight: $font-weight-medium;
+$label-label-l-medium-line-height: $line-height-700;
+$label-label-l-medium-letter-spacing: $letter-spacing-m;
+
+ /* Desktop-Label-L-Semibold  */
+ $label-label-l-semibold-font-size: $font-size-600;
+ $label-label-l-semibold-font-weight: $font-weight-semibold;
+ $label-label-l-semibold-line-height: $line-height-700;
+ $label-label-l-semibold-letter-spacing: $letter-spacing-m;
+
+  /* Desktop-Label-XL-Medium  */
+$label-label-xl-medium-font-size: $font-size-700;
+$label-label-xl-medium-font-weight: $font-weight-medium;
+$label-label-xl-medium-line-height: $line-height-800;
+$label-label-xl-medium-letter-spacing: $letter-spacing-s;
+
+ /* Desktop-Label-XL-Semibold  */
+ $label-label-xl-semibold-font-size: $font-size-700;
+ $label-label-xl-semibold-font-weight: $font-weight-semibold;
+ $label-label-xl-semibold-line-height: $line-height-800;
+ $label-label-xl-semibold-letter-spacing: $letter-spacing-s;
+
+ /* Desktop-Link */
+
+ /* Desktop-Link-Primary-CTA */
+
+ /* Desktop-Link-Primary-CTA-Meduim */
+ $link-primary-cta-medium-font-size: $font-size-500;
+ $link-primary-cta-medium-font-weight: $font-weight-medium;
+ $link-primary-cta-medium-line-height: $line-height-500;
+ $link-primary-cta-medium-letter-spacing: $letter-spacing-m;
+
+ /* Desktop-Link-Primary-CTA-Semibold */
+$link-primary-cta-semibold-font-size: $font-size-500;
+$link-primary-cta-semibold-font-weight: $font-weight-semibold;
+$link-primary-cta-semibold-line-height: $line-height-500;
+$link-primary-cta-semibold-letter-spacing: $letter-spacing-m;
+
+/* Desktop-Link-Secondary-CTA */
+
+/* Desktop-Link-Secondary-CTA-Medium */
+$link-secondary-cta-medium-font-size: $font-size-400;
+$link-secondary-cta-medium-font-weight: $font-weight-medium;
+$link-secondary-cta-medium-line-height: $line-height-400;
+$link-secondary-cta-medium-letter-spacing: $letter-spacing-l;
+
+/* Desktop-Link-Secondary-CTA-Semibold */
+$link-secondary-cta-semibold-font-size: $font-size-400;
+$link-secondary-cta-semibold-font-weight: $font-weight-semibold;
+$link-secondary-cta-semibold-line-height: $line-height-400;
+$link-secondary-cta-semibold-letter-spacing: $letter-spacing-l;
+
+/* Desktop-Link-Tertiary-CTA */
+
+/* Desktop-Link-Tertiary-CTA-Meduim */
+$link-tertiary-cta-medium-font-size: $font-size-300;
+$link-tertiary-cta-medium-font-weight: $font-weight-medium;
+$link-tertiary-cta-medium-line-height: $line-height-300;
+$link-tertiary-cta-medium-letter-spacing: $letter-spacing-xl;
+
+/* Desktop-Link-Tertiary-CTA-Semibold */
+$link-tertiary-cta-semibold-font-size: $font-size-300;
+$link-tertiary-cta-semibold-font-weight: $font-weight-semibold;
+$link-tertiary-cta-semibold-line-height: $line-height-300;
+$link-tertiary-cta-semibold-letter-spacing: $letter-spacing-xl;
+
+/* Desktop-Link-Small-Link-Text */
+
+/* Desktop-Link-Small-Link-Text-Medium */
+$link-small-link-text-medium-font-size: $font-size-200;
+$link-small-link-text-medium-font-weight: $font-weight-medium;
+$link-small-link-text-medium-line-height: $line-height-200;
+$link-small-link-text-medium-letter-spacing: $letter-spacing-xxl;
+
+/* Desktop-Link-Small-Link-Text-Semibold */
+$link-small-link-text-semibold-font-size: $font-size-200;
+$link-small-link-text-semibold-font-weight: $font-weight-semibold;
+$link-small-link-text-semibold-line-height: $line-height-200;
+$link-small-link-text-semibold-letter-spacing: $letter-spacing-xxl;
+
+/* Mobile  */
+
+/* Mobile-Body  */
+
+/* Mobile-Body-XL-Regular  */
+$body-body-xl-regular-font-size: $font-size-400;
+$body-body-xl-regular-font-weight: $font-weight-book;
+$body-body-xl-regular-line-height: $line-height-500;
+$body-body-xl-regular-letter-spacing: $letter-spacing-m;
+
+/* Mobile-Body-XL-SemiBold  */
+$body-body-xl-semibold-font-size: $font-size-400;
+$body-body-xl-semibold-font-weight: $font-weight-semibold;
+$body-body-xl-semibold-line-height: $line-height-500;
+$body-body-xl-semibold-letter-spacing: $letter-spacing-m;
+
+/* Mobile-Body-L-Regular  */
+$body-body-l-regular-font-size: $font-size-300;
+$body-body-l-regular-font-weight: $font-weight-book;
+$body-body-l-regular-line-height: $line-height-400;
+$body-body-l-regular-letter-spacing: $letter-spacing-l;
+
+/* Mobile-Body-L-SemiBold  */
+$body-body-l-semibold-font-size: $font-size-300;
+$body-body-l-semibold-font-weight: $font-weight-semibold;
+$body-body-l-semibold-line-height: $line-height-400;
+$body-body-l-semibold-letter-spacing: $letter-spacing-l;
+
+ /* Mobile-Body-M-Regular  */
+ $body-body-m-regular-font-size: $font-size-200;
+ $body-body-m-regular-font-weight: $font-weight-book;
+ $body-body-m-regular-line-height: $line-height-300;
+ $body-body-m-regular-letter-spacing: $letter-spacing-xl;
+
+  /* Mobile-Body-M-Semibold  */
+$body-body-m-semibold-font-size: $font-size-200;
+$body-body-m-semibold-font-weight: $font-weight-semibold;
+$body-body-m-semibold-line-height: $line-height-300;
+$body-body-m-semibold-letter-spacing: $letter-spacing-xl;
+
+ /* Mobile-Body-S-Regular  */
+ $body-body-s-regular-font-size: $font-size-100;
+ $body-body-s-regular-font-weight: $font-weight-book;
+ $body-body-s-regular-line-height: $line-height-200;
+ $body-body-s-regular-letter-spacing: $letter-spacing-xl;
+
+/* Mobile-Body-S-Semibold  */
+$body-body-s-semibold-font-size: $font-size-100;
+$body-body-s-semibold-font-weight: $font-weight-semibold;
+$body-body-s-semibold-line-height: $line-height-200;
+$body-body-s-semibold-letter-spacing: $letter-spacing-xl;
+
+ /* Mobile-Body-XS-Regular  */
+ $body-body-xs-regular-font-size: $font-size-50;
+ $body-body-xs-regular-font-weight: $font-weight-book;
+ $body-body-xs-regular-line-height: $line-height-200;
+ $body-body-xs-regular-letter-spacing: $letter-spacing-xl;
+
+ /* Mobile-Body-XS-Semibold  */
+ $body-body-xs-semibold-font-size: $font-size-50;
+ $body-body-xs-semibold-font-weight: $font-weight-semibold;
+ $body-body-xs-semibold-line-height: $line-height-200;
+ $body-body-xs-semibold-letter-spacing: $letter-spacing-xl;
+ 
+
+ /* Mobile-Heading  */
+
+  /* Mobile-Heading-2XS  */
+$heading-heading-2xs-font-size: $font-size-100;
+$heading-heading-2xs-font-weight: $font-weight-semibold;
+$heading-heading-2xs-line-height: $line-height-200;
+$heading-heading-2xs-letter-spacing: $letter-spacing-xxl;
+
+/* Mobile-Heading-XS  */
+ $heading-heading-xs-font-size: $font-size-200;
+ $heading-heading-xs-font-weight: $font-weight-book;
+ $heading-heading-xs-line-height: $line-height-300;
+ $heading-heading-xs-letter-spacing: $letter-spacing-xl;
+ 
+ /* Mobile-Heading-S  */
+ $heading-heading-s-font-size: $font-size-400;
+ $heading-heading-s-font-weight: $font-weight-semibold;
+ $heading-heading-s-line-height: $line-height-400;
+ $heading-heading-s-letter-spacing: $letter-spacing-m;
+ 
+ /* Mobile-Heading-M  */
+ $heading-heading-m-font-size: $font-size-500;
+ $heading-heading-m-font-weight: $font-weight-semibold;
+ $heading-heading-m-line-height: $line-height-600;
+ $heading-heading-m-letter-spacing: $letter-spacing-s;
+ 
+ /* Mobile-Heading-L  */
+ $heading-heading-l-font-size: $font-size-600;
+ $heading-heading-l-font-weight: $font-weight-semibold;
+ $heading-heading-l-line-height: $line-height-700;
+ $heading-heading-l-letter-spacing: $letter-spacing-xs;
+ 
+ /* Mobile-Heading-XL  */
+ $heading-heading-xl-font-size: $font-size-600;
+ $heading-heading-xl-font-weight: $font-weight-semibold;
+ $heading-heading-xl-line-height: $line-height-700;
+ $heading-heading-xl-letter-spacing: $letter-spacing-m;
+ 
+ /* Mobile-Heading-2XL  */
+ $heading-heading-2xl-font-size: $font-size-800;
+ $heading-heading-2xl-font-weight: $font-weight-semibold;
+ $heading-heading-2xl-line-height: $line-height-900;
+ $heading-heading-2xl-letter-spacing: $letter-spacing-m;
+ 
+ /* Mobile-Heading-3XL  */
+ $heading-heading-3xl-font-size: $font-size-900;
+ $heading-heading-3xl-font-weight: $font-weight-semibold;
+ $heading-heading-3xl-line-height: $line-height-900;
+ $heading-heading-3xl-letter-spacing: $letter-spacing-xs;
+ 
+ /* Mobile-Heading-4XL  */
+ $heading-heading-4xl-font-size: $font-size-1000;
+ $heading-heading-4xl-line-height: $line-height-1200;
+ $heading-heading-4xl-font-weight: $font-weight-semibold;
+ $heading-heading-4xl-letter-spacing: $letter-spacing-xs;
+ 
+ /* Mobile-Heading-5XL  */
+ $heading-heading-5xl-font-size: $font-size-1200;
+ $heading-heading-5xl-font-weight: $font-weight-semibold;
+ $heading-heading-5xl-line-height: $line-height-1400;
+ $heading-heading-5xl-letter-spacing: $letter-spacing-xs;
+
+  /* Mobile-Label  */
+
+  /* Mobile-Label-XS-Medium  */
+$label-label-xs-medium-font-size: $font-size-50;
+$label-label-xs-medium-font-weight: $font-weight-medium;
+$label-label-xs-medium-line-height: $line-height-100;
+$label-label-xs-medium-letter-spacing: $letter-spacing-xxl;
+
+ /* Mobile-Label-XS-Semibold  */
+ $label-label-xs-semibold-font-size: $font-size-50;
+ $label-label-xs-semibold-font-weight: $font-weight-semibold;
+ $label-label-xs-semibold-line-height: $line-height-100;
+ $label-label-xs-semibold-letter-spacing: $letter-spacing-xxl;
+ 
+ /* Mobile-Label-S-Medium  */
+ $label-label-s-medium-font-size: $font-size-200;
+ $label-label-s-medium-font-weight: $font-weight-medium;
+ $label-label-s-medium-line-height: $line-height-200;
+ $label-label-s-medium-letter-spacing: $letter-spacing-xl;
+ 
+ /* Mobile-Label-S-Semibold  */
+ $label-label-s-semibold-font-size: $font-size-200;
+ $label-label-s-semibold-font-weight: $font-weight-semibold;
+ $label-label-s-semibold-line-height: $line-height-200;
+ $label-label-s-semibold-letter-spacing: $letter-spacing-xl;
+ 
+ /* Mobile-Label-M-Medium  */
+ $label-label-m-medium-font-size: $font-size-300;
+ $label-label-m-medium-font-weight: $font-weight-medium;
+ $label-label-m-medium-line-height: $line-height-300;
+ $label-label-m-medium-letter-spacing: $letter-spacing-m;
+ 
+ /* Mobile-Label-M-Semibold  */
+ $label-label-m-semibold-font-size: $font-size-300;
+ $label-label-m-semibold-font-weight: $font-weight-semibold;
+ $label-label-m-semibold-line-height: $line-height-300;
+ $label-label-m-semibold-letter-spacing: $letter-spacing-m;
+ 
+ /* Mobile-Label-L-Medium  */
+ $label-label-l-medium-font-size: $font-size-500;
+ $label-label-l-medium-font-weight: $font-weight-medium;
+ $label-label-l-medium-line-height: $line-height-600;
+ $label-label-l-medium-letter-spacing: $letter-spacing-m;
+ 
+ /* Mobile-Label-L-Semibold  */
+ $label-label-l-semibold-font-size: $font-size-500;
+ $label-label-l-semibold-font-weight: $font-weight-semibold;
+ $label-label-l-semibold-line-height: $line-height-600;
+ $label-label-l-semibold-letter-spacing: $letter-spacing-m;
+
+  /* Mobile-Label-XL-Medium  */
+$label-label-xl-medium-font-size: $font-size-600;
+$label-label-xl-medium-font-weight: $font-weight-medium;
+$label-label-xl-medium-line-height: $line-height-700;
+$label-label-xl-medium-letter-spacing: $letter-spacing-s;
+
+ /* Mobile-Label-XL-Semibold  */
+ $label-label-xl-semibold-font-size: $font-size-600;
+ $label-label-xl-semibold-font-weight: $font-weight-semibold;
+ $label-label-xl-semibold-line-height: $line-height-700;
+ $label-label-xl-semibold-letter-spacing: $letter-spacing-s;
+
+ /* Mobile-Link  */
+
+ /* Mobile-Link-Primary-CTA  */
+ 
+  /* Mobile-Link-Primary-CTA-Medium  */
+$link-primary-cta-medium-font-size: $font-size-400;
+$link-primary-cta-medium-font-weight: $font-weight-medium;
+$link-primary-cta-medium-line-height: $line-height-400;
+$link-primary-cta-medium-letter-spacing: $letter-spacing-m;
+
+ /* Mobile-Link-Primary-CTA-Semibold  */
+ $link-primary-cta-semibold-font-size: $font-size-400;
+ $link-primary-cta-semibold-font-weight: $font-weight-semibold;
+ $link-primary-cta-semibold-line-height: $line-height-400;
+ $link-primary-cta-semibold-letter-spacing: $letter-spacing-m;
+
+ /* Mobile-Link-Secondary-CTA  */
+ 
+ /* Mobile-Link-Secondary-CTA-Medium  */
+ $link-secondary-cta-medium-font-size: $font-size-300;
+ $link-secondary-cta-medium-font-weight: $font-weight-medium;
+ $link-secondary-cta-medium-line-height: $line-height-300;
+ $link-secondary-cta-medium-letter-spacing: $letter-spacing-l;
+ 
+ /* Mobile-Link-Secondary-CTA-Semibold  */
+ $link-secondary-cta-semibold-font-size: $font-size-300;
+ $link-secondary-cta-semibold-font-weight: $font-weight-semibold;
+ $link-secondary-cta-semibold-line-height: $line-height-300;
+ $link-secondary-cta-semibold-letter-spacing: $letter-spacing-l;
+
+ /* Mobile-Link-Tertiary-CTA  */
+ 
+ /* Mobile-Link-Tertiary-CTA-Medium  */
+ $link-tertiary-cta-medium-font-size: $font-size-200;
+ $link-tertiary-cta-medium-font-weight: $font-weight-medium;
+ $link-tertiary-cta-medium-line-height: $line-height-200;
+ $link-tertiary-cta-medium-letter-spacing: $letter-spacing-xl;
+ 
+ /* Mobile-Link-Tertiary-CTA-Semibold  */
+ $link-tertiary-cta-semibold-font-size: $font-size-200;
+ $link-tertiary-cta-semibold-font-weight: $font-weight-semibold;
+ $link-tertiary-cta-semibold-line-height: $line-height-200;
+ $link-tertiary-cta-semibold-letter-spacing: $letter-spacing-xl;
+
+ /* Mobile-Link-Small-Link-Text  */
+ 
+ /* Mobile-Link-Small-Link-Text-Medium  */
+ $link-small-link-text-medium-font-size: $font-size-100;
+ $link-small-link-text-medium-font-weight: $font-weight-medium;
+ $link-small-link-text-medium-line-height: $line-height-200;
+ $link-small-link-text-medium-letter-spacing: $letter-spacing-xxl;
+ 
+ /* Mobile-Link-Small-Link-Text-Semibold  */
+ $link-small-link-text-semibold-font-size: $font-size-100;
+ $link-small-link-text-semibold-font-weight: $font-weight-semibold;
+ $link-small-link-text-semibold-line-height: $line-height-200;
+ $link-small-link-text-semibold-letter-spacing: $letter-spacing-xxl;
+
+
+
+ 
+
+
+ 
+       
+
+
+ 
+       
+
+ 
+        
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+ 
+
+
+ 
+
+ 
+ 
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+ 
+ 
+
+
+
+ 
+ 
+
+
+ 
+ 
+
+
+ 
+ 
+ 
+ 
+ 

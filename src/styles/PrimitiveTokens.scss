@@ -1,0 +1,199 @@
+/***************TYPOGRAPHY PRIMITIVES***************/
+
+/* Font Size  */
+$font-size-700: 40px;
+$font-size-500: 24px;
+$font-size-400: 20px;
+$font-size-300: 16px;
+$font-size-200: 14px;
+$font-size-100: 12px;
+$font-size-600: 32px;
+$font-size-900: 60px;
+$font-size-1000: 72px;
+$font-size-800: 48px;
+$font-size-1200: 96px;
+$font-size-1400: 120px;
+$font-size-1300: 108px;
+$font-size-1100: 84px;
+$font-size-1500: 132px;
+$font-size-50: 10px;
+
+ /* Font Weight  */
+$font-weight-semibold: 600px;
+$font-weight-medium: 500px;
+$font-weight-regular: 450px;
+$font-weight-light: 300px;
+$font-weight-book: 400px;
+$font-weight-bold: 800px;
+
+
+/* Letter Spacing  */
+$letter-spacing-xl: 0.25px;
+$letter-spacing-l: 0.15px;
+$letter-spacing-m: 0.1px;
+$letter-spacing-s: 0px;
+$letter-spacing-xs: -0.25px;
+$letter-spacing-xxl: 0.4px;
+
+ /* Line Height  */
+$line-height-1100: 72px;
+$line-height-900: 56px;
+$line-height-700: 40px;
+$line-height-300: 20px;
+$line-height-1000: 64px;
+$line-height-200: 18px;
+$line-height-600: 32px;
+$line-height-400: 24px;
+$line-height-100: 14px;
+$line-height-800: 48px;
+$line-height-1400: 96px;
+$line-height-1200: 80px;
+$line-height-1300: 88px;
+$line-height-1500: 104px;
+$line-height-1600: 112px;
+$line-height-500: 28px;
+
+ /***************COLOR PRIMITIVES***************/ 
+
+ /* Brand  */
+ $brand-100: #FFDDCFFF;
+ $brand-200: #FFBA9FFF;
+ $brand-300: #FF9870FF;
+ $brand-400: #FF7540FF;
+ $brand-500: #FF5310FF;
+ $brand-600: #CC420DFF;
+ $brand-700: #99320AFF;
+ $brand-800: #662106FF;
+ $brand-900: #331103FF;
+ 
+ 
+ /* Neutral  */
+ $neutral-50: #FFFFFFFF;
+ $neutral-100: #F4F4F4FF;
+ $neutral-150: #EAEAEAFF;
+ $neutral-200: #DFDFDFFF;
+ $neutral-250: #D4D4D4FF;
+ $neutral-300: #C9C9C9FF;
+ $neutral-350: #BDBDBDFF;
+ $neutral-400: #A7A6A6FF;
+ $neutral-450: #9B9A9AFF;
+ $neutral-500: #8F8E8EFF;
+ $neutral-550: #838282FF;
+ $neutral-600: #767575FF;
+ $neutral-650: #696767FF;
+ $neutral-700: #5C5A5AFF;
+ $neutral-750: #4E4C4CFF;
+ $neutral-800: #3F3D3DFF;
+ $neutral-850: #2E2C2CFF;
+ $neutral-900: #1D1B1BFF;
+ 
+  /* Cyan  */
+$cyan-100: #CCFBFFFF;
+$cyan-200: #99F8FFFF;
+$cyan-300: #66F4FFFF;
+$cyan-400: #33F1FFFF;
+$cyan-500: #00EDFFFF;
+$cyan-600: #00BECCFF;
+$cyan-700: #008E99FF;
+$cyan-800: #005F66FF;
+$cyan-900: #002F33FF;
+
+ /* Red  */
+ $red-100: #FFCCCCFF;
+ $red-200: #FF9999FF;
+ $red-300: #FF6666FF;
+ $red-400: #FF3333FF;
+ $red-500: #FF0000FF;
+ $red-600: #CC0000FF;
+ $red-700: #990000FF;
+ $red-800: #660000FF;
+ $red-900: #330000FF;
+ 
+  /* Yellow  */
+$yellow-100: #FFF2CFFF;
+$yellow-200: #FFE49FFF;
+$yellow-300: #FFD770FF;
+$yellow-400: #FFC940FF;
+$yellow-500: #FFBC10FF;
+$yellow-600: #CC960DFF;
+$yellow-700: #99710AFF;
+$yellow-800: #664B06FF;
+$yellow-900: #332603FF;
+
+ /* Green  */
+ $green-100: #CCF9DEFF;
+ $green-200: #99F3BDFF;
+ $green-300: #66EC9CFF;
+ $green-400: #33E67BFF;
+ $green-500: #00E05AFF;
+ $green-600: #00B348FF;
+ $green-700: #008636FF;
+ $green-800: #005A24FF;
+ $green-900: #002D12FF;
+ 
+  /* Blue  */
+$blue-100: #DDE4F6FF;
+$blue-200: #BAC9EEFF;
+$blue-300: #98ADE5FF;
+$blue-400: #7592DDFF;
+$blue-500: #5377D4FF;
+$blue-600: #425FAAFF;
+$blue-700: #32477FFF;
+$blue-800: #213055FF;
+$blue-900: #11182AFF;
+
+ /* Transparent  */ 
+$transparent-black-50: #1D1B1B80;
+$transparent-white-50: #FFFFFF80;
+$transparent-black-0: #1D1B1B00;
+$transparent-white-0: #FFFFFF00;
+
+ /***************BORDER RADIUS***************/
+ $radius-xs: 4px;
+ $radius-s: 8px;
+ $radius-m: 12px;
+ $radius-l: 16px;
+ $radius-pill: 999px;
+ $radius-circle: 50px;
+ $radius-xxs: 2px;
+ $radius-0: 0px;
+
+
+/***************BORDER WIDTH***************/
+$width-l: 4px;
+$width-xl: 8px;
+$width-xs: 1px;
+$width-s: 1.5px;
+$width-m: 2px;
+
+ /***************LAYOUT***************/
+ $breakpoint-s: 393px;
+ $breakpoint-m: 768px;
+ $breakpoint-l: 1024px;
+ $breakpoint-xl: 1440px;
+
+ /***************SPACE***************/
+$space-2xl: 32px;
+$space-m: 12px;
+$space-2xs: 4px;
+$space-12xl: 112px;
+$space-4xl: 48px;
+$space-6xl: 64px;
+$space-11xl: 104px;
+$space-9xl: 88px;
+$space-8xl: 80px;
+$space-l: 16px;
+$space-s: 8px;
+$space-3xs: 2px;
+$space-xl: 24px;
+$space-7xl: 72px;
+$space-10xl: 96px;
+$space-3xl: 40px;
+$space-5xl: 56px;
+$space-xs: 6px;
+$space-15xl: 134px;
+$space-20xl: 174px;
+$space-25xl: 214px;
+$space-50xl: 414px;
+$space-37xl: 310px;
+

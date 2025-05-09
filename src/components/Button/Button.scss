@@ -1,4 +1,8 @@
-@import '../../styles/tokens.scss';
+@import '../../styles/PrimitiveTokens.scss';
+@import '../../styles/SemanticTokens.scss';
+
+// Define missing variables
+$font-family-brand-sans-serif: "PP Neue Montreal";
 
 // Button Component Styles
 .button {
@@ -7,89 +11,203 @@
   justify-content: center;
   border-radius: $radius-s;
   font-family: $font-family-brand-sans-serif;
-  border: $width-xs solid;
+  border: none;
   cursor: pointer;
   transition: all 0.2s ease;
   gap: $space-s;
+  
+  // Default/Base styling
+  background: var(--Fill, $background-brand);
+  padding: var(--Button-verticalPadding, $space-m) var(--Button-horizontalPadding, $space-l);
+  opacity: var(--Opacity, 1);
+
+  &__label {
+    color: $content-primary-inverse;
+    font-size: $font-size-300;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-400;
+    letter-spacing: $letter-spacing-m;
+  }
 
   // Size Variations
   &--s {
     padding: $space-s $space-m;
-    font-size: $label-label-s-medium-font-size;
-    line-height: $label-label-s-medium-line-height;
-    font-weight: $label-label-s-medium-font-weight;
-    letter-spacing: $label-label-s-medium-letter-spacing;
+    font-size: $font-size-100;
+    line-height: $line-height-200;
   }
 
   &--m {
     padding: $space-m $space-l;
-    font-size: $label-label-m-medium-font-size;
-    line-height: $label-label-m-medium-line-height;
-    font-weight: $label-label-m-medium-font-weight;
-    letter-spacing: $label-label-m-medium-letter-spacing;
+    font-size: $font-size-200;
+    line-height: $line-height-300;
   }
 
   &--l {
     padding: $space-l $space-xl;
-    font-size: $label-label-l-medium-font-size;
-    line-height: $label-label-l-medium-line-height;
-    font-weight: $label-label-l-medium-font-weight;
-    letter-spacing: $label-label-l-medium-letter-spacing;
+    font-size: $font-size-300;
+    line-height: $line-height-400;
   }
 
-  // Prominence & State Variations
+  // Variant & State Variations
   // Primary Button
-  &--primary {
-    background-color: $background-brand;
-    border-color: $border-brand;
-    color: $content-primary-inverse;
+  &--variant-primary {
+    // Both light and dark use the same orange from Figma
+    &.button--light, &.button--dark {
+      background-color: $brand-500; // #FF5310
+      color: $content-primary-inverse;
+      border: $width-xs solid $border-brand;
 
-    &.button--hover {
-      background-color: $background-brand-hover;
-      border-color: $border-focus;
-    }
+      &:hover, &.button--hover {
+        background-color: $brand-600; // Darker orange on hover
+        color: $content-primary-inverse;
+        border-color: $border-focus;
+      }
 
-    &.button--pressed {
-      background-color: $background-brand-pressed;
-      border-color: $border-focus;
+      &:active, &.button--pressed {
+        background-color: $brand-700; // Even darker orange when pressed
+        color: $content-primary-inverse;
+        border-color: $border-focus;
+      }
     }
   }
 
   // Secondary Button
-  &--secondary {
-    background-color: $background-primary;
-    border-color: $border-brand;
-    color: $content-brand;
+  &--variant-secondary {
+    &.button--light {
+      background-color: $background-secondary;
+      color: $content-secondary;
+      border: $width-xs solid $border-brandlight;
 
-    &.button--hover {
-      background-color: $background-hover;
-      border-color: $border-focus;
-      color: $content-brand-focus;
+      &:hover, &.button--hover {
+        background-color: $background-secondary-hover;
+        color: $content-primary;
+        border-color: $border-brandlight-hover;
+      }
+
+      &:active, &.button--pressed {
+        background-color: $background-secondary-pressed;
+        color: $content-primary;
+        border-color: $border-brandlight-pressed;
+      }
     }
 
-    &.button--pressed {
-      background-color: $background-pressed;
-      border-color: $border-focus;
-      color: $content-brand-focus;
+    &.button--dark {
+      background-color: $background-primaryinverse;
+      color: $content-primary-inverse;
+      border: $width-xs solid $border-brand;
+
+      &:hover, &.button--hover {
+        background-color: $background-secondary50;
+        border-color: $border-focus;
+      }
+
+      &:active, &.button--pressed {
+        background-color: $background-primaryinverse;
+        border-color: $border-focus;
+      }
     }
   }
 
   // Tertiary Button
-  &--tertiary {
-    background-color: $brand-100;
-    border-color: $brand-100;
-    color: $content-brand;
+  &--variant-tertiary {
+    &.button--light {
+      background-color: $background-transparent;
+      color: $content-secondary;
+      border: $width-xs solid $border-brandlight;
 
-    &.button--hover {
-      background-color: $brand-200;
-      border-color: $brand-200;
-      color: $content-brand-focus;
+      &:hover, &.button--hover {
+        background-color: $background-transparent;
+        color: $content-primary;
+        border-color: $border-brandlight-hover;
+      }
+
+      &:active, &.button--pressed {
+        background-color: $background-transparent;
+        color: $content-primary;
+        border-color: $border-brandlight-pressed;
+      }
     }
 
-    &.button--pressed {
-      background-color: $brand-300;
-      border-color: $brand-300;
-      color: $content-brand-focus;
+    &.button--dark {
+      background-color: $background-transparent;
+      color: $content-secondary;
+      border: $width-xs solid $border-brand;
+
+      &:hover, &.button--hover {
+        background-color: $background-transparent50;
+        border-color: $border-focus;
+      }
+
+      &:active, &.button--pressed {
+        background-color: $background-transparent;
+        border-color: $border-focus;
+      }
+    }
+  }
+
+  // Destructive Button
+  &--variant-destructive {
+    &.button--light {
+      background-color: $background-negative-subtle;
+      color: $content-negative;
+      border: $width-xs solid $border-brandlight;
+
+      &:hover, &.button--hover {
+        background-color: $background-negative-subtle-hover;
+        color: $content-negative-bold;
+        border-color: $border-brandlight-hover;
+      }
+
+      &:active, &.button--pressed {
+        background-color: $background-negative-subtle-pressed;
+        color: $content-negative-bold;
+        border-color: $border-brandlight-pressed;
+      }
+    }
+
+    &.button--dark {
+      background-color: $background-negative;
+      color: $content-primary-inverse;
+      border: $width-xs solid $border-brand;
+
+      &:hover, &.button--hover {
+        background-color: $background-negative-hover;
+        border-color: $border-focus;
+      }
+
+      &:active, &.button--pressed {
+        background-color: $background-negative-pressed;
+        border-color: $border-focus;
+      }
+    }
+  }
+
+  // Semantic Typography Variations
+  &--semantic-desktop {
+    // Desktop typography settings
+  }
+
+  &--semantic-mobile {
+    // Mobile typography settings
+  }
+
+  // Visibility Variations
+  &--visibility-left {
+    .button__icon--left {
+      display: flex;
+    }
+  }
+
+  &--visibility-right {
+    .button__icon--left {
+      display: none;
+    }
+  }
+
+  &--visibility-off {
+    .button__icon--left, 
+    .button__icon--right {
+      display: none;
     }
   }
 
@@ -97,6 +215,7 @@
   &--disabled {
     opacity: 0.4;
     cursor: not-allowed;
+    pointer-events: none;
   }
 
   // Icon Positioning
@@ -123,18 +242,18 @@
 @media (max-width: $breakpoint-m) {
   .button {
     &--s {
-      font-size: $label-label-s-medium-font-size-mobile;
-      line-height: $label-label-s-medium-line-height-mobile;
+      font-size: $font-size-100;
+      line-height: $line-height-200;
     }
 
     &--m {
-      font-size: $label-label-m-medium-font-size-mobile;
-      line-height: $label-label-m-medium-line-height-mobile;
+      font-size: $font-size-200;
+      line-height: $line-height-300;
     }
 
     &--l {
-      font-size: $label-label-l-medium-font-size-mobile;
-      line-height: $label-label-l-medium-line-height-mobile;
+      font-size: $font-size-300;
+      line-height: $line-height-400;
     }
   }
 } 
