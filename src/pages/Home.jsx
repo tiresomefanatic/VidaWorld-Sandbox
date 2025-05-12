@@ -27,6 +27,9 @@ const Home = () => {
               <Link to="/designtokens">
                 <Button label="Design Tokens" prominence="primary" size="m" />
               </Link>
+              <Link to="/teaser">
+                <Button label="Teaser Page" prominence="primary" size="m" />
+              </Link>
             </div>
           </div>
           

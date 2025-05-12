@@ -13,6 +13,7 @@ import ExplorePage from "./pages/ExplorePage/ExplorePage";
 import HomePage from "./pages/HomePage";
 import DesignTokens from "./pages/DesignTokens";
 import ButtonsPage from "./pages/ButtonsPage/ButtonsPage";
+import TeaserPage from "./pages/TeaserPage";
 
 // Import Header component
 import Header from "./components/Header/Header";
@@ -38,6 +39,7 @@ function App() {
               <Route path="/explore" element={<ExplorePage />} />
               <Route path="/designtokens" element={<DesignTokens />} />
               <Route path="/buttons" element={<ButtonsPage />} />
+              <Route path="/teaser" element={<TeaserPage />} />
             </Routes>
           </main>
           
