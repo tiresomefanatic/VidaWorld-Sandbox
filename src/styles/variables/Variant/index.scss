@@ -1,0 +1,14 @@
+@import '../../PrimitiveTokens.scss';
+@import '../../SemanticTokens.scss';
+
+/* =================================================
+ * VARIANT STYLES INDEX
+ * ================================================= */
+
+// Import all variant styles
+@import './Primary.scss';
+@import './Secondary.scss';
+@import './Tertiary.scss';
+@import './Destructive.scss';
+
+// This file serves as a single point of import for all variant styles 

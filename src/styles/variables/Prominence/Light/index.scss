@@ -1,4 +1,11 @@
- /* Aliases  */
+@import '../../../SemanticTokens.scss';
+@import '../../States/Default/index.scss';
+
+/* =================================================
+ * LIGHT PROMINENCE STYLES
+ * ================================================= */
+
+/* Aliases  */
 $fill: $button-light-fill;
 $text-color: $button-light-textcolor;
 

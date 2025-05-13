@@ -1,72 +1,56 @@
 @import '../../styles/PrimitiveTokens.scss';
 @import '../../styles/SemanticTokens.scss';
+@import '../../styles/typography-mixins.scss';
+@import '../../styles/button-mixins.scss';
 
 // Define missing variables
 $font-family-brand-sans-serif: "PP Neue Montreal";
 
 // Button Component Styles
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: $radius-s;
-  font-family: $font-family-brand-sans-serif;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  gap: $space-s;
+  @include button-base;
   
-  // Default/Base styling
-  background: var(--Fill, $background-brand);
-  padding: var(--Button-verticalPadding, $space-m) var(--Button-horizontalPadding, $space-l);
-  opacity: var(--Opacity, 1);
-
   &__label {
-    color: $content-primary-inverse;
-    font-size: $font-size-300;
-    font-weight: $font-weight-semibold;
-    line-height: $line-height-400;
-    letter-spacing: $letter-spacing-m;
+    color: inherit; // Inherit color from button styles
   }
 
   // Size Variations
   &--s {
-    padding: $space-s $space-m;
-    font-size: $font-size-100;
-    line-height: $line-height-200;
+    @include button-size('s');
   }
 
   &--m {
-    padding: $space-m $space-l;
-    font-size: $font-size-200;
-    line-height: $line-height-300;
+    @include button-size('m');
   }
 
   &--l {
-    padding: $space-l $space-xl;
-    font-size: $font-size-300;
-    line-height: $line-height-400;
+    @include button-size('l');
   }
 
-  // Variant & State Variations
+  // Variant & Prominence Combinations
   // Primary Button
   &--variant-primary {
-    // Both light and dark use the same orange from Figma
-    &.button--light, &.button--dark {
-      background-color: $brand-500; // #FF5310
-      color: $content-primary-inverse;
-      border: $width-xs solid $border-brand;
+    &.button--light {
+      @include button-style('primary', 'light', 'default');
 
       &:hover, &.button--hover {
-        background-color: $brand-600; // Darker orange on hover
-        color: $content-primary-inverse;
-        border-color: $border-focus;
+        @include button-style('primary', 'light', 'hover');
       }
 
       &:active, &.button--pressed {
-        background-color: $brand-700; // Even darker orange when pressed
-        color: $content-primary-inverse;
-        border-color: $border-focus;
+        @include button-style('primary', 'light', 'pressed');
+      }
+    }
+
+    &.button--dark {
+      @include button-style('primary', 'dark', 'default');
+
+      &:hover, &.button--hover {
+        @include button-style('primary', 'dark', 'hover');
+      }
+
+      &:active, &.button--pressed {
+        @include button-style('primary', 'dark', 'pressed');
       }
     }
   }
@@ -74,36 +58,26 @@ $font-family-brand-sans-serif: "PP Neue Montreal";
   // Secondary Button
   &--variant-secondary {
     &.button--light {
-      background-color: $background-secondary;
-      color: $content-secondary;
-      border: $width-xs solid $border-brandlight;
+      @include button-style('secondary', 'light', 'default');
 
       &:hover, &.button--hover {
-        background-color: $background-secondary-hover;
-        color: $content-primary;
-        border-color: $border-brandlight-hover;
+        @include button-style('secondary', 'light', 'hover');
       }
 
       &:active, &.button--pressed {
-        background-color: $background-secondary-pressed;
-        color: $content-primary;
-        border-color: $border-brandlight-pressed;
+        @include button-style('secondary', 'light', 'pressed');
       }
     }
 
     &.button--dark {
-      background-color: $background-primaryinverse;
-      color: $content-primary-inverse;
-      border: $width-xs solid $border-brand;
+      @include button-style('secondary', 'dark', 'default');
 
       &:hover, &.button--hover {
-        background-color: $background-secondary50;
-        border-color: $border-focus;
+        @include button-style('secondary', 'dark', 'hover');
       }
 
       &:active, &.button--pressed {
-        background-color: $background-primaryinverse;
-        border-color: $border-focus;
+        @include button-style('secondary', 'dark', 'pressed');
       }
     }
   }
@@ -111,36 +85,26 @@ $font-family-brand-sans-serif: "PP Neue Montreal";
   // Tertiary Button
   &--variant-tertiary {
     &.button--light {
-      background-color: $background-transparent;
-      color: $content-secondary;
-      border: $width-xs solid $border-brandlight;
+      @include button-style('tertiary', 'light', 'default');
 
       &:hover, &.button--hover {
-        background-color: $background-transparent;
-        color: $content-primary;
-        border-color: $border-brandlight-hover;
+        @include button-style('tertiary', 'light', 'hover');
       }
 
       &:active, &.button--pressed {
-        background-color: $background-transparent;
-        color: $content-primary;
-        border-color: $border-brandlight-pressed;
+        @include button-style('tertiary', 'light', 'pressed');
       }
     }
 
     &.button--dark {
-      background-color: $background-transparent;
-      color: $content-secondary;
-      border: $width-xs solid $border-brand;
+      @include button-style('tertiary', 'dark', 'default');
 
       &:hover, &.button--hover {
-        background-color: $background-transparent50;
-        border-color: $border-focus;
+        @include button-style('tertiary', 'dark', 'hover');
       }
 
       &:active, &.button--pressed {
-        background-color: $background-transparent;
-        border-color: $border-focus;
+        @include button-style('tertiary', 'dark', 'pressed');
       }
     }
   }
@@ -148,92 +112,82 @@ $font-family-brand-sans-serif: "PP Neue Montreal";
   // Destructive Button
   &--variant-destructive {
     &.button--light {
-      background-color: $background-negative-subtle;
-      color: $content-negative;
-      border: $width-xs solid $border-brandlight;
+      @include button-style('destructive', 'light', 'default');
 
       &:hover, &.button--hover {
-        background-color: $background-negative-subtle-hover;
-        color: $content-negative-bold;
-        border-color: $border-brandlight-hover;
+        @include button-style('destructive', 'light', 'hover');
       }
 
       &:active, &.button--pressed {
-        background-color: $background-negative-subtle-pressed;
-        color: $content-negative-bold;
-        border-color: $border-brandlight-pressed;
+        @include button-style('destructive', 'light', 'pressed');
       }
     }
 
     &.button--dark {
-      background-color: $background-negative;
-      color: $content-primary-inverse;
-      border: $width-xs solid $border-brand;
+      @include button-style('destructive', 'dark', 'default');
 
       &:hover, &.button--hover {
-        background-color: $background-negative-hover;
-        border-color: $border-focus;
+        @include button-style('destructive', 'dark', 'hover');
       }
 
       &:active, &.button--pressed {
-        background-color: $background-negative-pressed;
-        border-color: $border-focus;
+        @include button-style('destructive', 'dark', 'pressed');
       }
     }
   }
 
-  // Semantic Typography Variations
+  // Link Prominence
+  &--link {
+    @include button-style('primary', 'link', 'default'); // Variant doesn't matter for link prominence
+
+    &:hover, &.button--hover {
+      @include button-style('primary', 'link', 'hover');
+    }
+
+    &:active, &.button--pressed {
+      @include button-style('primary', 'link', 'pressed');
+    }
+  }
+
+  // Typography Variations
   &--semantic-desktop {
-    // Desktop typography settings
+    @include button-typography('desktop');
   }
 
   &--semantic-mobile {
-    // Mobile typography settings
+    @include button-typography('mobile');
   }
 
   // Visibility Variations
-  &--visibility-left {
-    .button__icon--left {
-      display: flex;
-    }
+  &--visibility--left {
+    @include icon-visibility('left');
   }
 
-  &--visibility-right {
-    .button__icon--left {
-      display: none;
-    }
+  &--visibility--right {
+    @include icon-visibility('right');
   }
 
-  &--visibility-off {
-    .button__icon--left, 
-    .button__icon--right {
-      display: none;
-    }
+  &--visibility--off {
+    @include icon-visibility('off');
   }
 
   // Disabled State
   &--disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-    pointer-events: none;
+    @include button-disabled(true);
   }
 
-  // Icon Positioning
-  &--icon-left {
-    padding-left: $space-s;
-  }
-
-  &--icon-right {
-    padding-right: $space-s;
-  }
-
+  // Icon Styling
   &__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-      color: inherit;
+    &--s {
+      @include button-icon('s');
+    }
+  
+    &--m {
+      @include button-icon('m');
+    }
+  
+    &--l {
+      @include button-icon('l');
     }
   }
 }
