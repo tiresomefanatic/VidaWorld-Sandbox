@@ -1,0 +1,130 @@
+.teaser-page__container {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.teaser-feature-block {
+  width: 1344px;
+  height: 684px;
+  background: rgba(50, 50, 50, 0.5);
+  border-radius: 24px;
+  border: 1px solid #383838;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.teaser-feature-block__content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 24px;
+}
+
+.teaser-feature-block__heading {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  z-index: 2;
+}
+
+.teaser-feature-block__image {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  max-height: 90%;
+  object-fit: contain;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.teaser-feature-block__spotlight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(0,0,0,0) 80%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.teaser-feature-cards {
+  width: 1344px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.teaser-feature-card {
+  width: 642px;
+  height: 520px;
+  background: rgba(50, 50, 50, 0.5);
+  border-radius: 24px;
+  border: 1px solid #383838;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.teaser-feature-card__title {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.teaser-feature-card__image-placeholder {
+  width: 100%;
+  height: 320px;
+  background: #232323;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+}
+
+.teaser-feature-orange-text {
+  width: 100%;
+  font-family: 'PP Neue Montreal', sans-serif;
+  font-size: 174px;
+  font-weight: 600;
+  color: #FF5310;
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-top: 24px;
+  margin-bottom: 0;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+}
+
+.teaser-feature-orange-text__icon {
+  margin: 0 32px;
+  font-size: 1em;
+} 
