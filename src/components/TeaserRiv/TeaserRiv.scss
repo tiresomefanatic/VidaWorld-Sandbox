@@ -1,7 +1,7 @@
 @import '../../styles/PrimitiveTokens.scss';
 @import '../../styles/SemanticTokens.scss';
 
-.teaser {
+.teaser-riv {
   position: relative;
   width: 100%;
   height: 728px;
@@ -203,34 +203,6 @@
       width: 100%;
       height: auto;
     }
-  }
-  
-  &__footer {
-    margin-top: $space-4xl;
-  }
-  
-  &__brand-stripe {
-    background-color: $background-brand;
-    padding: $space-s 0;
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    white-space: nowrap;
-  }
-  
-  &__brand-text {
-    color: $content-primary-inverse;
-    font-size: $font-size-600;
-    font-weight: $font-weight-bold;
-    text-transform: uppercase;
-    margin-right: $space-xl;
-    display: inline-flex;
-    align-items: center;
-  }
-  
-  &__brand-icon {
-    margin-left: $space-xs;
-    font-size: $font-size-500;
   }
 }
 

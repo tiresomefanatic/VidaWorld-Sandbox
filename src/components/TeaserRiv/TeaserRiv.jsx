@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './Teaser.scss';
+import './TeaserRiv.scss';
 import { Link } from 'react-router-dom';
 
-const Teaser = ({ 
+const TeaserRiv = ({ 
   heading,
   subheading,
   ctaText,
@@ -12,25 +12,25 @@ const Teaser = ({
   bannerText,
   features,
   backgroundColor = 'dark',
-  productName = 'Vida VX2'
+  productName = 'Vida VX2 with RIV'
 }) => {
   const [ctaHovered, setCtaHovered] = useState(false);
   return (
-    <div className={`teaser teaser--${backgroundColor}`}>
-      <div className="teaser__breadcrumb">
-        <Link to="/" className="teaser__breadcrumb-link">Home</Link>
-        <span className="teaser__breadcrumb-separator">›</span>
-        <span className="teaser__breadcrumb-current">{productName}</span>
+    <div className={`teaser-riv teaser-riv--${backgroundColor}`}>
+      <div className="teaser-riv__breadcrumb">
+        <Link to="/" className="teaser-riv__breadcrumb-link">Home</Link>
+        <span className="teaser-riv__breadcrumb-separator">›</span>
+        <span className="teaser-riv__breadcrumb-current">{productName}</span>
       </div>
       
-      <div className="teaser__hero">
-        <div className="teaser__content">
-          <h1 className="teaser__heading">{heading}</h1>
-          <p className="teaser__subheading">{subheading}</p>
+      <div className="teaser-riv__hero">
+        <div className="teaser-riv__content">
+          <h1 className="teaser-riv__heading">{heading}</h1>
+          <p className="teaser-riv__subheading">{subheading}</p>
           
           {ctaText && (
             <button 
-              className="teaser__cta" 
+              className="teaser-riv__cta" 
               onClick={ctaAction}
               onMouseEnter={() => setCtaHovered(true)}
               onMouseLeave={() => setCtaHovered(false)}
@@ -41,11 +41,11 @@ const Teaser = ({
         </div>
         
         {image && (
-          <div className="teaser__image-container">
+          <div className="teaser-riv__image-container">
             <img 
               src={image} 
               alt={heading} 
-              className={`teaser__image${ctaHovered ? ' teaser__image--faded' : ''}`}
+              className={`teaser-riv__image${ctaHovered ? ' teaser-riv__image--faded' : ''}`}
               width="100%"
               height="auto"
             />
@@ -53,24 +53,20 @@ const Teaser = ({
         )}
       </div>
       
-     
-      
       {bannerText && (
-        <div className="teaser__banner">
-          <div className="teaser__banner-content">
+        <div className="teaser-riv__banner">
+          <div className="teaser-riv__banner-content">
             {Array(15).fill(bannerText).map((text, index) => (
-              <span key={index} className="teaser__banner-text">{text}</span>
+              <span key={index} className="teaser-riv__banner-text">{text}</span>
             ))}
           </div>
         </div>
       )}
-      
-    
     </div>
   );
 };
 
-Teaser.propTypes = {
+TeaserRiv.propTypes = {
   heading: PropTypes.string.isRequired,
   subheading: PropTypes.string.isRequired,
   ctaText: PropTypes.string,
@@ -87,4 +83,4 @@ Teaser.propTypes = {
   productName: PropTypes.string
 };
 
-export default Teaser; 
+export default TeaserRiv; 
