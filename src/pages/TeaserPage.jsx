@@ -50,6 +50,45 @@ const TeaserPage = () => {
         <div className="teaser-feature-orange-text">
           VIDA VX2 <span className="teaser-feature-orange-text__icon">⚡</span> VIDA
         </div>
+        {/* Footer Section */}
+        <footer className="teaser-footer">
+          <div className="teaser-footer__columns">
+            <div className="teaser-footer__column teaser-footer__column--brand">
+              <div className="teaser-footer__brand">VIDA</div>
+              <div className="teaser-footer__desc">Electric Scooters in India</div>
+            </div>
+            <div className="teaser-footer__column">
+              <div className="teaser-footer__heading">Try</div>
+              <div className="teaser-footer__item">Reserve a VX2</div>
+              <div className="teaser-footer__item">Test Ride</div>
+              <div className="teaser-footer__item">VX2 Lite</div>
+              <div className="teaser-footer__item">VX2 Plus</div>
+              <div className="teaser-footer__item">VX2 Pro</div>
+            </div>
+            <div className="teaser-footer__column">
+              <div className="teaser-footer__heading">Buy</div>
+              <div className="teaser-footer__item">Subscription</div>
+              <div className="teaser-footer__item">Savings Calculator</div>
+              <div className="teaser-footer__item">Offers</div>
+            </div>
+            <div className="teaser-footer__column">
+              <div className="teaser-footer__heading">Love</div>
+              <div className="teaser-footer__item">Miles Map</div>
+              <div className="teaser-footer__item">VX2 Community</div>
+            </div>
+            <div className="teaser-footer__column">
+              <div className="teaser-footer__heading">Explore</div>
+              <div className="teaser-footer__item">Accessories</div>
+              <div className="teaser-footer__item">Charging Network</div>
+              <div className="teaser-footer__item">Charging Locator</div>
+            </div>
+            <div className="teaser-footer__column">
+              <div className="teaser-footer__heading">Support</div>
+              <div className="teaser-footer__item">About Us</div>
+              <div className="teaser-footer__item">Contact Us</div>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
