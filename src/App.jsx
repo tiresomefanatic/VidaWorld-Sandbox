@@ -14,7 +14,6 @@ import HomePage from "./pages/HomePage";
 import DesignTokens from "./pages/DesignTokens";
 import ButtonsPage from "./pages/ButtonsPage/ButtonsPage";
 import TeaserPage from "./pages/TeaserPage";
-import TeaserWithRiv from "./pages/TeaserWithRiv";
 
 // Import Header component
 import Header from "./components/Header/Header";
@@ -41,7 +40,6 @@ function App() {
               <Route path="/designtokens" element={<DesignTokens />} />
               <Route path="/buttons" element={<ButtonsPage />} />
               <Route path="/teaser" element={<TeaserPage />} />
-              <Route path="/teaser-with-riv" element={<TeaserWithRiv />} />
             </Routes>
           </main>
           
