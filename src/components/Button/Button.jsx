@@ -8,9 +8,9 @@ import "./Button.scss";
 const Button = (props) => {
   // Extract props from config when passed through data-cmp-config
   const {
-    label = "Label",
-    prominence = "light", // light or dark
-    size = "m",
+    label = "Reserve",
+    prominence = "dark", // light or dark
+    size = "l",
     state = "default",
     disabled = false,
     customIcon = null,
@@ -42,20 +42,20 @@ const Button = (props) => {
 
   return (
     <button
-      className={`button button--${prominence} button--${size} button--semantic-${semanticTypography} button--visibility-${visibility} button--variant-${variant} ${getStateClass()} ${className} ${
+      className={`button button--${prominence} button--${size} button--semantic-${semanticTypography} icon--visibility-${visibility} button--variant-${variant} ${getStateClass()} ${className} ${
         showLeftIcon ? "button--icon-left" : ""
       } ${showRightIcon ? "button--icon-right" : ""}`}
       disabled={disabled}
       onClick={disabled ? undefined : onClick}
     >
       {showLeftIcon && (
-        <span className="button__icon button__icon--left">
+        <span className={`button__icon--${size} button__icon--left`}>
           {customIcon || <IconPlaceholder />}
         </span>
       )}
       <span className="button__label">{label}</span>
       {showRightIcon && (
-        <span className="button__icon button__icon--right">
+        <span className={`button__icon--${size} button__icon--right`}>
           {customIcon || <IconPlaceholder />}
         </span>
       )}

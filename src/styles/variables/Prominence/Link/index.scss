@@ -1,3 +1,11 @@
+@import '../../../SemanticTokens.scss';
+@import '../../States/Default/index.scss';
+@import '../../Variant/index.scss';
+
+/* =================================================
+ * LINK PROMINENCE STYLES
+ * ================================================= */
+
  /* Aliases  */
 $fill: $link-fill;
 $text-color: $textcolor-link;

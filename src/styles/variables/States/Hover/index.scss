@@ -1,0 +1,58 @@
+@import '../../../SemanticTokens.scss';
+@import '../../Variant/index.scss';
+
+/* =================================================
+ * HOVER STATE STYLES
+ * ================================================= */
+
+/* -------------------- BUTTON STYLES -------------------- */
+
+// Button - Dark
+$button-dark-fill: $button-hoverfill;
+$button-dark-stroke: $border-focus;
+
+// Button - Light
+$button-light-fill: $button-light-hoverfill;
+$button-light-stroke: $border-brandlight-hover;
+$button-light-textcolor: $textcolor-lighthover;
+
+/* -------------------- LINK STYLES -------------------- */
+$link-fill: $link-hoverfill;
+$link-stroke: $border-transparent;
+
+/* -------------------- FORM ELEMENT STYLES -------------------- */
+
+// Checkbox
+$checkbox-fill: $background-primaryinverse;
+$checkbox-stroke: $border-brand-hover;
+$checkbox-focus: $border-focus;
+
+// Radio
+$radio-fill: $background-primaryinverse;
+$radio-stroke: $border-brand-hover;
+$radio-active-fill: $background-brand-hover;
+$radio-active-stroke: $border-focus;
+$radio-focus: $border-focus;
+
+// Input
+$input-fill: $background-secondary-hover;
+$input-stroke: $border-brandlight-hover;
+$input-focus: $border-focus;
+
+// Switch
+$switch-track-fill: $background-secondary50;
+$switch-thumb-fill: $background-brand;
+
+/* -------------------- DROPDOWN & TAB STYLES -------------------- */
+
+// Dropdown
+$dropdown-fill: $background-secondary-hover;
+$dropdown-stroke: $border-brandlight-hover;
+$dropdown-focus: $border-focus;
+$dropdown-option-fill: $background-secondary-hover;
+$dropdown-selector-fill: $background-secondary-hover;
+
+// Tab
+$tab-fill: $background-secondary-hover;
+$tab-stroke: $border-brandlight-hover;
+$tab-active: $background-brand-hover; 
