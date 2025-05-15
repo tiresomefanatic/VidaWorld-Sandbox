@@ -1,19 +1,21 @@
-import React from 'react';
-import Teaser from '../components/Teaser/Teaser';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './TeaserPage.scss';
 
-const teaserData = {
-  heading: 'The Future of Urban Movement',
-  subheading: 'The all new VX2 starting from *****',
-  ctaText: 'Notify Me',
-  ctaAction: () => console.log('CTA clicked'),
-  image: '/TeaserBanner.png',
-  bannerText: 'LAUNCHING THIS JULY',
-  backgroundColor: 'dark',
-  productName: 'Vida VX2',
-};
-
 const TeaserPage = () => {
+  const [ctaHovered, setCtaHovered] = useState(false);
+
+  const teaserData = {
+    heading: 'The Future of Urban Movement',
+    subheading: 'The all new VX2 starting from *****',
+    ctaText: 'Notify Me',
+    ctaAction: () => console.log('CTA clicked'),
+    image: '/TeaserBanner.png',
+    bannerText: 'LAUNCHING THIS JULY',
+    backgroundColor: 'dark',
+    productName: 'Vida VX2',
+  };
+
   return (
     <div
       style={{
@@ -23,9 +25,62 @@ const TeaserPage = () => {
         width: '100%',
         minHeight: '100%',
         background: '#000',
+        paddingTop: '64px'
       }}
     >
-      <Teaser {...teaserData} />
+      <div className="teaser teaser--dark">
+        <div className="teaser__breadcrumb">
+          <Link to="/" className="teaser__breadcrumb-link">Home</Link>
+          <span className="teaser__breadcrumb-separator">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 2L11 8L5 14" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </span>
+          <span className="teaser__breadcrumb-current">{teaserData.productName}</span>
+        </div>
+        
+        <div className="teaser__hero">
+          <div className="teaser__content">
+            <h1 className="teaser__heading">{teaserData.heading}</h1>
+            <p className="teaser__subheading">{teaserData.subheading}</p>
+            
+            {teaserData.ctaText && (
+              <button 
+                className="teaser__cta" 
+                onClick={teaserData.ctaAction}
+                onMouseEnter={() => setCtaHovered(true)}
+                onMouseLeave={() => setCtaHovered(false)}
+              >
+                {teaserData.ctaText}
+              </button>
+            )}
+          </div>
+          
+          {teaserData.image && (
+            <div className="teaser__image-container">
+              <img 
+                src={teaserData.image} 
+                alt={teaserData.heading} 
+                className={`teaser__image${ctaHovered ? ' teaser__image--faded' : ''}`}
+                width="100%"
+                height="auto"
+              />
+            </div>
+          )}
+        </div>
+        
+        {teaserData.bannerText && (
+          <div className="teaser__banner">
+            <div className="teaser__banner-content">
+              {[...Array(2)].map((_, j) =>
+                Array(40).fill(teaserData.bannerText).map((text, i) => (
+                  <span key={j + '-' + i} className="teaser__banner-text">{text}</span>
+                ))
+              )}
+            </div>
+          </div>
+        )}
+      </div>
       <div className="teaser-page__container">
         {/* Top Feature Block */}
         <section className="teaser-feature-block">
@@ -48,7 +103,15 @@ const TeaserPage = () => {
         </section>
         {/* Orange Text */}
         <div className="teaser-feature-orange-text">
-          VIDA VX2 <span className="teaser-feature-orange-text__icon">⚡</span> VIDA
+          <div className="teaser-feature-orange-text__marquee">
+            {[...Array(2)].map((_, j) =>
+              Array(8).fill(null).map((_, i) => (
+                <React.Fragment key={j + '-' + i}>
+                  VIDA VX2 <span className="teaser-feature-orange-text__icon"><img src="/marqueeLightningIcon.svg" alt="Lightning Icon" className="teaser-feature-orange-text__icon-img" /></span>
+                </React.Fragment>
+              ))
+            )}
+          </div>
         </div>
         {/* Footer Section */}
         <footer className="teaser-footer">

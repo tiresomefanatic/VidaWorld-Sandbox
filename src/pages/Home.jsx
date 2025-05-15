@@ -30,9 +30,7 @@ const Home = () => {
               <Link to="/teaser">
                 <Button label="Teaser Page" prominence="primary" size="m" />
               </Link>
-              <Link to="/teaser-with-riv">
-                <Button label="Teaser with RIV" prominence="primary" size="m" />
-              </Link>
+             
             </div>
           </div>
           
