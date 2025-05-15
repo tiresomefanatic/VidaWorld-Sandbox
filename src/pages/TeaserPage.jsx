@@ -67,19 +67,19 @@ const TeaserPage = () => {
               />
             </div>
           )}
-        </div>
-        
-        {teaserData.bannerText && (
-          <div className="teaser__banner">
-            <div className="teaser__banner-content">
-              {[...Array(2)].map((_, j) =>
-                Array(40).fill(teaserData.bannerText).map((text, i) => (
-                  <span key={j + '-' + i} className="teaser__banner-text">{text}</span>
-                ))
-              )}
+          
+          {teaserData.bannerText && (
+            <div className="teaser__banner">
+              <div className="teaser__banner-content">
+                {[...Array(2)].map((_, j) =>
+                  Array(40).fill(teaserData.bannerText).map((text, i) => (
+                    <span key={j + '-' + i} className="teaser__banner-text">{text}</span>
+                  ))
+                )}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
       <div className="teaser-page__container">
         {/* Top Feature Block */}
@@ -157,4 +157,4 @@ const TeaserPage = () => {
   );
 };
 
-export default TeaserPage; 
+export default TeaserPage;

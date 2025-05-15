@@ -326,8 +326,7 @@
 .teaser {
   position: relative;
   width: 100%;
-  height: auto;
-  min-height: 500px;
+  height: calc(100vh - 64px);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -336,11 +335,11 @@
   background: $background-primaryinverse;
   
   @media (min-width: $breakpoint-m) {
-    height: 600px;
+    height: calc(100vh - 64px);
   }
 
   @media (min-width: $breakpoint-l) {
-    height: 728px;
+    height: calc(100vh - 64px);
   }
   
   &--dark {
@@ -408,18 +407,15 @@
   &__banner {
     background-color: #FC5311;
     height: 70px;
-    width: 100vw;
+    width: 100%;
     margin: 0;
     display: flex;
     align-items: center;
     padding: 19px 0;
     overflow: hidden;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: relative;
+    flex-shrink: 0;
     z-index: 2;
-    max-width: none;
   }
   
   &__banner-content {
@@ -442,15 +438,17 @@
   }
   
   &__hero {
-    flex: 1 1 auto;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding: 0;
     margin: 0;
     text-align: center;
     min-height: 0;
+    position: relative;
+    overflow: hidden;
   }
   
   &__content {
@@ -572,17 +570,6 @@
     padding: 16px;
     margin-bottom: 24px;
   }
-  .teaser-feature-cards {
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-  .teaser-feature-card {
-    width: 100%;
-    height: auto;
-    min-height: 200px;
-    padding: 16px;
-  }
   .teaser-feature-block__heading,
   .teaser-feature-card__title {
     font-size: 32px;
@@ -627,4 +614,15 @@
     line-height: 20px;
     margin-right: 12px;
   }
-} 
+  .teaser-feature-cards {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .teaser-feature-card {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    padding: 16px;
+  }
+}
