@@ -10,7 +10,7 @@ const TeaserPage = () => {
     subheading: 'The all new VX2 starting from *****',
     ctaText: 'Notify Me',
     ctaAction: () => console.log('CTA clicked'),
-    image: '/TeaserBanner.png',
+    image: '/TeaserBannerFull.png',
     bannerText: 'LAUNCHING THIS JULY',
     backgroundColor: 'dark',
     productName: 'Vida VX2',
@@ -86,7 +86,7 @@ const TeaserPage = () => {
         <section className="teaser-feature-block">
           <div className="teaser-feature-block__content">
             <h2 className="teaser-feature-block__heading">Modern aesthetics with<br/>ease of use</h2>
-            <img src="/TeaserBanner.png" alt="Scooter" className="teaser-feature-block__image" />
+            <img src="/TeaserCardImage.png" alt="Modern aesthetics" className="teaser-feature-card__image" />
             <div className="teaser-feature-block__spotlight" />
           </div>
         </section>
@@ -94,11 +94,9 @@ const TeaserPage = () => {
         <section className="teaser-feature-cards">
           <div className="teaser-feature-card">
             <div className="teaser-feature-card__title">Removable battery</div>
-            <div className="teaser-feature-card__image-placeholder" />
           </div>
           <div className="teaser-feature-card">
             <div className="teaser-feature-card__title">BAAS</div>
-            <div className="teaser-feature-card__image-placeholder" />
           </div>
         </section>
         {/* Orange Text */}
