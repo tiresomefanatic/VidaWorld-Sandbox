@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/main.scss';
-import '../styles/design-tokens.scss'; 
-import { initializeDesignTokens } from '../utils/designTokensLoader';
-import { initializeHotReload } from '../utils/tokenHotReload';
+import './DesignTokensPage.scss';
+import { initializeDesignTokens } from '../../utils/designTokensLoader';
+import { initializeHotReload } from '../../utils/tokenHotReload';
 
-const DesignTokens = () => {
+const DesignTokensPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
@@ -86,65 +85,57 @@ const DesignTokens = () => {
 
   // Simple container styles
   const containerStyle = {
-    paddingTop: '96px',
-    paddingBottom: '80px',
     maxWidth: '1200px',
     margin: '0 auto',
     padding: '0 24px',
   };
 
   return (
-    <div style={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      minHeight: '100%',
-      paddingTop: '96px' // Match header height exactly
-    }}>
-      <div style={containerStyle}>
+    <div className="design-tokens-page">
+      <div className="design-tokens-page__container">
         <h1>Design Tokens</h1>
-        
-        {/* File change instructions */}
-        <div style={{
-          margin: '2rem 0', 
-          padding: '1rem', 
-          borderRadius: '8px', 
-          backgroundColor: '#F4F4F4',
-          border: '1px solid #DFDFDF'
-        }}>
-          <h3 style={{marginTop: 0}}>Live Reload Instructions</h3>
-          <p>
-            This page displays all design tokens directly from your <code style={{fontFamily: 'monospace', backgroundColor: '#EAEAEA', padding: '2px 4px', borderRadius: '4px'}}>tokens.scss</code> file with automatic refresh capabilities.
-          </p>
-          <ol style={{paddingLeft: '1.5rem'}}>
-            <li>Click the "Enable Live Reload" button to start watching for changes</li>
-            <li>Edit your <code style={{fontFamily: 'monospace', backgroundColor: '#EAEAEA', padding: '2px 4px', borderRadius: '4px'}}>tokens.scss</code> file</li>
-            <li>Save the file, and the visualization will update automatically</li>
-          </ol>
-        </div>
-        
-        {/* Search bar */}
-        <div className="search-container">
-          <input
-            type="text"
-            className="search-input"
-            placeholder="Search tokens by name or value..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          {searchQuery && (
-            <button 
-              className="search-clear-button"
-              onClick={() => setSearchQuery('')}
-              aria-label="Clear search"
-            >
-              ×
-            </button>
-          )}
-        </div>
+        <p>Explore our design system's tokens and their values.</p>
         
         <div className="design-tokens-page__content">
+          {/* File change instructions */}
+          <div style={{
+            margin: '2rem 0', 
+            padding: '1rem', 
+            borderRadius: '8px', 
+            backgroundColor: '#F4F4F4',
+            border: '1px solid #DFDFDF'
+          }}>
+            <h3 style={{marginTop: 0}}>Live Reload Instructions</h3>
+            <p>
+              This page displays all design tokens directly from your <code style={{fontFamily: 'monospace', backgroundColor: '#EAEAEA', padding: '2px 4px', borderRadius: '4px'}}>tokens.scss</code> file with automatic refresh capabilities.
+            </p>
+            <ol style={{paddingLeft: '1.5rem'}}>
+              <li>Click the "Enable Live Reload" button to start watching for changes</li>
+              <li>Edit your <code style={{fontFamily: 'monospace', backgroundColor: '#EAEAEA', padding: '2px 4px', borderRadius: '4px'}}>tokens.scss</code> file</li>
+              <li>Save the file, and the visualization will update automatically</li>
+            </ol>
+          </div>
+          
+          {/* Search bar */}
+          <div className="search-container">
+            <input
+              type="text"
+              className="search-input"
+              placeholder="Search tokens by name or value..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+            {searchQuery && (
+              <button 
+                className="search-clear-button"
+                onClick={() => setSearchQuery('')}
+                aria-label="Clear search"
+              >
+                ×
+              </button>
+            )}
+          </div>
+          
           {/* Typography Primitives */}
           <section className="token-section">
             <h2 className="token-section__title">Typography Primitives</h2>
@@ -510,4 +501,4 @@ const DesignTokens = () => {
   );
 };
 
-export default DesignTokens;
+export default DesignTokensPage;

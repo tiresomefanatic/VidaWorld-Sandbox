@@ -1,0 +1,61 @@
+.velocity-scroll__container {
+  position: relative;
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: -0.02em;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    font-size: 4rem;
+    line-height: 5rem;
+  }
+}
+
+.velocity-scroll__parallax {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.velocity-scroll__track {
+  display: inline-block;
+  white-space: nowrap;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+.velocity-scroll__text {
+  display: inline-block;
+  color: #fff;
+  opacity: 0.8;
+  margin-right: 1.5rem;
+  user-select: none;
+  pointer-events: none;
+}
+
+.velocity-scroll {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  z-index: 1000;
+  font-family: monospace;
+  
+  &__content {
+    h2, h3 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+  }
+}

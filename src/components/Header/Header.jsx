@@ -167,30 +167,28 @@ const Header = () => {
         </div>
         
         {/* Vehicles dropdown - now as a separate element outside the nav item */}
-        {showDropdown && (
-          <div 
-            className="vida-header__dropdown dropdown"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="vida-header__dropdown-content">
-              <div className="vida-header__dropdown-vehicles">
-                {vehicleModels.map((vehicle) => (
-                  <Link 
-                    key={vehicle.id} 
-                    to={vehicle.link} 
-                    className="vida-header__vehicle-item"
-                  >
-                    <div className="vida-header__vehicle-image">
-                      <img src={vehicle.image} alt={vehicle.name} />
-                    </div>
-                    <span className="vida-header__vehicle-name">{vehicle.name}</span>
-                  </Link>
-                ))}
-              </div>
+        <div 
+          className={`vida-header__dropdown dropdown ${showDropdown ? 'show' : ''}`}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="vida-header__dropdown-content">
+            <div className="vida-header__dropdown-vehicles">
+              {vehicleModels.map((vehicle) => (
+                <Link 
+                  key={vehicle.id} 
+                  to={vehicle.link} 
+                  className="vida-header__vehicle-item"
+                >
+                  <div className="vida-header__vehicle-image">
+                    <img src={vehicle.image} alt={vehicle.name} />
+                  </div>
+                  <span className="vida-header__vehicle-name">{vehicle.name}</span>
+                </Link>
+              ))}
             </div>
           </div>
-        )}
+        </div>
         
         {/* Mobile menu */}
         {mobileMenuOpen && (

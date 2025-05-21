@@ -31,30 +31,10 @@ body {
 // Special approach for product page using pseudo-element
 .product-page {
   margin-top: 0; // Reset margin
-  padding-top: 96px; // Match header height exactly
   position: relative;
   
   &::before {
     display: none; // Remove the pseudo-element approach
-  }
-  
-  &__container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-  
-  &__models {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  &__compare {
-    text-align: center;
-    margin-top: 2rem;
   }
 }
 
@@ -295,36 +275,17 @@ p {
 
 // Global page styles - use consistent padding for all pages
 // Header height offset to prevent content being hidden behind fixed header
-.home-page, 
-.design-tokens-page, 
 .button-component-page, 
 .header-component-page,
-.components-page,
-.product-page {
+.components-page {
   width: 100%;
-  padding-top: 96px; // Header height offset
   margin-top: 0;
   position: relative;
   z-index: 1;
 }
 
 // Home page specific styles
-.home-page {
-  &__sections {
-    margin-top: 2rem;
-  }
-  
-  &__section {
-    margin-bottom: 2rem;
-  }
-  
-  &__buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-}
+// ... removed: .home-page, .home-page__container, .home-page__sections, .home-page__section, .home-page__buttons ...
 
 // Basic grid styles
 .component-grid {
@@ -339,12 +300,10 @@ p {
 // Responsive adjustments
 @media (max-width: 768px) {
   .home-page,
-  .design-tokens-page, 
   .button-component-page, 
   .header-component-page,
-  .components-page,
-  .product-page {
-    padding-top: 96px; // Keep consistent with header height
+  .components-page {
+    // Remove duplicate padding-top
   }
   
   .product-card {
@@ -353,8 +312,7 @@ p {
 }
 
 // Common page container styles
-.home-page__container,
-.design-tokens-page__container {
+.home-page__container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;

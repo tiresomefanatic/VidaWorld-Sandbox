@@ -3,7 +3,6 @@
 
 .explore-page {
   width: 100%;
-  padding-top: 96px; // Header height offset
   margin-top: 0;
   position: relative;
   z-index: 1;
@@ -19,6 +18,6 @@
 // Responsive adjustments
 @media (max-width: 768px) {
   .explore-page {
-    padding-top: 96px; // Keep consistent with header height
+    // Remove duplicate padding-top
   }
 } 

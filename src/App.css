@@ -9,7 +9,6 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'PP Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  height: 100%;
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -30,7 +29,8 @@ body, html {
 .app-content {
   width: 100%;
   position: relative; /* Create stacking context */
-  margin-top: 0; /* Let the individual pages handle their top margins */
+  margin-top: 0;
+  padding-top: 64px; /* Global padding for header height */
   z-index: 1; /* Ensure proper stacking with header */
 }
 

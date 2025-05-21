@@ -1,0 +1,24 @@
+// HomePage specific styles
+.home-page {
+  &__sections {
+    margin-top: 2rem;
+  }
+  
+  &__section {
+    margin-bottom: 2rem;
+  }
+  
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+.home-page__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+} 

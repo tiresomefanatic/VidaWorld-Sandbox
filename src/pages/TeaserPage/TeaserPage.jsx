@@ -1,9 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './TeaserPage.scss';
+import VelocityScroll from "../../components/VelocityScroll/VelocityScroll";
 
 const TeaserPage = () => {
   const [ctaHovered, setCtaHovered] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const pageRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (pageRef.current) {
+        setScrollPosition(Math.round(window.scrollY));
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const teaserData = {
     heading: 'The Future of Urban Movement',
@@ -18,14 +32,12 @@ const TeaserPage = () => {
 
   return (
     <div
+      ref={pageRef}
+      className="teaser-page"
       style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
         width: '100%',
         minHeight: '100%',
-        background: '#000',
-        paddingTop: '64px'
+        background: '#000'
       }}
     >
       <div className="teaser teaser--dark">
@@ -79,15 +91,24 @@ const TeaserPage = () => {
               </div>
             </div>
           )}
+        
         </div>
       </div>
       <div className="teaser-page__container">
         {/* Top Feature Block */}
         <section className="teaser-feature-block">
+          <img src="/TeaserScooterImage.svg" alt="Modern aesthetics" className="teaser-feature-card__image teaser-feature-card__image--blend" />
+          <svg width="1294" height="684" viewBox="0 0 1294 684" fill="none" xmlns="http://www.w3.org/2000/svg" className="teaser-feature-block__spotlight-svg">
+            <path opacity="0.6" d="M0.0291608 335.417L1445.41 -163.405L1466.31 -148.158L265.832 949.779L0.0291608 335.417Z" fill="url(#paint0_linear_609_3239)" fillOpacity="0.5"/>
+            <defs>
+              <linearGradient id="paint0_linear_609_3239" x1="1205.43" y1="3.44599" x2="199.405" y2="1084.21" gradientUnits="userSpaceOnUse">
+                <stop stopColor="white"/>
+                <stop offset="0.687619"/>
+              </linearGradient>
+            </defs>
+          </svg>
           <div className="teaser-feature-block__content">
             <h2 className="teaser-feature-block__heading">Modern aesthetics with<br/>ease of use</h2>
-            <img src="/TeaserCardImage.png" alt="Modern aesthetics" className="teaser-feature-card__image" />
-            <div className="teaser-feature-block__spotlight" />
           </div>
         </section>
         {/* Feature Cards */}
@@ -150,6 +171,9 @@ const TeaserPage = () => {
             </div>
           </div>
         </footer>
+      </div>
+      <div className="scroll-position">
+        Scroll: {scrollPosition}px
       </div>
     </div>
   );

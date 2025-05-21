@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/main.scss';
+import './HomePage.scss';
 
 const HomePage = () => {
   return (
-    <div className="home-page" style={{ paddingTop: '96px' }}>
+    <div className="home-page">
       <div className="home-page__container">
         <h1>Home Page</h1>
         <p>This is the dedicated home page, separate from the landing page.</p>

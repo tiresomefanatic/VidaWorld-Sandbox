@@ -1,6 +1,6 @@
-@import '../styles/PrimitiveTokens.scss';
-@import '../styles/SemanticTokens.scss';
-@import '../styles/tokens.scss';
+@import '../../styles/PrimitiveTokens.scss';
+@import '../../styles/SemanticTokens.scss';
+@import '../../styles/tokens.scss';
 
 .teaser-page__container {
   width: 100%;
@@ -12,7 +12,7 @@
   justify-content: flex-start;
   position: relative;
   box-sizing: border-box;
-  overflow: visible;
+  overflow:auto;
   padding: 0;
   background: transparent;
 
@@ -98,10 +98,22 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: 70%;
+  width: 100%;
   height: 100%;
-  background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(0,0,0,0) 80%);
+  background: linear-gradient(100deg, rgba(255,255,255,0.18) 60%, rgba(0,0,0,0) 100%);
   z-index: 1;
+  pointer-events: none;
+}
+
+.teaser-feature-block__spotlight-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  mix-blend-mode: screen;
   pointer-events: none;
 }
 
@@ -208,24 +220,18 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  top: 0;
   width: 60%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  border-radius: 24px 0 0 24px;
-  box-shadow: none;
-  margin: 0;
-  z-index: 2;
+  height: auto;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 0 0 0 24px;
+  z-index: 1;
   pointer-events: none;
+}
 
-  @media (max-width: 1439px) {
-    width: 70%;
-  }
-  @media (max-width: 767px) {
-    width: 100%;
-    border-radius: 24px 24px 0 0;
-  }
+.teaser-feature-card__image--blend {
+  mix-blend-mode: lighten;
+  opacity: 1;
 }
 
 .teaser-feature-orange-text {
@@ -686,4 +692,56 @@
     min-height: 200px;
     padding: 16px;
   }
+}
+
+// Spotlight animation keyframes
+@keyframes animate-spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(50%, -30%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(35%, -20%) scale(1);
+  }
+}
+
+.teaser-feature-block__spotlight-svg {
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+  width: 140%;
+  height: 170%;
+  top: 0;
+  right: 0;
+  left: auto;
+  bottom: auto;
+  opacity: 0;
+  animation: animate-spotlight 2s ease 0.75s 1 forwards;
+  mix-blend-mode: lighten;
+  transform: translate(25%, -20%) scale(1);
+}
+
+.teaser-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #000;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.scroll-position {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: 'PP Neue Montreal', sans-serif;
+  font-size: 14px;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: none;
 }

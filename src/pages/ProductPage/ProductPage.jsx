@@ -1,46 +1,14 @@
 import React from 'react';
-import '../styles/main.scss';
-import Button from '../components/Button/Button';
+import './ProductPage.scss';
+import Button from '../../components/Button/Button';
 
-const Product = () => {
-  // Container styles - similar to what we used for design tokens page
-  const containerStyle = {
-    paddingTop: '96px',
-    paddingBottom: '80px',
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '0 24px',
-  };
-
-  // Models section style
-  const modelsStyle = {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '2rem',
-    marginTop: '2rem',
-    width: '100%'
-  };
-
-  // Compare section style
-  const compareStyle = {
-    textAlign: 'center',
-    marginTop: '2rem',
-    width: '100%'
-  };
-
+const ProductPage = () => {
   return (
-    <div style={{
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      width: '100%',
-      minHeight: '100%',
-      paddingTop: '96px' // Match header height exactly
-    }}>
-      <div style={containerStyle}>
+    <div className="product-page">
+      <div className="product-page__container">
         <h1>Vida Electric Scooter Models</h1>
         
-        <div style={modelsStyle}>
+        <div className="product-page__models">
           <div className="product-card">
             <h2>Vida V1 Pro</h2>
             <div className="product-card__content">
@@ -69,7 +37,7 @@ const Product = () => {
             </div>
           </div>
           
-          <div style={compareStyle}>
+          <div className="product-page__compare">
             <Button 
               label="Compare Models"
               prominence="tertiary"
@@ -83,4 +51,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default ProductPage; 

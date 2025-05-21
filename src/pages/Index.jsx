@@ -5,7 +5,7 @@ import Button from '../components/Button/Button';
 
 const Home = () => {
   return (
-    <div className="home-page" style={{ paddingTop: '96px' }}>
+    <div className="home-page">
       <div className="home-page__container">
         <h1>Welcome to Vida World</h1>
         <p>Experience the future of electric mobility with Vida's premium electric scooters.</p>
