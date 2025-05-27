@@ -2,6 +2,15 @@
 @import '../../styles/SemanticTokens.scss';
 @import '../../styles/tokens.scss';
 
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 .teaser-page__container {
   width: 100%;
   max-width: 1440px;
@@ -23,63 +32,6 @@
   @media (min-width: $breakpoint-l) {
     padding: 0 $space-4xl;
   }
-}
-
-.teaser-feature-block {
-  width: 1344px;
-  height: 684px;
-  background: rgba(50, 50, 50, 0.5);
-  border-radius: 24px;
-  border: 1px solid #383838;
-  margin-top: 0;
-  margin-bottom: 48px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  padding: 24px;
-  box-sizing: border-box;
-
-  @media (min-width: $breakpoint-m) {
-    height: 500px;
-    margin-top: $space-3xl;
-    margin-bottom: $space-3xl;
-  }
-
-  @media (min-width: $breakpoint-l) {
-    height: 684px;
-    margin-top: $space-4xl;
-    margin-bottom: $space-4xl;
-  }
-}
-
-.teaser-feature-block__content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: $space-l;
-  z-index: 1;
-
-  @media (min-width: $breakpoint-m) {
-    padding: $space-xl;
-  }
-}
-
-.teaser-feature-block__heading {
-  position: relative;
-  z-index: 3;
-  font-family: 'PP Neue Montreal', sans-serif;
-  font-size: 48px;
-  font-weight: 600;
-  color: #FFF;
-  letter-spacing: -0.96px;
-  line-height: normal;
-  margin-bottom: 24px;
 }
 
 .teaser-feature-block__image {
@@ -234,57 +186,6 @@
   opacity: 1;
 }
 
-.teaser-feature-orange-text {
-  height: 209px;
-  width: 100vw;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background: transparent;
-  position: relative;
-  font-family: 'PP Neue Montreal', sans-serif;
-  font-size: 174px;
-  font-style: normal;
-  font-weight: 600;
-  color: #FF5310;
-  line-height: normal;
-  letter-spacing: -2px;
-  text-align: left;
-  max-width: none;
-  padding: 0;
-
-  .teaser-feature-orange-text__marquee {
-    display: flex;
-    align-items: center;
-    gap: 72px;
-    white-space: nowrap;
-    animation: marquee 20s linear infinite;
-    min-width: 200vw;
-  }
-  .teaser-feature-orange-text__icon {
-    margin: 0 36px;
-    font-size: 1em;
-  }
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.teaser-feature-orange-text__icon-img {
-  height: 120px;
-  width: auto;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 36px;
-}
-
 .teaser-footer {
   width: 100%;
   background: $background-primaryinverse;
@@ -384,342 +285,56 @@
   }
 }
 
-.teaser {
-  position: relative;
+.teaser__breadcrumb {
   width: 100%;
-  height: calc(100vh - 64px);
-  height: calc(100dvh - 64px);
-  height: calc(100svh - 64px);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  margin-top: 0;
-  box-sizing: border-box;
-  background: $background-primaryinverse;
-  
-  @media (min-width: $breakpoint-m) {
-    height: calc(100vh - 64px);
-    height: calc(100dvh - 64px);
-    height: calc(100svh - 64px);
-  }
-
-  @media (min-width: $breakpoint-l) {
-    height: calc(100vh - 64px);
-    height: calc(100dvh - 64px);
-    height: calc(100svh - 64px);
-  }
-  
-  &--dark {
-    background-color: $background-primaryinverse;
-    color: $content-primary-inverse;
-  }
-  
-  &--light {
-    background-color: $background-primary;
-    color: $content-primary;
-  }
-  
-  &__breadcrumb {
-    width: 100%;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    font-family: 'PP Neue Montreal', sans-serif;
-    font-size: 18px;
-    color: #FFF;
-    background: #303030;
-    gap: 8px;
-    padding: 8px $space-l;
-    margin: 0;
-    box-sizing: border-box;
-
-    @media (min-width: $breakpoint-l) {
-      padding: 8px 88px;
-    }
-
-    &-link {
-      color: #FFF;
-      text-decoration: none;
-      font-weight: 400;
-      font-family: inherit;
-      font-size: inherit;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    &-separator {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 8px;
-      height: 16px;
-      width: 16px;
-      svg {
-        display: block;
-        width: 16px;
-        height: 16px;
-        stroke: #FFF;
-      }
-    }
-
-    &-current {
-      color: #FFF;
-      font-weight: 700;
-      font-family: inherit;
-      font-size: inherit;
-    }
-  }
-  
-  &__banner {
-    background-color: #FC5311;
-    height: 70px;
-    width: 100%;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    padding: 19px 0;
-    overflow: hidden;
-    position: relative;
-    flex-shrink: 0;
-    z-index: 2;
-  }
-  
-  &__banner-content {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-    animation: marquee 20s linear infinite;
-    min-width: 200vw;
-  }
-  
-  &__banner-text {
-    color: #FFF;
-    font-family: 'PP Neue Montreal', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 32px;
-    letter-spacing: normal;
-    margin-right: 32px;
-    padding: 0 6px;
-  }
-  
-  &__hero {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    min-height: 0;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  &__content {
-    max-width: 100%;
-    z-index: 1;
-    text-align: center;
-    margin-bottom: $space-l;
-    margin-top: $space-xl;
-    padding: 0 $space-l;
-
-    @media (min-width: $breakpoint-m) {
-      max-width: 700px;
-      margin-top: 59px;
-      padding: 0;
-    }
-  }
-  
-  &__heading {
-    font-family: 'PP Neue Montreal', sans-serif;
-    font-size: 48px;
-    font-weight: 600;
-    color: #FFF;
-    letter-spacing: -0.96px;
-    line-height: normal;
-    text-align: center;
-    margin-bottom: 8px;
-  }
-  
-  &__subheading {
-    font-family: 'PP Neue Montreal', sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    color: #FFF;
-    line-height: normal;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: $space-xl;
-  }
-  
-  &__cta {
-    background-color: $background-brand;
-    color: $content-primary-inverse;
-    border: none;
-    padding: $space-m $space-l;
-    border-radius: $radius-s;
-    font-size: $font-size-300;
-    font-weight: $font-weight-semibold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    
-    @media (min-width: $breakpoint-m) {
-      padding: $space-m $space-xl;
-      font-size: $body-body-m-semibold-font-size;
-    }
-    
-    &:hover {
-      background-color: $background-brand-hover;
-    }
-    
-    &:active {
-      background-color: $background-brand-pressed;
-    }
-  }
-  
-  &__image-container {
-    width: 100%;
-    max-width: 100%;
-    margin: -150px auto 0;
-    padding: 0 $space-l;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    box-sizing: border-box;
-    height: auto;
-
-    @media (min-width: $breakpoint-m) {
-      max-width: 700px;
-      padding: 0;
-    }
-  }
-  
-  &__image {
-    opacity: 0.4;
-    transition: opacity 0.5s ease;
-    width: 100%;
-    height: auto;
-    
-    &--faded {
-      opacity: 1;
-    }
-  }
-}
-
-.teaser-feature-orange-text__marquee {
+  height: 38px;
   display: flex;
   align-items: center;
-  gap: 72px;
-  white-space: nowrap;
-  animation: marquee 20s linear infinite;
-  min-width: 200vw;
-}
+  font-family: 'PP Neue Montreal', sans-serif;
+  font-size: 18px;
+  color: #FFF;
+  background: #303030;
+  gap: 8px;
+  padding: 8px $space-l;
+  margin: 0;
+  box-sizing: border-box;
 
-// Responsive styles
-@media (max-width: 1439px) {
-  .teaser-page__container {
-    max-width: 100%;
-    padding: 0 8px;
-    margin-top: 24px;
+  @media (min-width: $breakpoint-l) {
+    padding: 8px 88px;
   }
-  .teaser-feature-block,
-  .teaser-feature-cards {
-    width: 100%;
-    min-width: 0;
-  }
-  .teaser-feature-block {
-    height: auto;
-    min-height: 320px;
-    padding: 16px;
-    margin-bottom: 24px;
-  }
-  .teaser-feature-block__heading,
-  .teaser-feature-card__title {
-    font-size: 32px;
-    margin-bottom: 16px;
-  }
-  .teaser-feature-orange-text {
-    height: 120px;
-    font-size: 64px;
-  }
-  .teaser-feature-orange-text__icon-img {
-    height: 48px;
-    margin: 0 16px;
-  }
-}
 
-@media (max-width: 767px) {
-  .teaser-feature-block__heading,
-  .teaser-feature-card__title {
-    font-size: 22px;
-    margin-bottom: 8px;
+  &-link {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 400;
+    font-family: inherit;
+    font-size: inherit;
+    &:hover {
+      text-decoration: underline;
+    }
   }
-  .teaser-feature-block {
-    padding: 8px;
-  }
-  .teaser-feature-card {
-    padding: 8px;
-  }
-  .teaser-feature-orange-text {
-    height: 64px;
-    font-size: 32px;
-  }
-  .teaser-feature-orange-text__icon-img {
-    height: 24px;
+
+  &-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 8px;
+    height: 16px;
+    width: 16px;
+    svg {
+      display: block;
+      width: 16px;
+      height: 16px;
+      stroke: #FFF;
+    }
   }
-  .teaser__banner {
-    height: 40px;
-    padding: 8px 0;
-  }
-  .teaser__banner-text {
-    font-size: 12px;
-    line-height: 20px;
-    margin-right: 12px;
-  }
-  .teaser-feature-cards {
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-  .teaser-feature-card {
-    width: 100%;
-    height: auto;
-    min-height: 200px;
-    padding: 16px;
-  }
-}
 
-// Spotlight animation keyframes
-@keyframes animate-spotlight {
-  0% {
-    opacity: 0;
-    transform: translate(50%, -30%) scale(0.8);
+  &-current {
+    color: #FFF;
+    font-weight: 700;
+    font-family: inherit;
+    font-size: inherit;
   }
-  100% {
-    opacity: 1;
-    transform: translate(35%, -20%) scale(1);
-  }
-}
-
-.teaser-feature-block__spotlight-svg {
-  pointer-events: none;
-  position: absolute;
-  z-index: 1;
-  width: 140%;
-  height: 170%;
-  top: 0;
-  right: 0;
-  left: auto;
-  bottom: auto;
-  opacity: 0;
-  animation: animate-spotlight 2s ease 0.75s 1 forwards;
-  mix-blend-mode: lighten;
-  transform: translate(25%, -20%) scale(1);
 }
 
 .teaser-page {
@@ -744,4 +359,41 @@
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   pointer-events: none;
+}
+
+// Spotlight animation keyframes
+@keyframes animate-spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(50%, -30%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(35%, -20%) scale(1);
+  }
+}
+
+.teaser-spec-card__spotlight-svg {
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+  width: 140%;
+  height: 170%;
+  top: 0;
+  right: 0;
+  left: auto;
+  bottom: auto;
+  opacity: 0;
+  animation: animate-spotlight 2s ease 0.75s 1 forwards;
+  mix-blend-mode: lighten;
+  transform: translate(25%, -20%) scale(1);
+}
+
+.teaser-hero-section {
+  max-height: calc(100svh - 64px - 38px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #171717;
+  position: relative;
 }

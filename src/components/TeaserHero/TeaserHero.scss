@@ -1,0 +1,152 @@
+@import '../../styles/PrimitiveTokens.scss';
+@import '../../styles/SemanticTokens.scss';
+@import '../../styles/tokens.scss';
+
+.teaser {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 64px);
+  height: calc(100dvh - 64px);
+  height: calc(100svh - 64px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  box-sizing: border-box;
+  background: $background-primaryinverse;
+  
+  @media (min-width: $breakpoint-m) {
+    height: calc(100vh - 64px);
+    height: calc(100dvh - 64px);
+    height: calc(100svh - 64px);
+  }
+
+  @media (min-width: $breakpoint-l) {
+    height: calc(100vh - 64px);
+    height: calc(100dvh - 64px);
+    height: calc(100svh - 64px);
+  }
+  
+  &--dark {
+    background-color: $background-primaryinverse;
+    color: $content-primary-inverse;
+  }
+  
+  &--light {
+    background-color: $background-primary;
+    color: $content-primary;
+  }
+  
+  &__hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    min-height: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 664px;
+    text-align: center;
+    margin-bottom: $space-l;
+    margin-top: 59px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+
+    @media (min-width: $breakpoint-m) {
+      max-width: 664px;
+      margin-top: 59px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+    }
+  }
+  
+  &__heading {
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: #FFF;
+    letter-spacing: -0.96px;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  
+  &__subheading {
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #FFF;
+    line-height: normal;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: $space-xl;
+  }
+  
+  &__cta {
+    background-color: $background-brand;
+    color: $content-primary-inverse;
+    border: none;
+    padding: $space-m $space-l;
+    border-radius: $radius-s;
+    font-size: $font-size-300;
+    font-weight: $font-weight-semibold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    @media (min-width: $breakpoint-m) {
+      padding: $space-m $space-xl;
+      font-size: $body-body-m-semibold-font-size;
+    }
+    
+    &:hover {
+      background-color: $background-brand-hover;
+    }
+    
+    &:active {
+      background-color: $background-brand-pressed;
+    }
+  }
+  
+  &__image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  &__image {
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    transition: opacity 0.5s ease, filter 0.5s ease;
+    position: relative;
+    z-index: 0;
+    filter: brightness(1);
+
+    &--faded {
+      opacity: 1;
+      filter: brightness(2);
+    }
+  }
+} 

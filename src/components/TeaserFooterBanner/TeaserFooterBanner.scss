@@ -1,0 +1,54 @@
+@import '../../styles/PrimitiveTokens.scss';
+@import '../../styles/SemanticTokens.scss';
+@import '../../styles/tokens.scss';
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.teaser-footer-banner {
+  height: 209px;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: transparent;
+  position: relative;
+  font-family: 'PP Neue Montreal', sans-serif;
+  font-size: 174px;
+  font-style: normal;
+  font-weight: 600;
+  color: #FF5310;
+  line-height: normal;
+  letter-spacing: -2px;
+  text-align: left;
+  max-width: none;
+  padding: 0;
+
+  .teaser-footer-banner__marquee {
+    display: flex;
+    align-items: center;
+    gap: 72px;
+    white-space: nowrap;
+    animation: marquee 20s linear infinite;
+    min-width: 200vw;
+  }
+  .teaser-footer-banner__icon {
+    margin: 0 36px;
+    font-size: 1em;
+  }
+}
+
+.teaser-footer-banner__icon-img {
+  height: 120px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 36px;
+} 
