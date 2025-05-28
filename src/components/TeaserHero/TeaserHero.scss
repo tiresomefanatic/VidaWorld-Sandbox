@@ -3,28 +3,28 @@
 @import '../../styles/tokens.scss';
 
 .teaser {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 64px);
-  height: calc(100dvh - 64px);
-  height: calc(100svh - 64px);
-  overflow: hidden;
+  background: $background-primaryinverse;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  height: calc(100vh - 64px - 48px - 38.5px);
+  height: calc(100dvh - 64px - 48px - 38.5px);
+  height: calc(100svh - 64px - 48px - 38.5px);
   margin-top: 0;
-  box-sizing: border-box;
-  background: $background-primaryinverse;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
   
   @media (min-width: $breakpoint-m) {
-    height: calc(100vh - 64px);
-    height: calc(100dvh - 64px);
-    height: calc(100svh - 64px);
+    height: calc(100vh - 64px - 48px - 38.5px);
+    height: calc(100dvh - 64px - 48px - 38.5px);
+    height: calc(100svh - 64px - 48px - 38.5px);
   }
 
   @media (min-width: $breakpoint-l) {
-    height: calc(100vh - 64px);
-    height: calc(100dvh - 64px);
-    height: calc(100svh - 64px);
+    height: calc(100vh - 64px - 48px - 38.5px);
+    height: calc(100dvh - 64px - 48px - 38.5px);
+    height: calc(100svh - 64px - 48px - 38.5px);
   }
   
   &--dark {

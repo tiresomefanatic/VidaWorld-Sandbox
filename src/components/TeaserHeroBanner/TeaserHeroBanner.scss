@@ -4,10 +4,10 @@
 
 @keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translateX(50%);
   }
   100% {
-    transform: translateX(50%);
+    transform: translateX(0);
   }
 }
 
@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   white-space: nowrap;
-  animation: marquee 20s linear infinite reverse;
+  animation: marquee 30s linear infinite reverse;
   min-width: 200vw;
   gap: 10px;
 }

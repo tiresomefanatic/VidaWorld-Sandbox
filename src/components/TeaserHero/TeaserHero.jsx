@@ -9,7 +9,7 @@ const TeaserHero = ({ teaserData }) => {
       <div className="teaser__hero">
         <div className="teaser__image-container">
           <img 
-            src="/TeaserHeroFull.png" 
+            src="/TeaserHeroFull4.jpg" 
             alt={teaserData.heading} 
             className={`teaser__image${ctaHovered ? ' teaser__image--faded' : ''}`} 
           />

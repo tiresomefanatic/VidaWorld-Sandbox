@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './TeaserPage.scss';
 import TeaserHero from '../../components/TeaserHero/TeaserHero';
 import TeaserHeroBanner from '../../components/TeaserHeroBanner/TeaserHeroBanner';
-import TeaserFeatureSpecCard from '../../components/TeaserFeatureSpecCard/TeaserFeatureSpecCard';
+import TeaserSecondFold from '../../components/TeaserSecondFold/TeaserSecondFold';
 import TeaserFooterBanner from '../../components/TeaserFooterBanner/TeaserFooterBanner';
 import { VelocityScroll } from '../../components/VelocityScroll/VelocityScroll';
 
@@ -27,16 +27,22 @@ const TeaserPage = () => {
     subheading: 'The biggest debate of all time ends here',
     ctaText: 'Notify Me',
     ctaAction: () => console.log('CTA clicked'),
-    image: '/TeaserBannerFull.png',
-    bannerText: 'LAUNCHING THIS JULY',
+    image: '/TeaserHeroFull2.png',
+    bannerText: 'LAUNCHING THIS JULY · ',
     backgroundColor: 'dark',
     productName: 'Vida VX2',
+  };
+
+  const secondFoldData = {
+    heading: `The wait will be worth it.\nGet ready for something big.`,
+    subheading: `From cutting-edge design to effortless performance, this is\nthe future of urban movement. And it's coming fast. \nClear your schedule - the ride of your life is about to begin.`,
+    image: '/TeaserSecondFold.png',
   };
 
   return (
     <div
       ref={pageRef}
-      className="teaser-page"
+      // className="teaser-page"
     >
       {/* Teaser Breadcrumb Section Starts */}
       <div className="teaser__breadcrumb">
@@ -52,17 +58,17 @@ const TeaserPage = () => {
 
      
       {/* Teaser Hero Section */}
-      <div className="teaser-hero-section">
+      {/* <div className="teaser-hero-section"> */}
         <TeaserHero teaserData={teaserData} />
         <TeaserHeroBanner bannerText={teaserData.bannerText} />
-      </div>
+      {/* </div> */}
 
-      <div className="teaser-page__container">
+      {/* <div className="teaser-page__container"> */}
         {/* Teaser Feature Spec Card Section */}
-        <TeaserFeatureSpecCard />
+        <TeaserSecondFold {...secondFoldData} />
 
         {/* Teaser Footer Banner Section */}
-        <TeaserFooterBanner />
+        {/* <TeaserFooterBanner /> */}
 
         {/* Footer Section Starts */}
         <footer className="teaser-footer">
@@ -104,7 +110,7 @@ const TeaserPage = () => {
           </div>
         </footer>
         {/* Footer Section Ends */}
-      </div>
+      {/* </div> */}
       <div className="scroll-position">
         Scroll: {scrollPosition}px
       </div>

@@ -9,7 +9,6 @@ const TeaserHeroBanner = ({ bannerText }) => {
     return Array(30).fill(null).map((_, i) => (
       <React.Fragment key={i}>
         <span className="teaser-hero-banner__text">{bannerText}</span>
-        <span className="teaser-hero-banner__dot">&middot;</span>
       </React.Fragment>
     ));
   };

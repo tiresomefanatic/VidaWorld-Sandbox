@@ -1,0 +1,110 @@
+@import '../../styles/PrimitiveTokens.scss';
+@import '../../styles/SemanticTokens.scss';
+@import '../../styles/tokens.scss';
+
+
+
+.teaser-second-fold {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 64px);  
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.teaser-second-fold__image {
+  width: 100vw;
+  height: 100vh;
+  //min-height: 675px;
+
+  //object-fit: fill;
+ //display: block;
+}
+
+.teaser-second-fold__content {
+  position: absolute;
+  left: 0;
+  top: 133px;
+  bottom: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 97px;
+  max-width: 50vw;
+  z-index: 2;
+  gap: 24px;
+}
+
+.teaser-second-fold__heading {
+  color: #FFF;
+  font-family: 'PP Neue Montreal', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.96px;
+  margin-bottom: 0;
+}
+
+.teaser-second-fold__subheading {
+  color: #FFF;
+  font-family: 'PP Neue Montreal', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 0;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.teaser-footer-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 209px;
+  overflow: hidden;
+  background-color: transparent;
+ // border: 1px solid red;
+}
+
+.teaser-footer-banner__marquee {
+  display: flex;
+  align-items: center;
+  height: 174px;
+  animation: marquee 30s linear infinite;
+ gap: 20px; // Consistent gap between all elements
+}
+
+.teaser-footer-banner__text,
+.teaser-footer-banner__icon {
+  display: block;
+  height: 174px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.teaser-footer-banner__text {
+  // Specific styles for text SVG if needed
+}
+
+.teaser-footer-banner__icon {
+  // Specific styles for heart SVG if needed
+  // You can adjust the size if the heart needs to be smaller/larger
+  // For example: height: 80%;
+}
+
+// Remove the old unused styles
+.teaser-footer-banner__icon-img {
+  display: none;
+}
