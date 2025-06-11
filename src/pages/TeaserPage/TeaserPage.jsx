@@ -22,12 +22,24 @@ const TeaserPage = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const teaserData = {
+  // Updated teaserData with responsive images and new structure
+  const teaserHeroConfig = {
     heading: 'Not just a scooter, Not just an EV',
     subheading: 'The biggest debate of all time ends here',
     ctaText: 'Notify Me',
-    ctaAction: () => console.log('CTA clicked'),
-    image: '/TeaserHeroFull2.png',
+    bgImgMob: '/TeaserHeroFull4.jpg', // Mobile image (< 768px)
+    bgImgTab: '/TeaserHeroFull2.png', // Tablet image (768px - 1023px)
+    bgImgDes: '/TeaserHeroFull4.jpg', // Desktop image (1024px+)
+    webPopupConfig: {
+      // Add popup configuration if needed
+      genericConfig: {
+        webPopupConfirmBtnLabel: 'Get Notified'
+      }
+    }
+  };
+
+  // Legacy data for other components
+  const teaserData = {
     bannerText: 'LAUNCHING THIS JULY · ',
     backgroundColor: 'dark',
     productName: 'Vida VX2',
@@ -36,7 +48,11 @@ const TeaserPage = () => {
   const secondFoldData = {
     heading: `The wait will be worth it.\nGet ready for something big.`,
     subheading: `From cutting-edge design to effortless performance, this is\nthe future of urban movement. And it's coming fast. \nClear your schedule - the ride of your life is about to begin.`,
-    image: '/TeaserSecondFold.png',
+    bgImg: '/TeaserSecondFold.png',
+     Ray1Img : '/Ray1.svg',
+     Ray2Img : '/Ray2.svg',
+     VidaVX2Img : '/FooterText.svg',
+     HeartIconImg : '/HeartFooter.svg'
   };
 
   return (
@@ -59,7 +75,10 @@ const TeaserPage = () => {
      
       {/* Teaser Hero Section */}
       {/* <div className="teaser-hero-section"> */}
-        <TeaserHero teaserData={teaserData} />
+        <TeaserHero 
+          config={teaserHeroConfig}
+          ctaAction={() => console.log('CTA clicked')} 
+        />
         <TeaserHeroBanner bannerText={teaserData.bannerText} />
       {/* </div> */}
 

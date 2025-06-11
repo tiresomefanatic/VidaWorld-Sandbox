@@ -2,12 +2,15 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
 import vidaLogo from '../../../public/VidaHeaderLogo.svg'
+import Button from '../Button/Button';
 
 // This component focuses on UI and CSS implementation matching the Figma design
 const Header = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showProductsDropdown, setShowProductsDropdown] = useState(false);
+  const [showExploreDropdown, setShowExploreDropdown] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const dropdownTimeoutRef = useRef(null);
+  const productsDropdownTimeoutRef = useRef(null);
+  const exploreDropdownTimeoutRef = useRef(null);
   const mobileMenuRef = useRef(null);
 
   // Handle outside click to close mobile menu
@@ -28,13 +31,16 @@ const Header = () => {
   // Clear timeout on unmount
   useEffect(() => {
     return () => {
-      if (dropdownTimeoutRef.current) {
-        clearTimeout(dropdownTimeoutRef.current);
+      if (productsDropdownTimeoutRef.current) {
+        clearTimeout(productsDropdownTimeoutRef.current);
+      }
+      if (exploreDropdownTimeoutRef.current) {
+        clearTimeout(exploreDropdownTimeoutRef.current);
       }
     };
   }, []);
 
-  // Vehicle models data for the dropdown - using SVGs from public folder
+  // Vehicle models data for the products dropdown - using SVGs from public folder
   const vehicleModels = [
     {
       id: "vx2plus",
@@ -68,6 +74,58 @@ const Header = () => {
     }
   ];
 
+  // Explore dropdown content - matching exact Figma design structure
+  const exploreItems = [
+    {
+      id: "service",
+      name: "Service",
+      description: "Lorem ipsum dolor sit amet",
+      link: "/service"
+    },
+    {
+      id: "extended-battery-warranty",
+      name: "Extended Battery Warranty",
+      description: "Lorem ipsum dolor sit amet",
+      link: "/extended-battery-warranty"
+    },
+    {
+      id: "battery-as-service",
+      name: "Battery As A Service", 
+      description: "Lorem ipsum dolor sit amet",
+      link: "/battery-as-service"
+    },
+    {
+      id: "dealers-locator",
+      name: "Dealers Locator",
+      description: "Lorem ipsum dolor sit amet", 
+      link: "/dealers-locator"
+    },
+    {
+      id: "charging-network",
+      name: "Charging Network",
+      description: "Lorem ipsum dolor sit amet",
+      link: "/charging-network"
+    },
+    {
+      id: "road-side-assistance", 
+      name: "Road Side Assistance",
+      description: "Lorem ipsum dolor sit amet",
+      link: "/road-side-assistance"
+    },
+    {
+      id: "savings-calculator",
+      name: "Savings Calculator",
+      description: "Lorem ipsum dolor sit amet",
+      link: "/savings-calculator"
+    },
+    {
+      id: "accessories",
+      name: "Accessories",
+      description: "Lorem ipsum dolor sit amet",
+      link: "/accessories"
+    }
+  ];
+
   // Toggle mobile menu
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -78,19 +136,35 @@ const Header = () => {
     }
   };
 
-  // Handle mouse enter event
-  const handleMouseEnter = () => {
-    if (dropdownTimeoutRef.current) {
-      clearTimeout(dropdownTimeoutRef.current);
-      dropdownTimeoutRef.current = null;
+  // Handle Products dropdown mouse events
+  const handleProductsMouseEnter = () => {
+    if (productsDropdownTimeoutRef.current) {
+      clearTimeout(productsDropdownTimeoutRef.current);
+      productsDropdownTimeoutRef.current = null;
     }
-    setShowDropdown(true);
+    setShowProductsDropdown(true);
+    setShowExploreDropdown(false);
   };
 
-  // Handle mouse leave event with delay
-  const handleMouseLeave = () => {
-    dropdownTimeoutRef.current = setTimeout(() => {
-      setShowDropdown(false);
+  const handleProductsMouseLeave = () => {
+    productsDropdownTimeoutRef.current = setTimeout(() => {
+      setShowProductsDropdown(false);
+    }, 300);
+  };
+
+  // Handle Explore dropdown mouse events
+  const handleExploreMouseEnter = () => {
+    if (exploreDropdownTimeoutRef.current) {
+      clearTimeout(exploreDropdownTimeoutRef.current);
+      exploreDropdownTimeoutRef.current = null;
+    }
+    setShowExploreDropdown(true);
+    setShowProductsDropdown(false);
+  };
+
+  const handleExploreMouseLeave = () => {
+    exploreDropdownTimeoutRef.current = setTimeout(() => {
+      setShowExploreDropdown(false);
     }, 300);
   };
 
@@ -129,33 +203,37 @@ const Header = () => {
           <ul className="vida-header__nav-list">
             <li 
               className="vida-header__nav-item vida-header__nav-item--dropdown"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
+              onMouseEnter={handleProductsMouseEnter}
+              onMouseLeave={handleProductsMouseLeave}
             >
               <Link to="/vehicles" className="vida-header__nav-link">
-                Vehicles
+                Products
                 <ChevronDown />
               </Link>
             </li>
             <li className="vida-header__nav-item">
-              <Link to="/charging-network" className="vida-header__nav-link">
-                Charging Network
-              </Link>
+              <Button
+                label="Book a Test Ride"
+                variant="primary"
+                size="m"
+                prominence="dark"
+                visibility="off"
+                onClick={() => window.location.href = '/book-test-ride'}
+                className="vida-header__nav-button-component"
+              />
             </li>
-            <li className="vida-header__nav-item">
-              <Link to="/dealer-locator" className="vida-header__nav-link">
-                Dealer Locator
+            <li 
+              className="vida-header__nav-item vida-header__nav-item--dropdown"
+              onMouseEnter={handleExploreMouseEnter}
+              onMouseLeave={handleExploreMouseLeave}
+            >
+              <Link to="/explore" className="vida-header__nav-link">
+                Explore
+                <ChevronDown />
               </Link>
             </li>
           </ul>
         </nav>
-        
-        {/* CTA button on desktop */}
-        <div className="vida-header__cta-wrapper">
-          <Link to="/book-test-ride" className="vida-header__cta-button">
-            Book a Test Ride
-          </Link>
-        </div>
         
         {/* Mobile menu toggle button */}
         <div 
@@ -166,11 +244,11 @@ const Header = () => {
           <div className="hamburger-icon"></div>
         </div>
         
-        {/* Vehicles dropdown - now as a separate element outside the nav item */}
+        {/* Products dropdown */}
         <div 
-          className={`vida-header__dropdown dropdown ${showDropdown ? 'show' : ''}`}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          className={`vida-header__dropdown dropdown ${showProductsDropdown ? 'show' : ''}`}
+          onMouseEnter={handleProductsMouseEnter}
+          onMouseLeave={handleProductsMouseLeave}
         >
           <div className="vida-header__dropdown-content">
             <div className="vida-header__dropdown-vehicles">
@@ -184,6 +262,28 @@ const Header = () => {
                     <img src={vehicle.image} alt={vehicle.name} />
                   </div>
                   <span className="vida-header__vehicle-name">{vehicle.name}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Explore dropdown */}
+        <div 
+          className={`vida-header__dropdown dropdown explore-dropdown ${showExploreDropdown ? 'show' : ''}`}
+          onMouseEnter={handleExploreMouseEnter}
+          onMouseLeave={handleExploreMouseLeave}
+        >
+          <div className="vida-header__dropdown-content">
+            <div className="vida-header__dropdown-vehicles">
+              {exploreItems.map((item) => (
+                <Link 
+                  key={item.id} 
+                  to={item.link} 
+                  className="vida-header__vehicle-item"
+                >
+                  <span className="vida-header__vehicle-name">{item.name}</span>
+                  <span className="vida-header__vehicle-description">{item.description}</span>
                 </Link>
               ))}
             </div>
@@ -209,16 +309,16 @@ const Header = () => {
                     className="vida-header__mobile-nav-link"
                     onClick={() => {
                       // Toggle mobile dropdown
-                      const dropdown = document.querySelector('.vida-header__mobile-dropdown');
+                      const dropdown = document.querySelector('.vida-header__mobile-dropdown.products');
                       if (dropdown) {
                         dropdown.style.display = dropdown.style.display === 'none' ? 'flex' : 'none';
                       }
                     }}
                   >
-                    Vehicles
+                    Products
                     <ChevronDown />
                   </button>
-                  <div className="vida-header__mobile-dropdown dropdown">
+                  <div className="vida-header__mobile-dropdown dropdown products">
                     {vehicleModels.map((vehicle) => (
                       <Link 
                         key={vehicle.id} 
@@ -232,31 +332,42 @@ const Header = () => {
                   </div>
                 </li>
                 <li className="vida-header__mobile-nav-item">
-                  <Link 
-                    to="/charging-network" 
-                    className="vida-header__mobile-nav-link"
-                    onClick={toggleMobileMenu}
-                  >
-                    Charging Network
-                  </Link>
+                  <Button
+                    label="Book a Test Ride"
+                    variant="primary"
+                    size="m"
+                    prominence="dark"
+                    visibility="off"
+                    onClick={() => window.location.href = '/book-test-ride'}
+                    className="vida-header__mobile-nav-button-component"
+                  />
                 </li>
-                <li className="vida-header__mobile-nav-item">
-                  <Link 
-                    to="/dealer-locator" 
+                <li className="vida-header__mobile-nav-item vida-header__mobile-nav-item--dropdown">
+                  <button 
                     className="vida-header__mobile-nav-link"
-                    onClick={toggleMobileMenu}
+                    onClick={() => {
+                      // Toggle mobile dropdown
+                      const dropdown = document.querySelector('.vida-header__mobile-dropdown.explore');
+                      if (dropdown) {
+                        dropdown.style.display = dropdown.style.display === 'none' ? 'flex' : 'none';
+                      }
+                    }}
                   >
-                    Dealer Locator
-                  </Link>
-                </li>
-                <li className="vida-header__mobile-nav-item">
-                  <Link 
-                    to="/book-test-ride" 
-                    className="vida-header__mobile-nav-link"
-                    onClick={toggleMobileMenu}
-                  >
-                    Book a Test Ride
-                  </Link>
+                    Explore
+                    <ChevronDown />
+                  </button>
+                  <div className="vida-header__mobile-dropdown dropdown explore">
+                    {exploreItems.map((item) => (
+                      <Link 
+                        key={item.id} 
+                        to={item.link} 
+                        className="vida-header__mobile-vehicle-item"
+                        onClick={toggleMobileMenu}
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
                 </li>
               </ul>
             </nav>
