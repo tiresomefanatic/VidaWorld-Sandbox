@@ -233,12 +233,12 @@ const Header = () => {
           </Link>
           <Button
             label="Buy Now"
-            variant="primary"
+            variant="secondary"
             size="s"
             prominence="dark"
             visibility="off"
+            roundness="circle"
             onClick={() => window.location.href = '/buy-now'}
-            className="vida-header__buy-now-button"
           />
         </div>
         
@@ -420,21 +420,21 @@ const Header = () => {
               <div className="vida-header__mobile-actions">
                 <Button
                   label="Test Ride"
-                  variant="primary"
+                  variant="secondary"
                   size="m"
                   prominence="light"
                   visibility="off"
+                  roundness="circle"
                   onClick={() => window.location.href = '/test-ride'}
-                  className="vida-header__mobile-test-ride-button"
                 />
                 <Button
                   label="Buy Now"
-                  variant="primary"
+                  variant="secondary"
                   size="m"
                   prominence="dark"
                   visibility="off"
+                  roundness="circle"
                   onClick={() => window.location.href = '/buy-now'}
-                  className="vida-header__mobile-buy-now-button"
                 />
               </div>
 
