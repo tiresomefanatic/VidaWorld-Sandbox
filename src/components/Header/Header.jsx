@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
-import vidaLogo from '../../../public/VIdaLogo.svg'
+import vidaLogo from '../../../public/VidaLogo.svg'
 import Button from '../Button/Button';
 
 // This component focuses on UI and CSS implementation matching the Figma design
