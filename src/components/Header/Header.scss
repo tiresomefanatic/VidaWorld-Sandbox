@@ -31,8 +31,10 @@
     align-items: center;
     
     img {
-      height: 32px;
-      width: auto;
+      width: 170px;
+      height: 24px;
+      flex-shrink: 0;
+      aspect-ratio: 85/12;
     }
   }
   
@@ -123,7 +125,7 @@
     }
   }
   
-  // Vehicles dropdown menu - dimensions from Figma
+  // Vehicles dropdown menu - three container structure from Figma
   &__dropdown {
     position: fixed;
     top: 64px; // Height of the header
@@ -137,7 +139,40 @@
     transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
     &.show {
-      height: 228px; // Height of the dropdown content (24px padding top + 24px padding bottom + 180px content)
+      height: 288px; // Outer container height (Rectangle 34626646)
+    }
+
+    // Products dropdown - three container structure
+    &:not(.explore-dropdown) {
+      // Outer container (Rectangle 34626646)
+      .vida-header__dropdown-content {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 10px; // 10px padding between outer and inner container
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 0 0 20px 20px; // Bottom corners only
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20); // Drop shadow
+        box-sizing: border-box;
+      }
+
+      // Inner container with background (Rectangle 34626647)
+      .vida-header__dropdown-vehicles {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%; // Take full width of outer container
+        height: 100%; // Take full height of outer container
+        background-color: #F9F5EE; // Correct background color from Figma
+        border-radius: 0 0 8px 8px; // Bottom corners only
+        padding: 20px; // Internal padding for content
+        gap: 61px; // Gap between individual products from Figma
+        box-sizing: border-box;
+      }
     }
 
     // Special styling for explore dropdown
@@ -146,26 +181,49 @@
         height: 287px; // Height from Figma design
       }
 
+      // Outer container - similar structure to products dropdown
       .vida-header__dropdown-content {
         display: flex;
-        max-width: 1440px;
         width: 100%;
-        margin: 0 auto;
-        padding: 42px;
-        align-items: flex-start;
-        justify-content: flex-start;
+        height: 100%;
+        margin: 0;
+        padding: 10px; // 10px padding between outer and inner container
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 0 0 20px 20px; // Bottom corners only
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20); // Drop shadow
+        box-sizing: border-box;
       }
 
+      // Inner container that holds all the content
       .vida-header__dropdown-vehicles {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        width: auto; // Auto width to fit content
+        max-width: 1200px; // Max width constraint
+        height: 100%; // Take full height of outer container
+        background-color: white; // Inner container background
+        border-radius: 0 0 8px 8px; // Bottom corners only
+        padding: 42px; // 42px padding as specified
+        gap: 48px; // Gap between grid and right sidebar
+        box-sizing: border-box;
+      }
+
+      // Grid container for the text items
+      .vida-header__dropdown-grid {
         display: grid;
         grid-template-columns: repeat(3, 240px);
         grid-template-rows: repeat(3, auto);
         gap: 16px 54px;
         width: 828px; // Total width from Figma
+        flex-shrink: 0; // Prevent shrinking
         
         // Arrange items to match Figma layout: 3 columns, with specific order
         .vida-header__vehicle-item:nth-child(1) { grid-area: 1 / 1; } // Service
-        .vida-header__vehicle-item:nth-child(2) { grid-area: 1 / 2; } // Extended Battery Warranty
+        .vida-header__vehicle-item:nth-child(2) { grid-area: 1 / 2; } // Extended Battery Warranty  
         .vida-header__vehicle-item:nth-child(3) { grid-area: 2 / 2; } // Battery As A Service
         .vida-header__vehicle-item:nth-child(4) { grid-area: 3 / 2; } // Dealers Locator
         .vida-header__vehicle-item:nth-child(5) { grid-area: 2 / 1; } // Charging Network
@@ -183,9 +241,12 @@
         width: 240px;
         padding: 8px;
         gap: 4px;
+        background: none;
+        border: none;
         
         &:hover {
           transform: none;
+          background: none;
           
           .vida-header__vehicle-name {
             color: #FF5310;
@@ -210,39 +271,45 @@
           font-size: 14px;
           font-weight: 450;
           line-height: 16.8px;
-          text-align: center;
+          text-align: left;
           width: 100%;
         }
       }
 
-      // Add separator line (if needed for future)
+      // Vertical separator line
       .vida-header__dropdown-separator {
         width: 1px;
         height: 203px;
         background-color: #d4d4d4;
-        margin: 0 24px;
+        margin: 0;
+        flex-shrink: 0; // Prevent shrinking
+      }
+
+      // Right navigation area
+      .vida-header__dropdown-right-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 85px; // Width from Figma
+        padding-top: 0;
+        flex-shrink: 0; // Prevent shrinking
+      }
+
+      .vida-header__dropdown-nav-item {
+        color: #5C5A5A; // Grey color from Figma
+        font-family: "PP Neue Montreal", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+        text-decoration: none;
+        text-align: left;
+        
+        &:hover {
+          color: #FF5310;
+        }
       }
     }
-  }
-  
-  &__dropdown-content {
-    display: flex;
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 24px 88px;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  &__dropdown-vehicles {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 1206px; // Based on Figma (1206 x 180)
-    gap: 61px; // Spacing between models from Figma
   }
   
   &__vehicle-item {
@@ -365,12 +432,12 @@
   // Mobile menu
   &__mobile-menu {
     position: fixed;
-    top: 64px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: calc(100vh - 64px);
+    height: 100vh;
     background-color: white;
-    z-index: 998;
+    z-index: 999;
     overflow-y: auto;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
@@ -379,92 +446,191 @@
       transform: translateX(0);
     }
   }
-  
-  &__mobile-menu-list {
-    list-style: none;
-    margin: 0;
-    padding: 24px;
-  }
-  
-  &__mobile-menu-item {
-    margin-bottom: 16px;
-    
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  
-  &__mobile-menu-link {
-    color: #000000;
-    @include body-l-regular;
-    text-decoration: none;
-    display: block;
-    padding: 8px 0;
-    
-    &:hover {
-      color: #FF5310;
-    }
-  }
-  
-  &__mobile-dropdown-button {
+
+  // Mobile header with logo and close button
+  &__mobile-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    padding: 16px 24px;
+    border-bottom: 1px solid #E5E5E5;
+    height: 64px;
+    box-sizing: border-box;
+  }
+
+  &__mobile-logo {
+    img {
+      width: 170px;
+      height: 24px;
+      flex-shrink: 0;
+      aspect-ratio: 85/12;
+    }
+  }
+
+  &__mobile-close {
     background: none;
     border: none;
-    padding: 8px 0;
+    font-size: 24px;
     color: #000000;
-    @include body-l-regular;
-    text-align: left;
     cursor: pointer;
-    
-    &:hover {
-      color: #FF5310;
-    }
-    
-    .chevron-down {
-      transition: transform 0.2s ease;
-    }
-    
-    &.open {
-      .chevron-down {
-        transform: rotate(180deg);
-      }
-    }
-  }
-  
-  &__mobile-submenu {
-    padding-left: 16px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    
-    &.open {
-      max-height: 500px; // Arbitrary large value
-    }
-  }
-  
-  &__mobile-submenu-item {
-    margin-bottom: 8px;
-    
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  
-  &__mobile-submenu-link {
-    color: #000000;
-    @include body-m-regular;
-    text-decoration: none;
-    display: block;
-    padding: 8px 0;
+    padding: 8px;
+    line-height: 1;
     
     &:hover {
       color: #FF5310;
     }
   }
 
+  // Mobile menu content container
+  &__mobile-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: calc(100vh - 64px);
+  }
+
+  // Mobile sections (PRODUCTS, EXPLORE, MY ACCOUNT)
+  &__mobile-section {
+    border-bottom: 1px solid #E5E5E5;
+    padding-bottom: 16px;
+    
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  &__mobile-section-header {
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.8px;
+    letter-spacing: 0.5px;
+    color: #5C5A5A;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom: 16px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    
+    &.static {
+      cursor: default;
+    }
+    
+    &:hover {
+      color: #FF5310;
+    }
+  }
+
+  &__mobile-section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    
+    &.open {
+      max-height: 1000px; // Arbitrary large value for smooth animation
+    }
+  }
+
+  // Mobile menu items
+  &__mobile-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #000000;
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 1px solid #F5F5F5;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    &:hover {
+      color: #FF5310;
+    }
+  }
+
+  // New badge for VX2 Series
+  &__mobile-badge {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  // Action buttons section
+  &__mobile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 24px;
+  }
+
+  &__mobile-test-ride-button {
+    width: 100% !important;
+    background-color: #FF5310 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 24px !important;
+    padding: 14px 24px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    
+    &:hover {
+      background-color: #E04409 !important;
+    }
+  }
+
+  &__mobile-buy-now-button {
+    width: 100% !important;
+    background-color: #000000 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 24px !important;
+    padding: 14px 24px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    
+    &:hover {
+      background-color: #333333 !important;
+    }
+  }
+
+  // Footer links
+  &__mobile-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid #E5E5E5;
+    margin-top: auto;
+  }
+
+  &__mobile-footer-link {
+    color: #5C5A5A;
+    font-family: "PP Neue Montreal", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.8px;
+    text-decoration: none;
+    
+    &:hover {
+      color: #FF5310;
+    }
+  }
 
   // Button component integration
   &__nav-button-component {
@@ -476,6 +642,52 @@
     margin: 8px 0;
     
     // Override button component styles if needed for mobile
+  }
+
+  // Right side buttons
+  &__right-buttons {
+    display: none;
+    
+    @include respond-to('tablet') {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+  }
+
+  &__top-link {
+    color: #3F3D3D; // Updated color as requested
+    @include body-m-regular;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    line-height: 20px;
+    
+    &:hover {
+      color: #FF5310;
+    }
+  }
+
+  &__buy-now-button {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 8px 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    min-width: auto !important;
+    height: auto !important;
+    
+    &:hover {
+      background-color: #333333 !important;
+      color: #ffffff !important;
+    }
+    
+    &:active {
+      background-color: #000000 !important;
+    }
   }
 }
 

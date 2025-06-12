@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Header.scss";
-import vidaLogo from '../../../public/VidaHeaderLogo.svg'
+import vidaLogo from '../../../public/VIdaLogo.svg'
 import Button from '../Button/Button';
 
 // This component focuses on UI and CSS implementation matching the Figma design
@@ -9,6 +9,8 @@ const Header = () => {
   const [showProductsDropdown, setShowProductsDropdown] = useState(false);
   const [showExploreDropdown, setShowExploreDropdown] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [mobileExploreOpen, setMobileExploreOpen] = useState(false);
   const productsDropdownTimeoutRef = useRef(null);
   const exploreDropdownTimeoutRef = useRef(null);
   const mobileMenuRef = useRef(null);
@@ -51,7 +53,7 @@ const Header = () => {
     {
       id: "vx2go",
       name: "VX2 Go",
-      image: "/VidaGo.svg",
+      image: "/VX2Go.svg",
       link: "/vehicles/vx2-go"
     },
     {
@@ -211,17 +213,6 @@ const Header = () => {
                 <ChevronDown />
               </Link>
             </li>
-            <li className="vida-header__nav-item">
-              <Button
-                label="Book a Test Ride"
-                variant="primary"
-                size="m"
-                prominence="dark"
-                visibility="off"
-                onClick={() => window.location.href = '/book-test-ride'}
-                className="vida-header__nav-button-component"
-              />
-            </li>
             <li 
               className="vida-header__nav-item vida-header__nav-item--dropdown"
               onMouseEnter={handleExploreMouseEnter}
@@ -235,13 +226,36 @@ const Header = () => {
           </ul>
         </nav>
         
+        {/* Right side buttons */}
+        <div className="vida-header__right-buttons">
+          <Link to="/test-ride" className="vida-header__top-link">
+            Test Ride
+          </Link>
+          <Button
+            label="Buy Now"
+            variant="primary"
+            size="s"
+            prominence="dark"
+            visibility="off"
+            onClick={() => window.location.href = '/buy-now'}
+            className="vida-header__buy-now-button"
+          />
+        </div>
+        
         {/* Mobile menu toggle button */}
-        <div 
-          className="vida-header__mobile-menu-toggle"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
-        >
-          <div className="hamburger-icon"></div>
+        <div className="vida-header__mobile-nav">
+          <button
+            className="vida-header__mobile-menu-button"
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            <div className={`vida-header__hamburger ${mobileMenuOpen ? 'open' : ''}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
         </div>
         
         {/* Products dropdown */}
@@ -276,101 +290,172 @@ const Header = () => {
         >
           <div className="vida-header__dropdown-content">
             <div className="vida-header__dropdown-vehicles">
-              {exploreItems.map((item) => (
-                <Link 
-                  key={item.id} 
-                  to={item.link} 
-                  className="vida-header__vehicle-item"
-                >
-                  <span className="vida-header__vehicle-name">{item.name}</span>
-                  <span className="vida-header__vehicle-description">{item.description}</span>
+              <div className="vida-header__dropdown-grid">
+                {exploreItems.map((item) => (
+                  <Link 
+                    key={item.id} 
+                    to={item.link} 
+                    className="vida-header__vehicle-item"
+                  >
+                    <span className="vida-header__vehicle-name">{item.name}</span>
+                    <span className="vida-header__vehicle-description">{item.description}</span>
+                  </Link>
+                ))}
+              </div>
+              
+              {/* Vertical separator line */}
+              <div className="vida-header__dropdown-separator"></div>
+              
+              {/* Right side navigation items */}
+              <div className="vida-header__dropdown-right-nav">
+                <Link to="/log-in" className="vida-header__dropdown-nav-item">
+                  Log In
                 </Link>
-              ))}
+                <Link to="/sign-up" className="vida-header__dropdown-nav-item">
+                  Sign Up
+                </Link>
+                <Link to="/faqs" className="vida-header__dropdown-nav-item">
+                  FAQs
+                </Link>
+              </div>
             </div>
           </div>
         </div>
         
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="vida-header__mobile-menu" ref={mobileMenuRef}>
-            <div className="vida-header__mobile-menu-header">
+          <div className={`vida-header__mobile-menu ${mobileMenuOpen ? 'open' : ''}`} ref={mobileMenuRef}>
+            {/* Mobile Header with Logo and Close Button */}
+            <div className="vida-header__mobile-header">
+              <div className="vida-header__mobile-logo">
+                <Link to="/" onClick={toggleMobileMenu}>
+                  <img src={vidaLogo} alt="VIDA Logo" />
+                </Link>
+              </div>
               <button 
-                className="vida-header__mobile-menu-close"
+                className="vida-header__mobile-close"
                 onClick={toggleMobileMenu}
                 aria-label="Close mobile menu"
               >
                 ×
               </button>
             </div>
-            <nav className="vida-header__mobile-nav">
-              <ul className="vida-header__mobile-nav-list">
-                <li className="vida-header__mobile-nav-item vida-header__mobile-nav-item--dropdown">
-                  <button 
-                    className="vida-header__mobile-nav-link"
-                    onClick={() => {
-                      // Toggle mobile dropdown
-                      const dropdown = document.querySelector('.vida-header__mobile-dropdown.products');
-                      if (dropdown) {
-                        dropdown.style.display = dropdown.style.display === 'none' ? 'flex' : 'none';
-                      }
-                    }}
+
+            {/* Mobile Menu Content */}
+            <div className="vida-header__mobile-content">
+              
+              {/* Products Section */}
+              <div className="vida-header__mobile-section">
+                <button 
+                  className={`vida-header__mobile-section-header ${mobileProductsOpen ? 'open' : ''}`}
+                  onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+                >
+                  PRODUCTS
+                </button>
+                <div className={`vida-header__mobile-section-content ${mobileProductsOpen ? 'open' : ''}`}>
+                  <Link 
+                    to="/vehicles/vx2-series" 
+                    className="vida-header__mobile-item"
+                    onClick={toggleMobileMenu}
                   >
-                    Products
-                    <ChevronDown />
-                  </button>
-                  <div className="vida-header__mobile-dropdown dropdown products">
-                    {vehicleModels.map((vehicle) => (
-                      <Link 
-                        key={vehicle.id} 
-                        to={vehicle.link} 
-                        className="vida-header__mobile-vehicle-item"
-                        onClick={toggleMobileMenu}
-                      >
-                        {vehicle.name}
-                      </Link>
-                    ))}
-                  </div>
-                </li>
-                <li className="vida-header__mobile-nav-item">
-                  <Button
-                    label="Book a Test Ride"
-                    variant="primary"
-                    size="m"
-                    prominence="dark"
-                    visibility="off"
-                    onClick={() => window.location.href = '/book-test-ride'}
-                    className="vida-header__mobile-nav-button-component"
-                  />
-                </li>
-                <li className="vida-header__mobile-nav-item vida-header__mobile-nav-item--dropdown">
-                  <button 
-                    className="vida-header__mobile-nav-link"
-                    onClick={() => {
-                      // Toggle mobile dropdown
-                      const dropdown = document.querySelector('.vida-header__mobile-dropdown.explore');
-                      if (dropdown) {
-                        dropdown.style.display = dropdown.style.display === 'none' ? 'flex' : 'none';
-                      }
-                    }}
+                    VX2 Series
+                    <span className="vida-header__mobile-badge">New</span>
+                  </Link>
+                  <Link 
+                    to="/vehicles/v2-series" 
+                    className="vida-header__mobile-item"
+                    onClick={toggleMobileMenu}
                   >
-                    Explore
-                    <ChevronDown />
-                  </button>
-                  <div className="vida-header__mobile-dropdown dropdown explore">
-                    {exploreItems.map((item) => (
-                      <Link 
-                        key={item.id} 
-                        to={item.link} 
-                        className="vida-header__mobile-vehicle-item"
-                        onClick={toggleMobileMenu}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </li>
-              </ul>
-            </nav>
+                    V2 Series
+                  </Link>
+                </div>
+              </div>
+
+              {/* Explore Section */}
+              <div className="vida-header__mobile-section">
+                <button 
+                  className={`vida-header__mobile-section-header ${mobileExploreOpen ? 'open' : ''}`}
+                  onClick={() => setMobileExploreOpen(!mobileExploreOpen)}
+                >
+                  EXPLORE
+                </button>
+                <div className={`vida-header__mobile-section-content ${mobileExploreOpen ? 'open' : ''}`}>
+                  {exploreItems.map((item) => (
+                    <Link 
+                      key={item.id}
+                      to={item.link} 
+                      className="vida-header__mobile-item"
+                      onClick={toggleMobileMenu}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  <Link 
+                    to="/faqs" 
+                    className="vida-header__mobile-item"
+                    onClick={toggleMobileMenu}
+                  >
+                    FAQs
+                  </Link>
+                </div>
+              </div>
+
+              {/* My Account Section */}
+              <div className="vida-header__mobile-section">
+                <div className="vida-header__mobile-section-header static">
+                  MY ACCOUNT
+                </div>
+                <div className="vida-header__mobile-section-content open">
+                  <Link 
+                    to="/login" 
+                    className="vida-header__mobile-item"
+                    onClick={toggleMobileMenu}
+                  >
+                    Login
+                  </Link>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="vida-header__mobile-actions">
+                <Button
+                  label="Test Ride"
+                  variant="primary"
+                  size="m"
+                  prominence="light"
+                  visibility="off"
+                  onClick={() => window.location.href = '/test-ride'}
+                  className="vida-header__mobile-test-ride-button"
+                />
+                <Button
+                  label="Buy Now"
+                  variant="primary"
+                  size="m"
+                  prominence="dark"
+                  visibility="off"
+                  onClick={() => window.location.href = '/buy-now'}
+                  className="vida-header__mobile-buy-now-button"
+                />
+              </div>
+
+              {/* Footer Links */}
+              <div className="vida-header__mobile-footer">
+                <Link 
+                  to="/terms-of-service" 
+                  className="vida-header__mobile-footer-link"
+                  onClick={toggleMobileMenu}
+                >
+                  Terms of Service
+                </Link>
+                <Link 
+                  to="/privacy-policy" 
+                  className="vida-header__mobile-footer-link"
+                  onClick={toggleMobileMenu}
+                >
+                  Privacy Policy
+                </Link>
+              </div>
+            </div>
           </div>
         )}
       </div>
