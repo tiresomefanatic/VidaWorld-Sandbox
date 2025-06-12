@@ -579,36 +579,6 @@
     padding-top: 24px;
   }
 
-  &__mobile-test-ride-button {
-    width: 100% !important;
-    background-color: #FF5310 !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 24px !important;
-    padding: 14px 24px !important;
-    font-size: 16px !important;
-    font-weight: 500 !important;
-    
-    &:hover {
-      background-color: #E04409 !important;
-    }
-  }
-
-  &__mobile-buy-now-button {
-    width: 100% !important;
-    background-color: #000000 !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 24px !important;
-    padding: 14px 24px !important;
-    font-size: 16px !important;
-    font-weight: 500 !important;
-    
-    &:hover {
-      background-color: #333333 !important;
-    }
-  }
-
   // Footer links
   &__mobile-footer {
     display: flex;
@@ -656,7 +626,7 @@
   }
 
   &__top-link {
-    color: #3F3D3D; // Updated color as requested
+    color: #3F3D3D;
     @include body-m-regular;
     text-decoration: none;
     font-size: 16px;
@@ -666,27 +636,6 @@
     
     &:hover {
       color: #FF5310;
-    }
-  }
-
-  &__buy-now-button {
-    background-color: #000000 !important;
-    color: #ffffff !important;
-    border: none !important;
-    border-radius: 20px !important;
-    padding: 8px 20px !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    min-width: auto !important;
-    height: auto !important;
-    
-    &:hover {
-      background-color: #333333 !important;
-      color: #ffffff !important;
-    }
-    
-    &:active {
-      background-color: #000000 !important;
     }
   }
 }

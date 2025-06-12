@@ -14,14 +14,28 @@
 // 6. Icon visibility → Button icon visibility
 
 // =============================
+// Button Roundness Mixin
+// =============================
+@mixin button-roundness($roundness) {
+  @if $roundness == 'circle' {
+    border-radius: $radius-circle; // 50px
+  } @else if $roundness == 'large' {
+    border-radius: $radius-s; // 8px
+  } @else if $roundness == 'small' {
+    border-radius: $radius-xs; // 4px
+  } @else if $roundness == 'off' {
+    border-radius: $radius-0; // 0px
+  }
+}
+
+// =============================
 // Button Base Styles
 // =============================
 @mixin button-base {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: $radius-s; // Dependency: radius → button border-radius
-
+  // Note: border-radius is now handled by button-roundness mixin
   cursor: pointer;
   transition: all 0.2s ease;
   gap: $space-s; // Dependency: spacing → button item spacing

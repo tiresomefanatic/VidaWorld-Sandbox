@@ -14,6 +14,23 @@ $font-family-brand-sans-serif: "PP Neue Montreal";
     color: inherit; // Inherit color from button styles
   }
 
+  // Roundness Variations
+  &--roundness-circle {
+    @include button-roundness('circle');
+  }
+
+  &--roundness-large {
+    @include button-roundness('large');
+  }
+
+  &--roundness-small {
+    @include button-roundness('small');
+  }
+
+  &--roundness-off {
+    @include button-roundness('off');
+  }
+
   // Size Variations
   &--s {
     @include button-size('s');
