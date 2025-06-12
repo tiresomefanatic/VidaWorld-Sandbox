@@ -43,14 +43,6 @@ const ButtonsShowcase = () => {
       </section>
       
       <section className="buttons-showcase__section">
-        <h3>Semantic Typography</h3>
-        <div className="buttons-showcase__examples">
-          <Button label="Desktop" semanticTypography="desktop" />
-          <Button label="Mobile" semanticTypography="mobile" />
-        </div>
-      </section>
-      
-      <section className="buttons-showcase__section">
         <h3>Visibility</h3>
         <div className="buttons-showcase__examples">
           <Button label="Left Icon Visible" visibility="left" customIcon={<IconPlaceholder />} />
