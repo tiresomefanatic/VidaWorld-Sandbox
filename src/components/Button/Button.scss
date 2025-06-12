@@ -1,7 +1,7 @@
 @import '../../styles/PrimitiveTokens.scss';
 @import '../../styles/SemanticTokens.scss';
-@import '../../styles/typography-mixins.scss';
-@import '../../styles/button-mixins.scss';
+@import '../../styles/mixins/typography.scss';
+@import '../../styles/mixins/button.scss';
 
 // Define missing variables
 $font-family-brand-sans-serif: "PP Neue Montreal";
@@ -166,15 +166,6 @@ $font-family-brand-sans-serif: "PP Neue Montreal";
     }
   }
 
-  // Typography Variations
-  &--semantic-desktop {
-    @include button-typography('desktop');
-  }
-
-  &--semantic-mobile {
-    @include button-typography('mobile');
-  }
-
   // Visibility Variations
   &--visibility--left {
     @include icon-visibility('left');
@@ -213,18 +204,15 @@ $font-family-brand-sans-serif: "PP Neue Montreal";
 @media (max-width: $breakpoint-m) {
   .button {
     &--s {
-      font-size: $font-size-100;
-      line-height: $line-height-200;
+      @include body-s-regular;
     }
 
     &--m {
-      font-size: $font-size-200;
-      line-height: $line-height-300;
+      @include body-s-regular;
     }
 
     &--l {
-      font-size: $font-size-300;
-      line-height: $line-height-400;
+      @include body-m-regular;
     }
   }
 } 

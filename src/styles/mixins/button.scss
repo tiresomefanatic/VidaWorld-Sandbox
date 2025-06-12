@@ -1,0 +1,313 @@
+@import '../PrimitiveTokens.scss';
+@import '../SemanticTokens.scss';
+@import './typography.scss';
+
+// =============================
+// Button Mixins
+// =============================
+// This file follows the dependency chain:
+// 1. Primitive colors → Semantic colors → Variants → States → Prominence → Button background fill
+// 2. Primitive colors → Semantic colors → Variants → States → Prominence → Button text fill
+// 3. Spacing → Size → Button padding
+// 4. Radius → Button border-radius
+// 5. Spacing → Button item spacing
+// 6. Icon visibility → Button icon visibility
+
+// =============================
+// Button Roundness Mixin
+// =============================
+@mixin button-roundness($roundness) {
+  @if $roundness == 'circle' {
+    border-radius: $radius-circle; // 50px
+  } @else if $roundness == 'large' {
+    border-radius: $radius-s; // 8px
+  } @else if $roundness == 'small' {
+    border-radius: $radius-xs; // 4px
+  } @else if $roundness == 'off' {
+    border-radius: $radius-0; // 0px
+  }
+}
+
+// =============================
+// Button Base Styles
+// =============================
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  // Note: border-radius is now handled by button-roundness mixin
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: $space-s; // Dependency: spacing → button item spacing
+  font-family: $font-family-brand-sans-serif;
+}
+
+// =============================
+// Size Mixins - Dependency: spacing → size → button padding
+// =============================
+@mixin button-size($size) {
+  @if $size == 's' {
+    padding: $space-s $space-m;
+    @include label-xs-semibold;
+  } @else if $size == 'm' {
+    padding: $space-m $space-l;
+    @include label-s-semibold;
+  } @else if $size == 'l' {
+    padding: $space-l $space-xl;
+    @include label-m-semibold;
+  }
+}
+
+// =============================
+// Button State Mixin - Reusable state styling across variants and prominence levels
+// =============================
+@mixin button-state($variant, $prominence, $state, $bg-color, $text-color, $hover-bg, $hover-text, $pressed-bg, $pressed-text) {
+  @if $state == 'default' {
+    background-color: $bg-color;
+    color: $text-color;
+  } @else if $state == 'hover' {
+    background-color: $hover-bg;
+    color: $hover-text;
+  } @else if $state == 'pressed' {
+    background-color: $pressed-bg;
+    color: $pressed-text;
+  }
+  
+  // Link prominence special styling
+  @if $prominence == 'link' {
+    background-color: if($state == 'default', $background-transparent, $background-transparent50);
+    padding: 0;
+    text-decoration: underline;
+  }
+}
+
+// =============================
+// Variant + State + Prominence Mixins - Dependencies:
+// 1. Primitive colors → Semantic colors → Variants → States → Prominence → Button background fill
+// 2. Primitive colors → Semantic colors → Variants → States → Prominence → Button text fill
+// =============================
+
+// Dynamic mixin for handling variant, state, and prominence
+@mixin button-style($variant, $prominence, $state: 'default') {
+  // Primary Variant
+  @if $variant == 'primary' {
+    @if $prominence == 'light' {
+      @include button-state(
+        $variant, 
+        $prominence, 
+        $state,
+        $background-tertiary,
+        $content-brand,
+        $background-tertiaryhover,
+        $content-brand,
+        $background-tertiarypressed,
+        $content-brand
+      );
+    } @else if $prominence == 'dark' {
+      @include button-state(
+        $variant, 
+        $prominence, 
+        $state,
+        $background-brand,
+        $content-primary-inverse,
+        $background-brand-hover,
+        $content-primary-inverse,
+        $background-brand-pressed,
+        $content-primary-inverse
+      );
+    } @else if $prominence == 'link' {
+      @include button-state(
+        $variant, 
+        $prominence, 
+        $state,
+        $background-transparent,
+        $content-brand,
+        $background-transparent50,
+        $content-brand,
+        $background-transparent50,
+        $content-brand
+      );
+    }
+  } 
+  // Secondary Variant
+  @else if $variant == 'secondary' {
+    @if $prominence == 'light' {
+      @include button-state(
+        $variant, 
+        $prominence, 
+        $state,
+        $background-secondary,
+        $content-secondary,
+        $background-secondary50,
+        $content-primary-inverse,
+        $background-primaryinverse,
+        $content-primary-inverse
+      );
+    } @else if $prominence == 'dark' {
+      @include button-state(
+        $variant, 
+        $prominence, 
+        $state,
+        $background-primaryinverse,
+        $content-primary-inverse,
+        $background-secondary50,
+        $content-primary-inverse,
+        $background-primaryinverse,
+        $content-primary-inverse
+      );
+    } @else if $prominence == 'link' {
+      @include button-state(
+        $variant, 
+        $prominence, 
+        $state,
+        $background-transparent,
+        $content-secondary,
+        $background-transparent50,
+        $content-primary,
+        $background-transparent50,
+        $content-primary
+      );
+    }
+  } 
+  // Tertiary Variant
+  @else if $variant == 'tertiary' {
+    @if $prominence == 'light' {
+      @include button-state(
+        $variant, 
+        $prominence, 
+        $state,
+        $background-transparent,
+        $content-secondary,
+        $background-transparent,
+        $content-primary,
+        $background-transparent,
+        $content-primary
+      );
+    } @else if $prominence == 'dark' {
+      @include button-state(
+        $variant, 
+        $prominence, 
+        $state,
+        $background-transparent,
+        $content-secondary,
+        $background-transparent50,
+        $content-secondary,
+        $background-transparent,
+        $content-secondary
+      );
+    } @else if $prominence == 'link' {
+      @include button-state(
+        $variant, 
+        $prominence, 
+        $state,
+        $background-transparent,
+        $content-secondary,
+        $background-transparent50,
+        $content-primary,
+        $background-transparent50,
+        $content-primary
+      );
+    }
+  } 
+  // Destructive Variant
+  @else if $variant == 'destructive' {
+    @if $prominence == 'light' {
+      @include button-state(
+        $variant, 
+        $prominence, 
+        $state,
+        $background-negative-subtle,
+        $content-negative,
+        $background-negative-subtle-hover,
+        $content-negative-bold,
+        $background-negative-subtle-pressed,
+        $content-negative-bold
+      );
+    } @else if $prominence == 'dark' {
+      @include button-state(
+        $variant, 
+        $prominence, 
+        $state,
+        $background-negative,
+        $content-primary-inverse,
+        $background-negative-hover,
+        $content-primary-inverse,
+        $background-negative-pressed,
+        $content-primary-inverse
+      );
+    } @else if $prominence == 'link' {
+      @include button-state(
+        $variant, 
+        $prominence, 
+        $state,
+        $background-transparent,
+        $content-negative,
+        $background-transparent50,
+        $content-negative-bold,
+        $background-transparent50,
+        $content-negative-bold
+      );
+    }
+  }
+}
+
+// =============================
+// Disabled State Mixin
+// =============================
+@mixin button-disabled($disabled) {
+  @if $disabled == true {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+// =============================
+// Icon Visibility Mixins - Dependency: Icon visibility → button icon visibility
+// =============================
+@mixin icon-visibility($visibility) {
+  @if $visibility == 'left' {
+    .button__icon--left {
+      display: flex;
+    }
+    .button__icon--right {
+      display: none;
+    }
+    padding-right: $space-s;
+  } @else if $visibility == 'right' {
+    .button__icon--left {
+      display: none;
+    }
+    .button__icon--right {
+      display: flex;
+    }
+    padding-left: $space-s;
+  } @else if $visibility == 'off' {
+    .button__icon--left, 
+    .button__icon--right {
+      display: none;
+    }
+  }
+}
+
+// =============================
+// Icon Styling
+// =============================
+@mixin button-icon($size) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    color: inherit;
+    @if $size == 's' {
+      width: $font-size-200;
+      height: $font-size-200;
+    } @else if $size == 'm' {
+      width: $font-size-300;
+      height: $font-size-300;
+    } @else if $size == 'l' {
+      width: $font-size-400;
+      height: $font-size-400;
+    }
+  }
+} 

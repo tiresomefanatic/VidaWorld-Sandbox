@@ -10,15 +10,13 @@ const Button = (props) => {
   const {
     label = "Reserve",
     prominence = "dark", // light or dark
-    size = "l",
+    size = "m",
     state = "default",
     disabled = false,
     customIcon = null,
-    semanticTypography = "desktop",
-    // Visibility controls the position of the icon: left, right, or off (no icon)
     visibility = "left",
-    variant = "primary", // primary, secondary, tertiary, destructive
-    roundness = "large", // circle, large, small, off
+    variant = "secondary", // primary, secondary, tertiary, destructive
+    roundness = "circle", // circle, large, small, off
     onClick,
     className = ""
   } = props.config || props;
@@ -43,7 +41,7 @@ const Button = (props) => {
 
   return (
     <button
-      className={`button button--${prominence} button--${size} button--semantic-${semanticTypography} button--roundness-${roundness} icon--visibility-${visibility} button--variant-${variant} ${getStateClass()} ${className} ${
+      className={`button button--${prominence} button--${size} button--roundness-${roundness} icon--visibility-${visibility} button--variant-${variant} ${getStateClass()} ${className} ${
         showLeftIcon ? "button--icon-left" : ""
       } ${showRightIcon ? "button--icon-right" : ""}`}
       disabled={disabled}
@@ -87,8 +85,6 @@ Button.propTypes = {
   state: PropTypes.oneOf(["default", "hover", "pressed"]),
   disabled: PropTypes.bool,
   customIcon: PropTypes.element,
-  semanticTypography: PropTypes.oneOf(["desktop", "mobile"]),
-  // Visibility controls the position of icons
   visibility: PropTypes.oneOf(["left", "right", "off"]),
   variant: PropTypes.oneOf(["primary", "secondary", "tertiary", "destructive"]),
   roundness: PropTypes.oneOf(["circle", "large", "small", "off"]),
