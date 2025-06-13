@@ -1,5 +1,9 @@
 @import '../PrimitiveTokens.scss';
 
+@mixin brand-font {
+  font-family: 'PP Neue Montreal', sans-serif;
+}
+
 // Responsive breakpoints reference
 @mixin respond-to($breakpoint) {
   @if $breakpoint == 'mobile' {
@@ -291,27 +295,27 @@
 
 /* Label-XS-Medium */
 @mixin label-xs-medium {
-  font-size: $font-size-100;
+  font-size: $font-size-200;
   font-weight: $font-weight-medium;
-  line-height: $line-height-100;
+  line-height: $line-height-200;
   letter-spacing: $letter-spacing-xxl;
   
   @include respond-to($breakpoint-s) {
-    font-size: $font-size-50;
-    line-height: $line-height-100;
+    font-size: $font-size-200;
+    line-height: $line-height-200;
   }
 }
 
 /* Label-XS-Semibold */
 @mixin label-xs-semibold {
-  font-size: $font-size-100;
+  font-size: $font-size-200;
   font-weight: $font-weight-semibold;
-  line-height: $line-height-100;
+  line-height: $line-height-200;
   letter-spacing: $letter-spacing-xxl;
   
   @include respond-to($breakpoint-s) {
-    font-size: $font-size-50;
-    line-height: $line-height-100;
+    font-size: $font-size-200;
+    line-height: $line-height-200;
   }
 }
 
@@ -501,26 +505,26 @@
 
 /* Link-Small-Link-Text-Medium */
 @mixin link-small-link-text-medium {
-  font-size: $font-size-200;
+  font-size: $font-size-50;
   font-weight: $font-weight-medium;
   line-height: $line-height-200;
   letter-spacing: $letter-spacing-xxl;
   
   @include respond-to($breakpoint-s) {
-    font-size: $font-size-100;
+    font-size: $font-size-50;
     line-height: $line-height-200;
   }
 }
 
 /* Link-Small-Link-Text-Semibold */
 @mixin link-small-link-text-semibold {
-  font-size: $font-size-200;
+  font-size: $font-size-50;
   font-weight: $font-weight-semibold;
   line-height: $line-height-200;
   letter-spacing: $letter-spacing-xxl;
   
   @include respond-to($breakpoint-s) {
-    font-size: $font-size-100;
+    font-size: $font-size-50;
     line-height: $line-height-200;
   }
 } 

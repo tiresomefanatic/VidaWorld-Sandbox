@@ -32,7 +32,7 @@
  $background-negative-pressed: $red-700;
  $background-negative-subtle-hover: $red-200;
  $background-negative-subtle-pressed: $red-300;
- $background-secondary-hover: $neutral-300;
+ $background-secondary-hover: $neutral-250;
  $background-secondary-pressed: $neutral-400;
 
  /* Border  */
@@ -41,6 +41,8 @@
  $border-tertiary: $neutral-200;
  $border-disabled: $neutral-300;
  $border-inverse: $neutral-50;
+ $border-inverse-hover: $neutral-100;
+ $border-inverse-secondary: $neutral-150;
  $border-brand: $brand-500;
  $border-brand-hover: $brand-600;
  $border-brand-pressed: $brand-700;
@@ -55,13 +57,15 @@
  $border-brandlight-pressed: $brand-300;
  
   /* Surface  */ 
-$surface-l0: $neutral-50;
-$surface-l1: $neutral-50;
-$surface-l2: $neutral-50;
-$surface-l3: $neutral-50;
-$surface-l4: $neutral-50;
-$surface-l5: $neutral-50;
-$surface-l6: $neutral-50;
+$surface-neutral-light: $neutral-50;
+$surface-highlight-light: $yellow-100;
+$surface-accent-light: $brand-100;
+$surface-neutral-strong: $neutral-100;
+$surface-highlight-strong: $yellow-200;
+$surface-accent-strong: $brand-200;
+$surface-neutral-dark: $neutral-700;
+$surface-highlight-dark: $yellow-400;
+$surface-accent-dark: $brand-400;
 
  /* Overlay  */ 
  $overlay-50: $transparent-black-50;
@@ -77,6 +81,7 @@ $content-tertiary-inverse: $neutral-400;
 $content-disabled: $neutral-400;
 $content-brand: $brand-500;
 $content-link: $brand-500;
+$content-link-dark: $neutral-900;
 $content-link-hover: $brand-600;
 $content-link-pressed: $brand-700;
 $content-notice: $yellow-400;
