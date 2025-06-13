@@ -153,6 +153,7 @@ $transparent-white-0: #FFFFFF00;
  $radius-s: 8px;
  $radius-m: 12px;
  $radius-l: 16px;
+ $radius-xl: 20px;
  $radius-pill: 999px;
  $radius-circle: 50px;
  $radius-xxs: 2px;
@@ -173,27 +174,41 @@ $width-m: 2px;
  $breakpoint-xl: 1440px;
 
  /***************SPACE***************/
-$space-2xl: 32px;
-$space-m: 12px;
-$space-2xs: 4px;
-$space-12xl: 112px;
-$space-4xl: 48px;
-$space-6xl: 64px;
-$space-11xl: 104px;
-$space-9xl: 88px;
-$space-8xl: 80px;
-$space-l: 16px;
-$space-s: 8px;
+
 $space-3xs: 2px;
-$space-xl: 24px;
-$space-7xl: 72px;
-$space-10xl: 96px;
-$space-3xl: 40px;
-$space-5xl: 56px;
+$space-2xs: 4px;
 $space-xs: 6px;
-$space-15xl: 134px;
+$space-s: 8px;
+$space-m: 10px;
+$space-l: 12px;
+$space-xl: 14px;
+$space-2xl: 16px;
+$space-3xl: 18px;
+$space-4xl: 20px;
+$space-5xl: 24px;
+$space-6xl: 32px;
+$space-7xl: 40px;
+$space-8xl: 48px;
+$space-9xl: 56px;
+$space-10xl: 60px;
+$space-11xl: 64px;
+$space-12xl: 72px;
+$space-13xl: 80px;
+$space-14xl: 88px;
+$space-15xl: 96px;
+$space-16xl: 104px;
+$space-17xl: 112px;
+$space-18xl: 134px;
 $space-20xl: 174px;
 $space-25xl: 214px;
+$space-35xl: 288px;
 $space-50xl: 414px;
 $space-37xl: 310px;
+
+
+
+
+
+
+
 

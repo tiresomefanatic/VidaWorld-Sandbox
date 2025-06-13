@@ -1,5 +1,5 @@
-@import '../../styles/tokens.scss';
-@import '../../styles/mixins.scss';
+@import '../../styles/PrimitiveTokens.scss';
+@import '../../styles/SemanticTokens.scss';
 @import '../../styles/typography-mixins.scss';
 
 // Header component styles based on Figma design
@@ -9,7 +9,7 @@
   left: 0;
   width: 100%;
   z-index: 1000 !important;
-  background-color: #ffffff;
+  background-color: $background-primary;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(25px);
   height: 64px; // Explicitly define header height
@@ -17,10 +17,10 @@
   &__container {
     display: flex;
     width: 100%;
-    max-width: 1440px;
+    max-width: $breakpoint-xl;
     height: 64px;
     margin: 0 auto;
-    padding: 8px 88px;
+    padding: $space-s $space-14xl;
     align-items: center;
     justify-content: space-between;
   }
@@ -54,7 +54,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 40px;
+    gap: $space-7xl;
   }
   
   &__nav-item {
@@ -66,17 +66,17 @@
       // Show active style on hover
       &:hover {
         .vida-header__nav-link {
-          color: #FF5310;
+          color: $content-link;
         }
       }
     }
   }
   
   &__nav-link {
-    color: #000000;
+    color: $content-link-dark;
     @include body-m-regular;
     text-decoration: none;
-    padding: 8px 4px;
+    padding: $space-s $space-2xs;
     display: inline-flex;
     align-items: center;
     background: none;
@@ -84,7 +84,7 @@
     cursor: pointer;
     
     &:hover {
-      color: #FF5310; // Vida brand orange from Figma
+      color: $content-link; // Vida brand orange from Figma
       
       .chevron-down {
         transform: rotate(180deg);
@@ -92,7 +92,7 @@
     }
     
     .chevron-down {
-      margin-left: 4px;
+      margin-left: $space-2xs;
       transition: transform 0.2s ease;
     }
   }
@@ -110,28 +110,28 @@
   &__cta-button {
     display: inline-block;
     background: none;
-    color: #000000;
+    color: $content-link-dark;
     @include body-m-regular;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: $space-s $space-2xl;
+    border-radius: $radius-xs;
     text-decoration: none;
     transition: background-color 0.2s, color 0.2s;
-    border: 1px solid #DDDDDD;
+    border: $width-xs solid $border-tertiary;
     
     &:hover {
-      background-color: #FF5310;
-      color: white;
-      border-color: #FF5310;
+      background-color: $background-brand;
+      color: $content-primary-inverse;
+      border-color: $border-brand;
     }
   }
   
   // Vehicles dropdown menu - three container structure from Figma
   &__dropdown {
     position: fixed;
-    top: 64px; // Height of the header
+    top: $space-11xl; // Height of the header
     left: 0;
     width: 100%;
-    background-color: white;
+    background-color: $background-primary;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 999;
     height: 0;
@@ -139,7 +139,7 @@
     transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
     &.show {
-      height: 288px; // Outer container height (Rectangle 34626646)
+      height: $space-35xl; // Outer container height (Rectangle 34626646)
     }
 
     // Products dropdown - three container structure
@@ -150,11 +150,11 @@
         width: 100%;
         height: 100%;
         margin: 0;
-        padding: 10px; // 10px padding between outer and inner container
+        padding: $space-m; // 10px padding between outer and inner container
         align-items: center;
         justify-content: center;
-        background-color: white;
-        border-radius: 0 0 20px 20px; // Bottom corners only
+        background-color: $background-primary;
+        border-radius: 0 0 $space-4xl $space-4xl; // Bottom corners only
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20); // Drop shadow
         box-sizing: border-box;
       }
@@ -167,10 +167,10 @@
         align-items: center;
         width: 100%; // Take full width of outer container
         height: 100%; // Take full height of outer container
-        background-color: #F9F5EE; // Correct background color from Figma
-        border-radius: 0 0 8px 8px; // Bottom corners only
-        padding: 20px; // Internal padding for content
-        gap: 61px; // Gap between individual products from Figma
+        background-color: $surface-highlight-light; // Correct background color from Figma
+        border-radius: 0 0 $space-s $space-s; // Bottom corners only
+        padding: $space-4xl; // Internal padding for content
+        gap: $space-10xl; // Gap between individual products from Figma
         box-sizing: border-box;
       }
     }
@@ -178,7 +178,7 @@
     // Special styling for explore dropdown
     &.explore-dropdown {
       &.show {
-        height: 287px; // Height from Figma design
+        height: $space-35xl; // Height from Figma design
       }
 
       // Outer container - similar structure to products dropdown
@@ -190,8 +190,8 @@
         padding: 10px; // 10px padding between outer and inner container
         align-items: center;
         justify-content: center;
-        background-color: white;
-        border-radius: 0 0 20px 20px; // Bottom corners only
+        background-color: $background-primary;
+        border-radius: 0 0 $space-4xl $space-4xl; // Bottom corners only
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20); // Drop shadow
         box-sizing: border-box;
       }
@@ -206,9 +206,9 @@
         max-width: 1200px; // Max width constraint
         height: 100%; // Take full height of outer container
         background-color: white; // Inner container background
-        border-radius: 0 0 8px 8px; // Bottom corners only
-        padding: 42px; // 42px padding as specified
-        gap: 48px; // Gap between grid and right sidebar
+        border-radius: 0 0 $space-s $space-s; // Bottom corners only
+        padding: $space-7xl; // 42px padding as specified
+        gap: $space-8xl; // Gap between grid and right sidebar
         box-sizing: border-box;
       }
 
@@ -217,7 +217,7 @@
         display: grid;
         grid-template-columns: repeat(3, 240px);
         grid-template-rows: repeat(3, auto);
-        gap: 16px 54px;
+        gap: $space-2xl $space-9xl;
         width: 828px; // Total width from Figma
         flex-shrink: 0; // Prevent shrinking
         
@@ -239,8 +239,8 @@
         justify-content: flex-start;
         height: auto;
         width: 240px;
-        padding: 8px;
-        gap: 4px;
+        padding: $space-s;
+        gap: $space-2xs;
         background: none;
         border: none;
         
@@ -249,28 +249,24 @@
           background: none;
           
           .vida-header__vehicle-name {
-            color: #FF5310;
+            color: $content-brand;
           }
         }
 
         .vida-header__vehicle-name {
           position: static;
-          color: #000000;
-          font-family: "PP Neue Montreal", sans-serif;
-          font-size: 16px;
-          font-weight: 530;
-          line-height: 19.2px;
+          color: $content-primary;
+          @include brand-font;
+          @include label-s-medium;
           text-align: left;
           width: 100%;
-          margin-bottom: 4px;
+          margin-bottom: $space-2xs;
         }
 
         .vida-header__vehicle-description {
           color: #424549;
-          font-family: "PP Neue Montreal", sans-serif;
-          font-size: 14px;
-          font-weight: 450;
-          line-height: 16.8px;
+          @include brand-font;
+          @include body-s-regular;
           text-align: left;
           width: 100%;
         }
@@ -278,9 +274,9 @@
 
       // Vertical separator line
       .vida-header__dropdown-separator {
-        width: 1px;
+        width: $width-xs;
         height: 203px;
-        background-color: #d4d4d4;
+        background-color: $background-secondary-hover;
         margin: 0;
         flex-shrink: 0; // Prevent shrinking
       }
@@ -289,7 +285,7 @@
       .vida-header__dropdown-right-nav {
         display: flex;
         flex-direction: column;
-        gap: 16px;
+        gap: $space-2xl;
         width: 85px; // Width from Figma
         padding-top: 0;
         flex-shrink: 0; // Prevent shrinking
@@ -297,16 +293,13 @@
 
       .vida-header__dropdown-nav-item {
         color: #5C5A5A; // Grey color from Figma
-        font-family: "PP Neue Montreal", sans-serif;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 20px;
-        letter-spacing: 0.25px;
+        @include brand-font;
+        @include label-s-medium;
         text-decoration: none;
         text-align: left;
         
         &:hover {
-          color: #FF5310;
+          color: $content-brand;
         }
       }
     }
@@ -335,7 +328,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 12px;
+    margin-bottom: $space-l;
     
     img {
       max-width: 100%;
@@ -345,7 +338,8 @@
   }
   
   &__vehicle-name {
-    color: #000000; // Text color from Figma
+    color: $content-primary; // Text color from Figma
+    @include brand-font;
     @include body-m-regular;
     text-align: center;
     position: absolute;
@@ -357,7 +351,7 @@
   &__mobile-nav {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: $space-2xl;
     
     @include respond-to('tablet') {
       display: none;
@@ -367,7 +361,7 @@
   &__mobile-menu-button {
     background: none;
     border: none;
-    padding: 8px;
+    padding: $space-s;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -384,8 +378,8 @@
       position: absolute;
       height: 2px;
       width: 100%;
-      background: #000000;
-      border-radius: 2px;
+      background: $background-primaryinverse;
+      border-radius: $radius-xxs;
       opacity: 1;
       left: 0;
       transform: rotate(0deg);
@@ -396,18 +390,18 @@
       }
       
       &:nth-child(2), &:nth-child(3) {
-        top: 8px;
+        top: $space-s;
       }
       
       &:nth-child(4) {
-        top: 16px;
+        top: $space-2xl;
       }
     }
     
     &.open {
       span {
         &:nth-child(1) {
-          top: 8px;
+          top: $space-s;
           width: 0%;
           left: 50%;
         }
@@ -421,7 +415,7 @@
         }
         
         &:nth-child(4) {
-          top: 8px;
+          top: $space-s;
           width: 0%;
           left: 50%;
         }
@@ -436,7 +430,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: white;
+    background-color: $background-primary;
     z-index: 999;
     overflow-y: auto;
     transform: translateX(-100%);
@@ -452,8 +446,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 24px;
-    border-bottom: 1px solid #E5E5E5;
+    padding: $space-2xl $space-5xl;
+    border-bottom: $width-xs solid $border-inverse-secondary;
     height: 64px;
     box-sizing: border-box;
   }
@@ -471,9 +465,9 @@
     background: none;
     border: none;
     font-size: 24px;
-    color: #000000;
+    color: $content-primary;
     cursor: pointer;
-    padding: 8px;
+    padding: $space-s;
     line-height: 1;
     
     &:hover {
@@ -486,14 +480,14 @@
     padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    min-height: calc(100vh - 64px);
+    gap: $space-5xl;
+    min-height: calc(100vh - $space-11xl);
   }
 
   // Mobile sections (PRODUCTS, EXPLORE, MY ACCOUNT)
   &__mobile-section {
-    border-bottom: 1px solid #E5E5E5;
-    padding-bottom: 16px;
+    border-bottom: $width-xs solid $border-inverse-secondary;
+    padding-bottom: $space-2xl;
     
     &:last-of-type {
       border-bottom: none;
@@ -501,17 +495,15 @@
   }
 
   &__mobile-section-header {
-    font-family: "PP Neue Montreal", sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 16.8px;
+    @include brand-font;
+    @include label-xs-semibold;
     letter-spacing: 0.5px;
     color: #5C5A5A;
     text-transform: uppercase;
     background: none;
     border: none;
     padding: 0;
-    margin-bottom: 16px;
+    margin-bottom: $space-2xl;
     text-align: left;
     width: 100%;
     cursor: pointer;
@@ -521,7 +513,7 @@
     }
     
     &:hover {
-      color: #FF5310;
+      color: $content-brand;
     }
   }
 
@@ -540,32 +532,29 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #000000;
-    font-family: "PP Neue Montreal", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 19.2px;
+    color: $content-primary;
+    @include brand-font;
+    @include body-m-semibold;
     text-decoration: none;
-    padding: 12px 0;
-    border-bottom: 1px solid #F5F5F5;
+    padding: $space-l 0;
+    border-bottom: $width-xs solid $border-inverse-hover;
     
     &:last-child {
       border-bottom: none;
     }
     
     &:hover {
-      color: #FF5310;
+      color: $content-brand;
     }
   }
 
   // New badge for VX2 Series
   &__mobile-badge {
-    background-color: #4CAF50;
-    color: white;
-    font-size: 10px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 12px;
+    background-color: $green-600;
+    color: $content-primary-inverse;
+    @include link-small-link-text-semibold;
+    padding: $space-3xs $space-s;
+    border-radius: $radius-m;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
@@ -574,31 +563,29 @@
   &__mobile-actions {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: $space-l;
     margin-top: auto;
-    padding-top: 24px;
+    padding-top: $space-5xl;
   }
 
   // Footer links
   &__mobile-footer {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding-top: 24px;
-    border-top: 1px solid #E5E5E5;
+    gap: $space-2xl;
+    padding-top: $space-5xl;
+    border-top: $width-xs solid $border-inverse-secondary;
     margin-top: auto;
   }
 
   &__mobile-footer-link {
-    color: #5C5A5A;
-    font-family: "PP Neue Montreal", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16.8px;
+    color: $content-tertiary;
+    @include brand-font;
+    @include body-s-regular;
     text-decoration: none;
     
     &:hover {
-      color: #FF5310;
+      color: $content-link;
     }
   }
 
@@ -609,7 +596,7 @@
 
   &__mobile-nav-button-component {
     width: 100%;
-    margin: 8px 0;
+    margin: $space-s 0;
     
     // Override button component styles if needed for mobile
   }
@@ -621,21 +608,17 @@
     @include respond-to('tablet') {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: $space-5xl;
     }
   }
 
   &__top-link {
-    color: #3F3D3D;
-    @include body-m-regular;
+    color: $content-secondary;
+    @include label-s-medium;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0.25px;
-    line-height: 20px;
     
     &:hover {
-      color: #FF5310;
+      color: $content-link;
     }
   }
 }

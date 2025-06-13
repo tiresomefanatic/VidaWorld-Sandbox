@@ -39,7 +39,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   gap: $space-s; // Dependency: spacing → button item spacing
-  font-family: $font-family-brand-sans-serif;
+  @include brand-font;
 }
 
 // =============================
