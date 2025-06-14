@@ -2,13 +2,6 @@
 @import '../../styles/SemanticTokens.scss';
 @import '../../styles/mixins/typography.scss';
 
-a:link,
-a:visited,
-a:hover,
-a:active {
-  text-decoration: none; 
-  font-weight: $font-weight-semibold;
-}
 
 // Header component styles
 .vida-header {
