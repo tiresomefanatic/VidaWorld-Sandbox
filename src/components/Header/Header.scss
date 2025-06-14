@@ -2,7 +2,8 @@
 @import '../../styles/SemanticTokens.scss';
 @import '../../styles/mixins/typography.scss';
 
-// Header component styles based on Figma design
+
+// Header component styles
 .vida-header {
   position: fixed;
   top: 0;
@@ -166,7 +167,7 @@
         justify-content: center;
         align-items: center;
         width: 100%; // Take full width of outer container
-        height: 100%; // Take full height of outer container
+        height: $space-35xl - ($space-m * 2); // Take full height of outer container
         background-color: $surface-highlight-light; // Correct background color from Figma
         border-radius: 0 0 $space-s $space-s; // Bottom corners only
         padding: $space-4xl; // Internal padding for content
@@ -178,7 +179,7 @@
     // Special styling for explore dropdown
     &.explore-dropdown {
       &.show {
-        height: $space-35xl; // Height from Figma design
+        height: 288px; // Height from Figma design
       }
 
       // Outer container - similar structure to products dropdown
@@ -205,7 +206,7 @@
         width: auto; // Auto width to fit content
         max-width: 1200px; // Max width constraint
         height: 100%; // Take full height of outer container
-        background-color: white; // Inner container background
+        background-color: $background-primary; // Inner container background
         border-radius: 0 0 $space-s $space-s; // Bottom corners only
         padding: $space-7xl; // 42px padding as specified
         gap: $space-8xl; // Gap between grid and right sidebar
@@ -239,7 +240,7 @@
         justify-content: flex-start;
         height: auto;
         width: 240px;
-        padding: $space-s;
+        padding: $space-2xs;
         gap: $space-2xs;
         background: none;
         border: none;
@@ -264,7 +265,7 @@
         }
 
         .vida-header__vehicle-description {
-          color: #424549;
+          color: $background-secondary50;
           @include brand-font;
           @include body-s-regular;
           text-align: left;
@@ -471,7 +472,7 @@
     line-height: 1;
     
     &:hover {
-      color: #FF5310;
+      color: $content-brand;
     }
   }
 
@@ -498,7 +499,7 @@
     @include brand-font;
     @include label-xs-semibold;
     letter-spacing: 0.5px;
-    color: #5C5A5A;
+    color: $content-tertiary;
     text-transform: uppercase;
     background: none;
     border: none;
@@ -626,4 +627,12 @@
 // Utility classes
 .overflow-hidden {
   overflow: hidden;
+}
+
+.vida-header__vehicle-item a {
+  font-weight: inherit !important;
+}
+
+.vida-header__vehicle-name {
+  font-weight: $font-weight-medium !important;
 } 

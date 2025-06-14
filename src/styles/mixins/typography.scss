@@ -1,29 +1,10 @@
 @import '../PrimitiveTokens.scss';
+@import '../../styles/mixins/responsive.scss';
 
 @mixin brand-font {
   font-family: 'PP Neue Montreal', sans-serif;
 }
 
-// Responsive breakpoints reference
-@mixin respond-to($breakpoint) {
-  @if $breakpoint == 'mobile' {
-    @media (min-width: $breakpoint-s) {
-      @content;
-    }
-  } @else if $breakpoint == 'tablet' {
-    @media (min-width: $breakpoint-m) {
-      @content;
-    }
-  } @else if $breakpoint == 'laptop' {
-    @media (min-width: $breakpoint-l) {
-      @content;
-    }
-  } @else if $breakpoint == 'desktop' {
-    @media (min-width: $breakpoint-xl) {
-      @content;
-    }
-  }
-}
 
 /***************TYPOGRAPHY MIXINS***************/
 
@@ -36,7 +17,7 @@
   line-height: $line-height-1500;
   letter-spacing: $letter-spacing-xs;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-1200;
     line-height: $line-height-1400;
   }
@@ -49,7 +30,7 @@
   line-height: $line-height-1300;
   letter-spacing: $letter-spacing-xs;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-1000;
     line-height: $line-height-1200;
   }
@@ -62,7 +43,7 @@
   line-height: $line-height-1100;
   letter-spacing: $letter-spacing-xs;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-900;
     line-height: $line-height-900;
   }
@@ -75,7 +56,7 @@
   line-height: $line-height-1100;
   letter-spacing: $letter-spacing-m;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-800;
     line-height: $line-height-900;
   }
@@ -88,7 +69,7 @@
   line-height: $line-height-900;
   letter-spacing: $letter-spacing-m;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-600;
     line-height: $line-height-700;
   }
@@ -101,7 +82,7 @@
   line-height: $line-height-800;
   letter-spacing: $letter-spacing-xs;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-600;
     line-height: $line-height-700;
   }
@@ -114,7 +95,7 @@
   line-height: $line-height-700;
   letter-spacing: $letter-spacing-s;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-500;
     line-height: $line-height-600;
   }
@@ -127,7 +108,7 @@
   line-height: $line-height-600;
   letter-spacing: $letter-spacing-m;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-400;
     line-height: $line-height-400;
   }
@@ -140,7 +121,7 @@
   line-height: $line-height-400;
   letter-spacing: $letter-spacing-xl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-200;
     line-height: $line-height-300;
   }
@@ -153,7 +134,7 @@
   line-height: $line-height-300;
   letter-spacing: $letter-spacing-xxl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-100;
     line-height: $line-height-200;
   }
@@ -168,7 +149,7 @@
   line-height: $line-height-600;
   letter-spacing: $letter-spacing-m;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-400;
     line-height: $line-height-500;
   }
@@ -181,7 +162,7 @@
   line-height: $line-height-600;
   letter-spacing: $letter-spacing-m;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-400;
     line-height: $line-height-500;
   }
@@ -194,7 +175,7 @@
   line-height: $line-height-500;
   letter-spacing: $letter-spacing-l;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-300;
     line-height: $line-height-400;
   }
@@ -207,7 +188,7 @@
   line-height: $line-height-500;
   letter-spacing: $letter-spacing-l;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-300;
     line-height: $line-height-400;
   }
@@ -220,7 +201,7 @@
   line-height: $line-height-400;
   letter-spacing: $letter-spacing-xl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-200;
     line-height: $line-height-300;
   }
@@ -233,7 +214,7 @@
   line-height: $line-height-400;
   letter-spacing: $letter-spacing-xl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-200;
     line-height: $line-height-300;
   }
@@ -246,7 +227,7 @@
   line-height: $line-height-300;
   letter-spacing: $letter-spacing-xl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-100;
     line-height: $line-height-200;
   }
@@ -259,7 +240,7 @@
   line-height: $line-height-300;
   letter-spacing: $letter-spacing-xl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-100;
     line-height: $line-height-200;
   }
@@ -272,7 +253,7 @@
   line-height: $line-height-300;
   letter-spacing: $letter-spacing-xl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-50;
     line-height: $line-height-200;
   }
@@ -285,7 +266,7 @@
   line-height: $line-height-300;
   letter-spacing: $letter-spacing-xl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-50;
     line-height: $line-height-200;
   }
@@ -300,7 +281,7 @@
   line-height: $line-height-200;
   letter-spacing: $letter-spacing-xxl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-200;
     line-height: $line-height-200;
   }
@@ -313,7 +294,7 @@
   line-height: $line-height-200;
   letter-spacing: $letter-spacing-xxl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-200;
     line-height: $line-height-200;
   }
@@ -326,7 +307,7 @@
   line-height: $line-height-300;
   letter-spacing: $letter-spacing-xl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-200;
     line-height: $line-height-200;
   }
@@ -339,7 +320,7 @@
   line-height: $line-height-300;
   letter-spacing: $letter-spacing-xl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-200;
     line-height: $line-height-200;
   }
@@ -352,7 +333,7 @@
   line-height: $line-height-400;
   letter-spacing: $letter-spacing-m;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-300;
     line-height: $line-height-300;
   }
@@ -365,7 +346,7 @@
   line-height: $line-height-400;
   letter-spacing: $letter-spacing-m;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-300;
     line-height: $line-height-300;
   }
@@ -378,7 +359,7 @@
   line-height: $line-height-700;
   letter-spacing: $letter-spacing-m;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-500;
     line-height: $line-height-600;
   }
@@ -391,7 +372,7 @@
   line-height: $line-height-700;
   letter-spacing: $letter-spacing-m;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-500;
     line-height: $line-height-600;
   }
@@ -404,7 +385,7 @@
   line-height: $line-height-800;
   letter-spacing: $letter-spacing-s;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-600;
     line-height: $line-height-700;
   }
@@ -417,7 +398,7 @@
   line-height: $line-height-800;
   letter-spacing: $letter-spacing-s;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-600;
     line-height: $line-height-700;
   }
@@ -432,7 +413,7 @@
   line-height: $line-height-500;
   letter-spacing: $letter-spacing-m;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-400;
     line-height: $line-height-400;
   }
@@ -445,7 +426,7 @@
   line-height: $line-height-500;
   letter-spacing: $letter-spacing-m;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-400;
     line-height: $line-height-400;
   }
@@ -458,7 +439,7 @@
   line-height: $line-height-400;
   letter-spacing: $letter-spacing-l;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-300;
     line-height: $line-height-300;
   }
@@ -471,7 +452,7 @@
   line-height: $line-height-400;
   letter-spacing: $letter-spacing-l;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-300;
     line-height: $line-height-300;
   }
@@ -484,7 +465,7 @@
   line-height: $line-height-300;
   letter-spacing: $letter-spacing-xl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-200;
     line-height: $line-height-200;
   }
@@ -497,7 +478,7 @@
   line-height: $line-height-300;
   letter-spacing: $letter-spacing-xl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-200;
     line-height: $line-height-200;
   }
@@ -510,7 +491,7 @@
   line-height: $line-height-200;
   letter-spacing: $letter-spacing-xxl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-50;
     line-height: $line-height-200;
   }
@@ -523,7 +504,7 @@
   line-height: $line-height-200;
   letter-spacing: $letter-spacing-xxl;
   
-  @include respond-to($breakpoint-s) {
+  @include respond-to('mobile') {
     font-size: $font-size-50;
     line-height: $line-height-200;
   }
