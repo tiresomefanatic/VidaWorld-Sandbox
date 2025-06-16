@@ -3,8 +3,9 @@
 @import '../../styles/mixins/typography.scss';
 //@import '../../styles/mixins/responsive.scss';
 
-// Desktop styles first, in order of appearance in Header.jsx
-// Header component styles
+// ===== DESKTOP STYLES (following JSX order) =====
+
+// Main header container
 .vida-header {
   position: fixed;
   top: 0;
@@ -15,32 +16,23 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(25px);
   height: 64px; // Explicitly define header height
+  @include respond-to('desktop') {
+    border-bottom: 1px solid #DCDCDD;
+
+ 
+    
+  }
   
+  // Header container
   &__container {
     display: flex;
     width: 100%;
     max-width: $breakpoint-xl;
     height: 64px;
     margin: 0 auto;
-    padding: $space-s $space-14xl;
+    padding: $space-2xl $space-5xl;
     align-items: center;
     justify-content: space-between;
-
-    @include respond-to('desktop') {
-      border-bottom: 1px solid #DCDCDD;
-      background: #FFF;
-      backdrop-filter: blur(25px);
-    }
-    @include respond-to('tablet') {
-      padding: $space-2xl $space-5xl;
-      box-sizing: border-box;
-      height: 64px;
-    }
-    @include respond-to('mobile') {
-      padding: $space-2xl $space-5xl;
-      box-sizing: border-box;
-      height: 64px;
-    }
   }
   
   // Logo
@@ -74,6 +66,7 @@
       display: flex;
       flex: 1;
       justify-content: center;
+      
     }
   }
   
@@ -104,8 +97,13 @@
   }
   
   &__nav-link {
-    color: $content-link-dark;
-    @include body-m-regular;
+    color: var(--Text-color, #3F3D3D);
+    font-family: var(--brand-font, "PP Neue Montreal");
+    font-size: var(--Button-fontSize, 16px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: var(--Button-lineHeight, 20px);
+    letter-spacing: -0.25px;
     text-decoration: none;
     padding: $space-s $space-2xs;
     display: inline-flex;
@@ -128,35 +126,106 @@
       transition: transform 0.2s ease;
     }
   }
-
-  // CTA Button
-  &__cta-wrapper {
+  
+  // Right side buttons
+  &__right-buttons {
     display: none;
-    
-    @include respond-to('tablet') {
-      display: block;
+    @include respond-to('desktop') {
+      display: flex;
+      align-items: center;
+      gap: $space-5xl;
     }
   }
-  
-  &__cta-button {
-    display: inline-block;
-    background: none;
-    color: $content-link-dark;
-    @include body-m-regular;
-    padding: $space-s $space-2xl;
-    border-radius: $radius-xs;
+
+  &__top-link {
+    color: $content-secondary;
+    @include label-s-medium;
     text-decoration: none;
-    transition: background-color 0.2s, color 0.2s;
-    border: $width-xs solid $border-tertiary;
     
     &:hover {
-      background-color: $background-brand;
-      color: $content-primary-inverse;
-      border-color: $border-brand;
+      color: $content-link;
     }
   }
   
-  // Vehicles dropdown menu - three container structure from Figma
+  // Mobile nav (with desktop override)
+  &__mobile-nav {
+    display: flex;
+    align-items: center;
+    gap: $space-2xl;
+    @include respond-to('desktop') {
+      display: none;
+    }
+  }
+  
+  // Mobile hamburger button
+  &__mobile-menu-button {
+    background: none;
+    border: none;
+    padding: $space-s;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__hamburger {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    
+    span {
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: $background-primaryinverse;
+      border-radius: $radius-xxs;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+      
+      &:nth-child(1) {
+        top: 0px;
+      }
+      
+      &:nth-child(2), &:nth-child(3) {
+        top: $space-s;
+      }
+      
+      &:nth-child(4) {
+        top: $space-2xl;
+      }
+    }
+    
+    &.open {
+      span {
+        &:nth-child(1) {
+          top: $space-s;
+          width: 0%;
+          left: 50%;
+        }
+        
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
+        
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+        
+        &:nth-child(4) {
+          top: $space-s;
+          width: 0%;
+          left: 50%;
+        }
+      }
+    }
+  }
+  
+  // ===== DROPDOWN STYLES =====
+  
+  // Base dropdown styles
   &__dropdown {
     position: fixed;
     top: $space-11xl; // Height of the header
@@ -168,174 +237,53 @@
     height: 0;
     overflow: hidden;
     transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+
+
     
     &.show {
       height: $space-35xl; // Outer container height (Rectangle 34626646)
     }
+  }
 
-    // Products dropdown - three container structure
-    &:not(.explore-dropdown) {
-      // Outer container (Rectangle 34626646)
-      .vida-header__dropdown-content {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: $space-m; // 10px padding between outer and inner container
-        align-items: center;
-        justify-content: center;
-        background-color: $background-primary;
-        border-radius: 0 0 $space-4xl $space-4xl; // Bottom corners only
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20); // Drop shadow
-        box-sizing: border-box;
-      }
-
-      // Inner container with background (Rectangle 34626647)
-      .vida-header__dropdown-vehicles {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%; // Take full width of outer container
-        height: $space-35xl - ($space-m * 2); // Take full height of outer container
-        background-color: $surface-highlight-light; // Correct background color from Figma
-        border-radius: 0 0 $space-s $space-s; // Bottom corners only
-        padding: $space-4xl; // Internal padding for content
-        gap: $space-10xl; // Gap between individual products from Figma
-        box-sizing: border-box;
-      }
+  // Products dropdown - specific styling
+  &__dropdown:not(.explore-dropdown) {
+    // Outer container (Rectangle 34626646)
+    .vida-header__dropdown-content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0; // Remove padding from outer container
+      align-items: center;
+      justify-content: center;
+      background-color: $background-primary;
+      border-radius: 0 0 $space-4xl $space-4xl; // Bottom corners only
+      box-sizing: border-box;
     }
 
-    // Special styling for explore dropdown
-    &.explore-dropdown {
-      &.show {
-        height: 288px; // Height from Figma design
-      }
-
-      // Outer container - similar structure to products dropdown
-      .vida-header__dropdown-content {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 10px; // 10px padding between outer and inner container
-        align-items: center;
-        justify-content: center;
-        background-color: $background-primary;
-        border-radius: 0 0 $space-4xl $space-4xl; // Bottom corners only
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20); // Drop shadow
-        box-sizing: border-box;
-      }
-
-      // Inner container that holds all the content
-      .vida-header__dropdown-vehicles {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-start;
-        width: auto; // Auto width to fit content
-        max-width: 1200px; // Max width constraint
-        height: 100%; // Take full height of outer container
-        background-color: $background-primary; // Inner container background
-        border-radius: 0 0 $space-s $space-s; // Bottom corners only
-        padding: $space-7xl; // 42px padding as specified
-        gap: $space-8xl; // Gap between grid and right sidebar
-        box-sizing: border-box;
-      }
-
-      // Grid container for the text items
-      .vida-header__dropdown-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 240px);
-        grid-template-rows: repeat(3, auto);
-        gap: $space-2xl $space-9xl;
-        width: 828px; // Total width from Figma
-        flex-shrink: 0; // Prevent shrinking
-        
-        // Arrange items to match Figma layout: 3 columns, with specific order
-        .vida-header__vehicle-item:nth-child(1) { grid-area: 1 / 1; } // Service
-        .vida-header__vehicle-item:nth-child(2) { grid-area: 1 / 2; } // Extended Battery Warranty  
-        .vida-header__vehicle-item:nth-child(3) { grid-area: 2 / 2; } // Battery As A Service
-        .vida-header__vehicle-item:nth-child(4) { grid-area: 3 / 2; } // Dealers Locator
-        .vida-header__vehicle-item:nth-child(5) { grid-area: 2 / 1; } // Charging Network
-        .vida-header__vehicle-item:nth-child(6) { grid-area: 3 / 1; } // Road Side Assistance
-        .vida-header__vehicle-item:nth-child(7) { grid-area: 1 / 3; } // Savings Calculator
-        .vida-header__vehicle-item:nth-child(8) { grid-area: 2 / 3; } // Accessories
-      }
-
-      .vida-header__vehicle-item {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        height: auto;
-        width: 240px;
-        padding: $space-2xs;
-        gap: $space-2xs;
-        background: none;
-        border: none;
-        
-        &:hover {
-          transform: none;
-          background: none;
-          
-          .vida-header__vehicle-name {
-            color: $content-brand;
-          }
-        }
-
-        .vida-header__vehicle-name {
-          position: static;
-          color: $content-primary;
-          @include brand-font;
-          @include label-s-medium;
-          text-align: left;
-          width: 100%;
-          margin-bottom: $space-2xs;
-        }
-
-        .vida-header__vehicle-description {
-          color: $background-secondary50;
-          @include brand-font;
-          @include body-s-regular;
-          text-align: left;
-          width: 100%;
-        }
-      }
-
-      // Vertical separator line
-      .vida-header__dropdown-separator {
-        width: $width-xs;
-        height: 203px;
-        background-color: $background-secondary-hover;
-        margin: 0;
-        flex-shrink: 0; // Prevent shrinking
-      }
-
-      // Right navigation area
-      .vida-header__dropdown-right-nav {
-        display: flex;
-        flex-direction: column;
-        gap: $space-2xl;
-        width: 85px; // Width from Figma
-        padding-top: 0;
-        flex-shrink: 0; // Prevent shrinking
-      }
-
-      .vida-header__dropdown-nav-item {
-        color: #5C5A5A; // Grey color from Figma
-        @include brand-font;
-        @include label-s-medium;
-        text-decoration: none;
-        text-align: left;
-        
-        &:hover {
-          color: $content-brand;
-        }
-      }
+    // Inner container with background (Rectangle 34626647)
+    .vida-header__dropdown-vehicles {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: calc(100vw - 20px); // Full viewport width minus 20px (10px padding on each side)
+      height: calc($space-35xl - 10px); // Full height minus 10px bottom padding
+      background-color: $surface-highlight-light; // Correct background color from Figma
+      border-radius: 0 0 $space-s $space-s; // Bottom corners only
+      padding: $space-4xl 10px 10px 10px; // Top, right, bottom, left padding - 10px on right, bottom, left
+      gap: $space-10xl; // Gap between individual products from Figma
+      box-sizing: border-box;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: calc(-50vw + 10px); // Offset by half viewport minus 10px padding
+      margin-right: calc(-50vw + 10px); // Offset by half viewport minus 10px padding
     }
   }
   
+  // General vehicle item styling (for products dropdown)
   &__vehicle-item {
     display: flex;
     flex-direction: column;
@@ -368,6 +316,23 @@
     }
   }
   
+  // Vehicle info section
+  &__vehicle-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__vehicle-name-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    //width: 100%;
+  }
+
   &__vehicle-name {
     color: $content-primary; // Text color from Figma
     @include brand-font;
@@ -378,64 +343,275 @@
     width: 100%;
   }
 
-  // Mobile nav (desktop override included)
-  &__mobile-nav {
+  &__vehicle-badge {
+    color: var(--Background-Positive-Subtle, #CCF9DE);
+    font-family: var(--brand-font, 'PP Neue Montreal');
+    font-size: var(--Label-Label-XS-Medium-font-size, 12px);
+    font-style: normal;
+    font-weight: var(--Label-Label-S-Medium-font-weight, 500);
+    line-height: var(--Label-Label-XS-Medium-line-height, 14px);
+    letter-spacing: var(--Label-Label-XS-Medium-letter-spacing, 0.4px);
+    border-radius: 2px;
+    background: var(--Background-Positive, #00B348);
     display: flex;
+    width: 38px;
+    height: 19px;
+    padding: 2px 4px;
+    justify-content: center;
     align-items: center;
-    gap: $space-2xl;
-    @include respond-to('desktop') {
-      display: none;
-    }
+    gap: 10px;
+    flex-shrink: 0;
   }
 
+  &__vehicle-price {
+    color: #898989;
+    font-family: 'PP Neue Montreal', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: normal;
+    margin-top: 4px;
+    text-align: left;
+  }
+
+  // Explore dropdown - completely separate styling
+  &__dropdown.explore-dropdown {
+    &.show {
+      height: 350px; // Set specific height for smooth animation
+    }
+
+    // Outer container - similar structure to products dropdown
+    .vida-header__dropdown-content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 10px; // 10px padding between outer and inner container
+      align-items: center;
+      justify-content: center;
+      background-color: $background-primary;
+      border-radius: 0 0 $space-4xl $space-4xl; // Bottom corners only
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.20); // Drop shadow
+      box-sizing: border-box;
+    }
+
+    // Inner container that holds all the content
+    .vida-header__dropdown-vehicles {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+      width: auto; // Auto width to fit content
+      max-width: 1200px; // Max width constraint
+      height: 100%; // Take full height of outer container
+      background-color: $background-primary; // Inner container background
+      border-radius: 0 0 $space-s $space-s; // Bottom corners only
+      padding: $space-7xl; // 42px padding as specified
+      gap: $space-8xl; // Gap between grid and right sidebar
+      box-sizing: border-box;
+    }
+
+    // Grid container for the text items
+    .vida-header__dropdown-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 240px);
+      grid-template-rows: repeat(3, auto);
+      gap: $space-2xl $space-9xl;
+      width: 828px; // Total width from Figma
+      flex-shrink: 0; // Prevent shrinking
+      
+      // Arrange items to match Figma layout: 3 columns, with specific order
+      .vida-header__vehicle-item:nth-child(1) { grid-area: 1 / 1; } // Service
+      .vida-header__vehicle-item:nth-child(2) { grid-area: 1 / 2; } // Extended Battery Warranty  
+      .vida-header__vehicle-item:nth-child(3) { grid-area: 2 / 2; } // Battery As A Service
+      .vida-header__vehicle-item:nth-child(4) { grid-area: 3 / 2; } // Dealers Locator
+      .vida-header__vehicle-item:nth-child(5) { grid-area: 2 / 1; } // Charging Network
+      .vida-header__vehicle-item:nth-child(6) { grid-area: 3 / 1; } // Road Side Assistance
+      .vida-header__vehicle-item:nth-child(7) { grid-area: 1 / 3; } // Savings Calculator
+      .vida-header__vehicle-item:nth-child(8) { grid-area: 2 / 3; } // Accessories
+    }
+
+    .vida-header__vehicle-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      height: auto;
+      width: 240px;
+      padding: $space-2xs;
+      gap: $space-2xs;
+      background: none;
+      border: none;
+      
+      &:hover {
+        transform: none;
+        background: none;
+        
+        .vida-header__vehicle-name {
+          color: $content-brand;
+        }
+      }
+
+      .vida-header__vehicle-name {
+        position: static;
+        color: $content-primary;
+        @include brand-font;
+        @include label-s-medium;
+        text-align: left;
+        width: 100%;
+        margin-bottom: $space-2xs;
+      }
+
+      .vida-header__vehicle-description {
+        color: $background-secondary50;
+        @include brand-font;
+        @include body-s-regular;
+        text-align: left;
+        width: 100%;
+      }
+    }
+
+    // Vertical separator line
+    .vida-header__dropdown-separator {
+      width: $width-xs;
+      height: 203px;
+      background-color: $background-secondary-hover;
+      margin: 0;
+      flex-shrink: 0; // Prevent shrinking
+    }
+
+    // Right navigation area
+    .vida-header__dropdown-right-nav {
+      display: flex;
+      flex-direction: column;
+      gap: $space-2xl;
+      width: 85px; // Width from Figma
+      padding-top: 0;
+      flex-shrink: 0; // Prevent shrinking
+    }
+
+    .vida-header__dropdown-nav-item {
+      color: #5C5A5A; // Grey color from Figma
+      @include brand-font;
+      @include label-s-medium;
+      text-decoration: none;
+      text-align: left;
+      
+      &:hover {
+        color: $content-brand;
+      }
+    }
+  }
+  
+  // Additional dropdown helper styles
+  &__dropdown-content {
+    width: 100%;
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__dropdown-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  // CTA styles (legacy)
+  &__cta-wrapper {
+    display: none;
+    
+    @include respond-to('tablet') {
+      display: block;
+    }
+  }
+  
+  &__cta-button {
+    display: inline-block;
+    background: none;
+    color: $content-link-dark;
+    @include body-m-regular;
+    padding: $space-s $space-2xl;
+    border-radius: $radius-xs;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    border: $width-xs solid $border-tertiary;
+    
+    &:hover {
+      background-color: $background-brand;
+      color: $content-primary-inverse;
+      border-color: $border-brand;
+    }
+  }
+  
   // Button component integration
   &__nav-button-component {
     // Any specific positioning or spacing adjustments for the navigation can go here
   }
-
-  // Right side buttons
-  &__right-buttons {
-    display: none;
-    @include respond-to('desktop') {
-      display: flex;
-      align-items: center;
-      gap: $space-5xl;
-    }
-  }
-
-  &__top-link {
-    color: $content-secondary;
-    @include label-s-medium;
-    text-decoration: none;
-    
-    &:hover {
-      color: $content-link;
-    }
-  }
 }
 
-// Utility classes
-.overflow-hidden {
-  overflow: hidden;
+// === VEHICLE DROPDOWN INFO STYLES (Figma match) ===
+.vida-header__vehicle-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.vida-header__vehicle-item a {
-  font-weight: inherit !important;
+.vida-header__vehicle-name-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  //width: 100%;
 }
 
 .vida-header__vehicle-name {
-  font-weight: $font-weight-medium !important;
+  color: #000;
+  font-family: 'PP Neue Montreal', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 530;
+  line-height: normal;
+  margin-bottom: 0;
+  position: static;
+  text-align: left;
 }
 
-// Add a global style for when dropdown is open
-.vida-header__nav-item--dropdown.dropdown-open .vida-header__nav-link {
-  color: $content-link;
-}
-.vida-header__nav-item--dropdown.dropdown-open .vida-header__nav-link .chevron-down {
-  transform: rotate(180deg);
+.vida-header__vehicle-badge {
+  color: var(--Background-Positive-Subtle, #CCF9DE);
+  font-family: var(--brand-font, 'PP Neue Montreal');
+  font-size: var(--Label-Label-XS-Medium-font-size, 12px);
+  font-style: normal;
+  font-weight: var(--Label-Label-S-Medium-font-weight, 500);
+  line-height: var(--Label-Label-XS-Medium-line-height, 14px);
+  letter-spacing: var(--Label-Label-XS-Medium-letter-spacing, 0.4px);
+  border-radius: 2px;
+  background: var(--Background-Positive, #00B348);
+  display: flex;
+  width: 38px;
+  height: 19px;
+  padding: 2px 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
-// --- MOBILE STYLES ---
+.vida-header__vehicle-price {
+  color: #898989;
+  font-family: 'PP Neue Montreal', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  margin-top: 4px;
+  text-align: left;
+}
+
+// ===== MOBILE STYLES =====
 
 // Mobile menu
 .vida-header__mobile-menu {
@@ -494,16 +670,21 @@
   }
 }
 
-// Mobile menu content container
-.vida-header__mobile-content {
+// Mobile menu container
+.vida-header__mobile-menu-container {
   width: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 32px;
-  box-sizing: border-box;
-} 
+}
+
+
 
 // Mobile sections (PRODUCTS, EXPLORE, MY ACCOUNT)
 .vida-header__mobile-section {
@@ -542,37 +723,9 @@
   }
 }
 
-.vida-header__mobile-menu-container {
-  width: 100%;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 32px;
-}
-
-.vida-header__mobile-content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 32px;
-  box-sizing: border-box;
-} 
-
 .vida-header__mobile-section-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  
-  &.open {
-    max-height: 1000px; // Arbitrary large value for smooth animation
-  }
+  // Static content - always visible
+ 
 }
 
 // Mobile menu items
@@ -588,7 +741,8 @@
   line-height: var(--Label-Label-M-Medium-line-height, 24px);
   letter-spacing: var(--Label-Label-M-Medium-letter-spacing, 0.1px);
   text-decoration: none;
-  padding: $space-l 0;
+  padding: $space-s 0;
+ 
   
   &:last-child {
     border-bottom: none;
@@ -599,15 +753,67 @@
   }
 }
 
-// New badge for VX2 Series
+// Mobile subitem styling
+.vida-header__mobile-item.vida-header__mobile-subitem {
+  color: var(--Content-Primary, #1D1B1B);
+  font-family: var(--brand-font, 'PP Neue Montreal');
+  font-size: var(--Body-Body-L-Regular-font-size, 20px);
+  font-style: normal;
+  font-weight: var(--Body-Body-L-Regular-font-weight, 400);
+  line-height: var(--Body-Body-L-Regular-line-height, 28px);
+  letter-spacing: var(--Body-Body-L-Regular-letter-spacing, 0.15px);
+
+  margin-bottom: 14px;
+
+  // Reset inherited styles
+  padding: 0 !important;
+  //padding-left: 32px !important;
+  display: block !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    color: $content-brand;
+  }
+}
+
+// Mobile badge for VX2 Series
 .vida-header__mobile-badge {
-  background-color: $green-600;
-  color: $content-primary-inverse;
-  @include link-small-link-text-semibold;
-  padding: $space-3xs $space-s;
-  border-radius: $radius-m;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: var(--Background-Positive-Subtle, #CCF9DE);
+  font-family: var(--brand-font, 'PP Neue Montreal');
+  font-size: var(--Label-Label-XS-Medium-font-size, 12px);
+  font-style: normal;
+  font-weight: var(--Label-Label-S-Medium-font-weight, 500);
+  line-height: var(--Label-Label-XS-Medium-line-height, 14px);
+  letter-spacing: var(--Label-Label-XS-Medium-letter-spacing, 0.4px);
+  border-radius: 2px;
+  background: var(--Background-Positive, #00B348);
+  display: flex;
+  width: 38px;
+  height: 19px;
+  padding: 2px 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+// Mobile vehicle price
+.vida-header__mobile-vehicle-price {
+  color: #898989;
+  font-family: 'PP Neue Montreal', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  margin-top: 2px;
+  margin-bottom: 0;
+  text-align: left;
+  display: block;
 }
 
 // Action buttons section
@@ -641,6 +847,26 @@
   opacity: var(--Opacity, 1);
 }
 
+.vida-header__mobile-action-button-label {
+  color: var(--Text-color, #FFF);
+  font-family: var(--brand-font, 'PP Neue Montreal');
+  font-size: var(--Button-fontSize, 20px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Button-lineHeight, 24px);
+  letter-spacing: -0.25px;
+}
+
+.vida-header__mobile-action-button .button__label {
+  color: var(--Text-color, #FFF);
+  font-family: var(--brand-font, 'PP Neue Montreal');
+  font-size: var(--Button-fontSize, 20px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Button-lineHeight, 24px);
+  letter-spacing: -0.25px;
+}
+
 // Footer links
 .vida-header__mobile-footer {
   display: flex;
@@ -665,119 +891,6 @@
   }
 }
 
-.vida-header__mobile-action-button-label {
-  color: var(--Text-color, #FFF);
-  font-family: var(--brand-font, 'PP Neue Montreal');
-  font-size: var(--Button-fontSize, 20px);
-  font-style: normal;
-  font-weight: 600;
-  line-height: var(--Button-lineHeight, 24px);
-  letter-spacing: -0.25px;
-}
-
-.vida-header__mobile-action-button .button__label {
-  color: var(--Text-color, #FFF);
-  font-family: var(--brand-font, 'PP Neue Montreal');
-  font-size: var(--Button-fontSize, 20px);
-  font-style: normal;
-  font-weight: 600;
-  line-height: var(--Button-lineHeight, 24px);
-  letter-spacing: -0.25px;
-}
-
-.vida-header__mobile-item.vida-header__mobile-subitem {
-  color: var(--Content-Primary, #1D1B1B);
-  font-family: var(--brand-font, 'PP Neue Montreal');
-  font-size: var(--Body-Body-L-Regular-font-size, 20px);
-  font-style: normal;
-  font-weight: var(--Body-Body-L-Regular-font-weight, 400);
-  line-height: var(--Body-Body-L-Regular-line-height, 28px);
-  letter-spacing: var(--Body-Body-L-Regular-letter-spacing, 0.15px);
-
-  margin-bottom: 14px;
-
-  // Reset inherited styles
-  padding: 0 !important;
-  //padding-left: 32px !important;
-  display: block !important;
-  align-items: unset !important;
-  justify-content: unset !important;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  &:hover {
-    color: $content-brand;
-  }
-}
-
-// Mobile hamburger
-.vida-header__mobile-menu-button {
-  background: none;
-  border: none;
-  padding: $space-s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.vida-header__hamburger {
-  width: 24px;
-  height: 18px;
-  position: relative;
-  
-  span {
-    display: block;
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background: $background-primaryinverse;
-    border-radius: $radius-xxs;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
-    
-    &:nth-child(1) {
-      top: 0px;
-    }
-    
-    &:nth-child(2), &:nth-child(3) {
-      top: $space-s;
-    }
-    
-    &:nth-child(4) {
-      top: $space-2xl;
-    }
-  }
-  
-  &.open {
-    span {
-      &:nth-child(1) {
-        top: $space-s;
-        width: 0%;
-        left: 50%;
-      }
-      
-      &:nth-child(2) {
-        transform: rotate(45deg);
-      }
-      
-      &:nth-child(3) {
-        transform: rotate(-45deg);
-      }
-      
-      &:nth-child(4) {
-        top: $space-s;
-        width: 0%;
-        left: 50%;
-      }
-    }
-  }
-}
-
 // Mobile nav button component
 .vida-header__mobile-nav-button-component {
   width: 100%;
@@ -785,3 +898,26 @@
   // Override button component styles if needed for mobile
 }
 
+// ===== UTILITY CLASSES & GLOBAL STYLES =====
+
+// Utility classes
+.overflow-hidden {
+  overflow: hidden;
+}
+
+// Global styles
+.vida-header__vehicle-item a {
+  font-weight: inherit !important;
+}
+
+.vida-header__vehicle-name {
+  font-weight: $font-weight-medium !important;
+}
+
+// Add a global style for when dropdown is open
+.vida-header__nav-item--dropdown.dropdown-open .vida-header__nav-link {
+  color: $content-link;
+}
+.vida-header__nav-item--dropdown.dropdown-open .vida-header__nav-link .chevron-down {
+  transform: rotate(180deg);
+}
