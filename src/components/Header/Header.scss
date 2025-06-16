@@ -1,8 +1,9 @@
 @import '../../styles/PrimitiveTokens.scss';
 @import '../../styles/SemanticTokens.scss';
 @import '../../styles/mixins/typography.scss';
+//@import '../../styles/mixins/responsive.scss';
 
-
+// Desktop styles first, in order of appearance in Header.jsx
 // Header component styles
 .vida-header {
   position: fixed;
@@ -24,6 +25,22 @@
     padding: $space-s $space-14xl;
     align-items: center;
     justify-content: space-between;
+
+    @include respond-to('desktop') {
+      border-bottom: 1px solid #DCDCDD;
+      background: #FFF;
+      backdrop-filter: blur(25px);
+    }
+    @include respond-to('tablet') {
+      padding: $space-2xl $space-5xl;
+      box-sizing: border-box;
+      height: 64px;
+    }
+    @include respond-to('mobile') {
+      padding: $space-2xl $space-5xl;
+      box-sizing: border-box;
+      height: 64px;
+    }
   }
   
   // Logo
@@ -36,14 +53,24 @@
       height: 24px;
       flex-shrink: 0;
       aspect-ratio: 85/12;
+      
+      @include respond-to('tablet') {
+        width: 144px;
+        height: 20px;
+        aspect-ratio: 36/5;
+      }
+      @include respond-to('mobile') {
+        width: 144px;
+        height: 20px;
+        aspect-ratio: 36/5;
+      }
     }
   }
   
   // Main navigation
   &__nav {
     display: none;
-    
-    @include respond-to('tablet') {
+    @include respond-to('desktop') {
       display: flex;
       flex: 1;
       justify-content: center;
@@ -64,11 +91,14 @@
     &--dropdown {
       cursor: pointer;
       
-      // Show active style on hover
-      &:hover {
-        .vida-header__nav-link {
-          color: $content-link;
-        }
+      // Show active style on hover or when dropdown is open
+      &:hover .vida-header__nav-link,
+      &.dropdown-open .vida-header__nav-link {
+        color: $content-link;
+      }
+      &:hover .vida-header__nav-link .chevron-down,
+      &.dropdown-open .vida-header__nav-link .chevron-down {
+        transform: rotate(180deg);
       }
     }
   }
@@ -88,7 +118,8 @@
       color: $content-link; // Vida brand orange from Figma
       
       .chevron-down {
-        transform: rotate(180deg);
+        margin-left: $space-2xs;
+        transition: transform 0.2s ease;
       }
     }
     
@@ -98,7 +129,6 @@
     }
   }
 
-  
   // CTA Button
   &__cta-wrapper {
     display: none;
@@ -347,246 +377,14 @@
     bottom: 0;
     width: 100%;
   }
-  
-  // Mobile navigation
+
+  // Mobile nav (desktop override included)
   &__mobile-nav {
     display: flex;
     align-items: center;
     gap: $space-2xl;
-    
-    @include respond-to('tablet') {
+    @include respond-to('desktop') {
       display: none;
-    }
-  }
-  
-  &__mobile-menu-button {
-    background: none;
-    border: none;
-    padding: $space-s;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  &__hamburger {
-    width: 24px;
-    height: 18px;
-    position: relative;
-    
-    span {
-      display: block;
-      position: absolute;
-      height: 2px;
-      width: 100%;
-      background: $background-primaryinverse;
-      border-radius: $radius-xxs;
-      opacity: 1;
-      left: 0;
-      transform: rotate(0deg);
-      transition: .25s ease-in-out;
-      
-      &:nth-child(1) {
-        top: 0px;
-      }
-      
-      &:nth-child(2), &:nth-child(3) {
-        top: $space-s;
-      }
-      
-      &:nth-child(4) {
-        top: $space-2xl;
-      }
-    }
-    
-    &.open {
-      span {
-        &:nth-child(1) {
-          top: $space-s;
-          width: 0%;
-          left: 50%;
-        }
-        
-        &:nth-child(2) {
-          transform: rotate(45deg);
-        }
-        
-        &:nth-child(3) {
-          transform: rotate(-45deg);
-        }
-        
-        &:nth-child(4) {
-          top: $space-s;
-          width: 0%;
-          left: 50%;
-        }
-      }
-    }
-  }
-  
-  // Mobile menu
-  &__mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: $background-primary;
-    z-index: 999;
-    overflow-y: auto;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    
-    &.open {
-      transform: translateX(0);
-    }
-  }
-
-  // Mobile header with logo and close button
-  &__mobile-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: $space-2xl $space-5xl;
-    border-bottom: $width-xs solid $border-inverse-secondary;
-    height: 64px;
-    box-sizing: border-box;
-  }
-
-  &__mobile-logo {
-    img {
-      width: 170px;
-      height: 24px;
-      flex-shrink: 0;
-      aspect-ratio: 85/12;
-    }
-  }
-
-  &__mobile-close {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: $content-primary;
-    cursor: pointer;
-    padding: $space-s;
-    line-height: 1;
-    
-    &:hover {
-      color: $content-brand;
-    }
-  }
-
-  // Mobile menu content container
-  &__mobile-content {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: $space-5xl;
-    min-height: calc(100vh - $space-11xl);
-  }
-
-  // Mobile sections (PRODUCTS, EXPLORE, MY ACCOUNT)
-  &__mobile-section {
-    border-bottom: $width-xs solid $border-inverse-secondary;
-    padding-bottom: $space-2xl;
-    
-    &:last-of-type {
-      border-bottom: none;
-    }
-  }
-
-  &__mobile-section-header {
-    @include brand-font;
-    @include label-xs-semibold;
-    letter-spacing: 0.5px;
-    color: $content-tertiary;
-    text-transform: uppercase;
-    background: none;
-    border: none;
-    padding: 0;
-    margin-bottom: $space-2xl;
-    text-align: left;
-    width: 100%;
-    cursor: pointer;
-    
-    &.static {
-      cursor: default;
-    }
-    
-    &:hover {
-      color: $content-brand;
-    }
-  }
-
-  &__mobile-section-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    
-    &.open {
-      max-height: 1000px; // Arbitrary large value for smooth animation
-    }
-  }
-
-  // Mobile menu items
-  &__mobile-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: $content-primary;
-    @include brand-font;
-    @include body-m-semibold;
-    text-decoration: none;
-    padding: $space-l 0;
-    border-bottom: $width-xs solid $border-inverse-hover;
-    
-    &:last-child {
-      border-bottom: none;
-    }
-    
-    &:hover {
-      color: $content-brand;
-    }
-  }
-
-  // New badge for VX2 Series
-  &__mobile-badge {
-    background-color: $green-600;
-    color: $content-primary-inverse;
-    @include link-small-link-text-semibold;
-    padding: $space-3xs $space-s;
-    border-radius: $radius-m;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  // Action buttons section
-  &__mobile-actions {
-    display: flex;
-    flex-direction: column;
-    gap: $space-l;
-    margin-top: auto;
-    padding-top: $space-5xl;
-  }
-
-  // Footer links
-  &__mobile-footer {
-    display: flex;
-    flex-direction: column;
-    gap: $space-2xl;
-    padding-top: $space-5xl;
-    border-top: $width-xs solid $border-inverse-secondary;
-    margin-top: auto;
-  }
-
-  &__mobile-footer-link {
-    color: $content-tertiary;
-    @include brand-font;
-    @include body-s-regular;
-    text-decoration: none;
-    
-    &:hover {
-      color: $content-link;
     }
   }
 
@@ -595,18 +393,10 @@
     // Any specific positioning or spacing adjustments for the navigation can go here
   }
 
-  &__mobile-nav-button-component {
-    width: 100%;
-    margin: $space-s 0;
-    
-    // Override button component styles if needed for mobile
-  }
-
   // Right side buttons
   &__right-buttons {
     display: none;
-    
-    @include respond-to('tablet') {
+    @include respond-to('desktop') {
       display: flex;
       align-items: center;
       gap: $space-5xl;
@@ -635,4 +425,363 @@
 
 .vida-header__vehicle-name {
   font-weight: $font-weight-medium !important;
+}
+
+// Add a global style for when dropdown is open
+.vida-header__nav-item--dropdown.dropdown-open .vida-header__nav-link {
+  color: $content-link;
+}
+.vida-header__nav-item--dropdown.dropdown-open .vida-header__nav-link .chevron-down {
+  transform: rotate(180deg);
+}
+
+// --- MOBILE STYLES ---
+
+// Mobile menu
+.vida-header__mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: $background-primary;
+  z-index: 999;
+  overflow-y: auto;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+// Mobile header with logo and close button
+.vida-header__mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-2xl $space-5xl;
+  height: 64px;
+  box-sizing: border-box;
+}
+
+.vida-header__mobile-logo {
+  img {
+    width: 144px;
+    height: 20px;
+    flex-shrink: 0;
+    aspect-ratio: 85/12;
+  }
+}
+
+.vida-header__mobile-close {
+  display: flex;
+  width: var(--Icon-Button-size, 32px);
+  height: var(--Icon-Button-size, 32px);
+  padding: var(--Button-verticalPadding, 8px) var(--Button-horzontalPadding, 12px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--Space-S, 8px);
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: $content-primary;
+  cursor: pointer;
+  line-height: 1;
+  
+  &:hover {
+    color: $content-brand;
+  }
+}
+
+// Mobile menu content container
+.vida-header__mobile-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  box-sizing: border-box;
 } 
+
+// Mobile sections (PRODUCTS, EXPLORE, MY ACCOUNT)
+.vida-header__mobile-section {
+  width: 100%;
+}
+
+.vida-header__mobile-separator {
+  width: 100%;
+  height: 1px;
+  background: var(--Content-Secondary-Inverse, #E6E6E6);
+  flex-shrink: 0;
+}
+
+.vida-header__mobile-section-header {
+  color: var(--Content-Tertiary, #5C5A5A);
+  font-family: 'PP Neue Montreal', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 450;
+  line-height: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  
+  &.static {
+    cursor: default;
+  }
+  
+  &:hover {
+    color: $content-brand;
+  }
+}
+
+.vida-header__mobile-menu-container {
+  width: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.vida-header__mobile-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  box-sizing: border-box;
+} 
+
+.vida-header__mobile-section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  
+  &.open {
+    max-height: 1000px; // Arbitrary large value for smooth animation
+  }
+}
+
+// Mobile menu items
+.vida-header__mobile-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--Content-Primary, #1D1B1B);
+  font-family: var(--brand-font, 'PP Neue Montreal');
+  font-size: var(--Label-Label-M-Medium-font-size, 20px);
+  font-style: normal;
+  font-weight: var(--Label-Label-M-Medium-font-weight, 500);
+  line-height: var(--Label-Label-M-Medium-line-height, 24px);
+  letter-spacing: var(--Label-Label-M-Medium-letter-spacing, 0.1px);
+  text-decoration: none;
+  padding: $space-l 0;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+  
+  &:hover {
+    color: $content-brand;
+  }
+}
+
+// New badge for VX2 Series
+.vida-header__mobile-badge {
+  background-color: $green-600;
+  color: $content-primary-inverse;
+  @include link-small-link-text-semibold;
+  padding: $space-3xs $space-s;
+  border-radius: $radius-m;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+// Action buttons section
+.vida-header__mobile-actions {
+  width: 100%;
+  height: 82px;
+  padding: 17px 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.vida-header__mobile-action-button {
+  display: flex;
+  padding: var(--Button-verticalPadding, 12px) 24px;
+  justify-content: center;
+  align-items: center;
+  gap: var(--Space-S, 8px);
+  flex: 1 0 0;
+  border-radius: 200px;
+  opacity: var(--Opacity, 1);
+  background: var(--Fill, #FF5310);
+}
+
+.vida-header__mobile-action-button--buy {
+  background: var(--Fill, #1D1B1B);
+  border-radius: 200px;
+  opacity: var(--Opacity, 1);
+}
+
+// Footer links
+.vida-header__mobile-footer {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2xl;
+  padding-top: $space-5xl;
+  margin-top: auto;
+}
+
+.vida-header__mobile-footer-link {
+  color: var(--Content-Tertiary, #5C5A5A);
+  font-family: var(--brand-font, 'PP Neue Montreal');
+  font-size: var(--Label-Label-S-Medium-font-size, 16px);
+  font-style: normal;
+  font-weight: var(--Label-Label-S-Medium-font-weight, 500);
+  line-height: var(--Label-Label-S-Medium-line-height, 20px);
+  letter-spacing: var(--Label-Label-S-Medium-letter-spacing, 0.25px);
+  text-decoration: none;
+  
+  &:hover {
+    color: $content-link;
+  }
+}
+
+.vida-header__mobile-action-button-label {
+  color: var(--Text-color, #FFF);
+  font-family: var(--brand-font, 'PP Neue Montreal');
+  font-size: var(--Button-fontSize, 20px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Button-lineHeight, 24px);
+  letter-spacing: -0.25px;
+}
+
+.vida-header__mobile-action-button .button__label {
+  color: var(--Text-color, #FFF);
+  font-family: var(--brand-font, 'PP Neue Montreal');
+  font-size: var(--Button-fontSize, 20px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: var(--Button-lineHeight, 24px);
+  letter-spacing: -0.25px;
+}
+
+.vida-header__mobile-item.vida-header__mobile-subitem {
+  color: var(--Content-Primary, #1D1B1B);
+  font-family: var(--brand-font, 'PP Neue Montreal');
+  font-size: var(--Body-Body-L-Regular-font-size, 20px);
+  font-style: normal;
+  font-weight: var(--Body-Body-L-Regular-font-weight, 400);
+  line-height: var(--Body-Body-L-Regular-line-height, 28px);
+  letter-spacing: var(--Body-Body-L-Regular-letter-spacing, 0.15px);
+
+  margin-bottom: 14px;
+
+  // Reset inherited styles
+  padding: 0 !important;
+  //padding-left: 32px !important;
+  display: block !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    color: $content-brand;
+  }
+}
+
+// Mobile hamburger
+.vida-header__mobile-menu-button {
+  background: none;
+  border: none;
+  padding: $space-s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vida-header__hamburger {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  
+  span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: $background-primaryinverse;
+    border-radius: $radius-xxs;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+    
+    &:nth-child(1) {
+      top: 0px;
+    }
+    
+    &:nth-child(2), &:nth-child(3) {
+      top: $space-s;
+    }
+    
+    &:nth-child(4) {
+      top: $space-2xl;
+    }
+  }
+  
+  &.open {
+    span {
+      &:nth-child(1) {
+        top: $space-s;
+        width: 0%;
+        left: 50%;
+      }
+      
+      &:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+      
+      &:nth-child(4) {
+        top: $space-s;
+        width: 0%;
+        left: 50%;
+      }
+    }
+  }
+}
+
+// Mobile nav button component
+.vida-header__mobile-nav-button-component {
+  width: 100%;
+  margin: $space-s 0;
+  // Override button component styles if needed for mobile
+}
+
