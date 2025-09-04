@@ -20,7 +20,6 @@ const BatteriesPage = () => {
     <div className="batteries-page">
       <div className="batteries-page__background-container">
         <div className="batteries-page__content-card">
-          {/* Left battery (desktop only) */}
           {!isMobile && (
             <div className="batteries-page__battery batteries-page__battery--left">
               <img 
@@ -44,7 +43,6 @@ const BatteriesPage = () => {
             </p>
           </div>
 
-          {/* Right battery (desktop only) */}
           {!isMobile && (
             <div className="batteries-page__battery batteries-page__battery--right">
               <img 
@@ -55,7 +53,6 @@ const BatteriesPage = () => {
             </div>
           )}
 
-          {/* Both batteries stacked under text on mobile */}
           {isMobile && (
             <div className="batteries-page__battery-stack">
               <img 
