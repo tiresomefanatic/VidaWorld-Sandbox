@@ -1,0 +1,152 @@
+// Connect Page Styles
+
+.connect-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #F8F6F3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px;
+  
+  @media (min-width: 768px) {
+    padding: 120px 48px;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 160px 64px;
+  }
+}
+
+.connect-page__container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.connect-page__content {
+  text-align: center;
+}
+
+.connect-page__headline {
+  color: var(--Neutral-Dark-Grey, #222);
+  text-align: center;
+  font-family: var(--brand-font, "PP Neue Montreal");
+  font-size: var(--Heading-Heading-M-font-size, 32px);
+  font-style: normal;
+  font-weight: var(--Heading-Heading-M-font-weight, 600);
+  line-height: var(--Heading-Heading-M-line-height, 40px);
+  letter-spacing: var(--Heading-Heading-M-letter-spacing, 0);
+  margin: 0 0 32px 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @media (min-width: 768px) {
+    font-size: var(--Heading-Heading-XL-font-size, 48px);
+    font-weight: var(--Heading-Heading-XL-font-weight, 600);
+    line-height: var(--Heading-Heading-XL-line-height, 56px);
+    letter-spacing: var(--Heading-Heading-XL-letter-spacing, 0.1px);
+   
+  }
+}
+
+.connect-page__app-name {
+  color: var(--Content-Brand, #FF5310);
+}
+
+.connect-page__divider {
+  width: 200px;
+  height: 1px;
+  background-color: var(--Content-Secondary-Inverse, #DFDFDF);
+  margin: 0 auto 32px auto;
+  
+  @media (min-width: 768px) {
+    width: 340px;
+    height: 1px;
+    margin-bottom: 32px;
+  }
+}
+
+.connect-page__download-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 80px;
+  
+  @media (min-width: 768px) {
+    gap: 32px;
+    margin-bottom: 120px;
+  }
+}
+
+.connect-page__download-btn {
+  width: 120px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+  }
+  
+  @media (min-width: 768px) {
+    width: 153px;
+    height: 52px;
+  }
+}
+
+
+
+.connect-page__phones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  
+  @media (min-width: 768px) {
+    gap: 40px;
+  }
+}
+
+.connect-page__phone {
+  position: relative;
+  
+  &--left {
+    transform: rotate(-15deg) translateY(20px);
+    z-index: 1;
+  }
+  
+  &--center {
+    z-index: 3;
+  }
+  
+  &--right {
+    transform: rotate(15deg) translateY(20px);
+    z-index: 1;
+  }
+  
+  @media (max-width: 767px) {
+    &--left {
+      transform: rotate(-10deg) translateY(10px);
+    }
+    
+    &--right {
+      transform: rotate(10deg) translateY(10px);
+    }
+  }
+}
+
+.connect-page__phone-image {
+  width: 200px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+  
+  @media (min-width: 768px) {
+    width: 280px;
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.2));
+  }
+}

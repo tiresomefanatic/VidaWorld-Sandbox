@@ -14,6 +14,9 @@ import HomePage from "./pages/HomePage/HomePage";
 import DesignTokensPage from "./pages/DesignTokensPage/DesignTokens";
 import ButtonsPage from "./pages/ButtonsPage/ButtonsPage";
 import TeaserPage from "./pages/TeaserPage/TeaserPage";
+import HeroPage from "./pages/HeroPage/HeroPage";
+import BatteriesPage from "./pages/BatteriesPage/BatteriesPage";
+import ConnectPage from "./pages/ConnectPage/ConnectPage";
 
 // Import Header component
 import Header from "./components/Header/Header";
@@ -37,7 +40,10 @@ function App() {
               <Route path="/explore" element={<ExplorePage />} />
               <Route path="/designtokens" element={<DesignTokensPage />} />
               <Route path="/buttons" element={<ButtonsPage />} />
-              <Route path="/teaser" element={<TeaserPage />} />
+                              <Route path="/teaser" element={<TeaserPage />} />
+                <Route path="/hero" element={<HeroPage />} />
+                <Route path="/batteries" element={<BatteriesPage />} />
+                <Route path="/connect" element={<ConnectPage />} />
             </Routes>
           </main>
           
